@@ -3,6 +3,8 @@ import { ArrowLeft, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { PageSection } from "@/components/ui/page-section"
+import { ContentCard } from "@/components/ui/content-card"
 
 export const metadata = {
   title: "Tapestry Glossaries | America's Tapestry",
@@ -69,123 +71,118 @@ const glossaryTerms: GlossaryTerm[] = [
 
 export default function GlossaryPage() {
   return (
-    <main className="flex-1 pt-24 pb-16">
-      <section className="bg-colonial-parchment py-12 md:py-16">
-        <div className="container mx-auto">
-          <div className="mb-6">
-            <Button
-              asChild
-              variant="ghost"
-              className="text-colonial-navy hover:text-colonial-burgundy hover:bg-colonial-parchment/50"
-            >
-              <Link href="/resources">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Resources
-              </Link>
-            </Button>
-          </div>
+    <PageSection background="colonial-parchment">
+      <div className="mb-6">
+        <Button
+          asChild
+          variant="ghost"
+          className="text-colonial-navy hover:text-colonial-burgundy hover:bg-colonial-parchment/50"
+        >
+          <Link href="/resources">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Resources
+          </Link>
+        </Button>
+      </div>
 
-          <div className="max-w-3xl mx-auto mb-12 content-typography">
-            <h1 className="text-3xl md:text-4xl font-bold text-colonial-navy mb-4 tracking-tight">
-              Tapestry Glossaries
-            </h1>
-            <p>
-              Explore the terminology and techniques used in traditional tapestry making. Our comprehensive glossaries
-              provide detailed explanations of stitching methods, materials, tools, and specialized terminology used
-              throughout the America's Tapestry project.
-            </p>
-          </div>
+      <h1 className="page-heading">
+        Tapestry Glossaries
+      </h1>
+      
+      <p className="lead-text">
+        Explore the terminology and techniques used in traditional tapestry making. Our comprehensive glossaries
+        provide detailed explanations of stitching methods, materials, tools, and specialized terminology used
+        throughout the America's Tapestry project.
+      </p>
 
-          <div className="max-w-3xl mx-auto mb-8">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-colonial-navy/50 h-4 w-4" />
-              <Input
-                type="search"
-                placeholder="Search glossary terms..."
-                className="pl-10 bg-white border-colonial-navy/20 focus-visible:ring-colonial-burgundy"
-              />
-            </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Tabs defaultValue="all" className="w-full">
-              <TabsList className="w-full grid grid-cols-5 mb-8">
-                <TabsTrigger value="all">All Terms</TabsTrigger>
-                <TabsTrigger value="stitches">Stitches</TabsTrigger>
-                <TabsTrigger value="materials">Materials</TabsTrigger>
-                <TabsTrigger value="tools">Tools</TabsTrigger>
-                <TabsTrigger value="techniques">Techniques</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="all" className="space-y-6">
-                <div className="grid grid-cols-1 gap-6">
-                  {glossaryTerms
-                    .sort((a, b) => a.term.localeCompare(b.term))
-                    .map((term, index) => (
-                      <GlossaryCard key={index} term={term} />
-                    ))}
-                </div>
-              </TabsContent>
-
-              <TabsContent value="stitches" className="space-y-6">
-                <div className="grid grid-cols-1 gap-6">
-                  {glossaryTerms
-                    .filter((term) => term.category === "stitches")
-                    .sort((a, b) => a.term.localeCompare(b.term))
-                    .map((term, index) => (
-                      <GlossaryCard key={index} term={term} />
-                    ))}
-                </div>
-              </TabsContent>
-
-              <TabsContent value="materials" className="space-y-6">
-                <div className="grid grid-cols-1 gap-6">
-                  {glossaryTerms
-                    .filter((term) => term.category === "materials")
-                    .sort((a, b) => a.term.localeCompare(b.term))
-                    .map((term, index) => (
-                      <GlossaryCard key={index} term={term} />
-                    ))}
-                </div>
-              </TabsContent>
-
-              <TabsContent value="tools" className="space-y-6">
-                <div className="grid grid-cols-1 gap-6">
-                  {glossaryTerms
-                    .filter((term) => term.category === "tools")
-                    .sort((a, b) => a.term.localeCompare(b.term))
-                    .map((term, index) => (
-                      <GlossaryCard key={index} term={term} />
-                    ))}
-                </div>
-              </TabsContent>
-
-              <TabsContent value="techniques" className="space-y-6">
-                <div className="grid grid-cols-1 gap-6">
-                  {glossaryTerms
-                    .filter((term) => term.category === "techniques")
-                    .sort((a, b) => a.term.localeCompare(b.term))
-                    .map((term, index) => (
-                      <GlossaryCard key={index} term={term} />
-                    ))}
-                </div>
-              </TabsContent>
-            </Tabs>
-          </div>
-
-          <div className="mt-12 p-6 bg-colonial-navy/5 rounded-lg border border-colonial-navy/10 max-w-3xl mx-auto content-typography">
-            <h2 className="text-xl font-bold text-colonial-navy mb-3">Download Complete Glossary</h2>
-            <p>
-              Want a reference you can keep? Download our complete illustrated glossary of tapestry terms, techniques,
-              and tools as a PDF for convenient reference.
-            </p>
-            <Button asChild className="rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90">
-              <Link href="#">Download Complete Glossary (PDF, 8.3MB)</Link>
-            </Button>
-          </div>
+      <div className="max-w-3xl mx-auto mb-8">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-colonial-navy/50 h-4 w-4" />
+          <Input
+            type="search"
+            placeholder="Search glossary terms..."
+            className="pl-10 bg-white border-colonial-navy/20 focus-visible:ring-colonial-burgundy"
+          />
         </div>
-      </section>
-    </main>
+      </div>
+
+      <div className="max-w-4xl mx-auto">
+        <Tabs defaultValue="all" className="w-full">
+          <TabsList className="w-full grid grid-cols-5 mb-8">
+            <TabsTrigger value="all">All Terms</TabsTrigger>
+            <TabsTrigger value="stitches">Stitches</TabsTrigger>
+            <TabsTrigger value="materials">Materials</TabsTrigger>
+            <TabsTrigger value="tools">Tools</TabsTrigger>
+            <TabsTrigger value="techniques">Techniques</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="all" className="space-y-6">
+            <div className="grid grid-cols-1 gap-6">
+              {glossaryTerms
+                .sort((a, b) => a.term.localeCompare(b.term))
+                .map((term, index) => (
+                  <GlossaryCard key={index} term={term} />
+                ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="stitches" className="space-y-6">
+            <div className="grid grid-cols-1 gap-6">
+              {glossaryTerms
+                .filter((term) => term.category === "stitches")
+                .sort((a, b) => a.term.localeCompare(b.term))
+                .map((term, index) => (
+                  <GlossaryCard key={index} term={term} />
+                ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="materials" className="space-y-6">
+            <div className="grid grid-cols-1 gap-6">
+              {glossaryTerms
+                .filter((term) => term.category === "materials")
+                .sort((a, b) => a.term.localeCompare(b.term))
+                .map((term, index) => (
+                  <GlossaryCard key={index} term={term} />
+                ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="tools" className="space-y-6">
+            <div className="grid grid-cols-1 gap-6">
+              {glossaryTerms
+                .filter((term) => term.category === "tools")
+                .sort((a, b) => a.term.localeCompare(b.term))
+                .map((term, index) => (
+                  <GlossaryCard key={index} term={term} />
+                ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="techniques" className="space-y-6">
+            <div className="grid grid-cols-1 gap-6">
+              {glossaryTerms
+                .filter((term) => term.category === "techniques")
+                .sort((a, b) => a.term.localeCompare(b.term))
+                .map((term, index) => (
+                  <GlossaryCard key={index} term={term} />
+                ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+      </div>
+
+      <ContentCard className="mt-12 max-w-3xl mx-auto">
+        <h2 className="section-title">Download Complete Glossary</h2>
+        <p className="font-serif text-colonial-navy/80 mb-4">
+          Want a reference you can keep? Download our complete illustrated glossary of tapestry terms, techniques,
+          and tools as a PDF for convenient reference.
+        </p>
+        <Button asChild className="rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90">
+          <Link href="#">Download Complete Glossary (PDF, 8.3MB)</Link>
+        </Button>
+      </ContentCard>
+    </PageSection>
   )
 }
 

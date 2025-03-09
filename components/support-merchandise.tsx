@@ -54,8 +54,8 @@ export function SupportMerchandise() {
         <div className="w-16 h-16 bg-colonial-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
           <ShoppingBag className="h-8 w-8 text-colonial-gold" />
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-colonial-navy">Merchandise Store</h2>
-        <p className="font-serif text-colonial-navy/80 leading-relaxed">
+        <h2 className="section-title">Merchandise Store</h2>
+        <p className="lead-text text-colonial-navy/80">
           Support America's Tapestry by purchasing our exclusive merchandise. Each item is thoughtfully designed to
           celebrate our nation's cultural heritage, with proceeds directly supporting our educational programs and
           tapestry creation.

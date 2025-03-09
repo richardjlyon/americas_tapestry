@@ -76,7 +76,7 @@ export function SupportDonations() {
           <Heart className="h-8 w-8 text-colonial-burgundy" />
         </div>
         <div className="content-typography">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-colonial-navy">Make a Donation</h2>
+          <h2 className="section-title">Make a Donation</h2>
           <p>
             Your financial contribution directly supports the creation, preservation, and exhibition of America's
             Tapestry. Donations help fund materials, artist stipends, educational programs, and community outreach

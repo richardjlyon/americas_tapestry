@@ -1,10 +1,11 @@
 import type React from "react"
+import PageLayout from "../page-layout"
 
 export default function SponsorsLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return <PageLayout>{children}</PageLayout>
 }
 

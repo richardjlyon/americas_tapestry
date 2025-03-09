@@ -82,8 +82,8 @@ export function SupportVolunteer() {
         <div className="w-16 h-16 bg-colonial-navy/10 rounded-full flex items-center justify-center mx-auto mb-4">
           <Users className="h-8 w-8 text-colonial-navy" />
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-colonial-navy">Volunteer Opportunities</h2>
-        <p className="font-serif text-colonial-navy/80 leading-relaxed">
+        <h2 className="section-title">Volunteer Opportunities</h2>
+        <p className="lead-text text-colonial-navy/80">
           Contribute your time, skills, and passion to America's Tapestry. Our volunteers are essential to our mission,
           helping us create, preserve, and share our nation's cultural heritage. Whether you're a skilled needleworker,
           a history enthusiast, or someone who wants to make a difference, we have opportunities for you.

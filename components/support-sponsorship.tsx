@@ -80,8 +80,8 @@ export function SupportSponsorship() {
         <div className="w-16 h-16 bg-colonial-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
           <Award className="h-8 w-8 text-colonial-gold" />
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-colonial-navy">Sponsorship Opportunities</h2>
-        <p className="font-serif text-colonial-navy/80 leading-relaxed">
+        <h2 className="section-title">Sponsorship Opportunities</h2>
+        <p className="lead-text text-colonial-navy/80">
           Partner with America's Tapestry as an organizational sponsor and align your brand with our mission of
           preserving and celebrating America's diverse cultural heritage. Sponsorships provide critical support for our
           educational programs, exhibitions, and community outreach initiatives.

@@ -107,10 +107,18 @@
     }
 
     .page-heading {
-        @apply text-3xl md:text-4xl lg:text-5xl font-bold text-colonial-navy mb-6 mt-12 text-center tracking-tight;
+        @apply text-3xl md:text-4xl lg:text-5xl font-bold text-colonial-navy mb-6 text-center tracking-tight;
     }
 
-    /* Page heading styles */
+    .section-title {
+        @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 tracking-tight text-colonial-navy;
+    }
+
+    .lead-text {
+        @apply text-lg md:text-xl text-colonial-navy/80 font-serif mb-8 max-w-3xl mx-auto text-center;
+    }
+
+    /* Typography styles */
 }
 
 /* Custom animation for the hero carousel */

@@ -3,27 +3,23 @@ import { getAllSponsors } from "@/lib/sponsors"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight, Award } from "lucide-react"
+import { PageSection } from "@/components/ui/page-section"
 
 export function SponsorsSection() {
   const sponsors = getAllSponsors()
   const featuredSponsors = sponsors.slice(0, 3) // Top 3 sponsors
 
   return (
-    <section className="bg-colonial-parchment py-12 md:py-16">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="w-16 h-16 bg-colonial-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Award className="h-8 w-8 text-colonial-gold" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 tracking-tight text-colonial-navy">
-            Our Sponsors
-          </h2>
-          <p className="font-serif text-colonial-navy mb-4 md:mb-6 leading-relaxed">
-            America's Tapestry is made possible through the generous support of our sponsors. These organizations and
-            institutions share our commitment to preserving and celebrating America's diverse cultural heritage through
-            art, education, and community engagement.
-          </p>
-        </div>
+    <PageSection background="colonial-parchment">
+        <h1 className="page-heading">
+          Our Sponsors
+        </h1>
+        
+        <p className="lead-text">
+          America's Tapestry is made possible through the generous support of our sponsors. These organizations and
+          institutions share our commitment to preserving and celebrating America's diverse cultural heritage through
+          art, education, and community engagement.
+        </p>
 
         {/* Featured Sponsor - Platinum Tier */}
         {sponsors.filter((s) => s.tier === "Platinum").length > 0 && (
@@ -87,8 +83,7 @@ export function SponsorsSection() {
             </Link>
           </Button>
         </div>
-      </div>
-    </section>
+    </PageSection>
   )
 }
 
