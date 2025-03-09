@@ -66,23 +66,13 @@
 }
 
 @layer components {
+
     /* Typography container for rich content areas */
     .content-typography {
-        @apply prose prose-lg md:prose-xl 
-               max-w-none
-               prose-headings:font-sans
-               prose-headings:text-colonial-navy
-               prose-p:font-serif
-               prose-p:text-colonial-navy
-               prose-a:text-colonial-burgundy
-               prose-a:no-underline
-               prose-a:font-medium
-               hover:prose-a:text-colonial-burgundy/80
-               prose-img:rounded-md
-               prose-img:shadow-md;
+        @apply prose prose-lg md:prose-xl max-w-none prose-headings:font-sans prose-headings:text-colonial-navy prose-p:font-serif prose-p:text-colonial-navy prose-a:text-colonial-burgundy prose-a:no-underline prose-a:font-medium hover:prose-a:text-colonial-burgundy/80 prose-img:rounded-md prose-img:shadow-md;
     }
-    
-    
+
+
     .container {
         @apply px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24;
     }
@@ -115,6 +105,12 @@
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         transition: opacity 0.5s ease;
     }
+
+    .page-heading {
+        @apply text-3xl md:text-4xl lg:text-5xl font-bold text-colonial-navy mb-6 mt-12 text-center tracking-tight;
+    }
+
+    /* Page heading styles */
 }
 
 /* Custom animation for the hero carousel */
