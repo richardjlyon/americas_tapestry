@@ -1,52 +1,58 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import Link from "next/link"
-import { cn } from "@/lib/utils"
-import { getTapestryBySlug } from "@/lib/tapestries"
+import { useState } from 'react';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { getTapestryBySlug } from '@/lib/tapestries';
 
 // Define the colony data with state names and positions for labels
 const colonies = [
   {
-    id: "massachusetts",
-    name: "Massachusetts",
-    path: "M830,180 L860,170 L865,190 L840,200 L830,180",
+    id: 'massachusetts',
+    name: 'Massachusetts',
+    path: 'M830,180 L860,170 L865,190 L840,200 L830,180',
     labelX: 845,
     labelY: 185,
   },
   // I'll let you complete the rest of the colonies
-]
+];
 
 export function ColonialMap() {
-  const [hoveredColony, setHoveredColony] = useState<string | null>(null)
+  const [hoveredColony, setHoveredColony] = useState<string | null>(null);
 
   // Check which colonies have tapestries
   const hasTapestry = (colonyId: string) => {
     try {
-      const tapestry = getTapestryBySlug(colonyId)
-      return !!tapestry
+      const tapestry = getTapestryBySlug(colonyId);
+      return !!tapestry;
     } catch (error) {
-      return false
+      return false;
     }
-  }
+  };
 
   return (
     <div className="w-full max-w-3xl mx-auto">
-      <h2 className="text-2xl font-bold text-colonial-navy mb-6 text-center">The Original Thirteen Colonies</h2>
+      <h2 className="text-2xl font-bold text-colonial-navy mb-6 text-center">
+        The Original Thirteen Colonies
+      </h2>
       <p className="font-serif text-colonial-navy/80 mb-8 text-center">
-        Explore the tapestries representing the original thirteen colonies. Click on a colony to view its tapestry.
+        Explore the tapestries representing the original thirteen colonies.
+        Click on a colony to view its tapestry.
       </p>
 
-      <div className="relative w-full" style={{ paddingBottom: "75%" }}>
+      <div className="relative w-full" style={{ paddingBottom: '75%' }}>
         <svg
           viewBox="700 140 180 280"
           className="absolute inset-0 w-full h-full"
           aria-labelledby="colonial-map-title"
           role="img"
         >
-          <title id="colonial-map-title">Map of the Original Thirteen Colonies</title>
+          <title id="colonial-map-title">
+            Map of the Original Thirteen Colonies
+          </title>
           <desc>
-            Interactive map of the original thirteen American colonies. Click on a colony to view its tapestry.
+            Interactive map of the original thirteen American colonies. Click on
+            a colony to view its tapestry.
           </desc>
 
           {/* Background */}
@@ -60,35 +66,46 @@ export function ColonialMap() {
 
           {/* Colonies */}
           {colonies.map((colony) => {
-            const hasColonyTapestry = hasTapestry(colony.id)
-            const isHovered = hoveredColony === colony.id
+            const hasColonyTapestry = hasTapestry(colony.id);
+            const isHovered = hoveredColony === colony.id;
 
             return (
               <g key={colony.id}>
                 <path
                   d={colony.path}
-                  fill={isHovered ? "#c3a343" : hasColonyTapestry ? "#851e3e" : "#102542"}
+                  fill={
+                    isHovered
+                      ? '#c3a343'
+                      : hasColonyTapestry
+                        ? '#851e3e'
+                        : '#102542'
+                  }
                   stroke="#f3e9d2"
                   strokeWidth="1"
                   opacity={hasColonyTapestry ? 1 : 0.7}
                   className={cn(
-                    "transition-all duration-300",
-                    hasColonyTapestry ? "cursor-pointer hover:fill-colonial-gold" : "cursor-not-allowed",
+                    'transition-all duration-300',
+                    hasColonyTapestry
+                      ? 'cursor-pointer hover:fill-colonial-gold'
+                      : 'cursor-not-allowed',
                   )}
                   onMouseEnter={() => setHoveredColony(colony.id)}
                   onMouseLeave={() => setHoveredColony(null)}
-                  aria-label={`${colony.name}${hasColonyTapestry ? "" : " (tapestry not available)"}`}
+                  aria-label={`${colony.name}${hasColonyTapestry ? '' : ' (tapestry not available)'}`}
                   role="button"
                   tabIndex={hasColonyTapestry ? 0 : -1}
                   onClick={() => {
                     if (hasColonyTapestry) {
-                      window.location.href = `/tapestry/${colony.id}`
+                      window.location.href = `/tapestry/${colony.id}`;
                     }
                   }}
                   onKeyDown={(e) => {
-                    if (hasColonyTapestry && (e.key === "Enter" || e.key === " ")) {
-                      e.preventDefault()
-                      window.location.href = `/tapestry/${colony.id}`
+                    if (
+                      hasColonyTapestry &&
+                      (e.key === 'Enter' || e.key === ' ')
+                    ) {
+                      e.preventDefault();
+                      window.location.href = `/tapestry/${colony.id}`;
                     }
                   }}
                 />
@@ -102,12 +119,12 @@ export function ColonialMap() {
                   fontSize="6"
                   fontWeight="bold"
                   className="hidden sm:block pointer-events-none"
-                  style={{ textShadow: "1px 1px 1px rgba(0,0,0,0.5)" }}
+                  style={{ textShadow: '1px 1px 1px rgba(0,0,0,0.5)' }}
                 >
                   {colony.name}
                 </text>
               </g>
-            )
+            );
           })}
 
           {/* Map title */}
@@ -126,7 +143,11 @@ export function ColonialMap() {
           {/* Compass rose */}
           <g transform="translate(720, 160) scale(0.5)">
             <circle cx="0" cy="0" r="10" fill="#102542" opacity="0.7" />
-            <path d="M0,-10 L0,10 M-10,0 L10,0" stroke="#f3e9d2" strokeWidth="1" />
+            <path
+              d="M0,-10 L0,10 M-10,0 L10,0"
+              stroke="#f3e9d2"
+              strokeWidth="1"
+            />
             <text x="0" y="-12" textAnchor="middle" fill="#102542" fontSize="6">
               N
             </text>
@@ -158,7 +179,7 @@ export function ColonialMap() {
       {/* Colony list for accessibility and mobile */}
       <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-4">
         {colonies.map((colony) => {
-          const hasColonyTapestry = hasTapestry(colony.id)
+          const hasColonyTapestry = hasTapestry(colony.id);
 
           return hasColonyTapestry ? (
             <Link
@@ -175,10 +196,9 @@ export function ColonialMap() {
             >
               {colony.name} (Coming Soon)
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }
-

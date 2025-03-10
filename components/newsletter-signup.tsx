@@ -1,23 +1,32 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
-import { subscribeToNewsletter, type NewsletterFormData } from "@/app/actions/newsletter-actions"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { AlertCircle, CheckCircle2, Loader2, Mail } from "lucide-react"
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import {
+  subscribeToNewsletter,
+  type NewsletterFormData,
+} from '@/app/actions/newsletter-actions';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { AlertCircle, CheckCircle2, Loader2, Mail } from 'lucide-react';
 
 const newsletterSchema = z.object({
-  email: z.string().email({ message: "Please enter a valid email address" }),
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }).optional(),
-})
+  email: z.string().email({ message: 'Please enter a valid email address' }),
+  name: z
+    .string()
+    .min(2, { message: 'Name must be at least 2 characters' })
+    .optional(),
+});
 
 export function NewsletterSignup() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formResponse, setFormResponse] = useState<{ success: boolean; message: string } | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formResponse, setFormResponse] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
 
   const {
     register,
@@ -26,29 +35,29 @@ export function NewsletterSignup() {
     formState: { errors },
   } = useForm<NewsletterFormData>({
     resolver: zodResolver(newsletterSchema),
-  })
+  });
 
   const onSubmit = async (data: NewsletterFormData) => {
-    setIsSubmitting(true)
-    setFormResponse(null)
+    setIsSubmitting(true);
+    setFormResponse(null);
 
     try {
-      const response = await subscribeToNewsletter(data)
-      setFormResponse(response)
+      const response = await subscribeToNewsletter(data);
+      setFormResponse(response);
 
       if (response.success) {
-        reset()
+        reset();
       }
     } catch (error) {
-      console.error("Error submitting form:", error)
+      console.error('Error submitting form:', error);
       setFormResponse({
         success: false,
-        message: "An unexpected error occurred. Please try again later.",
-      })
+        message: 'An unexpected error occurred. Please try again later.',
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -58,10 +67,12 @@ export function NewsletterSignup() {
           <Input
             id="newsletter-name"
             placeholder="Jane Doe"
-            {...register("name")}
-            className={errors.name ? "border-red-500" : ""}
+            {...register('name')}
+            className={errors.name ? 'border-red-500' : ''}
           />
-          {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+          {errors.name && (
+            <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+          )}
         </div>
 
         <div>
@@ -70,10 +81,12 @@ export function NewsletterSignup() {
             id="newsletter-email"
             type="email"
             placeholder="jane@example.com"
-            {...register("email")}
-            className={errors.email ? "border-red-500" : ""}
+            {...register('email')}
+            className={errors.email ? 'border-red-500' : ''}
           />
-          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+          )}
         </div>
       </div>
 
@@ -97,7 +110,7 @@ export function NewsletterSignup() {
 
       {formResponse && (
         <div
-          className={`p-4 rounded-lg ${formResponse.success ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}
+          className={`p-4 rounded-lg ${formResponse.success ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}
         >
           <div className="flex items-start">
             {formResponse.success ? (
@@ -110,6 +123,5 @@ export function NewsletterSignup() {
         </div>
       )}
     </form>
-  )
+  );
 }
-

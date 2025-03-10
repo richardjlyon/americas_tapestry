@@ -1,13 +1,16 @@
-import React from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import React from 'react';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 
 interface PageLayoutProps {
-  children: React.ReactNode
-  fullWidth?: boolean
+  children: React.ReactNode;
+  fullWidth?: boolean;
 }
 
-export default function PageLayout({ children, fullWidth = false }: PageLayoutProps) {
+export default function PageLayout({
+  children,
+  fullWidth = false,
+}: PageLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -16,5 +19,5 @@ export default function PageLayout({ children, fullWidth = false }: PageLayoutPr
       </main>
       <Footer />
     </div>
-  )
+  );
 }

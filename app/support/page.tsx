@@ -1,30 +1,35 @@
-import Link from "next/link"
-import { ArrowRight, ShoppingBag, Heart, Users, Award } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { SupportMerchandise } from "@/components/support-merchandise"
-import { SupportDonations } from "@/components/support-donations"
-import { SupportVolunteer } from "@/components/support-volunteer"
-import { SupportSponsorship } from "@/components/support-sponsorship"
-import { PageSection } from "@/components/ui/page-section"
+import Link from 'next/link';
+import { ArrowRight, ShoppingBag, Heart, Users, Award } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { SupportMerchandise } from '@/components/support-merchandise';
+import { SupportDonations } from '@/components/support-donations';
+import { SupportVolunteer } from '@/components/support-volunteer';
+import { SupportSponsorship } from '@/components/support-sponsorship';
+import { PageSection } from '@/components/ui/page-section';
 
 export const metadata = {
   title: "Support Our Project | America's Tapestry",
   description:
     "Discover ways to support America's Tapestry through merchandise, donations, volunteer opportunities, and sponsorships.",
-}
+};
 
 export default function SupportPage() {
   return (
     <main className="flex-1">
       {/* Hero Section */}
       <PageSection background="colonial-parchment">
-        <h1 className="page-heading">
-          Support America's Tapestry
-        </h1>
+        <h1 className="page-heading">Support America's Tapestry</h1>
         <p className="lead-text">
-          Join us in preserving and celebrating America's diverse cultural heritage through our tapestry project. Your
-          support helps us continue our mission of education, preservation, and community building.
+          Join us in preserving and celebrating America's diverse cultural
+          heritage through our tapestry project. Your support helps us continue
+          our mission of education, preservation, and community building.
         </p>
       </PageSection>
 
@@ -36,7 +41,9 @@ export default function SupportPage() {
               <div className="w-16 h-16 bg-colonial-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <ShoppingBag className="h-8 w-8 text-colonial-gold" />
               </div>
-              <CardTitle className="text-xl text-colonial-navy">Merchandise</CardTitle>
+              <CardTitle className="text-xl text-colonial-navy">
+                Merchandise
+              </CardTitle>
               <CardDescription className="text-colonial-navy/70">
                 Purchase items that support our mission
               </CardDescription>
@@ -59,7 +66,9 @@ export default function SupportPage() {
               <div className="w-16 h-16 bg-colonial-burgundy/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="h-8 w-8 text-colonial-burgundy" />
               </div>
-              <CardTitle className="text-xl text-colonial-navy">Donations</CardTitle>
+              <CardTitle className="text-xl text-colonial-navy">
+                Donations
+              </CardTitle>
               <CardDescription className="text-colonial-navy/70">
                 Contribute financially to our project
               </CardDescription>
@@ -82,8 +91,12 @@ export default function SupportPage() {
               <div className="w-16 h-16 bg-colonial-navy/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-colonial-navy" />
               </div>
-              <CardTitle className="text-xl text-colonial-navy">Volunteer</CardTitle>
-              <CardDescription className="text-colonial-navy/70">Contribute your time and skills</CardDescription>
+              <CardTitle className="text-xl text-colonial-navy">
+                Volunteer
+              </CardTitle>
+              <CardDescription className="text-colonial-navy/70">
+                Contribute your time and skills
+              </CardDescription>
             </CardHeader>
             <CardFooter className="flex justify-center pb-6">
               <Button
@@ -103,8 +116,12 @@ export default function SupportPage() {
               <div className="w-16 h-16 bg-colonial-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8 text-colonial-gold" />
               </div>
-              <CardTitle className="text-xl text-colonial-navy">Sponsorship</CardTitle>
-              <CardDescription className="text-colonial-navy/70">Partner with us as an organization</CardDescription>
+              <CardTitle className="text-xl text-colonial-navy">
+                Sponsorship
+              </CardTitle>
+              <CardDescription className="text-colonial-navy/70">
+                Partner with us as an organization
+              </CardDescription>
             </CardHeader>
             <CardFooter className="flex justify-center pb-6">
               <Button
@@ -122,37 +139,62 @@ export default function SupportPage() {
       </PageSection>
 
       {/* Merchandise Section */}
-      <PageSection id="merchandise" background="colonial-stone" className="scroll-mt-24">
+      <PageSection
+        id="merchandise"
+        background="colonial-stone"
+        className="scroll-mt-24"
+      >
         <SupportMerchandise />
       </PageSection>
 
       {/* Donations Section */}
-      <PageSection id="donations" background="colonial-parchment" className="scroll-mt-24">
+      <PageSection
+        id="donations"
+        background="colonial-parchment"
+        className="scroll-mt-24"
+      >
         <SupportDonations />
       </PageSection>
 
       {/* Volunteer Section */}
-      <PageSection id="volunteer" background="colonial-stone" className="scroll-mt-24">
+      <PageSection
+        id="volunteer"
+        background="colonial-stone"
+        className="scroll-mt-24"
+      >
         <SupportVolunteer />
       </PageSection>
 
       {/* Sponsorship Section */}
-      <PageSection id="sponsorship" background="colonial-parchment" className="scroll-mt-24">
+      <PageSection
+        id="sponsorship"
+        background="colonial-parchment"
+        className="scroll-mt-24"
+      >
         <SupportSponsorship />
       </PageSection>
 
       {/* Call to Action */}
-      <PageSection background="colonial-navy" className="text-colonial-parchment">
+      <PageSection
+        background="colonial-navy"
+        className="text-colonial-parchment"
+      >
         <div className="text-center">
           <div className="content-typography">
-            <h2 className="section-title text-colonial-parchment">Join Our Community of Supporters</h2>
+            <h2 className="section-title text-colonial-parchment">
+              Join Our Community of Supporters
+            </h2>
             <p className="lead-text text-colonial-parchment/90 max-w-3xl mx-auto mb-8">
-              Every contribution, whether through purchases, donations, volunteering, or sponsorships, helps us preserve
-              and share America's rich cultural tapestry for generations to come.
+              Every contribution, whether through purchases, donations,
+              volunteering, or sponsorships, helps us preserve and share
+              America's rich cultural tapestry for generations to come.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90">
+            <Button
+              asChild
+              className="rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90"
+            >
               <Link href="/contact">Contact Us With Questions</Link>
             </Button>
             <Button
@@ -166,6 +208,5 @@ export default function SupportPage() {
         </div>
       </PageSection>
     </main>
-  )
+  );
 }
-

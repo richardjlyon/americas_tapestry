@@ -1,35 +1,37 @@
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { getAllBlogPosts, getBlogPostBySlug, blogCategories } from "@/lib/blog"
-import { notFound } from "next/navigation"
-import { formatDate } from "@/lib/utils"
-import { remark } from "remark"
-import html from "remark-html"
-import { PageSection } from "@/components/ui/page-section"
-import { ContentCard } from "@/components/ui/content-card"
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { getAllBlogPosts, getBlogPostBySlug, blogCategories } from '@/lib/blog';
+import { notFound } from 'next/navigation';
+import { formatDate } from '@/lib/utils';
+import { remark } from 'remark';
+import html from 'remark-html';
+import { PageSection } from '@/components/ui/page-section';
+import { ContentCard } from '@/components/ui/content-card';
 
 export async function generateStaticParams() {
-  const posts = getAllBlogPosts()
+  const posts = getAllBlogPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = getBlogPostBySlug(params.slug)
+export default async function BlogPostPage({
+  params,
+}: { params: { slug: string } }) {
+  const post = getBlogPostBySlug(params.slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   // Convert markdown to HTML
-  const processedContent = await remark().use(html).process(post.content)
-  const contentHtml = processedContent.toString()
+  const processedContent = await remark().use(html).process(post.content);
+  const contentHtml = processedContent.toString();
 
   // Find the category info
-  const category = blogCategories.find((cat) => cat.slug === post.category)
+  const category = blogCategories.find((cat) => cat.slug === post.category);
 
   return (
     <PageSection background="colonial-parchment">
@@ -49,7 +51,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <ContentCard className="overflow-hidden p-0 max-w-4xl mx-auto">
         {post.image && (
           <div className="aspect-[16/9] relative">
-            <img src={post.image || "/placeholder.svg"} alt={post.title} className="w-full h-full object-cover" />
+            <img
+              src={post.image || '/placeholder.svg'}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
             <div className="absolute top-0 right-0 bg-colonial-burgundy text-colonial-parchment text-sm font-medium px-4 py-2 rounded-bl-lg">
               {category?.name || post.category}
             </div>
@@ -77,6 +83,5 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         </div>
       </ContentCard>
     </PageSection>
-  )
+  );
 }
-

@@ -1,31 +1,32 @@
-import Link from "next/link"
-import { ArrowUpRight, Headphones } from "lucide-react"
-import { cn } from "@/lib/utils"
-import type { TapestryEntry } from "@/lib/tapestries"
+import Link from 'next/link';
+import { ArrowUpRight, Headphones } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import type { TapestryEntry } from '@/lib/tapestries';
 
 // Status color mapping
 const statusColors = {
-  "Not Started": "bg-colonial-navy/70",
-  Designed: "bg-indigo-500",
-  "In Production": "bg-colonial-burgundy",
-  Finished: "bg-colonial-gold",
-}
+  'Not Started': 'bg-colonial-navy/70',
+  Designed: 'bg-indigo-500',
+  'In Production': 'bg-colonial-burgundy',
+  Finished: 'bg-colonial-gold',
+};
 
 const statusTextColors = {
-  "Not Started": "text-colonial-parchment",
-  Designed: "text-colonial-parchment",
-  "In Production": "text-colonial-parchment",
-  Finished: "text-colonial-navy",
-}
+  'Not Started': 'text-colonial-parchment',
+  Designed: 'text-colonial-parchment',
+  'In Production': 'text-colonial-parchment',
+  Finished: 'text-colonial-navy',
+};
 
 interface TapestryCardProps {
-  tapestry: TapestryEntry
+  tapestry: TapestryEntry;
 }
 
 export function TapestryCard({ tapestry }: TapestryCardProps) {
-  const hasAudio = !!tapestry.audioPath
-  const statusColor = statusColors[tapestry.status] || "bg-colonial-navy/70"
-  const statusTextColor = statusTextColors[tapestry.status] || "text-colonial-parchment"
+  const hasAudio = !!tapestry.audioPath;
+  const statusColor = statusColors[tapestry.status] || 'bg-colonial-navy/70';
+  const statusTextColor =
+    statusTextColors[tapestry.status] || 'text-colonial-parchment';
 
   return (
     <Link
@@ -35,12 +36,12 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
       <div className="aspect-[4/3] overflow-hidden">
         <div
           className={cn(
-            "absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity",
-            tapestry.background_color || "bg-colonial-navy",
+            'absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity',
+            tapestry.background_color || 'bg-colonial-navy',
           )}
         />
         <img
-          src={tapestry.thumbnail || "/placeholder.svg?height=600&width=800"}
+          src={tapestry.thumbnail || '/placeholder.svg?height=600&width=800'}
           alt={tapestry.title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -56,7 +57,9 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
 
         {/* Status badge */}
         <div className="absolute top-2 left-2">
-          <div className={`${statusColor} ${statusTextColor} text-xs font-medium px-2 py-1 rounded-full shadow-md`}>
+          <div
+            className={`${statusColor} ${statusTextColor} text-xs font-medium px-2 py-1 rounded-full shadow-md`}
+          >
             {tapestry.status}
           </div>
         </div>
@@ -68,9 +71,10 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
           </h3>
           <ArrowUpRight className="h-4 w-4 text-colonial-navy/50 group-hover:text-colonial-burgundy transition-colors" />
         </div>
-        <p className="font-serif text-sm text-colonial-navy/70 mt-1 line-clamp-2">{tapestry.summary}</p>
+        <p className="font-serif text-sm text-colonial-navy/70 mt-1 line-clamp-2">
+          {tapestry.summary}
+        </p>
       </div>
     </Link>
-  )
+  );
 }
-

@@ -3,135 +3,133 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --background: 40 33% 95%;
-        --foreground: 220 40% 16%;
+  :root {
+    --background: 40 33% 95%;
+    --foreground: 220 40% 16%;
 
-        --primary: 220 40% 16%;
-        --primary-foreground: 40 33% 95%;
+    --primary: 220 40% 16%;
+    --primary-foreground: 40 33% 95%;
 
-        --secondary: 345 64% 32%;
-        --secondary-foreground: 40 33% 95%;
+    --secondary: 345 64% 32%;
+    --secondary-foreground: 40 33% 95%;
 
-        --muted: 40 15% 85%;
-        --muted-foreground: 220 10% 40%;
+    --muted: 40 15% 85%;
+    --muted-foreground: 220 10% 40%;
 
-        --accent: 42 50% 52%;
-        --accent-foreground: 220 40% 16%;
+    --accent: 42 50% 52%;
+    --accent-foreground: 220 40% 16%;
 
-        --card: 40 33% 95%;
-        --card-foreground: 220 40% 16%;
+    --card: 40 33% 95%;
+    --card-foreground: 220 40% 16%;
 
-        --popover: 40 33% 95%;
-        --popover-foreground: 220 40% 16%;
+    --popover: 40 33% 95%;
+    --popover-foreground: 220 40% 16%;
 
-        --border: 40 15% 80%;
-        --input: 40 15% 80%;
+    --border: 40 15% 80%;
+    --input: 40 15% 80%;
 
-        --destructive: 0 85% 60%;
-        --destructive-foreground: 40 33% 95%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 40 33% 95%;
 
-        --ring: 42 50% 52%;
+    --ring: 42 50% 52%;
 
-        --radius: 0.5rem;
-    }
+    --radius: 0.5rem;
+  }
 }
 
 @layer base {
-    * {
-        @apply border-border;
-    }
+  * {
+    @apply border-border;
+  }
 
-    body {
-        @apply bg-background text-foreground;
-    }
+  body {
+    @apply bg-background text-foreground;
+  }
 
-    p {
-        @apply font-serif text-lg sm:text-xl md:text-2xl leading-relaxed;
-    }
+  p {
+    @apply font-serif text-lg sm:text-xl md:text-2xl leading-relaxed;
+  }
 
-    p+p {
-        @apply mt-4;
-        /* Adds margin only between paragraphs */
-    }
+  p + p {
+    @apply mt-4;
+    /* Adds margin only between paragraphs */
+  }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @apply font-sans;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans;
+  }
 }
 
 @layer components {
+  /* Typography container for rich content areas */
+  .content-typography {
+    @apply prose prose-lg md:prose-xl max-w-none prose-headings:font-sans prose-headings:text-colonial-navy prose-p:font-serif prose-p:text-colonial-navy prose-a:text-colonial-burgundy prose-a:no-underline prose-a:font-medium hover:prose-a:text-colonial-burgundy/80 prose-img:rounded-md prose-img:shadow-md;
+  }
 
-    /* Typography container for rich content areas */
-    .content-typography {
-        @apply prose prose-lg md:prose-xl max-w-none prose-headings:font-sans prose-headings:text-colonial-navy prose-p:font-serif prose-p:text-colonial-navy prose-a:text-colonial-burgundy prose-a:no-underline prose-a:font-medium hover:prose-a:text-colonial-burgundy/80 prose-img:rounded-md prose-img:shadow-md;
-    }
+  .container {
+    @apply px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24;
+  }
 
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
 
-    .container {
-        @apply px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24;
-    }
+  /* Ensure header is visible on all pages */
+  header {
+    @apply print:hidden;
+  }
 
-    .section-padding {
-        @apply py-12 sm:py-16 md:py-20 lg:py-24;
-    }
+  /* Embla Carousel Styles */
+  .embla {
+    @apply overflow-hidden;
+  }
 
-    /* Ensure header is visible on all pages */
-    header {
-        @apply print:hidden;
-    }
+  .embla__container {
+    @apply flex;
+  }
 
-    /* Embla Carousel Styles */
-    .embla {
-        @apply overflow-hidden;
-    }
+  .embla__slide {
+    @apply min-w-0;
+  }
 
-    .embla__container {
-        @apply flex;
-    }
+  /* Hero content box */
+  .hero-content-box {
+    @apply bg-colonial-navy/70 backdrop-blur-sm p-6 md:p-8 rounded-lg inline-block;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s ease;
+  }
 
-    .embla__slide {
-        @apply min-w-0;
-    }
+  .page-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-colonial-navy mb-6 text-center tracking-tight;
+  }
 
-    /* Hero content box */
-    .hero-content-box {
-        @apply bg-colonial-navy/70 backdrop-blur-sm p-6 md:p-8 rounded-lg inline-block;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-        transition: opacity 0.5s ease;
-    }
+  .section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 tracking-tight text-colonial-navy;
+  }
 
-    .page-heading {
-        @apply text-3xl md:text-4xl lg:text-5xl font-bold text-colonial-navy mb-6 text-center tracking-tight;
-    }
+  .lead-text {
+    @apply text-lg md:text-2xl text-colonial-navy/80 font-serif mb-10 max-w-3xl mx-auto text-center;
+  }
 
-    .section-title {
-        @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 tracking-tight text-colonial-navy;
-    }
-
-    .lead-text {
-        @apply text-lg md:text-xl text-colonial-navy/80 font-serif mb-8 max-w-3xl mx-auto text-center;
-    }
-
-    /* Typography styles */
+  /* Typography styles */
 }
 
 /* Custom animation for the hero carousel */
 @keyframes kenBurns {
-    from {
-        transform: scale(1);
-    }
+  from {
+    transform: scale(1);
+  }
 
-    to {
-        transform: scale(1.05);
-    }
+  to {
+    transform: scale(1.05);
+  }
 }
 
 .duration-10000 {
-    transition-duration: 10000ms;
+  transition-duration: 10000ms;
 }

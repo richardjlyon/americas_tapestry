@@ -4,8 +4,17 @@ import path from 'path';
 
 // List of allowed content extensions
 const ALLOWED_CONTENT_EXTENSIONS = [
-  '.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp', 
-  '.mp3', '.wav', '.ogg', '.mp4', '.webm'
+  '.jpg',
+  '.jpeg',
+  '.png',
+  '.gif',
+  '.svg',
+  '.webp',
+  '.mp3',
+  '.wav',
+  '.ogg',
+  '.mp4',
+  '.webm',
 ];
 
 /**
@@ -14,7 +23,7 @@ const ALLOWED_CONTENT_EXTENSIONS = [
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string[] } }
+  { params }: { params: { slug: string[] } },
 ) {
   try {
     // Join the slug array components to form the file path
@@ -54,13 +63,13 @@ export async function GET(
 
     // Set the content type
     const contentType = contentTypeMap[ext] || 'application/octet-stream';
-    
+
     // Return the file
     return new NextResponse(file, {
       headers: {
         'Content-Type': contentType,
         'Cache-Control': 'public, max-age=86400', // Cache for 1 day
-      }
+      },
     });
   } catch (error) {
     console.error('Error serving file:', error);

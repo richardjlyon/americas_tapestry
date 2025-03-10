@@ -1,27 +1,29 @@
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { TeamMemberCard } from "@/components/team-member-card"
-import { getTeamGroup, getTeamGroups, getTeamMembersByGroup } from "@/lib/team"
-import { notFound } from "next/navigation"
-import { PageSection } from "@/components/ui/page-section"
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { TeamMemberCard } from '@/components/team-member-card';
+import { getTeamGroup, getTeamGroups, getTeamMembersByGroup } from '@/lib/team';
+import { notFound } from 'next/navigation';
+import { PageSection } from '@/components/ui/page-section';
 
 export async function generateStaticParams() {
-  const groups = getTeamGroups()
+  const groups = getTeamGroups();
 
   return groups.map((group) => ({
     group: group.slug,
-  }))
+  }));
 }
 
-export default function TeamGroupPage({ params }: { params: { group: string } }) {
-  const group = getTeamGroup(params.group)
+export default function TeamGroupPage({
+  params,
+}: { params: { group: string } }) {
+  const group = getTeamGroup(params.group);
 
   if (!group) {
-    notFound()
+    notFound();
   }
 
-  const members = getTeamMembersByGroup(params.group)
+  const members = getTeamMembersByGroup(params.group);
 
   return (
     <PageSection background="colonial-parchment">
@@ -38,13 +40,9 @@ export default function TeamGroupPage({ params }: { params: { group: string } })
         </Button>
       </div>
 
-      <h1 className="page-heading">
-        {group.name}
-      </h1>
+      <h1 className="page-heading">{group.name}</h1>
 
-      <p className="lead-text">
-        {group.longDescription || group.description}
-      </p>
+      <p className="lead-text">{group.longDescription || group.description}</p>
 
       {members.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -54,10 +52,11 @@ export default function TeamGroupPage({ params }: { params: { group: string } })
         </div>
       ) : (
         <div className="text-center py-12">
-          <p className="font-serif text-colonial-navy/70 text-lg">No team members found in this group.</p>
+          <p className="font-serif text-colonial-navy/70 text-lg">
+            No team members found in this group.
+          </p>
         </div>
       )}
     </PageSection>
-  )
+  );
 }
-

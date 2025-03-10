@@ -1,40 +1,48 @@
-"use client"
+'use client';
 
-import { useState, useRef } from "react"
-import { Play, Pause, ExternalLink } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { useState, useRef } from 'react';
+import { Play, Pause, ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 interface VideoPlayerProps {
-  src: string
-  highResSrc: string
-  poster?: string
-  className?: string
+  src: string;
+  highResSrc: string;
+  poster?: string;
+  className?: string;
 }
 
-export function VideoPlayer({ src, highResSrc, poster, className }: VideoPlayerProps) {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
+export function VideoPlayer({
+  src,
+  highResSrc,
+  poster,
+  className,
+}: VideoPlayerProps) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const togglePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
-        videoRef.current.pause()
+        videoRef.current.pause();
       } else {
-        videoRef.current.play()
+        videoRef.current.play();
       }
-      setIsPlaying(!isPlaying)
+      setIsPlaying(!isPlaying);
     }
-  }
+  };
 
   return (
     <div
-      className={cn("relative rounded-2xl overflow-hidden border border-colonial-navy/10 mx-auto shadow-md", className)}
+      className={cn(
+        'relative rounded-2xl overflow-hidden border border-colonial-navy/10 mx-auto shadow-md',
+        className,
+      )}
     >
       <video
         ref={videoRef}
         className="w-full h-full object-cover"
-        poster={poster || "/placeholder.svg?height=1920&width=1080"}
+        poster={poster || '/placeholder.svg?height=1920&width=1080'}
         onEnded={() => setIsPlaying(false)}
         onClick={togglePlay}
         playsInline // Better mobile experience
@@ -89,6 +97,5 @@ export function VideoPlayer({ src, highResSrc, poster, className }: VideoPlayerP
         </Button>
       </div>
     </div>
-  )
+  );
 }
-

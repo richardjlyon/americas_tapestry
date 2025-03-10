@@ -1,44 +1,52 @@
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { getTeamGroups, getTeamMembersByGroup, getTeamMember } from "@/lib/team"
-import { notFound } from "next/navigation"
-import { remark } from "remark"
-import html from "remark-html"
-import { PageSection } from "@/components/ui/page-section"
-import { ContentCard } from "@/components/ui/content-card"
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  getTeamGroups,
+  getTeamMembersByGroup,
+  getTeamMember,
+} from '@/lib/team';
+import { notFound } from 'next/navigation';
+import { remark } from 'remark';
+import html from 'remark-html';
+import { PageSection } from '@/components/ui/page-section';
+import { ContentCard } from '@/components/ui/content-card';
 
 export async function generateStaticParams() {
-  const groups = getTeamGroups()
-  const params = []
+  const groups = getTeamGroups();
+  const params = [];
 
   for (const group of groups) {
-    const members = getTeamMembersByGroup(group.slug)
+    const members = getTeamMembersByGroup(group.slug);
 
     for (const member of members) {
       params.push({
         group: group.slug,
         member: member.slug,
-      })
+      });
     }
   }
 
-  return params
+  return params;
 }
 
-export default async function TeamMemberPage({ params }: { params: { group: string; member: string } }) {
-  const member = getTeamMember(params.group, params.member)
+export default async function TeamMemberPage({
+  params,
+}: { params: { group: string; member: string } }) {
+  const member = getTeamMember(params.group, params.member);
 
   if (!member) {
-    notFound()
+    notFound();
   }
 
   // Convert markdown to HTML
-  const processedContent = await remark().use(html).process(member.content)
-  const contentHtml = processedContent.toString()
+  const processedContent = await remark().use(html).process(member.content);
+  const contentHtml = processedContent.toString();
 
   // Default placeholder image if no image is found
-  const imageSrc = member.imagePath || `/placeholder.svg?height=800&width=600&text=${encodeURIComponent(member.name)}`
+  const imageSrc =
+    member.imagePath ||
+    `/placeholder.svg?height=800&width=600&text=${encodeURIComponent(member.name)}`;
 
   return (
     <PageSection background="colonial-parchment">
@@ -50,11 +58,11 @@ export default async function TeamMemberPage({ params }: { params: { group: stri
         >
           <Link href={`/team/${params.group}`}>
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to{" "}
+            Back to{' '}
             {params.group
-              .split("-")
+              .split('-')
               .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(" ")}
+              .join(' ')}
           </Link>
         </Button>
       </div>
@@ -63,19 +71,33 @@ export default async function TeamMemberPage({ params }: { params: { group: stri
         <div className="md:flex">
           <div className="md:w-1/3">
             <div className="h-80 md:h-full relative">
-              <img src={imageSrc || "/placeholder.svg"} alt={member.name} className="w-full h-full object-cover" />
+              <img
+                src={imageSrc || '/placeholder.svg'}
+                alt={member.name}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <div className="md:w-2/3 p-6 md:p-8">
             <div className="border-b border-colonial-gold pb-4 mb-6">
-              <h1 className="text-2xl md:text-3xl font-bold text-colonial-navy">{member.name}</h1>
-              <p className="font-serif text-xl text-colonial-burgundy mt-1">{member.role}</p>
+              <h1 className="text-2xl md:text-3xl font-bold text-colonial-navy">
+                {member.name}
+              </h1>
+              <p className="font-serif text-xl text-colonial-burgundy mt-1">
+                {member.role}
+              </p>
 
               {/* Additional metadata fields if they exist */}
               <div className="mt-2 space-y-1">
-                {member.state && <p className="font-serif text-sm text-colonial-navy/70">State: {member.state}</p>}
+                {member.state && (
+                  <p className="font-serif text-sm text-colonial-navy/70">
+                    State: {member.state}
+                  </p>
+                )}
                 {member.location && (
-                  <p className="font-serif text-sm text-colonial-navy/70">Location: {member.location}</p>
+                  <p className="font-serif text-sm text-colonial-navy/70">
+                    Location: {member.location}
+                  </p>
                 )}
                 {member.specialization && (
                   <p className="font-serif text-sm text-colonial-navy/70">
@@ -83,10 +105,14 @@ export default async function TeamMemberPage({ params }: { params: { group: stri
                   </p>
                 )}
                 {member.members && (
-                  <p className="font-serif text-sm text-colonial-navy/70">Members: {member.members}</p>
+                  <p className="font-serif text-sm text-colonial-navy/70">
+                    Members: {member.members}
+                  </p>
                 )}
                 {member.established && (
-                  <p className="font-serif text-sm text-colonial-navy/70">Established: {member.established}</p>
+                  <p className="font-serif text-sm text-colonial-navy/70">
+                    Established: {member.established}
+                  </p>
                 )}
                 {member.partnership_year && (
                   <p className="font-serif text-sm text-colonial-navy/70">
@@ -104,6 +130,5 @@ export default async function TeamMemberPage({ params }: { params: { group: stri
         </div>
       </ContentCard>
     </PageSection>
-  )
+  );
 }
-

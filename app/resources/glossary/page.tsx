@@ -1,73 +1,74 @@
-import Link from "next/link"
-import { ArrowLeft, Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { PageSection } from "@/components/ui/page-section"
-import { ContentCard } from "@/components/ui/content-card"
+import Link from 'next/link';
+import { ArrowLeft, Search } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { PageSection } from '@/components/ui/page-section';
+import { ContentCard } from '@/components/ui/content-card';
 
 export const metadata = {
   title: "Tapestry Glossaries | America's Tapestry",
-  description: "Detailed explanations of traditional tapestry-making techniques and methods",
-}
+  description:
+    'Detailed explanations of traditional tapestry-making techniques and methods',
+};
 
 interface GlossaryTerm {
-  term: string
-  definition: string
-  category: "stitches" | "materials" | "tools" | "techniques"
+  term: string;
+  definition: string;
+  category: 'stitches' | 'materials' | 'tools' | 'techniques';
 }
 
 // Dummy data for glossary terms
 const glossaryTerms: GlossaryTerm[] = [
   {
-    term: "Crewel Embroidery",
+    term: 'Crewel Embroidery',
     definition:
-      "A technique of surface embroidery using wool thread on a linen or cotton foundation fabric. Dating back to medieval England, crewel embroidery was particularly popular in colonial America for decorative household items and clothing.",
-    category: "techniques",
+      'A technique of surface embroidery using wool thread on a linen or cotton foundation fabric. Dating back to medieval England, crewel embroidery was particularly popular in colonial America for decorative household items and clothing.',
+    category: 'techniques',
   },
   {
-    term: "Stem Stitch",
+    term: 'Stem Stitch',
     definition:
-      "A basic embroidery stitch used to outline shapes and create fine lines. The stitches overlap slightly to form a twisted rope-like line. This stitch was commonly used in colonial American samplers and embroidered pieces.",
-    category: "stitches",
+      'A basic embroidery stitch used to outline shapes and create fine lines. The stitches overlap slightly to form a twisted rope-like line. This stitch was commonly used in colonial American samplers and embroidered pieces.',
+    category: 'stitches',
   },
   {
-    term: "Long and Short Stitch",
+    term: 'Long and Short Stitch',
     definition:
-      "A filling stitch used to create shaded or graduated color areas in embroidery. It consists of alternating long and short stitches that blend colors together, creating a painterly effect.",
-    category: "stitches",
+      'A filling stitch used to create shaded or graduated color areas in embroidery. It consists of alternating long and short stitches that blend colors together, creating a painterly effect.',
+    category: 'stitches',
   },
   {
-    term: "Merino Wool",
+    term: 'Merino Wool',
     definition:
-      "A fine, soft wool from Merino sheep, known for its elasticity and excellent color absorption when dyed. Used in high-quality embroidery and tapestry work where detail and texture are important.",
-    category: "materials",
+      'A fine, soft wool from Merino sheep, known for its elasticity and excellent color absorption when dyed. Used in high-quality embroidery and tapestry work where detail and texture are important.',
+    category: 'materials',
   },
   {
-    term: "Linen Ground Cloth",
+    term: 'Linen Ground Cloth',
     definition:
-      "The base fabric used in many traditional tapestries and embroideries. Made from flax fibers, linen provides a sturdy yet flexible foundation with a distinctive texture that was widely available in colonial America.",
-    category: "materials",
+      'The base fabric used in many traditional tapestries and embroideries. Made from flax fibers, linen provides a sturdy yet flexible foundation with a distinctive texture that was widely available in colonial America.',
+    category: 'materials',
   },
   {
-    term: "Embroidery Frame",
+    term: 'Embroidery Frame',
     definition:
-      "A device used to hold fabric taut while stitching, allowing for more precise needlework. Colonial frames were often wooden hoops or rectangular frames that could be placed on a stand or held in the lap.",
-    category: "tools",
+      'A device used to hold fabric taut while stitching, allowing for more precise needlework. Colonial frames were often wooden hoops or rectangular frames that could be placed on a stand or held in the lap.',
+    category: 'tools',
   },
   {
-    term: "Tapestry Needle",
+    term: 'Tapestry Needle',
     definition:
-      "A blunt-tipped needle with a large eye designed specifically for tapestry work. The blunt tip prevents splitting the ground fabric threads, while the large eye accommodates thicker yarns and threads.",
-    category: "tools",
+      'A blunt-tipped needle with a large eye designed specifically for tapestry work. The blunt tip prevents splitting the ground fabric threads, while the large eye accommodates thicker yarns and threads.',
+    category: 'tools',
   },
   {
-    term: "Couching",
+    term: 'Couching',
     definition:
-      "A technique where threads are laid on the surface of the fabric and secured with small stitches. This method was often used to create raised elements or to incorporate metallic threads that were too thick to pass through the fabric.",
-    category: "techniques",
+      'A technique where threads are laid on the surface of the fabric and secured with small stitches. This method was often used to create raised elements or to incorporate metallic threads that were too thick to pass through the fabric.',
+    category: 'techniques',
   },
-]
+];
 
 export default function GlossaryPage() {
   return (
@@ -85,13 +86,12 @@ export default function GlossaryPage() {
         </Button>
       </div>
 
-      <h1 className="page-heading">
-        Tapestry Glossaries
-      </h1>
-      
+      <h1 className="page-heading">Tapestry Glossaries</h1>
+
       <p className="lead-text">
-        Explore the terminology and techniques used in traditional tapestry making. Our comprehensive glossaries
-        provide detailed explanations of stitching methods, materials, tools, and specialized terminology used
+        Explore the terminology and techniques used in traditional tapestry
+        making. Our comprehensive glossaries provide detailed explanations of
+        stitching methods, materials, tools, and specialized terminology used
         throughout the America's Tapestry project.
       </p>
 
@@ -129,7 +129,7 @@ export default function GlossaryPage() {
           <TabsContent value="stitches" className="space-y-6">
             <div className="grid grid-cols-1 gap-6">
               {glossaryTerms
-                .filter((term) => term.category === "stitches")
+                .filter((term) => term.category === 'stitches')
                 .sort((a, b) => a.term.localeCompare(b.term))
                 .map((term, index) => (
                   <GlossaryCard key={index} term={term} />
@@ -140,7 +140,7 @@ export default function GlossaryPage() {
           <TabsContent value="materials" className="space-y-6">
             <div className="grid grid-cols-1 gap-6">
               {glossaryTerms
-                .filter((term) => term.category === "materials")
+                .filter((term) => term.category === 'materials')
                 .sort((a, b) => a.term.localeCompare(b.term))
                 .map((term, index) => (
                   <GlossaryCard key={index} term={term} />
@@ -151,7 +151,7 @@ export default function GlossaryPage() {
           <TabsContent value="tools" className="space-y-6">
             <div className="grid grid-cols-1 gap-6">
               {glossaryTerms
-                .filter((term) => term.category === "tools")
+                .filter((term) => term.category === 'tools')
                 .sort((a, b) => a.term.localeCompare(b.term))
                 .map((term, index) => (
                   <GlossaryCard key={index} term={term} />
@@ -162,7 +162,7 @@ export default function GlossaryPage() {
           <TabsContent value="techniques" className="space-y-6">
             <div className="grid grid-cols-1 gap-6">
               {glossaryTerms
-                .filter((term) => term.category === "techniques")
+                .filter((term) => term.category === 'techniques')
                 .sort((a, b) => a.term.localeCompare(b.term))
                 .map((term, index) => (
                   <GlossaryCard key={index} term={term} />
@@ -175,30 +175,36 @@ export default function GlossaryPage() {
       <ContentCard className="mt-12 max-w-3xl mx-auto">
         <h2 className="section-title">Download Complete Glossary</h2>
         <p className="font-serif text-colonial-navy/80 mb-4">
-          Want a reference you can keep? Download our complete illustrated glossary of tapestry terms, techniques,
-          and tools as a PDF for convenient reference.
+          Want a reference you can keep? Download our complete illustrated
+          glossary of tapestry terms, techniques, and tools as a PDF for
+          convenient reference.
         </p>
-        <Button asChild className="rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90">
+        <Button
+          asChild
+          className="rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90"
+        >
           <Link href="#">Download Complete Glossary (PDF, 8.3MB)</Link>
         </Button>
       </ContentCard>
     </PageSection>
-  )
+  );
 }
 
 function GlossaryCard({ term }: { term: GlossaryTerm }) {
   const categoryColors = {
-    stitches: "bg-colonial-burgundy/10 text-colonial-burgundy",
-    materials: "bg-colonial-gold/10 text-colonial-gold",
-    tools: "bg-colonial-navy/10 text-colonial-navy",
-    techniques: "bg-green-100 text-green-800",
-  }
+    stitches: 'bg-colonial-burgundy/10 text-colonial-burgundy',
+    materials: 'bg-colonial-gold/10 text-colonial-gold',
+    tools: 'bg-colonial-navy/10 text-colonial-navy',
+    techniques: 'bg-green-100 text-green-800',
+  };
 
   return (
     <div className="bg-white shadow-sm border border-colonial-navy/10 rounded-lg p-4">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
         <h3 className="font-bold text-colonial-navy text-lg">{term.term}</h3>
-        <div className={`px-3 py-1 rounded-full text-xs font-medium inline-flex ${categoryColors[term.category]}`}>
+        <div
+          className={`px-3 py-1 rounded-full text-xs font-medium inline-flex ${categoryColors[term.category]}`}
+        >
           {term.category.charAt(0).toUpperCase() + term.category.slice(1)}
         </div>
       </div>
@@ -206,6 +212,5 @@ function GlossaryCard({ term }: { term: GlossaryTerm }) {
         <p>{term.definition}</p>
       </div>
     </div>
-  )
+  );
 }
-

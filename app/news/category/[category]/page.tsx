@@ -1,27 +1,33 @@
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { BlogCard } from "@/components/blog-card"
-import { getBlogPostsByCategory, getCategoryBySlug, blogCategories } from "@/lib/blog"
-import { notFound } from "next/navigation"
-import { PageSection } from "@/components/ui/page-section"
-import { ContentCard } from "@/components/ui/content-card"
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { BlogCard } from '@/components/blog-card';
+import {
+  getBlogPostsByCategory,
+  getCategoryBySlug,
+  blogCategories,
+} from '@/lib/blog';
+import { notFound } from 'next/navigation';
+import { PageSection } from '@/components/ui/page-section';
+import { ContentCard } from '@/components/ui/content-card';
 
 export async function generateStaticParams() {
   return blogCategories.map((category) => ({
     category: category.slug,
-  }))
+  }));
 }
 
-export default function CategoryPage({ params }: { params: { category: string } }) {
-  const categoryInfo = getCategoryBySlug(params.category)
+export default function CategoryPage({
+  params,
+}: { params: { category: string } }) {
+  const categoryInfo = getCategoryBySlug(params.category);
 
   if (!categoryInfo) {
-    notFound()
+    notFound();
   }
 
-  const posts = getBlogPostsByCategory(params.category)
-  const hasPosts = posts.length > 0
+  const posts = getBlogPostsByCategory(params.category);
+  const hasPosts = posts.length > 0;
 
   return (
     <PageSection background="colonial-parchment">
@@ -38,13 +44,9 @@ export default function CategoryPage({ params }: { params: { category: string } 
         </Button>
       </div>
 
-      <h1 className="page-heading">
-        {categoryInfo.name}
-      </h1>
+      <h1 className="page-heading">{categoryInfo.name}</h1>
 
-      <p className="lead-text">
-        {categoryInfo.description}
-      </p>
+      <p className="lead-text">{categoryInfo.description}</p>
 
       {/* Category Filter */}
       <div className="flex flex-wrap justify-center gap-2 mb-10">
@@ -60,8 +62,8 @@ export default function CategoryPage({ params }: { params: { category: string } 
             href={`/news/category/${category.slug}`}
             className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${
               category.slug === params.category
-                ? "bg-colonial-navy text-colonial-parchment"
-                : "bg-colonial-parchment border border-colonial-navy/20 text-colonial-navy hover:bg-colonial-navy/10"
+                ? 'bg-colonial-navy text-colonial-parchment'
+                : 'bg-colonial-parchment border border-colonial-navy/20 text-colonial-navy hover:bg-colonial-navy/10'
             } transition-colors`}
           >
             {category.name}
@@ -87,6 +89,5 @@ export default function CategoryPage({ params }: { params: { category: string } 
         </ContentCard>
       )}
     </PageSection>
-  )
+  );
 }
-
