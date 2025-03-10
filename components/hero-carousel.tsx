@@ -115,7 +115,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
   return (
     <div className="relative h-[80vh] md:h-[90vh] overflow-hidden">
       {/* Background overlay */}
-      <div className="absolute inset-0 bg-colonial-navy/30 z-10" />
+      {/* <div className="absolute inset-0 bg-colonial-navy/30 z-10" /> */}
 
       {/* Carousel for background images only */}
       <div className="embla h-full" ref={emblaRef}>
@@ -135,7 +135,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
                   alt={tapestry.title || 'Tapestry image'}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-10000 ease-out"
                   style={{
-                    filter: 'brightness(0.7)',
+                    filter: 'brightness(0.9)',
                     transform:
                       currentIndex === index && isLoaded
                         ? 'scale(1.05)'
@@ -158,7 +158,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none">
         <div className="container mx-auto text-center px-6">
           <div className="hero-content-box max-w-4xl mx-auto">
-            <p className="font-serif text-xl sm:text-2xl text-colonial-parchment/90 max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed">
+            <p className="font-serif italic text-xl sm:text-2xl text-colonial-parchment/90 max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed">
               13 Colonies. 13 Stories. 1 Nation.
             </p>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-colonial-parchment mb-4 md:mb-6 tracking-tight">

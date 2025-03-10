@@ -15,8 +15,8 @@ export function TeamGroupsPreview() {
         <h2 className="section-title text-center">Our Team</h2>
         <p className="lead-text">
           America's Tapestry is brought to life by dedicated teams of
-          historians, artists, and craftspeople working together to capture the
-          diverse cultural narratives that make up our nation's identity.
+          historians, artists, and craftspeople working together to capture
+          stories from our nation’s journey towards Independence.
         </p>
       </div>
 

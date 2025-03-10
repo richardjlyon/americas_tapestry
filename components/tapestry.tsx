@@ -9,7 +9,7 @@ export function Tapestry({ tapestries }: TapestryProps) {
   return (
     <div className="space-y-8">
       <div className="max-w-3xl mx-auto text-center mb-10">
-        <p className="font-serif text-colonial-navy text-lg md:text-xl leading-relaxed mb-4">
+        <p className="lead-text">
           <em>America’s Tapestry</em> is composed of 13 individual embroidered
           panels, each 35" × 45". They tell the story of lesser known, often
           overlooked contributions to our nation’s journey towards Independence.

@@ -37,14 +37,14 @@ export default function Home() {
         <PageSection background="colonial-parchment">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="content-typography">
-              <h2 className="section-title">About the Project</h2>
-              <p>
+              <h2 className="section-title mt-0 pt-0">About the Project</h2>
+              <p className="font-medium text-2xl">
                 In 2026, Americans will celebrate our country's 250th
                 anniversary. To commemorate this occasion,{' '}
                 <em>America's Tapestry</em> weaves together stories from our
                 nation's founding through the medium of embroidery.
               </p>
-              <p>
+              <p className="text-2xl">
                 Thirteen embroidered panels have been designed by our creative
                 team in collaboration with historical organizations from each of
                 the original colonies. Embroiderers within each state, led by
@@ -52,7 +52,7 @@ export default function Home() {
                 The Tapestry will be exhibited in prominent gallery spaces in
                 2026 and 2027.
               </p>
-              <p>
+              <p className="text-2xl">
                 <em>America's Tapestry</em> enriches our understanding of our
                 shared heritage, while promoting the art of American needlework.
                 Through our virtual and in-person programming, visitors can
@@ -101,7 +101,7 @@ export default function Home() {
                 <SignpostBig className="h-8 w-8 text-colonial-burgundy" />
               </div>
               <h3 className="text-xl font-bold text-colonial-burgundy mb-4">
-                Educate Americans
+                Educate Young Americans
               </h3>
               <p className="font-serif text-colonial-navy/80 leading-relaxed">
                 Provide educational resources that bring colonial history to
@@ -115,11 +115,11 @@ export default function Home() {
                 <Users2 className="h-8 w-8 text-colonial-burgundy" />
               </div>
               <h3 className="text-xl font-bold text-colonial-burgundy mb-4">
-                Build Community
+                Promote needleworking
               </h3>
               <p className="font-serif text-colonial-navy/80 leading-relaxed">
-                Connect Americans to their shared heritage and foster
-                appreciation for our nation's diverse origins.
+                Promoting needlework arts across America, inspiring creativity,
+                and preserving traditional craftsmanship.
               </p>
             </div>
           </div>
@@ -128,10 +128,6 @@ export default function Home() {
         {/* Tapestry Section */}
         <PageSection background="colonial-parchment">
           <h2 className="section-title text-center">The Tapestry Collection</h2>
-          <p className="lead-text">
-            Preview a selection of our tapestries that weave together America's
-            diverse cultural narratives
-          </p>
           <Tapestry tapestries={randomTapestries} />
           <div className="text-center mt-10 md:mt-12">
             <Button

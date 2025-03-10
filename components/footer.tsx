@@ -13,8 +13,8 @@ export function Footer() {
               America's Tapestry
             </h3>
             <p className="font-serif text-lg sm:text-xl text-colonial-parchment/80">
-              A visual exploration of cultural diversity across the American
-              landscape.
+              A visual exploration of stories from our nation’s journey towards
+              Independence.
             </p>
           </div>
 
@@ -51,21 +51,21 @@ export function Footer() {
             </h3>
             <div className="flex space-x-4">
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/250tapestry/"
                 className="text-colonial-parchment/70 hover:text-colonial-gold transition-colors"
               >
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
-                href="https://twitter.com"
+                href="https://x.com/The250Tapestry"
                 className="text-colonial-parchment/70 hover:text-colonial-gold transition-colors"
               >
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/people/Americas-Tapestry/61571902259201/"
                 className="text-colonial-parchment/70 hover:text-colonial-gold transition-colors"
               >
                 <Facebook className="h-5 w-5" />
@@ -74,7 +74,7 @@ export function Footer() {
             </div>
 
             <div className="mt-4">
-              <p className="font-serif text-colonial-parchment/80 mb-2">
+              <p className="font-serif text-colonial-parchment/80 mb-6">
                 Subscribe to our newsletter for updates on exhibitions and
                 events.
               </p>
