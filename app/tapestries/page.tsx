@@ -11,57 +11,56 @@ export default function TapestriesPage() {
   const tapestries = getAllTapestries();
 
   return (
-    <main className="flex-1">
+    <>
       <PageSection background="colonial-parchment">
         <h1 className="page-heading">America's Tapestry Collection</h1>
 
         <p className="lead-text text-center">
-          Explore our complete collection of tapestries, each telling a unique
-          story of America's diverse cultural heritage. These meticulously
-          crafted panels represent the threads that, when woven together, form
-          the rich tapestry of our nation's history and identity.
+          Explore our complete collection of tapestries, each telling a lesser
+          known, often overlooked contribution to our nation's journey towards
+          Independence. These meticulously crafted panels represent the threads
+          that, when woven together, form the rich tapestry of our nation's
+          history and identity.
         </p>
-
-        {/* Colonial Map Section */}
-        <ContentCard className="mt-12 p-6 md:p-8">
-          <h2 className="section-title text-center">
-            The Original Thirteen Colonies
-          </h2>
-          <p className="lead-text text-colonial-navy/80 text-center">
-            Explore the tapestries representing the original thirteen colonies.
-            Click on a colony to view its tapestry.
-          </p>
-          <div className="mt-8">
-            <InteractiveColoniesMap tapestries={tapestries} />
-          </div>
-        </ContentCard>
-
-        {/* Timeline Section */}
-        <ContentCard className="mt-12 p-6 md:p-8">
-          <h2 className="section-title text-center">
-            Colonial America Timeline
-          </h2>
-          <p className="lead-text text-colonial-navy/80 text-center">
-            Explore key events in colonial American history and see how they
-            connect to our tapestry collection.
-          </p>
-          <div className="mt-8">
-            <InteractiveTimeline tapestries={tapestries} />
-          </div>
-        </ContentCard>
-
-        {/* Data Explorer Section */}
-        <ContentCard className="mt-12 p-6 md:p-8">
-          <h2 className="section-title text-center">Colonial Data Explorer</h2>
-          <p className="lead-text text-colonial-navy/80 text-center">
-            Analyze and compare data across all colonies through different
-            visualization methods.
-          </p>
-          <div className="mt-8">
-            <ColonialDataExplorer tapestries={tapestries} />
-          </div>
-        </ContentCard>
       </PageSection>
+
+      {/* Colonial Map Section */}
+      <PageSection background="colonial-stone">
+        <h2 className="section-title text-center">
+          The Original Thirteen Colonies
+        </h2>
+        <p className="lead-text text-colonial-navy/80 text-center">
+          Explore the tapestries representing the original thirteen colonies.
+          Click on a colony to view its tapestry.
+        </p>
+        <div className="mt-8">
+          <InteractiveColoniesMap tapestries={tapestries} />
+        </div>
+      </PageSection>
+
+      {/* Timeline Section */}
+      <PageSection background="colonial-parchment">
+        <h2 className="section-title text-center">Colonial America Timeline</h2>
+        <p className="lead-text text-colonial-navy/80 text-center">
+          Explore key events in colonial American history and see how they
+          connect to our tapestry collection.
+        </p>
+        <div className="mt-8">
+          <InteractiveTimeline tapestries={tapestries} />
+        </div>
+      </PageSection>
+
+      {/* Data Explorer Section */}
+      {/* <ContentCard className="mt-12 p-6 md:p-8">
+      <h2 className="section-title text-center">Colonial Data Explorer</h2>
+      <p className="lead-text text-colonial-navy/80 text-center">
+          Analyze and compare data across all colonies through different
+          visualization methods.
+      </p>
+      <div className="mt-8">
+          <ColonialDataExplorer tapestries={tapestries} />
+      </div>
+      </ContentCard> */}
 
       {/* All Tapestries Grid */}
       <PageSection background="colonial-stone">
@@ -72,6 +71,6 @@ export default function TapestriesPage() {
           ))}
         </div>
       </PageSection>
-    </main>
+    </>
   );
 }
