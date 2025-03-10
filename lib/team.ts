@@ -18,58 +18,67 @@ export interface TeamGroup {
   slug: string;
   description: string;
   longDescription?: string;
+  order?: number;
+  [key: string]: any; // For additional frontmatter fields
 }
 
-// Team group data to avoid duplication
-const teamGroupsData: TeamGroup[] = [
-  {
-    name: 'Project Director',
-    slug: 'project-director',
-    description:
-      "The visionary leadership behind America's Tapestry, guiding the project's artistic direction and historical integrity.",
-    longDescription:
-      "Our Project Director team provides the vision and leadership that drives America's Tapestry forward. With extensive backgrounds in textile arts, cultural history, and museum administration, these dedicated professionals oversee all aspects of the project, from historical research and design to community engagement and exhibition planning. Their expertise ensures that each tapestry panel meets the highest standards of artistic quality and historical accuracy while telling the diverse stories that make up America's cultural heritage.",
-  },
-  {
-    name: 'State Directors',
-    slug: 'state-directors',
-    description:
-      'Regional leaders who coordinate the creation of state-specific tapestry panels and engage local communities in the project.',
-    longDescription:
-      "Our State Directors serve as the regional leaders for America's Tapestry, each responsible for coordinating the creation of their state's panel and engaging local communities in the project. These talented individuals bring deep knowledge of their state's history and cultural traditions, along with expertise in textile arts and community organizing. Working with local historical societies, museums, and community groups, they gather stories and design elements that authentically represent their state's unique contribution to America's cultural tapestry.",
-  },
-  {
-    name: 'Historical Partners',
-    slug: 'historical-partners',
-    description:
-      'Museums, archives, and cultural institutions that provide historical expertise and resources to ensure authenticity.',
-    longDescription:
-      "Our Historical Partners are the prestigious museums, archives, and cultural institutions that provide America's Tapestry with historical expertise, research resources, and exhibition spaces. These partnerships ensure that our tapestries are grounded in rigorous historical scholarship while reaching broad audiences. From providing access to historical textiles and documents to hosting public programs and workshops, these institutions play a vital role in both the creation and presentation of America's Tapestry.",
-  },
-  {
-    name: 'Illustrators',
-    slug: 'illustrators',
-    description:
-      'Artists who create the detailed designs that form the foundation for each tapestry panel.',
-    longDescription:
-      "Our Illustrators are the talented artists who create the detailed designs that form the foundation for each tapestry panel. Combining artistic vision with historical research, these professionals work closely with historians, community members, and textile artists to develop designs that capture the essence of America's diverse cultural heritage. Their illustrations translate complex historical narratives into visual imagery that can be realized in textile form, balancing aesthetic considerations with the technical requirements of the needlework process.",
-  },
-  {
-    name: 'Stitching Groups',
-    slug: 'stitching-groups',
-    description:
-      'Collectives of skilled needleworkers who bring the tapestry designs to life through traditional techniques.',
-    longDescription:
-      'Our Stitching Groups are the collectives of skilled needleworkers who bring the tapestry designs to life through traditional techniques. These groups range from established embroidery guilds with decades of experience to community-based collectives representing diverse cultural traditions. Working collaboratively, they transform illustrations into textile art, applying a wide range of stitching techniques from various cultural traditions. Beyond their technical contributions, these groups serve as community hubs, engaging the public through demonstrations, workshops, and storytelling sessions.',
-  },
-];
+// Read team group data from the directory structure
+export function getTeamGroup(slug: string): TeamGroup | undefined {
+  const groupDir = path.join(process.cwd(), `content/team/${slug}`);
+  const indexFile = path.join(groupDir, 'index.md');
+  
+  if (!fs.existsSync(indexFile)) {
+    console.warn(`No index.md found for team group: ${slug}`);
+    return undefined;
+  }
+  
+  try {
+    const fileContents = fs.readFileSync(indexFile, 'utf8');
+    const { data, content } = matter(fileContents);
+    
+    return {
+      name: data.name,
+      slug: slug,
+      description: data.description,
+      longDescription: content.trim(),
+      order: data.order,
+      ...data // Include any additional frontmatter fields
+    } as TeamGroup;
+  } catch (error) {
+    console.error(`Error reading team group ${slug}:`, error);
+    return undefined;
+  }
+}
 
 export function getTeamGroups(): TeamGroup[] {
-  return teamGroupsData;
-}
-
-export function getTeamGroup(slug: string): TeamGroup | undefined {
-  return teamGroupsData.find((group) => group.slug === slug);
+  const teamDir = path.join(process.cwd(), 'content/team');
+  
+  if (!fs.existsSync(teamDir)) {
+    console.warn('Team directory not found');
+    return [];
+  }
+  
+  try {
+    // Get all directories that contain an index.md file
+    const groupDirs = fs
+      .readdirSync(teamDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => dirent.name)
+      .filter(dir => {
+        const indexPath = path.join(teamDir, dir, 'index.md');
+        return fs.existsSync(indexPath);
+      });
+    
+    const groups = groupDirs
+      .map(slug => getTeamGroup(slug))
+      .filter(Boolean) as TeamGroup[];
+    
+    // Sort by order field
+    return groups.sort((a, b) => (a.order || 999) - (b.order || 999));
+  } catch (error) {
+    console.error('Error reading team groups:', error);
+    return [];
+  }
 }
 
 // Check if a directory contains an image file
