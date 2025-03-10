@@ -28,6 +28,11 @@ export default async function TeamPage() {
   return (
     <PageSection background="colonial-parchment">
       <h1 className="page-heading">Our Team</h1>
+      <p className="lead-text text-center">
+        America’s Tapestry is a collaboration between visual artists, historical
+        advisors, and embroidery artisans drawn from each of the original 13
+        states.
+      </p>
 
       {/* Project Director Feature */}
       {projectDirector && (
@@ -37,7 +42,10 @@ export default async function TeamPage() {
               <div className="md:w-1/3 lg:w-1/4">
                 <div className="h-80 md:h-full relative">
                   <img
-                    src={directorImageSrc || '/placeholder.svg'}
+                    src={
+                      directorImageSrc ||
+                      '/team/project-director/stefan-romero/stefan-romero.jpg'
+                    }
                     alt={projectDirector.name}
                     className="w-full h-full object-cover"
                   />
