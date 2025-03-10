@@ -29,6 +29,7 @@ export default async function TeamPage() {
   return (
     <PageSection background="colonial-parchment">
       <h1 className="page-heading">Our Team</h1>
+
       <p className="lead-text text-center">
         America's Tapestry is a collaboration between visual artists, historical
         advisors, and embroidery artisans drawn from each of the original 13
