@@ -5,26 +5,32 @@ import matter from 'gray-matter';
 export interface Sponsor {
   slug: string;
   name: string;
-  tier: 'Platinum' | 'Gold' | 'Silver' | 'Bronze';
-  website: string;
-  location: string;
-  partnership_year: number;
-  logo: string;
+  website?: string;
+  tier?: string;
+  location?: string;
+  partnership_year?: number;
+  logo?: string;
   logoPath: string;
-  order: number;
+  order?: number;
   content: string;
   excerpt: string;
 }
 
-// Get all sponsors sorted by tier and order
+// Get all sponsors
 export function getAllSponsors(): Sponsor[] {
   const sponsorsDirectory = path.join(process.cwd(), 'content/sponsors');
 
   // Get all directories in the sponsors directory (excluding README.md)
-  const sponsorFolders = fs
-    .readdirSync(sponsorsDirectory, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => dirent.name);
+  let sponsorFolders: string[] = [];
+  try {
+    sponsorFolders = fs
+      .readdirSync(sponsorsDirectory, { withFileTypes: true })
+      .filter((dirent) => dirent.isDirectory())
+      .map((dirent) => dirent.name);
+  } catch (error) {
+    console.error('Error reading sponsors directory:', error);
+    return [];
+  }
 
   const sponsors = sponsorFolders
     .map((folder) => {
@@ -47,10 +53,40 @@ export function getAllSponsors(): Sponsor[] {
       // Parse the frontmatter and content
       const { data, content } = matter(fileContents);
 
-      // Find the logo file path
-      const logoPath = data.logo
-        ? `/content/sponsors/${folder}/${data.logo}`
-        : '/placeholder.svg?height=200&width=400';
+      // Look for a logo file in the folder first (any image file)
+      let logoPath = '';
+      let logoFileName = data.logo;
+      
+      // If no logo specified in frontmatter, check for common image names
+      if (!logoFileName) {
+        // Check for common logo filenames
+        const commonNames = [
+          `${folder}-logo.png`, 
+          `${folder}-logo.jpg`, 
+          `${folder}-logo.jpeg`,
+          `${folder}.png`, 
+          `${folder}.jpg`, 
+          `${folder}.jpeg`,
+          'logo.png', 
+          'logo.jpg', 
+          'logo.jpeg'
+        ];
+        
+        for (const name of commonNames) {
+          if (fs.existsSync(path.join(folderPath, name))) {
+            logoFileName = name;
+            break;
+          }
+        }
+      }
+      
+      // Construct logo path if we have a filename
+      if (logoFileName) {
+        logoPath = `/images/sponsors/${folder}/${logoFileName}`;
+      } else {
+        // Use placeholder with sponsor name
+        logoPath = `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data.name || 'Sponsor')}`;
+      }
 
       // Create an excerpt from the content (first paragraph)
       const excerpt = content
@@ -58,15 +94,22 @@ export function getAllSponsors(): Sponsor[] {
         .replace(/^#+\s+.*\n/, '')
         .trim();
 
+      // Create and format the display name
+      let displayName = data.name || folder.replace(/-/g, ' ');
+      displayName = displayName
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+
       // Return the sponsor data
       return {
         slug,
-        name: data.name,
-        tier: data.tier,
-        website: data.website,
-        location: data.location,
+        name: displayName,
+        website: data.website || '#',
+        tier: data.tier || 'Supporter',
+        location: data.location || '',
         partnership_year: data.partnership_year,
-        logo: data.logo,
+        logo: logoFileName,
         logoPath,
         order: data.order || 999,
         content,
@@ -75,17 +118,8 @@ export function getAllSponsors(): Sponsor[] {
     })
     .filter(Boolean) as Sponsor[];
 
-  // Sort sponsors by tier (Platinum > Gold > Silver > Bronze) and then by order
-  const tierOrder = { Platinum: 1, Gold: 2, Silver: 3, Bronze: 4 };
-
-  return sponsors.sort((a, b) => {
-    // First sort by tier
-    const tierDiff = tierOrder[a.tier] - tierOrder[b.tier];
-    if (tierDiff !== 0) return tierDiff;
-
-    // Then sort by order
-    return a.order - b.order;
-  });
+  // Just sort alphabetically by name
+  return sponsors.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 // Get a single sponsor by slug
@@ -101,25 +135,62 @@ export function getSponsorBySlug(slug: string): Sponsor | null {
   const fileContents = fs.readFileSync(indexPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  // Find the logo file path
-  const logoPath = data.logo
-    ? `/content/sponsors/${slug}/${data.logo}`
-    : '/placeholder.svg?height=200&width=400';
+  // Look for a logo file in the folder (any image file)
+  let logoPath = '';
+  let logoFileName = data.logo;
+  
+  // If no logo specified in frontmatter, check for common image names
+  if (!logoFileName) {
+    // Check for common logo filenames
+    const commonNames = [
+      `${slug}-logo.png`, 
+      `${slug}-logo.jpg`, 
+      `${slug}-logo.jpeg`,
+      `${slug}.png`, 
+      `${slug}.jpg`, 
+      `${slug}.jpeg`,
+      'logo.png', 
+      'logo.jpg', 
+      'logo.jpeg'
+    ];
+    
+    for (const name of commonNames) {
+      if (fs.existsSync(path.join(folderPath, name))) {
+        logoFileName = name;
+        break;
+      }
+    }
+  }
+  
+  // Construct logo path if we have a filename
+  if (logoFileName) {
+    logoPath = `/images/sponsors/${slug}/${logoFileName}`;
+  } else {
+    // Use placeholder with sponsor name
+    logoPath = `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data.name || 'Sponsor')}`;
+  }
 
   // Create an excerpt from the content (first paragraph)
   const excerpt = content
     .split('\n\n')[0]
     .replace(/^#+\s+.*\n/, '')
     .trim();
+    
+  // Create and format the display name
+  let displayName = data.name || slug.replace(/-/g, ' ');
+  displayName = displayName
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 
   return {
     slug,
-    name: data.name,
-    tier: data.tier,
-    website: data.website,
-    location: data.location,
+    name: displayName,
+    website: data.website || '#',
+    tier: data.tier || 'Supporter',
+    location: data.location || '',
     partnership_year: data.partnership_year,
-    logo: data.logo,
+    logo: logoFileName,
     logoPath,
     order: data.order || 999,
     content,
