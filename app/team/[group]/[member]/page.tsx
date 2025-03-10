@@ -75,6 +75,9 @@ export default async function TeamMemberPage({
                 src={imageSrc || '/placeholder.svg'}
                 alt={member.name}
                 className="w-full h-full object-cover"
+                style={{
+                  objectPosition: member.imagePosition || 'center'
+                }}
               />
             </div>
           </div>

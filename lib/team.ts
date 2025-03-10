@@ -7,9 +7,8 @@ export interface TeamMember {
   name: string;
   role: string;
   content: string;
-  order: number;
   groupSlug: string;
-  imagePath: string;
+  imagePosition?: string; // Control image positioning (e.g., "center", "top", "left 30% center")
   [key: string]: any; // For additional frontmatter fields
 }
 
@@ -81,17 +80,9 @@ export function getTeamGroups(): TeamGroup[] {
   }
 }
 
-// Check if a directory contains an image file
-function findImageInDirectory(dirPath: string): string | null {
-  if (!fs.existsSync(dirPath)) return null;
-
-  const files = fs.readdirSync(dirPath);
-  const imageFiles = files.filter((file) => {
-    const ext = path.extname(file).toLowerCase();
-    return ['.jpg', '.jpeg', '.png', '.gif', '.webp'].includes(ext);
-  });
-
-  return imageFiles.length > 0 ? imageFiles[0] : null;
+// Generate image path based on member slug and group slug
+function getTeamMemberImagePath(groupSlug: string, memberSlug: string): string {
+  return `/images/team/${groupSlug}/${memberSlug}.jpg`;
 }
 
 export function getTeamMembersByGroup(group: string): TeamMember[] {
@@ -101,7 +92,7 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
     return [];
   }
 
-  // Get all subdirectories (one for each team member)
+  // Filter out the index.md file itself from the group directory
   const memberDirs = fs
     .readdirSync(groupDirectory, { withFileTypes: true })
     .filter((dirent) => dirent.isDirectory())
@@ -119,16 +110,12 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
       const fileContents = fs.readFileSync(indexFile, 'utf8');
       const { data, content } = matter(fileContents);
 
-      // Look for image file in the same directory
-      const imageFile = findImageInDirectory(memberDir);
-      const imagePath = imageFile
-        ? `/content/team/${group}/${dirName}/${imageFile}`
-        : null;
-
+      // Construct the image path based on the directory structure
+      const imagePath = `/images/team/${group}/${dirName}/${dirName}.jpg`;
+      
       return {
         slug: dirName,
         content,
-        order: data.order || 999,
         groupSlug: group,
         imagePath,
         ...data,
@@ -136,8 +123,14 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
     })
     .filter(Boolean) as TeamMember[];
 
-  // Sort by order field
-  return members.sort((a, b) => a.order - b.order);
+  // Sort by order field if present, or by name
+  return members.sort((a, b) => {
+    if (a.order !== undefined && b.order !== undefined) {
+      return a.order - b.order;
+    }
+    // Fall back to name sorting if order is not defined
+    return a.name.localeCompare(b.name);
+  });
 }
 
 export function getProjectDirector(): TeamMember | null {

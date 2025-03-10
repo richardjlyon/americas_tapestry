@@ -111,11 +111,15 @@ module.exports = {
             },
             a: {
               color: theme('colors.colonial.burgundy'),
-              textDecoration: 'none',
+              textDecoration: 'underline',
+              textDecorationColor: theme('colors.colonial.burgundy'),
+              textDecorationThickness: '1px',
+              textUnderlineOffset: '2px',
               fontWeight: '500',
               '&:hover': {
                 color: theme('colors.colonial.burgundy'),
-                opacity: '0.8',
+                textDecorationColor: theme('colors.colonial.burgundy'),
+                textDecorationThickness: '2px',
               },
             },
           },
