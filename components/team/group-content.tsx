@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
@@ -14,19 +14,6 @@ export interface GroupContentProps {
 export function GroupContent({ group, members }: GroupContentProps) {
   return (
     <>
-      <div className="mb-6">
-        <Button
-          asChild
-          variant="ghost"
-          className="text-colonial-navy hover:text-colonial-burgundy hover:bg-colonial-parchment/50"
-        >
-          <Link href="/team">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Team
-          </Link>
-        </Button>
-      </div>
-
       <h1 className="page-heading">{group.name}</h1>
       <p className="lead-text">{group.longDescription || group.description}</p>
 

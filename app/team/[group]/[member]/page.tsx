@@ -52,18 +52,6 @@ export default async function TeamMemberPage({
   // Render the member content with the data
   return (
     <PageSection background="colonial-parchment">
-      <div className="mb-6">
-        <Button
-          asChild
-          variant="ghost"
-          className="text-colonial-navy hover:text-colonial-burgundy hover:bg-colonial-parchment/50"
-        >
-          <Link href={`/team/${params.group}`}>
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to {formattedGroupName}
-          </Link>
-        </Button>
-      </div>
       <h1 className="page-heading md:mb-16">State Director</h1>
 
       <PersonCard
