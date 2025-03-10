@@ -2,10 +2,9 @@ import Link from 'next/link';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSection } from '@/components/ui/page-section';
-import { getAllSponsors, getSponsorBySlug } from '@/lib/sponsors';
+import { getAllSponsors } from '@/lib/sponsors';
+import { getSponsorData } from '@/app/actions/sponsor-actions';
 import { notFound } from 'next/navigation';
-import { remark } from 'remark';
-import html from 'remark-html';
 
 export async function generateStaticParams() {
   const sponsors = getAllSponsors();
@@ -18,7 +17,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: { params: { slug: string } }) {
-  const sponsor = getSponsorBySlug(params.slug);
+  const { sponsor } = await getSponsorData(params.slug);
 
   if (!sponsor) {
     return {
@@ -36,15 +35,11 @@ export async function generateMetadata({
 export default async function SponsorPage({
   params,
 }: { params: { slug: string } }) {
-  const sponsor = getSponsorBySlug(params.slug);
+  const { sponsor, contentHtml } = await getSponsorData(params.slug);
 
   if (!sponsor) {
     notFound();
   }
-
-  // Convert markdown to HTML
-  const processedContent = await remark().use(html).process(sponsor.content);
-  const contentHtml = processedContent.toString();
 
   // Define tier colors with fallback
   const tierColors: Record<string, string> = {

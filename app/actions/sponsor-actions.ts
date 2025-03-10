@@ -1,8 +1,7 @@
 "use server";
 
-import { getSponsorTier, getSponsorTiers, getSponsorsByTier, getSponsorBySlug } from '@/lib/sponsors';
-import { remark } from 'remark';
-import html from 'remark-html';
+import { getSponsorTier, getSponsorTiers, getSponsorsByTier, getSponsorBySlug, getAllSponsors } from '@/lib/sponsors';
+import { markdownToHtml } from '@/lib/markdown';
 
 export async function getTier(slug: string) {
   return getSponsorTier(slug);
@@ -17,13 +16,7 @@ export async function getSponsor(slug: string) {
 }
 
 export async function getMarkdownHtml(content: string) {
-  try {
-    const processedContent = await remark().use(html).process(content);
-    return processedContent.toString();
-  } catch (error) {
-    console.error('Error processing markdown:', error);
-    return `<p>${content}</p>`;
-  }
+  return markdownToHtml(content);
 }
 
 export async function getFormattedTierName(slug: string) {
@@ -45,22 +38,18 @@ export async function getSponsorTierData(tierSlug: string) {
 
 export async function getSponsorData(slug: string) {
   const sponsor = await getSponsor(slug);
-  let tierInfo = null;
-  let formattedTierName = '';
   let contentHtml = '';
   
   if (sponsor) {
     contentHtml = await getMarkdownHtml(sponsor.content);
-    if (sponsor.tierSlug) {
-      tierInfo = await getTier(sponsor.tierSlug);
-      formattedTierName = await getFormattedTierName(sponsor.tierSlug);
-    }
   }
   
   return {
     sponsor,
-    tierInfo,
-    formattedTierName,
     contentHtml
   };
+}
+
+export async function getAllSponsorsData() {
+  return getAllSponsors();
 }

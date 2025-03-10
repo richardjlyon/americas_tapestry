@@ -1,6 +1,6 @@
 import { PageSection } from '@/components/ui/page-section';
 import { SponsorCard } from '@/components/sponsor-card';
-import { getAllSponsors } from '@/lib/sponsors';
+import { getAllSponsorsData } from '@/app/actions/sponsor-actions';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -11,8 +11,8 @@ export const metadata = {
     "Meet the organizations and institutions that make America's Tapestry possible through their generous support.",
 };
 
-export default function SponsorsPage() {
-  const sponsors = getAllSponsors();
+export default async function SponsorsPage() {
+  const sponsors = await getAllSponsorsData();
   
   // Group sponsors by tier if available
   const sponsorsByTier: Record<string, any[]> = {};

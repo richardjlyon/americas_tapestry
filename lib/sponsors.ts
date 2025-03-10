@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { extractExcerpt } from './markdown';
 
 export interface Sponsor {
   slug: string;
@@ -14,9 +15,65 @@ export interface Sponsor {
   order?: number;
   content: string;
   excerpt: string;
+  excerptHtml?: string;
 }
 
-// Get all sponsors
+/**
+ * Find a logo file in the sponsor's directory
+ * 
+ * @param folderPath Path to the sponsor's directory
+ * @param slug Sponsor's slug
+ * @param logoFromData Logo filename from frontmatter (if any)
+ * @returns The filename of the logo or undefined if not found
+ */
+function findLogoFile(folderPath: string, slug: string, logoFromData?: string): string | undefined {
+  // If logo specified in frontmatter, use that
+  if (logoFromData) {
+    return logoFromData;
+  }
+  
+  // Check for common logo filenames
+  const commonNames = [
+    `${slug}-logo.png`, 
+    `${slug}-logo.jpg`, 
+    `${slug}-logo.jpeg`,
+    `${slug}.png`, 
+    `${slug}.jpg`, 
+    `${slug}.jpeg`,
+    'logo.png', 
+    'logo.jpg', 
+    'logo.jpeg'
+  ];
+  
+  for (const name of commonNames) {
+    if (fs.existsSync(path.join(folderPath, name))) {
+      return name;
+    }
+  }
+  
+  return undefined;
+}
+
+/**
+ * Format a sponsor name from slug or data
+ * 
+ * @param nameFromData Name from frontmatter data (if any)
+ * @param slug Sponsor slug
+ * @returns Formatted display name
+ */
+function formatSponsorName(nameFromData: string | undefined, slug: string): string {
+  const baseName = nameFromData || slug.replace(/-/g, ' ');
+  return baseName
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+/**
+ * Get all sponsors
+ * 
+ * @returns Array of sponsor objects
+ */
 export function getAllSponsors(): Sponsor[] {
   const sponsorsDirectory = path.join(process.cwd(), 'content/sponsors');
 
@@ -53,53 +110,19 @@ export function getAllSponsors(): Sponsor[] {
       // Parse the frontmatter and content
       const { data, content } = matter(fileContents);
 
-      // Look for a logo file in the folder first (any image file)
-      let logoPath = '';
-      let logoFileName = data.logo;
+      // Find logo file
+      const logoFileName = findLogoFile(folderPath, folder, data.logo);
       
-      // If no logo specified in frontmatter, check for common image names
-      if (!logoFileName) {
-        // Check for common logo filenames
-        const commonNames = [
-          `${folder}-logo.png`, 
-          `${folder}-logo.jpg`, 
-          `${folder}-logo.jpeg`,
-          `${folder}.png`, 
-          `${folder}.jpg`, 
-          `${folder}.jpeg`,
-          'logo.png', 
-          'logo.jpg', 
-          'logo.jpeg'
-        ];
-        
-        for (const name of commonNames) {
-          if (fs.existsSync(path.join(folderPath, name))) {
-            logoFileName = name;
-            break;
-          }
-        }
-      }
-      
-      // Construct logo path if we have a filename
-      if (logoFileName) {
-        logoPath = `/images/sponsors/${folder}/${logoFileName}`;
-      } else {
-        // Use placeholder with sponsor name
-        logoPath = `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data.name || 'Sponsor')}`;
-      }
+      // Construct logo path
+      const logoPath = logoFileName 
+        ? `/images/sponsors/${folder}/${logoFileName}`
+        : `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data.name || 'Sponsor')}`;
 
-      // Create an excerpt from the content (first paragraph)
-      const excerpt = content
-        .split('\n\n')[0]
-        .replace(/^#+\s+.*\n/, '')
-        .trim();
+      // Create an excerpt from the content
+      const excerpt = extractExcerpt(content);
 
-      // Create and format the display name
-      let displayName = data.name || folder.replace(/-/g, ' ');
-      displayName = displayName
-        .split(' ')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
+      // Format the display name
+      const displayName = formatSponsorName(data.name, folder);
 
       // Return the sponsor data
       return {
@@ -122,7 +145,12 @@ export function getAllSponsors(): Sponsor[] {
   return sponsors.sort((a, b) => a.name.localeCompare(b.name));
 }
 
-// Get a single sponsor by slug
+/**
+ * Get a single sponsor by slug
+ * 
+ * @param slug Sponsor slug
+ * @returns Sponsor object or null if not found
+ */
 export function getSponsorBySlug(slug: string): Sponsor | null {
   const sponsorsDirectory = path.join(process.cwd(), 'content/sponsors');
   const folderPath = path.join(sponsorsDirectory, slug);
@@ -135,53 +163,19 @@ export function getSponsorBySlug(slug: string): Sponsor | null {
   const fileContents = fs.readFileSync(indexPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  // Look for a logo file in the folder (any image file)
-  let logoPath = '';
-  let logoFileName = data.logo;
+  // Find logo file
+  const logoFileName = findLogoFile(folderPath, slug, data.logo);
   
-  // If no logo specified in frontmatter, check for common image names
-  if (!logoFileName) {
-    // Check for common logo filenames
-    const commonNames = [
-      `${slug}-logo.png`, 
-      `${slug}-logo.jpg`, 
-      `${slug}-logo.jpeg`,
-      `${slug}.png`, 
-      `${slug}.jpg`, 
-      `${slug}.jpeg`,
-      'logo.png', 
-      'logo.jpg', 
-      'logo.jpeg'
-    ];
-    
-    for (const name of commonNames) {
-      if (fs.existsSync(path.join(folderPath, name))) {
-        logoFileName = name;
-        break;
-      }
-    }
-  }
-  
-  // Construct logo path if we have a filename
-  if (logoFileName) {
-    logoPath = `/images/sponsors/${slug}/${logoFileName}`;
-  } else {
-    // Use placeholder with sponsor name
-    logoPath = `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data.name || 'Sponsor')}`;
-  }
+  // Construct logo path
+  const logoPath = logoFileName 
+    ? `/images/sponsors/${slug}/${logoFileName}`
+    : `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data.name || 'Sponsor')}`;
 
-  // Create an excerpt from the content (first paragraph)
-  const excerpt = content
-    .split('\n\n')[0]
-    .replace(/^#+\s+.*\n/, '')
-    .trim();
+  // Create an excerpt from the content
+  const excerpt = extractExcerpt(content);
     
-  // Create and format the display name
-  let displayName = data.name || slug.replace(/-/g, ' ');
-  displayName = displayName
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+  // Format the display name
+  const displayName = formatSponsorName(data.name, slug);
 
   return {
     slug,

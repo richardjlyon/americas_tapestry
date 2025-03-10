@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,6 +11,8 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { Sponsor } from '@/lib/sponsors';
+import { useEffect, useState } from 'react';
+import { markdownToHtml } from '@/lib/markdown';
 
 interface SponsorCardProps {
   sponsor: Sponsor;
@@ -16,6 +20,9 @@ interface SponsorCardProps {
 }
 
 export function SponsorCard({ sponsor, featured = false }: SponsorCardProps) {
+  // State for the excerpt HTML
+  const [excerptHtml, setExcerptHtml] = useState('');
+  
   // Define tier colors with fallback
   const tierColors: Record<string, string> = {
     Platinum: 'bg-slate-300 text-slate-900',
@@ -29,6 +36,27 @@ export function SponsorCard({ sponsor, featured = false }: SponsorCardProps) {
   const tierColor = sponsor.tier && tierColors[sponsor.tier]
     ? tierColors[sponsor.tier]
     : 'bg-gray-100 text-gray-800';
+    
+  // Process markdown excerpt
+  useEffect(() => {
+    // Convert the excerpt to HTML
+    const processExcerpt = async () => {
+      try {
+        // Create markdown-style paragraph from excerpt if not already markdown
+        const markdown = sponsor.excerpt.startsWith('#') || sponsor.excerpt.includes('\n') 
+          ? sponsor.excerpt 
+          : sponsor.excerpt;
+        
+        const html = await markdownToHtml(markdown);
+        setExcerptHtml(html);
+      } catch (error) {
+        console.error('Error processing excerpt:', error);
+        setExcerptHtml(`<p>${sponsor.excerpt}</p>`);
+      }
+    };
+    
+    processExcerpt();
+  }, [sponsor.excerpt]);
 
   return (
     <Card
@@ -62,9 +90,12 @@ export function SponsorCard({ sponsor, featured = false }: SponsorCardProps) {
             </p>
           )}
         </div>
-        <p className="font-serif text-colonial-navy/80 line-clamp-3 text-sm">
-          {sponsor.excerpt}
-        </p>
+        
+        {/* Render excerpt as HTML with styles */}
+        <div 
+          className="text-sm line-clamp-3 content-typography prose-sm"
+          dangerouslySetInnerHTML={{ __html: excerptHtml }}
+        />
       </CardContent>
 
       <CardFooter className="p-4 pt-0 flex justify-between">
