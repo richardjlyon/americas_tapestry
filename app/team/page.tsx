@@ -41,6 +41,7 @@ export default async function TeamPage() {
             <div className="md:flex">
               <div className="md:w-1/3 lg:w-1/4">
                 <div className="h-80 md:h-full relative">
+                  {/* image */}
                   <img
                     src={
                       directorImageSrc ||
@@ -49,11 +50,12 @@ export default async function TeamPage() {
                     alt={projectDirector.name}
                     className="w-full h-full object-cover"
                     style={{
-                      objectPosition: projectDirector.imagePosition || 'center'
+                      objectPosition: projectDirector.imagePosition || 'center',
                     }}
                   />
                 </div>
               </div>
+              {/* content */}
               <div className="md:w-2/3 lg:w-3/4 p-6 md:p-8">
                 <div className="border-b border-colonial-gold pb-4 mb-6">
                   <h2 className="text-2xl md:text-3xl font-bold text-colonial-navy">

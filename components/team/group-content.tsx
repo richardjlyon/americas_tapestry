@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TeamMemberCard } from '@/components/team-member-card';
-import { PageSection } from '@/components/ui/page-section';
 import type { TeamGroup, TeamMember } from '@/lib/team';
 
 export interface GroupContentProps {
@@ -14,7 +13,7 @@ export interface GroupContentProps {
 
 export function GroupContent({ group, members }: GroupContentProps) {
   return (
-    <PageSection background="colonial-parchment">
+    <>
       <div className="mb-6">
         <Button
           asChild
@@ -44,6 +43,6 @@ export function GroupContent({ group, members }: GroupContentProps) {
           </p>
         </div>
       )}
-    </PageSection>
+    </>
   );
 }

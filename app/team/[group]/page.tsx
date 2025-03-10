@@ -2,6 +2,7 @@ import { getTeamGroups } from '@/lib/team';
 import { getTeamData } from '@/app/actions/team-actions';
 import { GroupContent } from '@/components/team/group-content';
 import { notFound } from 'next/navigation';
+import { PageSection } from '@/components/ui/page-section';
 
 export async function generateStaticParams() {
   const groups = getTeamGroups();
@@ -18,6 +19,10 @@ export default async function TeamGroupPage({ params }: { params: { group: strin
     notFound();
   }
   
-  // Render the content directly
-  return <GroupContent group={group} members={members} />;
+  // Render the content wrapped in a page section (consistent with main team page)
+  return (
+    <PageSection background="colonial-parchment">
+      <GroupContent group={group} members={members} />
+    </PageSection>
+  );
 }

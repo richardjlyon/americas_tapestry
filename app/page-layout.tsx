@@ -14,7 +14,7 @@ export default function PageLayout({
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className={`flex-1 ${fullWidth ? '' : 'pt-20 md:pt-24'}`}>
+      <main className="flex-1 pt-20 md:pt-24">
         {children}
       </main>
       <Footer />

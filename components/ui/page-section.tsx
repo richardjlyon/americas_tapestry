@@ -22,7 +22,7 @@ export function PageSection({
   return (
     <section
       className={cn(
-        'py-12 md:py-16',
+        'pb-12 md:pb-16',
         {
           'bg-colonial-parchment': background === 'colonial-parchment',
           'bg-colonial-stone': background === 'colonial-stone',
