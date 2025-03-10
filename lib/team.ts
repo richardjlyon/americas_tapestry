@@ -125,11 +125,25 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
 
   // Sort by order field if present, or by name
   return members.sort((a, b) => {
+    // If both have order, use that
     if (a.order !== undefined && b.order !== undefined) {
       return a.order - b.order;
     }
-    // Fall back to name sorting if order is not defined
-    return a.name.localeCompare(b.name);
+    // If only one has order, prioritize that one
+    if (a.order !== undefined) return -1;
+    if (b.order !== undefined) return 1;
+    
+    // If both have names, compare them
+    if (a.name && b.name) {
+      return a.name.localeCompare(b.name);
+    }
+    
+    // Handle cases where name might be undefined
+    if (a.name) return -1;
+    if (b.name) return 1;
+    
+    // If both missing names, keep original order
+    return 0;
   });
 }
 

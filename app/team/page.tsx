@@ -48,6 +48,9 @@ export default async function TeamPage() {
                     }
                     alt={projectDirector.name}
                     className="w-full h-full object-cover"
+                    style={{
+                      objectPosition: projectDirector.imagePosition || 'center'
+                    }}
                   />
                 </div>
               </div>

@@ -4,6 +4,12 @@ description: "Museums, archives, and cultural institutions that provide historic
 order: 3
 ---
 
-Our Historical Partners are the prestigious museums, archives, and cultural institutions that provide America's Tapestry with historical expertise, research resources, and exhibition spaces. These partnerships ensure that our tapestries are grounded in rigorous historical scholarship while reaching broad audiences. 
+Our Historical Partners are the prestigious museums, archives, and
+cultural institutions that provide America's Tapestry with historical
+expertise, research resources, and exhibition spaces. These
+partnerships ensure that our tapestries are grounded in rigorous
+historical scholarship while reaching broad audiences.
 
-From providing access to historical textiles and documents to hosting public programs and workshops, these institutions play a vital role in both the creation and presentation of America's Tapestry.
+From providing access to historical textiles and documents to hosting
+public programs and workshops, these institutions play a vital role in
+both the creation and presentation of America's Tapestry.
