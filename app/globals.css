@@ -3,56 +3,21 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 40 33% 95%;
-    --foreground: 220 40% 16%;
-
-    --primary: 220 40% 16%;
-    --primary-foreground: 40 33% 95%;
-
-    --secondary: 345 64% 32%;
-    --secondary-foreground: 40 33% 95%;
-
-    --muted: 40 15% 85%;
-    --muted-foreground: 220 10% 40%;
-
-    --accent: 42 50% 52%;
-    --accent-foreground: 220 40% 16%;
-
-    --card: 40 33% 95%;
-    --card-foreground: 220 40% 16%;
-
-    --popover: 40 33% 95%;
-    --popover-foreground: 220 40% 16%;
-
-    --border: 40 15% 80%;
-    --input: 40 15% 80%;
-
-    --destructive: 0 85% 60%;
-    --destructive-foreground: 40 33% 95%;
-
-    --ring: 42 50% 52%;
-
-    --radius: 0.5rem;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-colonial-parchment text-colonial-navy;
   }
 
+  /* Base typography */
   p {
-    @apply font-serif text-lg sm:text-xl md:text-2xl leading-relaxed;
+    @apply font-serif text-lg sm:text-xl leading-relaxed text-colonial-navy/90;
   }
 
   p + p {
     @apply mt-4;
-    /* Adds margin only between paragraphs */
   }
 
   h1,
@@ -61,49 +26,37 @@
   h4,
   h5,
   h6 {
-    @apply font-sans;
+    @apply font-sans font-bold text-colonial-navy;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  a {
+    @apply text-colonial-burgundy font-medium transition-colors hover:text-colonial-burgundy/80;
   }
 }
 
 @layer components {
-  /* Typography container for rich content areas */
-  .content-typography {
-    @apply prose prose-lg md:prose-xl max-w-none prose-headings:font-sans prose-headings:text-colonial-navy prose-p:font-serif prose-p:text-colonial-navy prose-a:text-colonial-burgundy prose-a:no-underline prose-a:font-medium hover:prose-a:text-colonial-burgundy/80 prose-img:rounded-md prose-img:shadow-md;
-  }
-
-  .container {
-    @apply px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24;
-  }
-
+  /* Layout components */
   .section-padding {
     @apply py-12 sm:py-16 md:py-20 lg:py-24;
   }
 
-  /* Ensure header is visible on all pages */
-  header {
-    @apply print:hidden;
-  }
-
-  /* Embla Carousel Styles */
-  .embla {
-    @apply overflow-hidden;
-  }
-
-  .embla__container {
-    @apply flex;
-  }
-
-  .embla__slide {
-    @apply min-w-0;
-  }
-
-  /* Hero content box */
-  .hero-content-box {
-    @apply bg-colonial-navy/70 backdrop-blur-sm p-6 md:p-8 rounded-lg inline-block;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.5s ease;
-  }
-
+  /* Standardized typography components */
   .page-heading {
     @apply text-3xl md:text-4xl lg:text-5xl font-bold text-colonial-navy mb-6 text-center tracking-tight;
   }
@@ -116,20 +69,65 @@
     @apply text-lg md:text-2xl text-colonial-navy/80 font-serif mb-10 max-w-3xl mx-auto text-center;
   }
 
-  /* Typography styles */
-}
-
-/* Custom animation for the hero carousel */
-@keyframes kenBurns {
-  from {
-    transform: scale(1);
+  /* Rich text content area */
+  .content-typography {
+    @apply prose prose-lg md:prose-xl max-w-none prose-headings:font-sans prose-headings:text-colonial-navy 
+           prose-p:font-serif prose-p:text-colonial-navy/90 prose-a:text-colonial-burgundy 
+           prose-a:no-underline prose-a:font-medium hover:prose-a:text-colonial-burgundy/80 
+           prose-img:rounded-md prose-img:shadow-md prose-hr:border-colonial-navy/20
+           prose-blockquote:border-colonial-gold prose-blockquote:text-colonial-navy/80
+           prose-blockquote:font-serif prose-blockquote:italic;
   }
 
-  to {
-    transform: scale(1.05);
+  /* Hero elements */
+  .hero-content-box {
+    @apply bg-colonial-navy/70 backdrop-blur-sm p-6 md:p-8 rounded-lg inline-block shadow-lg transition-opacity duration-500;
+  }
+
+  /* Carousel components */
+  .embla {
+    @apply overflow-hidden;
+  }
+
+  .embla__container {
+    @apply flex;
+  }
+
+  .embla__slide {
+    @apply min-w-0;
+  }
+
+  /* Print styles */
+  header,
+  footer {
+    @apply print:hidden;
+  }
+
+  /* Status indicators */
+  .status-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .status-not-started {
+    @apply bg-colonial-navy text-white;
+  }
+
+  .status-designed {
+    @apply bg-indigo-500 text-white;
+  }
+
+  .status-in-production {
+    @apply bg-colonial-burgundy text-white;
+  }
+
+  .status-finished {
+    @apply bg-colonial-gold text-colonial-navy;
   }
 }
 
-.duration-10000 {
-  transition-duration: 10000ms;
+/* Ensure animations are properly exported */
+@layer utilities {
+  .animate-ken-burns {
+    animation: ken-burns 10s ease-in-out infinite alternate;
+  }
 }

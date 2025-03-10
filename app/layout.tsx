@@ -41,9 +41,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body
-        className={`${montserrat.variable} ${ebGaramond.variable} bg-colonial-parchment text-colonial-navy`}
-      >
+      <body className={`${montserrat.variable} ${ebGaramond.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <DebugHelper />
           {children}
