@@ -6,6 +6,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';
+import PersonCard from '@/components/team/person-card';
 
 export default async function TeamPage() {
   const projectDirector = getProjectDirector();
@@ -29,50 +30,18 @@ export default async function TeamPage() {
     <PageSection background="colonial-parchment">
       <h1 className="page-heading">Our Team</h1>
       <p className="lead-text text-center">
-        America’s Tapestry is a collaboration between visual artists, historical
+        America's Tapestry is a collaboration between visual artists, historical
         advisors, and embroidery artisans drawn from each of the original 13
         states.
       </p>
 
       {/* Project Director Feature */}
       {projectDirector && (
-        <div className="mb-16 md:mb-24">
-          <ContentCard className="overflow-hidden p-0">
-            <div className="md:flex">
-              <div className="md:w-1/3 lg:w-1/4">
-                <div className="h-80 md:h-full relative">
-                  {/* image */}
-                  <img
-                    src={
-                      directorImageSrc ||
-                      '/team/project-director/stefan-romero/stefan-romero.jpg'
-                    }
-                    alt={projectDirector.name}
-                    className="w-full h-full object-cover"
-                    style={{
-                      objectPosition: projectDirector.imagePosition || 'center',
-                    }}
-                  />
-                </div>
-              </div>
-              {/* content */}
-              <div className="md:w-2/3 lg:w-3/4 p-6 md:p-8">
-                <div className="border-b border-colonial-gold pb-4 mb-6">
-                  <h2 className="text-2xl md:text-3xl font-bold text-colonial-navy">
-                    {projectDirector.name}
-                  </h2>
-                  <p className="font-serif text-xl text-colonial-burgundy mt-1">
-                    {projectDirector.role}
-                  </p>
-                </div>
-                <div
-                  className="prose prose-lg max-w-none font-serif text-colonial-navy prose-headings:font-sans prose-a:text-colonial-burgundy"
-                  dangerouslySetInnerHTML={{ __html: directorBioHtml }}
-                />
-              </div>
-            </div>
-          </ContentCard>
-        </div>
+        <PersonCard
+          personImageSrc={directorImageSrc}
+          person={projectDirector}
+          personBioHtml={directorBioHtml}
+        />
       )}
 
       {/* Team Groups */}

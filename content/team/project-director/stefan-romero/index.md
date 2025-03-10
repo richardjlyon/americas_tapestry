@@ -4,8 +4,9 @@ role: "Project Director"
 order: 1
 ---
 
-With conservatory training in visual and theatrical arts, Stefan
-oversees the design of each state embroidery panel. Fascinated with the
+Stefan Romero is the visionary founder of _America's Tapestry_. With
+conservatory training in visual and theatrical arts, Stefan oversees
+the design of each state embroidery panel. Fascinated with the
 intersection between archival inquiry and sartorial significance,
 Stefan is committed to telling stories that can only be told through
 textile-based sources.
