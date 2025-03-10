@@ -23,7 +23,12 @@ export function PageSection({
     <section
       className={cn(
         'py-12 md:py-16',
-        background && background !== 'white' && `bg-${background}`,
+        {
+          'bg-colonial-parchment': background === 'colonial-parchment',
+          'bg-colonial-stone': background === 'colonial-stone',
+          'bg-colonial-navy': background === 'colonial-navy',
+          'bg-white': background === 'white' || !background,
+        },
         className,
       )}
     >
