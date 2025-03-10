@@ -1,5 +1,6 @@
 import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -7,9 +8,24 @@ export default function AboutPage() {
       <PageSection background="colonial-parchment">
         <h1 className="page-heading">About</h1>
 
+        <p className="lead-text text-center">
+          Celebrating America’s 250th Anniversary.
+        </p>
+
+        {/* Hero image */}
+        <div className="max-w-5xl mx-auto mb-12 relative rounded-lg overflow-hidden shadow-xl">
+          <Image
+            src="/about-us.png"
+            alt="America's Tapestry - Collaborative embroidery project"
+            width={1200}
+            height={600}
+            className="w-full object-cover"
+          />
+        </div>
+
         <div className="max-w-3xl mx-auto">
           <ContentCard className="content-typography">
-            <p>
+            <p className="font-bold">
               On July 4th 2026, our nation will commemorate the 250th
               anniversary of the signing of the Declaration of Independence. All
               over the United States, communities will be holding events to
@@ -45,7 +61,7 @@ export default function AboutPage() {
               agreed to host the stitchers as they work.
             </p>
 
-            <blockquote className="border-l-4 border-colonial-gold pl-4 my-6 italic">
+            <blockquote>
               "The idea came to me while on a work assignment in Europe after
               visiting 'The Great Tapestry of Scotland'", says Stefan. "I was
               deeply moved by the richness and drama of Scotland's story as it
@@ -73,7 +89,7 @@ export default function AboutPage() {
               original 13 states. All materials will be provided.
             </p>
 
-            <blockquote className="border-l-4 border-colonial-gold pl-4 my-6 italic">
+            <blockquote>
               "It is a privilege for me to represent our Nation with a
               needlework project that will be a legacy product of this historic
               occasion. As we look forward to our next 250 years, it is more
