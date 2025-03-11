@@ -15,7 +15,7 @@ export default function PageLayout({
     <>
       <Header />
       <SiteBreadcrumb />
-      <main className="flex-1 woven-linen">{children}</main>
+      <main className="flex-1 woven-linen content-spacing-md">{children}</main>
       <Footer />
     </>
   );

@@ -9,7 +9,7 @@ export default function AboutPage() {
         Welcome to <em>America's Tapestry!</em>
       </h1>
 
-      <p className="lead-text text-center">
+      <p className="lead-text text-center mb-content-lg">
         Celebrating America's 250th Anniversary.
       </p>
 

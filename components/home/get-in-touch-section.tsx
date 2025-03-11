@@ -4,7 +4,7 @@ import { Mail } from 'lucide-react';
 
 export function GetInTouchSection() {
   return (
-    <div className="text-center">
+    <>
       <h2 className="section-title text-center mb-content-sm">Get in Touch</h2>
       <div className="lead-text mb-content-md">
         Interested in learning more about America's Tapestry or discussing
@@ -21,6 +21,6 @@ export function GetInTouchSection() {
           <Mail className="mr-2 h-4 w-4" /> Contact Us
         </Link>
       </Button>
-    </div>
+    </>
   );
 }
