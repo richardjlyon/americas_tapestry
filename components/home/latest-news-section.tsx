@@ -26,12 +26,13 @@ export function LatestNewsSection() {
   const hasPostsToDisplay = featuredPost || displayPosts.length > 0;
 
   return (
-    <PageSection background="colonial-parchment">
-      <h2 className="section-title text-center">Latest News</h2>
-      <p className="lead-text">
+    <>
+      <h2 className="section-title text-center mb-content-sm">Latest News</h2>
+
+      <div className="lead-text mb-content-md">
         Stay updated with the latest developments, events, and insights from
         America's Tapestry
-      </p>
+      </div>
 
       {hasPostsToDisplay ? (
         <>
@@ -72,6 +73,6 @@ export function LatestNewsSection() {
           </Link>
         </Button>
       </div>
-    </PageSection>
+    </>
   );
 }
