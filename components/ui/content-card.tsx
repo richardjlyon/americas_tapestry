@@ -19,10 +19,15 @@ export function ContentCard({
     large: 'p-8 md:p-10',
   };
 
+  // Extract custom background if it exists in className
+  const hasCustomBg = className?.includes('vintage-paper');
+
   return (
     <div
       className={cn(
-        'bg-white rounded-lg shadow-md border border-colonial-navy/10',
+        // Only apply bg-white if no custom background is provided
+        hasCustomBg ? '' : 'bg-white',
+        'rounded-lg shadow-md border border-colonial-navy/10',
         paddingClasses[padding],
         className,
       )}

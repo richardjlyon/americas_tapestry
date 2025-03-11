@@ -4,9 +4,12 @@ import { cn } from '@/lib/utils';
 export interface PageSectionProps {
   children: ReactNode;
   background?:
-    | 'colonial-parchment'
-    | 'colonial-stone'
+    | 'linen-texture'
+    | 'woven-linen'
+    | 'vintage-paper'
+    | 'authentic-parchment'
     | 'colonial-navy'
+    | 'colonial-burgundy'
     | 'white'
     | string;
   container?: boolean;
@@ -15,19 +18,22 @@ export interface PageSectionProps {
 
 export function PageSection({
   children,
-  background = 'white',
+  background = 'woven-linen',
   container = true,
   className,
 }: PageSectionProps) {
   return (
     <section
       className={cn(
-        'pb-12 md:pb-16',
+        'pt-12 pb-24',
         {
-          'bg-colonial-parchment': background === 'colonial-parchment',
-          'bg-colonial-stone': background === 'colonial-stone',
+          'linen-texture': background === 'linen-texture',
+          'woven-linen': background === 'woven-linen',
+          'vintage-paper': background === 'vintage-paper',
+          'authentic-parchment': background === 'authentic-parchment',
           'bg-colonial-navy': background === 'colonial-navy',
-          'bg-white': background === 'white' || !background,
+          'bg-colonial-burgundy': background === 'colonial-burgundy',
+          white: background === 'white' || !background,
         },
         className,
       )}

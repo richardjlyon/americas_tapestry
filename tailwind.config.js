@@ -28,9 +28,12 @@ module.exports = {
         colonial: {
           navy: '#102542', // Deep navy blue - primary brand color
           burgundy: '#711322', // Rich burgundy - accent color
-          parchment: '#f3e9d2', // Aged parchment - background color
           gold: '#c3a343', // Muted gold - highlight color
           stone: '#d8d3c8', // Stone/neutral - secondary background
+          linenTexture: '#f5f1e6',
+          linenWoven: '#f7f3ea',
+          vintagePaper: '#f8f3e6',
+          parchment: '#f4e9d5',
         },
         // System UI colors - mapped to colonial palette
         border: 'hsl(var(--colonial-stone))',
