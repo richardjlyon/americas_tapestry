@@ -167,7 +167,7 @@ export function InteractiveColoniesMap({
         > = {};
 
         // First, set default statuses for all colonies
-        originalColonies.forEach((colony) => {
+        for (const colony of originalColonies) {
           // Find matching tapestry by slug
           const tapestry = tapestries.find((t) => t.slug === colony.slug);
 
@@ -184,7 +184,7 @@ export function InteractiveColoniesMap({
               status: 'Not Started',
             };
           }
-        });
+        }
 
         console.log('Final colony tapestry map:', tapestryMap);
         setColonyTapestries(tapestryMap);
@@ -208,18 +208,18 @@ export function InteractiveColoniesMap({
   // Don't render the map on the server to avoid hydration issues
   if (!isClient) {
     return (
-      <div className="w-full h-[400px] bg-colonial-parchment/50 flex items-center justify-center rounded-lg">
+      <div className="flex h-[400px] w-full items-center justify-center rounded-lg bg-colonial-parchment/50">
         <p className="text-colonial-navy/70">Loading map...</p>
       </div>
     );
   }
 
   return (
-    <div className="w-full max-w-3xl mx-auto">
+    <div className="mx-auto mt-8 w-full max-w-3xl">
       <div className="relative w-full" style={{ paddingBottom: '75%' }}>
         <svg
           viewBox="700 140 180 280"
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 h-full w-full"
           aria-labelledby="colonial-map-title"
           role="img"
         >
@@ -253,13 +253,21 @@ export function InteractiveColoniesMap({
                   fill={isHovered ? '#c3a343' : statusColors[status]}
                   stroke="#f3e9d2"
                   strokeWidth="1"
-                  className="transition-all duration-300 cursor-pointer hover:fill-colonial-gold"
+                  className="cursor-pointer transition-all duration-300 hover:fill-colonial-gold"
                   onMouseEnter={() => setHoveredColony(colony.id)}
                   onMouseLeave={() => setHoveredColony(null)}
                   onClick={() => {
                     setSelectedColony(colony);
                     if (hasTapestry(colony.id)) {
-                      router.push(`/tapestry/${colony.slug}`);
+                      router.push(`/tapestries/${colony.slug}`);
+                    }
+                  }}
+                  onKeyUp={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      setSelectedColony(colony);
+                      if (hasTapestry(colony.id)) {
+                        router.push(`/tapestries/${colony.slug}`);
+                      }
                     }
                   }}
                   aria-label={`${colony.name} - ${status}`}
@@ -275,7 +283,7 @@ export function InteractiveColoniesMap({
                   fill="#f3e9d2"
                   fontSize="6"
                   fontWeight="bold"
-                  className="hidden sm:block pointer-events-none"
+                  className="pointer-events-none hidden sm:block"
                   style={{ textShadow: '1px 1px 1px rgba(0,0,0,0.5)' }}
                 >
                   {colony.name}
@@ -323,11 +331,11 @@ export function InteractiveColoniesMap({
 
       {/* Selected Colony Info */}
       {selectedColony && (
-        <div className="colony-info mt-4 p-4 border border-colonial-navy/20 rounded-md shadow-sm bg-white">
+        <div className="mt-4 rounded-md border border-colonial-navy/20 bg-white p-4 shadow-sm">
           <h3 className="text-xl font-bold text-colonial-navy">
             {selectedColony.name}
           </h3>
-          <p className="font-serif text-colonial-navy/80 mt-2">
+          <p className="mt-2 font-serif text-colonial-navy/80">
             {selectedColony.details}
           </p>
           {colonyTapestries[selectedColony.id] ? (
@@ -335,7 +343,7 @@ export function InteractiveColoniesMap({
               <p className="mt-2 text-sm">
                 <span className="font-medium">Status:</span>{' '}
                 <span
-                  className="inline-block px-2 py-0.5 rounded-full text-white text-xs"
+                  className="inline-block rounded-full px-2 py-0.5 text-xs text-white"
                   style={{
                     backgroundColor:
                       statusColors[colonyTapestries[selectedColony.id].status],
@@ -346,15 +354,15 @@ export function InteractiveColoniesMap({
               </p>
               <p className="mt-2 text-sm text-colonial-burgundy">
                 <a
-                  href={`/tapestry/${colonyTapestries[selectedColony.id].slug}`}
-                  className="underline hover:text-colonial-gold transition-colors"
+                  href={`/tapestries/${colonyTapestries[selectedColony.id].slug}`}
+                  className="underline transition-colors hover:text-colonial-gold"
                 >
                   View {selectedColony.name} Tapestry
                 </a>
               </p>
             </div>
           ) : (
-            <p className="mt-2 text-sm text-colonial-navy/60 italic">
+            <p className="mt-2 italic text-sm text-colonial-navy/60">
               Tapestry not available
             </p>
           )}
@@ -362,23 +370,43 @@ export function InteractiveColoniesMap({
       )}
 
       {/* Legend */}
-      <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4">
-        <div className="flex items-center">
-          <div className="w-4 h-4 bg-colonial-navy rounded-sm mr-2"></div>
-          <span className="text-sm text-colonial-navy">Not Started</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-4 h-4 bg-indigo-500 rounded-sm mr-2"></div>
-          <span className="text-sm text-colonial-navy">Designed</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-4 h-4 bg-colonial-burgundy rounded-sm mr-2"></div>
-          <span className="text-sm text-colonial-navy">In Production</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-4 h-4 bg-colonial-gold rounded-sm mr-2"></div>
-          <span className="text-sm text-colonial-navy">Finished</span>
-        </div>
+      <div className="mt-6">
+        <table className="mx-auto border-collapse">
+          <tbody>
+            <tr>
+              <td className="p-2">
+                <div className="flex items-center">
+                  <div className="mr-2 h-4 w-4 rounded-sm bg-colonial-navy" />
+                  <span className="text-sm text-colonial-navy">
+                    Not Started
+                  </span>
+                </div>
+              </td>
+              <td className="p-2">
+                <div className="flex items-center">
+                  <div className="mr-2 h-4 w-4 rounded-sm bg-indigo-500" />
+                  <span className="text-sm text-colonial-navy">Designed</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td className="p-2">
+                <div className="flex items-center">
+                  <div className="mr-2 h-4 w-4 rounded-sm bg-colonial-burgundy" />
+                  <span className="text-sm text-colonial-navy">
+                    In Production
+                  </span>
+                </div>
+              </td>
+              <td className="p-2">
+                <div className="flex items-center">
+                  <div className="mr-2 h-4 w-4 rounded-sm bg-colonial-gold" />
+                  <span className="text-sm text-colonial-navy">Finished</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

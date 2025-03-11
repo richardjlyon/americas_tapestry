@@ -22,7 +22,6 @@ timelineEvents:
 
 The New Hampshire Tapestry celebrates the state's revolutionary spirit and its distinctive natural landscape. The panel illustrates New Hampshire's development from early settlements at Portsmouth and Dover to its bold action as the first colony to establish an independent government in January 1776, six months before the Declaration of Independence. The design captures both the state's colonial heritage and its iconic natural features, from the seacoast to the White Mountains.
 
-![New Hampshire Tapestry](/content/tapestries/new-hampshire/new-hampshire-tapestry-main.jpg)
 
 The New Hampshire Panel is being created at the [Strawbery Banke Museum](/team/historical-partners/#strawbery-banke-museum) in Portsmouth, where visitors can observe the stitching process within the context of the museum's preserved colonial neighborhood. The museum's collection of historical textiles and artifacts has provided valuable reference material for the design of the panel.
 

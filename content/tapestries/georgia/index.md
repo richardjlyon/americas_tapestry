@@ -29,8 +29,6 @@ the Revolution, featuring French, Creole, Native American, English,
 Scottish, and Colonial forces. This panel was designed in collaboration
 with the Coastal Heritage Society of Savannah.
 
-![Georgia Tapestry](/content/tapestries/georgia/georgia-tapestry-main.jpg)
-
 The Georgia Panel is being stitched at the [Atlanta History
 Center](/team/historical-partners/#atlanta-history-center), a premier
 museum and research center. The Museum holds one of the largest
@@ -44,4 +42,3 @@ Berger](/team/state-directors/#debora-berger), Embroiderer's Guild of
 America National Director of Education. Deborah is mobilizing stitchers
 from all needlework organizations in the greater Atlanta area to work
 on the project.
-

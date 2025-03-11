@@ -22,8 +22,6 @@ timelineEvents:
 
 The New Jersey Tapestry honors the state's pivotal role during the American Revolution, when more battles were fought on its soil than in any other colony. The panel illustrates New Jersey's transformation from Native American homeland to Dutch and Swedish settlements, then to an English colony, and finally to a key state in the new nation. The design captures the state's diverse cultural influences and its position as the "Crossroads of the Revolution."
 
-![New Jersey Tapestry](/content/tapestries/new-jersey/new-jersey-tapestry-main.jpg)
-
 The New Jersey Panel is being created at the [New Jersey State Museum](/team/historical-partners/#new-jersey-state-museum) in Trenton, where visitors can observe the stitching process and learn about the state's rich history. The museum's extensive collections have provided valuable reference material for the design of the panel.
 
 Our New Jersey Director is [Eleanor Winters](/team/state-directors/#eleanor-winters), a textile artist and educator who has assembled a diverse team of stitchers from throughout the state. The panel incorporates techniques that reflect New Jersey's multicultural heritage, including Lenape, Dutch, Swedish, English, and African American influences.

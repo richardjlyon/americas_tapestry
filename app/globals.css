@@ -59,9 +59,8 @@
     .section-padding {
         @apply py-12 sm:py-16 md:py-20 lg:py-24;
     }
-
     .section-title {
-        @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 tracking-tight text-colonial-navy;
+        @apply text-2xl text-3xl md:text-4xl font-bold py-4 md:py-8 tracking-tight text-colonial-navy;
     }
     .lead-text {
         @apply text-lg md:text-2xl font-medium text-colonial-navy/80 font-serif mb-10 max-w-3xl mx-auto text-center;

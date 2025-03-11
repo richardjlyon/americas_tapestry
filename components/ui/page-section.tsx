@@ -25,7 +25,7 @@ export function PageSection({
   return (
     <section
       className={cn(
-        'md:pt-4 md:pb-24',
+        'pb-6 md:pt-4 md:pb-12 border-t border-colonial-navy/10',
         {
           'linen-texture': background === 'linen-texture',
           'woven-linen': background === 'woven-linen',

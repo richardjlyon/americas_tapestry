@@ -12,20 +12,18 @@ export default function TapestriesPage() {
 
   return (
     <>
-      <PageSection background="colonial-parchment">
-        <h1 className="page-heading">America's Tapestry Collection</h1>
+      <h1 className="page-heading">America's Tapestry Collection</h1>
 
-        <p className="lead-text text-center">
-          Explore our complete collection of tapestries, each telling a lesser
-          known, often overlooked contribution to our nation's journey towards
-          Independence. These meticulously crafted panels represent the threads
-          that, when woven together, form the rich tapestry of our nation's
-          history and identity.
-        </p>
-      </PageSection>
+      <p className="lead-text text-center">
+        Explore our complete collection of tapestries, each telling a lesser
+        known, often overlooked contribution to our nation's journey towards
+        Independence. These meticulously crafted panels represent the threads
+        that, when woven together, form the rich tapestry of our nation's
+        history and identity.
+      </p>
 
       {/* Colonial Map Section */}
-      <PageSection background="colonial-stone">
+      <PageSection>
         <h2 className="section-title text-center">
           The Original Thirteen Colonies
         </h2>
@@ -33,9 +31,8 @@ export default function TapestriesPage() {
           Explore the tapestries representing the original thirteen colonies.
           Click on a colony to view its tapestry.
         </p>
-        <div className="mt-8">
-          <InteractiveColoniesMap tapestries={tapestries} />
-        </div>
+
+        <InteractiveColoniesMap tapestries={tapestries} />
       </PageSection>
 
       {/* Timeline Section */}
@@ -64,7 +61,11 @@ export default function TapestriesPage() {
 
       {/* All Tapestries Grid */}
       <PageSection background="colonial-stone">
-        <h2 className="section-title text-center">All Available Tapestries</h2>
+        <h2 className="section-title text-center">The Tapestries</h2>
+        <p className="lead-text text-colonial-navy/80 text-center">
+          Explore the stories behind the tapestries, and the people who designed
+          and made them.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8">
           {tapestries.map((tapestry) => (
             <TapestryCard key={tapestry.slug} tapestry={tapestry} />
