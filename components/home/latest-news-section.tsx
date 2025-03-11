@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SectionHeader } from '@/components/ui/section-header';
 import { BlogCard } from '@/components/blog-card';
 import { FeaturedPost } from '@/components/featured-post';
 import { getFeaturedBlogPosts, getLatestBlogPosts } from '@/lib/blog';
@@ -27,12 +28,10 @@ export function LatestNewsSection() {
 
   return (
     <>
-      <h2 className="section-title text-center mb-content-sm">Latest News</h2>
-
-      <div className="lead-text mb-content-md">
-        Stay updated with the latest developments, events, and insights from
-        America's Tapestry
-      </div>
+      <SectionHeader
+        title="Latest News"
+        description="Stay updated with the latest developments, events, and insights from America's Tapestry"
+      />
 
       {hasPostsToDisplay ? (
         <>

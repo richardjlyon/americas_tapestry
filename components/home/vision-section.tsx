@@ -1,9 +1,13 @@
 import { Divide, SignpostBig, Users2 } from 'lucide-react';
+import { SectionHeader } from '@/components/ui/section-header';
 
 export function VisionSection() {
   return (
     <>
-      <h2 className="section-title text-center">Our Vision</h2>
+      <SectionHeader
+        title="Our Vision"
+        description="We're committed to preserving history, educating future generations, and building a community of needlework enthusiasts."
+      />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
         {/* Preserve History Card */}
         <div className="bg-white rounded-lg p-8 text-center shadow-md border border-colonial-navy/10">

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SectionHeader } from '@/components/ui/section-header';
 import { getTeamGroups } from '@/lib/team';
 import { ContentCard } from '@/components/ui/content-card';
 
@@ -11,12 +12,16 @@ export function TeamSection() {
 
   return (
     <>
-      <h2 className="section-title text-center mb-content-sm">Our Team</h2>
-      <div className="lead-text mb-content-md">
-        <em>America's Tapestry</em> is brought to life by dedicated teams of
-        historians, artists, and craftspeople working together to capture
-        stories from our nation's journey towards Independence.
-      </div>
+      <SectionHeader
+        title="Our Team"
+        description={
+          <>
+            <em>America's Tapestry</em> is brought to life by dedicated teams of
+            historians, artists, and craftspeople working together to capture
+            stories from our nation's journey towards Independence.
+          </>
+        }
+      />
 
       <div className="space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

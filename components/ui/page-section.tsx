@@ -25,10 +25,10 @@ export function PageSection({
   background = 'woven-linen',
   container = true,
   className,
-  hasPin = true,
+  hasPin = false,
   spacing = 'default',
-  paddingTop = 'none',
-  paddingBottom = 'small',
+  paddingTop = 'large',
+  paddingBottom = 'large',
 }: PageSectionProps) {
   // Determine padding classes based on spacing props
   const getPaddingClass = () => {

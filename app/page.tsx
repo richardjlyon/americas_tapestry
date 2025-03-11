@@ -39,42 +39,27 @@ export default function Home() {
         </PageSection>
 
         {/* Vision Section */}
-        <PageSection
-          paddingTop="large"
-          paddingBottom="large"
-          background="vintage-paper"
-          hasPin={false}
-        >
+        <PageSection background="vintage-paper">
           <VisionSection />
         </PageSection>
 
         {/* Tapestry Section */}
-        <PageSection paddingTop="large" paddingBottom="small" hasPin={false}>
+        <PageSection>
           <TapestriesSection randomTapestries={randomTapestries} />
         </PageSection>
 
         {/* Team Section */}
-        <PageSection
-          paddingTop="large"
-          paddingBottom="small"
-          hasPin={false}
-          background="vintage-paper"
-        >
+        <PageSection background="vintage-paper">
           <TeamSection />
         </PageSection>
 
         {/* Latest News Section */}
-        <PageSection paddingTop="large" paddingBottom="small" hasPin={false}>
+        <PageSection>
           <LatestNewsSection />
         </PageSection>
 
         {/* Contact Section */}
-        <PageSection
-          paddingTop="large"
-          paddingBottom="small"
-          hasPin={false}
-          background="vintage-paper"
-        >
+        <PageSection background="vintage-paper">
           <GetInTouchSection />
         </PageSection>
       </main>
