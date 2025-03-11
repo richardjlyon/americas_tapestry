@@ -1,5 +1,6 @@
 ---
 name: "Wichelt"
+tier: gold
 website: "https://www.wichelt.com"
 email: "wichelt@wichelt.com"
 ---

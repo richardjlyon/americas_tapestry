@@ -5,7 +5,7 @@ state: "Massachusetts"
 ---
 
 Denise De More is an attorney, information technology specialist and
-founder of the Mayflower Sampler Guild. More recently, in addition to
+founder of the [Mayflower Sampler Guild](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.facebook.com/groups/169203376789145/&ved=2ahUKEwjOn9-juICMAxWAVUEAHScwMPIQFnoECBoQAQ&usg=AOvVaw3f3V1LRqC77vKooUSw08ez). More recently, in addition to
 her everyday professional role, she has taken a leap in a different
 direction and launched DDM Needleworks, designing projects for the
 needlework world. Author of the exhibition catalog, Needlework Samplers
