@@ -51,6 +51,10 @@
 }
 
 @layer components {
+    /* Standardized typography components */
+    .page-heading {
+        @apply text-3xl md:text-4xl lg:text-5xl font-bold text-colonial-navy mb-6 text-center tracking-tight;
+    }
     /* Layout components */
     .section-padding {
         @apply py-12 sm:py-16 md:py-20 lg:py-24;
@@ -59,12 +63,6 @@
     .section-title {
         @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 tracking-tight text-colonial-navy;
     }
-
-    /* Standardized typography components */
-    .page-heading {
-        @apply text-3xl md:text-4xl lg:text-5xl font-bold text-colonial-navy mb-6 text-center tracking-tight;
-    }
-
     .lead-text {
         @apply text-lg md:text-2xl font-medium text-colonial-navy/80 font-serif mb-10 max-w-3xl mx-auto text-center;
     }
@@ -78,7 +76,15 @@
             hover:prose-a:text-colonial-burgundy hover:prose-a:decoration-colonial-burgundy/70
             prose-img:rounded-md prose-img:shadow-md
             prose-hr:border-colonial-navy/20
-            prose-blockquote:border-colonial-gold prose-blockquote:text-colonial-navy/80 prose-blockquote:font-serif prose-blockquote:italic;
+            prose-blockquote:border-colonial-gold
+            prose-blockquote:text-colonial-navy/80
+            prose-blockquote:font-serif
+            prose-blockquote:italic
+            prose-blockquote:leading-tight;
+    }
+
+    .content-typography > p:first-of-type {
+        @apply mt-0;
     }
 
     /* Hero elements */

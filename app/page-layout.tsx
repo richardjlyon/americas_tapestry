@@ -12,14 +12,11 @@ export default function PageLayout({
   fullWidth = false,
 }: PageLayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <Header />
-      {/* The header is fixed positioned, so we need margin-top to prevent overlap */}
-      <div className="mt-16 md:mt-20">
-        <SiteBreadcrumb />
-      </div>
-      <main className="flex-1 pt-4 md:pt-6">{children}</main>
+      <SiteBreadcrumb />
+      <main className="flex-1 woven-linen">{children}</main>
       <Footer />
-    </div>
+    </>
   );
 }

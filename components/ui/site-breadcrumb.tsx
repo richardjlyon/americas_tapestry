@@ -37,7 +37,8 @@ export function SiteBreadcrumb() {
   };
 
   return (
-    <div className="w-full  py-2 ">
+    // The header is fixed positioned, so we need margin-top to prevent overlap
+    <div className="w-full py-3 mt-16 md:mt-20 woven-linen">
       <div className="container mx-auto">
         <Breadcrumb>
           <BreadcrumbList className="text-colonial-navy font-medium">
