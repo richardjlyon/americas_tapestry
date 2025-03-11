@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { cn } from '@/lib/utils';
 import type { TeamMember } from '@/lib/team';
@@ -14,33 +14,37 @@ interface TeamMemberCardProps {
 export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
   // Use the imagePath from the TeamMember object
   const placeholderPath = `/placeholder.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
-  
+
   // Use state to track image loading errors and processed content
   const [imgSrc, setImgSrc] = useState(member.imagePath || placeholderPath);
   const [contentHtml, setContentHtml] = useState('');
-  
+
   // Handle image load error
   const handleImageError = () => {
-    console.error(`Failed to load image: ${member.imagePath} for ${member.name}`);
+    console.error(
+      `Failed to load image: ${member.imagePath} for ${member.name}`,
+    );
     setImgSrc(placeholderPath);
   };
-  
+
   // Process markdown content on component mount
   useEffect(() => {
     const processContent = async () => {
       // Get first paragraph of content
       const firstParagraph = member.content.split('\n\n')[0];
-      
+
       // Convert markdown to HTML
       try {
-        const processedContent = await remark().use(html).process(firstParagraph);
+        const processedContent = await remark()
+          .use(html)
+          .process(firstParagraph);
         setContentHtml(processedContent.toString());
       } catch (error) {
         console.error('Error processing markdown:', error);
         setContentHtml(`<p>${firstParagraph}</p>`);
       }
     };
-    
+
     processContent();
   }, [member.content]);
 
@@ -57,7 +61,7 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
           alt={member.name}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           style={{
-            objectPosition: member.imagePosition || 'center' // Use imagePosition if available, otherwise default to center
+            objectPosition: member.imagePosition || 'center', // Use imagePosition if available, otherwise default to center
           }}
           onError={handleImageError}
         />
@@ -98,8 +102,8 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
           </p>
         )}
 
-        <div 
-          className="mt-3 font-serif text-colonial-navy/80 line-clamp-6 content-typography" 
+        <div
+          className="mt-3 font-serif text-colonial-navy/80 line-clamp-6 content-typography"
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
 

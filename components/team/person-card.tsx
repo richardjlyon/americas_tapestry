@@ -22,11 +22,6 @@ const PersonCard: FC<PersonCardProps> = ({
   personBioHtml,
   width = 'two-thirds',
 }) => {
-  // Determine the object-position class based on the personDetails
-  const objectPositionClass = personDetails.imagePosition
-    ? `object-[${personDetails.imagePosition}]`
-    : 'object-center';
-
   // Determine width class based on the width prop
   const widthClass = {
     full: 'w-full',
@@ -35,7 +30,7 @@ const PersonCard: FC<PersonCardProps> = ({
   }[width];
 
   return (
-    <div className={`mb-16 md:mb-24 ${widthClass}`}>
+    <div className={`mb-4 md:mb-8 ${widthClass}`}>
       <ContentCard className="overflow-hidden p-0">
         <div className="md:flex">
           <div className="md:w-1/3 lg:w-1/4">
@@ -47,7 +42,10 @@ const PersonCard: FC<PersonCardProps> = ({
                   '/team/project-director/stefan-romero/stefan-romero.jpg'
                 }
                 alt={personDetails.name}
-                className={`w-full h-full object-cover ${objectPositionClass}`}
+                className="w-full h-full object-cover"
+                style={{
+                  objectPosition: personDetails.imagePosition || 'center',
+                }}
               />
             </div>
           </div>

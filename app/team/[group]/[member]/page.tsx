@@ -46,14 +46,21 @@ export default async function TeamMemberPage({
     member.imagePath ||
     `/placeholder.svg?height=800&width=600&text=${encodeURIComponent(member.name)}`;
 
+  // Extract only the properties we need, excluding 'state'
+  const personDetails = {
+    name: member.name,
+    role: member.role,
+    imagePosition: member.imagePosition,
+  };
+
   // Render the member content with the data
   return (
-    <PageSection background="colonial-parchment">
-      <h1 className="page-heading md:mb-16">State Director</h1>
+    <PageSection paddingTop="none" paddingBottom="large">
+      <h1 className="page-heading ">{group.name}</h1>
 
       <PersonCard
         personImageSrc={imageSrc}
-        person={member}
+        person={personDetails}
         personBioHtml={directorBioHtml}
       />
     </PageSection>

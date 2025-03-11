@@ -12,7 +12,10 @@ export function GroupContent({ group, members }: GroupContentProps) {
   return (
     <>
       <h1 className="page-heading">{group.name}</h1>
-      <p className="lead-text">{group.longDescription || group.description}</p>
+
+      <div className="lead-text mb-content-md">
+        {group.longDescription || group.description}
+      </div>
 
       {members.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
