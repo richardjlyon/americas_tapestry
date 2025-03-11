@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --colonial-navy: #102542;
+  --colonial-burgundy: #711322;
+  --colonial-gold: #c3a343;
+  --colonial-stone: #d8d3c8;
+  --colonial-linenTexture: #f5f1e6;
+  --colonial-linenWoven: #f7f3ea;
+  --colonial-vintagePaper: #f8f3e6;
+  --colonial-parchment: #f4e9d5;
+}
+
 @layer base {
     * {
         @apply border-border;
@@ -60,10 +71,56 @@
         @apply py-12 sm:py-16 md:py-20 lg:py-24;
     }
     .section-title {
-        @apply text-2xl text-3xl md:text-4xl font-bold py-4 md:py-8 tracking-tight text-colonial-navy;
+        @apply text-2xl text-3xl md:text-4xl font-bold tracking-tight text-colonial-navy;
+    }
+    .page-section {
+        @apply pb-6 md:pt-4 md:pb-12;
+    }
+    .page-section-pin {
+        @apply relative pb-16;
+    }
+    .page-section-pin::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 300px;
+        height: 50px;
+        background-image: url('/needle.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
     }
     .lead-text {
-        @apply text-lg md:text-2xl font-medium text-colonial-navy/80 font-serif mb-10 max-w-3xl mx-auto text-center;
+        @apply text-lg md:text-2xl font-medium text-colonial-navy/80 font-serif max-w-3xl mx-auto text-center;
+    }
+
+    /* Content spacing utilities */
+    .content-spacing-sm > * + * {
+        @apply mt-4 md:mt-6;
+    }
+
+    .content-spacing-md > * + * {
+        @apply mt-6 md:mt-8;
+    }
+
+    .content-spacing-lg > * + * {
+        @apply mt-8 md:mt-12;
+    }
+
+    /* Margin utilities that can be applied directly */
+    .mb-content-sm {
+        @apply mb-4 md:mb-6;
+    }
+
+    .mb-content-md {
+        @apply mb-6 md:mb-8;
+    }
+
+    .mb-content-lg {
+        @apply mb-8 md:mb-12;
     }
 
     /* Rich text content area */
@@ -106,12 +163,12 @@
 
     /* Textured backgrounds */
     .linen-texture {
-        background-color: theme('colors.colonial.linenTexture') !important;
+        background-color: var(--colonial-linenTexture) !important;
         background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23dfcca1' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
     }
 
     .woven-linen {
-        background-color: theme('colors.colonial.linenWoven') !important;
+        background-color: var(--colonial-linenWoven) !important;
         background-image:
             linear-gradient(90deg, rgba(197, 186, 161, 0.05) 50%, transparent 50%),
             linear-gradient(rgba(197, 186, 161, 0.05) 50%, transparent 50%);
@@ -120,17 +177,17 @@
     }
 
     .vintage-paper {
-        background-color: theme('colors.colonial.vintagePaper') !important; /* Colonial vintagePaper color */
+        background-color: var(--colonial-vintagePaper) !important; /* Colonial vintagePaper color */
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
         box-shadow: inset 0 0 80px rgba(185, 161, 126, 0.2) !important;
     }
 
     .authentic-parchment {
-        background-color: theme('colors.colonial.parchment') !important;
+        background-color: var(--colonial-parchment) !important;
         background-image:
             linear-gradient(to right, rgba(209, 186, 145, 0.07) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(209, 186, 145, 0.07) 1px, transparent 1px);
-        background-size: 20px 20px;
+        background-size: 28px 28px;
         position: relative;
     }
 

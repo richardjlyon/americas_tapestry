@@ -145,6 +145,97 @@ This project uses the Tailwind Typography plugin for consistent, beautiful text 
 
 The typography styles are defined in `app/globals.css`. You can modify the `.content-typography` class to adjust font sizes, colors, and spacing.
 
+### Page Spacing System
+
+This project implements a comprehensive spacing system to maintain consistent vertical rhythm throughout the site. The system provides flexible control over spacing between sections and elements.
+
+#### Three-Tier Spacing Approach
+
+1. **Page-Level Spacing**
+   - Wrap page content in spacing containers:
+   ```jsx
+   <div className="content-spacing-lg">
+     {/* Page content */}
+   </div>
+   ```
+   - Available options: `content-spacing-sm`, `content-spacing-md`, `content-spacing-lg`
+
+2. **Section-Level Spacing**
+   - Control padding around page sections:
+   ```jsx
+   <PageSection
+     paddingTop="medium"
+     paddingBottom="large"
+     hasPin={true}
+   >
+     {/* Section content */}
+   </PageSection>
+   ```
+   - Padding options: `none`, `small`, `medium`, `large`, `default`
+   - The `hasPin` prop adds a decorative pin element
+
+3. **Element-Level Spacing**
+   - Apply margin utilities to individual elements:
+   ```jsx
+   <p className="lead-text mb-content-md">
+     This paragraph has medium bottom margin
+   </p>
+   ```
+   - Available margin utilities: `mb-content-sm`, `mb-content-md`, `mb-content-lg`
+
+#### Usage Examples
+
+**Basic Page Structure:**
+```jsx
+export default function ExamplePage() {
+  return (
+    <div className="content-spacing-lg">
+      <h1 className="page-heading">Page Title</h1>
+
+      <p className="lead-text mb-content-lg">
+        Introduction paragraph with large bottom margin
+      </p>
+
+      <PageSection paddingTop="medium" paddingBottom="medium">
+        <div className="content-spacing-md">
+          <h2 className="section-title">Section Title</h2>
+          <p>Section content...</p>
+        </div>
+      </PageSection>
+
+      <PageSection paddingTop="medium" paddingBottom="large">
+        <div className="content-spacing-md">
+          <h2 className="section-title">Another Section</h2>
+          <p>More content...</p>
+        </div>
+      </PageSection>
+    </div>
+  );
+}
+```
+
+#### When to Use Each Spacing Type
+
+- **content-spacing-sm**: For dense content areas with minimal spacing
+- **content-spacing-md**: For standard content sections (most common)
+- **content-spacing-lg**: For spacious layouts and landing pages
+
+- **paddingTop/Bottom="small"**: For compact sections
+- **paddingTop/Bottom="medium"**: For standard sections (most common)
+- **paddingTop/Bottom="large"**: For prominent sections
+- **paddingTop/Bottom="none"**: To remove padding on a specific side
+
+- **mb-content-sm**: For tight grouping of related elements
+- **mb-content-md**: For standard spacing between elements
+- **mb-content-lg**: For emphasizing separation between elements
+
+#### Benefits
+
+- Consistent spacing throughout the site
+- Responsive design with mobile-optimized spacing
+- Flexible control for different page layouts
+- Eliminates spacing inconsistencies between sections
+
 ## Technologies
 
 - Next.js 15.2.1

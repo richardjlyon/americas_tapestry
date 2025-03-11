@@ -28,17 +28,17 @@ export default async function TeamPage() {
     `/placeholder.svg?height=800&width=600&text=${encodeURIComponent(projectDirector?.name || 'Project Director')}`;
 
   return (
-    <>
+    <div className="content-spacing-sm">
       <h1 className="page-heading">Our Team</h1>
 
-      <p className="lead-text text-center">
+      <div className="lead-text mb-content-md">
         America's Tapestry is a collaboration between visual artists, historical
         advisors, and embroidery artisans drawn from each of the original 13
         states.
-      </p>
+      </div>
 
-      <div className="container mx-auto">
-        {/* Project Director Feature */}
+      {/* Project Director */}
+      <PageSection hasPin={true}>
         {projectDirector && (
           <PersonCard
             personImageSrc={directorImageSrc}
@@ -46,12 +46,17 @@ export default async function TeamPage() {
             personBioHtml={directorBioHtml}
           />
         )}
-      </div>
+      </PageSection>
 
-      <PageSection background="colonial-stone">
-        {/* Team Groups */}
-        <div className="space-y-12 md:space-y-16">
+      {/* Team Groups */}
+      <PageSection hasPin={false} paddingBottom="large">
+        <div className="content-spacing-md">
           <h2 className="section-title text-center">Meet Our Team Groups</h2>
+
+          <div className="lead-text mb-content-md">
+            Meet the talented people and prestigious institutions who are
+            working together to create <em>America's Tapestry</em>.
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {teamGroups
@@ -81,6 +86,6 @@ export default async function TeamPage() {
           </div>
         </div>
       </PageSection>
-    </>
+    </div>
   );
 }
