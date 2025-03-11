@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import { ContentCard } from '../ui/content-card';
 
 interface PersonDetails {
@@ -7,19 +7,35 @@ interface PersonDetails {
   imagePosition?: string;
 }
 
+type CardWidth = 'full' | 'two-thirds' | 'half';
+
 interface PersonCardProps {
   personImageSrc?: string;
   person: PersonDetails;
   personBioHtml: string;
+  width?: CardWidth;
 }
 
-const PersonCard: React.FC<PersonCardProps> = ({
+const PersonCard: FC<PersonCardProps> = ({
   personImageSrc: imageSrc,
   person: personDetails,
   personBioHtml,
+  width = 'two-thirds',
 }) => {
+  // Determine the object-position class based on the personDetails
+  const objectPositionClass = personDetails.imagePosition
+    ? `object-[${personDetails.imagePosition}]`
+    : 'object-center';
+
+  // Determine width class based on the width prop
+  const widthClass = {
+    full: 'w-full',
+    'two-thirds': 'w-full lg:w-2/3 mx-auto',
+    half: 'w-full lg:w-1/2 mx-auto',
+  }[width];
+
   return (
-    <div className="mb-16 md:mb-24">
+    <div className={`mb-16 md:mb-24 ${widthClass}`}>
       <ContentCard className="overflow-hidden p-0">
         <div className="md:flex">
           <div className="md:w-1/3 lg:w-1/4">
@@ -31,10 +47,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
                   '/team/project-director/stefan-romero/stefan-romero.jpg'
                 }
                 alt={personDetails.name}
-                className="w-full h-full object-cover"
-                style={{
-                  objectPosition: personDetails.imagePosition || 'center',
-                }}
+                className={`w-full h-full object-cover ${objectPositionClass}`}
               />
             </div>
           </div>
