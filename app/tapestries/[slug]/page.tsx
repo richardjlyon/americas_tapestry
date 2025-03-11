@@ -53,7 +53,9 @@ export default async function TapestryPage({
   return (
     <>
       <h1 className="page-heading">{tapestry.title}</h1>
-      <p className="lead-text text-center">{tapestry.summary}</p>
+
+      <div className="lead-text text-center">{tapestry.summary}</div>
+
       <div className="container mx-auto">
         {/* Tapestry image with full image viewer capability */}
         <FullImageViewer

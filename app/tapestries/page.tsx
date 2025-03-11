@@ -14,13 +14,13 @@ export default function TapestriesPage() {
     <>
       <h1 className="page-heading">America's Tapestry Collection</h1>
 
-      <p className="lead-text text-center">
+      <div className="lead-text text-center">
         Explore our complete collection of tapestries, each telling a lesser
         known, often overlooked contribution to our nation's journey towards
         Independence. These meticulously crafted panels represent the threads
         that, when woven together, form the rich tapestry of our nation's
         history and identity.
-      </p>
+      </div>
 
       {/* Colonial Map Section */}
       <PageSection background="vintage-paper">
