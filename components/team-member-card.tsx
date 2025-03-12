@@ -71,16 +71,16 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
         <p className="font-serif text-colonial-burgundy mb-3">{member.role}</p>
 
         {/* Additional metadata fields if they exist */}
-        {member.state && (
+        {/* {member.state && (
           <p className="font-serif text-sm text-colonial-navy/70 mb-2">
             State: {member.state}
           </p>
-        )}
-        {member.location && (
+        )} */}
+        {/* {member.location && (
           <p className="font-serif text-sm text-colonial-navy/70 mb-2">
             Location: {member.location}
           </p>
-        )}
+        )} */}
         {member.specialization && (
           <p className="font-serif text-sm text-colonial-navy/70 mb-2">
             Specialization: {member.specialization}
