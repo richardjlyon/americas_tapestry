@@ -1,13 +1,19 @@
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { getAllBlogPosts, getBlogPostBySlug, blogCategories } from '@/lib/blog';
+import { BlogPostContent } from '@/components/news/blog-post-content';
+import { RelatedPosts } from '@/components/news/related-posts';
+import { PostNavigation } from '@/components/news/post-navigation';
+import { PostExcerpt } from '@/components/news/post-excerpt';
+import { PostTitle } from '@/components/news/post-title';
+import {
+  getAllBlogPosts,
+  getBlogPostBySlug,
+  getBlogPostsByCategory,
+  getCategoryBySlug,
+} from '@/lib/blog';
+import type { BlogCategory } from '@/lib/blog';
 import { notFound } from 'next/navigation';
-import { formatDate } from '@/lib/utils';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { PageSection } from '@/components/ui/page-section';
-import { ContentCard } from '@/components/ui/content-card';
 
 export async function generateStaticParams() {
   const posts = getAllBlogPosts();
@@ -30,58 +36,42 @@ export default async function BlogPostPage({
   const processedContent = await remark().use(html).process(post.content);
   const contentHtml = processedContent.toString();
 
-  // Find the category info
-  const category = blogCategories.find((cat) => cat.slug === post.category);
+  // Get related posts from the same category
+  const relatedPosts = getBlogPostsByCategory(
+    post.category as BlogCategory,
+  ).filter((p) => p.slug !== post.slug); // Exclude current post
+
+  // Get category info
+  const categoryInfo = getCategoryBySlug(post.category);
 
   return (
-    <PageSection background="colonial-parchment">
-      <div className="mb-6">
-        <Button
-          asChild
-          variant="ghost"
-          className="text-colonial-navy hover:text-colonial-burgundy hover:bg-colonial-parchment/50"
-        >
-          <Link href="/news">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to News
-          </Link>
-        </Button>
-      </div>
+    <>
+      {/* Page Header */}
+      <PostTitle title={post.title} />
+      <PostExcerpt excerpt={post.excerpt} />
 
-      <ContentCard className="overflow-hidden p-0 max-w-4xl mx-auto">
-        {post.image && (
-          <div className="aspect-[16/9] relative">
-            <img
-              src={post.image || '/placeholder.svg'}
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute top-0 right-0 bg-colonial-burgundy text-colonial-parchment text-sm font-medium px-4 py-2 rounded-bl-lg">
-              {category?.name || post.category}
-            </div>
-          </div>
-        )}
+      {/* Navigation Section */}
+      <PageSection background="colonial-parchment">
+        <PostNavigation
+          categoryInfo={categoryInfo}
+          categorySlug={post.category}
+        />
+      </PageSection>
 
-        <div className="p-6 md:p-8">
-          <div className="text-sm text-colonial-navy/60 mb-3">
-            {formatDate(post.date)} {post.author && `• By ${post.author}`}
-          </div>
+      {/* Content Section */}
+      <PageSection background="vintage-paper">
+        <BlogPostContent post={post} contentHtml={contentHtml} />
+      </PageSection>
 
-          <div
-            className="content-typography"
-            dangerouslySetInnerHTML={{ __html: contentHtml }}
+      {/* Related Posts Section */}
+      {relatedPosts.length > 0 && (
+        <PageSection background="colonial-parchment">
+          <RelatedPosts
+            posts={relatedPosts}
+            title={`More ${post.category.replace('-', ' ').replace(/\b\w/g, (l) => l.toUpperCase())}`}
           />
-
-          <div className="mt-8 pt-6 border-t border-colonial-navy/10">
-            <Link
-              href={`/news/category/${post.category}`}
-              className="inline-block px-4 py-2 rounded-full bg-colonial-parchment border border-colonial-navy/20 text-colonial-navy text-sm font-medium hover:bg-colonial-navy/10 transition-colors"
-            >
-              More in {category?.name || post.category}
-            </Link>
-          </div>
-        </div>
-      </ContentCard>
-    </PageSection>
+        </PageSection>
+      )}
+    </>
   );
 }
