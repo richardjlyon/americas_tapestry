@@ -14,7 +14,7 @@ export default function TapestriesPage() {
     <>
       <h1 className="page-heading">America's Tapestry Collection</h1>
 
-      <div className="lead-text text-center">
+      <div className="lead-text">
         Explore our complete collection of tapestries, each telling a lesser
         known, often overlooked contribution to our nation's journey towards
         Independence. These meticulously crafted panels represent the threads

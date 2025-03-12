@@ -8,10 +8,10 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { SupportMerchandise } from '@/components/support-merchandise';
-import { SupportDonations } from '@/components/support-donations';
-import { SupportVolunteer } from '@/components/support-volunteer';
-import { SupportSponsorship } from '@/components/support-sponsorship';
+import { SupportMerchandise } from '@/components/support/support-merchandise';
+import { SupportDonations } from '@/components/support/support-donations';
+import { SupportVolunteer } from '@/components/support/support-volunteer';
+import { SupportSponsorship } from '@/components/support/support-sponsorship';
 import { PageSection } from '@/components/ui/page-section';
 
 export const metadata = {
@@ -22,19 +22,19 @@ export const metadata = {
 
 export default function SupportPage() {
   return (
-    <main className="flex-1">
+    <>
       {/* Hero Section */}
-      <PageSection background="colonial-parchment">
-        <h1 className="page-heading">Support America's Tapestry</h1>
-        <p className="lead-text">
-          Join us in preserving and celebrating America's diverse cultural
-          heritage through our tapestry project. Your support helps us continue
-          our mission of education, preservation, and community building.
-        </p>
-      </PageSection>
+
+      <h1 className="page-heading">Support America's Tapestry</h1>
+
+      <p className="lead-text">
+        Join us in preserving and celebrating America's diverse cultural
+        heritage through our tapestry project. Your support helps us continue
+        our mission of education, preservation, and community building.
+      </p>
 
       {/* Support Options Navigation */}
-      <PageSection background="colonial-stone">
+      <PageSection paddingTop="small">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <Card className="bg-white shadow-md border border-colonial-navy/10 hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
@@ -139,38 +139,22 @@ export default function SupportPage() {
       </PageSection>
 
       {/* Merchandise Section */}
-      <PageSection
-        id="merchandise"
-        background="colonial-stone"
-        className="scroll-mt-24"
-      >
+      <PageSection id="merchandise" paddingTop="none" className="scroll-mt-24">
         <SupportMerchandise />
       </PageSection>
 
       {/* Donations Section */}
-      <PageSection
-        id="donations"
-        background="colonial-parchment"
-        className="scroll-mt-24"
-      >
+      <PageSection id="donations" paddingTop="none" className="scroll-mt-24">
         <SupportDonations />
       </PageSection>
 
       {/* Volunteer Section */}
-      <PageSection
-        id="volunteer"
-        background="colonial-stone"
-        className="scroll-mt-24"
-      >
+      <PageSection id="volunteer" paddingTop="none" className="scroll-mt-24">
         <SupportVolunteer />
       </PageSection>
 
       {/* Sponsorship Section */}
-      <PageSection
-        id="sponsorship"
-        background="colonial-parchment"
-        className="scroll-mt-24"
-      >
+      <PageSection id="sponsorship" paddingTop="none" className="scroll-mt-24">
         <SupportSponsorship />
       </PageSection>
 
@@ -207,6 +191,6 @@ export default function SupportPage() {
           </div>
         </div>
       </PageSection>
-    </main>
+    </>
   );
 }
