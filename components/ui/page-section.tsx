@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 
 export interface PageSectionProps {
   children: ReactNode;
+  id?: string;
   background?:
     | 'linen-texture'
     | 'woven-linen'
@@ -22,6 +23,7 @@ export interface PageSectionProps {
 
 export function PageSection({
   children,
+  id = '',
   background = 'woven-linen',
   container = true,
   className,
@@ -57,6 +59,7 @@ export function PageSection({
 
   return (
     <section
+      id={id}
       className={cn(
         'page-section',
         hasPin && 'page-section-pin',

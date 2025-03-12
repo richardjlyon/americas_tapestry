@@ -27,8 +27,8 @@ export async function sendContactEmail(formData: ContactFormData) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "America's Tapestry <contact@americastapestry.art>",
-      to: 'contact@americastapestry.art',
+      from: "America's Tapestry <hello@americastapestry.com>",
+      to: 'hello@americastapestry.com',
       reply_to: validatedData.email,
       subject: `Contact Form: ${validatedData.subject}`,
       html: `<h1>New Contact Form Submission</h1><p><strong>Name:</strong> ${validatedData.name}</p><p><strong>Email:</strong> ${validatedData.email}</p><p><strong>Subject:</strong> ${validatedData.subject}</p><p><strong>Message:</strong></p><p>${validatedData.message.replace(/\n/g, '<br>')}</p>`,

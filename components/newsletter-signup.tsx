@@ -45,11 +45,32 @@ export function NewsletterSignup() {
       const response = await subscribeToNewsletter(data);
       setFormResponse(response);
 
+      // Log detailed response for debugging
+      fetch('/api/debug-log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ error: { type: 'newsletter_response', data: response } }),
+      }).catch(err => console.error('Failed to log response:', err));
+
       if (response.success) {
         reset();
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      
+      // Log error for debugging
+      fetch('/api/debug-log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          error: { 
+            type: 'newsletter_error', 
+            message: error instanceof Error ? error.message : String(error),
+            stack: error instanceof Error ? error.stack : undefined 
+          } 
+        }),
+      }).catch(err => console.error('Failed to log error:', err));
+
       setFormResponse({
         success: false,
         message: 'An unexpected error occurred. Please try again later.',
