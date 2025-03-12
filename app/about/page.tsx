@@ -13,7 +13,7 @@ export default function AboutPage() {
         Celebrating America's 250th Anniversary.
       </p>
 
-      <PageSection>
+      <PageSection paddingTop="none">
         {/* Hero image */}
         <div className="max-w-5xl mx-auto mb-6 md:mb-12 relative rounded-lg overflow-hidden shadow-xl">
           <Image

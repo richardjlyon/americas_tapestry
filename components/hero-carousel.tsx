@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,7 +14,10 @@ interface HeroCarouselProps {
 
 export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
   // Ensure tapestries is a valid array
-  const validTapestries = Array.isArray(tapestries) ? tapestries : [];
+  const validTapestries = useMemo(() => 
+    Array.isArray(tapestries) ? tapestries : [], 
+    [tapestries]
+  );
   const hasTapestries = validTapestries.length > 0;
 
   // Only init carousel if we have tapestries
@@ -169,8 +172,9 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
             </p>
             <Button
               asChild
+              variant="gold"
               size="lg"
-              className="rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90 font-medium text-base sm:text-lg px-6 py-3 h-auto pointer-events-auto"
+              className="text-base sm:text-lg px-6 py-3 h-auto pointer-events-auto"
             >
               <Link href={`/tapestries/${currentTapestry.slug}`}>
                 Explore the {currentTapestry.title} tapestry

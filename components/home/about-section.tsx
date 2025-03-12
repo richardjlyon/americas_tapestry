@@ -8,7 +8,7 @@ export function AboutSection() {
       className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start"
     >
       <div className="content-typography">
-        <p className="font-medium text-2xl leading-tight  md:text-3xl">
+        <p className="font-bold md:font-medium text-1xl md:text-2xl leading-tight  md:text-3xl">
           In 2026, Americans will celebrate our country's 250th anniversary. To
           commemorate this occasion, <em>America's Tapestry</em> weaves together
           stories from our nation's founding through the medium of embroidery.

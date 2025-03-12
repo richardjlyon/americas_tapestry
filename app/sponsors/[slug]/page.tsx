@@ -44,32 +44,20 @@ export default async function SponsorPage({
   // Define tier colors with fallback
   const tierColors: Record<string, string> = {
     Platinum: 'bg-slate-300 text-slate-900',
-    Gold: 'bg-amber-300 text-amber-900', 
+    Gold: 'bg-amber-300 text-amber-900',
     Silver: 'bg-gray-300 text-gray-900',
     Bronze: 'bg-amber-700 text-amber-50',
     Supporter: 'bg-blue-100 text-blue-800',
   };
 
   // Get tier color or default
-  const tierColor = sponsor.tier && tierColors[sponsor.tier]
-    ? tierColors[sponsor.tier]
-    : 'bg-gray-100 text-gray-800';
+  const tierColor =
+    sponsor.tier && tierColors[sponsor.tier]
+      ? tierColors[sponsor.tier]
+      : 'bg-gray-100 text-gray-800';
 
   return (
-    <PageSection background="colonial-parchment">
-      <div className="mb-6">
-        <Button
-          asChild
-          variant="ghost"
-          className="text-colonial-navy hover:text-colonial-burgundy hover:bg-colonial-parchment/50"
-        >
-          <Link href="/sponsors">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to All Sponsors
-          </Link>
-        </Button>
-      </div>
-
+    <>
       <div className="bg-white rounded-lg shadow-md border border-colonial-navy/10 overflow-hidden max-w-4xl mx-auto">
         <div className="p-6 md:p-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-colonial-navy/10 pb-6">
@@ -86,13 +74,14 @@ export default async function SponsorPage({
                   </span>
                 )}
               </div>
-              
+
               {/* Show metadata if available */}
               {(sponsor.location || sponsor.partnership_year) && (
                 <p className="text-colonial-navy/70">
                   {sponsor.location}
                   {sponsor.location && sponsor.partnership_year && ' • '}
-                  {sponsor.partnership_year && `Partner since ${sponsor.partnership_year}`}
+                  {sponsor.partnership_year &&
+                    `Partner since ${sponsor.partnership_year}`}
                 </p>
               )}
             </div>
@@ -141,6 +130,6 @@ export default async function SponsorPage({
           </div>
         </div>
       </div>
-    </PageSection>
+    </>
   );
 }
