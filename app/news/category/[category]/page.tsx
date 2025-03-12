@@ -35,8 +35,10 @@ export default function CategoryPage({
       <div className="lead-text text-center">{categoryInfo.description}</div>
 
       {/* Category Filter */}
-      <PageSection background="vintage-paper">
-        <h2 className="section-title text-center mb-6">Browse Categories</h2>
+      <PageSection paddingTop="small" paddingBottom="none">
+        <h2 className="section-title text-center mb-6 text-xl">
+          Browse Categories
+        </h2>
         <CategoryPageFilter currentCategory={params.category} />
       </PageSection>
 

@@ -121,23 +121,10 @@ const factSheets: ResourceItem[] = [
 
 export default function EducationalResourcesPage() {
   return (
-    <PageSection background="colonial-parchment">
-      <div className="mb-6">
-        <Button
-          asChild
-          variant="ghost"
-          className="text-colonial-navy hover:text-colonial-burgundy hover:bg-colonial-parchment/50"
-        >
-          <Link href="/resources">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Resources
-          </Link>
-        </Button>
-      </div>
-
+    <>
       <h1 className="page-heading">Educational Resources</h1>
 
-      <p className="lead-text">
+      <p className="lead-text text-center mb-content-lg">
         America's Tapestry offers a variety of educational resources designed
         for teachers, students, and history enthusiasts. These materials are
         crafted to complement our tapestry project and provide deeper insights
@@ -146,55 +133,57 @@ export default function EducationalResourcesPage() {
         settings.
       </p>
 
-      <Tabs defaultValue="lesson-plans" className="w-full">
-        <TabsList className="w-full grid grid-cols-3 mb-8">
-          <TabsTrigger value="lesson-plans">Lesson Plans</TabsTrigger>
-          <TabsTrigger value="activities">Activities</TabsTrigger>
-          <TabsTrigger value="fact-sheets">Fact Sheets</TabsTrigger>
-        </TabsList>
+      <PageSection paddingTop="none">
+        <Tabs defaultValue="lesson-plans" className="w-full">
+          <TabsList className="w-full grid grid-cols-3 mb-8">
+            <TabsTrigger value="lesson-plans">Lesson Plans</TabsTrigger>
+            <TabsTrigger value="activities">Activities</TabsTrigger>
+            <TabsTrigger value="fact-sheets">Fact Sheets</TabsTrigger>
+          </TabsList>
 
-        <TabsContent value="lesson-plans" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {lessonPlans.map((resource, index) => (
-              <ResourceCard key={index} resource={resource} />
-            ))}
-          </div>
-        </TabsContent>
+          <TabsContent value="lesson-plans" className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {lessonPlans.map((resource, index) => (
+                <ResourceCard key={index} resource={resource} />
+              ))}
+            </div>
+          </TabsContent>
 
-        <TabsContent value="activities" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {activities.map((resource, index) => (
-              <ResourceCard key={index} resource={resource} />
-            ))}
-          </div>
-        </TabsContent>
+          <TabsContent value="activities" className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {activities.map((resource, index) => (
+                <ResourceCard key={index} resource={resource} />
+              ))}
+            </div>
+          </TabsContent>
 
-        <TabsContent value="fact-sheets" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {factSheets.map((resource, index) => (
-              <ResourceCard key={index} resource={resource} />
-            ))}
-          </div>
-        </TabsContent>
-      </Tabs>
+          <TabsContent value="fact-sheets" className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {factSheets.map((resource, index) => (
+                <ResourceCard key={index} resource={resource} />
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
 
-      <ContentCard className="mt-12 max-w-3xl mx-auto">
-        <h2 className="section-title">Request Custom Resources</h2>
-        <p className="font-serif text-colonial-navy/80 mb-4">
-          Are you an educator looking for specific materials related to
-          America's Tapestry? We can develop custom resources tailored to your
-          curriculum needs. Please contact our educational outreach team.
-        </p>
-        <Button
-          asChild
-          className="rounded-full bg-colonial-burgundy hover:bg-colonial-burgundy/90"
-        >
-          <Link href="/contact?subject=Educational%20Resources%20Request">
-            Contact Educational Outreach
-          </Link>
-        </Button>
-      </ContentCard>
-    </PageSection>
+        <ContentCard className="mt-12 max-w-3xl mx-auto">
+          <h2 className="section-title">Request Custom Resources</h2>
+          <p className="font-serif text-colonial-navy/80 mb-4">
+            Are you an educator looking for specific materials related to
+            America's Tapestry? We can develop custom resources tailored to your
+            curriculum needs. Please contact our educational outreach team.
+          </p>
+          <Button
+            asChild
+            className="rounded-full bg-colonial-burgundy hover:bg-colonial-burgundy/90"
+          >
+            <Link href="/contact?subject=Educational%20Resources%20Request">
+              Contact Educational Outreach
+            </Link>
+          </Button>
+        </ContentCard>
+      </PageSection>
+    </>
   );
 }
 

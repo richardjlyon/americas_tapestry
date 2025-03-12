@@ -109,23 +109,10 @@ const artefacts: Artefact[] = [
 
 export default function ArtefactsGalleryPage() {
   return (
-    <PageSection background="colonial-parchment">
-      <div className="mb-6">
-        <Button
-          asChild
-          variant="ghost"
-          className="text-colonial-navy hover:text-colonial-burgundy hover:bg-colonial-parchment/50"
-        >
-          <Link href="/resources">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Resources
-          </Link>
-        </Button>
-      </div>
-
+    <>
       <h1 className="page-heading">Related Artefacts Gallery</h1>
 
-      <p className="lead-text">
+      <p className="lead-text text-center mb-content-lg">
         Explore historical items and artefacts that are thematically connected
         to the America's Tapestry project. These items have either inspired our
         tapestry designs or provide important historical context for the stories
@@ -133,79 +120,81 @@ export default function ArtefactsGalleryPage() {
         origin, age, and significance.
       </p>
 
-      <Tabs defaultValue="all" className="w-full">
-        <TabsList className="w-full grid grid-cols-5 mb-8">
-          <TabsTrigger value="all">All Artefacts</TabsTrigger>
-          <TabsTrigger value="textiles">Textiles</TabsTrigger>
-          <TabsTrigger value="documents">Documents</TabsTrigger>
-          <TabsTrigger value="tools">Tools</TabsTrigger>
-          <TabsTrigger value="artwork">Artwork</TabsTrigger>
-        </TabsList>
+      <PageSection paddingTop="none">
+        <Tabs defaultValue="all" className="w-full">
+          <TabsList className="w-full grid grid-cols-5 mb-8">
+            <TabsTrigger value="all">All Artefacts</TabsTrigger>
+            <TabsTrigger value="textiles">Textiles</TabsTrigger>
+            <TabsTrigger value="documents">Documents</TabsTrigger>
+            <TabsTrigger value="tools">Tools</TabsTrigger>
+            <TabsTrigger value="artwork">Artwork</TabsTrigger>
+          </TabsList>
 
-        <TabsContent value="all" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {artefacts.map((artefact, index) => (
-              <ArtefactCard key={index} artefact={artefact} />
-            ))}
-          </div>
-        </TabsContent>
-
-        <TabsContent value="textiles" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {artefacts
-              .filter((artefact) => artefact.category === 'textiles')
-              .map((artefact, index) => (
+          <TabsContent value="all" className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {artefacts.map((artefact, index) => (
                 <ArtefactCard key={index} artefact={artefact} />
               ))}
-          </div>
-        </TabsContent>
+            </div>
+          </TabsContent>
 
-        <TabsContent value="documents" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {artefacts
-              .filter((artefact) => artefact.category === 'documents')
-              .map((artefact, index) => (
-                <ArtefactCard key={index} artefact={artefact} />
-              ))}
-          </div>
-        </TabsContent>
+          <TabsContent value="textiles" className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {artefacts
+                .filter((artefact) => artefact.category === 'textiles')
+                .map((artefact, index) => (
+                  <ArtefactCard key={index} artefact={artefact} />
+                ))}
+            </div>
+          </TabsContent>
 
-        <TabsContent value="tools" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {artefacts
-              .filter((artefact) => artefact.category === 'tools')
-              .map((artefact, index) => (
-                <ArtefactCard key={index} artefact={artefact} />
-              ))}
-          </div>
-        </TabsContent>
+          <TabsContent value="documents" className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {artefacts
+                .filter((artefact) => artefact.category === 'documents')
+                .map((artefact, index) => (
+                  <ArtefactCard key={index} artefact={artefact} />
+                ))}
+            </div>
+          </TabsContent>
 
-        <TabsContent value="artwork" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {artefacts
-              .filter((artefact) => artefact.category === 'artwork')
-              .map((artefact, index) => (
-                <ArtefactCard key={index} artefact={artefact} />
-              ))}
-          </div>
-        </TabsContent>
-      </Tabs>
+          <TabsContent value="tools" className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {artefacts
+                .filter((artefact) => artefact.category === 'tools')
+                .map((artefact, index) => (
+                  <ArtefactCard key={index} artefact={artefact} />
+                ))}
+            </div>
+          </TabsContent>
 
-      <ContentCard className="mt-12 max-w-3xl mx-auto">
-        <h2 className="section-title">Visit Our Museum Partners</h2>
-        <p className="font-serif text-colonial-navy/80 mb-4">
-          Many of these artefacts can be viewed in person at our museum partners
-          across the country. Plan a visit to see these historical treasures up
-          close and learn more about America's textile heritage.
-        </p>
-        <Button
-          asChild
-          className="rounded-full bg-colonial-navy hover:bg-colonial-navy/90"
-        >
-          <Link href="/team/historical-partners">View Museum Partners</Link>
-        </Button>
-      </ContentCard>
-    </PageSection>
+          <TabsContent value="artwork" className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {artefacts
+                .filter((artefact) => artefact.category === 'artwork')
+                .map((artefact, index) => (
+                  <ArtefactCard key={index} artefact={artefact} />
+                ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+
+        <ContentCard className="mt-12 max-w-3xl mx-auto">
+          <h2 className="section-title">Visit Our Museum Partners</h2>
+          <p className="font-serif text-colonial-navy/80 mb-4">
+            Many of these artefacts can be viewed in person at our museum
+            partners across the country. Plan a visit to see these historical
+            treasures up close and learn more about America's textile heritage.
+          </p>
+          <Button
+            asChild
+            className="rounded-full bg-colonial-navy hover:bg-colonial-navy/90"
+          >
+            <Link href="/team/historical-partners">View Museum Partners</Link>
+          </Button>
+        </ContentCard>
+      </PageSection>
+    </>
   );
 }
 
