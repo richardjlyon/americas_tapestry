@@ -28,9 +28,9 @@ export default function TapestriesPage() {
       </PageSection>
 
       {/* Timeline Section */}
-      <PageSection paddingTop="small" background="colonial-parchment">
+      {/* <PageSection paddingTop="small" background="colonial-parchment">
         <InteractiveTimeline tapestries={tapestries} />
-      </PageSection>
+      </PageSection> */}
 
       {/* Data Explorer Section */}
       {/* <ContentCard className="mt-12 p-6 md:p-8">
@@ -45,7 +45,7 @@ export default function TapestriesPage() {
       </ContentCard> */}
 
       {/* All Tapestries Grid */}
-      <PageSection paddingTop="small" background="vintage-paper">
+      <PageSection paddingTop="small">
         <TapestryGrid tapestries={tapestries} />
       </PageSection>
     </>

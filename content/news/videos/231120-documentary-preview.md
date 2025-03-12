@@ -9,7 +9,7 @@ videoUrl: "/video/250305-short-promotional/250305-short-promotional-v2.mp4"
 
 We're excited to share this exclusive preview of our upcoming
 documentary film, "Threads of a Nation: The Making of America's
-Tapestry," which will be released in summer 2024 to coincide with our
+Tapestry," which hope to be released in summer 2026 to coincide with our
 national exhibition tour.
 
 <div class="aspect-w-16 aspect-h-9 my-8">

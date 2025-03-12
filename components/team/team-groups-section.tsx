@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { ContentCard } from '@/components/ui/content-card';
 import { getTeamGroups } from '@/lib/team';
+import { NavyButton } from '../ui/colonial-buttons';
 
 export function TeamGroupsSection() {
   const teamGroups = getTeamGroups();
@@ -31,15 +31,11 @@ export function TeamGroupsSection() {
               <p className="font-serif text-colonial-navy/80 mb-4">
                 {group.description}
               </p>
-              <Button
-                asChild
-                variant="outline"
-                className="rounded-full border-colonial-burgundy text-colonial-burgundy hover:bg-colonial-burgundy hover:text-colonial-parchment"
-              >
+              <NavyButton asChild variant="outline" className="text-sm">
                 <Link href={`/team/${group.slug}`}>
                   View {group.name} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </Button>
+              </NavyButton>
             </ContentCard>
           ))}
       </div>

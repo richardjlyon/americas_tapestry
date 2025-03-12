@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { SectionHeader } from '@/components/ui/section-header';
 import { Mail } from 'lucide-react';
+import { ColonialGoldButton } from '../ui/colonial-buttons';
 
 export function GetInTouchSection() {
   return (
@@ -12,16 +12,15 @@ export function GetInTouchSection() {
       />
 
       <div className="text-center">
-        <Button
+        <ColonialGoldButton
           asChild
-          size="lg"
           variant="outline"
-          className="rounded-full border-colonial-gold text-colonial-gold hover:bg-colonial-gold hover:text-colonial-navy"
+          className="px-6 py-2.5 text-base"
         >
           <Link href="/contact">
             <Mail className="mr-2 h-4 w-4" /> Contact Us
           </Link>
-        </Button>
+        </ColonialGoldButton>
       </div>
     </>
   );

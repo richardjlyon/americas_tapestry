@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { SectionHeader } from '@/components/ui/section-header';
 import { getTeamGroups } from '@/lib/team';
 import { ContentCard } from '@/components/ui/content-card';
+import { NavyButton } from '../ui/colonial-buttons';
 
 export function TeamSection() {
   const teamGroups = getTeamGroups().filter(
@@ -36,30 +36,25 @@ export function TeamSection() {
               <p className="font-serif text-colonial-navy/80 mb-4">
                 {group.description}
               </p>
-              <Button
-                asChild
-                variant="outline"
-                className="rounded-full border-colonial-burgundy text-colonial-burgundy hover:bg-colonial-burgundy hover:text-colonial-parchment"
-              >
+              <NavyButton asChild variant="outline" className="text-sm">
                 <Link href={`/team/${group.slug}`}>
                   Meet Our {group.name} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </Button>
+              </NavyButton>
             </ContentCard>
           ))}
         </div>
 
         <div className="text-center mt-8 md:mt-12">
-          <Button
+          <NavyButton
             asChild
             variant="outline"
-            size="lg"
-            className="rounded-full border-colonial-navy text-colonial-navy hover:bg-colonial-navy hover:text-colonial-parchment"
+            className="px-6 py-2.5 text-base"
           >
             <Link href="/team">
               View Full Team <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-          </Button>
+          </NavyButton>
         </div>
       </div>
     </>

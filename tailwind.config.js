@@ -28,7 +28,7 @@ module.exports = {
         colonial: {
           navy: '#102542', // Deep navy blue - primary brand color
           burgundy: '#711322', // Rich burgundy - accent color
-          gold: '#c3a343', // Muted gold - highlight color
+          gold: '#e8b903', // Bright gold - highlight color
           stone: '#d8d3c8', // Stone/neutral - secondary background
           linenTexture: '#f5f1e6',
           linenWoven: '#f7f3ea',
@@ -36,38 +36,38 @@ module.exports = {
           parchment: '#f4e9d5',
         },
         // System UI colors - mapped to colonial palette
-        border: 'hsl(var(--colonial-stone))',
-        input: 'hsl(var(--colonial-stone))',
-        ring: 'hsl(var(--colonial-gold))',
-        background: 'hsl(var(--colonial-parchment))',
-        foreground: 'hsl(var(--colonial-navy))',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: 'hsl(var(--colonial-navy))',
-          foreground: 'hsl(var(--colonial-parchment))',
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--colonial-burgundy))',
-          foreground: 'hsl(var(--colonial-parchment))',
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         destructive: {
-          DEFAULT: '#d32f2f', // This one isn't in your colonial palette
-          foreground: 'hsl(var(--colonial-parchment))',
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
         },
         muted: {
-          DEFAULT: 'hsl(var(--colonial-stone))',
-          foreground: 'hsl(var(--colonial-navy))',
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
-          DEFAULT: 'hsl(var(--colonial-gold))',
-          foreground: 'hsl(var(--colonial-navy))',
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
         },
         popover: {
-          DEFAULT: 'hsl(var(--colonial-parchment))',
-          foreground: 'hsl(var(--colonial-navy))',
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
         },
         card: {
-          DEFAULT: '#ffffff', // White - not in your colonial palette
-          foreground: 'hsl(var(--colonial-navy))',
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
       },
       borderRadius: {

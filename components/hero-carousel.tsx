@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ColonialGoldButton } from './ui/colonial-buttons';
 import useEmblaCarousel from 'embla-carousel-react';
 import { cn } from '@/lib/utils';
 import type { TapestryEntry } from '@/lib/tapestries';
@@ -170,16 +171,14 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
             <p className="font-serif text-xl sm:text-2xl text-colonial-parchment/90 max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed">
               Be a part of America's 250th Anniversary.
             </p>
-            <Button
+            <ColonialGoldButton
               asChild
-              variant="gold"
-              size="lg"
-              className="text-base sm:text-lg px-6 py-3 h-auto pointer-events-auto"
+              className="text-base py-2.5 px-6 pointer-events-auto"
             >
               <Link href={`/tapestries/${currentTapestry.slug}`}>
                 Explore the {currentTapestry.title} tapestry
               </Link>
-            </Button>
+            </ColonialGoldButton>
           </div>
         </div>
       </div>

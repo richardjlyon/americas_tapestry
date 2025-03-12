@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { SectionHeader } from '@/components/ui/section-header';
 import { BlogCard } from '@/components/blog-card';
 import { FeaturedPost } from '@/components/featured-post';
 import { getFeaturedBlogPosts, getLatestBlogPosts } from '@/lib/blog';
 import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';
+import { NavyButton } from '../ui/colonial-buttons';
 
 export function LatestNewsSection() {
   const featuredPosts = getFeaturedBlogPosts() || [];
@@ -61,16 +61,15 @@ export function LatestNewsSection() {
       )}
 
       <div className="text-center mt-10 md:mt-12">
-        <Button
+        <NavyButton
           asChild
           variant="outline"
-          size="lg"
-          className="rounded-full border-colonial-navy text-colonial-navy hover:bg-colonial-navy hover:text-colonial-parchment"
+          className="px-6 py-2.5 text-base"
         >
           <Link href="/news">
             View All News <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
-        </Button>
+        </NavyButton>
       </div>
     </>
   );

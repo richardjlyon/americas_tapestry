@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { ColonialGoldButton } from './ui/colonial-buttons';
 
 // Navigation items used in both desktop and mobile
 const navigationItems = [
@@ -80,9 +81,9 @@ export function Header() {
           </nav>
 
           {/* Support Button - Desktop */}
-          <Button asChild variant="gold" size="sm" className="hidden md:flex">
+          <ColonialGoldButton asChild className="hidden md:flex text-sm py-1.5 px-4">
             <Link href="/support">Support our project</Link>
-          </Button>
+          </ColonialGoldButton>
 
           {/* Mobile Menu Toggle Button */}
           <button
@@ -126,9 +127,9 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-4 text-center">
-              <Button
+              <ColonialGoldButton
                 asChild
-                className="w-full sm:w-auto rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90 font-bold shadow-lg"
+                className="w-full sm:w-auto text-base"
               >
                 <Link
                   href="/support"
@@ -136,7 +137,7 @@ export function Header() {
                 >
                   Support our project
                 </Link>
-              </Button>
+              </ColonialGoldButton>
             </div>
           </nav>
         </div>
