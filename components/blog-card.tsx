@@ -16,9 +16,10 @@ export function BlogCard({ post, className }: BlogCardProps) {
 
   return (
     <div
-      className={`bg-white rounded-lg shadow-md overflow-hidden border border-colonial-navy/10 h-full flex flex-col ${className}`}
+      className={`vintage-paper rounded-lg shadow-md overflow-hidden border border-colonial-navy/10 h-full flex flex-col ${className}`}
     >
       <div className="aspect-[16/9] relative overflow-hidden">
+        {/* image */}
         <img
           src={
             post.image ||
@@ -27,7 +28,9 @@ export function BlogCard({ post, className }: BlogCardProps) {
           alt={post.title}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
         />
-        <div className="absolute top-0 right-0 bg-colonial-burgundy text-colonial-parchment text-xs font-medium px-3 py-1 rounded-bl-lg">
+
+        {/* content */}
+        <div className="absolute top-0 right-0 text-colonial-parchment text-xs font-medium px-3 py-1 rounded-bl-lg">
           {category?.name || post.category}
         </div>
         {isVideo && (
@@ -38,16 +41,24 @@ export function BlogCard({ post, className }: BlogCardProps) {
           </div>
         )}
       </div>
+
       <div className="p-5 flex-grow flex flex-col">
+        {/* date and author */}
         <div className="text-sm text-colonial-navy/60 mb-2">
           {formatDate(post.date)} {post.author && `• By ${post.author}`}
         </div>
+
+        {/* title */}
         <h3 className="text-xl font-bold text-colonial-navy mb-2">
           {post.title}
         </h3>
+
+        {/* excerpt */}
         <p className="font-serif text-colonial-navy/80 mb-4 line-clamp-3">
           {post.excerpt}
         </p>
+
+        {/* read more */}
         <div className="mt-auto pt-2">
           <Link
             href={`/news/${post.slug}`}

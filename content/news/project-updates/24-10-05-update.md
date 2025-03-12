@@ -1,0 +1,60 @@
+---
+title: "October 2024 Update"
+date: "2024-10-05T10:51:26-05:00"
+excerpt: "A Coby Foundation award, and speaking events."
+image: "/images/sponsors/coby-foundation/coby-foundation-logo.png"
+featured: false
+---
+
+Happy October! Can you believe how fast this fall is flying by?
+
+## What's New?
+
+Drumroll please ... This month, [The Coby
+Foundation](https://cobyfoundation.org/) **has awarded America's
+Tapestry $20,000 to begin production of the panels**. The Foundation
+Director called our team to applaud the project and believes that it
+will be an excellent legacy product of the 2026 Anniversary. To see our
+work recognized at the national level is humbling to say the least!
+
+These funds will go directly towards linen and floss needed to begin
+stitching the panels.
+
+This month, I will be virtually speaking at the [EGA Carolinas Fall
+Retreat](https://www.egacarolinas.org/wp-content/uploads/2024/08/flyer_rev4_8-25-24.pdf)
+on Saturday, October 26. I hope to "see" some of you there!
+
+Please keep a lookout in your inbox for additional speaking events
+scheduled for the Mid-Atlantic & New England Regions. We have found
+this is a great way to spread the word about America's Tapestry to
+ensure maximum representation. We don't want anyone to miss out on this
+opportunity!
+
+## Timeline
+
+States where we have secured historical partners, stitching venues, and
+willing stitchers can begin embroidery as early as January 2025. This
+will allow 18 months for stitching.
+
+Think your state may be ready to begin stitching in January 2025?
+Please send us an email.
+
+## What's Next?
+
+We are continuing conversations with our historical partners in each
+state to design the panels. Each panel's illustration will be completed
+by January 2025. Many of the stories depicted are based on exciting
+contemporary research that will be new to visitors.
+
+Below is a sneak peak of a design for North Carolina. The event
+depicted is the Edenton Tea Party, the first known act of political
+resistance in North America conducted by women. The North Carolina
+Panel has been designed in collaboration with the State Department of
+Natural and Cultural Resources.
+
+**We still need stitchers!** Let us know if you know if you are in
+contact with talented embroiderers from the following states:
+
+- Rhode Island
+- North & South Carolina
+- New Hampshire

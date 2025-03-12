@@ -126,11 +126,20 @@
     /* Rich text content area */
     .content-typography {
         @apply prose prose-lg md:prose-xl max-w-none
-            prose-headings:font-sans prose-headings:text-colonial-navy
-            prose-p:font-serif prose-p:text-colonial-navy/90
-            prose-a:text-colonial-burgundy prose-a:underline prose-a:decoration-colonial-burgundy/30 prose-a:underline-offset-2 prose-a:font-medium
-            hover:prose-a:text-colonial-burgundy hover:prose-a:decoration-colonial-burgundy/70
-            prose-img:rounded-md prose-img:shadow-md
+            prose-headings:font-sans
+            prose-headings:text-colonial-navy
+            prose-h2:text-xl
+            prose-p:font-serif
+            prose-p:text-colonial-navy/90
+            prose-a:text-colonial-burgundy
+            prose-a:underline
+            prose-a:decoration-colonial-burgundy/30
+            prose-a:underline-offset-2
+            prose-a:font-medium
+            hover:prose-a:text-colonial-burgundy
+            hover:prose-a:decoration-colonial-burgundy/70
+            prose-img:rounded-md
+            prose-img:shadow-md
             prose-hr:border-colonial-navy/20
             prose-blockquote:border-colonial-gold
             prose-blockquote:text-colonial-navy/80

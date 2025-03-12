@@ -1,22 +1,22 @@
 ---
-title: "Documentary Preview: The Making of America's Tapestry"
-date: "2023-11-20"
-excerpt: "Watch an exclusive preview of our upcoming documentary film chronicling the creation of America's Tapestry."
+title: "Video: Welcome to America's Tapestry"
+date: "2025-03-11"
+excerpt: "Watch our introductory video."
 featured: false
-image: "/images/news/documentary-preview-thumbnail.jpg"
-author: "Jane Doe"
-videoUrl: "https://www.youtube.com/embed/another-example-id"
+image: "/video/250305-short-promotional/250305-short-promotional-v2-poster-landscape.png"
+videoUrl: "/video/250305-short-promotional/250305-short-promotional-v2.mp4"
 ---
 
-# Documentary Preview: The Making of America's Tapestry
-
-We're excited to share this exclusive preview of our upcoming documentary film, "Threads of a Nation: The Making of America's Tapestry," which will be released in summer 2024 to coincide with our national exhibition tour.
+We're excited to share this exclusive preview of our upcoming
+documentary film, "Threads of a Nation: The Making of America's
+Tapestry," which will be released in summer 2024 to coincide with our
+national exhibition tour.
 
 <div class="aspect-w-16 aspect-h-9 my-8">
-  <iframe 
-    src="https://www.youtube.com/embed/another-example-id" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  <iframe
+    src="https://www.youtube.com/embed/another-example-id"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
     class="w-full h-full rounded-lg shadow-lg"
   ></iframe>
@@ -24,7 +24,12 @@ We're excited to share this exclusive preview of our upcoming documentary film, 
 
 ## About the Documentary
 
-"Threads of a Nation" is a feature-length documentary that chronicles the creation of America's Tapestry from its inception to the completion of the first seven state panels. Directed by award-winning filmmaker Sarah Johnson, the film offers unprecedented behind-the-scenes access to the artists, historians, and community members bringing this monumental project to life.
+"Threads of a Nation" is a feature-length documentary that chronicles
+the creation of America's Tapestry from its inception to the completion
+of the first seven state panels. Directed by award-winning filmmaker
+Sarah Johnson, the film offers unprecedented behind-the-scenes access
+to the artists, historians, and community members bringing this
+monumental project to life.
 
 The documentary explores:
 
@@ -52,4 +57,3 @@ Following its festival run and public release, the documentary will be made avai
 The documentary is being produced by Heritage Film Collective in association with the National Endowment for the Arts and the American Textile History Foundation. The production team has been following the project since 2021, documenting key moments in the creation of each state panel and conducting interviews with participants across the country.
 
 Stay tuned for more updates on the documentary's release and screening events in your area!
-

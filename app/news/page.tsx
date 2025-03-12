@@ -24,21 +24,23 @@ export default function NewsPage() {
         historical insights, and event information.
       </div>
 
+      {/* Category Filter Section */}
+      <PageSection paddingTop="small" paddingBottom="none">
+        <h2 className="section-title text-center mb-6 text-xl">
+          Browse by Category
+        </h2>
+        <CategoryFilter />
+      </PageSection>
+
       {/* Featured Posts Section (if any) */}
       {featuredPosts.length > 0 && (
-        <PageSection background="vintage-paper">
+        <PageSection paddingTop="small" paddingBottom="small">
           <FeaturedPosts posts={featuredPosts} />
         </PageSection>
       )}
 
-      {/* Category Filter Section */}
-      <PageSection background="colonial-parchment">
-        <h2 className="section-title text-center mb-6">Browse by Category</h2>
-        <CategoryFilter />
-      </PageSection>
-
       {/* All Posts Grid */}
-      <PageSection background="vintage-paper">
+      <PageSection paddingTop="none">
         <h2 className="section-title text-center mb-6">Latest Articles</h2>
         <NewsGrid posts={allPosts} />
       </PageSection>

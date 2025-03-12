@@ -50,16 +50,8 @@ export default async function BlogPostPage({
       <PostTitle title={post.title} />
       <PostExcerpt excerpt={post.excerpt} />
 
-      {/* Navigation Section */}
-      <PageSection background="colonial-parchment">
-        <PostNavigation
-          categoryInfo={categoryInfo}
-          categorySlug={post.category}
-        />
-      </PageSection>
-
       {/* Content Section */}
-      <PageSection background="vintage-paper">
+      <PageSection paddingTop="none" paddingBottom="none">
         <BlogPostContent post={post} contentHtml={contentHtml} />
       </PageSection>
 

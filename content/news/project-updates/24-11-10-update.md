@@ -1,0 +1,92 @@
+---
+title: "November 2024 Update"
+date: "2024-11-10T10:51:26-05:00"
+excerpt: "An exciting partnership with William & Mary."
+image: "/images/news/images/atlanta-history-centre.jpg"
+featured: false
+---
+
+Dear All,
+
+Happy November! I hope you have been well and are preparing for the
+upcoming holiday festivities. As we all know, they will be here before
+you know it!
+
+## What's New
+
+We remain thrilled that the [Coby
+Foundation](https://cobyfoundation.org/) has awarded us $20,000 to
+begin work on the panels next spring. This has given the project much
+needed momentum for "lift off!"
+
+It was an honor to speak with some of you at the EGA Carolinas Fall
+Retreat this month. I hope it provided some inspiration and energy to
+bring the project to the Carolinas Region.
+
+We have received word that William & Mary will debut the 13 panels in
+July 2026 at their insitution's renowned [Muscarelle Art
+Museum](https://muscarelle.wm.edu/about/) in Williamsburg, Virginia.
+The Muscarelle is one of the South's most prominent art museums
+featuring over 7,000 works of art collected over the course of 300
+years.
+
+Their current multi-million dollar expansion will triple the size of
+the museum and will beautifully present America's Tapestry to the
+world.
+
+![Muscarelle Art Museum](/images/news/images/muscarelle-art-museum.jpg)
+
+## November Showcase - Georgia
+
+As we are quickly approaching 2025, we will be featuring different
+states in our newsletter to present their progress thus far. This month
+is the state of [Georgia](/tapestries/georgia).
+
+![Georgia
+Tapestry](/images/tapestries/georgia/georgia-tapestry-main.webp)
+
+The Georgia Panel depicts the **Chasseurs Volontaires de
+Saint-Domingue**, the Creole militia unit that participated in the
+Battle of Savannah in 1779. The unit was made up of both enslaved and
+free blacks from Saint-Domingue who fought either for income or for
+their freedom. The Battle of Savannah was one of the most diverse
+battles of the Revolution, featuring French, Creole, Native American,
+English, Scottish, and Colonial forces. This panel was designed in
+collaboration with the [Coastal Heritage
+Society](https://chsgeorgia.org/) of Savannah.
+
+The Georgia Panel will be stitched at the [Atlanta History
+Center](https://www.atlantahistorycenter.com/), a premier museum and
+research center of the South. The Museum holds one of the largest
+archives of Civil War artifacts in the U.S. Stitchers will work in the
+museum's state-of-the-art rotunda, allowing all visitors to engage with
+both the panel's history as well as the stitchers to learn about their
+organization.
+
+Our Georgia Director is [Deborah
+Berger](/team/state-directors/deborah-berger), EGA National Director of
+Education. Deborah is mobilizing stitchers from all needlework
+organizations in the greater Atlanta area to work on the project.
+
+## Timeline
+
+We anticipate for a minimum of three states to begin stitching in
+January, with the remaining 10 to begin later in spring 2025.
+
+## What's Next?
+
+We are busy finalizing designs for each state. Next month we will
+feature New Jersey and the role of the Ladies of Trenton, who
+fundraised an astounding $15,000 for the Patriot Cause.
+
+## ATTENTION - Stitchers Needed!
+
+That's right - we are still seeking talented stitchers from the
+following states. Think you know the right person or organization? Send
+them our info!
+
+_Rhode Island_ _North & South Carolina_ _New Hampshire_
+
+## Need to Get in Touch?
+
+We want to hear from YOU! Contact us [here](/contact).
