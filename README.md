@@ -243,3 +243,5 @@ export default function ExamplePage() {
 - TypeScript
 - Tailwind CSS
 - Tailwind Typography Plugin
+
+.
