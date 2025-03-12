@@ -31,7 +31,7 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
   return (
     <Link
       href={`/tapestries/${tapestry.slug}`}
-      className="group cursor-pointer overflow-hidden rounded-lg bg-colonial-parchment shadow-md transition-all hover:shadow-lg border border-colonial-navy/10 relative"
+      className="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-lg border border-colonial-navy/10 relative"
     >
       <div className="aspect-[4/3] overflow-hidden">
         <div

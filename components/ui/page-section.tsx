@@ -40,7 +40,7 @@ export function PageSection({
 
     const topClass = {
       none: 'pt-0',
-      small: 'pt-6 md:pt-8',
+      small: 'pt-3 md:pt-8',
       medium: 'pt-8 md:pt-12',
       large: 'pt-12 md:pt-16',
       default: 'pt-12 md:pt-16 lg:pt-20',
@@ -59,7 +59,7 @@ export function PageSection({
 
   return (
     <section
-      id={id}
+      {...(id && { id })}
       className={cn(
         'page-section',
         hasPin && 'page-section-pin',

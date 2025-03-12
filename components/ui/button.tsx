@@ -4,12 +4,18 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
+// Common button styles that can be shared
+const colonialButtonBase =
+  'rounded-full border shadow-md transition-all duration-300 hover:bg-colonial-navy hover:border-colonial-navy hover:text-colonial-parchment';
+
 const buttonVariants = cva(
   'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
         default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+        primary: `${colonialButtonBase} bg-colonial-burgundy text-colonial-parchment border-colonial-burgundy`,
+        gold: `${colonialButtonBase} bg-colonial-gold hover:bg-colonial-gold/25% text-colonial-navy border-colonial-gold`,
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         outline:

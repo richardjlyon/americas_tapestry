@@ -11,17 +11,19 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function TeamGroupPage({ params }: { params: { group: string } }) {
+export default async function TeamGroupPage({
+  params,
+}: { params: { group: string } }) {
   // Use a server action to fetch the data
   const { group, members } = await getTeamData(params.group);
-  
+
   if (!group) {
     notFound();
   }
-  
+
   // Render the content wrapped in a page section (consistent with main team page)
   return (
-    <PageSection background="colonial-parchment">
+    <PageSection paddingTop="none" background="colonial-parchment">
       <GroupContent group={group} members={members} />
     </PageSection>
   );

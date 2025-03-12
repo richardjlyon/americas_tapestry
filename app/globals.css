@@ -62,6 +62,11 @@
 }
 
 @layer components {
+
+    .button-primary {
+        @apply rounded-full bg-colonial-burgundy border-colonial-navy text-colonial-linenTexture hover:bg-colonial-navy hover:text-colonial-parchment;
+    }
+
     /* Standardized typography components */
     .page-heading {
         @apply text-3xl md:text-4xl lg:text-5xl font-bold text-colonial-navy mb-6 text-center tracking-tight;

@@ -34,32 +34,32 @@ export default function Home() {
         <HeroCarousel tapestries={randomTapestries} />
 
         {/* About Section */}
-        <PageSection paddingTop="large" hasPin={false}>
+        <PageSection paddingTop="small" hasPin={false}>
           <AboutSection />
         </PageSection>
 
         {/* Vision Section */}
-        <PageSection background="vintage-paper">
+        <PageSection paddingTop="medium" background="vintage-paper">
           <VisionSection />
         </PageSection>
 
         {/* Tapestry Section */}
-        <PageSection>
+        <PageSection paddingTop="medium">
           <TapestriesSection randomTapestries={randomTapestries} />
         </PageSection>
 
         {/* Team Section */}
-        <PageSection background="vintage-paper">
+        <PageSection paddingTop="medium" background="vintage-paper">
           <TeamSection />
         </PageSection>
 
         {/* Latest News Section */}
-        <PageSection>
+        <PageSection paddingTop="medium">
           <LatestNewsSection />
         </PageSection>
 
         {/* Contact Section */}
-        <PageSection background="vintage-paper">
+        <PageSection paddingTop="medium" background="vintage-paper">
           <GetInTouchSection />
         </PageSection>
       </main>

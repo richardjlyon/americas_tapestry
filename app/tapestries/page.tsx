@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { TapestryCard } from '@/components/tapestry-card';
+import { TapestryCard } from '@/components/tapestries/tapestry-card';
 import { InteractiveColoniesMap } from '@/components/tapestries/interactive-colonies-map';
 import { InteractiveTimeline } from '@/components/tapestries/interactive-timeline';
 import { TapestryGrid } from '@/components/tapestries/tapestry-grid';
@@ -23,12 +23,12 @@ export default function TapestriesPage() {
       </div>
 
       {/* Colonial Map Section */}
-      <PageSection background="vintage-paper">
+      <PageSection background="vintage-paper" paddingTop="medium">
         <InteractiveColoniesMap tapestries={tapestries} />
       </PageSection>
 
       {/* Timeline Section */}
-      <PageSection background="colonial-parchment">
+      <PageSection paddingTop="small" background="colonial-parchment">
         <InteractiveTimeline tapestries={tapestries} />
       </PageSection>
 
@@ -45,7 +45,7 @@ export default function TapestriesPage() {
       </ContentCard> */}
 
       {/* All Tapestries Grid */}
-      <PageSection background="vintage-paper">
+      <PageSection paddingTop="small" background="vintage-paper">
         <TapestryGrid tapestries={tapestries} />
       </PageSection>
     </>

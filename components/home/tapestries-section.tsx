@@ -1,4 +1,4 @@
-import { TapestryCard } from '@/components/tapestry-card';
+import { TapestryCard } from '@/components/tapestries/tapestry-card';
 import { Button } from '@/components/ui/button';
 import { SectionHeader } from '@/components/ui/section-header';
 import { ArrowRight } from 'lucide-react';
@@ -36,12 +36,7 @@ export function TapestriesSection({
       </div>
 
       <div className="text-center mt-10 md:mt-12">
-        <Button
-          asChild
-          variant="outline"
-          size="lg"
-          className="rounded-full border-colonial-navy text-colonial-navy hover:bg-colonial-navy hover:text-colonial-parchment"
-        >
+        <Button asChild variant="primary" size="lg">
           <Link href="/tapestries">
             Explore All Thirteen Colonies{' '}
             <ArrowRight className="ml-2 h-4 w-4" />
