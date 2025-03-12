@@ -172,7 +172,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
               size="lg"
               className="rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90 font-medium text-base sm:text-lg px-6 py-3 h-auto pointer-events-auto"
             >
-              <Link href={`/tapestry/${currentTapestry.slug}`}>
+              <Link href={`/tapestries/${currentTapestry.slug}`}>
                 Explore the {currentTapestry.title} tapestry
               </Link>
             </Button>
