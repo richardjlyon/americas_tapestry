@@ -1,139 +1,63 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Map, {
+  Source,
+  Layer,
+  NavigationControl,
+  Popup,
+  MapRef,
+  LayerProps,
+  MapLayerMouseEvent,
+} from 'react-map-gl/mapbox';
 import type { TapestryEntry, TapestryStatus } from '@/lib/tapestries';
 import { SectionHeader } from '@/components/ui/section-header';
-
-// Original 13 colonies with their current state abbreviations, names, and tapestry slugs
-const originalColonies = [
-  {
-    id: 'DE',
-    name: 'Delaware',
-    slug: 'delaware',
-    details: 'First state to ratify the Constitution (1787)',
-    path: 'M825,240 L830,230 L835,240 L830,250 L825,240',
-    labelX: 830,
-    labelY: 240,
-  },
-  {
-    id: 'PA',
-    name: 'Pennsylvania',
-    slug: 'pennsylvania',
-    details:
-      'Home to Independence Hall where the Declaration of Independence was signed',
-    path: 'M780,210 L825,200 L820,220 L775,230 L780,210',
-    labelX: 800,
-    labelY: 215,
-  },
-  {
-    id: 'NJ',
-    name: 'New Jersey',
-    slug: 'new-jersey',
-    details: 'Third state to ratify the Constitution',
-    path: 'M835,220 L840,210 L845,220 L840,235 L835,220',
-    labelX: 840,
-    labelY: 220,
-  },
-  {
-    id: 'GA',
-    name: 'Georgia',
-    slug: 'georgia',
-    details: 'Southernmost of the original 13 colonies',
-    path: 'M800,320 L820,310 L825,330 L805,340 L800,320',
-    labelX: 810,
-    labelY: 325,
-  },
-  {
-    id: 'CT',
-    name: 'Connecticut',
-    slug: 'connecticut',
-    details: "Known as the 'Constitution State'",
-    path: 'M840,195 L850,190 L855,200 L845,205 L840,195',
-    labelX: 847,
-    labelY: 197,
-  },
-  {
-    id: 'MA',
-    name: 'Massachusetts',
-    slug: 'massachusetts',
-    details: 'Site of the Boston Tea Party',
-    path: 'M830,180 L860,170 L865,190 L840,200 L830,180',
-    labelX: 845,
-    labelY: 185,
-  },
-  {
-    id: 'MD',
-    name: 'Maryland',
-    slug: 'maryland',
-    details: 'Named after Queen Henrietta Maria',
-    path: 'M810,240 L825,235 L830,245 L815,250 L810,240',
-    labelX: 820,
-    labelY: 242,
-  },
-  {
-    id: 'SC',
-    name: 'South Carolina',
-    slug: 'south-carolina',
-    details: 'Originally part of a single colony with North Carolina',
-    path: 'M810,290 L830,280 L835,300 L815,310 L810,290',
-    labelX: 820,
-    labelY: 295,
-  },
-  {
-    id: 'NH',
-    name: 'New Hampshire',
-    slug: 'new-hampshire',
-    details: 'Named after Hampshire, England',
-    path: 'M840,165 L855,160 L860,175 L845,180 L840,165',
-    labelX: 850,
-    labelY: 170,
-  },
-  {
-    id: 'VA',
-    name: 'Virginia',
-    slug: 'virginia',
-    details: 'Birthplace of eight U.S. presidents',
-    path: 'M790,250 L820,240 L825,260 L795,270 L790,250',
-    labelX: 805,
-    labelY: 255,
-  },
-  {
-    id: 'NY',
-    name: 'New York',
-    slug: 'new-york',
-    details: 'Originally a Dutch colony called New Netherland',
-    path: 'M810,180 L840,170 L845,190 L815,200 L810,180',
-    labelX: 825,
-    labelY: 185,
-  },
-  {
-    id: 'NC',
-    name: 'North Carolina',
-    slug: 'north-carolina',
-    details: 'Site of the first English attempts at colonization',
-    path: 'M800,270 L825,260 L830,280 L805,290 L800,270',
-    labelX: 815,
-    labelY: 275,
-  },
-  {
-    id: 'RI',
-    name: 'Rhode Island',
-    slug: 'rhode-island',
-    details:
-      'Founded by Roger Williams after being banished from Massachusetts',
-    path: 'M855,195 L860,190 L865,195 L860,200 L855,195',
-    labelX: 860,
-    labelY: 195,
-  },
-];
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, DEFAULT_CENTER, DEFAULT_ZOOM, MAP_BOUNDS } from '@/lib/mapbox-config';
 
 // Status color mapping
 const statusColors = {
   'Not Started': '#102542', // colonial-navy
   Designed: '#5a67d8', // indigo-500
-  'In Production': '#851e3e', // colonial-burgundy
-  Finished: '#c3a343', // colonial-gold
+  'In Production': '#711322', // colonial-burgundy
+  Finished: '#e8b903', // colonial-gold (updated)
+};
+
+// Define layer styles
+const fillLayer: LayerProps = {
+  id: 'colonies-fill',
+  type: 'fill',
+  paint: {
+    'fill-opacity': 0.6,
+    'fill-color': [
+      'match',
+      ['get', 'status'],
+      'Finished', statusColors.Finished,
+      'In Production', statusColors['In Production'],
+      'Designed', statusColors.Designed,
+      statusColors['Not Started'] // default
+    ],
+  },
+};
+
+const lineLayer: LayerProps = {
+  id: 'colonies-outline',
+  type: 'line',
+  paint: {
+    'line-color': '#f3e9d2',
+    'line-width': 1,
+  },
+};
+
+const hoverLineLayer: LayerProps = {
+  id: 'colonies-hover-outline',
+  type: 'line',
+  source: 'hover',
+  paint: {
+    'line-color': '#e8b903',
+    'line-width': 2,
+  },
 };
 
 interface InteractiveColoniesMapProps {
@@ -144,72 +68,162 @@ export function InteractiveColoniesMap({
   tapestries,
 }: InteractiveColoniesMapProps) {
   const router = useRouter();
-  const [hoveredColony, setHoveredColony] = useState<string | null>(null);
-  const [selectedColony, setSelectedColony] = useState<
-    (typeof originalColonies)[0] | null
-  >(null);
-  const [colonyTapestries, setColonyTapestries] = useState<
-    Record<string, { slug: string; status: TapestryStatus }>
-  >({});
+  const mapRef = useRef<MapRef>(null);
+  const [geoJsonData, setGeoJsonData] = useState<any>(null);
+  const [hoveredColony, setHoveredColony] = useState<any>(null);
+  const [selectedColony, setSelectedColony] = useState<any>(null);
   const [isClient, setIsClient] = useState(false);
 
-  // Load tapestries and map them to colonies
+  // Load GeoJSON data for colonies
   useEffect(() => {
     setIsClient(true);
-
-    const loadTapestries = () => {
+    
+    const fetchColoniesData = async () => {
       try {
-        console.log('Mapping tapestries to colonies:', tapestries);
-
-        // Directly map each colony to its status based on the slug
-        const tapestryMap: Record<
-          string,
-          { slug: string; status: TapestryStatus }
-        > = {};
-
-        // First, set default statuses for all colonies
-        for (const colony of originalColonies) {
-          // Find matching tapestry by slug
-          const tapestry = tapestries.find((t) => t.slug === colony.slug);
-
-          if (tapestry) {
-            console.log(`Found tapestry for ${colony.name}:`, tapestry);
-            tapestryMap[colony.id] = {
-              slug: colony.slug,
-              status: tapestry.status,
+        const response = await fetch('/data/gz_2010_us_040_00_500k.geojson');
+        const data = await response.json();
+        
+        // Map of state FIPS or abbreviations to slugs for the 13 colonies
+        const colonyMapping: {[key: string]: string} = {
+          'Delaware': 'delaware',
+          'Pennsylvania': 'pennsylvania',
+          'New Jersey': 'new-jersey',
+          'Georgia': 'georgia',
+          'Connecticut': 'connecticut',
+          'Massachusetts': 'massachusetts',
+          'Maryland': 'maryland',
+          'South Carolina': 'south-carolina',
+          'New Hampshire': 'new-hampshire',
+          'Virginia': 'virginia',
+          'New York': 'new-york',
+          'North Carolina': 'north-carolina',
+          'Rhode Island': 'rhode-island',
+        };
+        
+        // Filter to only include the 13 original colonies
+        const originalColonies = data.features.filter((feature: any) => {
+          // Check if this is one of the 13 original colonies by name
+          return colonyMapping[feature.properties.NAME] !== undefined;
+        });
+        
+        // Add tapestry status to each feature
+        const enhancedData = {
+          type: "FeatureCollection",
+          features: originalColonies.map((feature: any) => {
+            const stateName = feature.properties.NAME;
+            const slug = colonyMapping[stateName];
+            const tapestry = tapestries.find(t => t.slug === slug);
+            
+            return {
+              ...feature,
+              properties: {
+                ...feature.properties,
+                name: stateName,
+                slug: slug,
+                status: tapestry?.status || 'Not Started',
+                details: getColonyDetails(stateName),
+              },
             };
-          } else {
-            // Default status if no tapestry found
-            tapestryMap[colony.id] = {
-              slug: colony.slug,
-              status: 'Not Started',
-            };
-          }
-        }
-
-        console.log('Final colony tapestry map:', tapestryMap);
-        setColonyTapestries(tapestryMap);
+          }),
+        };
+        
+        console.log("Processed colonies data:", enhancedData);
+        setGeoJsonData(enhancedData);
       } catch (error) {
-        console.error('Error mapping tapestries:', error);
+        console.error('Error loading colonies GeoJSON:', error);
       }
     };
-
-    loadTapestries();
+    
+    // Helper function to provide colony details
+    const getColonyDetails = (stateName: string): string => {
+      const details: {[key: string]: string} = {
+        'Delaware': 'First state to ratify the Constitution (1787)',
+        'Pennsylvania': 'Home to Independence Hall where the Declaration of Independence was signed',
+        'New Jersey': 'Third state to ratify the Constitution',
+        'Georgia': 'Southernmost of the original 13 colonies',
+        'Connecticut': "Known as the 'Constitution State'",
+        'Massachusetts': 'Site of the Boston Tea Party',
+        'Maryland': 'Named after Queen Henrietta Maria',
+        'South Carolina': 'Originally part of a single colony with North Carolina',
+        'New Hampshire': 'Named after Hampshire, England',
+        'Virginia': 'Birthplace of eight U.S. presidents',
+        'New York': 'Originally a Dutch colony called New Netherland',
+        'North Carolina': 'Site of the first English attempts at colonization',
+        'Rhode Island': 'Founded by Roger Williams after being banished from Massachusetts',
+      };
+      
+      return details[stateName] || '';
+    };
+    
+    fetchColoniesData();
   }, [tapestries]);
 
-  // Check which colonies have tapestries
-  const hasTapestry = (colonyId: string) => {
-    try {
-      return !!colonyTapestries[colonyId];
-    } catch (error) {
-      return false;
+  // Create a GeoJSON source for the hovered colony
+  const hoverData = useMemo(() => {
+    if (!hoveredColony) return null;
+    return {
+      type: 'FeatureCollection',
+      features: [hoveredColony],
+    };
+  }, [hoveredColony]);
+
+  // State for popup coordinates
+  const [popupCoords, setPopupCoords] = useState<{lng: number, lat: number} | null>(null);
+
+  // Handle mouse move over the map
+  const onMouseMove = useCallback((event: MapLayerMouseEvent) => {
+    if (!event.features || event.features.length === 0) {
+      setHoveredColony(null);
+      setPopupCoords(null);
+      return;
     }
-  };
+    
+    const hoveredFeature = event.features[0];
+    if (hoveredFeature.layer.id === 'colonies-fill') {
+      setHoveredColony(hoveredFeature);
+      setPopupCoords({
+        lng: event.lngLat.lng,
+        lat: event.lngLat.lat
+      });
+    }
+  }, []);
+
+  // Handle mouse leave
+  const onMouseLeave = useCallback(() => {
+    setHoveredColony(null);
+    setPopupCoords(null);
+  }, []);
+
+  // Handle click on colony
+  const onColonyClick = useCallback((event: MapLayerMouseEvent) => {
+    if (!event.features || event.features.length === 0) return;
+    
+    const clickedFeature = event.features[0];
+    if (clickedFeature.layer.id === 'colonies-fill') {
+      const colony = clickedFeature.properties;
+      setSelectedColony(colony);
+      
+      if (colony.slug) {
+        const tapestry = tapestries.find(t => t.slug === colony.slug);
+        if (tapestry) {
+          router.push(`/tapestries/${colony.slug}`);
+        }
+      }
+    }
+  }, [router, tapestries]);
+
+  // Reset map view
+  const resetView = useCallback(() => {
+    mapRef.current?.fitBounds(MAP_BOUNDS as [[number, number], [number, number]], {
+      padding: 40,
+      duration: 1000,
+    });
+  }, []);
 
   // Don't render the map on the server to avoid hydration issues
   if (!isClient) {
     return (
-      <div className="flex h-[400px] w-full items-center justify-center rounded-lg bg-colonial-parchment/50">
+      <div className="flex h-[500px] w-full items-center justify-center rounded-lg bg-colonial-parchment/50">
         <p className="text-colonial-navy/70">Loading map...</p>
       </div>
     );
@@ -222,212 +236,86 @@ export function InteractiveColoniesMap({
         description="Explore the tapestries representing the original thirteen colonies. Click on a colony to view its tapestry."
       />
 
-      <div className="mx-auto mt-8 w-full max-w-3xl">
-        <div className="relative w-full" style={{ paddingBottom: '75%' }}>
-          <svg
-            viewBox="700 140 180 280"
-            className="absolute inset-0 h-full w-full"
-            aria-labelledby="colonial-map-title"
-            role="img"
-          >
-            <title id="colonial-map-title">
-              Map of the Original Thirteen Colonies
-            </title>
-            <desc>
-              Interactive map of the original thirteen American colonies. Click
-              on a colony to view its tapestry.
-            </desc>
-
-            {/* Background */}
-            <rect x="700" y="140" width="180" height="280" fill="#f3e9d2" />
-
-            {/* Ocean */}
-            <path
-              d="M880,140 L880,420 L700,420 L700,140 L880,140 Z M830,180 L860,170 L865,190 L870,200 L860,210 L830,210 L840,230 L830,250 L835,270 L825,275 L805,280 L790,310 L780,340 L770,370 L760,410 L730,390 L740,350 L750,320 L760,290 L770,240 L790,210 L800,180 L830,160 L860,150 L865,170 L830,180"
-              fill="#d8e4f1"
-            />
-
-            {/* Colonies */}
-            {originalColonies.map((colony) => {
-              const tapestryInfo = colonyTapestries[colony.id];
-              const status = tapestryInfo?.status || 'Not Started';
-              const isHovered = hoveredColony === colony.id;
-
-              return (
-                <g key={colony.id}>
-                  <path
-                    d={colony.path}
-                    fill={isHovered ? '#c3a343' : statusColors[status]}
-                    stroke="#f3e9d2"
-                    strokeWidth="1"
-                    className="cursor-pointer transition-all duration-300 hover:fill-colonial-gold"
-                    onMouseEnter={() => setHoveredColony(colony.id)}
-                    onMouseLeave={() => setHoveredColony(null)}
-                    onClick={() => {
-                      setSelectedColony(colony);
-                      if (hasTapestry(colony.id)) {
-                        router.push(`/tapestries/${colony.slug}`);
-                      }
-                    }}
-                    onKeyUp={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        setSelectedColony(colony);
-                        if (hasTapestry(colony.id)) {
-                          router.push(`/tapestries/${colony.slug}`);
-                        }
-                      }
-                    }}
-                    aria-label={`${colony.name} - ${status}`}
-                    role="button"
-                    tabIndex={0}
-                  />
-
-                  {/* Labels for larger screens */}
-                  <text
-                    x={colony.labelX}
-                    y={colony.labelY}
-                    textAnchor="middle"
-                    fill="#f3e9d2"
-                    fontSize="6"
-                    fontWeight="bold"
-                    className="pointer-events-none hidden sm:block"
-                    style={{ textShadow: '1px 1px 1px rgba(0,0,0,0.5)' }}
-                  >
-                    {colony.name}
-                  </text>
-                </g>
-              );
-            })}
-
-            {/* Map title */}
-            <text
-              x="790"
-              y="155"
-              textAnchor="middle"
-              fill="#102542"
-              fontSize="8"
-              fontWeight="bold"
-              className="pointer-events-none"
+      <div className="mx-auto mt-8 w-full max-w-4xl">
+        <div className="relative w-full rounded-lg overflow-hidden shadow-md" style={{ height: '500px' }}>
+          {geoJsonData && (
+            <Map
+              ref={mapRef}
+              mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
+              initialViewState={{
+                longitude: DEFAULT_CENTER.longitude,
+                latitude: DEFAULT_CENTER.latitude,
+                zoom: DEFAULT_ZOOM,
+              }}
+              mapStyle={MAPBOX_STYLE}
+              interactiveLayerIds={['colonies-fill']}
+              onMouseMove={onMouseMove}
+              onMouseLeave={onMouseLeave}
+              onClick={onColonyClick}
+              onLoad={resetView}
             >
-              The Thirteen Colonies
-            </text>
-
-            {/* Compass rose */}
-            <g transform="translate(720, 160) scale(0.5)">
-              <circle cx="0" cy="0" r="10" fill="#102542" opacity="0.7" />
-              <path
-                d="M0,-10 L0,10 M-10,0 L10,0"
-                stroke="#f3e9d2"
-                strokeWidth="1"
-              />
-              <text
-                x="0"
-                y="-12"
-                textAnchor="middle"
-                fill="#102542"
-                fontSize="6"
-              >
-                N
-              </text>
-              <text x="12" y="0" textAnchor="start" fill="#102542" fontSize="6">
-                E
-              </text>
-              <text
-                x="0"
-                y="16"
-                textAnchor="middle"
-                fill="#102542"
-                fontSize="6"
-              >
-                S
-              </text>
-              <text x="-12" y="0" textAnchor="end" fill="#102542" fontSize="6">
-                W
-              </text>
-            </g>
-          </svg>
+              <NavigationControl position="top-right" />
+              
+              <Source id="colonies" type="geojson" data={geoJsonData}>
+                <Layer {...fillLayer} />
+                <Layer {...lineLayer} />
+              </Source>
+              
+              {hoverData && (
+                <Source id="hover" type="geojson" data={hoverData}>
+                  <Layer {...hoverLineLayer} />
+                </Source>
+              )}
+              
+              {hoveredColony && popupCoords && (
+                <Popup
+                  longitude={popupCoords.lng}
+                  latitude={popupCoords.lat}
+                  closeButton={false}
+                  closeOnClick={false}
+                  className="z-10"
+                >
+                  <div className="px-2 py-1">
+                    <h3 className="font-bold text-sm text-colonial-navy">
+                      {hoveredColony.properties.name}
+                    </h3>
+                    <p className="text-xs mt-1 text-colonial-navy/80">
+                      <span
+                        className="inline-block rounded-full px-2 py-0.5 text-white text-[10px]"
+                        style={{
+                          backgroundColor: statusColors[hoveredColony.properties.status as TapestryStatus],
+                        }}
+                      >
+                        {hoveredColony.properties.status}
+                      </span>
+                    </p>
+                  </div>
+                </Popup>
+              )}
+            </Map>
+          )}
         </div>
 
-        {/* Selected Colony Info */}
-        {selectedColony && (
-          <div className="mt-4 rounded-md border border-colonial-navy/20 bg-white p-4 shadow-sm">
-            <h3 className="text-xl font-bold text-colonial-navy">
-              {selectedColony.name}
-            </h3>
-            <p className="mt-2 font-serif text-colonial-navy/80">
-              {selectedColony.details}
-            </p>
-            {colonyTapestries[selectedColony.id] ? (
-              <div>
-                <p className="mt-2 text-sm">
-                  <span className="font-medium">Status:</span>{' '}
-                  <span
-                    className="inline-block rounded-full px-2 py-0.5 text-xs text-white"
-                    style={{
-                      backgroundColor:
-                        statusColors[
-                          colonyTapestries[selectedColony.id].status
-                        ],
-                    }}
-                  >
-                    {colonyTapestries[selectedColony.id].status}
-                  </span>
-                </p>
-                <p className="mt-2 text-sm text-colonial-burgundy">
-                  <a
-                    href={`/tapestries/${colonyTapestries[selectedColony.id].slug}`}
-                    className="underline transition-colors hover:text-colonial-gold"
-                  >
-                    View {selectedColony.name} Tapestry
-                  </a>
-                </p>
-              </div>
-            ) : (
-              <p className="mt-2 italic text-sm text-colonial-navy/60">
-                Tapestry not available
-              </p>
-            )}
-          </div>
-        )}
-
         {/* Legend */}
-        <div className="mt-6">
-          <table className="mx-auto border-collapse">
-            <tbody>
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-sm bg-colonial-navy" />
-                    <span className="text-sm text-colonial-navy">
-                      Not Started
-                    </span>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-sm bg-indigo-500" />
-                    <span className="text-sm text-colonial-navy">Designed</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-sm bg-colonial-burgundy" />
-                    <span className="text-sm text-colonial-navy">
-                      In Production
-                    </span>
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div className="flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-sm bg-colonial-gold" />
-                    <span className="text-sm text-colonial-navy">Finished</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="mt-6 bg-white rounded-lg p-4 shadow-sm border border-colonial-navy/10">
+          <h3 className="text-sm font-bold text-colonial-navy mb-2">Tapestry Status</h3>
+          <div className="grid grid-cols-2 gap-2">
+            {Object.entries(statusColors).map(([status, color]) => (
+              <div key={status} className="flex items-center">
+                <div
+                  className="mr-2 h-4 w-4 rounded-sm"
+                  style={{ backgroundColor: color }}
+                />
+                <span className="text-sm text-colonial-navy">{status}</span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-4 text-center">
+            <p className="text-sm text-colonial-navy/80 italic">
+              Click on a colony to view its tapestry details
+            </p>
+          </div>
         </div>
       </div>
     </>

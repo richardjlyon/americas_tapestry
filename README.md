@@ -236,6 +236,81 @@ export default function ExamplePage() {
 - Flexible control for different page layouts
 - Eliminates spacing inconsistencies between sections
 
+## Environment Variables
+
+This project uses environment variables to manage configuration and API keys. There are two main files:
+
+### `.env` - Default Configuration (Safe to commit)
+
+Contains non-sensitive default values and configuration:
+```
+# Public URLs and non-sensitive configuration
+NEXT_PUBLIC_SITE_URL=https://americastapestry.org
+NEXT_PUBLIC_DEFAULT_MAPBOX_STYLE=mapbox://styles/mapbox/light-v11
+
+# Documentation placeholders for required keys
+NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_mapbox_token_here
+RESEND_API_KEY=your_resend_api_key_here
+MAILERLITE_API_KEY=your_mailerlite_api_key_here
+```
+
+### `.env.local` - Sensitive Data (DO NOT commit)
+
+Contains actual API keys and sensitive information:
+```
+# Mapbox API token (client-side access needed)
+NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_real_mapbox_token
+
+# Server-side API keys (not exposed to browser)
+RESEND_API_KEY=your_real_resend_api_key
+MAILERLITE_API_KEY=your_real_mailerlite_api_key
+```
+
+### Setting Up Environment Variables
+
+1. Copy all required API keys to `.env.local`
+2. Never commit `.env.local` to version control
+3. Use `NEXT_PUBLIC_` prefix only for values needed in the browser
+4. Restart the development server after changing environment variables
+
+## Map Integration with Mapbox
+
+The interactive colonies map uses Mapbox GL for a professional, customizable map experience.
+
+### Setting Up Mapbox
+
+1. **Get a Mapbox Access Token**
+   - Sign up or log in at [Mapbox](https://www.mapbox.com/)
+   - Create a new access token in your Mapbox account dashboard
+   - Make sure it has the appropriate permissions (public scopes are sufficient)
+
+2. **Configure Your Environment**
+   - Add your Mapbox token to `.env.local`:
+     ```
+     NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_mapbox_token_here
+     ```
+   - Optionally customize the map style in `.env`:
+     ```
+     NEXT_PUBLIC_DEFAULT_MAPBOX_STYLE=mapbox://styles/mapbox/light-v11
+     ```
+   - Restart your development server after adding the token
+
+3. **Customizing the Map**
+   - Edit `lib/mapbox-config.ts` to change map style, default center, or zoom level
+   - For a custom style, create one in Mapbox Studio and use its style URL
+
+4. **Map Features**
+   - Interactive hover effects showing tapestry status
+   - Color-coding based on tapestry completion status
+   - Click to navigate to individual tapestry pages
+   - Responsive layout for all devices
+   - Custom styling to match the colonial aesthetic
+
+### GeoJSON Data
+
+The map uses GeoJSON data for accurate colony boundaries. The data is stored in:
+- `/public/data/13-colonies.geojson`
+
 ## Technologies
 
 - Next.js 15.2.1
@@ -243,5 +318,5 @@ export default function ExamplePage() {
 - TypeScript
 - Tailwind CSS
 - Tailwind Typography Plugin
-
-.
+- Mapbox GL
+- GeoJSON
