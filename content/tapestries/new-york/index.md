@@ -20,34 +20,35 @@ timelineEvents:
     description: "The Erie Canal opened, connecting the Great Lakes to the Atlantic Ocean via the Hudson River, revolutionizing transportation and trade and establishing New York City as America's premier commercial center."
 ---
 
-The New York Tapestry celebrates the state's evolution from Dutch
-colony to cultural melting pot and commercial powerhouse. The panel
-illustrates New York's beginnings as New Amsterdam, its transfer to
-British control, its strategic importance during the Revolutionary War,
-and its emergence as America's gateway for immigration and commerce.
-The design weaves together the diverse threads of New York's story,
-from the Haudenosaunee (Iroquois) Confederacy to the waves of
-immigrants who transformed the state and nation.
+The design features the Birch Trials, one of the lesser known events
+hosted by New York’s iconic [Fraunces
+Tavern](https://www.frauncestavernmuseum.org/birch-trials-at-fraunces-tavern).
+Significant research undertaken by the Tavern (at which you can still
+enjoy a pint or two) has uncovered this important story that resulted
+in one of the largest emancipations of enslaved people prior to the
+Civil War.
 
 
-The New York Panel is being created at the [Metropolitan Museum of
-Art](/team/historical-partners/#metropolitan-museum) in New York City,
-where visitors can observe the stitching process in the American Wing.
-The museum's world-class collections have provided rich inspiration for
-the design and techniques used in the panel.
+The Birch Trials were established to determine claims formerly enslaved
+individuals made about service to the British Crown during the American
+Revolution. In 1783, American and British Generals gathered at Fraunces
+Tavern to hear and debate these cases, ultimately determining whether
+the petitioner would be sent to Nova Scotia as a reward for their
+service to King George III, or return to slavery in the United States
+if their case was unclear or contested.
 
-Our New York Director is [Rebecca van
-Rensselaer](/team/state-directors/#rebecca-van-rensselaer), a textile
-conservator and historian who has brought together stitchers from
-across the state, including members of the New York Historical
-Society's textile program, the Hudson River Valley Art Workshops, and
-community groups from the five boroughs of New York City.
+Within the design, a hearing is underway in the upper left hand corner.
+A man advocates for his service and loyalty to Great Britain during the
+Revolution--a speech which will ultimately determine his fate.
 
-The tapestry highlights key moments and themes in New York's history,
-from the purchase of Manhattan to the Battle of Saratoga, the
-completion of the Erie Canal, and the rise of New York City as a global
-center of finance, arts, and culture. Special attention has been paid
-to representing the contributions of Native Americans, African
-Americans, and the waves of immigrants—Dutch, English, Irish, German,
-Italian, Jewish, Chinese, Puerto Rican, Dominican, and many others—who
-have shaped New York's unique identity as a cultural crossroads.
+In the panel’s center, we learn about the various roles undertaken by
+enslaved people in the British Army--tradesmen, laborers, and soldiers
+in Dunmore’s famous Ethiopian Regiment.
+
+The lower right hand corner depicts a family en route to their new home
+in Nova Scotia as citizens of the British Crown.
+
+The New York Panel is directed by Jenni Paperman and will be stitched
+at the [Van Schaick Mansion](http://www.vanschaickmansion.org/) in
+Albany by the Capitol District Chapter of the EGA alongside other
+organizations. We are excited for them to get underway!

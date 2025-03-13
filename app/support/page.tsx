@@ -35,8 +35,10 @@ export default function SupportPage() {
 
       {/* Support Options Navigation */}
       <PageSection paddingTop="small">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <Card className="bg-white shadow-md border border-colonial-navy/10 hover:shadow-lg transition-shadow">
+        {/* Set this to 4 columns if merchandise is available */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Merchandise */}
+          {/* <Card className="bg-white shadow-md border border-colonial-navy/10 hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
               <div className="w-16 h-16 bg-colonial-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <ShoppingBag className="h-8 w-8 text-colonial-gold" />
@@ -59,7 +61,7 @@ export default function SupportPage() {
                 </a>
               </Button>
             </CardFooter>
-          </Card>
+          </Card> */}
 
           <Card className="bg-white shadow-md border border-colonial-navy/10 hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
@@ -139,9 +141,9 @@ export default function SupportPage() {
       </PageSection>
 
       {/* Merchandise Section */}
-      <PageSection id="merchandise" paddingTop="none" className="scroll-mt-24">
+      {/* <PageSection id="merchandise" paddingTop="none" className="scroll-mt-24">
         <SupportMerchandise />
-      </PageSection>
+      </PageSection> */}
 
       {/* Donations Section */}
       <PageSection id="donations" paddingTop="none" className="scroll-mt-24">

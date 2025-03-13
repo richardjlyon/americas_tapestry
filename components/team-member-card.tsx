@@ -68,7 +68,10 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
       </div>
       <div className="p-5 flex-grow flex flex-col">
         <h3 className="text-xl font-bold text-colonial-navy">{member.name}</h3>
-        <p className="font-serif text-colonial-burgundy mb-3">{member.role}</p>
+        <p className="font-serif text-colonial-burgundy mb-3">
+          {member.role}
+          {member.state ? `, ${member.state}` : ''}
+        </p>
 
         {/* Additional metadata fields if they exist */}
         {/* {member.state && (

@@ -7,8 +7,9 @@ image: "/video/250305-short-promotional/250305-short-promotional-v2-poster-lands
 videoUrl: "/video/250305-short-promotional/250305-short-promotional-v2.mp4"
 ---
 
-We're excited to share a promotional clip of the video footage we will be compiling over the next year as "America's Tapestry" gets underway in each of the 13 states. Stay tuned! 
-
+We're excited to share a promotional clip of the video footage we will
+be compiling over the next year as _"America's Tapestry"_ gets underway
+in each of the 13 states. Stay tuned!
 
 <div class="aspect-w-16 aspect-h-9 my-8">
   <iframe
@@ -19,5 +20,3 @@ We're excited to share a promotional clip of the video footage we will be compil
     class="w-full h-full rounded-lg shadow-lg"
   ></iframe>
 </div>
-
-

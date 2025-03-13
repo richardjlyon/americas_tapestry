@@ -20,7 +20,7 @@ export function TapestriesSection({
             <em>America's Tapestry</em> is composed of 13 individual embroidered
             panels, each 35" × 45". They tell the story of lesser known, often
             overlooked contributions to our nation's journey towards
-            Independence. Together, they honor the traditions, struggles, and
+            independence. Together, they honor the traditions, struggles, and
             triumphs that have shaped our collective identity.
           </>
         }
@@ -35,10 +35,7 @@ export function TapestriesSection({
       </div>
 
       <div className="text-center mt-10 md:mt-12">
-        <RevolutionaryButton 
-          asChild 
-          className="text-base py-2 px-5"
-        >
+        <RevolutionaryButton asChild className="text-base py-2 px-5">
           <Link href="/tapestries">
             Explore All Thirteen Colonies{' '}
             <ArrowRight className="h-4 w-4 ml-2" />

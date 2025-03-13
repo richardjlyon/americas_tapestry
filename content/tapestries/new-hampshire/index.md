@@ -20,11 +20,38 @@ timelineEvents:
     description: "New Hampshire became the ninth state to ratify the U.S. Constitution, providing the necessary majority to officially establish the United States government under the Constitution."
 ---
 
-The New Hampshire Tapestry celebrates the state's revolutionary spirit and its distinctive natural landscape. The panel illustrates New Hampshire's development from early settlements at Portsmouth and Dover to its bold action as the first colony to establish an independent government in January 1776, six months before the Declaration of Independence. The design captures both the state's colonial heritage and its iconic natural features, from the seacoast to the White Mountains.
+The New Hampshire Tapestry celebrates the state's pioneering
+revolutionary spirit.
 
+The panel illustrates New Hampshire’s role at the forefront of
+independence, depicting the Pine Tree Riot of 1772 which was one of the
+first major disputes of royal authority. The lower left hand vignette
+pays tribute to the raid of Fort William & Mary in 1774. Considered one
+of the first significant armed attacks of the American Revolution, the
+raid set the stage for future conflict with Great Britain. The
+gunpowder & cannons seized from the fort were distributed across the
+colonies and utilized at the Battle of Bunker Hill the following year.
 
-The New Hampshire Panel is being created at the [Strawbery Banke Museum](/team/historical-partners/#strawbery-banke-museum) in Portsmouth, where visitors can observe the stitching process within the context of the museum's preserved colonial neighborhood. The museum's collection of historical textiles and artifacts has provided valuable reference material for the design of the panel.
+The upper portion of the panel depicts the role of the Abenaki tribe in
+defending the vulnerable Northern border, which was site to continual
+conflict with enemy tribes & Canadian encroachment. Lieutenant Timothy
+Bedel established strong ties to the Abenaki Community of Coos, New
+Hampshire, on the Connecticut River in the hopes of recruiting members
+to the Patriot cause. Despite its history as a frequent war zone
+between the French & British for supremacy of the territory, the
+Abenaki retained their foothold in a land with significant spiritual
+and economic importance to their people. Through his promise of
+material support and protection, Bedel was able to recruit warriors &
+scouts who chose to relocate to the lower Coos. The panel features
+Lieutenant Bedel and Chief Philip, an Abenaki Patriot, deep in
+discussion. Despite their significant contribution to the Revolution,
+the Abenaki were denied protection in their homeland after the
+Revolution as fellow Patriots illegally seized territory belonging to
+the tribe.
 
-Our New Hampshire Director is [Jonathan Prescott](/team/state-directors/#jonathan-prescott), a textile artist and historian who has assembled a team of stitchers from throughout the state. The panel incorporates traditional New England needlework techniques, including crewel embroidery and whitework that would have been familiar to colonial New Hampshire women.
+The New Hampshire Panel is being created at the New Hampshire
+Historical Society in Concord, where visitors can observe the stitching
+process within the context of the museum’s vast collection.
 
-The tapestry highlights key moments in New Hampshire's history, from the establishment of Fort William and Mary to the capture of its gunpowder by colonists in December 1774—one of the first acts of armed rebellion against British authority. It also celebrates the state's natural beauty, maritime traditions, and later industrial development in mill towns like Manchester and Nashua. Special attention has been paid to representing the Abenaki people and their continuing presence in the region, as well as the state's tradition of political independence embodied in its motto, "Live Free or Die."
+Our New Hampshire State Director is Carol Tewes Ganse, a needleworker
+who has assembled a team of stitchers from throughout the state.

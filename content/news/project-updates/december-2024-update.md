@@ -1,0 +1,93 @@
+---
+title: "December 2024 Update"
+date: "2024-12-06T10:51:26-05:00"
+excerpt: "Stitching timeline, and New Jersey showcase."
+image: "/images/news/images/muscarelle-art-museum.jpg"
+featured: false
+---
+
+Dear All,
+
+That's right - it's December! I hope everyone's holiday spirit is in
+full swing and no matter where you are - stay warm!
+
+## What's New
+
+This month we had a wonderful meeting with David Brashear, director of
+the [Muscarelle Museum of Art](https://muscarelle.wm.edu/), who is
+thrilled to be hosting the debut exhibition of America's Tapestry. It
+will be one of their first exhibitions in their gorgeous new expansion
+scheduled to be completed in January 2025.
+
+One of his main comments was the importance of this piece of art in
+conflicting times such as ours. He believes it will be a touching
+tribute to the Revolution and a legacy piece from our 250th
+anniversary. **Additionally, he asked if the panels could be completed
+by June 2026** so they could be installed and set to go for the July
+celebration. That means we have our work cut out for us!
+
+We have been regularly meeting with our fiscal agent [Seton Hill
+University](https://www.setonhill.edu/), who we are collaborating with
+on two additional grant opportunities - [Heinz Endowment
+Grant](https://www.heinz.org/) & [America250PA Organization
+Grant](https://www.america250pa.org/HOME). We believe America's
+Tapestry strongly aligns with both organizations' missions and will no
+doubt be a competitive application.
+
+## December Showcase - New Jersey
+
+This month we are highlighting the state of New Jersey. The state
+design features the many roles New Jersey women undertook during the
+Revolution, including raising a phenomenal $15,000 for the patriot
+cause. Our historical advisor i   s the [Passaic County Department of
+Cultural and Historical
+Affairs](/team/historical-partners/passaic-county-department-of-historic-and-cultural-affairs),
+who conducted a significant amount of research on the fascinating lives
+of those living in the Dey Mansion in Passaic County. Famously, the Dey
+Family hosted Generals Lafayette and Washington at the Mansion in 1780.
+
+![New Jersey Tapestry](/images/tapestries/new-jersey/new-jersey-tapestry-main.webp)
+
+The stitching will be conducted by members of the **Colonial West EGA
+Chapter** in partnership with the **Princeton EGA Chapter**. With their
+combined artistry and exceptional skill, we cannot wait to see this
+come together! They will be stitching at **St. Andrews Church in
+Hainesport**, approximately 20 miles east from Philadelphia.
+
+Lastly, New Jersey is one of our exhibition venues - the 13
+completed panels will gather for an exhibition at the arts center
+managed by Passaic County** from October 2026 to January 2027. Stay
+tuned for information regarding the reception ceremony! We would love
+to see many of you there.
+
+![Muscarelle Art Museum](/images/news/images/day-mansion.jpg)
+
+## Stitching Timeline
+
+This is subject to change - but it helps to get everyone on the same
+page!
+
+- JANUARY 2025 - GEORGIA, NEW JERSEY, & NEW YORK BEGIN STITCHING
+
+- FEBRUARY 2025 - VIRGINIA, PENNSYLVANIA, & CONNECTICUT BEGIN STITCHING
+
+- MARCH 2025- NEW HAMPSHIRE, MASSACHUSETTS, & MARYLAND BEGIN STITCHING
+
+## What's Next?
+
+We will be continuing to design the state panels and secure final
+partnerships. There is a lot of excitement generating about America's
+Tapestry, so we hope to keep this momentum going!
+
+## Attention - Stitchers Needed!
+
+That's right - we are still seeking talented stitchers from the
+following states. Think you know the right person or organization? Send
+them our info!
+
+- Rhode Island
+- North Carolina
+- South Carolina
+
+As always, please reach out with any [questions, concerns, or comments](/contact).
+I'd love to hear from you!

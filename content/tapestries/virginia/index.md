@@ -4,7 +4,7 @@ summary: The birthplace of American democracy and early colonial life
 background_color: "bg-blue-900"
 audioDescription: "This audio description provides a detailed verbal account of the Virginia Tapestry, which depicts the early colonial settlements, the House of Burgesses, and Virginia's pivotal role in the American Revolution."
 colony: "VA"
-status: "Not Started"
+status: "Designed"
 timelineEvents:
   - date: "1607-05-14"
     title: "Jamestown Founded"
@@ -20,12 +20,22 @@ timelineEvents:
     description: "Virginia native George Washington was inaugurated as the first President of the United States, beginning a tradition of Virginia-born presidents that would include Jefferson, Madison, and Monroe."
 ---
 
-The Virginia Tapestry celebrates the state's foundational role in American history as the site of the first permanent English settlement at Jamestown in 1607 and the birthplace of representative democracy in the New World. The panel illustrates key historical moments from the establishment of the House of Burgesses in 1619 to Virginia's central role in the American Revolution and the early republic.
+The Virginia Panel pays tribute to the lead mines of Wythe County,
+Virginia, integral to the production of bullets for the Continental
+Army. Composed of enslaved, convicted, and imported labor, the mine was
+a melting pot of cultures and backgrounds whose forced labored in
+dangerous, dark conditions from sunup to sundown ensured American
+independence.
 
-![Virginia Tapestry](/content/tapestries/virginia/virginia-tapestry-main.jpg)
+Our illustration depicts the Welsh miners who were hired to revive the
+failing lead mine. Subject to the same conditions as other laborerers,
+they toiled alongside enslaved men who were hired out by their masters
+as well as convicts, who were serving their sentences in the mine.
 
-The Virginia Panel is being created at the [Colonial Williamsburg Foundation](/team/historical-partners/#colonial-williamsburg), where artisans practice historical textile techniques using period-appropriate tools and materials. The foundation's expertise in early American crafts and material culture ensures historical accuracy in both the imagery and the techniques used to create the tapestry.
-
-Our Virginia Director is [Elizabeth Jameson](/team/state-directors/#elizabeth-jameson), a textile historian with the Virginia Historical Society. Elizabeth has assembled a diverse team of stitchers from across the Commonwealth, including members of the Virginia Quilt Museum, the Embroiderers' Guild of America's Richmond chapter, and faculty from the textile arts program at Virginia Commonwealth University.
-
-The panel incorporates motifs and techniques that would have been familiar to 18th-century Virginians, including elements inspired by surviving textiles from Monticello, Mount Vernon, and other historic Virginia homes. Special attention has been paid to representing the contributions of all Virginians, including indigenous peoples, enslaved Africans, and women, whose stories are often overlooked in traditional historical narratives.
+The Tapestry spotlights an enslaved man named Aberdeen in the upper
+right hand corner, who defied his Loyalist master’s orders to join the
+British cause & volunteered to enlist with the Continentals. Despite
+being led away from the line of action to the lead mine of Wythe
+County, Aberdeen served seven long years at the mine. After writing a
+petition to the House of Delegates explaining his service to the
+Patriot cause, Aberdeen received his freedom in 1783.

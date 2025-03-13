@@ -32,10 +32,12 @@ export default function ResourcesPage() {
       </p>
 
       <PageSection paddingTop="small">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <EducationalResourcesCard />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
+          {/* <EducationalResourcesCard /> */}
+          <div></div>
           <TapestryGlossariesCard />
-          <RelatedArtefactsGalleryCard />
+          {/* <RelatedArtefactsGalleryCard /> */}
+          <div></div>
         </div>
       </PageSection>
     </>
