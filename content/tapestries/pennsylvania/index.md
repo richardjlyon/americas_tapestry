@@ -4,7 +4,7 @@ summary: The Keystone State and cradle of American democracy
 background_color: "bg-indigo-900"
 audioDescription: "This audio description narrates the details of the Pennsylvania Tapestry, which depicts William Penn's 'Holy Experiment,' the signing of the Declaration of Independence, and the state's industrial heritage."
 colony: "PA"
-status: "Not Started"
+status: "Designed"
 timelineEvents:
   - date: "1681-03-04"
     title: "William Penn Receives Royal Charter"
