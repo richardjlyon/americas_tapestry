@@ -1,6 +1,6 @@
 ---
 name: "Coby Foundation"
-tier: gold
+tier: Gold
 website: "https://cobyfoundation.org/"
 ---
 

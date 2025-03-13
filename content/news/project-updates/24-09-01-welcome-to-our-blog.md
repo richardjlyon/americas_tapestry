@@ -22,10 +22,10 @@ and successes along the way.
 
 ## Historical Insights
 
-Explore the rich historical contexts behind the
-scenes and stories depicted in our tapestries. Our team of historians
-will provide in-depth articles about the events, people, and cultural
-movements that have shaped America's diverse heritage.
+Explore the rich historical contexts behind the scenes and stories
+depicted in our tapestries. Our team will provide articles about the
+events, people, and cultural movements that have shaped America's
+diverse heritage.
 
 ## Event Information
 

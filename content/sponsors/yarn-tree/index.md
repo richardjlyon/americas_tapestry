@@ -1,6 +1,6 @@
 ---
 name: "Yarn Tree"
-tier: bronze
+tier: Bronze
 website: "https://www.yarntree.com"
 email: info@yarntree.com
 phone: 1-800-247-3952
