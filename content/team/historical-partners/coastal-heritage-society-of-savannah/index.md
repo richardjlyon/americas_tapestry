@@ -1,7 +1,9 @@
 ---
 name: "Coastal Heritage Society of Savannah"
-location: "XXX"
+role: "Historical Partner"
 state: "Georgia"
+summary: "A distinguished regional preservation society safeguarding coastal heritage through management of historically significant sites and museums dating to America's founding era."
+location: "XXX"
 moreInformation: "https://chsgeorgia.org/"
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: James Washington
+role: "Illustrator"
 state: "Rhode Island"
 ---
 

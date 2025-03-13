@@ -1,5 +1,6 @@
 ---
 name: "Elizabeth Long"
+role: "Illustrator"
 state: "New Hampshire"
 ---
 

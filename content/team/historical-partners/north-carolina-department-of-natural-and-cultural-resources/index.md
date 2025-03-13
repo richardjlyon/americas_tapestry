@@ -1,7 +1,9 @@
 ---
 name: "North Carolina Department of Natural and Cultural Resources"
-location: "XXX"
+role: "Historical Partner"
 state: "North Carolina"
+summary: "Prestigious state agency oversees comprehensive cultural preservation, offering unparalleled expertise on revolutionary heritage through extensive historical resources."
+location: "XXX"
 moreInformation: "https://www.dncr.nc.gov/"
 ---
 

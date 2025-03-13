@@ -1,5 +1,6 @@
 ---
 name: Abena Apatu
+role: "Illustrator"
 state: Maryland
 ---
 

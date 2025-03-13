@@ -9,7 +9,9 @@ export interface TeamMember {
   content: string;
   groupSlug: string;
   imagePosition?: string; // Control image positioning (e.g., "center", "top", "left 30% center")
-  [key: string]: any; // For additional frontmatter fields
+  state?: string;         // Single state assignment
+  states?: string[];      // Multiple state assignments
+  [key: string]: any;     // For additional frontmatter fields
 }
 
 export interface TeamGroup {
@@ -111,13 +113,35 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
       const { data, content } = matter(fileContents);
 
       // Construct the image path based on the directory structure
-      const imagePath = `/images/team/${group}/${dirName}/${dirName}.jpg`;
+      let imagePath;
+      
+      // Special handling for different group types
+      if (group === 'stitching-groups') {
+        // Stitching groups use a placeholder
+        imagePath = `/placeholder-user.jpg`;
+      } else if (group === 'historical-partners') {
+        // Historical partners use the directory name convention
+        imagePath = `/images/team/${group}/${dirName}/${dirName}.jpg`;
+      } else {
+        // Standard image path for other groups
+        imagePath = `/images/team/${group}/${dirName}/${dirName}.jpg`;
+      }
+      
+      // Check if a face image exists (using the naming convention: name-face.jpg)
+      const faceImagePath = `/images/team/${group}/${dirName}/${dirName}-face.jpg`;
+      
+      // Check if the face image exists (for state directors)
+      // This is a hardcoded list of directors that we know have face images
+      const hasFaceImage = group === 'state-directors' && 
+        ['sally-poole', 'denise-de-more', 'carol-prevost', 'mary-van-tyne'].includes(dirName);
       
       return {
         slug: dirName,
         content,
         groupSlug: group,
         imagePath,
+        faceImagePath, // Add face image path (will be checked for existence client-side)
+        hasFaceImage, // Flag to indicate if a face image exists
         ...data,
       } as TeamMember;
     })
@@ -155,4 +179,45 @@ export function getProjectDirector(): TeamMember | null {
 export function getTeamMember(group: string, slug: string): TeamMember | null {
   const members = getTeamMembersByGroup(group);
   return members.find((member) => member.slug === slug) || null;
+}
+
+// Get team members for a specific state/colony
+export function getTeamMembersByState(stateName: string) {
+  // Find state director
+  const stateDirectors = getTeamMembersByGroup('state-directors').filter(
+    (member) => member.state === stateName
+  );
+  const stateDirector = stateDirectors.length > 0 ? stateDirectors[0] : null;
+  
+  // Find historical partner
+  const historicalPartners = getTeamMembersByGroup('historical-partners').filter(
+    (member) => member.state === stateName
+  );
+  const historicalPartner = historicalPartners.length > 0 ? historicalPartners[0] : null;
+  
+  // Find illustrator - handle both single state and array of states
+  const illustrators = getTeamMembersByGroup('illustrators').filter(
+    (member) => {
+      // Check if member.state is an array and contains stateName
+      if (Array.isArray(member.state) && member.state.includes(stateName)) {
+        return true;
+      }
+      // Check if member.state is a string that matches stateName
+      return member.state === stateName;
+    }
+  );
+  const illustrator = illustrators.length > 0 ? illustrators[0] : null;
+  
+  // Find stitching group
+  const stitchingGroups = getTeamMembersByGroup('stitching-groups').filter(
+    (member) => member.state === stateName
+  );
+  const stitchingGroup = stitchingGroups.length > 0 ? stitchingGroups[0] : null;
+
+  return {
+    stateDirector,
+    historicalPartner,
+    illustrator,
+    stitchingGroup
+  };
 }

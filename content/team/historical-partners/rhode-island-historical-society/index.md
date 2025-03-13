@@ -1,7 +1,9 @@
 ---
 name: "Rhode Island Historical Society"
-location: "XXX"
+role: "Historical Partner"
 state: "Rhode Island"
+summary: "Historical society maintains definitive state archives, offering scholarly colonial expertise while engaging communities through innovative exhibitions and educational programming."
+location: "XXX"
 moreInformation: "https://www.rihs.org/"
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: "Carol Prevost"
-role: "New Jersey State co-Director"
+role: "State Director"
 state: "New Jersey"
+summary: "Skilled embroiderer with family tradition, mastering Bayeux reproductions, Hardanger, whitework, and goldwork while finding peace through dedicated needlework practice."
 imagePosition: "left center"
 ---
 

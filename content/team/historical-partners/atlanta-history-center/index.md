@@ -1,7 +1,9 @@
 ---
 name: "Atlanta History Center"
-location: "Atlanta, Georgia"
+role: "Historical Partner"
 state: "Georgia"
+summary: "A preeminent institution housing comprehensive Southern historical collections while engaging diverse audiences through innovative exhibitions and educational programming."
+location: "Atlanta, Georgia"
 moreInformation: ""
 ---
 

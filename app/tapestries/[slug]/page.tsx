@@ -4,6 +4,9 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import { AccessibleAudioPlayer } from '@/components/accessible-audio-player';
 import { FullImageViewer } from '@/components/full-image-viewer';
+import { TeamCard } from '@/components/tapestries/team-card';
+import { getTeamMembersByState } from '@/lib/team';
+import { PageSection } from '@/components/ui/page-section';
 
 // Status color mapping
 const statusColors = {
@@ -50,13 +53,17 @@ export default async function TapestryPage({
     tapestry.thumbnail ||
     '/placeholder.svg?height=600&width=800';
 
+  // Get all team members for this state using the utility function
+  const { stateDirector, historicalPartner, illustrator, stitchingGroup } =
+    getTeamMembersByState(tapestry.title);
+
   return (
     <>
       <h1 className="page-heading">{tapestry.title}</h1>
 
-      <div className="lead-text text-center">{tapestry.summary}</div>
+      <div className="lead-text">{tapestry.summary}</div>
 
-      <div className="container mx-auto">
+      <PageSection paddingTop="none" paddingBottom="small" hasPin={true}>
         {/* Tapestry image with full image viewer capability */}
         <FullImageViewer
           imageSrc={imageSrc}
@@ -82,7 +89,23 @@ export default async function TapestryPage({
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
         </div>
-      </div>
+      </PageSection>
+
+      {/* Team card section */}
+      <PageSection paddingTop="none">
+        {(stateDirector ||
+          historicalPartner ||
+          illustrator ||
+          stitchingGroup) && (
+          <TeamCard
+            stateName={tapestry.title}
+            stateDirector={stateDirector}
+            historicalPartner={historicalPartner}
+            illustrator={illustrator}
+            stitchingGroup={stitchingGroup}
+          />
+        )}
+      </PageSection>
     </>
   );
 }

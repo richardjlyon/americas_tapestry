@@ -1,5 +1,6 @@
 ---
 name: Sarah Naidich
+role: "Illustrator"
 state: Connecticut
 ---
 

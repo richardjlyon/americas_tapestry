@@ -1,7 +1,8 @@
 ---
 name: "Denise De More"
-role: "Massachusetts Director"
+role: "State Director"
 state: "Massachusetts"
+summary: "Attorney and IT specialist designs needlework projects, authors exhibition catalogs, consults on sampler history, and creates museum pieces like the Fuller Craft's Calico Dress."
 ---
 
 Denise De More is an attorney, information technology specialist and

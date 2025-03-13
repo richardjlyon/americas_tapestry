@@ -1,7 +1,8 @@
 ---
 name: "Debora Berger"
-role: "Georgia Director"
+role: "State Director"
 state: "Georgia"
+summary: "Experienced EGA member who champions embroidery education, community building, and resource development while enhancing America's needle arts traditions."
 imagePosition: "top center"
 
 ---

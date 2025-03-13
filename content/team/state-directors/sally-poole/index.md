@@ -1,7 +1,8 @@
 ---
 name: "Sally Poole"
-role: "Maryland Director"
+role: "State Director"
 state: "Maryland"
+summary: "Dedicated embroiderer with four decades of guild service moves between surface techniques and counted thread Blackwork while fostering friendships through leadership roles."
 ---
 
 Sally Poole is currently Program Chairman and Region Representative of

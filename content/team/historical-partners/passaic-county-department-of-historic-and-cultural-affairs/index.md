@@ -1,7 +1,9 @@
 ---
 name: "Passaic County Department of Historic and Cultural Affairs"
-location: "XXX"
+role: "Historical Partner"
 state: "New Jersey"
+summary: "County heritage division cultivates revolutionary narrative through exemplary preservation initiatives while fostering vibrant community historical engagement."
+location: "XXX"
 moreInformation: "https://seepassaiccounty.org/"
 imagePosition: "left center"
 ---

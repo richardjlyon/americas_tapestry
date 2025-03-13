@@ -1,7 +1,8 @@
 ---
 name: "Catherine Theron"
-role: "Virginia State Director"
+role: "State Director"
 state: "Virginia"
+summary: "Accomplished counted thread designer spanning decades, co-founded The Gentle Art, promotes historical significance while fostering embroidery's educational and community aspects."
 ---
 
 Catherine Theron has designed and taught counted thread pieces for over

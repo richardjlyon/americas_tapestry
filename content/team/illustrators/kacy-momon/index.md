@@ -1,5 +1,6 @@
 ---
 name: Kacy Momon
+role: "Illustrator"
 state: "Rhode Island"
 ---
 

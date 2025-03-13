@@ -1,7 +1,9 @@
 ---
 name: "William & Mary"
-location: "XXX"
+role: "Historical Partner"
 state: "Virginia"
+summary: "Colonial-era university leverages premier museum spaces and scholarly institutes to illuminate diverse revolutionary narratives through comprehensive historical research."
+location: "XXX"
 moreInformation: "https://www.wm.edu/"
 ---
 

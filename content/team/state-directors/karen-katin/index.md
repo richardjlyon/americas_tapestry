@@ -1,7 +1,8 @@
 ---
 name: "Karen Katin"
-role: "Rhode Island State Director"
+role: "State Director"
 state: "Rhode Island"
+summary: "Certified educator and sewing shop owner teaches diverse classes, mentors youth, hosts community events, and unites military spouses through shared fiber arts."
 ---
 
 Meet Karen Katin, owner since February 2017 of [The

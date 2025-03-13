@@ -1,5 +1,6 @@
 ---
 name: Alyssa Ruby
+role: "Illustrator"
 state: Massachussets
 ---
 

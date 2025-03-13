@@ -1,7 +1,8 @@
 ---
 name: "Jennifer Paperman"
-role: "New York Director"
+role: "State Director"
 state: "New York"
+summary: "Cross stitcher with three decades of experience who created an impressive 2.5 by 6.5 foot Chinese Scholar artwork over seven years."
 imagePosition: "left bottom"
 ---
 

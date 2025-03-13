@@ -1,5 +1,6 @@
 ---
 name: Maggie Weng
+role: "Illustrator"
 state: Pennsylvania
 ---
 

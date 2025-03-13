@@ -1,7 +1,8 @@
 ---
 name: "Laura Kasowitz"
-role: "Connecticut Director"
+role: "State Director"
 state: "Connecticut"
+summary: "Sewing school owner promotes fiber arts as empowering and connective, organizing community events while teaching diverse textile techniques to all ages."
 ---
 
 Laura Kasowitz is the owner of [Hartford
