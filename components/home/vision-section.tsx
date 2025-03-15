@@ -43,7 +43,7 @@ export function VisionSection() {
             <Users2 className="h-8 w-8 text-colonial-burgundy" />
           </div>
           <h3 className="text-xl font-bold text-colonial-burgundy mb-4">
-            Promote needleworking
+            Promote Needlework
           </h3>
           <p className="font-serif text-colonial-navy/80 leading-relaxed">
             Inspire creativity, preserve, and advance traditional craftsmanship.

@@ -1,6 +1,6 @@
 ---
 title: New Hampshire
-summary: The Granite State's revolutionary spirit and natural beauty
+summary: Early unrest in the Granite State
 background_color: "bg-green-900"
 audioDescription: "This audio description provides a detailed verbal account of the New Hampshire Tapestry, which depicts the state's colonial settlements, revolutionary activities, and its iconic White Mountains landscape."
 colony: "NH"
@@ -32,22 +32,7 @@ raid set the stage for future conflict with Great Britain. The
 gunpowder & cannons seized from the fort were distributed across the
 colonies and utilized at the Battle of Bunker Hill the following year.
 
-The upper portion of the panel depicts the role of the Abenaki tribe in
-defending the vulnerable Northern border, which was site to continual
-conflict with enemy tribes & Canadian encroachment. Lieutenant Timothy
-Bedel established strong ties to the Abenaki Community of Coos, New
-Hampshire, on the Connecticut River in the hopes of recruiting members
-to the Patriot cause. Despite its history as a frequent war zone
-between the French & British for supremacy of the territory, the
-Abenaki retained their foothold in a land with significant spiritual
-and economic importance to their people. Through his promise of
-material support and protection, Bedel was able to recruit warriors &
-scouts who chose to relocate to the lower Coos. The panel features
-Lieutenant Bedel and Chief Philip, an Abenaki Patriot, deep in
-discussion. Despite their significant contribution to the Revolution,
-the Abenaki were denied protection in their homeland after the
-Revolution as fellow Patriots illegally seized territory belonging to
-the tribe.
+The upper portion of the panel depicts the role of the Coosuk Abenaki band in defending the vulnerable Northern border, which was subject to frequent conflict. Lieutenant Timothy Bedel established strong ties to this Abenaki Community of Coos, New Hampshire, on the Connecticut River to facilitate recruitment of members to the Patriot cause. Despite its history as a frequent war zone between the French & British for supremacy of the territory, these Coosuk band members retained their foothold in a land with significant spiritual and economic importance to their people. Through his promise of material support and protection, Bedel recruited soldiers & scouts. The panel features Lieutenant Bedel and Chief Philip, an Abenaki Patriot, deep in discussion. Despite their significant contribution to the Revolution, these Abenaki were denied protection in their homeland after the Revolution as fellow Patriots seized territory belonging to the tribe. Philip and his tribal citizens remained along with the settlers as he worked to secure hunting, fishing and planting rights for future generations.
 
 The New Hampshire Panel is being created at the New Hampshire
 Historical Society in Concord, where visitors can observe the stitching

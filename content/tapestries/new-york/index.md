@@ -1,6 +1,6 @@
 ---
 title: New York
-summary: From Dutch colony to cultural melting pot
+summary: Fraunces Tavern - Birch Trials & Freedom
 background_color: "bg-orange-900"
 audioDescription: "This audio description narrates the details of the New York Tapestry, which depicts the state's evolution from Dutch colony to British possession to American state, and its emergence as a center of commerce and immigration."
 colony: "NY"
@@ -27,7 +27,6 @@ Significant research undertaken by the Tavern (at which you can still
 enjoy a pint or two) has uncovered this important story that resulted
 in one of the largest emancipations of enslaved people prior to the
 Civil War.
-
 
 The Birch Trials were established to determine claims formerly enslaved
 individuals made about service to the British Crown during the American

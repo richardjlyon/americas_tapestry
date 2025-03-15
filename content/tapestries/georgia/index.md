@@ -37,8 +37,5 @@ work in the museum's state-of-the-art rotunda, allowing all visitors to
 engage with both the panel's history as well as the stitchers to learn
 about their organization.
 
-Our Georgia Director is [Deborah
-Berger](/team/state-directors/#debora-berger), Embroiderer's Guild of
-America National Director of Education. Deborah is mobilizing stitchers
-from all needlework organizations in the greater Atlanta area to work
+Our Georgia Director is Robin Starnes, the EGA Dogwood Chapter Membership Chair. Robin is mobilizing stitchers from all needlework organizations in the greater Atlanta area to work
 on the project.

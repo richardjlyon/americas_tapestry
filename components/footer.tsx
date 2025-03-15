@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           <div>
-            <h3 className="font-sans font-bold text-lg mb-4 text-colonial-gold">
+            <h3 className="font-serif font-bold text-2xl mb-4 text-colonial-gold">
               America's Tapestry
             </h3>
             <p className="font-serif text-lg sm:text-xl text-colonial-parchment/80">

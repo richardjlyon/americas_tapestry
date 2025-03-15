@@ -17,7 +17,7 @@ export default function TapestriesPage() {
       <div className="lead-text">
         Explore our complete collection of tapestries, each telling a lesser
         known, often overlooked contribution to our nation's journey towards
-        Independence. These meticulously crafted panels represent the threads
+        independence. These meticulously crafted panels represent the threads
         that, when woven together, form the rich tapestry of our nation's
         history and identity.
       </div>
