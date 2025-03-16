@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+  <!-- Background color -->
+  <rect width="100%" height="100%" fill="#f8f5ee"/>
+
+  <!-- Horizontal threads in subtle colors -->
+  <pattern id="threadTexture" patternUnits="userSpaceOnUse" width="5" height="5">
+    <rect width="5" height="5" fill="#f8f5ee"/>
+    <line x1="0" y1="2.5" x2="5" y2="2.5" stroke="#ebe6da" stroke-width="1"/>
+  </pattern>
+
+  <rect width="100%" height="100%" fill="url(#threadTexture)"/>
+
+  <!-- Thread spools as decorative elements -->
+  <g transform="translate(180,180)">
+    <rect x="-15" y="-30" width="30" height="60" rx="2" ry="2" fill="#d8d3c6"/>
+    <rect x="-20" y="-35" width="40" height="5" rx="1" ry="1" fill="#b5ad9c"/>
+    <rect x="-20" y="30" width="40" height="5" rx="1" ry="1" fill="#b5ad9c"/>
+    <!-- Thread wound around spool -->
+    <rect x="-15" y="-25" width="30" height="50" rx="1" ry="1" fill="#cdc7b8"/>
+  </g>
+
+  <!-- Thread coming off spool -->
+  <path d="M180,145 C220,130 240,180 260,160 C280,140 290,200 330,190" fill="none" stroke="#cdc7b8" stroke-width="2"/>
+</svg>

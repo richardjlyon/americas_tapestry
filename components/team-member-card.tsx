@@ -13,10 +13,13 @@ interface TeamMemberCardProps {
 
 export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
   // Use the imagePath from the TeamMember object
-  const placeholderPath = `/placeholder.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
+  const placeholderPath = `/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
 
   // Use state to track image loading errors and processed content
-  const [imgSrc, setImgSrc] = useState(member.imagePath || placeholderPath);
+  // Only use member.imagePath if it's a non-empty string
+  const [imgSrc, setImgSrc] = useState(
+    member.imagePath?.trim() ? member.imagePath : placeholderPath,
+  );
   const [contentHtml, setContentHtml] = useState('');
 
   // Handle image load error
@@ -47,6 +50,25 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
 
     processContent();
   }, [member.content]);
+
+  // Check for image existence when component mounts
+  useEffect(() => {
+    if (member.imagePath?.trim()) {
+      const img = new Image();
+      img.onload = () => {
+        // Image exists and loads successfully
+        setImgSrc(member.imagePath);
+      };
+      img.onerror = () => {
+        // Image doesn't exist or fails to load
+        console.error(
+          `Image doesn't exist: ${member.imagePath} for ${member.name}`,
+        );
+        setImgSrc(placeholderPath);
+      };
+      img.src = member.imagePath;
+    }
+  }, [member.imagePath, member.name, placeholderPath]);
 
   return (
     <div
