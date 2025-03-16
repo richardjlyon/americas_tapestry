@@ -24,7 +24,7 @@
     --border: 33 19% 82%;         /* colonial-stone */
     --input: 33 19% 82%;          /* colonial-stone */
     --ring: 47 97% 46%;           /* colonial-gold #e8b903 */
-    
+
     --radius: 0.5rem;
   }
 }
@@ -79,20 +79,20 @@
     /***************************************
      * TYPOGRAPHY COMPONENTS
      ***************************************/
-    
+
     /* Heading styles */
     .page-heading {
         @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-center tracking-tight;
     }
-    
+
     .section-title {
         @apply text-2xl text-3xl md:text-4xl font-bold tracking-tight text-foreground;
     }
-    
+
     .lead-text {
         @apply text-lg md:text-2xl font-medium text-foreground/80 font-serif max-w-3xl mx-auto text-center;
     }
-    
+
     /* Rich text content area */
     .content-typography {
         @apply prose prose-lg md:prose-xl max-w-none
@@ -125,20 +125,20 @@
     /***************************************
      * LAYOUT COMPONENTS
      ***************************************/
-     
+
     /* Section layouts */
     .section-padding {
         @apply py-12 sm:py-16 md:py-20 lg:py-24;
     }
-    
+
     .page-section {
         @apply pb-6 md:pt-4 md:pb-12;
     }
-    
+
     .page-section-pin {
         @apply relative pb-16;
     }
-    
+
     .page-section-pin::after {
         content: '';
         position: absolute;
@@ -183,7 +183,7 @@
     /***************************************
      * UI COMPONENTS
      ***************************************/
-     
+
     /* Hero elements */
     .hero-content-box {
         @apply bg-primary/50 backdrop-blur-sm p-6 md:p-8 rounded-lg inline-block shadow-lg transition-opacity duration-500;
@@ -226,7 +226,7 @@
     /***************************************
      * BACKGROUND TEXTURES
      ***************************************/
-    
+
     /* Textured backgrounds */
     .linen-texture {
         background-color: #f5f1e6 !important; /* colonial-linenTexture */
@@ -246,6 +246,16 @@
         background-color: #f8f3e6 !important; /* colonial-vintagePaper */
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
         box-shadow: inset 0 0 80px rgba(185, 161, 126, 0.2) !important;
+    }
+
+    /* Specific styling for form inputs with vintage paper texture */
+    input.vintage-paper,
+    textarea.vintage-paper {
+        background-color: #f8f3e6 !important;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
+        box-shadow: inset 0 0 30px rgba(185, 161, 126, 0.15) !important;
+        border-color: rgba(185, 161, 126, 0.4) !important;
+        color: #5a4a3a !important;
     }
 
     .authentic-parchment {
@@ -272,7 +282,7 @@
     /***************************************
      * PRINT STYLES
      ***************************************/
-    
+
     header,
     footer {
         @apply print:hidden;
@@ -283,7 +293,7 @@
     /***************************************
      * ANIMATION UTILITIES
      ***************************************/
-    
+
     .animate-ken-burns {
         animation: ken-burns 10s ease-in-out infinite alternate;
     }
@@ -291,24 +301,24 @@
     /***************************************
      * TEXT UTILITIES
      ***************************************/
-    
+
     /* Standardized link styling for use outside content-typography */
     .text-link {
         @apply text-secondary underline decoration-secondary/30 underline-offset-2 font-medium
         hover:text-secondary hover:decoration-secondary/70;
     }
-    
+
     /***************************************
      * BUTTON UTILITIES
      ***************************************/
-    
+
     .button-primary {
-        @apply rounded-full bg-secondary text-white border-secondary shadow-md 
+        @apply rounded-full bg-secondary text-white border-secondary shadow-md
                hover:bg-primary hover:border-primary hover:text-white transition-all duration-300;
     }
-    
+
     .button-gold {
-        @apply rounded-full bg-accent text-primary border-accent shadow-md 
+        @apply rounded-full bg-accent text-primary border-accent shadow-md
                hover:bg-primary hover:border-primary hover:text-white transition-all duration-300;
     }
 }

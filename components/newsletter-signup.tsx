@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { AlertCircle, CheckCircle2, Loader2, Mail } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const newsletterSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email address' }),
@@ -49,27 +50,29 @@ export function NewsletterSignup() {
       fetch('/api/debug-log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: { type: 'newsletter_response', data: response } }),
-      }).catch(err => console.error('Failed to log response:', err));
+        body: JSON.stringify({
+          error: { type: 'newsletter_response', data: response },
+        }),
+      }).catch((err) => console.error('Failed to log response:', err));
 
       if (response.success) {
         reset();
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      
+
       // Log error for debugging
       fetch('/api/debug-log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          error: { 
-            type: 'newsletter_error', 
+        body: JSON.stringify({
+          error: {
+            type: 'newsletter_error',
             message: error instanceof Error ? error.message : String(error),
-            stack: error instanceof Error ? error.stack : undefined 
-          } 
+            stack: error instanceof Error ? error.stack : undefined,
+          },
         }),
-      }).catch(err => console.error('Failed to log error:', err));
+      }).catch((err) => console.error('Failed to log error:', err));
 
       setFormResponse({
         success: false,
@@ -89,7 +92,7 @@ export function NewsletterSignup() {
             id="newsletter-name"
             placeholder="Jane Doe"
             {...register('name')}
-            className={errors.name ? 'border-red-500' : ''}
+            className={cn('vintage-paper', errors.name && 'border-red-500')}
           />
           {errors.name && (
             <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
@@ -103,7 +106,7 @@ export function NewsletterSignup() {
             type="email"
             placeholder="jane@example.com"
             {...register('email')}
-            className={errors.email ? 'border-red-500' : ''}
+            className={cn('vintage-paper', errors.email && 'border-red-500')}
           />
           {errors.email && (
             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>

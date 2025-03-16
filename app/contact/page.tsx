@@ -30,8 +30,36 @@ export default function ContactPage() {
               <ContactForm />
             </ContentCard>
 
-            {/* Subscribe to our newsletter */}
+            {/* Contact information - moved from right column */}
             <ContentCard>
+              <h2 className="section-title text-xl pb-4">
+                Contact Information
+              </h2>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <Mail className="h-5 w-5 text-colonial-burgundy mr-3 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-colonial-navy text-xl">
+                      Email
+                    </h3>
+                    <p className="font-serif text-colonial-navy/80">
+                      <a
+                        href="mailto:hello@americastapestry.com"
+                        className="hover:text-colonial-burgundy transition-colors"
+                      >
+                        hello@americastapestry.com
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ContentCard>
+          </div>
+
+          {/* Right column */}
+          <div className="sticky top-24">
+            {/* Subscribe to our newsletter - moved from left column */}
+            <ContentCard className="mb-8">
               <h2 className="section-title text-xl pb-4">
                 Subscribe to Our Newsletter
               </h2>
@@ -42,75 +70,14 @@ export default function ContactPage() {
               </p>
               <NewsletterSignup />
             </ContentCard>
-          </div>
 
-          {/* Contact information */}
-          <div>
-            <div className="sticky top-24">
-              <div className="relative mx-auto max-w-md mb-8">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/letter-BWuLNcfXG3VHpLMxMiOjxj8utfA2wo.png"
-                  alt="Embroidered envelope illustration"
-                  className="w-full rounded-lg shadow-lg"
-                />
-                <div className="absolute inset-0 bg-colonial-navy/5 rounded-lg"></div>
-              </div>
-
-              <ContentCard>
-                <h2 className="section-title text-xl pb-4">
-                  Contact Information
-                </h2>
-
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <Mail className="h-5 w-5 text-colonial-burgundy mr-3 mt-1" />
-                    <div>
-                      <h3 className="font-bold text-colonial-navy text-xl">
-                        Email
-                      </h3>
-                      <p className="font-serif text-colonial-navy/80">
-                        <a
-                          href="mailto:hello@americastapestry.com"
-                          className="hover:text-colonial-burgundy transition-colors"
-                        >
-                          hello@americastapestry.com
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <Phone className="h-5 w-5 text-colonial-burgundy mr-3 mt-1" />
-                    <div>
-                      <h3 className="font-bold text-colonial-navy text-xl">
-                        Phone
-                      </h3>
-                      <p className="font-serif text-colonial-navy/80">
-                        <a
-                          href="tel:+12025551234"
-                          className="hover:text-colonial-burgundy transition-colors"
-                        >
-                          (202) 555-1234
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-colonial-navy/10">
-                  <h3 className="font-bold text-colonial-navy mb-3 text-xl">
-                    Hours of Operation
-                  </h3>
-                  <p className="font-serif text-colonial-navy/80 mb-2">
-                    <span className="font-medium">Monday - Friday:</span> 9:00
-                    AM - 5:00 PM EST
-                  </p>
-                  <p className="font-serif text-colonial-navy/80">
-                    <span className="font-medium">Saturday - Sunday:</span>{' '}
-                    Closed
-                  </p>
-                </div>
-              </ContentCard>
+            {/* letter image */}
+            <div className="relative mx-auto max-w-md mt-12">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/letter-BWuLNcfXG3VHpLMxMiOjxj8utfA2wo.png"
+                alt="Embroidered envelope illustration"
+                className="w-2/3 rounded-lg mx-auto"
+              />
             </div>
           </div>
         </div>

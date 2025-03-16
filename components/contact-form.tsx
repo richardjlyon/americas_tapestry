@@ -13,6 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters' }),
@@ -72,7 +73,7 @@ export function ContactForm() {
             id="name"
             placeholder="Jane Doe"
             {...register('name')}
-            className={errors.name ? 'border-red-500' : ''}
+            className={cn('vintage-paper', errors.name && 'border-red-500')}
           />
           {errors.name && (
             <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
@@ -86,7 +87,7 @@ export function ContactForm() {
             type="email"
             placeholder="jane@example.com"
             {...register('email')}
-            className={errors.email ? 'border-red-500' : ''}
+            className={cn('vintage-paper', errors.email && 'border-red-500')}
           />
           {errors.email && (
             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -99,7 +100,7 @@ export function ContactForm() {
             id="subject"
             placeholder="Inquiry about America's Tapestry"
             {...register('subject')}
-            className={errors.subject ? 'border-red-500' : ''}
+            className={cn('vintage-paper', errors.subject && 'border-red-500')}
           />
           {errors.subject && (
             <p className="text-red-500 text-sm mt-1">
@@ -115,7 +116,7 @@ export function ContactForm() {
             placeholder="Your message here..."
             rows={5}
             {...register('message')}
-            className={errors.message ? 'border-red-500' : ''}
+            className={cn('vintage-paper', errors.message && 'border-red-500')}
           />
           {errors.message && (
             <p className="text-red-500 text-sm mt-1">
