@@ -13,7 +13,7 @@ export function Footer() {
               America's Tapestry
             </h3>
             <p className="font-serif text-lg sm:text-xl text-colonial-parchment/80">
-              A visual exploration of stories from our nation’s journey towards
+              A visual exploration of stories from our nation's journey towards
               Independence.
             </p>
           </div>
@@ -22,27 +22,42 @@ export function Footer() {
             <h3 className="font-sans font-bold text-lg mb-4 text-colonial-gold">
               Quick Links
             </h3>
-            <ul className="space-y-2">
-              {[
-                { name: 'Home', href: '/' },
-                { name: 'About', href: '/about' },
-                { name: 'News', href: '/news' },
-                { name: 'Tapestry', href: '/tapestries' },
-                { name: 'Team', href: '/team' },
-                { name: 'Resources', href: '/resources' },
-                { name: 'Sponsors', href: '/sponsors' },
-                { name: 'Contact', href: '/contact' },
-              ].map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="font-serif text-lg text-colonial-parchment/70 hover:text-colonial-parchment transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="grid grid-cols-2 gap-x-4">
+              <ul className="space-y-2">
+                {[
+                  { name: 'Home', href: '/' },
+                  { name: 'About', href: '/about' },
+                  { name: 'News', href: '/news' },
+                  { name: 'Tapestry', href: '/tapestries' },
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="font-serif text-lg text-colonial-parchment/70 hover:text-colonial-parchment transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-2">
+                {[
+                  { name: 'Team', href: '/team' },
+                  { name: 'Resources', href: '/resources' },
+                  { name: 'Sponsors', href: '/sponsors' },
+                  { name: 'Contact', href: '/contact' },
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="font-serif text-lg text-colonial-parchment/70 hover:text-colonial-parchment transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div className="sm:col-span-2 md:col-span-1">
@@ -79,6 +94,14 @@ export function Footer() {
                 events.
               </p>
               <FooterNewsletter />
+              <div className="mt-4">
+                <Link
+                  href="/privacy-policy"
+                  className="font-serif text-colonial-parchment/70 hover:text-colonial-parchment transition-colors text-lg"
+                >
+                  Privacy Policy
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -86,14 +109,14 @@ export function Footer() {
         <div className="flex justify-center mt-8">
           <Button
             asChild
-            className="rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90 font-medium"
+            className="bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90 font-medium"
           >
             <Link href="/support">Support our project</Link>
           </Button>
         </div>
 
-        <div className="border-t border-colonial-gold/20 mt-8 pt-8 text-center text-colonial-parchment/60">
-          <p className="font-serif text-base">
+        <div className="mt-8 pt-8 text-center">
+          <p className="font-serif text-base font-medium text-colonial-parchment/70 bg-colonial-navy/50 inline-block px-4 py-2 rounded">
             © {new Date().getFullYear()} America's Tapestry. All rights
             reserved.
           </p>

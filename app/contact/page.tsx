@@ -68,11 +68,18 @@ export default function ContactPage() {
                 America's Tapestry. We send monthly updates about our project's
                 progress, upcoming exhibitions, and educational opportunities.
               </p>
+
               <NewsletterSignup />
+              <p className="text-sm pt-4 text-center ">
+                You can subscribe at any time. See our{' '}
+                <a className="font-bold" href="/privacy-policy">
+                  privacy policy.
+                </a>
+              </p>
             </ContentCard>
 
             {/* letter image */}
-            <div className="relative mx-auto max-w-md mt-12">
+            <div className="relative mx-auto max-w-md mt-4">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/letter-BWuLNcfXG3VHpLMxMiOjxj8utfA2wo.png"
                 alt="Embroidered envelope illustration"
