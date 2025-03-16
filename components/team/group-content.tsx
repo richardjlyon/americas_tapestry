@@ -9,6 +9,9 @@ export interface GroupContentProps {
 }
 
 export function GroupContent({ group, members }: GroupContentProps) {
+  // Filter out members with visible set to false
+  const visibleMembers = members.filter((member) => member.visible !== false);
+
   return (
     <>
       <h1 className="page-heading">{group.name}</h1>
@@ -17,9 +20,9 @@ export function GroupContent({ group, members }: GroupContentProps) {
         {group.longDescription || group.description}
       </div>
 
-      {members.length > 0 ? (
+      {visibleMembers.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {members.map((member) => (
+          {visibleMembers.map((member) => (
             <TeamMemberCard key={member.slug} member={member} />
           ))}
         </div>
