@@ -23,6 +23,21 @@ export async function generateStaticParams() {
   }));
 }
 
+// Function to add captions to images in HTML
+function addImageCaptions(htmlContent: string): string {
+  // Replace standard markdown image tags with figure + figcaption
+  // This regex looks for <p><img src="..." alt="..."></p> tags which is how remark-html typically renders markdown images
+  return htmlContent.replace(
+    /<p>(<img\s+src="([^"]+)"\s+alt="([^"]+)"[^>]*>)<\/p>/g,
+    (match, img, src, alt) => `
+      <figure class="image-with-caption">
+        ${img}
+        <figcaption>${alt}</figcaption>
+      </figure>
+    `,
+  );
+}
+
 export default async function BlogPostPage({
   params,
 }: { params: { slug: string } }) {
@@ -34,7 +49,10 @@ export default async function BlogPostPage({
 
   // Convert markdown to HTML
   const processedContent = await remark().use(html).process(post.content);
-  const contentHtml = processedContent.toString();
+  let contentHtml = processedContent.toString();
+
+  // Add captions to images
+  contentHtml = addImageCaptions(contentHtml);
 
   // Get related posts from the same category
   const relatedPosts = getBlogPostsByCategory(

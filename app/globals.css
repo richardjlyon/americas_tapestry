@@ -122,6 +122,19 @@
         @apply mt-0;
     }
 
+    /* Image caption styles */
+    .image-with-caption {
+        @apply my-8 mx-auto max-w-full;
+    }
+
+    .image-with-caption img {
+        @apply w-full rounded-md shadow-md mx-auto;
+    }
+
+    .image-with-caption figcaption {
+        @apply text-center text-sm text-foreground/70 italic mt-2 font-serif max-w-prose mx-auto;
+    }
+
     /***************************************
      * LAYOUT COMPONENTS
      ***************************************/
