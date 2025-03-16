@@ -71,7 +71,7 @@ export default function ContactPage() {
 
               <NewsletterSignup />
               <p className="text-sm pt-4 text-center ">
-                You can subscribe at any time. See our{' '}
+                You can unsubscribe at any time. See our{' '}
                 <a className="font-bold" href="/privacy-policy">
                   privacy policy.
                 </a>
