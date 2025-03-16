@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
             <p>
               When you subscribe to our newsletter, we only collect your email
               address. We use it solely to send you updates and information
-              youve requested.
+              you've requested.
             </p>
             <h2>Data Storage</h2>
             <p>
@@ -32,8 +32,8 @@ export default function PrivacyPolicyPage() {
             <h2>Anonymous Usage Metrics</h2>
             <p>
               We collect anonymous website usage metrics to improve our service
-              and user experience. This data does not identify individual users
-              and is used solely for analytical purposes.
+              and user experience. This data does not identify you and is used
+              solely for analytical purposes.
             </p>
             <h2>No Third-Party Sharing</h2>
             <p>
@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <h2>Questions?</h2>
             <p>
-              If you have any questions about this policy, feel free to{' '}
+              If you have any questions about this policy, feel free to
               <a href="/contact">contact us</a>. We're here to help!
             </p>
 
