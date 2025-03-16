@@ -10,27 +10,28 @@ import { useState, useEffect } from 'react';
 
 interface TeamCardProps {
   stateName: string;
-  historicalPartner?: TeamMember | null;
-  illustrator?: TeamMember | null;
-  stateDirector?: TeamMember | null;
-  stitchingGroup?: TeamMember | null;
+  historicalPartners?: TeamMember[] | null;
+  illustrators?: TeamMember[] | null;
+  stateDirectors?: TeamMember[] | null;
+  stitchingGroups?: TeamMember[] | null;
 }
 
 export function TeamCard({
   stateName,
-  historicalPartner,
-  illustrator,
-  stateDirector,
-  stitchingGroup,
+  historicalPartners,
+  illustrators,
+  stateDirectors,
+  stitchingGroups,
 }: TeamCardProps) {
   // State to track which images failed to load
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
+  // Flatten all team members into a single array
   const teamMembers = [
-    historicalPartner,
-    illustrator,
-    stateDirector,
-    stitchingGroup,
+    ...(historicalPartners || []),
+    ...(illustrators || []),
+    ...(stateDirectors || []),
+    ...(stitchingGroups || []),
   ].filter(Boolean);
 
   // Function to handle image loading errors
@@ -75,10 +76,11 @@ export function TeamCard({
                               : member.groupSlug === 'stitching-groups'
                                 ? '/placeholder-user.jpg'
                                 : member.groupSlug === 'state-directors'
-                                  ? // For state directors, try the face image first, then fall back to regular image if it fails
-                                    failedImages[`${member.slug}-face`]
-                                    ? `/images/team/${member.groupSlug}/${member.slug}/${member.slug}.jpg`
-                                    : `/images/team/${member.groupSlug}/${member.slug}/${member.slug}-face.jpg`
+                                  ? // For state directors, use the face image if available, otherwise use regular image
+                                    member.hasFaceImage &&
+                                    !failedImages[`${member.slug}-face`]
+                                    ? `/images/team/${member.groupSlug}/${member.slug}/${member.slug}-face.jpg`
+                                    : `/images/team/${member.groupSlug}/${member.slug}/${member.slug}.jpg`
                                   : member.groupSlug === 'illustrators'
                                     ? `/images/team/${member.groupSlug}/${member.slug}/${member.slug}.jpg`
                                     : member.faceImagePath ||

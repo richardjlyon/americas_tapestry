@@ -54,8 +54,14 @@ export default async function TapestryPage({
     '/placeholder.svg?height=600&width=800';
 
   // Get all team members for this state using the utility function
-  const { stateDirector, historicalPartner, illustrator, stitchingGroup } =
+  const { stateDirectors, historicalPartners, illustrators, stitchingGroups } =
     getTeamMembersByState(tapestry.title);
+
+  const hasTeamMembers =
+    (stateDirectors && stateDirectors.length > 0) ||
+    (historicalPartners && historicalPartners.length > 0) ||
+    (illustrators && illustrators.length > 0) ||
+    (stitchingGroups && stitchingGroups.length > 0);
 
   return (
     <>
@@ -93,16 +99,13 @@ export default async function TapestryPage({
 
       {/* Team card section */}
       <PageSection paddingTop="none">
-        {(stateDirector ||
-          historicalPartner ||
-          illustrator ||
-          stitchingGroup) && (
+        {hasTeamMembers && (
           <TeamCard
             stateName={tapestry.title}
-            stateDirector={stateDirector}
-            historicalPartner={historicalPartner}
-            illustrator={illustrator}
-            stitchingGroup={stitchingGroup}
+            stateDirectors={stateDirectors}
+            historicalPartners={historicalPartners}
+            illustrators={illustrators}
+            stitchingGroups={stitchingGroups}
           />
         )}
       </PageSection>

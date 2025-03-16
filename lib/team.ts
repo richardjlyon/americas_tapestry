@@ -9,9 +9,9 @@ export interface TeamMember {
   content: string;
   groupSlug: string;
   imagePosition?: string; // Control image positioning (e.g., "center", "top", "left 30% center")
-  state?: string;         // Single state assignment
-  states?: string[];      // Multiple state assignments
-  [key: string]: any;     // For additional frontmatter fields
+  state?: string; // Single state assignment
+  states?: string[]; // Multiple state assignments
+  [key: string]: any; // For additional frontmatter fields
 }
 
 export interface TeamGroup {
@@ -27,23 +27,23 @@ export interface TeamGroup {
 export function getTeamGroup(slug: string): TeamGroup | undefined {
   const groupDir = path.join(process.cwd(), `content/team/${slug}`);
   const indexFile = path.join(groupDir, 'index.md');
-  
+
   if (!fs.existsSync(indexFile)) {
     console.warn(`No index.md found for team group: ${slug}`);
     return undefined;
   }
-  
+
   try {
     const fileContents = fs.readFileSync(indexFile, 'utf8');
     const { data, content } = matter(fileContents);
-    
+
     return {
       name: data.name,
       slug: slug,
       description: data.description,
       longDescription: content.trim(),
       order: data.order,
-      ...data // Include any additional frontmatter fields
+      ...data, // Include any additional frontmatter fields
     } as TeamGroup;
   } catch (error) {
     console.error(`Error reading team group ${slug}:`, error);
@@ -53,27 +53,27 @@ export function getTeamGroup(slug: string): TeamGroup | undefined {
 
 export function getTeamGroups(): TeamGroup[] {
   const teamDir = path.join(process.cwd(), 'content/team');
-  
+
   if (!fs.existsSync(teamDir)) {
     console.warn('Team directory not found');
     return [];
   }
-  
+
   try {
     // Get all directories that contain an index.md file
     const groupDirs = fs
       .readdirSync(teamDir, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name)
-      .filter(dir => {
+      .filter((dirent) => dirent.isDirectory())
+      .map((dirent) => dirent.name)
+      .filter((dir) => {
         const indexPath = path.join(teamDir, dir, 'index.md');
         return fs.existsSync(indexPath);
       });
-    
+
     const groups = groupDirs
-      .map(slug => getTeamGroup(slug))
+      .map((slug) => getTeamGroup(slug))
       .filter(Boolean) as TeamGroup[];
-    
+
     // Sort by order field
     return groups.sort((a, b) => (a.order || 999) - (b.order || 999));
   } catch (error) {
@@ -113,12 +113,12 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
       const { data, content } = matter(fileContents);
 
       // Construct the image path based on the directory structure
-      let imagePath;
-      
+      let imagePath: string;
+
       // Special handling for different group types
       if (group === 'stitching-groups') {
         // Stitching groups use a placeholder
-        imagePath = `/placeholder-user.jpg`;
+        imagePath = '/placeholder-user.jpg';
       } else if (group === 'historical-partners') {
         // Historical partners use the directory name convention
         imagePath = `/images/team/${group}/${dirName}/${dirName}.jpg`;
@@ -126,22 +126,35 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
         // Standard image path for other groups
         imagePath = `/images/team/${group}/${dirName}/${dirName}.jpg`;
       }
-      
+
       // Check if a face image exists (using the naming convention: name-face.jpg)
       const faceImagePath = `/images/team/${group}/${dirName}/${dirName}-face.jpg`;
-      
-      // Check if the face image exists (for state directors)
-      // This is a hardcoded list of directors that we know have face images
-      const hasFaceImage = group === 'state-directors' && 
-        ['sally-poole', 'denise-de-more', 'carol-prevost', 'mary-van-tyne'].includes(dirName);
-      
+      const actualFaceImagePath = path.join(
+        process.cwd(),
+        'public',
+        `images/team/${group}/${dirName}/${dirName}-face.jpg`,
+      );
+
+      // Dynamically check if the face image file exists
+      const hasFaceImage =
+        group === 'state-directors' && fs.existsSync(actualFaceImagePath);
+
+      // Check if required fields exist in data
+      if (!data.name || !data.role) {
+        console.warn(
+          `Missing required fields (name or role) for team member: ${dirName} in group ${group}`,
+        );
+      }
+
       return {
         slug: dirName,
+        name: data.name || dirName, // Fallback to dirName if name is missing
+        role: data.role || 'Team Member', // Provide a default role if missing
         content,
         groupSlug: group,
         imagePath,
-        faceImagePath, // Add face image path (will be checked for existence client-side)
-        hasFaceImage, // Flag to indicate if a face image exists
+        faceImagePath,
+        hasFaceImage,
         ...data,
       } as TeamMember;
     })
@@ -156,16 +169,16 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
     // If only one has order, prioritize that one
     if (a.order !== undefined) return -1;
     if (b.order !== undefined) return 1;
-    
+
     // If both have names, compare them
     if (a.name && b.name) {
       return a.name.localeCompare(b.name);
     }
-    
+
     // Handle cases where name might be undefined
     if (a.name) return -1;
     if (b.name) return 1;
-    
+
     // If both missing names, keep original order
     return 0;
   });
@@ -183,19 +196,17 @@ export function getTeamMember(group: string, slug: string): TeamMember | null {
 
 // Get team members for a specific state/colony
 export function getTeamMembersByState(stateName: string) {
-  // Find state director
+  // Find state directors
   const stateDirectors = getTeamMembersByGroup('state-directors').filter(
-    (member) => member.state === stateName
+    (member) => member.state === stateName,
   );
-  const stateDirector = stateDirectors.length > 0 ? stateDirectors[0] : null;
-  
-  // Find historical partner
-  const historicalPartners = getTeamMembersByGroup('historical-partners').filter(
-    (member) => member.state === stateName
-  );
-  const historicalPartner = historicalPartners.length > 0 ? historicalPartners[0] : null;
-  
-  // Find illustrator - handle both single state and array of states
+
+  // Find historical partners
+  const historicalPartners = getTeamMembersByGroup(
+    'historical-partners',
+  ).filter((member) => member.state === stateName);
+
+  // Find illustrators - handle both single state and array of states
   const illustrators = getTeamMembersByGroup('illustrators').filter(
     (member) => {
       // Check if member.state is an array and contains stateName
@@ -204,20 +215,18 @@ export function getTeamMembersByState(stateName: string) {
       }
       // Check if member.state is a string that matches stateName
       return member.state === stateName;
-    }
+    },
   );
-  const illustrator = illustrators.length > 0 ? illustrators[0] : null;
-  
-  // Find stitching group
+
+  // Find stitching groups
   const stitchingGroups = getTeamMembersByGroup('stitching-groups').filter(
-    (member) => member.state === stateName
+    (member) => member.state === stateName,
   );
-  const stitchingGroup = stitchingGroups.length > 0 ? stitchingGroups[0] : null;
 
   return {
-    stateDirector,
-    historicalPartner,
-    illustrator,
-    stitchingGroup
+    stateDirectors,
+    historicalPartners,
+    illustrators,
+    stitchingGroups,
   };
 }
