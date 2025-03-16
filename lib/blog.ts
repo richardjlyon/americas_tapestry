@@ -12,6 +12,7 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   author?: string;
+  videoUrl?: string;
 }
 
 // Update the BlogCategory type to include "videos"
@@ -135,6 +136,7 @@ export function getAllBlogPosts(): BlogPost[] {
           image: data.image || '/placeholder.svg',
           content,
           author: data.author || null,
+          videoUrl: data.videoUrl || undefined,
         });
       } catch (error) {
         console.error(`Error processing ${fullPath}:`, error);
@@ -197,6 +199,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
           image: data.image || '/placeholder.svg',
           content,
           author: data.author || null,
+          videoUrl: data.videoUrl || undefined,
         };
       } catch (error) {
         console.error(`Error processing ${fullPath}:`, error);

@@ -11,8 +11,7 @@ import {
 } from '@/lib/blog';
 import type { BlogCategory } from '@/lib/blog';
 import { notFound } from 'next/navigation';
-import { remark } from 'remark';
-import html from 'remark-html';
+import { markdownToHtml } from '@/lib/markdown';
 import { PageSection } from '@/components/ui/page-section';
 
 export async function generateStaticParams() {
@@ -47,9 +46,16 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  // Convert markdown to HTML
-  const processedContent = await remark().use(html).process(post.content);
-  let contentHtml = processedContent.toString();
+  // Debug logging
+  console.log('Post data:', {
+    title: post.title,
+    category: post.category,
+    videoUrl: post.videoUrl,
+    image: post.image,
+  });
+
+  // Convert markdown to HTML using our modified function
+  let contentHtml = await markdownToHtml(post.content);
 
   // Add captions to images
   contentHtml = addImageCaptions(contentHtml);
@@ -65,8 +71,10 @@ export default async function BlogPostPage({
   return (
     <>
       {/* Page Header */}
-      <PostTitle title={post.title} />
-      <PostExcerpt excerpt={post.excerpt} />
+      <div className="mb-8">
+        <PostTitle title={post.title} />
+        <PostExcerpt excerpt={post.excerpt} />
+      </div>
 
       {/* Content Section */}
       <PageSection paddingTop="none" paddingBottom="none">

@@ -65,7 +65,7 @@ export function Header() {
       >
         <div className="relative h-10 w-10 md:h-12 md:w-12 overflow-hidden">
           <Image
-            src="/americas-tapestry-logo-white.png"
+            src="/americas-tapestry-logo-patriotic.png"
             alt="America's Tapestry Logo"
             fill
             className="object-contain"
