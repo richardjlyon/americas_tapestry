@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -57,16 +58,27 @@ export function Header() {
           : 'bg-colonial-burgundy/90 backdrop-blur-sm',
       )}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="font-serif font-bold text-lg sm:text-xl z-20"
-          >
-            <span className="text-colonial-parchment">America's Tapestry</span>
-          </Link>
+      {/* Logo - Positioned at the root level */}
+      <Link
+        href="/"
+        className="absolute top-1/2 left-4 md:left-8 flex items-center z-30 transform -translate-y-1/2"
+      >
+        <div className="relative h-10 w-10 md:h-12 md:w-12 overflow-hidden">
+          <Image
+            src="/americas-tapestry-logo-white.png"
+            alt="America's Tapestry Logo"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
+        <span className="ml-2.5 font-serif font-bold text-lg sm:text-2xl text-colonial-parchment">
+          America's Tapestry
+        </span>
+      </Link>
 
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-end h-16 md:h-20">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8 lg:space-x-12">
             {navigationItems.map((item) => (
@@ -81,7 +93,10 @@ export function Header() {
           </nav>
 
           {/* Support Button - Desktop */}
-          <ColonialGoldButton asChild className="hidden md:flex text-sm py-1.5 px-4">
+          <ColonialGoldButton
+            asChild
+            className="hidden md:flex text-sm py-1.5 px-4 ml-4"
+          >
             <Link href="/support">Support our project</Link>
           </ColonialGoldButton>
 
@@ -115,7 +130,7 @@ export function Header() {
       >
         {/* Mobile Menu Content */}
         <div className="h-screen pt-20 pb-6 px-4 overflow-y-auto bg-colonial-burgundy">
-          <nav className="flex flex-col space-y-6">
+          <nav className="flex flex-col space-y-6 mt-4">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
