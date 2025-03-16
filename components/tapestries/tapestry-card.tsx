@@ -27,12 +27,10 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
   const statusColor = statusColors[tapestry.status] || 'bg-colonial-navy/70';
   const statusTextColor =
     statusTextColors[tapestry.status] || 'text-colonial-parchment';
+  const isClickable = tapestry.status !== 'Not Started';
 
-  return (
-    <Link
-      href={`/tapestries/${tapestry.slug}`}
-      className="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-lg border border-colonial-navy/10 relative"
-    >
+  const cardContent = (
+    <>
       <div className="aspect-[4/3] overflow-hidden">
         <div
           className={cn(
@@ -69,12 +67,30 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
           <h3 className="font-sans font-medium text-lg text-colonial-navy group-hover:text-colonial-burgundy transition-colors">
             {tapestry.title}
           </h3>
-          <ArrowUpRight className="h-4 w-4 text-colonial-navy/50 group-hover:text-colonial-burgundy transition-colors" />
+          {isClickable && (
+            <ArrowUpRight className="h-4 w-4 text-colonial-navy/50 group-hover:text-colonial-burgundy transition-colors" />
+          )}
         </div>
         <p className="font-serif text-sm text-colonial-navy/70 mt-1 line-clamp-2">
           {tapestry.summary}
         </p>
       </div>
-    </Link>
+    </>
   );
+
+  const baseClassNames =
+    'group overflow-hidden rounded-lg bg-white shadow-md transition-all border border-colonial-navy/10 relative';
+
+  if (isClickable) {
+    return (
+      <Link
+        href={`/tapestries/${tapestry.slug}`}
+        className={`${baseClassNames} cursor-pointer hover:shadow-lg`}
+      >
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return <div className={`${baseClassNames} opacity-80`}>{cardContent}</div>;
 }
