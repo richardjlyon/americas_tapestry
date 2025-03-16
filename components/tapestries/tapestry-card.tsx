@@ -39,7 +39,10 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
           )}
         />
         <img
-          src={tapestry.thumbnail || '/placeholder.svg?height=600&width=800'}
+          src={
+            tapestry.thumbnail ||
+            '/tapestry-placeholder.svg?height=600&width=800'
+          }
           alt={tapestry.title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

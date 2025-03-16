@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+  <!-- Background matching the image -->
+  <rect width="100%" height="100%" fill="#f1ece2"/>
+
+  <!-- Simple "Coming Soon" text in EB Garamond with muted color -->
+  <text x="400" y="300"
+        font-family="'EB Garamond', serif"
+        font-size="48"
+        fill="#7f7f7f"
+        text-anchor="middle"
+        dominant-baseline="middle">
+    Coming Soon
+  </text>
+</svg>

@@ -158,7 +158,7 @@ export function getAllTapestries(): TapestryEntry[] {
           thumbnail = imagePath;
         } else {
           // Use placeholder as last resort
-          thumbnail = '/placeholder.svg';
+          thumbnail = '/tapestry-placeholder.svg?height=600&width=800';
         }
       }
 
