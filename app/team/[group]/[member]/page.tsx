@@ -50,6 +50,7 @@ export default async function TeamMemberPage({
   const personDetails = {
     name: member.name,
     role: member.role,
+    state: member.state || '',
     imagePosition: member.imagePosition,
   };
 

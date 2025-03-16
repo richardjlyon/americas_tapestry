@@ -4,6 +4,7 @@ import { ContentCard } from '../ui/content-card';
 interface PersonDetails {
   name: string;
   role: string;
+  state?: string;
   imagePosition?: string;
 }
 
@@ -57,6 +58,7 @@ const PersonCard: FC<PersonCardProps> = ({
               </h2>
               <p className="font-serif text-xl text-colonial-burgundy mt-1">
                 {personDetails.role}
+                {personDetails.state ? `, ${personDetails.state}` : ''}
               </p>
             </div>
             <div
