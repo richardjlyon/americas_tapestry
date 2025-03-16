@@ -110,8 +110,6 @@ export function getAllTapestries(): TapestryEntry[] {
     .filter((dirent) => dirent.isDirectory())
     .map((dirent) => dirent.name);
 
-  console.log('Found tapestry folders:', tapestryFolders);
-
   // Read each folder and parse its index.md file
   const tapestries = tapestryFolders
     .map((folderName) => {
@@ -163,8 +161,6 @@ export function getAllTapestries(): TapestryEntry[] {
           thumbnail = '/placeholder.svg';
         }
       }
-
-      console.log(`Loaded tapestry: ${slug} with status: ${status}`);
 
       // Return the tapestry entry
       return {

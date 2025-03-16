@@ -58,10 +58,10 @@ export default async function TapestryPage({
     getTeamMembersByState(tapestry.title);
 
   const hasTeamMembers =
-    (stateDirectors && stateDirectors.length > 0) ||
-    (historicalPartners && historicalPartners.length > 0) ||
-    (illustrators && illustrators.length > 0) ||
-    (stitchingGroups && stitchingGroups.length > 0);
+    stateDirectors?.length > 0 ||
+    historicalPartners?.length > 0 ||
+    illustrators?.length > 0 ||
+    stitchingGroups?.length > 0;
 
   return (
     <>

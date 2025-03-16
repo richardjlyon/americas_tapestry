@@ -15,9 +15,9 @@ interface HeroCarouselProps {
 
 export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
   // Ensure tapestries is a valid array
-  const validTapestries = useMemo(() => 
-    Array.isArray(tapestries) ? tapestries : [], 
-    [tapestries]
+  const validTapestries = useMemo(
+    () => (Array.isArray(tapestries) ? tapestries : []),
+    [tapestries],
   );
   const hasTapestries = validTapestries.length > 0;
 
@@ -30,15 +30,8 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
 
   // Debug carousel issues
   useEffect(() => {
-    console.log('HeroCarousel received tapestries:', {
-      count: validTapestries.length,
-      tapestries: validTapestries.map((t) => ({
-        slug: t.slug,
-        imagePath: t.imagePath,
-        thumbnail: t.thumbnail,
-      })),
-    });
-  }, [validTapestries]);
+    // Debugging code removed
+  }, []);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -75,20 +68,18 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
     setIsLoaded(true);
   }, []);
 
-  // Debug tapestry data
+  // Set up autoplay
   useEffect(() => {
-    console.log('Hero carousel tapestries:', tapestries);
-    tapestries.forEach((tapestry) => {
-      console.log(`Tapestry ${tapestry.slug}:`, {
-        status: tapestry.status,
-        imagePath: tapestry.imagePath,
-        thumbnail: tapestry.thumbnail,
-      });
-    });
-  }, [tapestries]);
+    // Set up autoplay interval
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % validTapestries.length);
+    }, 6000);
+
+    // Clear interval on unmount
+    return () => clearInterval(interval);
+  }, [validTapestries.length]);
 
   if (!hasTapestries) {
-    console.log('No eligible tapestries found for carousel!');
     return (
       <div className="relative h-[80vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
         <div
