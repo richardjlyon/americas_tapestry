@@ -1,6 +1,6 @@
 ---
 title: Maryland
-summary: Religious tolerance and the Chesapeake Bay heritage
+summary: The bravery of the Maryland 400
 background_color: "bg-red-800"
 audioDescription: "This audio description provides a detailed verbal account of the Maryland Tapestry, which depicts the state's founding as a haven for religious tolerance and its rich maritime traditions."
 colony: "MD"
@@ -29,4 +29,3 @@ The Maryland Panel is being created at the [Maryland Historical Society](/team/h
 Our Maryland Director is [Catherine Howard](/team/state-directors/#catherine-howard), a textile artist and historian specializing in Chesapeake Bay traditions. She has assembled a diverse team of stitchers from across the state, including members of the Chesapeake Needlework Guild and the Baltimore Embroidery Circle.
 
 The tapestry highlights key moments in Maryland's history, from the landing of the Ark and the Dove at St. Clement's Island to the writing of "The Star-Spangled Banner" during the bombardment of Fort McHenry. It also celebrates the state's agricultural and maritime traditions, including tobacco farming, shipbuilding, and the distinctive culture of the Chesapeake watermen. Special attention has been paid to representing the contributions of Native Americans, African Americans, and the diverse religious communities that have shaped Maryland's identity.
-

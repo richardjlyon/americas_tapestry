@@ -1,6 +1,6 @@
 ---
 title: Connecticut
-summary: The Constitution State and its Puritan foundations
+summary: Stories from the Provision State
 background_color: "bg-blue-700"
 audioDescription: "This audio description narrates the details of the Connecticut Tapestry, which depicts the state's Puritan origins, its contribution to American governance, and its industrial innovations."
 colony: "CT"

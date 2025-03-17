@@ -1,6 +1,6 @@
 ---
 title: North Carolina
-summary: From the Lost Colony to the First in Flight
+summary: The Edenton Tea Party
 background_color: "bg-teal-900"
 audioDescription: "This audio description provides a detailed verbal account of the North Carolina Tapestry, which depicts the state's early colonial history, its independent spirit during the Revolution, and its diverse geographical regions."
 colony: "NC"

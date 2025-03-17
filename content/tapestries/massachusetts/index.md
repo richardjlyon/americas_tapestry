@@ -1,6 +1,6 @@
 ---
 title: Massachusetts
-summary: The cradle of the American Revolution and intellectual thought
+summary: Patriotic chocolate making
 background_color: "bg-red-900"
 audioDescription: "This audio description narrates the details of the Massachusetts Tapestry, which celebrates the state's pivotal role in the founding of America and its continued influence on education and innovation."
 colony: "MA"

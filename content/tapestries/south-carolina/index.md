@@ -1,6 +1,6 @@
 ---
 title: South Carolina
-summary: Palmetto State traditions and revolutionary courage
+summary: Battle in the Backcountry
 background_color: "bg-indigo-800"
 audioDescription: "This audio description narrates the details of the South Carolina Tapestry, which depicts the state's colonial heritage, its role in the American Revolution, and its unique Lowcountry culture."
 colony: "SC"

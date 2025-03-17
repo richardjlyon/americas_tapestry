@@ -1,6 +1,6 @@
 ---
 title: Rhode Island
-summary: The smallest state with the largest ideals of religious liberty
+summary: The battle of Rhode Island
 background_color: "bg-purple-900"
 audioDescription: "This audio description narrates the details of the Rhode Island Tapestry, which depicts the state's founding as a haven for religious freedom by Roger Williams and its maritime and industrial heritage."
 colony: "RI"
