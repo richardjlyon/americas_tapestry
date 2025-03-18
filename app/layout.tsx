@@ -2,7 +2,6 @@ import type React from 'react';
 import '@/app/globals.css';
 import { Montserrat, EB_Garamond } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
-import { DebugHelper } from '@/components/debug-helper';
 
 // Load Montserrat as the sans-serif font
 const montserrat = Montserrat({
@@ -43,7 +42,6 @@ export default function RootLayout({
       </head>
       <body className={`${montserrat.variable} ${ebGaramond.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <DebugHelper />
           {children}
         </ThemeProvider>
       </body>
