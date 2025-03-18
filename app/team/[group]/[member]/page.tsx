@@ -52,6 +52,7 @@ export default async function TeamMemberPage({
     role: member.role,
     state: member.state || '',
     imagePosition: member.imagePosition,
+    moreInformation: member.moreInformation,
   };
 
   // Render the member content with the data

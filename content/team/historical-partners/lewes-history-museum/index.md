@@ -4,7 +4,7 @@ role: "Historical Partner"
 state: "Delaware"
 summary: "Lewes History Museum showcases Delaware's first town through artifacts and exhibits celebrating 300+ years of coastal heritage."
 location: "XXX"
-moreInformation: ""
+moreInformation: "https://www.historiclewes.org/locations/lewes-history-museum-archives/"
 ---
 The Lewes History Museum offers visitors a captivating journey through
 over 300 years of Delaware's first town. Located in the historic

@@ -4,7 +4,7 @@ role: "Historical Partner"
 state: "Virginia"
 summary: "Historic Wytheville: where Appalachian stories come alive"
 location: "XXX"
-moreInformation: ""
+moreInformation: "https://museums.wytheville.org/"
 ---
 
 Nestled in the heart of Southwest Virginia, Wytheville boasts a

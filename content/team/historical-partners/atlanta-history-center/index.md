@@ -4,7 +4,7 @@ role: "Historical Partner"
 state: "Georgia"
 summary: "A preeminent institution housing comprehensive Southern historical collections while engaging diverse audiences through innovative exhibitions and educational programming."
 location: "Atlanta, Georgia"
-moreInformation: ""
+moreInformation: "https://www.atlantahistorycenter.com/"
 ---
 
 The Atlanta History Center (AHC) is home to one of the most

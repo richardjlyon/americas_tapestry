@@ -6,6 +6,7 @@ interface PersonDetails {
   role: string;
   state?: string;
   imagePosition?: string;
+  moreInformation?: string;
 }
 
 type CardWidth = 'full' | 'two-thirds' | 'half';
@@ -65,6 +66,16 @@ const PersonCard: FC<PersonCardProps> = ({
               className="prose prose-lg max-w-none font-serif text-colonial-navy prose-headings:font-sans prose-a:text-colonial-burgundy"
               dangerouslySetInnerHTML={{ __html: personBioHtml }}
             />
+            {personDetails.moreInformation && (
+              <div className="mt-auto pt-4">
+                <a
+                  href={`${personDetails.moreInformation}`}
+                  className="inline-block text-link"
+                >
+                  More information →
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </ContentCard>

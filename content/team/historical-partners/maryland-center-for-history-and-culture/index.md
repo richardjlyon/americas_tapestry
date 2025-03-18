@@ -4,7 +4,7 @@ role: "Historical Partner"
 state: "Maryland"
 summary: "Lewes History Museum showcases Delaware's first town through artifacts and exhibits celebrating 300+ years of coastal heritage."
 location: "XXX"
-moreInformation: ""
+moreInformation: "https://www.mdhistory.org/"
 ---
 
 The Maryland Center for History and Culture stands as Baltimore's

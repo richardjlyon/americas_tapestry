@@ -4,7 +4,7 @@ role: "Historical Partner"
 state: "Massachusetts"
 summary: "Fuller Craft Museum in Brockton is New England's only contemporary craft museum, showcasing diverse handmade works."
 location: "Atlanta, Georgia"
-moreInformation: ""
+moreInformation: "https://fullercraft.org/"
 ---
 
 The Fuller Craft Museum, located in Brockton, Massachusetts, stands as

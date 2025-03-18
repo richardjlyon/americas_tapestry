@@ -11,6 +11,7 @@ export interface TeamMember {
   imagePosition?: string; // Control image positioning (e.g., "center", "top", "left 30% center")
   state?: string; // Single state assignment
   states?: string[]; // Multiple state assignments
+  moreInformation?: string;
   [key: string]: any; // For additional frontmatter fields
 }
 
