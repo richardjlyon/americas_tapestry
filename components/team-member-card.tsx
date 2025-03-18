@@ -61,9 +61,9 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
       };
       img.onerror = () => {
         // Image doesn't exist or fails to load
-        console.error(
-          `Image doesn't exist: ${member.imagePath} for ${member.name}`,
-        );
+        // console.error(
+        //   `Image doesn't exist: ${member.imagePath} for ${member.name}`,
+        // );
         setImgSrc(placeholderPath);
       };
       img.src = member.imagePath;
@@ -106,6 +106,13 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
             Location: {member.location}
           </p>
         )} */}
+        {member.groupSlug === 'stitching-groups' && member.more_info && (
+          <div className="mt-auto pt-4">
+            <a href={`${member.more_info}`} className="inline-block text-link">
+              More info →
+            </a>
+          </div>
+        )}
         {member.specialization && (
           <p className="font-serif text-sm text-colonial-navy/70 mb-2">
             Specialization: {member.specialization}
@@ -132,14 +139,16 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
 
-        <div className="mt-auto pt-4">
-          <a
-            href={`/team/${member.groupSlug}/${member.slug}`}
-            className="inline-block text-link"
-          >
-            Read full bio →
-          </a>
-        </div>
+        {member.groupSlug !== 'stitching-groups' && (
+          <div className="mt-auto pt-4">
+            <a
+              href={`/team/${member.groupSlug}/${member.slug}`}
+              className="inline-block text-link"
+            >
+              Read full bio →
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
