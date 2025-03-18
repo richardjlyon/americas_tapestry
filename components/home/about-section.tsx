@@ -32,7 +32,7 @@ export function AboutSection() {
           <VideoPlayer
             src="/video/250305-short-promotional/250305-short-promotional-v2-lowres.mp4"
             highResSrc="/video/250305-short-promotional/250305-short-promotional-v2.mp4"
-            poster="`/video/250305-short-promotional/250305-short-promotional-v2-poster.png"
+            poster="/video/250305-short-promotional/250305-short-promotional-v2-poster.png"
             className="aspect-[9/16] w-full"
           />
           <p className="font-serif text-sm sm:text-base text-colonial-navy/70 mt-2 italic text-center">
