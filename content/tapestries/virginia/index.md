@@ -4,7 +4,7 @@ summary: Freedom forged in darkness
 background_color: "bg-blue-900"
 audioDescription: "This audio description provides a detailed verbal account of the Virginia Tapestry, which depicts the early colonial settlements, the House of Burgesses, and Virginia's pivotal role in the American Revolution."
 colony: "VA"
-status: "Designed"
+status: "In Production"
 timelineEvents:
   - date: "1607-05-14"
     title: "Jamestown Founded"

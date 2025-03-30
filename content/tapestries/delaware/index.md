@@ -4,7 +4,7 @@ summary: Defending the Delaware Bay
 background_color: "bg-blue-800"
 audioDescription: "This audio description provides a detailed verbal account of the Delaware Tapestry, which depicts the state's early colonial history and its role as the first state to ratify the Constitution."
 colony: "DE"
-status: "Not Started"
+status: "In Production"
 timelineEvents:
   - date: "1638-03-29"
     title: "New Sweden Colony Established"
@@ -20,12 +20,6 @@ timelineEvents:
     description: "Delaware unanimously became the first state to ratify the United States Constitution, earning its nickname 'The First State.'"
 ---
 
-The Delaware Tapestry honors the state's distinction as the first to ratify the U.S. Constitution on December 7, 1787. The panel illustrates Delaware's colonial origins as New Sweden and later as part of William Penn's holdings, alongside its pivotal role in America's founding. The rich imagery captures the state's diverse cultural influences and maritime traditions along the Delaware River and Bay.
+This evocative artwork captures a pivotal moment in the American Revolution, highlighting the heroism of Major Henry Fisher, known as the "eyes and ears" of the Revolution. Fisher is depicted firing a signal gun, alerting Patriot forces to the approach of an enemy ship near the Delaware Bay. A steadfast patriot from Lewes, Delaware, Fisher played a critical role in safeguarding the Delaware River and its surrounding areas from British incursions. He raised and funded an army of 100 soldiers to defend the Cape and the Bay, often using his own resources to provide meals and care for ill soldiers. 
 
-![Delaware Tapestry](/content/tapestries/delaware/delaware-tapestry-main.jpg)
-
-The Delaware Panel is being created at the [Delaware Historical Society](/team/historical-partners/#delaware-historical-society), where visitors can observe the stitching process and learn about the state's unique history. The society's extensive collection of historical documents and artifacts has provided valuable reference material for the design of the panel.
-
-Our Delaware Director is [Thomas Richardson](/team/state-directors/#thomas-richardson), a textile historian and curator who has assembled a diverse team of stitchers from across the state. The panel incorporates traditional techniques that reflect Delaware's multicultural heritage, including Swedish, Dutch, English, and Lenape influences.
-
-The tapestry highlights key moments in Delaware's history, from the establishment of Fort Christina in 1638 to the state's crucial vote for independence in 1776, and its leadership in ratifying the Constitution. Special attention has been paid to representing the state's early industries, including shipbuilding, milling, and agriculture.
+Fisher also collaborated with the Cape Henlopen Lighthouse keeper to establish a system of signals for early warnings of enemy movements. His innovative tactics included creating a "circuit riding" intelligence network to expedite communication with Philadelphia and employing underwater defenses, such as cheveaux de frise, to damage enemy ships. This painting vividly portrays Fisher’s dedication and ingenuity as he works to protect the colonies’ vital waterways during the fight for independence.

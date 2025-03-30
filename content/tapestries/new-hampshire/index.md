@@ -4,7 +4,7 @@ summary: Early unrest in the Granite State
 background_color: "bg-green-900"
 audioDescription: "This audio description provides a detailed verbal account of the New Hampshire Tapestry, which depicts the state's colonial settlements, revolutionary activities, and its iconic White Mountains landscape."
 colony: "NH"
-status: "Designed"
+status: "In Production"
 timelineEvents:
   - date: "1623-08-10"
     title: "First Settlement Established"

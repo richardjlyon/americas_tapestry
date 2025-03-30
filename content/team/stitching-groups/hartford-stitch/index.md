@@ -1,6 +1,6 @@
 ---
 name: "Hartford Stitch"
 role: "Stitching Group"
-state: "Connecticut"
+state: ""
 more_info: "https://www.hartfordstitch.com/"
 ---

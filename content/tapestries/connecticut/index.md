@@ -4,7 +4,7 @@ summary: Stories from the Provision State
 background_color: "bg-blue-700"
 audioDescription: "This audio description narrates the details of the Connecticut Tapestry, which depicts the state's Puritan origins, its contribution to American governance, and its industrial innovations."
 colony: "CT"
-status: "Not Started"
+status: "In Production"
 timelineEvents:
   - date: "1636-03-03"
     title: "First English Settlement Established"
@@ -20,12 +20,11 @@ timelineEvents:
     description: "Connecticut became the fifth state to ratify the United States Constitution, with a vote of 128 to 40 in favor of adoption."
 ---
 
-The Connecticut Tapestry celebrates the state's foundational role in American governance and its rich cultural and industrial heritage. Known as "The Constitution State" for the Fundamental Orders of 1639—considered by many to be America's first written constitution—Connecticut's panel depicts its Puritan origins, its contribution to the Revolutionary War, and its transformation through maritime trade and industrial innovation.
+This artwork captures Connecticut's critical role as the "Provision State" during the Revolutionary War. The scene highlights the state's contributions to the Continental Army, including Salisbury's cannon foundries, which produced 80% of the cannons used by the army, and the marble quarries in Canaan, as marble was utilized as a fluxing agent during the smelting process. Charcoal pits are depicted, essential for fueling foundry furnaces, alongside East Haven's saltworks, where salt—a vital resource for preserving food—was manufactured. The sprawling farms emphasize Connecticut farmers' role in supplying meat and provisions to sustain the troops.
 
-![Connecticut Tapestry](/content/tapestries/connecticut/connecticut-tapestry-main.jpg)
+In the foreground, Hannah Bunce Watson is shown at work on her husband's newspaper, The Connecticut Courant, which she inherited after his death. At just 27 years old, Watson became one of America's first female publishers, using the paper to advocate for the patriot cause and disseminate revolutionary news. Soldiers of the 7th Connecticut Regiment appear in the upper right corner, including Prince Simbo, an African American who fought for liberty alongside white & Black soldiers. In the upper background stands Jonathan Trumbull's War Office in Lebanon, known as "The Pentagon of the Revolution," where pivotal meetings were held to coordinate military and logistical efforts. This artwork beautifully integrates Connecticut's industrial, agricultural, and human contributions to America's fight for independence.
 
-The Connecticut Panel is being created at the [Connecticut Historical Society](/team/historical-partners/#connecticut-historical-society) in Hartford, where visitors can observe the stitching process and engage with the state's history. The society's extensive collection of historical textiles, including samplers, quilts, and clothing, has provided valuable reference material for the design and techniques used in the panel.
 
-Our Connecticut Director is [Margaret Hollister](/team/state-directors/#margaret-hollister), a textile conservator and historian who has assembled a team of stitchers representing communities from across the state. The panel incorporates traditional New England needlework techniques, including crewel embroidery and whitework that would have been familiar to colonial Connecticut women.
 
-The tapestry highlights key moments in Connecticut's history, from the founding of the Hartford, Windsor, and Wethersfield colonies to the Charter Oak incident, the state's contribution of soldiers and supplies to the Continental Army, and its later industrial innovations in clock making, firearms manufacturing, and submarine construction. Special attention has been paid to representing the contributions of the Pequot and Mohegan peoples, African Americans, and immigrant communities to Connecticut's development.
+
+
