@@ -29,6 +29,12 @@ conducted a significant amount of research on the fascinating lives of
 those living in the Dey Mansion in Passaic County. Famously, the Dey
 Family hosted Generals Lafayette and Washington at the Mansion in 1780.
 
+The lower right hand vignette features a smallpox innoculation administered by 
+Senior Surgeon of the Continental Army Dr. Bodo Otto. Dr. Otto was tasked with
+establishing a military hospital in Trenton, New Jersey, specifically to inoculate
+troops against smallpox. This initiative was critical in safeguarding the health of
+soldier during a time when disease posed a severe threat to military effectiveness. 
+
 Our New Jersey Directors are Carol Prevost and Kiki Lar. The stitching
 will be conducted by members of the Colonial West EGA Chapter in
 partnership with the Princeton EGA Chapter. With their combined

@@ -21,7 +21,7 @@ timelineEvents:
 ---
 
 The Virginia Panel pays tribute to the lead mines of Wythe County,
-Virginia, integral to the production of bullets for the Continental
+Virginia, integral to the production of musket balls for the Continental
 Army. Composed of enslaved, convicted, and imported labor, the mine was
 a melting pot of cultures and backgrounds whose forced labored in
 dangerous, dark conditions from sunup to sundown ensured American

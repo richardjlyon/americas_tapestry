@@ -2,9 +2,8 @@
 name: "Stefan Romero"
 role: "Illustrator"
 state:
-- Georgia
-- New Jersey
-- New York
+  - Georgia
+  - New York
 summary: "Conservatory-trained artist merges theatrical expertise with textile scholarship to illuminate historical narratives through innovative embroidery design."
 order: 1
 ---

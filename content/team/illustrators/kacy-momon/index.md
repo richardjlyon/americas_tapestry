@@ -1,7 +1,7 @@
 ---
 name: Kacy Momon
 role: "Illustrator"
-state: "Rhode Island"
+state: "North Carolina"
 ---
 
 Kacy Momon is a multimedia artist and designer residing in Savannah,

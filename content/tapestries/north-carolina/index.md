@@ -4,15 +4,28 @@ summary: The Edenton Tea Party
 background_color: "bg-teal-900"
 audioDescription: "This audio description provides a detailed verbal account of the North Carolina Tapestry, which depicts the state's early colonial history, its independent spirit during the Revolution, and its diverse geographical regions."
 colony: "NC"
-status: "Not Started"
+status: "In Production"
 ---
 
-The North Carolina Tapestry celebrates the state's journey from the mysterious Lost Colony of Roanoke to the Wright Brothers' first flight at Kitty Hawk. The panel illustrates North Carolina's development from early English settlements to its role in the American Revolution, including the Mecklenburg Declaration of Independence, often cited as the first declaration of independence from British rule. The design captures the state's diverse geography, from the Outer Banks to the Piedmont to the Blue Ridge Mountains.
+The North Carolina tapestry panel illustrates the Edenton Tea Party, a significant
+moment early in the Revolutionary movement.
 
-![North Carolina Tapestry](/content/tapestries/north-carolina/north-carolina-tapestry-main.jpg)
+The panel depicts a group of women gathered outside the Chowan County Courthouse in 1774 debating
+and discussing a document symbolizing their political resolve. The event is considered one
+of the earliest recorded instances of organized political actions by women in the American
+colonies.
 
-The North Carolina Panel is being created at the [North Carolina Museum of History](/team/historical-partners/#north-carolina-museum) in Raleigh, where visitors can observe the stitching process and engage with the state's rich history. The museum's extensive collections have provided valuable reference material for the design of the panel.
+The Edenton Tea Party was organized by Penelope Barker and involved 51 women who signed a
+resolution to boycott British goods including tea and textiles. This act was in protest of the
+Tea Act of 1773 and other oppressive measures imposed by the British Crown. The women pledged
+their support for the resolutions passed by the North Carolina Provincial Congress, which aimed to
+resist British taxation without representation
 
-Our North Carolina Director is [Martha Graham](/team/state-directors/#martha-graham), a textile artist and educator who has assembled a diverse team of stitchers from across the state. The panel incorporates techniques that reflect North Carolina's multicultural heritage, including Cherokee basket patterns, Scots-Irish weaving traditions, and African American quilting motifs.
+The resolution, known as the "Edenton Resolves," declared the women's commitment to abstain
+from British imports until unjust laws were repealed. It emphasized their duty to protect
+the "safety and happiness" of their county and demonstrated their solidarity with broader
+colonial resistance efforts.
 
-The tapestry highlights key moments in North Carolina's history, from the establishment of the first English colony in America on Roanoke Island to the state's reluctant secession from the Union and its subsequent reconciliation and growth. It also celebrates the state's natural resources, from the longleaf pine forests that provided naval stores for the British Empire to the tobacco and textile industries that drove economic development in the 19th and 20th centuries. Special attention has been paid to representing the contributions of Native Americans, African Americans, and the diverse European settlers who shaped North Carolina's distinctive regions and traditions.
+While ridiculed in England through satirical cartoons, it was celebrated in the colonies
+as an act of patriotism. These women not only supported the revolutionary cause but placed
+themselves at great risk by publicly asserting their political agency.
