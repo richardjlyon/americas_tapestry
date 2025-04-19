@@ -29,10 +29,12 @@ node scripts/copy-to-public.mjs
 ### Adding a New Tapestry
 
 1. **Create Content Directory**
+
    - Create a folder in `/content/tapestries/[new-colony]`
    - Use the colony name as the folder name (e.g., `vermont`)
 
 2. **Add Content Files**
+
    - Create `index.md` with colony information
    - Add images using consistent naming:
      - `[colony]-tapestry-main.jpg` (main image)
@@ -41,10 +43,12 @@ node scripts/copy-to-public.mjs
      - `[colony]-audio-description.mp3`
 
 3. **Run Copy Script**
+
    ```
    node scripts/copy-to-public.mjs
    ```
-   This copies your images to the public directory automatically.
+
+   This copies your images to the public directory automatically..
 
 4. **Restart/Rebuild**
    - In development: `npm run dev`
@@ -53,10 +57,12 @@ node scripts/copy-to-public.mjs
 ### Best Practices
 
 1. **Consistent Naming**
+
    - Always use the colony name as both folder name and image prefix
    - Example: `/content/tapestries/maryland/maryland-tapestry-main.jpg`
 
 2. **Image Formats**
+
    - Main images: `.jpg` (better for photographs)
    - Thumbnails: `.png` or `.jpg` (either works now)
    - Ensure images are at least 1KB in size (not placeholders)
@@ -67,7 +73,7 @@ node scripts/copy-to-public.mjs
      ---
      title: Vermont
      summary: The Green Mountain State
-     status: "In Production"  # or "Designed", "Not Started", "Finished"
+     status: "In Production" # or "Designed", "Not Started", "Finished"
      ---
      ```
    - Only tapestries with "In Production" or "Designed" status appear in the carousel
@@ -75,6 +81,7 @@ node scripts/copy-to-public.mjs
 ### Content Organization
 
 1. **Directory Structure**
+
    ```
    content/
      └── tapestries/
@@ -152,25 +159,25 @@ This project implements a comprehensive spacing system to maintain consistent ve
 #### Three-Tier Spacing Approach
 
 1. **Page-Level Spacing**
+
    - Wrap page content in spacing containers:
+
    ```jsx
-   <div className="content-spacing-lg">
-     {/* Page content */}
-   </div>
+   <div className="content-spacing-lg">{/* Page content */}</div>
    ```
+
    - Available options: `content-spacing-sm`, `content-spacing-md`, `content-spacing-lg`
 
 2. **Section-Level Spacing**
+
    - Control padding around page sections:
+
    ```jsx
-   <PageSection
-     paddingTop="medium"
-     paddingBottom="large"
-     hasPin={true}
-   >
+   <PageSection paddingTop="medium" paddingBottom="large" hasPin={true}>
      {/* Section content */}
    </PageSection>
    ```
+
    - Padding options: `none`, `small`, `medium`, `large`, `default`
    - The `hasPin` prop adds a decorative pin element
 
@@ -186,6 +193,7 @@ This project implements a comprehensive spacing system to maintain consistent ve
 #### Usage Examples
 
 **Basic Page Structure:**
+
 ```jsx
 export default function ExamplePage() {
   return (
@@ -243,6 +251,7 @@ This project uses environment variables to manage configuration and API keys. Th
 ### `.env` - Default Configuration (Safe to commit)
 
 Contains non-sensitive default values and configuration:
+
 ```
 # Public URLs and non-sensitive configuration
 NEXT_PUBLIC_SITE_URL=https://americastapestry.org
@@ -257,6 +266,7 @@ MAILERLITE_API_KEY=your_mailerlite_api_key_here
 ### `.env.local` - Sensitive Data (DO NOT commit)
 
 Contains actual API keys and sensitive information:
+
 ```
 # Mapbox API token (client-side access needed)
 NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_real_mapbox_token
@@ -280,11 +290,13 @@ The interactive colonies map uses Mapbox GL for a professional, customizable map
 ### Setting Up Mapbox
 
 1. **Get a Mapbox Access Token**
+
    - Sign up or log in at [Mapbox](https://www.mapbox.com/)
    - Create a new access token in your Mapbox account dashboard
    - Make sure it has the appropriate permissions (public scopes are sufficient)
 
 2. **Configure Your Environment**
+
    - Add your Mapbox token to `.env.local`:
      ```
      NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_mapbox_token_here
@@ -296,6 +308,7 @@ The interactive colonies map uses Mapbox GL for a professional, customizable map
    - Restart your development server after adding the token
 
 3. **Customizing the Map**
+
    - Edit `lib/mapbox-config.ts` to change map style, default center, or zoom level
    - For a custom style, create one in Mapbox Studio and use its style URL
 
@@ -309,6 +322,7 @@ The interactive colonies map uses Mapbox GL for a professional, customizable map
 ### GeoJSON Data
 
 The map uses GeoJSON data for accurate colony boundaries. The data is stored in:
+
 - `/public/data/13-colonies.geojson`
 
 ## Technologies

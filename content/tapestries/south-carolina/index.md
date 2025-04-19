@@ -4,7 +4,7 @@ summary: Battle in the Backcountry
 background_color: "bg-indigo-800"
 audioDescription: "This audio description narrates the details of the South Carolina Tapestry, which depicts the state's colonial heritage, its role in the American Revolution, and its unique Lowcountry culture."
 colony: "SC"
-status: "Not Started"
+status: "In Progress"
 timelineEvents:
   - date: "1670-04-15"
     title: "Charles Towne Founded"
@@ -20,12 +20,25 @@ timelineEvents:
     description: "American forces under General Daniel Morgan defeated the British under Lieutenant Colonel Banastre Tarleton in one of the most decisive tactical victories of the Revolutionary War."
 ---
 
-The South Carolina Tapestry celebrates the state's distinctive colonial heritage and its crucial role in the American Revolution. The panel illustrates South Carolina's development from early settlements at Charles Towne to its emergence as a center of rice and indigo cultivation, and its pivotal contributions to American independence through the leadership of figures like Francis Marion, the "Swamp Fox," and the crucial victory at the Battle of Cowpens.
+The South Carolina tapestry commemorates the role the backcountry played in the American Revolution. 
 
-![South Carolina Tapestry](/content/tapestries/south-carolina/south-carolina-tapestry-main.jpg)
+The upper vignette illustrates the Battle of Esseneca Town which took place on August 1, 1776, near the Seneca River in
+what is now Oconee County, South Carolina. Esseneca was a Cherokee "Lower Town" and became a site of significant conflict during 
+the Revolution. Throughout 1776, the Cherokee launched a series of attacks in coordination with the British against 
+frontier settlements throughout Western South Carolina. The Cherokee had allied with the British in hopes of preserving 
+their native land which was under increasing threat of colonial encroachment. 
 
-The South Carolina Panel is being created at the [Charleston Museum](/team/historical-partners/#charleston-museum), America's first museum, founded in 1773. Visitors can observe the stitching process and engage with the state's rich history through the museum's extensive collections of decorative arts, textiles, and historical artifacts.
+Loyalist and Cherokee forces are seen ambushing Andrew Williamson's militia at Esseneca Ford. Captain Francis Salvador, who
+became the first Jewish American killed in the Revolution, is illustrated on horseback. Catawba General New River is seen with
+his musket poised. The Catawba Indians allied with the Patriots early in 1775 in the hopes of preserving their ancestral land. 
+Until his death in 1804, New River fought for hunting and land rights for his people. 
 
-Our South Carolina Director is [Elizabeth Pinckney](/team/state-directors/#elizabeth-pinckney), a textile historian specializing in Lowcountry traditions, who has assembled a diverse team of stitchers from across the state. The panel incorporates techniques that reflect South Carolina's multicultural heritage, including Gullah Geechee textile traditions, European needlework, and designs influenced by the state's Native American communities.
+The lower image depicts John McCord, a 13 year old resident of the Long Canes District. His family was Scotch-Irish immigrants
+who first established themselves in Virginia before journeying southward. At age 13, McCord volunteered to serve with 
+Captain Joseph Pickens. Considered too small for field duty, the young Patriot engaged in the important work of a camp follower, 
+shelling corn, assisting with food preparation, caring for the ill, and carrying messages.
+John would later serve as a soldier in the Continental Army and eventually petition for a military pension in 1832. 
 
-The tapestry highlights key moments in South Carolina's history, from the founding of Charleston to the Revolutionary War battles at Fort Moultrie and Kings Mountain. It also celebrates the state's distinctive architecture, cuisine, and cultural traditions, including the sweetgrass basketry of the Lowcountry and the indigo dyeing techniques introduced by Eliza Lucas Pinckney. Special attention has been paid to representing the contributions of enslaved Africans to the state's development and the preservation of African cultural traditions in the Gullah Geechee communities.
+The Pension Act of June 7, 1832 granted every surviving officer and soldier who served at least two years in the Continental 
+Army or other eligible units full pay for life. It was the most inclusive and generous pension act for Revolutionary War
+veterans up to that time. 
