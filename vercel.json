@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "chmod +x vercel-build.sh && ./vercel-build.sh",
+  "buildCommand": "./vercel.sh",
   "outputDirectory": ".next",
   "public": true,
   "images": {
