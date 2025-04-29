@@ -10,6 +10,11 @@
   "routes": [
     {
       "src": "/content/(.*)",
+      "dest": "/content/$1",
+      "continue": true
+    },
+    {
+      "src": "/content/(.*)",
       "headers": { "cache-control": "public, max-age=86400" },
       "continue": true
     },
