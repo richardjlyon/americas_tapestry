@@ -3,8 +3,9 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "node scripts/copy-video-files.mjs && node scripts/prepare-content-for-vercel.mjs && next dev",
-        "build": "node scripts/copy-video-files.mjs && node scripts/copy-content-to-public.mjs && next build",
+        "dev": "mkdir -p public && node scripts/copy-video-files.mjs && node scripts/prepare-content-for-vercel.mjs && next dev",
+        "build": "bash -c \"mkdir -p public public/content\" && bash -c \"cp -r content/* public/content/ || true\" && bash -c \"mkdir -p public/video && cp -r content/video/* public/video/ || true\" && next build",
+        "vercel-build": "./vercel-build.sh",
         "start": "next start",
         "lint": "next lint",
         "format": "npx @biomejs/biome format --write ./app ./components ./lib ./hooks"

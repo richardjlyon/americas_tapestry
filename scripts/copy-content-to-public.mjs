@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * This script is a simplified version of prepare-content-for-vercel.mjs
- * It copies files from /content to /public/content without symlinks
- * Specifically designed to run in restricted environments like Vercel
+ * Ultra-simple content copy script for Vercel deployment
+ * Bypasses all symlinks and complex operations to just copy files
  */
 
 import fs from 'fs';
@@ -15,115 +14,116 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
-// Content directory
+console.log(`Current directory: ${process.cwd()}`);
+console.log(`Root directory: ${rootDir}`);
+
+// Directory paths
 const contentDir = path.join(rootDir, 'content');
-// Public directory
 const publicDir = path.join(rootDir, 'public');
-// Public content directory
 const publicContentDir = path.join(publicDir, 'content');
 
-// Function to recursively copy files, with extra error checking
-function copyFiles(sourceDir, targetDir) {
-  // Create target directory
-  try {
-    fs.mkdirSync(targetDir, { recursive: true });
-    console.log(`Created directory: ${targetDir}`);
-  } catch (err) {
-    console.error(`Error creating directory ${targetDir}: ${err.message}`);
-    throw err;
-  }
-
-  // Check if source exists
-  if (!fs.existsSync(sourceDir)) {
-    console.error(`Source directory does not exist: ${sourceDir}`);
-    throw new Error(`Source directory does not exist: ${sourceDir}`);
-  }
-
-  // Get all entries
-  const entries = fs.readdirSync(sourceDir, { withFileTypes: true });
+// Debug function
+function debugDir(dirPath, label) {
+  console.log(`[DEBUG] ${label}: ${dirPath}`);
+  console.log(`[DEBUG] ${label} exists: ${fs.existsSync(dirPath)}`);
   
-  // Process each entry
-  for (const entry of entries) {
-    const srcPath = path.join(sourceDir, entry.name);
-    const destPath = path.join(targetDir, entry.name);
-    
-    if (entry.isDirectory()) {
-      // Recursively copy sub-directories
-      copyFiles(srcPath, destPath);
-    } else {
-      // Copy files
-      try {
-        fs.copyFileSync(srcPath, destPath);
-      } catch (err) {
-        console.error(`Error copying file ${srcPath}: ${err.message}`);
-      }
+  if (fs.existsSync(dirPath)) {
+    try {
+      const files = fs.readdirSync(dirPath);
+      console.log(`[DEBUG] Contents of ${label}:`, files.length > 0 ? files.join(', ') : '(empty)');
+    } catch (err) {
+      console.log(`[DEBUG] Error reading ${label}:`, err.message);
     }
   }
+}
+
+// Simple function to copy a file
+function copyFile(src, dest) {
+  try {
+    fs.copyFileSync(src, dest);
+    return true;
+  } catch (err) {
+    console.error(`Error copying ${src} to ${dest}: ${err.message}`);
+    return false;
+  }
+}
+
+// Simple function to create a directory
+function createDir(dir) {
+  try {
+    fs.mkdirSync(dir, { recursive: true });
+    return true;
+  } catch (err) {
+    console.error(`Error creating directory ${dir}: ${err.message}`);
+    return false;
+  }
+}
+
+// Simple recursive copy
+function copyDirRecursive(src, dest) {
+  // Create the destination directory
+  createDir(dest);
+  
+  // Get all items in the source directory
+  let items;
+  try {
+    items = fs.readdirSync(src, { withFileTypes: true });
+  } catch (err) {
+    console.error(`Error reading directory ${src}: ${err.message}`);
+    return false;
+  }
+  
+  // Copy each item
+  for (const item of items) {
+    const srcPath = path.join(src, item.name);
+    const destPath = path.join(dest, item.name);
+    
+    if (item.isDirectory()) {
+      copyDirRecursive(srcPath, destPath);
+    } else {
+      copyFile(srcPath, destPath);
+    }
+  }
+  
+  return true;
 }
 
 // Main process
-console.log('Starting content copy process...');
+console.log('Starting simplified content copy process...');
 
-try {
-  // Check if content directory exists
-  if (!fs.existsSync(contentDir)) {
-    console.error(`Content directory does not exist: ${contentDir}`);
-    process.exit(1);
-  }
-  
-  // Ensure public directory exists
-  if (!fs.existsSync(publicDir)) {
-    try {
-      fs.mkdirSync(publicDir, { recursive: true });
-      console.log(`Created public directory: ${publicDir}`);
-    } catch (err) {
-      console.error(`Failed to create public directory: ${err.message}`);
-      process.exit(1);
-    }
-  }
-  
-  // Remove existing content directory if it exists
-  if (fs.existsSync(publicContentDir)) {
-    try {
-      console.log(`Removing existing public/content directory`);
-      fs.rmSync(publicContentDir, { recursive: true, force: true });
-    } catch (err) {
-      console.error(`Failed to remove existing content directory: ${err.message}`);
-      // Try to continue anyway
-    }
-  }
-  
-  // Create public/content directory
-  try {
-    fs.mkdirSync(publicContentDir, { recursive: true });
-    console.log(`Created public/content directory`);
-  } catch (err) {
-    console.error(`Failed to create public/content directory: ${err.message}`);
-    process.exit(1);
-  }
-  
-  // Copy content to public
-  console.log(`Copying content from ${contentDir} to ${publicContentDir}`);
-  
-  // Get the top-level content directories
-  const contentEntries = fs.readdirSync(contentDir, { withFileTypes: true });
-  
-  // Copy each top-level directory
-  for (const entry of contentEntries) {
-    const srcPath = path.join(contentDir, entry.name);
-    const destPath = path.join(publicContentDir, entry.name);
-    
-    if (entry.isDirectory()) {
-      console.log(`Copying directory: ${entry.name}`);
-      copyFiles(srcPath, destPath);
-    } else {
-      console.log(`Copying file: ${entry.name}`);
-      fs.copyFileSync(srcPath, destPath);
-    }
-  }
-  
-  console.log('Content copy completed successfully!');
-} catch (err) {
-  console.error('Error during content copy:', err);
+// Debug the starting directory state
+debugDir(rootDir, 'Root directory');
+debugDir(contentDir, 'Content directory');
+debugDir(publicDir, 'Public directory');
+
+// Step 1: Make sure public directory exists
+console.log('Creating public directory...');
+if (!createDir(publicDir)) {
+  console.error('Failed to create public directory, exiting');
   process.exit(1);
 }
+
+// Step 2: Attempt direct copy of content to public/content
+console.log('Creating public/content directory...');
+if (!createDir(publicContentDir)) {
+  console.error('Failed to create public/content directory, exiting');
+  process.exit(1);
+}
+
+// Step 3: Copy content files
+if (!fs.existsSync(contentDir)) {
+  console.error('Content directory does not exist, cannot copy files');
+  process.exit(1);
+}
+
+console.log('Copying content files...');
+if (copyDirRecursive(contentDir, publicContentDir)) {
+  console.log('Content copied successfully');
+} else {
+  console.error('Failed to copy content files');
+  process.exit(1);
+}
+
+// Final debug check
+debugDir(publicContentDir, 'Public content directory (after copy)');
+console.log('Content copy process completed');
