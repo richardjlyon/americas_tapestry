@@ -24,11 +24,9 @@ const publicContentDir = path.join(publicDir, 'content');
 
 // Function to recursively copy a directory
 function copyDirectoryRecursively(source, target) {
-  // Create target directory if it doesn't exist
-  if (!fs.existsSync(target)) {
-    fs.mkdirSync(target, { recursive: true });
-    console.log(`Created directory: ${target}`);
-  }
+  // Create target directory
+  fs.mkdirSync(target, { recursive: true });
+  console.log(`Created directory: ${target}`);
 
   // Get all entries in the source directory
   const entries = fs.readdirSync(source, { withFileTypes: true });
@@ -43,8 +41,11 @@ function copyDirectoryRecursively(source, target) {
       copyDirectoryRecursively(sourcePath, targetPath);
     } else {
       // Copy files
-      fs.copyFileSync(sourcePath, targetPath);
-      console.log(`Copied: ${sourcePath} -> ${targetPath}`);
+      try {
+        fs.copyFileSync(sourcePath, targetPath);
+      } catch (err) {
+        console.error(`Error copying ${sourcePath} to ${targetPath}: ${err.message}`);
+      }
     }
   }
 }
@@ -59,35 +60,63 @@ try {
     process.exit(1);
   }
 
-  // Check if public directory exists
+  // Ensure public directory exists
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
     console.log(`Created public directory: ${publicDir}`);
   }
-  
+
   // Remove existing content directory in public if it exists
   if (fs.existsSync(publicContentDir)) {
     console.log(`Removing existing content in public: ${publicContentDir}`);
-    fs.rmSync(publicContentDir, { recursive: true, force: true });
+    try {
+      fs.rmSync(publicContentDir, { recursive: true, force: true });
+    } catch (err) {
+      console.warn(`Failed to remove existing content: ${err.message}`);
+      // Continue anyway
+    }
   }
 
-  // Create a symbolic link from public/content to content
-  console.log(`Creating symbolic link from ${contentDir} to ${publicContentDir}`);
+  // Try different approaches to make content available in the public directory
+  const isVercel = process.env.VERCEL === '1';
+  console.log(`Running in ${isVercel ? 'Vercel' : 'local'} environment`);
 
-  // Try to create a symlink first (works on most environments)
-  try {
-    fs.symlinkSync(contentDir, publicContentDir, 'junction');
-    console.log(`Created symbolic link successfully`);
-  } catch (err) {
-    console.warn(`Failed to create symbolic link: ${err.message}`);
-    console.log(`Falling back to copying content directory`);
-    
-    // If symlink fails, copy the content directory instead
-    copyDirectoryRecursively(contentDir, publicContentDir);
-    console.log(`Copied content directory successfully`);
+  if (isVercel) {
+    // On Vercel, just copy the content directory
+    console.log(`Copying content directory to ${publicContentDir}`);
+    try {
+      // Ensure the target directory exists
+      fs.mkdirSync(publicContentDir, { recursive: true });
+      copyDirectoryRecursively(contentDir, publicContentDir);
+      console.log(`Copied content directory successfully`);
+    } catch (err) {
+      console.error(`Error during content copy: ${err.message}`);
+      process.exit(1);
+    }
+  } else {
+    // In local environment, try to create a symlink first
+    console.log(`Creating symbolic link from ${contentDir} to ${publicContentDir}`);
+    try {
+      fs.symlinkSync(contentDir, publicContentDir, 'junction');
+      console.log(`Created symbolic link successfully`);
+    } catch (err) {
+      console.warn(`Failed to create symbolic link: ${err.message}`);
+      console.log(`Falling back to copying content directory`);
+      
+      // If symlink fails, copy the content directory instead
+      try {
+        // Ensure the target directory exists
+        fs.mkdirSync(publicContentDir, { recursive: true });
+        copyDirectoryRecursively(contentDir, publicContentDir);
+        console.log(`Copied content directory successfully`);
+      } catch (err) {
+        console.error(`Error during content copy fallback: ${err.message}`);
+        process.exit(1);
+      }
+    }
   }
 
-  console.log('Content preparation for Vercel completed successfully!');
+  console.log('Content preparation completed successfully!');
 } catch (err) {
   console.error('Error during content preparation:', err);
   process.exit(1);

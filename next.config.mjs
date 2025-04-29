@@ -31,7 +31,7 @@ const nextConfig = {
   outputFileTracingExcludes: {
     '*': [
       './content/**/*',
-      './public/images/**/*',
+      './public/content/**/*',
       './public/video/**/*',
       'node_modules/**/*.{jpg,jpeg,png,gif,webp,mp4,mp3,svg}'
     ],
