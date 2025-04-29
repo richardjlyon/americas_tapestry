@@ -75,7 +75,9 @@ const newsDirectory = path.join(process.cwd(), 'content/news');
 // Extract slug from filename (remove date prefix)
 function slugFromFilename(filename: string): string {
   // Remove the YYMMDD- prefix and .md extension
-  return filename.replace(/^\d{6}-/, '').replace(/\.md$/, '');
+  const slug = filename.replace(/^\d{6}-/, '').replace(/\.md$/, '');
+  console.log(`Slug extraction: ${filename} -> ${slug}`);
+  return slug;
 }
 
 // Function to convert image paths to the public directory structure
@@ -135,7 +137,9 @@ export function getAllBlogPosts(): BlogPost[] {
 
     // Process each file
     for (const filename of filenames) {
+      // Extract slug from filename, ensuring we get the full slug without date prefix
       const slug = slugFromFilename(filename);
+      console.log(`Processing file: ${filename}, extracted slug: ${slug}`);
       const fullPath = path.join(categoryDir, filename);
 
       try {
@@ -195,10 +199,15 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
       continue;
     }
 
-    // Look for files that end with the slug
+    // Look for files that end with the slug (more robust matching)
     const files = fs
       .readdirSync(categoryDir)
-      .filter((filename) => filename.endsWith(`${slug}.md`));
+      .filter((filename) => {
+        const fileSlug = slugFromFilename(filename);
+        const match = fileSlug === slug;
+        console.log(`Comparing: fileSlug '${fileSlug}' with requested slug '${slug}', match: ${match}`);
+        return match;
+      });
 
     if (files.length > 0) {
       const filename = files[0];
