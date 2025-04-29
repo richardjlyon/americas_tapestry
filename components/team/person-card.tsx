@@ -1,5 +1,7 @@
 import type { FC } from 'react';
+import Image from 'next/image';
 import { ContentCard } from '../ui/content-card';
+import { getImagePath, getImageSizes } from '@/lib/image-utils';
 
 interface PersonDetails {
   name: string;
@@ -38,17 +40,25 @@ const PersonCard: FC<PersonCardProps> = ({
           <div className="md:w-1/3 lg:w-1/4">
             <div className="h-80 md:h-full relative">
               {/* image */}
-              <img
-                src={
-                  imageSrc ||
-                  '/team/project-director/stefan-romero/stefan-romero.jpg'
-                }
-                alt={personDetails.name}
-                className="w-full h-full object-cover"
-                style={{
-                  objectPosition: personDetails.imagePosition || 'center',
-                }}
-              />
+              {imageSrc ? (
+                <Image
+                  src={getImagePath(imageSrc)}
+                  alt={personDetails.name}
+                  fill
+                  sizes={getImageSizes('thumbnail')}
+                  className="object-cover"
+                  style={{
+                    objectPosition: personDetails.imagePosition || 'center',
+                  }}
+                  priority
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                  <div className="text-colonial-navy/40 text-center p-4">
+                    {personDetails.name}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           {/* content */}

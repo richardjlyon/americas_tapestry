@@ -26,15 +26,15 @@ const nextConfig = {
   output: 'standalone',
   // Exclude large content directories from serverless function bundle
   // This is crucial for keeping function size small
+  outputFileTracingExcludes: {
+    '*': [
+      './content/**/*',
+      './public/images/**/*',
+      './public/video/**/*',
+      'node_modules/**/*.{jpg,jpeg,png,gif,webp,mp4,mp3,svg}'
+    ],
+  },
   experimental: {
-    outputFileTracingExcludes: {
-      '*': [
-        './content/**/*',
-        './public/images/**/*',
-        './public/video/**/*',
-        'node_modules/**/*.{jpg,jpeg,png,gif,webp,mp4,mp3,svg}'
-      ],
-    },
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,

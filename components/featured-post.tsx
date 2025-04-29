@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { formatDate } from '@/lib/utils';
 import type { BlogPost } from '@/lib/blog';
 import { blogCategories } from '@/lib/blog';
 import { ArrowRight, Play } from 'lucide-react';
 import { NavyButton } from '@/components/ui/colonial-buttons';
+import { getImagePath, getImageSizes } from '@/lib/image-utils';
 
 interface FeaturedPostProps {
   post: BlogPost;
@@ -19,19 +21,27 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
       <div className="md:flex">
         <div className="md:w-1/2">
           <div className="h-64 md:h-full relative">
-            <img
-              src={
-                post.image ||
-                "/placeholder.svg?height=600&width=800&text=America's+Tapestry"
-              }
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute top-0 right-0 bg-colonial-burgundy text-colonial-parchment text-sm font-medium px-3 py-1 rounded-bl-lg">
+            {post.image ? (
+              <Image
+                src={getImagePath(post.image)}
+                alt={post.title}
+                fill
+                sizes={getImageSizes('feature')}
+                className="object-cover"
+                priority
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                <div className="text-colonial-navy/40 text-center p-4">
+                  America&apos;s Tapestry
+                </div>
+              </div>
+            )}
+            <div className="absolute top-0 right-0 bg-colonial-burgundy text-colonial-parchment text-sm font-medium px-3 py-1 rounded-bl-lg z-10">
               {category?.name || post.category}
             </div>
             {isVideo && (
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center z-10">
                 <div className="bg-colonial-navy/70 rounded-full p-4 text-colonial-parchment">
                   <Play className="h-10 w-10" />
                 </div>

@@ -2,11 +2,12 @@
 
 import type React from 'react';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
+import { getVideoPath } from '@/lib/image-utils';
 
 interface AccessibleAudioPlayerProps {
   src: string;
@@ -26,6 +27,7 @@ export function AccessibleAudioPlayer({
   const [currentTime, setCurrentTime] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(1);
+  const [audioSrc, setAudioSrc] = useState(src);
   const audioRef = useRef<HTMLAudioElement>(null);
   const progressBarId = `progress-${Math.random().toString(36).substring(2, 9)}`;
   const volumeId = `volume-${Math.random().toString(36).substring(2, 9)}`;
@@ -37,6 +39,12 @@ export function AccessibleAudioPlayer({
     const seconds = Math.floor(time % 60);
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
+
+  // Process the audio source path
+  useEffect(() => {
+    // Let's handle the path - use the original for now as we might need to special case audio files
+    setAudioSrc(src);
+  }, [src]);
 
   // Handle play/pause
   const togglePlay = () => {
@@ -141,7 +149,7 @@ export function AccessibleAudioPlayer({
 
       <audio
         ref={audioRef}
-        src={src}
+        src={audioSrc}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={handleEnded}

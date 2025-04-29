@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Maximize2, Minimize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { getImagePath } from '@/lib/image-utils';
 
 interface FullImageViewerProps {
   imageSrc: string;
@@ -28,15 +30,35 @@ export function FullImageViewer({
   return (
     <div className="relative">
       {/* Image container with conditional aspect ratio */}
-      <div className={isFullView ? 'w-full' : 'aspect-[16/9] w-full relative'}>
-        <img
-          src={imageSrc}
-          alt={altText}
-          className={`w-full ${isFullView ? 'h-auto' : 'h-full object-cover'}`}
-        />
+      <div 
+        className={isFullView ? 'w-full relative' : 'aspect-[16/9] w-full relative'} 
+        style={{ height: isFullView ? 'auto' : undefined }}
+      >
+        {isFullView ? (
+          <div className="relative w-full">
+            <Image
+              src={getImagePath(imageSrc)}
+              alt={altText}
+              width={1920}
+              height={1080}
+              className="w-full h-auto"
+              sizes="100vw"
+              priority
+            />
+          </div>
+        ) : (
+          <Image
+            src={getImagePath(imageSrc)}
+            alt={altText}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        )}
 
         {/* Status badge */}
-        <div className="absolute top-4 left-4">
+        <div className="absolute top-4 left-4 z-10">
           <div
             className={`${statusColor} ${statusTextColor} px-3 py-1 rounded-full shadow-md font-medium`}
           >
@@ -45,7 +67,7 @@ export function FullImageViewer({
         </div>
 
         {/* Toggle view button */}
-        <div className="absolute bottom-4 right-4">
+        <div className="absolute bottom-4 right-4 z-10">
           <Button
             onClick={toggleView}
             variant="secondary"

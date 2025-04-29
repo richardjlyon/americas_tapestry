@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight, Headphones } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { TapestryEntry } from '@/lib/tapestries';
+import { getImagePath, getImageSizes } from '@/lib/image-utils';
 
 // Status color mapping
 const statusColors = {
@@ -31,24 +33,31 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
 
   const cardContent = (
     <>
-      <div className="aspect-[4/3] overflow-hidden">
+      <div className="aspect-[4/3] overflow-hidden relative">
         <div
           className={cn(
-            'absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity',
+            'absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity z-10',
             tapestry.background_color || 'bg-colonial-navy',
           )}
         />
-        <img
-          src={
-            tapestry.thumbnail ||
-            '/tapestry-placeholder.svg?height=600&width=800'
-          }
-          alt={tapestry.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        {tapestry.thumbnail ? (
+          <Image
+            src={getImagePath(tapestry.thumbnail)}
+            alt={tapestry.title}
+            fill
+            sizes={getImageSizes('gallery')}
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="h-full w-full flex items-center justify-center bg-gray-100">
+            <div className="text-colonial-navy/40 text-center p-4">
+              {tapestry.title}
+            </div>
+          </div>
+        )}
 
         {hasAudio && (
-          <div className="absolute bottom-2 right-2">
+          <div className="absolute bottom-2 right-2 z-20">
             <div className="bg-colonial-navy/80 text-colonial-parchment rounded-full p-1.5 shadow-md">
               <Headphones className="h-4 w-4" aria-hidden="true" />
               <span className="sr-only">Audio description available</span>
@@ -57,7 +66,7 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
         )}
 
         {/* Status badge */}
-        <div className="absolute top-2 left-2">
+        <div className="absolute top-2 left-2 z-20">
           <div
             className={`${statusColor} ${statusTextColor} text-xs font-medium px-2 py-1 rounded-full shadow-md`}
           >

@@ -7,6 +7,7 @@ import { FullImageViewer } from '@/components/full-image-viewer';
 import { TeamCard } from '@/components/tapestries/team-card';
 import { getTeamMembersByState } from '@/lib/team';
 import { PageSection } from '@/components/ui/page-section';
+import { getImagePath } from '@/lib/image-utils';
 
 // Status color mapping
 const statusColors = {
@@ -33,8 +34,12 @@ export async function generateStaticParams() {
 
 export default async function TapestryPage({
   params,
-}: { params: { slug: string } }) {
-  const tapestry = getTapestryBySlug(params.slug);
+}: {
+  params: { slug: string };
+}) {
+  // Wait for params to be fully available
+  const slug = params.slug;
+  const tapestry = getTapestryBySlug(slug);
 
   if (!tapestry) {
     notFound();
@@ -48,10 +53,15 @@ export default async function TapestryPage({
   const statusTextColor =
     statusTextColors[tapestry.status] || 'text-colonial-parchment';
 
-  const imageSrc =
-    tapestry.imagePath ||
-    tapestry.thumbnail ||
-    '/placeholder.svg?height=600&width=800';
+  // Get the image source path and ensure it uses the new structure
+  const imageSrc = tapestry.imagePath 
+    ? getImagePath(tapestry.imagePath)
+    : (tapestry.thumbnail 
+      ? getImagePath(tapestry.thumbnail) 
+      : '/placeholder.svg?height=600&width=800');
+
+  // Handle audio path
+  const audioSrc = tapestry.audioPath ? getImagePath(tapestry.audioPath) : undefined;
 
   // Get all team members for this state using the utility function
   const { stateDirectors, historicalPartners, illustrators, stitchingGroups } =
@@ -80,10 +90,10 @@ export default async function TapestryPage({
         />
 
         <div className="p-6 md:p-8">
-          {tapestry.audioPath && (
+          {audioSrc && (
             <div className="mb-8">
               <AccessibleAudioPlayer
-                src={tapestry.audioPath}
+                src={audioSrc}
                 title={`Audio Description: ${tapestry.title} Tapestry`}
                 description={tapestry.audioDescription}
               />

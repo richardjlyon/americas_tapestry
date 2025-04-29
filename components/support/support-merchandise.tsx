@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -9,6 +10,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { ShoppingBag, ExternalLink } from 'lucide-react';
+import { getImagePath, getImageSizes } from '@/lib/image-utils';
 
 interface MerchandiseItem {
   id: string;
@@ -34,7 +36,7 @@ const merchandiseItems: MerchandiseItem[] = [
       'Learn traditional embroidery techniques with our beginner-friendly kit. Includes patterns inspired by our tapestries, quality materials, and step-by-step instructions.',
     price: '$45.00',
     image:
-      '/support/colonial-embroidery-kit.png?height=300&width=400&text=Embroidery+Kit',
+      '/support/colonial-embroidery-kit.png',
   },
   {
     id: 'book',
@@ -78,12 +80,22 @@ export function SupportMerchandise() {
             key={item.id}
             className="bg-white shadow-md border border-colonial-navy/10 overflow-hidden"
           >
-            <div className="aspect-[4/3] overflow-hidden">
-              <img
-                src={item.image || '/placeholder.svg'}
-                alt={item.name}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-              />
+            <div className="aspect-[4/3] relative overflow-hidden">
+              {item.image && item.image.startsWith('/support/') ? (
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  sizes={getImageSizes('gallery')}
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                  <div className="text-colonial-navy/40 text-center p-4">
+                    {item.name}
+                  </div>
+                </div>
+              )}
             </div>
             <CardHeader>
               <CardTitle className="flex justify-between items-start">

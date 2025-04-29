@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -13,6 +14,7 @@ import { Badge } from '@/components/ui/badge';
 import type { Sponsor } from '@/lib/sponsors';
 import { useEffect, useState } from 'react';
 import { markdownToHtml } from '@/lib/markdown';
+import { getImagePath } from '@/lib/image-utils';
 
 interface SponsorCardProps {
   sponsor: Sponsor;
@@ -74,12 +76,22 @@ export function SponsorCard({ sponsor, featured = false }: SponsorCardProps) {
 
       <CardContent className={`p-4 ${sponsor.tier ? 'pt-2' : 'pt-4'}`}>
         <div className="flex flex-col items-center mb-4">
-          <div className="h-24 flex items-center justify-center mb-3 p-2">
-            <img
-              src={sponsor.logoPath}
-              alt={`${sponsor.name} logo`}
-              className="max-h-full max-w-full object-contain"
-            />
+          <div className="h-24 flex items-center justify-center mb-3 p-2 relative">
+            {sponsor.logoPath ? (
+              <div className="relative w-full h-full flex items-center justify-center">
+                <Image
+                  src={getImagePath(sponsor.logoPath)}
+                  alt={`${sponsor.name} logo`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 200px"
+                />
+              </div>
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-gray-50">
+                <span className="text-colonial-navy/40">{sponsor.name}</span>
+              </div>
+            )}
           </div>
           <h3 className="text-xl font-bold text-colonial-navy text-center">
             {sponsor.name}
