@@ -11,6 +11,9 @@
  * @returns Properly formatted image path for Next.js Image component
  */
 export function getImagePath(path: string): string {
+  // If path is null or empty, return empty string
+  if (!path) return '';
+  
   // If path is already absolute or starts with / (for public directory), return as is
   if (path.startsWith('/') || path.startsWith('http')) {
     return path;
@@ -33,6 +36,9 @@ export function getImagePath(path: string): string {
  * @returns Properly formatted video path
  */
 export function getVideoPath(path: string): string {
+  // If path is null or empty, return empty string
+  if (!path) return '';
+  
   // If path is already absolute or starts with / (for public directory), return as is
   if (path.startsWith('/') || path.startsWith('http')) {
     return path;
@@ -67,4 +73,26 @@ export function getImageSizes(role: 'thumbnail' | 'banner' | 'gallery' | 'featur
     default:
       return '(max-width: 1024px) 100vw, 1024px';
   }
+}
+
+/**
+ * Loader function that can be used with Next.js Image component
+ * This provides a custom loading strategy for images
+ * 
+ * @param params - Image loader parameters
+ * @returns URL for the image with proper params
+ */
+export function customImageLoader({ src, width, quality }: { 
+  src: string; 
+  width: number; 
+  quality?: number;
+}): string {
+  // For external URLs, just return the URL
+  if (src.startsWith('http')) {
+    return src;
+  }
+  
+  // For local images, return the path with width and quality params
+  // This will be handled by Next.js image optimization pipeline
+  return `${src}?w=${width}&q=${quality || 75}`;
 }
