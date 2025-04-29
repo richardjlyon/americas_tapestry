@@ -78,26 +78,31 @@ function slugFromFilename(filename: string): string {
   return filename.replace(/^\d{6}-/, '').replace(/\.md$/, '');
 }
 
-// Function to convert image paths to the content directory structure
+// Function to convert image paths to the public directory structure
 function convertImagePath(imagePath: string | undefined): string {
   if (!imagePath) return '/placeholder.svg';
   
-  // If the path already starts with /content/, leave it as is
-  if (imagePath.startsWith('/content/')) {
+  // If path is already using the new /images/ format, leave it as is
+  if (imagePath.startsWith('/images/')) {
     return imagePath;
   }
   
-  // Convert any paths that start with /images/ to their corresponding /content/ paths
-  if (imagePath.startsWith('/images/')) {
+  // If the path starts with /content/, convert to public directory format
+  if (imagePath.startsWith('/content/')) {
     // Try to infer the content directory from the path
     const pathParts = imagePath.split('/');
     if (pathParts.length >= 3) {
       const contentType = pathParts[2]; // e.g., 'news', 'tapestries', etc.
-      return imagePath.replace(`/images/${contentType}/`, `/content/${contentType}/`);
+      return imagePath.replace(`/content/${contentType}/`, `/images/${contentType}/`);
     }
     
     // If we can't infer the content type, use a general replacement
-    return imagePath.replace('/images/', '/content/');
+    return imagePath.replace('/content/', '/images/');
+  }
+  
+  // For relative paths, prefix with /images/news/
+  if (!imagePath.startsWith('/') && !imagePath.startsWith('http')) {
+    return `/images/news/${imagePath}`;
   }
   
   // If it's an absolute path to a placeholder or external URL, leave it as is
