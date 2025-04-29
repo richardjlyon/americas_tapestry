@@ -83,9 +83,9 @@ export function getTeamGroups(): TeamGroup[] {
   }
 }
 
-// Generate image path based on member slug and group slug
+// Generate image path based on member slug and group slug - update to use content directory
 function getTeamMemberImagePath(groupSlug: string, memberSlug: string): string {
-  return `/images/team/${groupSlug}/${memberSlug}.jpg`;
+  return `/content/team/${groupSlug}/${memberSlug}/${memberSlug}.jpg`;
 }
 
 export function getTeamMembersByGroup(group: string): TeamMember[] {
@@ -121,19 +121,21 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
         // Stitching groups use a placeholder
         imagePath = `/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(data.name)}`;
       } else if (group === 'historical-partners') {
-        // Historical partners use the directory name convention
-        imagePath = `/images/team/${group}/${dirName}/${dirName}.jpg`;
+        // Historical partners use the directory name convention - updated to use content directory
+        imagePath = `/content/team/${group}/${dirName}/${dirName}.jpg`;
       } else {
-        // Standard image path for other groups
-        imagePath = `/images/team/${group}/${dirName}/${dirName}.jpg`;
+        // Standard image path for other groups - updated to use content directory
+        imagePath = `/content/team/${group}/${dirName}/${dirName}.jpg`;
       }
 
       // Check if a face image exists (using the naming convention: name-face.jpg)
-      const faceImagePath = `/images/team/${group}/${dirName}/${dirName}-face.jpg`;
+      // Updated to use content directory
+      const faceImagePath = `/content/team/${group}/${dirName}/${dirName}-face.jpg`;
+      
+      // Check the actual file path in the content directory, not public
       const actualFaceImagePath = path.join(
         process.cwd(),
-        'public',
-        `images/team/${group}/${dirName}/${dirName}-face.jpg`,
+        `content/team/${group}/${dirName}/${dirName}-face.jpg`,
       );
 
       // Dynamically check if the face image file exists

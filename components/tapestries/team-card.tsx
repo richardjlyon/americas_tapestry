@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import type { TeamMember } from '@/lib/team';
 import { PageSection } from '@/components/ui/page-section';
 import { useState } from 'react';
+import { getImagePath } from '@/lib/image-utils';
 
 interface TeamCardProps {
   stateName: string;
@@ -33,7 +34,7 @@ export function TeamCard({
     setFailedImages((prev) => ({ ...prev, [id]: true }));
   };
 
-  // Simple function to get the appropriate image source
+  // Updated function to get the appropriate image source using content directory paths
   const getImageSrc = (member: TeamMember) => {
     // If image already failed, use placeholder
     if (failedImages[member.slug]) {
@@ -44,25 +45,25 @@ export function TeamCard({
     if (member.groupSlug === 'state-directors') {
       // Check if this director has a face image and it hasn't failed to load
       if (member.hasFaceImage && !failedImages[`${member.slug}-face`]) {
-        // The face path format matches the structure in lib/team.ts
-        return `/images/team/state-directors/${member.slug}/${member.slug}-face.jpg`;
+        // The face path format now uses content directory
+        return `/content/team/state-directors/${member.slug}/${member.slug}-face.jpg`;
       }
       // If face image has failed but regular image hasn't been tried yet
       if (
         failedImages[`${member.slug}-face`] &&
         !failedImages[`${member.slug}`]
       ) {
-        return `/images/team/state-directors/${member.slug}/${member.slug}.jpg`;
+        return `/content/team/state-directors/${member.slug}/${member.slug}.jpg`;
       }
       // If both failed, use SVG fallback
       return personSvgFallback;
     }
 
-    // For historical partners - use the nested structure
+    // For historical partners - use the content directory
     if (member.groupSlug === 'historical-partners') {
       return failedImages[`${member.slug}`]
         ? personSvgFallback
-        : `/images/team/historical-partners/${member.slug}/${member.slug}.jpg`;
+        : `/content/team/historical-partners/${member.slug}/${member.slug}.jpg`;
     }
 
     // For stitching groups use SVG fallback
@@ -70,10 +71,10 @@ export function TeamCard({
       return personSvgFallback;
     }
 
-    // Default image path for other groups (using the nested path structure)
+    // Default image path for other groups (using content directory)
     return failedImages[`${member.slug}`]
       ? personSvgFallback
-      : `/images/team/${member.groupSlug}/${member.slug}/${member.slug}.jpg`;
+      : `/content/team/${member.groupSlug}/${member.slug}/${member.slug}.jpg`;
   };
 
   // Flatten all team members into a single array - keep it simple
@@ -111,6 +112,7 @@ export function TeamCard({
                       src={getImageSrc(member)}
                       alt={member.name || 'Team member'}
                       fill
+                      sizes="(max-width: 768px) 128px, 128px"
                       className="object-cover"
                       style={{
                         objectPosition: member.imagePosition || 'center',

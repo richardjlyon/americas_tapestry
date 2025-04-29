@@ -78,6 +78,32 @@ function slugFromFilename(filename: string): string {
   return filename.replace(/^\d{6}-/, '').replace(/\.md$/, '');
 }
 
+// Function to convert image paths to the content directory structure
+function convertImagePath(imagePath: string | undefined): string {
+  if (!imagePath) return '/placeholder.svg';
+  
+  // If the path already starts with /content/, leave it as is
+  if (imagePath.startsWith('/content/')) {
+    return imagePath;
+  }
+  
+  // Convert any paths that start with /images/ to their corresponding /content/ paths
+  if (imagePath.startsWith('/images/')) {
+    // Try to infer the content directory from the path
+    const pathParts = imagePath.split('/');
+    if (pathParts.length >= 3) {
+      const contentType = pathParts[2]; // e.g., 'news', 'tapestries', etc.
+      return imagePath.replace(`/images/${contentType}/`, `/content/${contentType}/`);
+    }
+    
+    // If we can't infer the content type, use a general replacement
+    return imagePath.replace('/images/', '/content/');
+  }
+  
+  // If it's an absolute path to a placeholder or external URL, leave it as is
+  return imagePath;
+}
+
 // Get all blog posts across all categories
 export function getAllBlogPosts(): BlogPost[] {
   // Ensure the directory exists
@@ -126,6 +152,9 @@ export function getAllBlogPosts(): BlogPost[] {
           }
         }
 
+        // Convert image path to content directory
+        const imagePath = convertImagePath(data.image);
+
         allPosts.push({
           slug,
           title: data.title || '',
@@ -133,7 +162,7 @@ export function getAllBlogPosts(): BlogPost[] {
           excerpt: data.excerpt || '',
           category: category.slug,
           featured: data.featured || false,
-          image: data.image || '/placeholder.svg',
+          image: imagePath,
           content,
           author: data.author || null,
           videoUrl: data.videoUrl || undefined,
@@ -188,6 +217,9 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
             postDate = `${year}-${month}-${day}`;
           }
         }
+        
+        // Convert image path to content directory
+        const imagePath = convertImagePath(data.image);
 
         return {
           slug,
@@ -196,7 +228,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
           excerpt: data.excerpt || '',
           category: category.slug,
           featured: data.featured || false,
-          image: data.image || '/placeholder.svg',
+          image: imagePath,
           content,
           author: data.author || null,
           videoUrl: data.videoUrl || undefined,

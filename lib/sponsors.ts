@@ -113,9 +113,9 @@ export function getAllSponsors(): Sponsor[] {
       // Find logo file
       const logoFileName = findLogoFile(folderPath, folder, data.logo);
       
-      // Construct logo path
+      // Construct logo path using content directory
       const logoPath = logoFileName 
-        ? `/images/sponsors/${folder}/${logoFileName}`
+        ? `/content/sponsors/${folder}/${logoFileName}`
         : `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data.name || 'Sponsor')}`;
 
       // Create an excerpt from the content
@@ -166,9 +166,9 @@ export function getSponsorBySlug(slug: string): Sponsor | null {
   // Find logo file
   const logoFileName = findLogoFile(folderPath, slug, data.logo);
   
-  // Construct logo path
+  // Construct logo path using content directory
   const logoPath = logoFileName 
-    ? `/images/sponsors/${slug}/${logoFileName}`
+    ? `/content/sponsors/${slug}/${logoFileName}`
     : `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data.name || 'Sponsor')}`;
 
   // Create an excerpt from the content
