@@ -58,8 +58,8 @@ function findImageInDirectory(dirPath: string, prefix = ''): string | null {
   if (mainImage) {
     // Extract the tapestry slug from the directory path
     const folderName = path.basename(dirPath);
-    // Construct path for content directory
-    return `/content/tapestries/${folderName}/${mainImage}`;
+    // Construct path for public images directory
+    return `/images/tapestries/${folderName}/${mainImage}`;
   }
 
   // If no main image found, return the first image file
@@ -73,7 +73,7 @@ function findImageInDirectory(dirPath: string, prefix = ''): string | null {
 
   if (imageFile) {
     const folderName = path.basename(dirPath);
-    return `/content/tapestries/${folderName}/${imageFile}`;
+    return `/images/tapestries/${folderName}/${imageFile}`;
   }
 
   return null;
@@ -97,7 +97,7 @@ function findAudioInDirectory(dirPath: string, prefix = ''): string | null {
 
   if (audioFile) {
     const folderName = path.basename(dirPath);
-    return `/content/tapestries/${folderName}/${audioFile}`;
+    return `/images/tapestries/${folderName}/${audioFile}`;
   }
 
   return null;
@@ -152,7 +152,7 @@ export function getAllTapestries(): TapestryEntry[] {
 
         if (thumbnailFile) {
           // Use the slug which is also the folder name
-          thumbnail = `/content/tapestries/${slug}/${thumbnailFile}`;
+          thumbnail = `/images/tapestries/${slug}/${thumbnailFile}`;
         } else if (imagePath) {
           // Use main image as fallback if available
           thumbnail = imagePath;
@@ -217,7 +217,7 @@ export function getTapestryBySlug(slug: string): TapestryEntry | null {
         .find((file) => file.toLowerCase().includes('thumbnail'));
 
       if (thumbnailFile) {
-        thumbnail = `/content/tapestries/${slug}/${thumbnailFile}`;
+        thumbnail = `/images/tapestries/${slug}/${thumbnailFile}`;
       } else if (imagePath) {
         // Use main image as fallback if available
         thumbnail = imagePath;
