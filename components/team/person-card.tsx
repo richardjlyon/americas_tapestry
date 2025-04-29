@@ -51,6 +51,7 @@ const PersonCard: FC<PersonCardProps> = ({
                     objectPosition: personDetails.imagePosition || 'center',
                   }}
                   priority
+                  unoptimized
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-gray-100">

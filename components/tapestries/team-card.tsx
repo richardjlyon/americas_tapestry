@@ -117,6 +117,7 @@ export function TeamCard({
                       style={{
                         objectPosition: member.imagePosition || 'center',
                       }}
+                      unoptimized
                       onError={() => {
                         // For state directors with face images, we need to track face failures separately
                         if (

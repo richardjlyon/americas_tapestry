@@ -29,6 +29,7 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
                 sizes={getImageSizes('feature')}
                 className="object-cover"
                 priority
+                unoptimized
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center bg-gray-100">

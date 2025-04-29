@@ -85,6 +85,7 @@ export function SponsorCard({ sponsor, featured = false }: SponsorCardProps) {
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, 200px"
+                  unoptimized
                 />
               </div>
             ) : (

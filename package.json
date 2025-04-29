@@ -3,12 +3,13 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "mkdir -p public && node scripts/copy-video-files.mjs && node scripts/prepare-content-for-vercel.mjs && next dev",
-        "build": "bash -c \"mkdir -p public public/content\" && bash -c \"cp -r content/* public/content/ || true\" && bash -c \"mkdir -p public/video && cp -r content/video/* public/video/ || true\" && next build",
-        "vercel-build": "./vercel-build.sh",
+        "dev": "node scripts/migrate-images-to-public.mjs && node scripts/add-unoptimized-to-images.mjs && next dev",
+        "build": "node scripts/migrate-images-to-public.mjs && node scripts/add-unoptimized-to-images.mjs && next build",
         "start": "next start",
         "lint": "next lint",
-        "format": "npx @biomejs/biome format --write ./app ./components ./lib ./hooks"
+        "format": "npx @biomejs/biome format --write ./app ./components ./lib ./hooks",
+        "migrate-images": "node scripts/migrate-images-to-public.mjs",
+        "update-images": "node scripts/add-unoptimized-to-images.mjs"
     },
     "dependencies": {
         "@hookform/resolvers": "latest",

@@ -1,14 +1,14 @@
 /**
  * Utilities for handling images in the America's Tapestry website
+ * Refactored to use direct public paths
  */
 
 /**
- * Convert a content path to a properly formatted image source path
- * This allows components to reference images in the content directory
- * while Next.js Image optimization handles them correctly
+ * Get image path from any format to the correct public path
+ * This simplifies the image path handling to use only public directories
  * 
- * @param path - Original image path (can be full path or relative to content)
- * @returns Properly formatted image path for Next.js Image component
+ * @param path - Original image path
+ * @returns Properly formatted image path for public directory
  */
 export function getImagePath(path: string): string {
   // If path is null or empty, return empty string
@@ -16,21 +16,57 @@ export function getImagePath(path: string): string {
   
   // If path is already absolute or starts with / (for public directory), return as is
   if (path.startsWith('/') || path.startsWith('http')) {
+    // If path is using old content format, convert it
+    if (path.startsWith('/content/')) {
+      return convertContentPathToPublic(path);
+    }
     return path;
   }
   
-  // If path starts with 'content/', strip that part as it's redundant
+  // If path starts with 'content/', convert to public format
   if (path.startsWith('content/')) {
-    return `/${path}`;
+    return convertContentPathToPublic('/' + path);
   }
   
-  // Otherwise, assume it's a path relative to the content directory
-  return `/content/${path}`;
+  // Otherwise, assume it's a relative path to images directory
+  return `/images/${path}`;
 }
 
 /**
- * Convert a path to a proper video source path
- * Videos are still copied to the public directory
+ * Convert a content path to a public path
+ * Maps content directory paths to their public equivalents
+ * 
+ * @param contentPath - Path starting with /content/
+ * @returns Equivalent public path
+ */
+function convertContentPathToPublic(contentPath: string): string {
+  // Map content directories to public directories
+  if (contentPath.startsWith('/content/tapestries/')) {
+    return contentPath.replace('/content/tapestries/', '/images/tapestries/');
+  }
+  
+  if (contentPath.startsWith('/content/sponsors/')) {
+    return contentPath.replace('/content/sponsors/', '/images/sponsors/');
+  }
+  
+  if (contentPath.startsWith('/content/team/')) {
+    return contentPath.replace('/content/team/', '/images/team/');
+  }
+  
+  if (contentPath.startsWith('/content/news/')) {
+    return contentPath.replace('/content/news/', '/images/news/');
+  }
+  
+  if (contentPath.startsWith('/content/video/')) {
+    return contentPath.replace('/content/video/', '/video/');
+  }
+  
+  // Default case - just strip content and assume images
+  return contentPath.replace('/content/', '/images/');
+}
+
+/**
+ * Get path for video files
  * 
  * @param path - Original video path
  * @returns Properly formatted video path
@@ -41,15 +77,19 @@ export function getVideoPath(path: string): string {
   
   // If path is already absolute or starts with / (for public directory), return as is
   if (path.startsWith('/') || path.startsWith('http')) {
+    // If path is using old content format, convert it
+    if (path.startsWith('/content/video/')) {
+      return path.replace('/content/video/', '/video/');
+    }
     return path;
   }
   
-  // If path starts with 'content/video', convert to public/video
+  // If path starts with 'content/video', convert to public format
   if (path.startsWith('content/video/')) {
-    return `/video/${path.substring('content/video/'.length)}`;
+    return path.replace('content/video/', '/video/');
   }
   
-  // Otherwise, assume it's a path relative to the content/video directory
+  // Otherwise, assume it's a relative path to video directory
   return `/video/${path}`;
 }
 
@@ -73,26 +113,4 @@ export function getImageSizes(role: 'thumbnail' | 'banner' | 'gallery' | 'featur
     default:
       return '(max-width: 1024px) 100vw, 1024px';
   }
-}
-
-/**
- * Loader function that can be used with Next.js Image component
- * This provides a custom loading strategy for images
- * 
- * @param params - Image loader parameters
- * @returns URL for the image with proper params
- */
-export function customImageLoader({ src, width, quality }: { 
-  src: string; 
-  width: number; 
-  quality?: number;
-}): string {
-  // For external URLs, just return the URL
-  if (src.startsWith('http')) {
-    return src;
-  }
-  
-  // For local images, return the path with width and quality params
-  // This will be handled by Next.js image optimization pipeline
-  return `${src}?w=${width}&q=${quality || 75}`;
 }

@@ -22,6 +22,7 @@ export default function AboutPage() {
             width={1200}
             height={600}
             className="w-full object-cover"
+            unoptimized
           />
         </div>
 

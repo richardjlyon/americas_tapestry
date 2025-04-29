@@ -70,6 +70,7 @@ export function Header() {
             fill
             className="object-contain"
             priority
+            unoptimized
           />
         </div>
         <span className="ml-2.5 font-serif font-bold text-lg sm:text-2xl text-colonial-parchment">

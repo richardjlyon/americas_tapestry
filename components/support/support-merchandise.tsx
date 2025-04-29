@@ -88,6 +88,7 @@ export function SupportMerchandise() {
                   fill
                   sizes={getImageSizes('gallery')}
                   className="object-cover transition-transform duration-500 hover:scale-105"
+                  unoptimized
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-gray-100">

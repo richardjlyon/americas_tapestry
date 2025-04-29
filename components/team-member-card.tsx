@@ -74,6 +74,7 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
               objectPosition: member.imagePosition || 'center',
             }}
             onError={handleImageError}
+            unoptimized
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gray-100">

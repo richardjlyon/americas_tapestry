@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "./vercel.sh",
+  "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "public": true,
   "images": {

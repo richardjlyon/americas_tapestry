@@ -44,6 +44,7 @@ export function FullImageViewer({
               className="w-full h-auto"
               sizes="100vw"
               priority
+              unoptimized
             />
           </div>
         ) : (
@@ -54,6 +55,7 @@ export function FullImageViewer({
             className="object-cover"
             sizes="100vw"
             priority
+            unoptimized
           />
         )}
 

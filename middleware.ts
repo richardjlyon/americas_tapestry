@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-// Middleware to handle content directory access and other static files
+// Simple middleware to handle content directory access
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -32,7 +32,6 @@ export async function middleware(request: NextRequest) {
 // Configure the paths that the middleware should match
 export const config = {
   matcher: [
-    // Match static content paths
     '/content/:path*',
     '/video/:path*',
   ],

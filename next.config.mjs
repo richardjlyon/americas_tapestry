@@ -14,15 +14,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    // Enable Next.js image optimization
-    formats: ['image/avif', 'image/webp'],
-    // Add remote patterns if needed for external images
-    remotePatterns: [],
-    // Optional: set size limits if needed
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // Allow files from content directory to be served through next/image
-    domains: ['localhost', 'www.americastapestry.com'],
+    unoptimized: true, // Disable image optimization for direct file serving
   },
   // Output to standalone mode for Vercel
   output: 'standalone',

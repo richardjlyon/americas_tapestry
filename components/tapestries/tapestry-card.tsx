@@ -47,6 +47,7 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
             fill
             sizes={getImageSizes('gallery')}
             className="object-cover transition-transform duration-500 group-hover:scale-105"
+            unoptimized
           />
         ) : (
           <div className="h-full w-full flex items-center justify-center bg-gray-100">
