@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "node scripts/copy-to-public.mjs && next dev",
-        "build": "node scripts/copy-to-public.mjs && next build",
+        "dev": "node scripts/copy-video-files.mjs && next dev",
+        "build": "node scripts/copy-video-files.mjs && next build",
         "start": "next start",
         "lint": "next lint",
         "format": "npx @biomejs/biome format --write ./app ./components ./lib ./hooks"

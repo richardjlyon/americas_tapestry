@@ -1,10 +1,12 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 import type { TeamMember } from '@/lib/team';
 import { useState, useEffect } from 'react';
 import { remark } from 'remark';
 import html from 'remark-html';
+import { getImagePath, getImageSizes } from '@/lib/image-utils';
 
 interface TeamMemberCardProps {
   member: TeamMember;
@@ -17,9 +19,10 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
 
   // Use state to track image loading errors and processed content
   // Only use member.imagePath if it's a non-empty string
-  const [imgSrc, setImgSrc] = useState(
-    member.imagePath?.trim() ? member.imagePath : placeholderPath,
+  const [imgSrc, setImgSrc] = useState<string>(
+    member.imagePath?.trim() ? getImagePath(member.imagePath) : placeholderPath,
   );
+  const [imgError, setImgError] = useState(false);
   const [contentHtml, setContentHtml] = useState('');
 
   // Handle image load error
@@ -27,6 +30,7 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
     console.error(
       `Failed to load image: ${member.imagePath} for ${member.name}`,
     );
+    setImgError(true);
     setImgSrc(placeholderPath);
   };
 
@@ -51,25 +55,6 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
     processContent();
   }, [member.content]);
 
-  // Check for image existence when component mounts
-  useEffect(() => {
-    if (member.imagePath?.trim()) {
-      const img = new Image();
-      img.onload = () => {
-        // Image exists and loads successfully
-        setImgSrc(member.imagePath);
-      };
-      img.onerror = () => {
-        // Image doesn't exist or fails to load
-        // console.error(
-        //   `Image doesn't exist: ${member.imagePath} for ${member.name}`,
-        // );
-        setImgSrc(placeholderPath);
-      };
-      img.src = member.imagePath;
-    }
-  }, [member.imagePath, member.name, placeholderPath]);
-
   return (
     <div
       className={cn(
@@ -78,15 +63,25 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
       )}
     >
       <div className="aspect-[3/4] relative overflow-hidden">
-        <img
-          src={imgSrc}
-          alt={member.name}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-          style={{
-            objectPosition: member.imagePosition || 'center', // Use imagePosition if available, otherwise default to center
-          }}
-          onError={handleImageError}
-        />
+        {!imgError ? (
+          <Image
+            src={imgSrc}
+            alt={member.name}
+            fill
+            sizes={getImageSizes('thumbnail')}
+            className="object-cover transition-transform duration-500 hover:scale-105"
+            style={{
+              objectPosition: member.imagePosition || 'center',
+            }}
+            onError={handleImageError}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-gray-100">
+            <div className="text-colonial-navy/40 text-center p-4">
+              {member.name}
+            </div>
+          </div>
+        )}
       </div>
       <div className="p-5 flex-grow flex flex-col">
         <h3 className="text-xl font-bold text-colonial-navy">{member.name}</h3>
@@ -95,17 +90,6 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
           {member.state ? `, ${member.state}` : ''}
         </p>
 
-        {/* Additional metadata fields if they exist */}
-        {/* {member.state && (
-          <p className="font-serif text-sm text-colonial-navy/70 mb-2">
-            State: {member.state}
-          </p>
-        )} */}
-        {/* {member.location && (
-          <p className="font-serif text-sm text-colonial-navy/70 mb-2">
-            Location: {member.location}
-          </p>
-        )} */}
         {member.groupSlug === 'stitching-groups' && member.more_info && (
           <div className="mt-auto pt-4">
             <a href={`${member.more_info}`} className="inline-block text-link">
