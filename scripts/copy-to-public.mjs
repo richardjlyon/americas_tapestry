@@ -21,7 +21,7 @@ const contentMappings = [
   { source: 'content/sponsors', destination: 'public/images/sponsors' },
   { source: 'content/team', destination: 'public/images/team' },
   { source: 'content/video', destination: 'public/video' },
-  { source: 'content/news', destination: 'public/images/news' }
+  { source: 'content/news/images', destination: 'public/images/news' }
 ];
 
 // List of media file extensions to copy

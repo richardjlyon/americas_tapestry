@@ -2,7 +2,7 @@
 title: "November 2024 Update"
 date: "2024-11-10T10:51:26-05:00"
 excerpt: "An exciting partnership with William & Mary."
-image: "/images/news/images/atlanta-history-centre.jpg"
+image: "/images/news/atlanta-history-centre.jpg"
 featured: false
 ---
 

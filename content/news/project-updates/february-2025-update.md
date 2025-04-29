@@ -2,7 +2,7 @@
 title: "February 2025 Update"
 date: "2025-02-09T10:51:26-05:00"
 excerpt: "Our new illustrators, and new projects underway!"
-image: "/images/news/images/georgia-panel-traced.webp"
+image: "/images/news/georgia-panel-traced.webp"
 featured: false
 ---
 

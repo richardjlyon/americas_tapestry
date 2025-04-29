@@ -104,6 +104,10 @@ function convertImagePath(imagePath: string | undefined): string {
   
   // For relative paths, prefix with /images/news/
   if (!imagePath.startsWith('/') && !imagePath.startsWith('http')) {
+    // Make sure we don't add redundant 'images/' prefix
+    if (imagePath.startsWith('images/')) {
+      return `/images/news/${imagePath.replace('images/', '')}`;
+    }
     return `/images/news/${imagePath}`;
   }
   
@@ -161,8 +165,13 @@ export function getAllBlogPosts(): BlogPost[] {
           }
         }
 
-        // Convert image path to content directory
-        const imagePath = convertImagePath(data.image);
+        // Convert image path to public directory
+        let imagePath = convertImagePath(data.image);
+        
+        // Fix news images path - remove redundant 'images/' in path
+        if (imagePath && imagePath.startsWith('/images/news/images/')) {
+          imagePath = imagePath.replace('/images/news/images/', '/images/news/');
+        }
 
         allPosts.push({
           slug,
@@ -232,8 +241,13 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
           }
         }
         
-        // Convert image path to content directory
-        const imagePath = convertImagePath(data.image);
+        // Convert image path to public directory
+        let imagePath = convertImagePath(data.image);
+        
+        // Fix news images path - remove redundant 'images/' in path
+        if (imagePath && imagePath.startsWith('/images/news/images/')) {
+          imagePath = imagePath.replace('/images/news/images/', '/images/news/');
+        }
 
         return {
           slug,

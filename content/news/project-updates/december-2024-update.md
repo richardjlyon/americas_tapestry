@@ -2,7 +2,7 @@
 title: "December 2024 Update"
 date: "2024-12-06T10:51:26-05:00"
 excerpt: "Stitching timeline, and New Jersey showcase."
-image: "/images/news/images/muscarelle-art-museum.jpg"
+image: "/images/news/muscarelle-art-museum.jpg"
 featured: false
 ---
 

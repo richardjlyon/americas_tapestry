@@ -2,7 +2,7 @@
 title: "January 2025 Update"
 date: "2025-01-09T10:51:26-05:00"
 excerpt: "New sponsors, new website, and lift off!"
-image: "/images/news/images/muscarelle-interior.jpg"
+image: "/images/news/muscarelle-interior.jpg"
 featured: false
 ---
 

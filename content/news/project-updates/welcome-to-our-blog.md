@@ -3,7 +3,7 @@ title: "Welcome to our new Blog"
 date: "2024-09-01"
 excerpt: "Introducing our new blog where we'll share updates, historical insights, and event information about the America's Tapestry project."
 featured: true
-image: "/images/news/images/merriwether.jpg"
+image: "/images/news/merriwether.jpg"
 ---
 
 We're excited to launch the official blog for _America's Tapestry_, a
