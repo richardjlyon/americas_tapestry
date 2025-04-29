@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "node scripts/copy-video-files.mjs && node scripts/prepare-content-for-vercel.mjs && next dev",
-        "build": "node scripts/copy-video-files.mjs && node scripts/prepare-content-for-vercel.mjs && next build",
+        "build": "node scripts/copy-video-files.mjs && node scripts/copy-content-to-public.mjs && next build",
         "start": "next start",
         "lint": "next lint",
         "format": "npx @biomejs/biome format --write ./app ./components ./lib ./hooks"

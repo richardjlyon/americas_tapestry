@@ -36,9 +36,14 @@ const nextConfig = {
       'node_modules/**/*.{jpg,jpeg,png,gif,webp,mp4,mp3,svg}'
     ],
   },
-  // Add the content directory to the list of public directories
-  // This ensures that the content directory is copied to the output directory
+  // Add content directory static handling
   transpilePackages: [],
+  // Define which assets to include in the build
+  staticPageGenerationTimeout: 300,
+  compress: true,
+  // Set output files to be copied to output directory
+  // This includes content files in public/content
+  trailingSlash: false,
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,

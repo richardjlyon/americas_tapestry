@@ -25,8 +25,13 @@ const publicContentDir = path.join(publicDir, 'content');
 // Function to recursively copy a directory
 function copyDirectoryRecursively(source, target) {
   // Create target directory
-  fs.mkdirSync(target, { recursive: true });
-  console.log(`Created directory: ${target}`);
+  try {
+    fs.mkdirSync(target, { recursive: true });
+    console.log(`Created directory: ${target}`);
+  } catch (err) {
+    console.error(`Error creating directory ${target}: ${err.message}`);
+    throw err;
+  }
 
   // Get all entries in the source directory
   const entries = fs.readdirSync(source, { withFileTypes: true });
@@ -50,52 +55,133 @@ function copyDirectoryRecursively(source, target) {
   }
 }
 
+// Debug function to list directories and their existence
+function debugDirectories() {
+  console.log('DEBUG: Directory information:');
+  console.log(`- Root directory: ${rootDir} (exists: ${fs.existsSync(rootDir)})`);
+  console.log(`- Content directory: ${contentDir} (exists: ${fs.existsSync(contentDir)})`);
+  console.log(`- Public directory: ${publicDir} (exists: ${fs.existsSync(publicDir)})`);
+  console.log(`- Public content directory: ${publicContentDir} (exists: ${fs.existsSync(publicContentDir)})`);
+  
+  // List contents of the root directory
+  if (fs.existsSync(rootDir)) {
+    console.log('Contents of root directory:');
+    fs.readdirSync(rootDir).forEach(file => {
+      console.log(`  - ${file}`);
+    });
+  }
+  
+  // List contents of the content directory
+  if (fs.existsSync(contentDir)) {
+    console.log('Contents of content directory:');
+    fs.readdirSync(contentDir).forEach(file => {
+      console.log(`  - ${file}`);
+    });
+  }
+  
+  // List contents of the public directory if it exists
+  if (fs.existsSync(publicDir)) {
+    console.log('Contents of public directory:');
+    fs.readdirSync(publicDir).forEach(file => {
+      console.log(`  - ${file}`);
+    });
+  }
+}
+
 // Main process
 console.log('Starting content preparation for Vercel...');
+debugDirectories();
 
 try {
   // Check if the content directory exists
   if (!fs.existsSync(contentDir)) {
-    console.error('Content directory does not exist');
+    console.error('Content directory does not exist!');
     process.exit(1);
   }
 
-  // Ensure public directory exists
-  if (!fs.existsSync(publicDir)) {
+  // Check all environment variables to help debug
+  console.log('Environment variables:');
+  console.log(`- VERCEL: ${process.env.VERCEL}`);
+  console.log(`- NODE_ENV: ${process.env.NODE_ENV}`);
+  console.log(`- VERCEL_ENV: ${process.env.VERCEL_ENV}`);
+
+  // Determine if running on Vercel
+  const isVercel = process.env.VERCEL === '1' || process.env.VERCEL === 'true';
+  console.log(`Running in ${isVercel ? 'Vercel' : 'local'} environment`);
+
+  // Force create the public directory first
+  try {
     fs.mkdirSync(publicDir, { recursive: true });
-    console.log(`Created public directory: ${publicDir}`);
+    console.log(`Created/ensured public directory exists: ${publicDir}`);
+  } catch (err) {
+    console.error(`Failed to create public directory: ${err.message}`);
+    // Don't exit, try to continue
   }
 
-  // Remove existing content directory in public if it exists
+  // Delete existing public/content if it exists
   if (fs.existsSync(publicContentDir)) {
-    console.log(`Removing existing content in public: ${publicContentDir}`);
     try {
+      console.log(`Removing existing content directory: ${publicContentDir}`);
       fs.rmSync(publicContentDir, { recursive: true, force: true });
     } catch (err) {
-      console.warn(`Failed to remove existing content: ${err.message}`);
-      // Continue anyway
+      console.warn(`Failed to remove existing content directory: ${err.message}`);
+      // Try to continue anyway
     }
   }
 
-  // Try different approaches to make content available in the public directory
-  const isVercel = process.env.VERCEL === '1';
-  console.log(`Running in ${isVercel ? 'Vercel' : 'local'} environment`);
+  // Debug after removal
+  console.log(`Public directory exists after cleanup: ${fs.existsSync(publicDir)}`);
+  console.log(`Public content directory exists after cleanup: ${fs.existsSync(publicContentDir)}`);
 
+  // Handle content based on environment
   if (isVercel) {
-    // On Vercel, just copy the content directory
-    console.log(`Copying content directory to ${publicContentDir}`);
+    console.log('In Vercel environment, directly copying files');
+    
+    // Create public/content directory before copying
     try {
-      // Ensure the target directory exists
+      console.log(`Creating public/content directory at ${publicContentDir}`);
       fs.mkdirSync(publicContentDir, { recursive: true });
-      copyDirectoryRecursively(contentDir, publicContentDir);
-      console.log(`Copied content directory successfully`);
+      console.log(`Successfully created public/content directory`);
     } catch (err) {
-      console.error(`Error during content copy: ${err.message}`);
+      console.error(`Failed to create public/content directory: ${err.message}`);
+      process.exit(1);
+    }
+
+    // List directories after creation
+    console.log(`Public directory now exists: ${fs.existsSync(publicDir)}`);
+    console.log(`Public content directory now exists: ${fs.existsSync(publicContentDir)}`);
+    
+    try {
+      // Copy top-level directories one at a time
+      const contentEntries = fs.readdirSync(contentDir, { withFileTypes: true });
+      
+      for (const entry of contentEntries) {
+        if (entry.isDirectory()) {
+          const sourcePath = path.join(contentDir, entry.name);
+          const targetPath = path.join(publicContentDir, entry.name);
+          
+          console.log(`Copying ${sourcePath} to ${targetPath}`);
+          fs.mkdirSync(targetPath, { recursive: true });
+          copyDirectoryRecursively(sourcePath, targetPath);
+        } else {
+          // Copy individual files
+          const sourcePath = path.join(contentDir, entry.name);
+          const targetPath = path.join(publicContentDir, entry.name);
+          
+          console.log(`Copying file ${sourcePath} to ${targetPath}`);
+          fs.copyFileSync(sourcePath, targetPath);
+        }
+      }
+      
+      console.log('Content copy completed successfully');
+    } catch (err) {
+      console.error(`Error during content copying: ${err.message}`);
       process.exit(1);
     }
   } else {
     // In local environment, try to create a symlink first
-    console.log(`Creating symbolic link from ${contentDir} to ${publicContentDir}`);
+    console.log('In local environment, trying symlink first');
+    
     try {
       fs.symlinkSync(contentDir, publicContentDir, 'junction');
       console.log(`Created symbolic link successfully`);
@@ -103,20 +189,18 @@ try {
       console.warn(`Failed to create symbolic link: ${err.message}`);
       console.log(`Falling back to copying content directory`);
       
-      // If symlink fails, copy the content directory instead
       try {
-        // Ensure the target directory exists
         fs.mkdirSync(publicContentDir, { recursive: true });
         copyDirectoryRecursively(contentDir, publicContentDir);
         console.log(`Copied content directory successfully`);
-      } catch (err) {
-        console.error(`Error during content copy fallback: ${err.message}`);
+      } catch (copyErr) {
+        console.error(`Error during content copy fallback: ${copyErr.message}`);
         process.exit(1);
       }
     }
   }
 
-  console.log('Content preparation completed successfully!');
+  console.log('Content preparation completed successfully');
 } catch (err) {
   console.error('Error during content preparation:', err);
   process.exit(1);
