@@ -34,7 +34,7 @@ export function TeamCard({
     setFailedImages((prev) => ({ ...prev, [id]: true }));
   };
 
-  // Updated function to get the appropriate image source using content directory paths
+  // Updated function to get the appropriate image source using public directory paths
   const getImageSrc = (member: TeamMember) => {
     // If image already failed, use placeholder
     if (failedImages[member.slug]) {
@@ -45,25 +45,25 @@ export function TeamCard({
     if (member.groupSlug === 'state-directors') {
       // Check if this director has a face image and it hasn't failed to load
       if (member.hasFaceImage && !failedImages[`${member.slug}-face`]) {
-        // The face path format now uses content directory
-        return `/content/team/state-directors/${member.slug}/${member.slug}-face.jpg`;
+        // Use public images directory path for face images
+        return `/images/team/state-directors/${member.slug}/${member.slug}-face.jpg`;
       }
       // If face image has failed but regular image hasn't been tried yet
       if (
         failedImages[`${member.slug}-face`] &&
         !failedImages[`${member.slug}`]
       ) {
-        return `/content/team/state-directors/${member.slug}/${member.slug}.jpg`;
+        return `/images/team/state-directors/${member.slug}/${member.slug}.jpg`;
       }
       // If both failed, use SVG fallback
       return personSvgFallback;
     }
 
-    // For historical partners - use the content directory
+    // For historical partners - use the public images directory
     if (member.groupSlug === 'historical-partners') {
       return failedImages[`${member.slug}`]
         ? personSvgFallback
-        : `/content/team/historical-partners/${member.slug}/${member.slug}.jpg`;
+        : `/images/team/historical-partners/${member.slug}/${member.slug}.jpg`;
     }
 
     // For stitching groups use SVG fallback
@@ -71,10 +71,10 @@ export function TeamCard({
       return personSvgFallback;
     }
 
-    // Default image path for other groups (using content directory)
+    // Default image path for other groups (using public images directory)
     return failedImages[`${member.slug}`]
       ? personSvgFallback
-      : `/content/team/${member.groupSlug}/${member.slug}/${member.slug}.jpg`;
+      : `/images/team/${member.groupSlug}/${member.slug}/${member.slug}.jpg`;
   };
 
   // Flatten all team members into a single array - keep it simple
