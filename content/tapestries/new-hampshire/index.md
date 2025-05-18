@@ -37,5 +37,5 @@ The upper portion of the panel depicts the role of the Coosuk Abenaki band in de
 The New Hampshire Panel is being created at the Millyard Museum in Manchester, where visitors can observe the stitching
 process within the context of the museum’s vast collection.
 
-Our New Hampshire State Director is Carol Tewes Ganse, a needleworker
-who has assembled a team of stitchers from throughout the state.
+Our New Hampshire State Co-Directors are Carol Tewes Ganse & Michelle McPheron, needleworkers
+who have assembled a team of stitchers from throughout the state.
