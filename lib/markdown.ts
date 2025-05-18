@@ -49,31 +49,27 @@ export async function markdownToHtml(
   } = {},
 ): Promise<string> {
   try {
-    const processableContent = content;
+    // Fix image paths in markdown content before processing
+    let processableContent = content;
+    
+    // Find markdown image syntax and fix paths
+    // ![alt text](/images/news/images/file.jpg) -> ![alt text](/images/news/file.jpg)
+    processableContent = processableContent.replace(
+      /!\[(.*?)\]\(\/images\/news\/images\/(.*?)\)/g, 
+      '![$1](/images/news/$2)'
+    );
+    
+    // ![alt text](/images/images/file.jpg) -> ![alt text](/images/file.jpg)
+    processableContent = processableContent.replace(
+      /!\[(.*?)\]\(\/images\/images\/(.*?)\)/g, 
+      '![$1](/images/$2)'
+    );
 
     // Process the markdown content
+    // Fixed configuration for remark-html v16+
     const processedContent = await remark()
       .use(html, {
-        sanitize: {
-          // Allow iframes from YouTube
-          tagNames: ['iframe'],
-          attributes: {
-            iframe: [
-              'src',
-              'width',
-              'height',
-              'frameborder',
-              'allow',
-              'allowfullscreen',
-              'title',
-              'class',
-            ],
-          },
-          protocols: {
-            src: ['https'],
-          },
-          urlSchemes: ['https'],
-        },
+        sanitize: false, // Disable sanitization to preserve all HTML
       })
       .process(processableContent);
 

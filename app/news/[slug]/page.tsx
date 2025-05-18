@@ -27,13 +27,17 @@ function addImageCaptions(htmlContent: string): string {
   // Replace standard markdown image tags with figure + figcaption
   // This regex looks for <p><img src="..." alt="..."></p> tags which is how remark-html typically renders markdown images
   return htmlContent.replace(
-    /<p>(<img\s+src="([^"]+)"\s+alt="([^"]+)"[^>]*>)<\/p>/g,
-    (match, img, src, alt) => `
-      <figure class="image-with-caption">
-        ${img}
-        <figcaption>${alt}</figcaption>
-      </figure>
-    `,
+    /<p>(<img\s+src="([^"]+)"\s+alt="([^"]*)"[^>]*>)<\/p>/g,
+    (match, img, src, alt) => {
+      // Only add figcaption if alt text exists
+      const caption = alt ? `<figcaption>${alt}</figcaption>` : '';
+      return `
+        <figure class="image-with-caption">
+          ${img}
+          ${caption}
+        </figure>
+      `;
+    }
   );
 }
 
@@ -59,6 +63,11 @@ export default async function BlogPostPage({
 
   // Add captions to images
   contentHtml = addImageCaptions(contentHtml);
+  
+  // Fix redundant image paths in the HTML content
+  contentHtml = contentHtml
+    .replace(/src="\/images\/news\/images\//g, 'src="/images/news/')
+    .replace(/src="\/images\/images\//g, 'src="/images/');
 
   // Get related posts from the same category
   const relatedPosts = getBlogPostsByCategory(

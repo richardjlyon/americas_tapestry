@@ -26,17 +26,19 @@ export function BlogPostContent({ post, contentHtml }: BlogPostContentProps) {
         <MarkdownContent html={contentHtml} />
       </div>
 
-      {/* Video section */}
-      <video
-        className="w-full aspect-video"
-        controls
-        preload="metadata"
-        poster={post.image}
-      >
-        <source src={post.videoUrl} type="video/mp4" />
-        <track kind="captions" src="" label="English" />
-        Your browser does not support the video tag.
-      </video>
+      {/* Video section - only show if videoUrl exists */}
+      {post.videoUrl && (
+        <video
+          className="w-full aspect-video"
+          controls
+          preload="metadata"
+          poster={post.image || '/placeholder.svg'}
+        >
+          <source src={post.videoUrl} type="video/mp4" />
+          <track kind="captions" src="#" label="English" />
+          Your browser does not support the video tag.
+        </video>
+      )}
     </ContentCard>
   );
 }

@@ -82,7 +82,10 @@ function slugFromFilename(filename: string): string {
 
 // Function to convert image paths to the public directory structure
 function convertImagePath(imagePath: string | undefined): string {
-  if (!imagePath) return '/placeholder.svg';
+  // Handle empty or undefined image paths with a placeholder
+  if (!imagePath || imagePath.trim() === '') {
+    return '/placeholder.svg';
+  }
   
   // If path is already using the new /images/ format, leave it as is
   if (imagePath.startsWith('/images/')) {
@@ -168,9 +171,11 @@ export function getAllBlogPosts(): BlogPost[] {
         // Convert image path to public directory
         let imagePath = convertImagePath(data.image);
         
-        // Fix news images path - remove redundant 'images/' in path
-        if (imagePath && imagePath.startsWith('/images/news/images/')) {
+        // Fix image paths to remove redundant 'images/' segment
+        if (imagePath) {
+          // Handle multiple patterns of redundant 'images/' in path
           imagePath = imagePath.replace('/images/news/images/', '/images/news/');
+          imagePath = imagePath.replace('/images/images/', '/images/');
         }
 
         allPosts.push({
@@ -244,9 +249,11 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
         // Convert image path to public directory
         let imagePath = convertImagePath(data.image);
         
-        // Fix news images path - remove redundant 'images/' in path
-        if (imagePath && imagePath.startsWith('/images/news/images/')) {
+        // Fix image paths to remove redundant 'images/' segment
+        if (imagePath) {
+          // Handle multiple patterns of redundant 'images/' in path
           imagePath = imagePath.replace('/images/news/images/', '/images/news/');
+          imagePath = imagePath.replace('/images/images/', '/images/');
         }
 
         return {

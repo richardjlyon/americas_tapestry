@@ -39,3 +39,6 @@ being led away from the line of action to the lead mine of Wythe
 County, Aberdeen served seven long years at the mine. After writing a
 petition to the House of Delegates explaining his service to the
 Patriot cause, Aberdeen received his freedom in 1783.
+
+The tapestry is being stitched at the Muscarelle Museum of Art on William & Mary's Campus
+in Williamsburg, VA, under the leadership of Catherine Theron. 
