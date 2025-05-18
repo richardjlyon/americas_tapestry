@@ -2,7 +2,7 @@
 title: "April 2025 Update"
 date: "2025-04-09T10:51:26-05:00"
 excerpt: "The Connecticut Panel, and a Conference"
-image: "/images/news/atlanta-stitchers-thumbnail.png"
+image: "/images/news/stefan-with-stitchers.jpg"
 featured: false
 ---
 
