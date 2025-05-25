@@ -1,8 +1,8 @@
 ---
 name: "Becky Gutin"
-role: "State Director"
+role: "Co-State Director"
 state: "Delaware"
-summary: "Becky is the State Director for Delaware."
+summary: "Becky is the Co-State Director for Delaware."
 ---
 
 Becky began stitching with a stamped cross-stitch while in elementary school. Thanks to her sister, she began stitching counted cross-stitch in 1983, and hasn't looked back. Fiber arts run in the family - she has one sister who quilts and another who is a kiltmaker.
