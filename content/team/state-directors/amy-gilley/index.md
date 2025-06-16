@@ -3,9 +3,10 @@ name: "Amy Gilley"
 role: "Co-State Director"
 state: "Delaware"
 summary: "Amy is the Co-State Director for Delaware."
+imagePosition: "left center"
 ---
 
-Amy Gilley began learning needlework from her sister’s projects in Home Economics and took the class also to learn more about needlework. She learned rug hooking, needlepoint, Swedish huck weaving, and moved on to counted cross stitch in the mid-1980’s. 
+Amy Gilley began learning needlework from her sister’s projects in Home Economics and took the class also to learn more about needlework. She learned rug hooking, needlepoint, Swedish huck weaving, and moved on to counted cross stitch in the mid-1980’s.
 
 Since then, Amy has taken individual classes from the Embroiderers' Guild of America, the Royal School of Needlework both in the US and in England at Hampton Court Palace, and from talented instructors such as Diane Hermann, Kate Barlow, Celeste Chalasani, Catherine Theron, and Thea Dueck, learning various embroidery stitches, goldwork, stumpwork, bullion knots, bargello, Jacobean Crewelwork, applique, beading, and more.
 
