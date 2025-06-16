@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Award, Check, Mail } from 'lucide-react';
-import Link from 'next/link';
+} from "@/components/ui/card";
+import { Award, Check, Mail } from "lucide-react";
+import Link from "next/link";
 
 interface SponsorshipTier {
   id: string;
@@ -22,59 +22,59 @@ interface SponsorshipTier {
 
 const sponsorshipTiers: SponsorshipTier[] = [
   {
-    id: 'bronze',
-    name: 'Bronze',
-    amount: '$1,000 - $4,999',
+    id: "bronze",
+    name: "Bronze",
+    amount: "$1,000 - $4,999",
     description: "Support America's Tapestry with a Bronze level sponsorship.",
     benefits: [
-      'Recognition on our website and in printed materials',
-      'Invitation to annual sponsor reception',
-      '10% discount on merchandise for employees',
-      'Quarterly newsletter updates',
+      "Recognition on our website and in printed materials",
+      "Invitation to annual sponsor reception",
+      "10% discount on merchandise for employees",
+      "Quarterly newsletter updates",
     ],
   },
   {
-    id: 'silver',
-    name: 'Silver',
-    amount: '$5,000 - $9,999',
-    description: 'Provide significant support with a Silver level sponsorship.',
+    id: "silver",
+    name: "Silver",
+    amount: "$5,000 - $9,999",
+    description: "Provide significant support with a Silver level sponsorship.",
     benefits: [
-      'All Bronze level benefits',
-      'Logo placement on event signage',
-      'Recognition in press releases',
-      'Private tour for up to 10 guests',
-      '15% discount on merchandise for employees',
+      "All Bronze level benefits",
+      "Logo placement on event signage",
+      "Recognition in press releases",
+      "Private tour for up to 10 guests",
+      "15% discount on merchandise for employees",
     ],
   },
   {
-    id: 'gold',
-    name: 'Gold',
-    amount: '$10,000 - $24,999',
-    description: 'Make a substantial impact with a Gold level sponsorship.',
+    id: "gold",
+    name: "Gold",
+    amount: "$10,000 - $24,999",
+    description: "Make a substantial impact with a Gold level sponsorship.",
     benefits: [
-      'All Silver level benefits',
-      'Featured logo placement on website and promotional materials',
-      'Acknowledgment in exhibition catalogs',
-      'Private reception for up to 20 guests',
-      '20% discount on merchandise for employees',
-      'Customized educational program for sponsor organization',
+      "All Silver level benefits",
+      "Featured logo placement on website and promotional materials",
+      "Acknowledgment in exhibition catalogs",
+      "Private reception for up to 20 guests",
+      "20% discount on merchandise for employees",
+      "Customized educational program for sponsor organization",
     ],
     featured: true,
   },
   {
-    id: 'platinum',
-    name: 'Platinum',
-    amount: '$25,000+',
+    id: "platinum",
+    name: "Platinum",
+    amount: "$25,000+",
     description:
-      'Become a leading supporter with a Platinum level sponsorship.',
+      "Become a leading supporter with a Platinum level sponsorship.",
     benefits: [
-      'All Gold level benefits',
-      'Premier logo placement on all materials',
-      'Named recognition on a tapestry panel',
-      'Custom tapestry-themed event for sponsor organization',
-      'VIP access to all exhibitions and events',
-      '25% discount on merchandise for employees',
-      'Opportunity to host a private exhibition',
+      "All Gold level benefits",
+      "Premier logo placement on all materials",
+      "Named recognition on a tapestry panel",
+      "Custom tapestry-themed event for sponsor organization",
+      "VIP access to all exhibitions and events",
+      "25% discount on merchandise for employees",
+      "Opportunity to host a private exhibition",
     ],
     featured: true,
   },
@@ -103,8 +103,8 @@ export function SupportSponsorship() {
             key={tier.id}
             className={`bg-white shadow-md border overflow-hidden h-full flex flex-col ${
               tier.featured
-                ? 'border-colonial-gold shadow-lg'
-                : 'border-colonial-navy/10'
+                ? "border-colonial-gold shadow-lg"
+                : "border-colonial-navy/10"
             }`}
           >
             {tier.featured && (
@@ -175,7 +175,7 @@ export function SupportSponsorship() {
               Contact About Custom Sponsorship
             </Link>
           </Button>
-          <Button
+          {/* <Button
             asChild
             variant="outline"
             className="rounded-full border-colonial-navy text-colonial-navy hover:bg-colonial-navy hover:text-colonial-parchment"
@@ -187,7 +187,7 @@ export function SupportSponsorship() {
             >
               Download Sponsorship Prospectus
             </a>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>

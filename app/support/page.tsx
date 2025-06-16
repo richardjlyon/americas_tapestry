@@ -1,18 +1,18 @@
-import Link from 'next/link';
-import { ArrowRight, ShoppingBag, Heart, Users, Award } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import Link from "next/link";
+import { ArrowRight, ShoppingBag, Heart, Users, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { SupportMerchandise } from '@/components/support/support-merchandise';
-import { SupportDonations } from '@/components/support/support-donations';
-import { SupportVolunteer } from '@/components/support/support-volunteer';
-import { SupportSponsorship } from '@/components/support/support-sponsorship';
-import { PageSection } from '@/components/ui/page-section';
+} from "@/components/ui/card";
+import { SupportMerchandise } from "@/components/support/support-merchandise";
+import { SupportDonations } from "@/components/support/support-donations";
+import { SupportVolunteer } from "@/components/support/support-volunteer";
+import { SupportSponsorship } from "@/components/support/support-sponsorship";
+import { PageSection } from "@/components/ui/page-section";
 
 export const metadata = {
   title: "Support Our Project | America's Tapestry",
@@ -63,7 +63,7 @@ export default function SupportPage() {
             </CardFooter>
           </Card> */}
 
-          {/* <Card className="bg-white shadow-md border border-colonial-navy/10 hover:shadow-lg transition-shadow">
+          <Card className="bg-white shadow-md border border-colonial-navy/10 hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
               <div className="w-16 h-16 bg-colonial-burgundy/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="h-8 w-8 text-colonial-burgundy" />
@@ -86,7 +86,7 @@ export default function SupportPage() {
                 </a>
               </Button>
             </CardFooter>
-          </Card> */}
+          </Card>
 
           <Card className="bg-white shadow-md border border-colonial-navy/10 hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
@@ -97,16 +97,18 @@ export default function SupportPage() {
                 Volunteer
               </CardTitle>
               <CardDescription className="text-colonial-navy/70">
-                Contribute your time and skills
+                For details on contributing your time and skills, please email
+                us
               </CardDescription>
             </CardHeader>
+
             <CardFooter className="flex justify-center pb-6">
               <Button
                 variant="outline"
                 className="rounded-full border-colonial-navy text-colonial-navy hover:bg-colonial-navy hover:text-colonial-parchment"
                 asChild
               >
-                <a href="#volunteer">
+                <a href="/contact">
                   Volunteer With Us <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -146,14 +148,14 @@ export default function SupportPage() {
       </PageSection> */}
 
       {/* Donations Section */}
-      {/* <PageSection id="donations" paddingTop="none" className="scroll-mt-24">
+      <PageSection id="donations" paddingTop="none" className="scroll-mt-24">
         <SupportDonations />
-      </PageSection> */}
+      </PageSection>
 
       {/* Volunteer Section */}
-      <PageSection id="volunteer" paddingTop="none" className="scroll-mt-24">
+      {/* <PageSection id="volunteer" paddingTop="none" className="scroll-mt-24">
         <SupportVolunteer />
-      </PageSection>
+      </PageSection> */}
 
       {/* Sponsorship Section */}
       <PageSection id="sponsorship" paddingTop="none" className="scroll-mt-24">
