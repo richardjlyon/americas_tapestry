@@ -37,9 +37,9 @@ const nextConfig = {
   // This includes content files in public/content
   trailingSlash: false,
   experimental: {
-    webpackBuildWorker: true,
-    parallelServerBuildTraces: true,
-    parallelServerCompiles: true,
+    // webpackBuildWorker: true,
+    // parallelServerBuildTraces: true,
+    // parallelServerCompiles: true,
   },
   // Make content directory accessible
   async rewrites() {
