@@ -1,15 +1,15 @@
 "use server";
 
-import { getSponsorTier, getSponsorTiers, getSponsorsByTier, getSponsorBySlug, getAllSponsors } from '@/lib/sponsors';
+import { /* getSponsorTier, getSponsorTiers, getSponsorsByTier, */ getSponsorBySlug, getAllSponsors } from '@/lib/sponsors';
 import { markdownToHtml } from '@/lib/markdown';
 
-export async function getTier(slug: string) {
-  return getSponsorTier(slug);
-}
+// export async function getTier(slug: string) {
+//   return getSponsorTier(slug);
+// }
 
-export async function getSponsors(tierSlug: string) {
-  return getSponsorsByTier(tierSlug);
-}
+// export async function getSponsors(tierSlug: string) {
+//   return getSponsorsByTier(tierSlug);
+// }
 
 export async function getSponsor(slug: string) {
   return getSponsorBySlug(slug);
@@ -26,15 +26,15 @@ export async function getFormattedTierName(slug: string) {
     .join(' ');
 }
 
-export async function getSponsorTierData(tierSlug: string) {
-  const tier = await getTier(tierSlug);
-  const sponsors = await getSponsors(tierSlug);
-  
-  return {
-    tier,
-    sponsors
-  };
-}
+// export async function getSponsorTierData(tierSlug: string) {
+//   const tier = await getTier(tierSlug);
+//   const sponsors = await getSponsors(tierSlug);
+//   
+//   return {
+//     tier,
+//     sponsors
+//   };
+// }
 
 export async function getSponsorData(slug: string) {
   const sponsor = await getSponsor(slug);
