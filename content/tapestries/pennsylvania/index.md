@@ -40,3 +40,5 @@ around 1775, designating her as one of the first verified flag makers
 of a US Flag. In addition, she was paid for sewing a number of flags
 for the Pennsylvania army & navy, along with military blankets & drum
 cases.
+
+Be sure to follow the [Pennsylvania Tapestry’s Instagram Page](https://www.instagram.com/americastapestry.pa/) for additional updates.

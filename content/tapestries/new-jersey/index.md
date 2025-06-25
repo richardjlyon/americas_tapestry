@@ -35,9 +35,6 @@ establishing a military hospital in Trenton, New Jersey, specifically to inocula
 troops against smallpox. This initiative was critical in safeguarding the health of
 soldier during a time when disease posed a severe threat to military effectiveness. 
 
-Our New Jersey Directors are Carol Prevost and Kiki Lar. The stitching
-will be conducted by members of the Colonial West EGA Chapter in
-partnership with the Princeton EGA Chapter. With their combined
-artistry and exceptional skill, we cannot wait to see this come
-together! They are stitching at St. Paul’s Lutheran Church in
-Lumberton.
+Our New Jersey Directors are Carol Prevost and Kiki Haumann. The stitching
+will be conducted by members of the Colonial West Jersey EGA Chapter in
+partnership with the Princeton EGA Chapter.

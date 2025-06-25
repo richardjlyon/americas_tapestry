@@ -39,3 +39,5 @@ process within the context of the museum’s vast collection.
 
 Our New Hampshire State Co-Directors are Carol Tewes Ganse & Michelle McPheron, needleworkers
 who have assembled a team of stitchers from throughout the state.
+
+Be sure to follow the [New Hampshire Panel Instagram Page](https://www.instagram.com/americastapestrynh/) for additional updates.
