@@ -2,7 +2,7 @@
 name: "Maryland Center For History And Culture"
 role: "Historical Partner"
 state: "Maryland"
-summary: "Lewes History Museum showcases Delaware's first town through artifacts and exhibits celebrating 300+ years of coastal heritage."
+summary: "The Maryland Center for History and Culture stands as Baltimore's premier institution dedicated to preserving and interpreting the state's rich heritage."
 location: "XXX"
 moreInformation: "https://www.mdhistory.org/"
 ---

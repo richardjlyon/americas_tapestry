@@ -32,7 +32,7 @@ In the upper right-hand corner, a poignant motif spotlights one of the most sign
 
 Washington's decision to voluntarily relinquish his military command to the Continental Congress, rather than seizing power, was a revolutionary act that set a crucial precedent for civilian control over the military in the United States. It solidified the principles of a republic, where power resides with the people and their elected representatives, not with military strongmen. 
 
-Standing on the upper balcony, observing this historic event, is Mary “Molly” Rideout. A letter she wrote to her mother vividly captures the emotional gravity of Washington's farewell, underscoring the profound significance of the moment for those who witnessed it.
+Standing on the upper balcony, observing this historic event, is Mary “Molly” Ridout. A letter she wrote to her mother vividly captures the emotional gravity of Washington's farewell, underscoring the profound significance of the moment for those who witnessed it.
 
 Dominating the left side of the illustration, the majestic branches of the Wye Oak Tree traverse across the page. This iconic Maryland tree, once the largest white oak in the United States, symbolizes the deep roots of the state's history and its enduring legacy. 
 
