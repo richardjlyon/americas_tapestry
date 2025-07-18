@@ -1,5 +1,7 @@
 # Next.js Deployment Optimization and Image Fix PRP
 
+IMPORTANT: We're on the claude-refactor branch. Since we want to test our feature branch, create a preview deployment instead of trying to deploy to production:
+
 ## 📋 Overview
 
 This PRP addresses critical deployment blockers for the America's Tapestry Next.js website on Vercel, focusing on image optimization, bundle size reduction, and App Router best practices. The project is currently hitting Vercel's serverless function size limits due to image handling issues and needs comprehensive optimization.
@@ -70,7 +72,7 @@ import Image from 'next/image';
 - **Fix**: Consolidate to single content structure
 
 ### 4. Pre-build Scripts Causing Issues
-- **Files**: 
+- **Files**:
   - `scripts/migrate-images-to-public.mjs`
   - `scripts/add-unoptimized-to-images.mjs`
 - **Impact**: Build complexity, deployment failures
@@ -243,11 +245,11 @@ typescript: {
 // components/ui/optimized-image.tsx - Create wrapper component
 const OptimizedImage = ({ src, alt, ...props }) => {
   const [hasError, setHasError] = useState(false);
-  
+
   if (hasError) {
     return <div className="bg-gray-200 flex items-center justify-center">Image failed to load</div>;
   }
-  
+
   return (
     <Image
       src={src}
