@@ -33,36 +33,16 @@ export function getImagePath(path: string): string {
 }
 
 /**
- * Convert a content path to a public path
- * Maps content directory paths to their public equivalents
+ * Convert a content path to direct content access
+ * Now serves content files directly without copying to public
  * 
  * @param contentPath - Path starting with /content/
- * @returns Equivalent public path
+ * @returns Direct content path for Next.js to serve
  */
 function convertContentPathToPublic(contentPath: string): string {
-  // Map content directories to public directories
-  if (contentPath.startsWith('/content/tapestries/')) {
-    return contentPath.replace('/content/tapestries/', '/images/tapestries/');
-  }
-  
-  if (contentPath.startsWith('/content/sponsors/')) {
-    return contentPath.replace('/content/sponsors/', '/images/sponsors/');
-  }
-  
-  if (contentPath.startsWith('/content/team/')) {
-    return contentPath.replace('/content/team/', '/images/team/');
-  }
-  
-  if (contentPath.startsWith('/content/news/')) {
-    return contentPath.replace('/content/news/', '/images/news/');
-  }
-  
-  if (contentPath.startsWith('/content/video/')) {
-    return contentPath.replace('/content/video/', '/video/');
-  }
-  
-  // Default case - just strip content and assume images
-  return contentPath.replace('/content/', '/images/');
+  // Return content paths as-is - Next.js will serve them directly
+  // The rewrites in next.config.mjs handle the routing
+  return contentPath;
 }
 
 /**
