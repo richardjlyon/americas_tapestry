@@ -54,11 +54,14 @@ const PersonCard: FC<PersonCardProps> = ({
                   unoptimized
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                  <div className="text-colonial-navy/40 text-center p-4">
-                    {personDetails.name}
-                  </div>
-                </div>
+                <Image
+                  src="/placeholder-user.jpg"
+                  alt={`${personDetails.name} - placeholder`}
+                  fill
+                  sizes={getImageSizes('thumbnail')}
+                  className="object-cover"
+                  unoptimized
+                />
               )}
             </div>
           </div>

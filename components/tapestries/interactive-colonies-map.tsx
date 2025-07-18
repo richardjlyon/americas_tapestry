@@ -89,8 +89,13 @@ export function InteractiveColoniesMap({
 
     const fetchColoniesData = async () => {
       try {
+        console.log('Fetching colonies data...');
         const response = await fetch('/data/gz_2010_us_040_00_500k.geojson');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
+        console.log('Raw GeoJSON data loaded:', data.features?.length, 'features');
 
         // Map of state FIPS or abbreviations to slugs for the 13 colonies
         const colonyMapping: { [key: string]: string } = {
@@ -137,6 +142,7 @@ export function InteractiveColoniesMap({
         };
 
         console.log('Processed colonies data:', enhancedData);
+        console.log('Setting geoJsonData...');
         setGeoJsonData(enhancedData);
       } catch (error) {
         console.error('Error loading colonies GeoJSON:', error);
@@ -251,6 +257,9 @@ export function InteractiveColoniesMap({
     );
   }
 
+  // Debug logging
+  console.log('Map component render - isClient:', isClient, 'geoJsonData:', !!geoJsonData, 'MAPBOX_ACCESS_TOKEN:', !!MAPBOX_ACCESS_TOKEN);
+
   return (
     <>
       <SectionHeader
@@ -263,7 +272,7 @@ export function InteractiveColoniesMap({
           className="relative w-full rounded-lg overflow-hidden shadow-md"
           style={{ height: '500px' }}
         >
-          {geoJsonData && (
+          {geoJsonData ? (
             <Map
               ref={mapRef}
               mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
@@ -321,6 +330,10 @@ export function InteractiveColoniesMap({
                 </Popup>
               )}
             </Map>
+          ) : (
+            <div className="flex h-full w-full items-center justify-center">
+              <p className="text-colonial-navy/70">Loading map data...</p>
+            </div>
           )}
         </div>
 
