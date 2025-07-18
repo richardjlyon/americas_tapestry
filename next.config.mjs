@@ -22,17 +22,19 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Output to standalone mode for Vercel
-  output: 'standalone',
+  // output: 'standalone',
   // Exclude large content directories from serverless function bundle
   // This is crucial for keeping function size small
-  outputFileTracingExcludes: {
-    '*': [
-      './content/**/*',
-      './public/content/**/*',
-      './public/video/**/*',
-      'node_modules/**/*.{jpg,jpeg,png,gif,webp,mp4,mp3,svg}'
-    ],
-  },
+  // Temporarily disabled outputFileTracingExcludes to fix image deployment
+  // outputFileTracingExcludes: {
+  //   '*': [
+  //     './content/**/*',
+  //     './public/content/**/*',
+  //     './public/video/**/*',
+  //     'node_modules/**/*.{jpg,jpeg,png,gif,webp,mp4,mp3,svg}',
+  //     // Note: public/images/ is intentionally NOT excluded to ensure images are deployed
+  //   ],
+  // },
   // Add content directory static handling
   transpilePackages: [],
   // Define which assets to include in the build
