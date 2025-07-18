@@ -9,7 +9,10 @@
         "start": "next start",
         "lint": "next lint",
         "format": "npx @biomejs/biome format --write ./app ./components ./lib ./hooks",
-        "update-images": "node scripts/add-unoptimized-to-images.mjs"
+        "analyze": "cross-env ANALYZE=true next build",
+        "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+        "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
+        "perf": "npm run build && npm run start"
     },
     "dependencies": {
         "@hookform/resolvers": "^3.9.1",
@@ -72,14 +75,17 @@
         "tailwind-merge": "^2.5.5",
         "tailwindcss-animate": "^1.0.7",
         "vaul": "^0.9.6",
+        "web-vitals": "^4.2.4",
         "zod": "^3.24.1"
     },
     "devDependencies": {
         "@biomejs/biome": "1.9.4",
+        "@next/bundle-analyzer": "^15.2.1",
         "@tailwindcss/typography": "^0.5.16",
         "@types/node": "^22",
         "@types/react": "^18",
         "@types/react-dom": "^18",
+        "cross-env": "^7.0.3",
         "eslint": "^9.22.0",
         "eslint-config-next": "^15.2.1",
         "postcss": "^8",

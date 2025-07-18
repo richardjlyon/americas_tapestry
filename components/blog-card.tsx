@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { formatDate } from '@/lib/utils';
 import { Play } from 'lucide-react';
 import type { BlogPost } from '@/lib/blog';
 import { blogCategories } from '@/lib/blog';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 interface BlogCardProps {
   post: BlogPost;
@@ -22,14 +22,14 @@ export function BlogCard({ post, className }: BlogCardProps) {
       <div className="aspect-[16/9] relative overflow-hidden">
         {/* image */}
         {post.image ? (
-          <Image
+          <OptimizedImage
             src={post.image}
             alt={post.title}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            role="card"
             className="object-cover transition-transform duration-500 hover:scale-105"
-            priority={false}
-            unoptimized
+            fallbackSrc="/images/placeholder.svg"
+            enableBlurPlaceholder={true}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gray-100">

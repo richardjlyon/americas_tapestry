@@ -28,7 +28,7 @@ This panel illustrates [New Hampshire’s](/tapestries/new-hampshire) role at th
 independence, depicting the Pine Tree Riot of 1772 which was one of the
 first major disputes of royal authority.
 
-![New Hampshire Tapestry Panel](/)
+![New Hampshire Tapestry Panel](/images/tapestries/new-hampshire/new-hampshire-tapestry-main.webp)
 
 The lower left hand vignette pays tribute to the raid of Fort William & Mary in 1774. Considered one of the first significant armed attacks of the American Revolution, the raid set the stage for future conflict with Great Britain. The gunpowder & cannons seized from the fort were distributed across the colonies and utilized at the Battle of Bunker Hill the following year.
 

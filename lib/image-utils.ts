@@ -138,3 +138,55 @@ export function getOptimizedImagePath(path: string): string {
   
   return path;
 }
+
+/**
+ * Generate a low-quality blur placeholder for better perceived performance
+ * Creates a minimal base64 encoded image for blur effect during loading
+ * 
+ * @param width - Width of the placeholder (default: 10)
+ * @param height - Height of the placeholder (default: 10)
+ * @returns Base64 encoded blur placeholder
+ */
+export function generateBlurPlaceholder(width: number = 10, height: number = 10): string {
+  // Create a minimal SVG that will be blurred
+  const svg = `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#f3f4f6"/>
+    </svg>
+  `;
+  
+  // Convert SVG to base64
+  const base64 = Buffer.from(svg).toString('base64');
+  return `data:image/svg+xml;base64,${base64}`;
+}
+
+/**
+ * Get blur placeholder based on image type or content
+ * Returns appropriate placeholder colors for different content types
+ * 
+ * @param imagePath - Path to the image to determine appropriate placeholder
+ * @returns Base64 encoded blur placeholder
+ */
+export function getContextualBlurPlaceholder(imagePath: string): string {
+  // Determine placeholder color based on content type
+  let fillColor = '#f3f4f6'; // Default gray
+  
+  if (imagePath.includes('/team/')) {
+    fillColor = '#e0e7ff'; // Light blue for team photos
+  } else if (imagePath.includes('/tapestries/')) {
+    fillColor = '#fef3c7'; // Light amber for tapestry images
+  } else if (imagePath.includes('/sponsors/')) {
+    fillColor = '#f0fdf4'; // Light green for sponsors
+  } else if (imagePath.includes('/news/')) {
+    fillColor = '#fdf2f8'; // Light pink for news
+  }
+  
+  const svg = `
+    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="${fillColor}"/>
+    </svg>
+  `;
+  
+  const base64 = Buffer.from(svg).toString('base64');
+  return `data:image/svg+xml;base64,${base64}`;
+}

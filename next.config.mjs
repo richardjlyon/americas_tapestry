@@ -14,6 +14,22 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  // Exclude content files from serverless function bundles
+  outputFileTracingExcludes: {
+    '*': [
+      'content/**/*',
+      'public/content/**/*',
+      'public/images/**/*',
+      'public/video/**/*',
+      'scripts/**/*',
+      '**/*.md',
+      '**/*.mdx',
+      'node_modules/@swc/core-linux-x64-gnu/**/*',
+      'node_modules/@swc/core-linux-x64-musl/**/*',
+      'node_modules/@next/swc-linux-x64-gnu/**/*',
+      'node_modules/@next/swc-linux-x64-musl/**/*',
+    ],
+  },
   // Essential rewrites for content directory
   async rewrites() {
     return [
