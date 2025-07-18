@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { getImagePath, getImageSizes } from '@/lib/image-utils';
 
 interface TeamMember {
   name: string;
@@ -56,11 +58,13 @@ export function Team() {
             key={member.name}
             className="flex flex-col sm:flex-row gap-6 items-start"
           >
-            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-colonial-navy/10 flex-shrink-0 mx-auto sm:mx-0">
-              <img
-                src={member.image || '/placeholder.svg'}
+            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-colonial-navy/10 flex-shrink-0 mx-auto sm:mx-0 relative">
+              <Image
+                src={getImagePath(member.image || '/placeholder.svg')}
                 alt={member.name}
-                className="w-full h-full object-cover"
+                fill
+                sizes={getImageSizes('thumbnail')}
+                className="object-cover"
               />
             </div>
             <div>

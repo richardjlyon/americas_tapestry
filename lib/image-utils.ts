@@ -91,22 +91,50 @@ export function getVideoPath(path: string): string {
 
 /**
  * Generate responsive image sizes string based on the image's role
+ * Enhanced with PRP specifications for better performance
  * 
  * @param role - The role of the image in the layout
  * @returns Appropriate sizes attribute for next/image
  */
-export function getImageSizes(role: 'thumbnail' | 'banner' | 'gallery' | 'feature' | 'full' = 'gallery'): string {
+export function getImageSizes(role: 'hero' | 'card' | 'thumbnail' | 'feature' | 'banner' | 'gallery' | 'full' = 'gallery'): string {
   switch (role) {
-    case 'thumbnail':
-      return '(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 250px';
-    case 'banner':
+    case 'hero':
       return '100vw';
     case 'feature':
       return '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw';
+    case 'card':
+      return '(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw';
+    case 'thumbnail':
+      return '(max-width: 768px) 25vw, 15vw';
+    case 'banner':
+      return '100vw';
     case 'gallery':
       return '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
     case 'full':
     default:
       return '(max-width: 1024px) 100vw, 1024px';
   }
+}
+
+/**
+ * Get optimized image path with enhanced validation
+ * Ensures proper path handling for Next.js Image component
+ * 
+ * @param path - Original image path
+ * @returns Properly formatted image path
+ */
+export function getOptimizedImagePath(path: string): string {
+  if (!path) return '';
+  
+  // Handle public directory paths
+  if (path.startsWith('/public/')) {
+    return path.replace('/public/', '/');
+  }
+  
+  // Handle content directory paths
+  if (!path.startsWith('/content/') && !path.startsWith('/')) {
+    return `/content/${path}`;
+  }
+  
+  return path;
 }

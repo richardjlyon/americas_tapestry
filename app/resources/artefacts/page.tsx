@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -12,6 +13,7 @@ import {
 } from '@/components/ui/card';
 import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';
+import { getImagePath, getImageSizes } from '@/lib/image-utils';
 
 export const metadata = {
   title: "Related Artefacts Gallery | America's Tapestry",
@@ -209,10 +211,12 @@ function ArtefactCard({ artefact }: { artefact: Artefact }) {
   return (
     <Card className="bg-white shadow-md border border-colonial-navy/10 h-full flex flex-col overflow-hidden">
       <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={artefact.image || '/placeholder.svg'}
+        <Image
+          src={getImagePath(artefact.image || '/placeholder.svg')}
           alt={artefact.title}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          fill
+          sizes={getImageSizes('card')}
+          className="object-cover transition-transform duration-500 hover:scale-105"
         />
         <div
           className={`absolute top-2 right-2 px-3 py-1 rounded-full text-xs font-medium ${categoryColors[artefact.category]}`}

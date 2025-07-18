@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSection } from '@/components/ui/page-section';
 import { getAllSponsors } from '@/lib/sponsors';
 import { getSponsorData } from '@/app/actions/sponsor-actions';
+import { getImagePath, getImageSizes } from '@/lib/image-utils';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
@@ -86,11 +88,13 @@ export default async function SponsorPage({
               )}
             </div>
 
-            <div className="h-16 md:h-20">
-              <img
-                src={sponsor.logoPath}
+            <div className="h-16 md:h-20 relative w-32 md:w-40">
+              <Image
+                src={getImagePath(sponsor.logoPath)}
                 alt={`${sponsor.name} logo`}
-                className="max-h-full max-w-full object-contain"
+                fill
+                sizes={getImageSizes('thumbnail')}
+                className="object-contain"
               />
             </div>
           </div>

@@ -3,6 +3,8 @@ import { NewsletterSignup } from '@/components/newsletter-signup';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';
+import Image from 'next/image';
+import { getImageSizes } from '@/lib/image-utils';
 
 export const metadata = {
   title: "Contact Us | America's Tapestry",
@@ -79,11 +81,13 @@ export default function ContactPage() {
             </ContentCard>
 
             {/* letter image */}
-            <div className="relative mx-auto max-w-md mt-4">
-              <img
+            <div className="relative mx-auto max-w-md mt-4 aspect-square">
+              <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/letter-BWuLNcfXG3VHpLMxMiOjxj8utfA2wo.png"
                 alt="Embroidered envelope illustration"
-                className="w-2/3 rounded-lg mx-auto"
+                fill
+                sizes={getImageSizes('feature')}
+                className="object-contain rounded-lg w-2/3 mx-auto"
               />
             </div>
           </div>
