@@ -253,6 +253,15 @@ export function InteractiveColoniesMap({
     );
   }
 
+  // Check if we have the necessary data and config
+  if (!MAPBOX_ACCESS_TOKEN) {
+    return (
+      <div className="flex h-[500px] w-full items-center justify-center rounded-lg bg-colonial-parchment/50">
+        <p className="text-colonial-navy/70">Map configuration unavailable</p>
+      </div>
+    );
+  }
+
   // Map component ready to render
 
   return (
