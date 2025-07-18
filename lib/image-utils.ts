@@ -4,8 +4,8 @@
  */
 
 /**
- * Get image path from any format to the correct public path
- * This simplifies the image path handling to use only public directories
+ * Get image path - simplified to only use public directory
+ * All images are stored in /public/images/ for direct serving
  * 
  * @param path - Original image path
  * @returns Properly formatted image path for public directory
@@ -14,18 +14,14 @@ export function getImagePath(path: string): string {
   // If path is null or empty, return empty string
   if (!path) return '';
   
-  // If path is already absolute or starts with / (for public directory), return as is
-  if (path.startsWith('/') || path.startsWith('http')) {
-    // If path is using old content format, convert it
-    if (path.startsWith('/content/')) {
-      return convertContentPathToPublic(path);
-    }
+  // If path is already a public path, return as is
+  if (path.startsWith('/images/') || path.startsWith('http')) {
     return path;
   }
   
-  // If path starts with 'content/', convert to public format
-  if (path.startsWith('content/')) {
-    return convertContentPathToPublic('/' + path);
+  // Convert any content path to public path
+  if (path.startsWith('/content/') || path.startsWith('content/')) {
+    return convertContentPathToPublic(path.startsWith('/') ? path : '/' + path);
   }
   
   // Otherwise, assume it's a relative path to images directory
@@ -33,16 +29,36 @@ export function getImagePath(path: string): string {
 }
 
 /**
- * Convert a content path to direct content access
- * Now serves content files directly without copying to public
+ * Convert a content path to public images path
+ * Maps content directory paths to their public equivalents
  * 
  * @param contentPath - Path starting with /content/
- * @returns Direct content path for Next.js to serve
+ * @returns Equivalent public path
  */
 function convertContentPathToPublic(contentPath: string): string {
-  // Return content paths as-is - Next.js will serve them directly
-  // The rewrites in next.config.mjs handle the routing
-  return contentPath;
+  // Map content directories to public directories
+  if (contentPath.startsWith('/content/tapestries/')) {
+    return contentPath.replace('/content/tapestries/', '/images/tapestries/');
+  }
+  
+  if (contentPath.startsWith('/content/sponsors/')) {
+    return contentPath.replace('/content/sponsors/', '/images/sponsors/');
+  }
+  
+  if (contentPath.startsWith('/content/team/')) {
+    return contentPath.replace('/content/team/', '/images/team/');
+  }
+  
+  if (contentPath.startsWith('/content/news/images/')) {
+    return contentPath.replace('/content/news/images/', '/images/news/');
+  }
+  
+  if (contentPath.startsWith('/content/video/')) {
+    return contentPath.replace('/content/video/', '/video/');
+  }
+  
+  // Default case - just strip content and assume images
+  return contentPath.replace('/content/', '/images/');
 }
 
 /**
