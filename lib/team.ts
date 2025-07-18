@@ -83,9 +83,9 @@ export function getTeamGroups(): TeamGroup[] {
   }
 }
 
-// Generate image path based on member slug and group slug - update to use content directory
+// Generate image path based on member slug and group slug - use public directory
 function getTeamMemberImagePath(groupSlug: string, memberSlug: string): string {
-  return `/content/team/${groupSlug}/${memberSlug}/${memberSlug}.jpg`;
+  return `/images/team/${groupSlug}/${memberSlug}/${memberSlug}.jpg`;
 }
 
 export function getTeamMembersByGroup(group: string): TeamMember[] {
