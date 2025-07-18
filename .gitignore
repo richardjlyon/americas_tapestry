@@ -39,12 +39,7 @@ coverage/
 *.sublime-project
 *.sublime-workspace
 
-# Generated media files (copied from content directory)
-public/images/tapestries/
-public/images/news/
-public/images/sponsors/
-public/images/team/
-public/video/
+# Note: public/images/ is now tracked in git (standard Next.js setup)
 
 # Exception: Keep placeholder images in git
 !public/placeholder.jpg
