@@ -120,22 +120,18 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
       if (group === 'stitching-groups') {
         // Stitching groups use a placeholder
         imagePath = `/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(data.name)}`;
-      } else if (group === 'historical-partners') {
-        // Historical partners use the directory name convention - updated to use content directory
-        imagePath = `/content/team/${group}/${dirName}/${dirName}.jpg`;
       } else {
-        // Standard image path for other groups - updated to use content directory
-        imagePath = `/content/team/${group}/${dirName}/${dirName}.jpg`;
+        // Use public directory path for all team images
+        imagePath = getTeamMemberImagePath(group, dirName);
       }
 
       // Check if a face image exists (using the naming convention: name-face.jpg)
-      // Updated to use content directory
-      const faceImagePath = `/content/team/${group}/${dirName}/${dirName}-face.jpg`;
+      const faceImagePath = `/images/team/${group}/${dirName}/${dirName}-face.jpg`;
       
-      // Check the actual file path in the content directory, not public
+      // Check the actual file path in the public directory
       const actualFaceImagePath = path.join(
         process.cwd(),
-        `content/team/${group}/${dirName}/${dirName}-face.jpg`,
+        `public/images/team/${group}/${dirName}/${dirName}-face.jpg`,
       );
 
       // Dynamically check if the face image file exists
