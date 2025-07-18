@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 // List of allowed content extensions
 const ALLOWED_CONTENT_EXTENSIONS = [
@@ -23,11 +23,13 @@ const ALLOWED_CONTENT_EXTENSIONS = [
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string[] } },
+  { params }: { params: Promise<{ slug: string[] }> },
 ) {
   try {
+    // Await the params since they're now a Promise in Next.js 15
+    const resolvedParams = await params;
     // Join the slug array components to form the file path
-    const filePath = path.join(process.cwd(), 'content', ...params.slug);
+    const filePath = path.join(process.cwd(), 'content', ...resolvedParams.slug);
     console.log(`Serving content file: ${filePath}`);
 
     // Security: Verify the extension is allowed

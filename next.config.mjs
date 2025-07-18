@@ -1,10 +1,3 @@
-let userConfig = undefined
-try {
-  userConfig = await import('./v0-user-next.config')
-} catch (e) {
-  // ignore error
-}
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -21,34 +14,7 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  // Output to standalone mode for Vercel
-  // output: 'standalone',
-  // Exclude large content directories from serverless function bundle
-  // This is crucial for keeping function size small
-  // Temporarily disabled outputFileTracingExcludes to fix image deployment
-  // outputFileTracingExcludes: {
-  //   '*': [
-  //     './content/**/*',
-  //     './public/content/**/*',
-  //     './public/video/**/*',
-  //     'node_modules/**/*.{jpg,jpeg,png,gif,webp,mp4,mp3,svg}',
-  //     // Note: public/images/ is intentionally NOT excluded to ensure images are deployed
-  //   ],
-  // },
-  // Add content directory static handling
-  transpilePackages: [],
-  // Define which assets to include in the build
-  staticPageGenerationTimeout: 300,
-  compress: true,
-  // Set output files to be copied to output directory
-  // This includes content files in public/content
-  trailingSlash: false,
-  experimental: {
-    // webpackBuildWorker: true,
-    // parallelServerBuildTraces: true,
-    // parallelServerCompiles: true,
-  },
-  // Make content directory accessible
+  // Essential rewrites for content directory
   async rewrites() {
     return [
       {
@@ -57,21 +23,10 @@ const nextConfig = {
       },
     ]
   },
-  // Configure static asset handling more directly
+  // Basic headers for content delivery
   async headers() {
     return [
       {
-        // Apply these headers to all routes
-        source: '/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=86400',
-          },
-        ],
-      },
-      {
-        // Enable content directory access
         source: '/content/:path*',
         headers: [
           {
@@ -82,28 +37,6 @@ const nextConfig = {
       },
     ]
   },
-}
-
-mergeConfig(nextConfig, userConfig)
-
-function mergeConfig(nextConfig, userConfig) {
-  if (!userConfig) {
-    return
-  }
-
-  for (const key in userConfig) {
-    if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
-    ) {
-      nextConfig[key] = {
-        ...nextConfig[key],
-        ...userConfig[key],
-      }
-    } else {
-      nextConfig[key] = userConfig[key]
-    }
-  }
 }
 
 export default nextConfig
