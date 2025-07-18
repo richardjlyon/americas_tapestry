@@ -64,7 +64,7 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
       )}
     >
       <div className="aspect-[3/4] relative overflow-hidden">
-        {member.groupSlug === 'stitching-groups' && !member.imagePath?.trim() ? (
+        {member.groupSlug === 'stitching-groups' ? (
           <StitchingGroupPlaceholder name={member.name} />
         ) : !imgError ? (
           <Image
