@@ -4,11 +4,10 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "node scripts/migrate-images-to-public.mjs && next build",
+        "build": "next build",
         "start": "next start",
         "lint": "next lint",
         "format": "npx @biomejs/biome format --write ./app ./components ./lib ./hooks",
-        "migrate-images": "node scripts/migrate-images-to-public.mjs",
         "update-images": "node scripts/add-unoptimized-to-images.mjs"
     },
     "dependencies": {

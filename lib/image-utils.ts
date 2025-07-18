@@ -14,12 +14,12 @@ export function getImagePath(path: string): string {
   // If path is null or empty, return empty string
   if (!path) return '';
   
-  // If path is already a public path, return as is
+  // If path is already a public path or external URL, return as is
   if (path.startsWith('/images/') || path.startsWith('http')) {
     return path;
   }
   
-  // Convert any content path to public path
+  // For backward compatibility, convert old content paths to public paths
   if (path.startsWith('/content/') || path.startsWith('content/')) {
     return convertContentPathToPublic(path.startsWith('/') ? path : '/' + path);
   }
