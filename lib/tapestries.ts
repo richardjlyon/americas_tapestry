@@ -212,24 +212,31 @@ export function getTapestryBySlug(slug: string): TapestryEntry | null {
       data.status && isValidStatus(data.status) ? data.status : 'Not Started';
 
     // Find the main image in the directory
-    const imagePath = findImageInDirectory(folderPath);
+    const imagePath = findImageInDirectory(slug);
 
     // Find audio description file
-    const audioPath = findAudioInDirectory(folderPath);
+    const audioPath = findAudioInDirectory(slug);
 
     // Construct the thumbnail path - either from frontmatter or by convention
     let thumbnail = data.thumbnail;
     if (!thumbnail) {
-      // Look for thumbnail in the directory
-      const thumbnailFile = fs
-        .readdirSync(folderPath)
-        .find((file) => file.toLowerCase().includes('thumbnail'));
+      // Look for thumbnail in the public images directory
+      const publicImagePath = path.join(process.cwd(), 'public/images/tapestries', slug);
+      
+      if (fs.existsSync(publicImagePath)) {
+        const thumbnailFile = fs
+          .readdirSync(publicImagePath)
+          .find((file) => file.toLowerCase().includes('thumbnail'));
 
-      if (thumbnailFile) {
-        thumbnail = `/images/tapestries/${slug}/${thumbnailFile}`;
-      } else if (imagePath) {
-        // Use main image as fallback if available
-        thumbnail = imagePath;
+        if (thumbnailFile) {
+          thumbnail = `/images/tapestries/${slug}/${thumbnailFile}`;
+        } else if (imagePath) {
+          // Use main image as fallback if available
+          thumbnail = imagePath;
+        } else {
+          // Use placeholder as last resort
+          thumbnail = '/placeholder.svg';
+        }
       } else {
         // Use placeholder as last resort
         thumbnail = '/placeholder.svg';
