@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ColonialGoldButton } from './ui/colonial-buttons';
@@ -121,14 +122,16 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
               className="embla__slide h-full relative flex-[0_0_100%]"
             >
               <div className="absolute inset-0 overflow-hidden">
-                <img
+                <Image
                   src={
                     tapestry.imagePath ||
                     tapestry.thumbnail ||
                     `/placeholder.svg?height=1080&width=1920`
                   }
                   alt={tapestry.title || 'Tapestry image'}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-10000 ease-out"
+                  fill
+                  sizes="100vw"
+                  className="absolute inset-0 object-cover transition-transform duration-10000 ease-out"
                   style={{
                     filter: 'brightness(0.9)',
                     transform:
@@ -136,6 +139,8 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
                         ? 'scale(1.05)'
                         : 'scale(1)',
                   }}
+                  priority={index === 0}
+                  quality={85}
                 />
               </div>
               <div
