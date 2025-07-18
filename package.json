@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "node scripts/migrate-images-to-public.mjs && node scripts/add-unoptimized-to-images.mjs && next dev",
-        "build": "node scripts/migrate-images-to-public.mjs && node scripts/add-unoptimized-to-images.mjs && next build",
+        "dev": "next dev",
+        "build": "next build",
         "start": "next start",
         "lint": "next lint",
         "format": "npx @biomejs/biome format --write ./app ./components ./lib ./hooks",
