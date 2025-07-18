@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { getImagePath, getImageSizes } from '@/lib/image-utils';
+import { StitchingGroupPlaceholder } from './stitching-group-placeholder';
 
 interface TeamMemberCardProps {
   member: TeamMember;
@@ -14,8 +15,8 @@ interface TeamMemberCardProps {
 }
 
 export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
-  // Use proper placeholder image for stitching groups
-  const placeholderPath = `/placeholder-user.jpg`;
+  // Use the imagePath from the TeamMember object
+  const placeholderPath = `/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
 
   // Use state to track image loading errors and processed content
   // Only use member.imagePath if it's a non-empty string
@@ -63,7 +64,9 @@ export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
       )}
     >
       <div className="aspect-[3/4] relative overflow-hidden">
-        {!imgError ? (
+        {member.groupSlug === 'stitching-groups' && !member.imagePath?.trim() ? (
+          <StitchingGroupPlaceholder name={member.name} />
+        ) : !imgError ? (
           <Image
             src={imgSrc}
             alt={member.name}

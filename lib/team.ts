@@ -119,7 +119,7 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
       // Special handling for different group types
       if (group === 'stitching-groups') {
         // Stitching groups use a placeholder
-        imagePath = `/placeholder-user.jpg`;
+        imagePath = `/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(data.name)}`;
       } else {
         // Use public directory path for all team images
         imagePath = getTeamMemberImagePath(group, dirName);
