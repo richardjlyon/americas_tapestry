@@ -14,8 +14,8 @@ interface TeamMemberCardProps {
 }
 
 export function TeamMemberCard({ member, className }: TeamMemberCardProps) {
-  // Use the imagePath from the TeamMember object
-  const placeholderPath = `/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
+  // Use proper placeholder image for stitching groups
+  const placeholderPath = `/placeholder-user.jpg`;
 
   // Use state to track image loading errors and processed content
   // Only use member.imagePath if it's a non-empty string
