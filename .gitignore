@@ -12,6 +12,7 @@ pnpm-debug.log*
 # Dependency directories
 .pnp
 .pnp.js
+pnpm-lock.yaml
 
 # Next.js build output
 .next/
