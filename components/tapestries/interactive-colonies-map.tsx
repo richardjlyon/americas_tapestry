@@ -89,13 +89,11 @@ export function InteractiveColoniesMap({
 
     const fetchColoniesData = async () => {
       try {
-        console.log('Fetching colonies data...');
         const response = await fetch('/data/gz_2010_us_040_00_500k.geojson');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        console.log('Raw GeoJSON data loaded:', data.features?.length, 'features');
 
         // Map of state FIPS or abbreviations to slugs for the 13 colonies
         const colonyMapping: { [key: string]: string } = {
@@ -141,8 +139,6 @@ export function InteractiveColoniesMap({
           }),
         };
 
-        console.log('Processed colonies data:', enhancedData);
-        console.log('Setting geoJsonData...');
         setGeoJsonData(enhancedData);
       } catch (error) {
         console.error('Error loading colonies GeoJSON:', error);
@@ -257,8 +253,7 @@ export function InteractiveColoniesMap({
     );
   }
 
-  // Debug logging
-  console.log('Map component render - isClient:', isClient, 'geoJsonData:', !!geoJsonData, 'MAPBOX_ACCESS_TOKEN:', !!MAPBOX_ACCESS_TOKEN);
+  // Map component ready to render
 
   return (
     <>
