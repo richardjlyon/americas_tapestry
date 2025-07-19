@@ -8,7 +8,7 @@ This PRP addresses comprehensive refactoring of the America's Tapestry Next.js w
 
 - ✅ Eliminate all layout duplication (7+ identical layout files)
 - ✅ Consolidate duplicate components and remove redundancy
-- ✅ Implement feature-based component organization following 2025 patterns  
+- ✅ Implement feature-based component organization following 2025 patterns
 - ✅ Enable strict TypeScript checking (currently disabled for production)
 - ✅ Add comprehensive testing framework with validation patterns
 - ✅ Achieve consistent naming conventions throughout codebase
@@ -343,6 +343,7 @@ npm run test:coverage            # Minimum 60% coverage
 
 # Visual Validation
 npm run dev
+npm run test:refactor              # Runs both Jest and Playwright tests
 # Manual testing of key pages:
 # - / (homepage)
 # - /about
@@ -363,7 +364,7 @@ npm run dev
 **Problem**: Moving to src/ breaks all imports
 **Solution**: Use find/replace for `@/` imports, update tsconfig.json paths
 
-### Layout Migration Issues  
+### Layout Migration Issues
 **Problem**: Nested layouts may have different requirements
 **Solution**: Audit each page's layout needs before consolidating
 

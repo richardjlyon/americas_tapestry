@@ -23,6 +23,18 @@ build/
 
 # Testing
 coverage/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Keep these test files in git:
+# e2e/refactor-safety.spec.ts
+# __tests__/component-integrity.test.tsx  
+# __tests__/simple-smoke.test.tsx
+# jest.config.js
+# jest.setup.js
+# playwright.config.ts
+# REFACTOR-TESTING.md
 
 # Environment variables
 .env.local
