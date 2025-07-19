@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { ColonialGoldButton } from '@/components/ui/colonial-buttons';
 import useEmblaCarousel from 'embla-carousel-react';
 import { cn } from '@/lib/utils';
@@ -107,6 +106,11 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
   // Safely get the current tapestry or fallback to the first one
   const safeIndex = currentIndex < validTapestries.length ? currentIndex : 0;
   const currentTapestry = validTapestries[safeIndex];
+  
+  // Return null if no valid tapestry is available
+  if (!currentTapestry) {
+    return null;
+  }
 
   return (
     <div className="relative h-[80vh] md:h-[90vh] overflow-hidden">

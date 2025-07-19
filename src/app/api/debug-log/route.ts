@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.MAILERLITE_API_KEY || ''}`,
+        'Authorization': `Bearer ${process.env['MAILERLITE_API_KEY'] || ''}`,
       },
       body: JSON.stringify(body),
     });
@@ -68,7 +68,7 @@ export async function GET(request: NextRequest) {
       request: {
         url: endpoint,
         body,
-        auth: process.env.MAILERLITE_API_KEY ? 'Bearer token provided' : 'No token',
+        auth: process.env['MAILERLITE_API_KEY'] ? 'Bearer token provided' : 'No token',
       }
     });
   } catch (error) {

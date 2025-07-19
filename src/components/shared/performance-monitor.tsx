@@ -20,7 +20,7 @@ interface PerformanceMonitorProps {
  * Usage:
  * ```tsx
  * // In your root layout or app component
- * <PerformanceMonitor showWidget={process.env.NODE_ENV === 'development'} />
+ * <PerformanceMonitor showWidget={process.env['NODE_ENV'] === 'development'} />
  * ```
  */
 export function PerformanceMonitor({ showWidget = false, onMetric }: PerformanceMonitorProps) {
@@ -44,7 +44,7 @@ export function PerformanceMonitor({ showWidget = false, onMetric }: Performance
   }, [onMetric]);
 
   // Don't render widget in production or if not enabled
-  if (!showWidget || process.env.NODE_ENV === 'production') {
+  if (!showWidget || process.env['NODE_ENV'] === 'production') {
     return null;
   }
 
@@ -168,7 +168,8 @@ function getOverallScore(metrics: PerformanceMetric[]): number {
     }
   });
   
-  return Math.round(scores.reduce((sum, score) => sum + score, 0) / scores.length);
+  const average = scores.reduce((sum, score) => sum + score, 0 as number) / scores.length;
+  return Math.round(average) as 0 | 20 | 60 | 100;
 }
 
 /**

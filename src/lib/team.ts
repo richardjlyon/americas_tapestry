@@ -39,11 +39,11 @@ export function getTeamGroup(slug: string): TeamGroup | undefined {
     const { data, content } = matter(fileContents);
 
     return {
-      name: data.name,
+      name: data['name'],
       slug: slug,
-      description: data.description,
+      description: data['description'],
       longDescription: content.trim(),
-      order: data.order,
+      order: data['order'],
       ...data, // Include any additional frontmatter fields
     } as TeamGroup;
   } catch (error) {
@@ -76,7 +76,7 @@ export function getTeamGroups(): TeamGroup[] {
       .filter(Boolean) as TeamGroup[];
 
     // Sort by order field
-    return groups.sort((a, b) => (a.order || 999) - (b.order || 999));
+    return groups.sort((a, b) => (a['order'] || 999) - (b['order'] || 999));
   } catch (error) {
     console.error('Error reading team groups:', error);
     return [];
@@ -139,7 +139,7 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
         group === 'state-directors' && fs.existsSync(actualFaceImagePath);
 
       // Check if required fields exist in data
-      if (!data.name || !data.role) {
+      if (!data['name'] || !data['role']) {
         console.warn(
           `Missing required fields (name or role) for team member: ${dirName} in group ${group}`,
         );
@@ -147,8 +147,8 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
 
       return {
         slug: dirName,
-        name: data.name || dirName, // Fallback to dirName if name is missing
-        role: data.role || 'Team Member', // Provide a default role if missing
+        name: data['name'] || dirName, // Fallback to dirName if name is missing
+        role: data['role'] || 'Team Member', // Provide a default role if missing
         content,
         groupSlug: group,
         imagePath,
@@ -162,12 +162,12 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
   // Sort by order field if present, or by name
   return members.sort((a, b) => {
     // If both have order, use that
-    if (a.order !== undefined && b.order !== undefined) {
-      return a.order - b.order;
+    if (a['order'] !== undefined && b['order'] !== undefined) {
+      return a['order'] - b['order'];
     }
     // If only one has order, prioritize that one
-    if (a.order !== undefined) return -1;
-    if (b.order !== undefined) return 1;
+    if (a['order'] !== undefined) return -1;
+    if (b['order'] !== undefined) return 1;
 
     // If both have names, compare them
     if (a.name && b.name) {
@@ -185,7 +185,7 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
 
 export function getProjectDirector(): TeamMember | null {
   const directors = getTeamMembersByGroup('project-director');
-  return directors.length > 0 ? directors[0] : null;
+  return directors.length > 0 && directors[0] ? directors[0] : null;
 }
 
 export function getTeamMember(group: string, slug: string): TeamMember | null {

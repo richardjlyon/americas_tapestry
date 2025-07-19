@@ -158,13 +158,15 @@ export function ColonialDataExplorer({
       {/* Controls */}
       <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
         <div className="flex-1 w-full sm:w-auto">
-          <Input
-            placeholder="Search colonies..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full"
-            icon={<Search className="h-4 w-4" />}
-          />
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              placeholder="Search colonies..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10"
+            />
+          </div>
         </div>
         <div className="flex gap-2 w-full sm:w-auto">
           <Select value={filterStatus} onValueChange={setFilterStatus}>
@@ -417,12 +419,12 @@ export function ColonialDataExplorer({
                   <div className="relative">
                     <div className="absolute h-0.5 bg-colonial-navy/20 top-4 left-0 right-0" />
                     <div className="relative flex justify-between">
-                      {tapestry.timelineEvents.map((event, index) => (
+                      {tapestry.timelineEvents?.map((event, index) => (
                         <div
                           key={index}
                           className="relative flex flex-col items-center"
                           style={{
-                            left: `${(index / (tapestry.timelineEvents.length - 1)) * 100}%`,
+                            left: `${(index / ((tapestry.timelineEvents?.length ?? 1) - 1)) * 100}%`,
                             position: 'absolute',
                             transform: 'translateX(-50%)',
                           }}

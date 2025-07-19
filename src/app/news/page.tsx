@@ -1,15 +1,11 @@
-import Link from 'next/link';
-import { BlogCard } from '@/components/features/blog/blog-card';
 import { CategoryFilter } from '@/components/features/news/category-filter';
 import { NewsGrid } from '@/components/features/news/news-grid';
 import { FeaturedPosts } from '@/components/features/news/featured-posts';
 import {
   getAllBlogPosts,
   getFeaturedBlogPosts,
-  blogCategories,
 } from '@/lib/blog';
 import { PageSection } from '@/components/ui/page-section';
-import { ContentCard } from '@/components/ui/content-card';
 
 export default function NewsPage() {
   const allPosts = getAllBlogPosts();

@@ -1,18 +1,5 @@
-import Link from 'next/link';
-import { ArrowRight, BookOpen, History, Gauge } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { PageSection } from '@/components/ui/page-section';
-import EducationalResourcesCard from '@/components/features/resources/EducationalResourcesCard';
-import TapestryGlossariesCard from '@/components/features/resources/TapestryGlossariesCard';
-import RelatedArtefactsGalleryCard from '@/components/features/resources/RelatedArtefactsGalleryCard';
+import TapestryGlossariesCard from '@/components/features/resources/tapestry-glossaries-card';
 
 export const metadata = {
   title: "Resources | America's Tapestry",

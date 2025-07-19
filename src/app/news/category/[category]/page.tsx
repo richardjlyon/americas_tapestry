@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { NewsGrid } from '@/components/features/news/news-grid';
 import { CategoryPageFilter } from '@/components/features/news/category-page-filter';
 import {
@@ -16,16 +15,17 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function CategoryPage({
+export default async function CategoryPage({
   params,
-}: { params: { category: string } }) {
-  const categoryInfo = getCategoryBySlug(params.category);
+}: { params: Promise<{ category: string }> }) {
+  const { category } = await params;
+  const categoryInfo = getCategoryBySlug(category);
 
   if (!categoryInfo) {
     notFound();
   }
 
-  const posts = getBlogPostsByCategory(params.category as BlogCategory);
+  const posts = getBlogPostsByCategory(category as BlogCategory);
 
   return (
     <>
@@ -39,7 +39,7 @@ export default function CategoryPage({
         <h2 className="section-title text-center mb-6 text-xl">
           Browse Categories
         </h2>
-        <CategoryPageFilter currentCategory={params.category} />
+        <CategoryPageFilter currentCategory={category} />
       </PageSection>
 
       {/* Blog Posts Grid */}

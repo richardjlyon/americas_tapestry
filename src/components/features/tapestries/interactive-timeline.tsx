@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -68,18 +68,18 @@ export function InteractiveTimeline({ tapestries }: InteractiveTimelineProps) {
     setColonies(coloniesList);
 
     // Set the first event as active by default
-    if (sortedEvents.length > 0) {
+    if (sortedEvents.length > 0 && sortedEvents[0]) {
       setActiveEvent(sortedEvents[0]);
     }
   }, [tapestries]);
 
   // Get earliest and latest dates for scaling
-  const earliestDate =
-    allEvents.length > 0 ? new Date(allEvents[0].date) : new Date(1600, 0, 1);
-  const latestDate =
-    allEvents.length > 0
-      ? new Date(allEvents[allEvents.length - 1].date)
-      : new Date(1800, 0, 1);
+  const earliestDate = useMemo(
+    () => (allEvents.length > 0 && allEvents[0] ? new Date(allEvents[0].date) : new Date(1600, 0, 1)),
+    [allEvents]
+  );
+  const lastEvent = allEvents.length > 0 ? allEvents[allEvents.length - 1] : null;
+  const latestDate = lastEvent ? new Date(lastEvent.date) : new Date(1800, 0, 1);
   const timespan = latestDate.getTime() - earliestDate.getTime();
 
   // Calculate position along timeline based on date
@@ -120,7 +120,10 @@ export function InteractiveTimeline({ tapestries }: InteractiveTimelineProps) {
       }
     }
 
-    setActiveEvent(filteredEvents[closestEventIndex]);
+    const closestEvent = filteredEvents[closestEventIndex];
+    if (closestEvent) {
+      setActiveEvent(closestEvent);
+    }
   }, [isScrolling, allEvents, selectedColony, getPositionFromDate]);
 
   // Scroll to specific event
@@ -163,7 +166,10 @@ export function InteractiveTimeline({ tapestries }: InteractiveTimelineProps) {
         ? Math.min(currentIndex + 1, filteredEvents.length - 1)
         : Math.max(currentIndex - 1, 0);
 
-    scrollToEvent(filteredEvents[newIndex]);
+    const eventToScrollTo = filteredEvents[newIndex];
+    if (eventToScrollTo) {
+      scrollToEvent(eventToScrollTo);
+    }
   };
 
   // Filter events by colony
@@ -179,7 +185,7 @@ export function InteractiveTimeline({ tapestries }: InteractiveTimelineProps) {
     const colonyEvents = allEvents.filter(
       (event) => event.colonySlug === colonySlug,
     );
-    if (colonyEvents.length > 0) {
+    if (colonyEvents.length > 0 && colonyEvents[0]) {
       scrollToEvent(colonyEvents[0]);
     }
   };

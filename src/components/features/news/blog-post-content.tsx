@@ -22,7 +22,11 @@ export function BlogPostContent({ post, contentHtml }: BlogPostContentProps) {
 
       {/* Content section */}
       <div className="content-typography p-6 md:p-8">
-        <PostMetadata date={post.date} author={post.author} className="mb-3" />
+        <PostMetadata 
+          date={post.date} 
+          {...(post.author && { author: post.author })}
+          className="mb-3" 
+        />
         <MarkdownContent html={contentHtml} />
       </div>
 

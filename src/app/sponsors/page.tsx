@@ -21,7 +21,7 @@ export default async function SponsorsPage() {
       if (!sponsorsByTier[sponsor.tier]) {
         sponsorsByTier[sponsor.tier] = [];
       }
-      sponsorsByTier[sponsor.tier].push(sponsor);
+      sponsorsByTier[sponsor.tier]?.push(sponsor);
     }
   });
 
@@ -44,14 +44,14 @@ export default async function SponsorsPage() {
         {Object.keys(sponsorsByTier).length > 0 &&
           Object.entries(sponsorsByTier)
             .sort(([tierA], [tierB]) => {
-              const tierOrder = {
+              const tierOrder: Record<string, number> = {
                 Platinum: 1,
                 Gold: 2,
                 Silver: 3,
                 Bronze: 4,
                 Supporter: 5,
               };
-              return (tierOrder[tierA] || 999) - (tierOrder[tierB] || 999);
+              return (tierOrder[tierA] ?? 999) - (tierOrder[tierB] ?? 999);
             })
             .map(([tier, tierSponsors]) => (
               <div key={tier} className="mb-12">

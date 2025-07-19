@@ -10,7 +10,7 @@ interface PageLayoutProps {
 
 export function PageLayout({
   children,
-  fullWidth = false,
+  fullWidth: _fullWidth = false,
 }: PageLayoutProps) {
   return (
     <>

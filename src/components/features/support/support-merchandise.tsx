@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { ShoppingBag, ExternalLink } from 'lucide-react';
-import { getImagePath, getImageSizes } from '@/lib/image-utils';
+import { getImageSizes } from '@/lib/image-utils';
 
 interface MerchandiseItem {
   id: string;

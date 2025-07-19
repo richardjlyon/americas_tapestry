@@ -111,30 +111,30 @@ export function getAllSponsors(): Sponsor[] {
       const { data, content } = matter(fileContents);
 
       // Find logo file
-      const logoFileName = findLogoFile(folderPath, folder, data.logo);
+      const logoFileName = findLogoFile(folderPath, folder, data['logo']);
       
       // Construct logo path using content directory
       const logoPath = logoFileName 
         ? `/content/sponsors/${folder}/${logoFileName}`
-        : `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data.name || 'Sponsor')}`;
+        : `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data['name'] || 'Sponsor')}`;
 
       // Create an excerpt from the content
       const excerpt = extractExcerpt(content);
 
       // Format the display name
-      const displayName = formatSponsorName(data.name, folder);
+      const displayName = formatSponsorName(data['name'], folder);
 
       // Return the sponsor data
       return {
         slug,
         name: displayName,
-        website: data.website || '#',
-        tier: data.tier || 'Supporter',
-        location: data.location || '',
-        partnership_year: data.partnership_year,
+        website: data['website'] || '#',
+        tier: data['tier'] || 'Supporter',
+        location: data['location'] || '',
+        partnership_year: data['partnership_year'],
         logo: logoFileName,
         logoPath,
-        order: data.order || 999,
+        order: data['order'] || 999,
         content,
         excerpt,
       } as Sponsor;
@@ -164,29 +164,29 @@ export function getSponsorBySlug(slug: string): Sponsor | null {
   const { data, content } = matter(fileContents);
 
   // Find logo file
-  const logoFileName = findLogoFile(folderPath, slug, data.logo);
+  const logoFileName = findLogoFile(folderPath, slug, data['logo']);
   
   // Construct logo path using content directory
   const logoPath = logoFileName 
     ? `/content/sponsors/${slug}/${logoFileName}`
-    : `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data.name || 'Sponsor')}`;
+    : `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data['name'] || 'Sponsor')}`;
 
   // Create an excerpt from the content
   const excerpt = extractExcerpt(content);
     
   // Format the display name
-  const displayName = formatSponsorName(data.name, slug);
+  const displayName = formatSponsorName(data['name'], slug);
 
   return {
     slug,
     name: displayName,
-    website: data.website || '#',
-    tier: data.tier || 'Supporter',
-    location: data.location || '',
-    partnership_year: data.partnership_year,
+    website: data['website'] || '#',
+    tier: data['tier'] || 'Supporter',
+    location: data['location'] || '',
+    partnership_year: data['partnership_year'],
     logo: logoFileName,
     logoPath,
-    order: data.order || 999,
+    order: data['order'] || 999,
     content,
     excerpt,
   } as Sponsor;

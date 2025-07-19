@@ -19,7 +19,7 @@ export async function subscribeToNewsletter(formData: NewsletterFormData) {
     const validatedData = newsletterSchema.parse(formData);
     
     // Determine if we have a JWT (v3) or API key (v2)
-    const apiKey = process.env.MAILERLITE_API_KEY || '';
+    const apiKey = process.env['MAILERLITE_API_KEY'] || '';
     const isJwt = apiKey.startsWith('ey'); // JWT tokens start with 'ey'
     
     let response;

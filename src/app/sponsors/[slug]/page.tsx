@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { PageSection } from '@/components/ui/page-section';
 import { getAllSponsors } from '@/lib/sponsors';
 import { getSponsorData } from '@/app/actions/sponsor-actions';
 import { getImagePath, getImageSizes } from '@/lib/image-utils';
@@ -18,8 +17,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: { params: { slug: string } }) {
-  const { sponsor } = await getSponsorData(params.slug);
+}: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const { sponsor } = await getSponsorData(slug);
 
   if (!sponsor) {
     return {
@@ -36,8 +36,9 @@ export async function generateMetadata({
 
 export default async function SponsorPage({
   params,
-}: { params: { slug: string } }) {
-  const { sponsor, contentHtml } = await getSponsorData(params.slug);
+}: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const { sponsor, contentHtml } = await getSponsorData(slug);
 
   if (!sponsor) {
     notFound();

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,21 +9,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Heart, Check } from "lucide-react";
+import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface DonationTier {
-  id: string;
-  name: string;
-  amount: number;
-  description: string;
-  benefits: string[];
-}
+// interface DonationTier {
+//   id: string;
+//   name: string;
+//   amount: number;
+//   description: string;
+//   benefits: string[];
+// }
 
+// Donation tiers configuration for future implementation
+/*
 const donationTiers: DonationTier[] = [
   {
     id: "supporter",
@@ -77,10 +75,12 @@ const donationTiers: DonationTier[] = [
     ],
   },
 ];
+*/
 
 export function SupportDonations() {
-  const [selectedTier, setSelectedTier] = useState<string>("supporter");
-  const [customAmount, setCustomAmount] = useState<string>("");
+  // State variables for future donation form implementation
+  // const [_selectedTier, _setSelectedTier] = useState<string>("supporter");
+  // const [_customAmount, _setCustomAmount] = useState<string>("");
 
   return (
     <div className="space-y-12">

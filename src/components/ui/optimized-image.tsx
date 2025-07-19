@@ -110,9 +110,9 @@ export function OptimizedImage({
   };
 
   // Add blur placeholder if enabled
-  if (enableBlurPlaceholder && !props.placeholder) {
-    imageProps.placeholder = 'blur';
-    imageProps.blurDataURL = getContextualBlurPlaceholder(currentSrc);
+  if (enableBlurPlaceholder && !('placeholder' in props)) {
+    (imageProps as any).placeholder = 'blur';
+    (imageProps as any).blurDataURL = getContextualBlurPlaceholder(currentSrc);
   }
 
   return (

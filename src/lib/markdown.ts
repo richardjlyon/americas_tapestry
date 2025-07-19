@@ -103,8 +103,8 @@ export function extractExcerpt(content: string, maxLength = 160): string {
     const contentWithoutHeadings = content.replace(/^#\s+.*$/gm, '').trim();
 
     // Get the first paragraph
-    const firstParagraph = contentWithoutHeadings
-      .split('\n\n')[0]
+    const paragraphs = contentWithoutHeadings.split('\n\n');
+    const firstParagraph = (paragraphs[0] || '')
       .replace(/\n/g, ' ')
       .trim();
 

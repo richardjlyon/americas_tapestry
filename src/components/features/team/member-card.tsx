@@ -27,7 +27,7 @@ export function MemberCard({
   
   // State management for image loading and content processing
   const [imgSrc, setImgSrc] = useState<string>(
-    member.imagePath?.trim() ? getImagePath(member.imagePath) : placeholderPath,
+    member['imagePath']?.trim() ? getImagePath(member['imagePath']) : placeholderPath,
   );
   const [imgError, setImgError] = useState(false);
   const [contentHtml, setContentHtml] = useState('');
@@ -35,7 +35,7 @@ export function MemberCard({
   // Handle image load error
   const handleImageError = () => {
     console.error(
-      `Failed to load image: ${member.imagePath} for ${member.name}`,
+      `Failed to load image: ${member['imagePath']} for ${member.name}`,
     );
     setImgError(true);
     setImgSrc(placeholderPath);
@@ -100,31 +100,31 @@ export function MemberCard({
             {member.state ? `, ${member.state}` : ''}
           </p>
 
-          {member.groupSlug === 'stitching-groups' && member.more_info && (
+          {member.groupSlug === 'stitching-groups' && member['more_info'] && (
             <div className="mt-auto pt-4">
-              <a href={`${member.more_info}`} className="inline-block text-link">
+              <a href={`${member['more_info']}`} className="inline-block text-link">
                 More info →
               </a>
             </div>
           )}
-          {member.specialization && (
+          {member['specialization'] && (
             <p className="font-serif text-sm text-colonial-navy/70 mb-2">
-              Specialization: {member.specialization}
+              Specialization: {member['specialization']}
             </p>
           )}
-          {member.members && (
+          {member['members'] && (
             <p className="font-serif text-sm text-colonial-navy/70 mb-2">
-              Members: {member.members}
+              Members: {member['members']}
             </p>
           )}
-          {member.established && (
+          {member['established'] && (
             <p className="font-serif text-sm text-colonial-navy/70 mb-2">
-              Established: {member.established}
+              Established: {member['established']}
             </p>
           )}
-          {member.partnership_year && (
+          {member['partnership_year'] && (
             <p className="font-serif text-sm text-colonial-navy/70 mb-2">
-              Partnership since: {member.partnership_year}
+              Partnership since: {member['partnership_year']}
             </p>
           )}
 

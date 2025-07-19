@@ -5,7 +5,7 @@ describe('Basic Smoke Tests', () => {
   it('can render a simple React component', () => {
     const TestComponent = () => <div data-testid="test">Hello Test</div>;
     const { getByTestId } = render(<TestComponent />);
-    expect(getByTestId('test')).toBeInTheDocument();
+    expect(getByTestId('test')).toBeTruthy();
   });
 
   it('Jest and Testing Library are working', () => {

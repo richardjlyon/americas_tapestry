@@ -6,7 +6,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import type { TeamMember } from '@/lib/team';
 import { PageSection } from '@/components/ui/page-section';
 import { useState } from 'react';
-import { getImagePath } from '@/lib/image-utils';
 
 interface TeamCardProps {
   stateName: string;
@@ -17,7 +16,7 @@ interface TeamCardProps {
 }
 
 export function TeamCard({
-  stateName,
+  stateName: _stateName,
   historicalPartners,
   illustrators,
   stateDirectors,
@@ -44,7 +43,7 @@ export function TeamCard({
     // For state directors, try face image first if available
     if (member.groupSlug === 'state-directors') {
       // Check if this director has a face image and it hasn't failed to load
-      if (member.hasFaceImage && !failedImages[`${member.slug}-face`]) {
+      if (member['hasFaceImage'] && !failedImages[`${member.slug}-face`]) {
         // Use public images directory path for face images
         return `/images/team/state-directors/${member.slug}/${member.slug}-face.jpg`;
       }
@@ -122,7 +121,7 @@ export function TeamCard({
                         // For state directors with face images, we need to track face failures separately
                         if (
                           member.groupSlug === 'state-directors' &&
-                          member.hasFaceImage &&
+                          member['hasFaceImage'] &&
                           !failedImages[`${member.slug}-face`]
                         ) {
                           handleImageError(`${member.slug}-face`);
@@ -142,9 +141,9 @@ export function TeamCard({
                     <p className="font-normal text-colonial-navy mb-1 pb-0">
                       {member.name || member.slug}
                     </p>
-                    {(member.description || member.summary) && (
+                    {(member['description'] || member['summary']) && (
                       <p className="text-sm text-gray-700 mt-0 pt-0">
-                        {member.description || member.summary}
+                        {member['description'] || member['summary']}
                       </p>
                     )}
                   </div>

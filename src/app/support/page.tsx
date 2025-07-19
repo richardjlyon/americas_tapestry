@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ShoppingBag, Heart, Users, Award } from "lucide-react";
+import { ArrowRight, Heart, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,9 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { SupportMerchandise } from "@/components/features/support/support-merchandise";
 import { SupportDonations } from "@/components/features/support/support-donations";
-import { SupportVolunteer } from "@/components/features/support/support-volunteer";
 import { SupportSponsorship } from "@/components/features/support/support-sponsorship";
 import { PageSection } from "@/components/ui/page-section";
 

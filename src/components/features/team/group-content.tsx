@@ -10,7 +10,7 @@ export interface GroupContentProps {
 
 export function GroupContent({ group, members }: GroupContentProps) {
   // Filter out members with visible set to false
-  const visibleMembers = members.filter((member) => member.visible !== false);
+  const visibleMembers = members.filter((member) => member['visible'] !== false);
 
   return (
     <>

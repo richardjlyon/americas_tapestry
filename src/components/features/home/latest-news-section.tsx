@@ -4,7 +4,6 @@ import { SectionHeader } from '@/components/ui/section-header';
 import { BlogCard } from '@/components/features/blog/blog-card';
 import { FeaturedPost } from '@/components/features/blog/featured-post';
 import { getFeaturedBlogPosts, getLatestBlogPosts } from '@/lib/blog';
-import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';
 import { NavyButton } from '@/components/ui/colonial-buttons';
 

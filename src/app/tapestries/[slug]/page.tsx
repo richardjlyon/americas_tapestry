@@ -35,10 +35,10 @@ export async function generateStaticParams() {
 export default async function TapestryPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   // Wait for params to be fully available
-  const slug = params.slug;
+  const { slug } = await params;
   const tapestry = getTapestryBySlug(slug);
 
   if (!tapestry) {
@@ -95,7 +95,7 @@ export default async function TapestryPage({
               <AccessibleAudioPlayer
                 src={audioSrc}
                 title={`Audio Description: ${tapestry.title} Tapestry`}
-                description={tapestry.audioDescription}
+                {...(tapestry.audioDescription && { description: tapestry.audioDescription })}
               />
             </div>
           )}

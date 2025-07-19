@@ -1,6 +1,6 @@
 "use server";
 
-import { getTeamGroup, getTeamGroups, getTeamMembersByGroup, getTeamMember } from '@/lib/team';
+import { getTeamGroup, getTeamMembersByGroup, getTeamMember } from '@/lib/team';
 import { remark } from 'remark';
 import html from 'remark-html';
 

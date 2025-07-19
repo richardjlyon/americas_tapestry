@@ -1,6 +1,6 @@
 import type React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Download, FileText, PenTool } from 'lucide-react';
+import { Download, FileText, PenTool } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Card,

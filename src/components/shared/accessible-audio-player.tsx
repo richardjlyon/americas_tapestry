@@ -7,7 +7,6 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
-import { getVideoPath } from '@/lib/image-utils';
 
 interface AccessibleAudioPlayerProps {
   src: string;
@@ -69,7 +68,7 @@ export function AccessibleAudioPlayer({
   // Handle volume change
   const handleVolumeChange = (value: number[]) => {
     const newVolume = value[0];
-    if (audioRef.current) {
+    if (audioRef.current && newVolume !== undefined) {
       audioRef.current.volume = newVolume;
       setVolume(newVolume);
       if (newVolume === 0) {
@@ -91,9 +90,10 @@ export function AccessibleAudioPlayer({
 
   // Handle seeking
   const handleSeek = (value: number[]) => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = value[0];
-      setCurrentTime(value[0]);
+    const newTime = value[0];
+    if (audioRef.current && newTime !== undefined) {
+      audioRef.current.currentTime = newTime;
+      setCurrentTime(newTime);
     }
   };
 

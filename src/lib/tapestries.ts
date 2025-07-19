@@ -136,7 +136,7 @@ export function getAllTapestries(): TapestryEntry[] {
 
       // Validate status or set default
       const status =
-        data.status && isValidStatus(data.status) ? data.status : 'Not Started';
+        data['status'] && isValidStatus(data['status']) ? data['status'] : 'Not Started';
 
       // Find the main image in the directory
       const imagePath = findImageInDirectory(slug);
@@ -145,7 +145,7 @@ export function getAllTapestries(): TapestryEntry[] {
       const audioPath = findAudioInDirectory(slug);
 
       // Construct the thumbnail path - either from frontmatter or by convention
-      let thumbnail = data.thumbnail;
+      let thumbnail = data['thumbnail'];
       if (!thumbnail) {
         // Look for thumbnail in the public images directory
         const publicImagePath = path.join(process.cwd(), 'public/images/tapestries', slug);
@@ -174,19 +174,19 @@ export function getAllTapestries(): TapestryEntry[] {
       // Return the tapestry entry
       return {
         slug,
-        title: data.title,
-        summary: data.summary,
+        title: data['title'],
+        summary: data['summary'],
         thumbnail: thumbnail || imagePath, // Use main image as fallback if no thumbnail
-        background_color: data.background_color,
+        background_color: data['background_color'],
         content,
         imagePath,
         audioPath,
         audioDescription:
-          data.audioDescription ||
-          `Audio description of the ${data.title} tapestry`,
-        colony: data.colony || null,
+          data['audioDescription'] ||
+          `Audio description of the ${data['title']} tapestry`,
+        colony: data['colony'] || null,
         status,
-        timelineEvents: data.timelineEvents || [],
+        timelineEvents: data['timelineEvents'] || [],
       } as TapestryEntry;
     })
     .filter(Boolean) as TapestryEntry[];
@@ -209,7 +209,7 @@ export function getTapestryBySlug(slug: string): TapestryEntry | null {
 
     // Validate status or set default
     const status =
-      data.status && isValidStatus(data.status) ? data.status : 'Not Started';
+      data['status'] && isValidStatus(data['status']) ? data['status'] : 'Not Started';
 
     // Find the main image in the directory
     const imagePath = findImageInDirectory(slug);
@@ -218,7 +218,7 @@ export function getTapestryBySlug(slug: string): TapestryEntry | null {
     const audioPath = findAudioInDirectory(slug);
 
     // Construct the thumbnail path - either from frontmatter or by convention
-    let thumbnail = data.thumbnail;
+    let thumbnail = data['thumbnail'];
     if (!thumbnail) {
       // Look for thumbnail in the public images directory
       const publicImagePath = path.join(process.cwd(), 'public/images/tapestries', slug);
@@ -245,19 +245,19 @@ export function getTapestryBySlug(slug: string): TapestryEntry | null {
 
     return {
       slug,
-      title: data.title,
-      summary: data.summary,
+      title: data['title'],
+      summary: data['summary'],
       thumbnail: thumbnail || imagePath, // Use main image as fallback if no thumbnail
-      background_color: data.background_color,
+      background_color: data['background_color'],
       content,
       imagePath,
       audioPath,
       audioDescription:
-        data.audioDescription ||
-        `Audio description of the ${data.title} tapestry`,
-      colony: data.colony || null,
+        data['audioDescription'] ||
+        `Audio description of the ${data['title']} tapestry`,
+      colony: data['colony'] || null,
       status,
-      timelineEvents: data.timelineEvents || [],
+      timelineEvents: data['timelineEvents'] || [],
     } as TapestryEntry;
   } catch (error) {
     console.error(`Error getting tapestry ${slug}:`, error);

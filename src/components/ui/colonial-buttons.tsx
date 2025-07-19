@@ -1,7 +1,6 @@
 import { type ButtonHTMLAttributes, forwardRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Slot } from '@radix-ui/react-slot';
 
 // Base button props type
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -128,7 +127,7 @@ export const ParchmentDocumentButton = forwardRef<
   HTMLButtonElement,
   ButtonProps
 >(({ className, asChild = false, ...props }, ref) => {
-  const Comp = asChild ? Slot : 'button';
+  // const Comp = asChild ? Slot : 'button'; // Not currently used
   return (
     <Button
       ref={ref}

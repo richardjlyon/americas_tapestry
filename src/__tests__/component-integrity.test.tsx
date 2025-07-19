@@ -102,9 +102,7 @@ describe('Component Integrity Tests', () => {
       const originalError = console.error;
       console.error = jest.fn();
       
-      const BrokenComponent = () => {
-        throw new Error('Test error');
-      };
+      // BrokenComponent would throw an error if used
       
       const ErrorBoundary = ({ children }: { children: React.ReactNode }) => {
         try {
@@ -150,7 +148,7 @@ describe('Component Integrity Tests', () => {
       
       expect(() => {
         render(<FlexibleComponent />);
-        render(<FlexibleComponent title={undefined} items={undefined} config={null} />);
+        render(<FlexibleComponent config={null} />);
         render(<FlexibleComponent title="Test" items={[]} config={{}} />);
       }).not.toThrow();
     });

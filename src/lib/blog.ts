@@ -154,11 +154,11 @@ export function getAllBlogPosts(): BlogPost[] {
         const { data, content } = matter(fileContents);
 
         // Extract date from filename if not in frontmatter
-        let postDate = data.date;
+        let postDate = data['date'];
         if (!postDate) {
           // Extract YYMMDD from filename
           const dateMatch = filename.match(/^(\d{6})/);
-          if (dateMatch) {
+          if (dateMatch && dateMatch[1]) {
             const dateStr = dateMatch[1];
             // Convert YYMMDD to YYYY-MM-DD
             const year = '20' + dateStr.substring(0, 2);
@@ -169,7 +169,7 @@ export function getAllBlogPosts(): BlogPost[] {
         }
 
         // Convert image path to public directory
-        let imagePath = convertImagePath(data.image);
+        let imagePath = convertImagePath(data['image']);
         
         // Fix image paths to remove redundant 'images/' segment
         if (imagePath) {
@@ -180,15 +180,15 @@ export function getAllBlogPosts(): BlogPost[] {
 
         allPosts.push({
           slug,
-          title: data.title || '',
+          title: data['title'] || '',
           date: postDate || '',
-          excerpt: data.excerpt || '',
+          excerpt: data['excerpt'] || '',
           category: category.slug,
-          featured: data.featured || false,
+          featured: data['featured'] || false,
           image: imagePath,
           content,
-          author: data.author || null,
-          videoUrl: data.videoUrl || undefined,
+          author: data['author'] || null,
+          videoUrl: data['videoUrl'] || undefined,
         });
       } catch (error) {
         console.error(`Error processing ${fullPath}:`, error);
@@ -223,7 +223,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
         return match;
       });
 
-    if (files.length > 0) {
+    if (files.length > 0 && files[0]) {
       const filename = files[0];
       const fullPath = path.join(categoryDir, filename);
 
@@ -232,11 +232,11 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
         const { data, content } = matter(fileContents);
 
         // Extract date from filename if not in frontmatter
-        let postDate = data.date;
+        let postDate = data['date'];
         if (!postDate) {
           // Extract YYMMDD from filename
           const dateMatch = filename.match(/^(\d{6})/);
-          if (dateMatch) {
+          if (dateMatch && dateMatch[1]) {
             const dateStr = dateMatch[1];
             // Convert YYMMDD to YYYY-MM-DD
             const year = '20' + dateStr.substring(0, 2);
@@ -247,7 +247,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
         }
         
         // Convert image path to public directory
-        let imagePath = convertImagePath(data.image);
+        let imagePath = convertImagePath(data['image']);
         
         // Fix image paths to remove redundant 'images/' segment
         if (imagePath) {
@@ -258,15 +258,15 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
 
         return {
           slug,
-          title: data.title || '',
+          title: data['title'] || '',
           date: postDate || '',
-          excerpt: data.excerpt || '',
+          excerpt: data['excerpt'] || '',
           category: category.slug,
-          featured: data.featured || false,
+          featured: data['featured'] || false,
           image: imagePath,
           content,
-          author: data.author || null,
-          videoUrl: data.videoUrl || undefined,
+          author: data['author'] || null,
+          videoUrl: data['videoUrl'] || undefined,
         };
       } catch (error) {
         console.error(`Error processing ${fullPath}:`, error);

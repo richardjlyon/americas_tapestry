@@ -3,6 +3,11 @@
  * and other performance metrics in the America's Tapestry website
  */
 
+// Declare gtag global function
+declare global {
+  function gtag(...args: any[]): void;
+}
+
 export interface PerformanceMetric {
   name: string;
   value: number;
@@ -80,7 +85,7 @@ export function trackWebVitals(onMetric: (metric: PerformanceMetric) => void) {
  * Log performance metrics to console (development)
  */
 export function logPerformanceMetric(metric: PerformanceMetric) {
-  if (process.env.NODE_ENV !== 'development') return;
+  if (process.env['NODE_ENV'] !== 'development') return;
 
   const emoji = metric.rating === 'good' ? '🟢' : metric.rating === 'needs-improvement' ? '🟡' : '🔴';
   console.log(
@@ -215,7 +220,7 @@ export class ImagePerformanceTracker {
     const loadTime = Date.now() - startTime;
     this.loadTimes.delete(src);
 
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env['NODE_ENV'] === 'development') {
       console.log(`Image loaded: ${src} (${loadTime}ms)`);
     }
 
@@ -229,7 +234,7 @@ export class ImagePerformanceTracker {
     this.failedImages.add(src);
     this.loadTimes.delete(src);
 
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env['NODE_ENV'] === 'development') {
       console.warn(`Image failed to load: ${src}`);
     }
   }
@@ -255,8 +260,8 @@ let globalPerformanceMonitor: PerformanceMonitor | null = null;
 export function getPerformanceMonitor(): PerformanceMonitor {
   if (!globalPerformanceMonitor) {
     globalPerformanceMonitor = new PerformanceMonitor({
-      enableLogging: process.env.NODE_ENV === 'development',
-      enableAnalytics: process.env.NODE_ENV === 'production',
+      enableLogging: process.env['NODE_ENV'] === 'development',
+      enableAnalytics: process.env['NODE_ENV'] === 'production',
     });
   }
   return globalPerformanceMonitor;

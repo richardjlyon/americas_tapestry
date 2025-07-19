@@ -9,7 +9,7 @@ import Map, {
   Popup,
   MapRef,
   LayerProps,
-  MapLayerMouseEvent,
+  MapMouseEvent,
 } from 'react-map-gl/mapbox';
 import type { TapestryEntry, TapestryStatus } from '@/lib/tapestries';
 import { SectionHeader } from '@/components/ui/section-header';
@@ -80,7 +80,7 @@ export function InteractiveColoniesMap({
   const mapRef = useRef<MapRef>(null);
   const [geoJsonData, setGeoJsonData] = useState<any>(null);
   const [hoveredColony, setHoveredColony] = useState<any>(null);
-  const [selectedColony, setSelectedColony] = useState<any>(null);
+  const [_selectedColony, setSelectedColony] = useState<any>(null);
   const [isClient, setIsClient] = useState(false);
 
   // Load GeoJSON data for colonies
@@ -176,7 +176,7 @@ export function InteractiveColoniesMap({
   const hoverData = useMemo(() => {
     if (!hoveredColony) return null;
     return {
-      type: 'FeatureCollection',
+      type: 'FeatureCollection' as const,
       features: [hoveredColony],
     };
   }, [hoveredColony]);
@@ -188,7 +188,7 @@ export function InteractiveColoniesMap({
   } | null>(null);
 
   // Handle mouse move over the map
-  const onMouseMove = useCallback((event: MapLayerMouseEvent) => {
+  const onMouseMove = useCallback((event: MapMouseEvent) => {
     if (!event.features || event.features.length === 0) {
       setHoveredColony(null);
       setPopupCoords(null);
@@ -196,7 +196,7 @@ export function InteractiveColoniesMap({
     }
 
     const hoveredFeature = event.features[0];
-    if (hoveredFeature.layer.id === 'colonies-fill') {
+    if (hoveredFeature?.layer?.id === 'colonies-fill') {
       setHoveredColony(hoveredFeature);
       setPopupCoords({
         lng: event.lngLat.lng,
@@ -213,19 +213,19 @@ export function InteractiveColoniesMap({
 
   // Handle click on colony
   const onColonyClick = useCallback(
-    (event: MapLayerMouseEvent) => {
+    (event: MapMouseEvent) => {
       if (!event.features || event.features.length === 0) return;
 
       const clickedFeature = event.features[0];
-      if (clickedFeature.layer.id === 'colonies-fill') {
+      if (clickedFeature?.layer?.id === 'colonies-fill') {
         const colony = clickedFeature.properties;
         setSelectedColony(colony);
 
         // Only navigate if the colony's status is not "Not Started"
-        if (colony.slug && colony.status !== 'Not Started') {
-          const tapestry = tapestries.find((t) => t.slug === colony.slug);
+        if (colony && colony['slug'] && colony['status'] !== 'Not Started') {
+          const tapestry = tapestries.find((t) => t.slug === colony['slug']);
           if (tapestry) {
-            router.push(`/tapestries/${colony.slug}`);
+            router.push(`/tapestries/${colony['slug']}`);
           }
         }
       }

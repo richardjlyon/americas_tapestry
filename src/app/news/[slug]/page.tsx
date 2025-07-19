@@ -1,13 +1,11 @@
 import { BlogPostContent } from '@/components/features/news/blog-post-content';
 import { RelatedPosts } from '@/components/features/news/related-posts';
-import { PostNavigation } from '@/components/features/news/post-navigation';
 import { PostExcerpt } from '@/components/features/news/post-excerpt';
 import { PostTitle } from '@/components/features/news/post-title';
 import {
   getAllBlogPosts,
   getBlogPostBySlug,
   getBlogPostsByCategory,
-  getCategoryBySlug,
 } from '@/lib/blog';
 import type { BlogCategory } from '@/lib/blog';
 import { notFound } from 'next/navigation';
@@ -28,7 +26,7 @@ function addImageCaptions(htmlContent: string): string {
   // This regex looks for <p><img src="..." alt="..."></p> tags which is how remark-html typically renders markdown images
   return htmlContent.replace(
     /<p>(<img\s+src="([^"]+)"\s+alt="([^"]*)"[^>]*>)<\/p>/g,
-    (match, img, src, alt) => {
+    (_match, img, _src, alt) => {
       // Only add figcaption if alt text exists
       const caption = alt ? `<figcaption>${alt}</figcaption>` : '';
       return `
@@ -43,8 +41,9 @@ function addImageCaptions(htmlContent: string): string {
 
 export default async function BlogPostPage({
   params,
-}: { params: { slug: string } }) {
-  const post = getBlogPostBySlug(params.slug);
+}: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -74,8 +73,8 @@ export default async function BlogPostPage({
     post.category as BlogCategory,
   ).filter((p) => p.slug !== post.slug); // Exclude current post
 
-  // Get category info
-  const categoryInfo = getCategoryBySlug(post.category);
+  // Category info would be used for metadata if needed
+  // const categoryInfo = getCategoryBySlug(post.category);
 
   return (
     <>

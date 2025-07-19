@@ -24,10 +24,11 @@ export async function generateStaticParams() {
 
 export default async function TeamMemberPage({
   params,
-}: { params: { group: string; member: string } }) {
+}: { params: Promise<{ group: string; member: string }> }) {
   // Use a server action to fetch all the data we need
-  const { member, contentHtml, formattedGroupName, group } =
-    await getTeamMemberData(params.group, params.member);
+  const { group: groupSlug, member: memberSlug } = await params;
+  const { member, group } =
+    await getTeamMemberData(groupSlug, memberSlug);
 
   if (!member || !group) {
     notFound();
