@@ -1,6 +1,7 @@
 {
-    "name": "my-v0-project",
-    "version": "0.1.0",
+    "name": "americas-tapestry",
+    "version": "1.0.0",
+    "description": "A visual exploration of cultural diversity across the American landscape",
     "private": true,
     "packageManager": "npm@10.0.0",
     "scripts": {
