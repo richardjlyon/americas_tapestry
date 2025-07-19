@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { SectionHeader } from '@/components/ui/section-header';
 import { getTeamGroups } from '@/lib/team';
 import { ContentCard } from '@/components/ui/content-card';
-import { NavyButton } from '../ui/colonial-buttons';
+import { NavyButton } from '@/components/ui/colonial-buttons';
 
 export function TeamSection() {
   const teamGroups = getTeamGroups().filter(

@@ -1,4 +1,4 @@
-import PageLayout from '../page-layout';
+import PageLayout from '@/app/page-layout';
 
 export default function PrivacyPolicyLayout({
   children,

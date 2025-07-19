@@ -1,7 +1,7 @@
 import type React from 'react';
-import PageLayout from '../page-layout';
+import PageLayout from '@/app/page-layout';
 
-export default function TapestriesLayout({
+export default function ContactLayout({
   children,
 }: {
   children: React.ReactNode;

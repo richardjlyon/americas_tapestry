@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { ContentCard } from '@/components/ui/content-card';
 import { getTeamGroups } from '@/lib/team';
-import { NavyButton } from '../ui/colonial-buttons';
+import { NavyButton } from '@/components/ui/colonial-buttons';
 
 export function TeamGroupsSection() {
   const teamGroups = getTeamGroups();

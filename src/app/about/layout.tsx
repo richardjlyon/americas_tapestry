@@ -1,7 +1,7 @@
 import type React from 'react';
-import PageLayout from '../page-layout';
+import PageLayout from '@/app/page-layout';
 
-export default function TeamLayout({
+export default function AboutLayout({
   children,
 }: {
   children: React.ReactNode;

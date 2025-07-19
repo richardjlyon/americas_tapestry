@@ -1,5 +1,5 @@
 import type React from 'react';
-import '@/app/globals.css';
+import './globals.css';
 import { Montserrat, EB_Garamond } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 

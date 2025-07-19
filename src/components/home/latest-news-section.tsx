@@ -6,7 +6,7 @@ import { FeaturedPost } from '@/components/featured-post';
 import { getFeaturedBlogPosts, getLatestBlogPosts } from '@/lib/blog';
 import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';
-import { NavyButton } from '../ui/colonial-buttons';
+import { NavyButton } from '@/components/ui/colonial-buttons';
 
 export function LatestNewsSection() {
   const featuredPosts = getFeaturedBlogPosts() || [];

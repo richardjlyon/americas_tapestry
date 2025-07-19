@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import Image from 'next/image';
-import { ContentCard } from '../ui/content-card';
+import { ContentCard } from '@/components/ui/content-card';
 import { getImagePath, getImageSizes } from '@/lib/image-utils';
 
 interface PersonDetails {

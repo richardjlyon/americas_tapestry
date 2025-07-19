@@ -1,5 +1,7 @@
 # Next.js Website Refactoring and Modernization PRP
 
+CRITICAL. You MUST run `npm run test:refactor` and enture tests work before completing a taks.Z
+
 ## 📋 Overview
 
 This PRP addresses comprehensive refactoring of the America's Tapestry Next.js website to eliminate code duplication, implement modern 2025 architectural patterns, and bring the codebase up to professional standards. The current implementation shows junior-level patterns with significant technical debt including layout duplication, component inconsistencies, disabled TypeScript checking, and poor organization.
@@ -147,6 +149,7 @@ mv hooks src/ # if exists
 ```
 
 **Task 1.2: Consolidate Layout Duplication**
+CRITICAL: Make sure you do NOT break the layout of the homepage when altering header files
 Create `src/components/layouts/page-layout.tsx`:
 ```tsx
 import type React from 'react';

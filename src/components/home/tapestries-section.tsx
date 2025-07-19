@@ -3,7 +3,7 @@ import { SectionHeader } from '@/components/ui/section-header';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { TapestryEntry } from '@/lib/tapestries';
-import { RevolutionaryButton } from '../ui/colonial-buttons';
+import { RevolutionaryButton } from '@/components/ui/colonial-buttons';
 interface TapestriesSectionProps {
   randomTapestries: Array<TapestryEntry>;
 }

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { SectionHeader } from '@/components/ui/section-header';
 import { Mail } from 'lucide-react';
-import { ColonialGoldButton } from '../ui/colonial-buttons';
+import { ColonialGoldButton } from '@/components/ui/colonial-buttons';
 
 export function GetInTouchSection() {
   return (
