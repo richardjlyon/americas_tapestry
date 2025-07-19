@@ -2,12 +2,13 @@ import type React from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { SiteBreadcrumb } from '@/components/ui/site-breadcrumb';
+
 interface PageLayoutProps {
   children: React.ReactNode;
   fullWidth?: boolean;
 }
 
-export default function PageLayout({
+export function PageLayout({
   children,
   fullWidth = false,
 }: PageLayoutProps) {

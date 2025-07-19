@@ -1,4 +1,5 @@
-import PageLayout from '@/app/page-layout';
+import type React from 'react';
+import { PageLayout } from '@/components/layouts/page-layout';
 
 export default function PrivacyPolicyLayout({
   children,
