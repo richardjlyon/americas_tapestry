@@ -2,7 +2,7 @@ import { getTeamGroups, getTeamMembersByGroup } from '@/lib/team';
 import { getTeamMemberData } from '@/app/actions/team-actions';
 import { notFound } from 'next/navigation';
 import { PageSection } from '@/components/ui/page-section';
-import PersonCard from '@/components/team/person-card';
+import PersonCard from '@/components/features/team/person-card';
 import html from 'remark-html';
 import { remark } from 'remark';
 

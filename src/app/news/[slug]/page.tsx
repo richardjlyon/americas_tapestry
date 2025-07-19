@@ -1,8 +1,8 @@
-import { BlogPostContent } from '@/components/news/blog-post-content';
-import { RelatedPosts } from '@/components/news/related-posts';
-import { PostNavigation } from '@/components/news/post-navigation';
-import { PostExcerpt } from '@/components/news/post-excerpt';
-import { PostTitle } from '@/components/news/post-title';
+import { BlogPostContent } from '@/components/features/news/blog-post-content';
+import { RelatedPosts } from '@/components/features/news/related-posts';
+import { PostNavigation } from '@/components/features/news/post-navigation';
+import { PostExcerpt } from '@/components/features/news/post-excerpt';
+import { PostTitle } from '@/components/features/news/post-title';
 import {
   getAllBlogPosts,
   getBlogPostBySlug,

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { SectionHeader } from '@/components/ui/section-header';
-import { BlogCard } from '@/components/blog-card';
-import { FeaturedPost } from '@/components/featured-post';
+import { BlogCard } from '@/components/features/blog/blog-card';
+import { FeaturedPost } from '@/components/features/blog/featured-post';
 import { getFeaturedBlogPosts, getLatestBlogPosts } from '@/lib/blog';
 import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';

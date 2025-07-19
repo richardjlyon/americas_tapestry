@@ -1,16 +1,16 @@
-import { HeroCarousel } from '@/components/hero-carousel';
-import { LatestNewsSection } from '@/components/home/latest-news-section';
+import { HeroCarousel } from '@/components/shared/hero-carousel';
+import { LatestNewsSection } from '@/components/features/home/latest-news-section';
 import { getAllTapestries } from '@/lib/tapestries';
 
 import { PageSection } from '@/components/ui/page-section';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 
-import { AboutSection } from '@/components/home/about-section';
-import { VisionSection } from '@/components/home/vision-section';
-import { TapestriesSection } from '@/components/home/tapestries-section';
-import { TeamSection } from '@/components/home/team-section';
-import { GetInTouchSection } from '@/components/home/get-in-touch-section';
+import { AboutSection } from '@/components/features/home/about-section';
+import { VisionSection } from '@/components/features/home/vision-section';
+import { TapestriesSection } from '@/components/features/home/tapestries-section';
+import { TeamSection } from '@/components/features/home/team-section';
+import { GetInTouchSection } from '@/components/features/home/get-in-touch-section';
 
 export default function Home() {
   const allTapestries = getAllTapestries();

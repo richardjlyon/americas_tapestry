@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ColonialGoldButton } from './ui/colonial-buttons';
+import { ColonialGoldButton } from '@/components/ui/colonial-buttons';
 import useEmblaCarousel from 'embla-carousel-react';
 import { cn } from '@/lib/utils';
 import type { TapestryEntry } from '@/lib/tapestries';

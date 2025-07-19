@@ -10,9 +10,9 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { PageSection } from '@/components/ui/page-section';
-import EducationalResourcesCard from '@/components/resources/EducationalResourcesCard';
-import TapestryGlossariesCard from '@/components/resources/TapestryGlossariesCard';
-import RelatedArtefactsGalleryCard from '@/components/resources/RelatedArtefactsGalleryCard';
+import EducationalResourcesCard from '@/components/features/resources/EducationalResourcesCard';
+import TapestryGlossariesCard from '@/components/features/resources/TapestryGlossariesCard';
+import RelatedArtefactsGalleryCard from '@/components/features/resources/RelatedArtefactsGalleryCard';
 
 export const metadata = {
   title: "Resources | America's Tapestry",

@@ -1,5 +1,5 @@
 import { PageSection } from '@/components/ui/page-section';
-import { SponsorCard } from '@/components/sponsor-card';
+import { SponsorCard } from '@/components/features/sponsors/sponsor-card';
 import { getAllSponsorsData } from '@/app/actions/sponsor-actions';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';

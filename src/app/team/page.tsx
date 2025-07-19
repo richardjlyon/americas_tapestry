@@ -1,6 +1,6 @@
 import React from 'react';
-import { ProjectDirectorSection } from '@/components/team/project-director-section';
-import { TeamGroupsSection } from '@/components/team/team-groups-section';
+import { ProjectDirectorSection } from '@/components/features/team/project-director-section';
+import { TeamGroupsSection } from '@/components/features/team/team-groups-section';
 import { PageSection } from '@/components/ui/page-section';
 
 export default async function TeamPage() {

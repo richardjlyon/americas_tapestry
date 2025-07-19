@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Instagram, Twitter, Facebook } from 'lucide-react';
-import { FooterNewsletter } from '@/components/footer-newsletter';
+import { FooterNewsletter } from '@/components/features/newsletter/footer-newsletter';
 import { Button } from '@/components/ui/button';
 
 export function Footer() {

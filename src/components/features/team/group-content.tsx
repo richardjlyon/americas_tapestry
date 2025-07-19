@@ -1,6 +1,6 @@
 'use client';
 
-import { TeamMemberCard } from '@/components/team-member-card';
+import { TeamMemberCard } from '@/components/features/team/team-member-card';
 import type { TeamGroup, TeamMember } from '@/lib/team';
 
 export interface GroupContentProps {

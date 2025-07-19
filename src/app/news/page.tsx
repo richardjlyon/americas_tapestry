@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { BlogCard } from '@/components/blog-card';
-import { CategoryFilter } from '@/components/news/category-filter';
-import { NewsGrid } from '@/components/news/news-grid';
-import { FeaturedPosts } from '@/components/news/featured-posts';
+import { BlogCard } from '@/components/features/blog/blog-card';
+import { CategoryFilter } from '@/components/features/news/category-filter';
+import { NewsGrid } from '@/components/features/news/news-grid';
+import { FeaturedPosts } from '@/components/features/news/featured-posts';
 import {
   getAllBlogPosts,
   getFeaturedBlogPosts,

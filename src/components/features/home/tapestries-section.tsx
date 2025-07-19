@@ -1,4 +1,4 @@
-import { TapestryCard } from '@/components/tapestries/tapestry-card';
+import { TapestryCard } from '@/components/features/tapestries/tapestry-card';
 import { SectionHeader } from '@/components/ui/section-header';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';

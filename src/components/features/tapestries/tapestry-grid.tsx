@@ -1,6 +1,6 @@
 'use client';
 
-import { TapestryCard } from '@/components/tapestries/tapestry-card';
+import { TapestryCard } from '@/components/features/tapestries/tapestry-card';
 import { SectionHeader } from '@/components/ui/section-header';
 import type { TapestryEntry } from '@/lib/tapestries';
 

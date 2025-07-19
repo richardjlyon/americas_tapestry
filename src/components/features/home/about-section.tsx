@@ -1,4 +1,4 @@
-import { VideoPlayer } from '@/components/video-player';
+import { VideoPlayer } from '@/components/shared/video-player';
 import { SectionHeader } from '@/components/ui/section-header';
 
 export function AboutSection() {

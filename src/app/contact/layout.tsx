@@ -1,5 +1,5 @@
 import type React from 'react';
-import { PageLayout } from '@/components/layouts/page-layout';
+import { PageLayout } from '@/components/layout/page-layout';
 
 export default function ContactLayout({
   children,

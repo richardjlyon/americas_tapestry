@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { NewsGrid } from '@/components/news/news-grid';
-import { CategoryPageFilter } from '@/components/news/category-page-filter';
+import { NewsGrid } from '@/components/features/news/news-grid';
+import { CategoryPageFilter } from '@/components/features/news/category-page-filter';
 import {
   getBlogPostsByCategory,
   getCategoryBySlug,

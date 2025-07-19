@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { getImagePath, getImageSizes } from '@/lib/image-utils';
-import { StitchingGroupPlaceholder } from './team/stitching-group-placeholder';
+import { StitchingGroupPlaceholder } from './stitching-group-placeholder';
 
 interface TeamMemberCardProps {
   member: TeamMember;

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { ColonialGoldButton } from './ui/colonial-buttons';
+import { ColonialGoldButton } from '@/components/ui/colonial-buttons';
 
 // Navigation items used in both desktop and mobile
 const navigationItems = [

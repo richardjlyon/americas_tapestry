@@ -8,10 +8,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { SupportMerchandise } from "@/components/support/support-merchandise";
-import { SupportDonations } from "@/components/support/support-donations";
-import { SupportVolunteer } from "@/components/support/support-volunteer";
-import { SupportSponsorship } from "@/components/support/support-sponsorship";
+import { SupportMerchandise } from "@/components/features/support/support-merchandise";
+import { SupportDonations } from "@/components/features/support/support-donations";
+import { SupportVolunteer } from "@/components/features/support/support-volunteer";
+import { SupportSponsorship } from "@/components/features/support/support-sponsorship";
 import { PageSection } from "@/components/ui/page-section";
 
 export const metadata = {

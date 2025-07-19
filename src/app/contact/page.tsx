@@ -1,5 +1,5 @@
-import { ContactForm } from '@/components/contact-form';
-import { NewsletterSignup } from '@/components/newsletter-signup';
+import { ContactForm } from '@/components/features/contact/contact-form';
+import { NewsletterSignup } from '@/components/features/newsletter/newsletter-signup';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';

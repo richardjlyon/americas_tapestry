@@ -1,7 +1,7 @@
 import React from 'react';
 import { remark } from 'remark';
 import html from 'remark-html';
-import PersonCard from '@/components/team/person-card';
+import PersonCard from '@/components/features/team/person-card';
 import { getProjectDirector } from '@/lib/team';
 
 export async function ProjectDirectorSection() {

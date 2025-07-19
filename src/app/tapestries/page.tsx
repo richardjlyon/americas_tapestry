@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { TapestryCard } from '@/components/tapestries/tapestry-card';
-import { InteractiveColoniesMap } from '@/components/tapestries/interactive-colonies-map';
-import { InteractiveTimeline } from '@/components/tapestries/interactive-timeline';
-import { TapestryGrid } from '@/components/tapestries/tapestry-grid';
-import { ColonialDataExplorer } from '@/components/colonial-data-explorer';
+import { TapestryCard } from '@/components/features/tapestries/tapestry-card';
+import { InteractiveColoniesMap } from '@/components/features/tapestries/interactive-colonies-map';
+import { InteractiveTimeline } from '@/components/features/tapestries/interactive-timeline';
+import { TapestryGrid } from '@/components/features/tapestries/tapestry-grid';
+import { ColonialDataExplorer } from '@/components/shared/colonial-data-explorer';
 import { getAllTapestries } from '@/lib/tapestries';
 import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';
