@@ -2,9 +2,7 @@ import { getTeamGroups, getTeamMembersByGroup } from '@/lib/team';
 import { getTeamMemberData } from '@/app/actions/team-actions';
 import { notFound } from 'next/navigation';
 import { PageSection } from '@/components/ui/page-section';
-import PersonCard from '@/components/features/team/person-card';
-import html from 'remark-html';
-import { remark } from 'remark';
+import { MemberCard } from '@/components/features/team/member-card';
 
 export async function generateStaticParams() {
   const groups = getTeamGroups();
@@ -35,35 +33,15 @@ export default async function TeamMemberPage({
     notFound();
   }
 
-  // Convert markdown to HTML for project director bio
-  let directorBioHtml = '';
-  if (member) {
-    const processedContent = await remark().use(html).process(member.content);
-    directorBioHtml = processedContent.toString();
-  }
-
-  const imageSrc =
-    member.imagePath ||
-    `/placeholder.svg?height=800&width=600&text=${encodeURIComponent(member.name)}`;
-
-  // Extract only the properties we need, excluding 'state'
-  const personDetails = {
-    name: member.name,
-    role: member.role,
-    state: member.state || '',
-    imagePosition: member.imagePosition,
-    moreInformation: member.moreInformation,
-  };
-
   // Render the member content with the data
   return (
     <PageSection paddingTop="none" paddingBottom="large">
       <h1 className="page-heading ">{group.name}</h1>
 
-      <PersonCard
-        personImageSrc={imageSrc}
-        person={personDetails}
-        personBioHtml={directorBioHtml}
+      <MemberCard
+        member={member}
+        variant="full"
+        width="two-thirds"
       />
     </PageSection>
   );

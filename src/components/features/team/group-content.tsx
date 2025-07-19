@@ -1,6 +1,6 @@
 'use client';
 
-import { TeamMemberCard } from '@/components/features/team/team-member-card';
+import { MemberCard } from '@/components/features/team/member-card';
 import type { TeamGroup, TeamMember } from '@/lib/team';
 
 export interface GroupContentProps {
@@ -23,7 +23,7 @@ export function GroupContent({ group, members }: GroupContentProps) {
       {visibleMembers.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {visibleMembers.map((member) => (
-            <TeamMemberCard key={member.slug} member={member} />
+            <MemberCard key={member.slug} member={member} variant="grid" />
           ))}
         </div>
       ) : (
