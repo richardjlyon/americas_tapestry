@@ -4,31 +4,34 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
-// Common button styles that can be shared
-const colonialButtonBase =
-  'rounded-full border shadow-md transition-all duration-300 hover:bg-colonial-navy hover:border-colonial-navy hover:text-colonial-parchment';
+// Colonial button variants consolidated from colonial-buttons.tsx
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        primary: `${colonialButtonBase} bg-colonial-burgundy text-colonial-parchment border-colonial-burgundy`,
-        gold: `${colonialButtonBase} bg-colonial-gold hover:bg-colonial-gold/25% text-colonial-navy border-colonial-gold`,
-        destructive:
-          'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-        outline:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-        secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
+        // Standard shadcn/ui variants
+        default: 'bg-primary text-primary-foreground hover:bg-primary/90 rounded-md',
+        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-md',
+        outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md',
+        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md',
+        ghost: 'hover:bg-accent hover:text-accent-foreground rounded-md',
         link: 'text-primary underline-offset-4 hover:underline',
+        
+        // Colonial theme variants
+        'colonial-primary': 'font-serif rounded-full bg-colonial-burgundy text-colonial-parchment border border-colonial-burgundy hover:bg-colonial-navy hover:border-colonial-navy shadow-md transition-all duration-300',
+        'colonial-secondary': 'font-serif rounded-full bg-colonial-navy text-colonial-parchment border border-colonial-navy hover:bg-colonial-burgundy hover:border-colonial-burgundy shadow-md transition-all duration-300',
+        'colonial-gold': 'font-serif rounded-full bg-colonial-gold text-colonial-navy border border-colonial-gold hover:bg-colonial-navy hover:text-colonial-parchment hover:border-colonial-navy shadow-md transition-all duration-300',
+        'colonial-outline': 'font-serif rounded-full border border-colonial-navy text-colonial-navy bg-transparent hover:bg-colonial-navy hover:text-colonial-parchment shadow-md transition-all duration-300',
+        'colonial-ghost': 'font-serif rounded-full text-colonial-navy hover:bg-colonial-navy/10 transition-all duration-300',
+        'colonial-parchment': 'font-serif rounded-full bg-colonial-parchment text-colonial-navy border border-colonial-gold/30 hover:bg-colonial-parchment/80 hover:border-colonial-gold/50 shadow-sm transition-all duration-300',
+        'colonial-stone': 'font-serif rounded-full bg-colonial-stone text-colonial-navy border border-colonial-stone hover:bg-colonial-stone/80 shadow-md transition-all duration-300',
       },
       size: {
         default: 'h-10 px-4 py-2',
-        sm: 'h-9 rounded-md px-3',
-        lg: 'h-11 rounded-md px-8',
+        sm: 'h-9 px-3',
+        lg: 'h-11 px-8',
         icon: 'h-10 w-10',
       },
     },

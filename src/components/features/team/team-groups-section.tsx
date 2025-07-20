@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { ContentCard } from '@/components/ui/content-card';
 import { getTeamGroups } from '@/lib/team';
-import { NavyButton } from '@/components/ui/colonial-buttons';
+import { Button } from '@/components/ui/button';
 
 export function TeamGroupsSection() {
   const teamGroups = getTeamGroups();
@@ -31,11 +31,11 @@ export function TeamGroupsSection() {
               <p className="font-serif text-colonial-navy/80 mb-4">
                 {group.description}
               </p>
-              <NavyButton asChild variant="outline" className="text-sm">
+              <Button asChild variant="colonial-outline" className="text-sm">
                 <Link href={`/team/${group.slug}`}>
                   View {group.name} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </NavyButton>
+              </Button>
             </ContentCard>
           ))}
       </div>

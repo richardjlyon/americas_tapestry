@@ -5,7 +5,7 @@ import { BlogCard } from '@/components/features/blog/blog-card';
 import { FeaturedPost } from '@/components/features/blog/featured-post';
 import { getFeaturedBlogPosts, getLatestBlogPosts } from '@/lib/blog';
 import { ContentCard } from '@/components/ui/content-card';
-import { NavyButton } from '@/components/ui/colonial-buttons';
+import { Button } from '@/components/ui/button';
 
 export function LatestNewsSection() {
   const featuredPosts = getFeaturedBlogPosts() || [];
@@ -60,15 +60,15 @@ export function LatestNewsSection() {
       )}
 
       <div className="text-center mt-10 md:mt-12">
-        <NavyButton
+        <Button
           asChild
-          variant="outline"
+          variant="colonial-outline"
           className="px-6 py-2.5 text-base"
         >
           <Link href="/news">
             View All News <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
-        </NavyButton>
+        </Button>
       </div>
     </>
   );

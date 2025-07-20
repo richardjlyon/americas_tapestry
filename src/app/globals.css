@@ -225,7 +225,7 @@
     }
 
     .status-designed {
-        @apply bg-indigo-500 text-white;
+        @apply bg-colonial-navy text-colonial-parchment;
     }
 
     .status-in-production {
@@ -321,17 +321,4 @@
         hover:text-secondary hover:decoration-secondary/70;
     }
 
-    /***************************************
-     * BUTTON UTILITIES
-     ***************************************/
-
-    .button-primary {
-        @apply rounded-full bg-secondary text-white border-secondary shadow-md
-               hover:bg-primary hover:border-primary hover:text-white transition-all duration-300;
-    }
-
-    .button-gold {
-        @apply rounded-full bg-accent text-primary border-accent shadow-md
-               hover:bg-primary hover:border-primary hover:text-white transition-all duration-300;
-    }
 }

@@ -4,7 +4,7 @@ import { formatDate } from '@/lib/utils';
 import type { BlogPost } from '@/lib/blog';
 import { blogCategories } from '@/lib/blog';
 import { ArrowRight, Play } from 'lucide-react';
-import { NavyButton } from '@/components/ui/colonial-buttons';
+import { Button } from '@/components/ui/button';
 import { getImagePath, getImageSizes } from '@/lib/image-utils';
 
 interface FeaturedPostProps {
@@ -59,12 +59,12 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
           <p className="font-serif text-colonial-navy/80 mb-6 line-clamp-4">
             {post.excerpt}
           </p>
-          <NavyButton asChild variant="outline" className="text-sm">
+          <Button asChild variant="colonial-outline" className="text-sm">
             <Link href={`/news/${post.slug}`}>
               {isVideo ? 'Watch Video' : 'Read Full Article'}{' '}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-          </NavyButton>
+          </Button>
         </div>
       </div>
     </div>

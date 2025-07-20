@@ -2,6 +2,8 @@
 
 This document provides guidelines and preferences for Claude Code when generating Next.js applications.
 
+IMPORTANT: You may get webpack build errors. Investigate if they are .cache issues and try clearing and rebuiilding to resolve. Do NOT disable features when troubleshooting in an effort to simplify.
+
 ## Core Principles
 
 1. **Simplicity First**: Write code that is easy to understand and maintain

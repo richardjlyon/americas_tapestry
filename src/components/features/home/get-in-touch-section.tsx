@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { SectionHeader } from '@/components/ui/section-header';
 import { Mail } from 'lucide-react';
-import { ColonialGoldButton } from '@/components/ui/colonial-buttons';
+import { Button } from '@/components/ui/button';
 
 export function GetInTouchSection() {
   return (
@@ -12,15 +12,15 @@ export function GetInTouchSection() {
       />
 
       <div className="text-center">
-        <ColonialGoldButton
+        <Button
           asChild
-          variant="outline"
+          variant="colonial-outline"
           className="px-6 py-2.5 text-base"
         >
           <Link href="/contact">
             <Mail className="mr-2 h-4 w-4" /> Contact Us
           </Link>
-        </ColonialGoldButton>
+        </Button>
       </div>
     </>
   );

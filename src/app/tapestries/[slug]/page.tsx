@@ -12,7 +12,7 @@ import { getImagePath } from '@/lib/image-utils';
 // Status color mapping
 const statusColors = {
   'Not Started': 'bg-colonial-navy/70',
-  Designed: 'bg-indigo-500',
+  Designed: 'bg-colonial-navy',
   'In Production': 'bg-colonial-burgundy',
   Finished: 'bg-colonial-gold',
 };

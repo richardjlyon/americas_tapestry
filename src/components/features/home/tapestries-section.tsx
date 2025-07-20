@@ -3,7 +3,7 @@ import { SectionHeader } from '@/components/ui/section-header';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { TapestryEntry } from '@/lib/tapestries';
-import { RevolutionaryButton } from '@/components/ui/colonial-buttons';
+import { Button } from '@/components/ui/button';
 interface TapestriesSectionProps {
   randomTapestries: Array<TapestryEntry>;
 }
@@ -35,12 +35,12 @@ export function TapestriesSection({
       </div>
 
       <div className="text-center mt-10 md:mt-12">
-        <RevolutionaryButton asChild className="text-base py-2 px-5">
+        <Button asChild variant="colonial-primary" className="text-base py-2 px-5">
           <Link href="/tapestries">
             Explore All Thirteen Colonies{' '}
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
-        </RevolutionaryButton>
+        </Button>
       </div>
     </>
   );

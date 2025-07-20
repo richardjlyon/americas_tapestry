@@ -1,5 +1,1 @@
-You're an experienced Next.js developer. This website loads slowly.
-- The first page has a carousel with a large image
-- The page with tapestries on it has a number of them
-
-Analyse the page structure and the page assets. I recommend making changes to ensure that it is fast to load in both mobile and desktop forms.
+The Next.js website uses Tailwind It's been developed incrementally, and it's not clear that all of the Tailwind files, custom CSS files, and other related styling files are A) optimal and B) consistent. The purpose of this phase is to go through site styling to ensure that it is clean, functional, and compatible with modern methods. And to set us up for a subsequent phase for improving the appearance of the site.
