@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 // Navigation items used in both desktop and mobile
 const navigationItems = [
-  { name: 'About', href: '/about' },
-  { name: 'Tapestries', href: '/tapestries' },
-  { name: 'Team', href: '/team' },
-  { name: 'News', href: '/news' },
-  { name: 'Resources', href: '/resources' },
-  { name: 'Sponsors', href: '/sponsors' },
-  { name: 'Contact', href: '/contact' },
+  { name: "About", href: "/about" },
+  { name: "Tapestries", href: "/tapestries" },
+  { name: "Team", href: "/team" },
+  { name: "News", href: "/news" },
+  { name: "Resources", href: "/resources" },
+  { name: "Sponsors", href: "/sponsors" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -25,12 +25,12 @@ export function Header() {
   // Prevent body scrolling when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -40,8 +40,8 @@ export function Header() {
       setIsScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMobileMenu = () => {
@@ -51,10 +51,10 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? 'bg-colonial-burgundy shadow-md'
-          : 'bg-colonial-burgundy/90 backdrop-blur-sm',
+          ? "bg-colonial-burgundy shadow-md"
+          : "bg-colonial-burgundy/90 backdrop-blur-sm",
       )}
     >
       {/* Logo - Positioned at the root level */}
@@ -71,7 +71,7 @@ export function Header() {
             priority
           />
         </div>
-        <span className="ml-2.5 font-serif font-bold text-lg sm:text-2xl text-colonial-parchment">
+        <span className="ml-2.5 font-sans font-bold text-lg sm:text-2xl text-colonial-parchment">
           America's Tapestry
         </span>
       </Link>
@@ -84,7 +84,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm lg:text-base font-medium text-colonial-parchment transition-colors hover:text-colonial-gold"
+                className="text-sm lg:text-base font-medium font-sans text-colonial-parchment transition-colors hover:text-colonial-gold"
               >
                 {item.name}
               </Link>
@@ -95,7 +95,7 @@ export function Header() {
           <Button
             variant="colonial-gold"
             asChild
-            className="hidden md:flex text-sm py-1.5 px-4 ml-4"
+            className="hidden md:flex text-sm py-1.5 px-4 ml-4 font-sans"
           >
             <Link href="/support">Support our project</Link>
           </Button>
@@ -110,7 +110,7 @@ export function Header() {
             aria-label="Toggle mobile menu"
           >
             <span className="sr-only">
-              {isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              {isMobileMenuOpen ? "Close menu" : "Open menu"}
             </span>
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" aria-hidden="true" />
@@ -124,8 +124,8 @@ export function Header() {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          'fixed inset-0 bg-colonial-burgundy z-10 transition-transform duration-300 transform md:hidden',
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full',
+          "fixed inset-0 bg-colonial-burgundy z-10 transition-transform duration-300 transform md:hidden",
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
         {/* Mobile Menu Content */}
@@ -135,7 +135,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block text-center py-2 text-xl font-bold text-colonial-parchment hover:text-colonial-gold transition-colors"
+                className="block text-center py-2 text-xl font-bold font-sans text-colonial-parchment hover:text-colonial-gold transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
@@ -145,7 +145,7 @@ export function Header() {
               <Button
                 variant="colonial-gold"
                 asChild
-                className="w-full sm:w-auto text-base"
+                className="w-full sm:w-auto text-base font-sans"
               >
                 <Link
                   href="/support"

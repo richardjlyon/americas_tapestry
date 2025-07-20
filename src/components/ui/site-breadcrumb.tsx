@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,30 +10,30 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+} from "@/components/ui/breadcrumb";
 
 export function SiteBreadcrumb() {
   const pathname = usePathname();
 
-  console.log('Breadcrumb pathname:', pathname);
+  console.log("Breadcrumb pathname:", pathname);
 
   // Skip rendering breadcrumbs on home page
-  if (pathname === '/') {
-    console.log('Skipping breadcrumb on home page');
+  if (pathname === "/") {
+    console.log("Skipping breadcrumb on home page");
     return null;
   }
 
   // Create breadcrumb segments from pathname
-  const pathSegments = pathname.split('/').filter((segment) => segment !== '');
-  console.log('Breadcrumb segments:', pathSegments);
+  const pathSegments = pathname.split("/").filter((segment) => segment !== "");
+  console.log("Breadcrumb segments:", pathSegments);
 
   // Format segment names for display
   const formatSegmentName = (segment: string) => {
     // Handle dynamic route parameters that might show up as actual values
-    if (segment.startsWith('[') && segment.endsWith(']')) {
-      return segment.slice(1, -1).replace(/-/g, ' ');
+    if (segment.startsWith("[") && segment.endsWith("]")) {
+      return segment.slice(1, -1).replace(/-/g, " ");
     }
-    return segment.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase());
+    return segment.replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase());
   };
 
   return (
@@ -41,12 +41,12 @@ export function SiteBreadcrumb() {
     <div className="w-full py-3 mt-16 md:mt-20 md:pb-6 woven-linen">
       <div className="container mx-auto">
         <Breadcrumb>
-          <BreadcrumbList className="text-colonial-navy font-medium">
+          <BreadcrumbList className="text-colonial-navy font-medium font-sans text-lg">
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
                 <Link
                   href="/"
-                  className="text-colonial-burgundy hover:text-colonial-burgundy/80"
+                  className="text-colonial-burgundy hover:text-colonial-burgundy/80 font-sans"
                 >
                   Home
                 </Link>
@@ -56,21 +56,21 @@ export function SiteBreadcrumb() {
 
             {pathSegments.map((segment, index) => {
               const isLastItem = index === pathSegments.length - 1;
-              const href = `/${pathSegments.slice(0, index + 1).join('/')}`;
+              const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
               const label = formatSegmentName(segment);
 
               return (
                 <React.Fragment key={segment}>
                   <BreadcrumbItem>
                     {isLastItem ? (
-                      <BreadcrumbPage className="font-bold">
+                      <BreadcrumbPage className="font-bold font-sans">
                         {label}
                       </BreadcrumbPage>
                     ) : (
                       <BreadcrumbLink asChild>
                         <Link
                           href={href}
-                          className="text-colonial-burgundy hover:text-colonial-burgundy/80"
+                          className="text-colonial-burgundy hover:text-colonial-burgundy/80 font-sans"
                         >
                           {label}
                         </Link>
