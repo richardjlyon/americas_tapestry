@@ -28,7 +28,7 @@ export function BlogCard({ post, className }: BlogCardProps) {
             fill
             role="card"
             className="object-cover transition-transform duration-500 hover:scale-105"
-            fallbackSrc="/images/placeholder.svg"
+            fallbackSrc="/images/placeholders/placeholder.svg"
             enableBlurPlaceholder={true}
           />
         ) : (

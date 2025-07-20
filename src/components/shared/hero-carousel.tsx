@@ -128,7 +128,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
-            backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
+            backgroundImage: "url('/images/placeholders/placeholder.svg?height=1080&width=1920')",
             filter: 'brightness(0.7)',
           }}
         />
@@ -173,7 +173,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
                   src={
                     tapestry.imagePath ||
                     tapestry.thumbnail ||
-                    `/placeholder.svg?height=1080&width=1920`
+                    `/images/placeholders/placeholder.svg?height=1080&width=1920`
                   }
                   alt={tapestry.title || 'Tapestry image'}
                   fill

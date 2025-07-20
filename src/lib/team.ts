@@ -1,4 +1,4 @@
-import { getAllContent, getAllNestedContent } from './content-core';
+import { getAllContent } from './content-core';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';

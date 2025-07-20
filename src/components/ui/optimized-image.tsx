@@ -39,7 +39,7 @@ export function OptimizedImage({
   src,
   alt,
   role = 'gallery',
-  fallbackSrc = '/images/placeholder.svg',
+  fallbackSrc = '/images/placeholders/placeholder.svg',
   showErrorMessage = false,
   errorClassName,
   enableBlurPlaceholder = true,
@@ -89,9 +89,9 @@ export function OptimizedImage({
       // Try fallback image first
       setCurrentSrc(fallbackSrc);
       setHasError(false);
-    } else if (currentSrc !== '/placeholder.svg') {
+    } else if (currentSrc !== '/images/placeholders/placeholder.svg') {
       // Try generic placeholder
-      setCurrentSrc('/placeholder.svg');
+      setCurrentSrc('/images/placeholders/placeholder.svg');
       setHasError(false);
     } else {
       // If all fallbacks fail, show error state
@@ -210,7 +210,7 @@ export function OptimizedImage({
 export function OptimizedImageWithFallback({
   src,
   alt,
-  fallbackSrc = '/images/placeholder.svg',
+  fallbackSrc = '/images/placeholders/placeholder.svg',
   ...props
 }: Omit<OptimizedImageProps, 'role' | 'showErrorMessage' | 'errorClassName' | 'enableBlurPlaceholder'>) {
   const [currentSrc, setCurrentSrc] = useState(src);

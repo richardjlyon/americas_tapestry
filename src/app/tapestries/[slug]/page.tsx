@@ -59,7 +59,7 @@ export default async function TapestryPage({
     ? getImagePath(tapestry.imagePath)
     : tapestry.thumbnail
       ? getImagePath(tapestry.thumbnail)
-      : "/placeholder.svg?height=600&width=800";
+      : "/images/placeholders/placeholder.svg?height=600&width=800";
 
   // Handle audio path
   const audioSrc = tapestry.audioPath

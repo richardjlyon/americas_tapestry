@@ -295,7 +295,7 @@ async function processContentDirectory(
  */
 export function convertImagePath(imagePath: string | undefined, contentType?: string): string {
   if (!imagePath || imagePath.trim() === '') {
-    return '/placeholder.svg';
+    return '/images/placeholders/placeholder.svg';
   }
   
   // If path is already using the /images/ format, leave it as is

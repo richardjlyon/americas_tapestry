@@ -1,6 +1,6 @@
+import { getAllContent, getContentBySlug } from './content-core';
 import fs from 'fs';
 import path from 'path';
-import { getAllContent, getContentBySlug } from './content-core';
 
 // Define the possible status values as an enum
 export type TapestryStatus =
@@ -243,11 +243,11 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
             thumbnail = imagePath;
           } else if (!thumbnail) {
             // Use placeholder as last resort
-            thumbnail = '/tapestry-placeholder.svg?height=600&width=800';
+            thumbnail = '/images/placeholders/tapestry-placeholder.svg?height=600&width=800';
           }
         } else {
           // Use placeholder as last resort
-          thumbnail = '/tapestry-placeholder.svg?height=600&width=800';
+          thumbnail = '/images/placeholders/tapestry-placeholder.svg?height=600&width=800';
         }
       }
 
@@ -318,11 +318,11 @@ export async function getTapestryBySlug(slug: string): Promise<TapestryEntry | n
           thumbnail = imagePath;
         } else {
           // Use placeholder as last resort
-          thumbnail = '/placeholder.svg';
+          thumbnail = '/images/placeholders/placeholder.svg';
         }
       } else {
         // Use placeholder as last resort
-        thumbnail = '/placeholder.svg';
+        thumbnail = '/images/placeholders/placeholder.svg';
       }
     }
 

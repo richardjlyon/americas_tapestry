@@ -16,25 +16,25 @@ const teamMembers: TeamMember[] = [
     name: 'Jane Doe',
     role: 'Project Director',
     bio: "Jane is the visionary behind America's Tapestry, bringing over 15 years of experience in textile arts and cultural preservation.",
-    image: '/placeholder.svg?height=400&width=400',
+    image: '/images/placeholders/placeholder.svg?height=400&width=400',
   },
   {
     name: 'Robert Smith',
     role: 'Lead Historian',
     bio: 'Robert specializes in American cultural history and ensures historical accuracy across all tapestry panels.',
-    image: '/placeholder.svg?height=400&width=400',
+    image: '/images/placeholders/placeholder.svg?height=400&width=400',
   },
   {
     name: 'Maria Rodriguez',
     role: 'Master Weaver',
     bio: 'Maria oversees the creation of each tapestry, bringing traditional techniques and innovative approaches to the project.',
-    image: '/placeholder.svg?height=400&width=400',
+    image: '/images/placeholders/placeholder.svg?height=400&width=400',
   },
   {
     name: 'David Chen',
     role: 'Community Outreach',
     bio: 'David coordinates with communities across America to ensure diverse perspectives are represented in the tapestries.',
-    image: '/placeholder.svg?height=400&width=400',
+    image: '/images/placeholders/placeholder.svg?height=400&width=400',
   },
 ];
 
@@ -60,7 +60,7 @@ export function Team() {
           >
             <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-colonial-navy/10 flex-shrink-0 mx-auto sm:mx-0 relative">
               <Image
-                src={getImagePath(member.image || '/placeholder.svg')}
+                src={getImagePath(member.image || '/images/placeholders/placeholder.svg')}
                 alt={member.name}
                 fill
                 sizes={getImageSizes('thumbnail')}

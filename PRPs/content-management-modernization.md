@@ -344,7 +344,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         excerpt: item.frontmatter.excerpt || '',
         category: category.slug,
         featured: item.frontmatter.featured || false,
-        image: item.frontmatter.image || '/placeholder.svg',
+        image: item.frontmatter.image || '/images/placeholders/placeholder.svg',
         content: item.content,
         author: item.frontmatter.author || null,
         videoUrl: item.frontmatter.videoUrl || undefined,

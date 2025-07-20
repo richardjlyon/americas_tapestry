@@ -15,7 +15,7 @@ export default function AboutPage() {
         {/* Hero image */}
         <div className="max-w-5xl mx-auto mb-6 md:mb-12 relative rounded-lg overflow-hidden shadow-xl">
           <Image
-            src="/about-us.webp"
+            src="/images/content/about-us.webp"
             alt="America's Tapestry - Collaborative embroidery project"
             width={1200}
             height={600}

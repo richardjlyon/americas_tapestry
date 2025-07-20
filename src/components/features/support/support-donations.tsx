@@ -119,7 +119,7 @@ export function SupportDonations() {
               and then type "America's Tapestry" in the "Other" field.
               <div className="relative my-4 aspect-video overflow-hidden rounded-md border border-colonial-navy/10 shadow-lg">
                 <Image
-                  src="/donation-example.png"
+                  src="/images/content/donation-example.png"
                   alt="Example of donation form showing 'Designation Other' selected and 'America's Tapestry' typed in the field."
                   fill
                   className="object-contain"

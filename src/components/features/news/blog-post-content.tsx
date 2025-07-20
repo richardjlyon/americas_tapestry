@@ -41,7 +41,7 @@ export function BlogPostContent({ post, contentHtml }: BlogPostContentProps) {
             className="w-full aspect-video"
             controls
             preload="metadata"
-            poster={post.image || '/placeholder.svg'}
+            poster={post.image || '/images/placeholders/placeholder.svg'}
           >
             <source src={post.videoUrl} type="video/mp4" />
             <track kind="captions" src="#" label="English" />

@@ -23,7 +23,7 @@ export function MemberCard({
   width = 'two-thirds',
   className 
 }: MemberCardProps) {
-  const placeholderPath = `/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
+  const placeholderPath = `/images/placeholders/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
   
   // State management for image loading and content processing
   // Don't load images for:
@@ -42,9 +42,9 @@ export function MemberCard({
   const handleImageError = () => {
     console.warn(`Image failed to load: ${imgSrc} for ${member.name}`);
     
-    if (imgSrc !== '/placeholder-user.jpg' && imgSrc !== placeholderPath) {
+    if (imgSrc !== '/images/placeholders/placeholder-user.jpg' && imgSrc !== placeholderPath) {
       // Try generic user placeholder first
-      setImgSrc('/placeholder-user.jpg');
+      setImgSrc('/images/placeholders/placeholder-user.jpg');
     } else if (imgSrc !== placeholderPath) {
       // Try the specific placeholder
       setImgSrc(placeholderPath);
@@ -189,7 +189,7 @@ export function MemberCard({
                   />
                 ) : (
                   <Image
-                    src="/placeholder-user.jpg"
+                    src="/images/placeholders/placeholder-user.jpg"
                     alt={`${member.name} - placeholder`}
                     fill
                     sizes={getImageSizes('thumbnail')}

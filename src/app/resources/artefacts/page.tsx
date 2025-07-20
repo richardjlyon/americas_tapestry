@@ -43,7 +43,7 @@ const artefacts: Artefact[] = [
     origin: 'Massachusetts',
     institution: 'Museum of Fine Arts, Boston',
     institutionUrl: 'https://www.mfa.org',
-    image: '/placeholder.svg?height=500&width=600&text=Historical+Sampler',
+    image: '/images/placeholders/placeholder.svg?height=500&width=600&text=Historical+Sampler',
     category: 'textiles',
     relatedColony: 'Massachusetts',
   },
@@ -55,7 +55,7 @@ const artefacts: Artefact[] = [
     origin: 'Virginia',
     institution: 'Colonial Williamsburg Foundation',
     institutionUrl: 'https://www.colonialwilliamsburg.org',
-    image: '/placeholder.svg?height=500&width=600&text=Colonial+Petticoat',
+    image: '/images/placeholders/placeholder.svg?height=500&width=600&text=Colonial+Petticoat',
     category: 'textiles',
     relatedColony: 'Virginia',
   },
@@ -67,7 +67,7 @@ const artefacts: Artefact[] = [
     origin: 'South Carolina',
     institution: 'South Carolina Historical Society',
     institutionUrl: 'https://schistory.org',
-    image: '/placeholder.svg?height=500&width=600&text=Historical+Letter',
+    image: '/images/placeholders/placeholder.svg?height=500&width=600&text=Historical+Letter',
     category: 'documents',
     relatedColony: 'South Carolina',
   },
@@ -79,7 +79,7 @@ const artefacts: Artefact[] = [
     origin: 'Pennsylvania',
     institution: 'Winterthur Museum',
     institutionUrl: 'https://www.winterthur.org',
-    image: '/placeholder.svg?height=500&width=600&text=Flax+Hackle',
+    image: '/images/placeholders/placeholder.svg?height=500&width=600&text=Flax+Hackle',
     category: 'tools',
     relatedColony: 'Pennsylvania',
   },
@@ -91,7 +91,7 @@ const artefacts: Artefact[] = [
     origin: 'New York',
     institution: 'Metropolitan Museum of Art',
     institutionUrl: 'https://www.metmuseum.org',
-    image: '/placeholder.svg?height=500&width=600&text=Colonial+Portrait',
+    image: '/images/placeholders/placeholder.svg?height=500&width=600&text=Colonial+Portrait',
     category: 'artwork',
     relatedColony: 'New York',
   },
@@ -103,7 +103,7 @@ const artefacts: Artefact[] = [
     origin: 'Northeastern Woodland Tribes',
     institution: 'National Museum of the American Indian',
     institutionUrl: 'https://americanindian.si.edu',
-    image: '/placeholder.svg?height=500&width=600&text=Wampum+Belt',
+    image: '/images/placeholders/placeholder.svg?height=500&width=600&text=Wampum+Belt',
     category: 'artwork',
     relatedColony: 'New York',
   },
@@ -212,7 +212,7 @@ function ArtefactCard({ artefact }: { artefact: Artefact }) {
     <Card className="bg-white shadow-md border border-colonial-navy/10 h-full flex flex-col overflow-hidden">
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
-          src={getImagePath(artefact.image || '/placeholder.svg')}
+          src={getImagePath(artefact.image || '/images/placeholders/placeholder.svg')}
           alt={artefact.title}
           fill
           sizes={getImageSizes('card')}
