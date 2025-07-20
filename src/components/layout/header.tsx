@@ -71,7 +71,7 @@ export function Header() {
             priority
           />
         </div>
-        <span className="ml-2.5 font-serif font-bold text-lg sm:text-2xl md:text-3xl lg:text-4xl text-colonial-parchment">
+        <span className="ml-2.5 font-serif font-bold text-lg sm:text-2xl md:text-3xl  text-colonial-parchment">
           America's Tapestry
         </span>
       </Link>
