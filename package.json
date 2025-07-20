@@ -4,6 +4,9 @@
     "description": "A visual exploration of cultural diversity across the American landscape",
     "private": true,
     "packageManager": "npm@10.0.0",
+    "engines": {
+        "node": ">=20.0.0"
+    },
     "scripts": {
         "dev": "next dev",
         "build": "next build",
