@@ -41,6 +41,7 @@ export interface TapestryEntry {
 const tapestryDirectory = path.join(process.cwd(), 'content/tapestries');
 
 // Helper function to find image files in a directory
+// Updated to prefer optimized responsive variants over original large files
 function findImageInDirectory(tapestrySlug: string): string | null {
   // Look in the public/images/tapestries directory instead of content directory
   const publicImagePath = path.join(process.cwd(), 'public/images/tapestries', tapestrySlug);
@@ -49,31 +50,87 @@ function findImageInDirectory(tapestrySlug: string): string | null {
 
   const files = fs.readdirSync(publicImagePath);
 
-  // Look for main image file (typically has "main" in the filename)
-  const mainImage = files.find((file) => {
-    const ext = path.extname(file).toLowerCase();
-    return (
-      ['.jpg', '.jpeg', '.png', '.webp'].includes(ext) &&
-      file.toLowerCase().includes('main')
-    );
-  });
+  // Priority order for formats: AVIF > WebP > original files
+  const formatPriority = ['.avif', '.webp', '.jpg', '.jpeg', '.png'];
+  
+  // Look for main image file, preferring optimized formats
+  for (const format of formatPriority) {
+    // First try to find responsive variant (1024w is good balance for main images)
+    const responsiveMainImage = files.find((file) => {
+      const ext = path.extname(file).toLowerCase();
+      return (
+        ext === format &&
+        file.toLowerCase().includes('main') &&
+        file.includes('-1024w')
+      );
+    });
 
-  if (mainImage) {
-    // Construct path for public images directory
-    return `/images/tapestries/${tapestrySlug}/${mainImage}`;
+    if (responsiveMainImage) {
+      return `/images/tapestries/${tapestrySlug}/${responsiveMainImage}`;
+    }
+
+    // Fall back to original main image if no responsive variant
+    const originalMainImage = files.find((file) => {
+      const ext = path.extname(file).toLowerCase();
+      return (
+        ext === format &&
+        file.toLowerCase().includes('main') &&
+        !file.includes('-640w') &&
+        !file.includes('-1024w') &&
+        !file.includes('-1920w') &&
+        !file.includes('-2560w') &&
+        !file.includes('-400w') &&
+        !file.includes('-1280w') &&
+        !file.includes('-200w') &&
+        !file.includes('-600w') &&
+        !file.includes('-300w') &&
+        !file.includes('-900w')
+      );
+    });
+
+    if (originalMainImage) {
+      return `/images/tapestries/${tapestrySlug}/${originalMainImage}`;
+    }
   }
 
-  // If no main image found, return the first image file
-  const imageFile = files.find((file) => {
-    const ext = path.extname(file).toLowerCase();
-    return (
-      ['.jpg', '.jpeg', '.png', '.webp'].includes(ext) &&
-      !file.toLowerCase().includes('thumbnail')
-    );
-  });
+  // If no main image found, look for any non-thumbnail image with format priority
+  for (const format of formatPriority) {
+    // Try responsive variants first
+    const responsiveImage = files.find((file) => {
+      const ext = path.extname(file).toLowerCase();
+      return (
+        ext === format &&
+        !file.toLowerCase().includes('thumbnail') &&
+        file.includes('-1024w')
+      );
+    });
 
-  if (imageFile) {
-    return `/images/tapestries/${tapestrySlug}/${imageFile}`;
+    if (responsiveImage) {
+      return `/images/tapestries/${tapestrySlug}/${responsiveImage}`;
+    }
+
+    // Fall back to original files
+    const originalImage = files.find((file) => {
+      const ext = path.extname(file).toLowerCase();
+      return (
+        ext === format &&
+        !file.toLowerCase().includes('thumbnail') &&
+        !file.includes('-640w') &&
+        !file.includes('-1024w') &&
+        !file.includes('-1920w') &&
+        !file.includes('-2560w') &&
+        !file.includes('-400w') &&
+        !file.includes('-1280w') &&
+        !file.includes('-200w') &&
+        !file.includes('-600w') &&
+        !file.includes('-300w') &&
+        !file.includes('-900w')
+      );
+    });
+
+    if (originalImage) {
+      return `/images/tapestries/${tapestrySlug}/${originalImage}`;
+    }
   }
 
   return null;
@@ -145,23 +202,62 @@ export function getAllTapestries(): TapestryEntry[] {
       const audioPath = findAudioInDirectory(slug);
 
       // Construct the thumbnail path - either from frontmatter or by convention
+      // Updated to prefer optimized responsive variants over original files
       let thumbnail = data['thumbnail'];
       if (!thumbnail) {
         // Look for thumbnail in the public images directory
         const publicImagePath = path.join(process.cwd(), 'public/images/tapestries', slug);
         
         if (fs.existsSync(publicImagePath)) {
-          const thumbnailFile = fs
-            .readdirSync(publicImagePath)
-            .find((file) => file.toLowerCase().includes('thumbnail'));
+          const files = fs.readdirSync(publicImagePath);
+          const formatPriority = ['.avif', '.webp', '.jpg', '.jpeg', '.png'];
+          
+          // Find optimized thumbnail variants first
+          for (const format of formatPriority) {
+            // Try responsive thumbnail variants (640w is good for thumbnails)
+            const responsiveThumbnail = files.find((file) => {
+              const ext = path.extname(file).toLowerCase();
+              return (
+                ext === format &&
+                file.toLowerCase().includes('thumbnail') &&
+                file.includes('-640w')
+              );
+            });
 
-          if (thumbnailFile) {
-            // Use the slug which is also the folder name
-            thumbnail = `/images/tapestries/${slug}/${thumbnailFile}`;
-          } else if (imagePath) {
-            // Use main image as fallback if available
+            if (responsiveThumbnail) {
+              thumbnail = `/images/tapestries/${slug}/${responsiveThumbnail}`;
+              break;
+            }
+
+            // Fall back to original thumbnail
+            const originalThumbnail = files.find((file) => {
+              const ext = path.extname(file).toLowerCase();
+              return (
+                ext === format &&
+                file.toLowerCase().includes('thumbnail') &&
+                !file.includes('-640w') &&
+                !file.includes('-1024w') &&
+                !file.includes('-1920w') &&
+                !file.includes('-2560w') &&
+                !file.includes('-400w') &&
+                !file.includes('-1280w') &&
+                !file.includes('-200w') &&
+                !file.includes('-600w') &&
+                !file.includes('-300w') &&
+                !file.includes('-900w')
+              );
+            });
+
+            if (originalThumbnail) {
+              thumbnail = `/images/tapestries/${slug}/${originalThumbnail}`;
+              break;
+            }
+          }
+
+          // If no thumbnail found, use main image as fallback
+          if (!thumbnail && imagePath) {
             thumbnail = imagePath;
-          } else {
+          } else if (!thumbnail) {
             // Use placeholder as last resort
             thumbnail = '/tapestry-placeholder.svg?height=600&width=800';
           }

@@ -60,7 +60,7 @@ The panel honors the Edenton Tea Party, a significant moment early in the Revolu
 Momon's illustration depicts a group of women gathered outside the Chowan County Courthouse in 1774 debating and discussing a
 document symbolizing their political resolve. The event is considered one of the earliest recorded instances of organized political actions by women in the American colonies.
 
-![North Carolina Tapestry](/images/tapestries/north-carolina/north-carolina-tapestry-main.jpg)
+![North Carolina Tapestry](/images/tapestries/north-carolina/north-carolina-tapestry-main-1024w.webp)
 
 The Edenton Tea Party was organized by Penelope Barker and involved 51 women who signed a resolution to boycott British goods including
 tea and textiles. This act was in protest of the Tea Act of 1773 and other oppressive measures imposed by the British Crown. The women

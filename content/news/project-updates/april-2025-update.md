@@ -30,7 +30,7 @@ The state of the art classroom, just off the museum's main lobby, is the perfect
 
 This month we are thrilled to present [the Connecticut Panel](tapestries/connecticut), depicting the various activities of the "Provision State." In the foreground, editor Hannah Bunce Watson is shown at work on The Connecticut Courant. Upon her husband's death, Hannah inherited the newspaper and became one of the first female editors in chief at just 27 years old in 1778. She used the newspaper to spread information about the Revolution & to further the Patriot cause.
 
-![The Connecticut Panel](/images/tapestries/connecticut/connecticut-tapestry.jpeg)
+![The Connecticut Panel](/images/tapestries/connecticut/connecticut-tapestry-1024w.webp)
 
 Additional patriotic activities can be seen throughout the panel, highlighting the cannon foundries of Salisbury, marble quarries in Canaan, and saltworks in East Haven. The interracial 7th Connecticut unit, featuring soldier Prince Simbo, is depicted in the upper righthand corner. Simbo's powder horn is now in the collection of the [Smithsonian National Museum of African American History and Culture](https://www.si.edu/object/powder-horn-carved-name-revolutionary-war-soldier-prince-simbo%3Anmaahc_2009.14.1).
 

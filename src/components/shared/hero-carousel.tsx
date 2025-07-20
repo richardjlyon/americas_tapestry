@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { ColonialGoldButton } from '@/components/ui/colonial-buttons';
 import useEmblaCarousel from 'embla-carousel-react';
 import { cn } from '@/lib/utils';
 import type { TapestryEntry } from '@/lib/tapestries';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 interface HeroCarouselProps {
   tapestries: TapestryEntry[];
@@ -126,7 +126,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
               className="embla__slide h-full relative flex-[0_0_100%]"
             >
               <div className="absolute inset-0 overflow-hidden">
-                <Image
+                <OptimizedImage
                   src={
                     tapestry.imagePath ||
                     tapestry.thumbnail ||
@@ -134,7 +134,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
                   }
                   alt={tapestry.title || 'Tapestry image'}
                   fill
-                  sizes="100vw"
+                  role="hero"
                   className="absolute inset-0 object-cover transition-transform duration-10000 ease-out"
                   style={{
                     filter: 'brightness(0.9)',
@@ -144,7 +144,8 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
                         : 'scale(1)',
                   }}
                   priority={index === 0}
-                  quality={85}
+                  quality={75}
+                  enableBlurPlaceholder={true}
                 />
               </div>
               <div

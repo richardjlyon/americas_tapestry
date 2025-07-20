@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { Maximize2, Minimize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getImagePath } from '@/lib/image-utils';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 interface FullImageViewerProps {
   imageSrc: string;
@@ -36,26 +36,28 @@ export function FullImageViewer({
       >
         {isFullView ? (
           <div className="relative w-full">
-            <Image
+            <OptimizedImage
               src={getImagePath(imageSrc)}
               alt={altText}
               width={1920}
               height={1080}
               className="w-full h-auto"
-              sizes="100vw"
+              role="full"
               priority
-              unoptimized
+              quality={85}
+              enableBlurPlaceholder={true}
             />
           </div>
         ) : (
-          <Image
+          <OptimizedImage
             src={getImagePath(imageSrc)}
             alt={altText}
             fill
             className="object-cover"
-            sizes="100vw"
+            role="feature"
             priority
-            unoptimized
+            quality={85}
+            enableBlurPlaceholder={true}
           />
         )}
 

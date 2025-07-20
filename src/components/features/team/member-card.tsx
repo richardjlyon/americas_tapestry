@@ -83,7 +83,6 @@ export function MemberCard({
                 objectPosition: member.imagePosition || 'center',
               }}
               onError={handleImageError}
-              unoptimized
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gray-100">
@@ -173,8 +172,7 @@ export function MemberCard({
                       objectPosition: member.imagePosition || 'center',
                     }}
                     priority
-                    unoptimized
-                    onError={handleImageError}
+                          onError={handleImageError}
                   />
                 ) : (
                   <Image
@@ -183,8 +181,7 @@ export function MemberCard({
                     fill
                     sizes={getImageSizes('thumbnail')}
                     className="object-cover"
-                    unoptimized
-                  />
+                        />
                 )}
               </div>
             </div>
@@ -235,7 +232,6 @@ export function MemberCard({
                 objectPosition: member.imagePosition || 'center',
               }}
               onError={handleImageError}
-              unoptimized
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gray-100">

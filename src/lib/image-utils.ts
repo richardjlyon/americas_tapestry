@@ -190,3 +190,130 @@ export function getContextualBlurPlaceholder(imagePath: string): string {
   const base64 = Buffer.from(svg).toString('base64');
   return `data:image/svg+xml;base64,${base64}`;
 }
+
+/**
+ * Generate responsive image srcSet for different sizes and formats
+ * Part of Phase 2 Performance Optimization
+ * 
+ * @param basePath - Base image path without extension
+ * @param role - Image role determining which sizes to generate
+ * @param format - Image format (webp, avif, jpg)
+ * @returns srcSet string for the specified format
+ */
+export function getResponsiveImageSrcSet(
+  basePath: string, 
+  role: 'hero' | 'gallery' | 'thumbnail' | 'card',
+  format: 'webp' | 'avif' | 'jpg' = 'webp'
+): string {
+  const sizes = {
+    hero: [640, 1024, 1920, 2560],
+    gallery: [400, 640, 1024, 1280],
+    thumbnail: [200, 400, 600],
+    card: [300, 600, 900]
+  };
+  
+  const imageSizes = sizes[role];
+  const baseName = basePath.replace(/\.[^/.]+$/, ''); // Remove extension
+  
+  // Generate srcSet for the specified format
+  const srcSet = imageSizes
+    .map(size => `${baseName}-${size}w.${format} ${size}w`)
+    .join(', ');
+    
+  return srcSet;
+}
+
+/**
+ * Get complete responsive image sources for modern picture element
+ * Provides AVIF, WebP, and fallback sources with appropriate srcSets
+ * 
+ * @param basePath - Base image path
+ * @param role - Image role for sizing
+ * @returns Object with AVIF, WebP, fallback sources and sizes
+ */
+export function getResponsiveImageSources(basePath: string, role: 'hero' | 'gallery' | 'thumbnail' | 'card') {
+  const sizes = getImageSizes(role);
+  
+  return {
+    avif: getResponsiveImageSrcSet(basePath, role, 'avif'),
+    webp: getResponsiveImageSrcSet(basePath, role, 'webp'),
+    fallback: basePath,
+    sizes
+  };
+}
+
+/**
+ * Get mobile-optimized image path
+ * Returns smaller, more compressed variants for mobile devices
+ * Part of Phase 4 Mobile Optimization
+ * 
+ * @param imagePath - Original image path
+ * @param role - Image role for appropriate sizing
+ * @returns Optimized path for mobile devices
+ */
+export function getMobileOptimizedPath(imagePath: string, role: 'hero' | 'gallery' | 'thumbnail' | 'card' = 'gallery'): string {
+  // For mobile, prefer smaller, more compressed variants
+  if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+    const baseName = imagePath.replace(/\.[^/.]+$/, '');
+    
+    // Choose appropriate mobile size based on role
+    const mobileSize = role === 'hero' ? '1024w' : 
+                     role === 'gallery' ? '640w' :
+                     role === 'card' ? '600w' : '400w';
+    
+    return `${baseName}-${mobileSize}.webp`;
+  }
+  return imagePath;
+}
+
+/**
+ * Check if responsive variants exist for an image
+ * Helps determine if we should use responsive loading or fallback
+ * 
+ * @param imagePath - Path to check for variants
+ * @param role - Image role to check appropriate sizes
+ * @returns boolean indicating if responsive variants are available
+ */
+export function hasResponsiveVariants(imagePath: string, _role?: 'hero' | 'gallery' | 'thumbnail' | 'card'): boolean {
+  // This is a simplified check - in production you might want to actually verify file existence
+  // For now, we assume variants exist for tapestry images since we generated them
+  const baseName = imagePath.replace(/\.[^/.]+$/, '');
+  const isOriginalTapestryImage = baseName.includes('/tapestries/') && 
+    !baseName.includes('-640w') && 
+    !baseName.includes('-1024w') &&
+    !baseName.includes('-1920w') &&
+    !baseName.includes('-2560w') &&
+    !baseName.includes('-400w') &&
+    !baseName.includes('-1280w') &&
+    !baseName.includes('-200w') &&
+    !baseName.includes('-600w') &&
+    !baseName.includes('-300w') &&
+    !baseName.includes('-900w');
+  
+  // Role parameter is available for future use when we might want different logic per role
+  return isOriginalTapestryImage;
+}
+
+/**
+ * Get the optimal image format based on browser support
+ * Returns the best supported format for the current browser
+ * 
+ * @returns Preferred image format
+ */
+export function getOptimalImageFormat(): 'avif' | 'webp' | 'jpg' {
+  if (typeof window === 'undefined') return 'webp'; // Default for SSR
+  
+  // Check for AVIF support
+  const canvas = document.createElement('canvas');
+  canvas.width = 1;
+  canvas.height = 1;
+  const avifSupported = canvas.toDataURL('image/avif').indexOf('data:image/avif') === 0;
+  
+  if (avifSupported) return 'avif';
+  
+  // Check for WebP support
+  const webpSupported = canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+  if (webpSupported) return 'webp';
+  
+  return 'jpg';
+}

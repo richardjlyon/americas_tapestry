@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowUpRight, Headphones } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { TapestryEntry } from '@/lib/tapestries';
-import { getImagePath, getImageSizes } from '@/lib/image-utils';
+import { getImagePath } from '@/lib/image-utils';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 // Status color mapping
 const statusColors = {
@@ -41,13 +41,14 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
           )}
         />
         {tapestry.thumbnail ? (
-          <Image
+          <OptimizedImage
             src={getImagePath(tapestry.thumbnail)}
             alt={tapestry.title}
             fill
-            sizes={getImageSizes('gallery')}
+            role="gallery"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
-            unoptimized
+            enableBlurPlaceholder={true}
+            priority={false}
           />
         ) : (
           <div className="h-full w-full flex items-center justify-center bg-gray-100">
