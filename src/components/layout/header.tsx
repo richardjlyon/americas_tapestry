@@ -71,7 +71,7 @@ export function Header() {
             priority
           />
         </div>
-        <span className="ml-2.5 font-sans font-bold text-lg sm:text-2xl text-colonial-parchment">
+        <span className="ml-2.5 font-serif font-bold text-lg sm:text-2xl md:text-3xl lg:text-4xl text-colonial-parchment">
           America's Tapestry
         </span>
       </Link>
@@ -79,7 +79,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-end h-16 md:h-20">
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 lg:space-x-12">
+          <nav className="hidden xl:flex items-center space-x-8 2xl:space-x-12">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
@@ -95,7 +95,7 @@ export function Header() {
           <Button
             variant="colonial-gold"
             asChild
-            className="hidden md:flex text-sm py-1.5 px-4 ml-4 font-sans"
+            className="hidden xl:flex text-sm py-1.5 px-4 ml-8 font-sans"
           >
             <Link href="/support">Support our project</Link>
           </Button>
@@ -103,7 +103,7 @@ export function Header() {
           {/* Mobile Menu Toggle Button */}
           <button
             type="button"
-            className="md:hidden p-2 z-20 rounded-md text-colonial-parchment focus:outline-none focus:ring-2 focus:ring-inset focus:ring-colonial-gold"
+            className="xl:hidden p-2 z-20 rounded-md text-colonial-parchment focus:outline-none focus:ring-2 focus:ring-inset focus:ring-colonial-gold"
             onClick={toggleMobileMenu}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
@@ -124,7 +124,7 @@ export function Header() {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 bg-colonial-burgundy z-10 transition-transform duration-300 transform md:hidden",
+          "fixed inset-0 bg-colonial-burgundy z-10 transition-transform duration-300 transform xl:hidden",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
