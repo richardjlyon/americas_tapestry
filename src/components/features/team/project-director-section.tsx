@@ -3,7 +3,7 @@ import { MemberCard } from '@/components/features/team/member-card';
 import { getProjectDirector } from '@/lib/team';
 
 export async function ProjectDirectorSection() {
-  const projectDirector = getProjectDirector();
+  const projectDirector = await getProjectDirector();
 
   return (
     projectDirector && (

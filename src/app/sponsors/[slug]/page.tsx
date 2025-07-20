@@ -9,7 +9,7 @@ import { getImagePath, getImageSizes } from "@/lib/image-utils";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  const sponsors = getAllSponsors();
+  const sponsors = await getAllSponsors();
 
   return sponsors.map((sponsor) => ({
     slug: sponsor.slug,

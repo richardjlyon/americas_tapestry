@@ -7,9 +7,9 @@ import {
 } from '@/lib/blog';
 import { PageSection } from '@/components/ui/page-section';
 
-export default function NewsPage() {
-  const allPosts = getAllBlogPosts();
-  const featuredPosts = getFeaturedBlogPosts();
+export default async function NewsPage() {
+  const allPosts = await getAllBlogPosts();
+  const featuredPosts = await getFeaturedBlogPosts();
 
   return (
     <>

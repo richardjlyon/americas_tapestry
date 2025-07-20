@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
+import { getAllContent, getContentBySlug } from './content-core';
 
 // Define the possible status values as an enum
 export type TapestryStatus =
@@ -38,7 +38,8 @@ export interface TapestryEntry {
   timelineEvents?: TimelineEvent[];
 }
 
-const tapestryDirectory = path.join(process.cwd(), 'content/tapestries');
+// Keep this for backward compatibility with image/audio finding functions (used in helper functions)
+// const tapestryDirectory = path.join(process.cwd(), 'content/tapestries');
 
 // Helper function to find image files in a directory
 // Updated to prefer optimized responsive variants over original large files
@@ -162,34 +163,17 @@ function findAudioInDirectory(tapestrySlug: string): string | null {
   return null;
 }
 
-export function getAllTapestries(): TapestryEntry[] {
-  // Get all directories in the tapestry directory
-  const tapestryFolders = fs
-    .readdirSync(tapestryDirectory, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => dirent.name);
+export async function getAllTapestries(): Promise<TapestryEntry[]> {
+  try {
+    // Use content-core to get all tapestry content
+    const tapestryContent = await getAllContent('tapestries');
 
-  // Read each folder and parse its index.md file
-  const tapestries = tapestryFolders
-    .map((folderName) => {
-      // Use the folder name as the slug
-      const slug = folderName;
+    const tapestries: TapestryEntry[] = [];
 
-      // Get the full path to the folder
-      const folderPath = path.join(tapestryDirectory, folderName);
-
-      // Read the index.md file
-      const indexPath = path.join(folderPath, 'index.md');
-
-      if (!fs.existsSync(indexPath)) {
-        console.warn(`No index.md found in ${folderPath}`);
-        return null;
-      }
-
-      const fileContents = fs.readFileSync(indexPath, 'utf8');
-
-      // Parse the frontmatter
-      const { data, content } = matter(fileContents);
+    for (const item of tapestryContent) {
+      const data = item.frontmatter;
+      const content = item.content;
+      const slug = item.slug;
 
       // Validate status or set default
       const status =
@@ -268,7 +252,7 @@ export function getAllTapestries(): TapestryEntry[] {
       }
 
       // Return the tapestry entry
-      return {
+      tapestries.push({
         slug,
         title: data['title'],
         summary: data['summary'],
@@ -283,25 +267,28 @@ export function getAllTapestries(): TapestryEntry[] {
         colony: data['colony'] || null,
         status,
         timelineEvents: data['timelineEvents'] || [],
-      } as TapestryEntry;
-    })
-    .filter(Boolean) as TapestryEntry[];
+      } as TapestryEntry);
+    }
 
-  // Sort tapestries by title
-  return tapestries.sort((a, b) => a.title.localeCompare(b.title));
+    // Sort tapestries by title
+    return tapestries.sort((a, b) => a.title.localeCompare(b.title));
+  } catch (error) {
+    console.error('Error getting all tapestries:', error);
+    return [];
+  }
 }
 
-export function getTapestryBySlug(slug: string): TapestryEntry | null {
+export async function getTapestryBySlug(slug: string): Promise<TapestryEntry | null> {
   try {
-    const folderPath = path.join(tapestryDirectory, slug);
-    const indexPath = path.join(folderPath, 'index.md');
+    // Use content-core to get the specific tapestry content
+    const tapestryItem = await getContentBySlug('tapestries', slug);
 
-    if (!fs.existsSync(indexPath)) {
+    if (!tapestryItem) {
       return null;
     }
 
-    const fileContents = fs.readFileSync(indexPath, 'utf8');
-    const { data, content } = matter(fileContents);
+    const data = tapestryItem.frontmatter;
+    const content = tapestryItem.content;
 
     // Validate status or set default
     const status =
@@ -362,8 +349,8 @@ export function getTapestryBySlug(slug: string): TapestryEntry | null {
 }
 
 // Add this debug function at the end of the file
-export function debugTapestryColonies() {
-  const tapestries = getAllTapestries();
+export async function debugTapestryColonies() {
+  const tapestries = await getAllTapestries();
   console.log('All tapestries with their slugs:');
   tapestries.forEach((tapestry) => {
     console.log(

@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { PageSection } from '@/components/ui/page-section';
 
 export async function generateStaticParams() {
-  const groups = getTeamGroups();
+  const groups = await getTeamGroups();
   return groups.map((group) => ({
     group: group.slug,
   }));

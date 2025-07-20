@@ -6,7 +6,7 @@ import type { TeamMember } from '@/lib/team';
 import { useState, useEffect } from 'react';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { getImagePath, getImageSizes } from '@/lib/image-utils';
+import { getImageSizes } from '@/lib/image-utils';
 import { StitchingGroupPlaceholder } from './stitching-group-placeholder';
 import { ContentCard } from '@/components/ui/content-card';
 
@@ -26,9 +26,15 @@ export function MemberCard({
   const placeholderPath = `/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
   
   // State management for image loading and content processing
-  const [imgSrc, setImgSrc] = useState<string>(
-    member['imagePath']?.trim() ? getImagePath(member['imagePath']) : placeholderPath,
-  );
+  // Don't load images for:
+  // 1. Stitching groups
+  // 2. Group index files (these have description but no role, or slug matches group name)
+  const isGroupIndexFile = member['description'] && !member['role'];
+  const shouldUseImage = member.groupSlug !== 'stitching-groups' && !isGroupIndexFile;
+  const teamImagePath = shouldUseImage 
+    ? `/images/team/${member.groupSlug}/${member.slug}.jpg`
+    : placeholderPath;
+  const [imgSrc, setImgSrc] = useState<string>(teamImagePath);
   const [imgError, setImgError] = useState(false);
   const [contentHtml, setContentHtml] = useState('');
 

@@ -1,6 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import { getAllNestedContent, convertImagePath, extractDateFromFilename } from './content-core';
 
 export interface BlogPost {
   slug: string;
@@ -70,120 +68,49 @@ export const blogCategories: CategoryInfo[] = [
   },
 ];
 
-const newsDirectory = path.join(process.cwd(), 'content/news');
-
-// Extract slug from filename (remove date prefix)
-function slugFromFilename(filename: string): string {
-  // Remove the YYMMDD- prefix and .md extension
-  const slug = filename.replace(/^\d{6}-/, '').replace(/\.md$/, '');
-  console.log(`Slug extraction: ${filename} -> ${slug}`);
-  return slug;
-}
-
-// Function to convert image paths to the public directory structure
-function convertImagePath(imagePath: string | undefined): string {
-  // Handle empty or undefined image paths with a placeholder
-  if (!imagePath || imagePath.trim() === '') {
-    return '/placeholder.svg';
-  }
-  
-  // If path is already using the new /images/ format, leave it as is
-  if (imagePath.startsWith('/images/')) {
-    return imagePath;
-  }
-  
-  // If the path starts with /content/, convert to public directory format
-  if (imagePath.startsWith('/content/')) {
-    // Try to infer the content directory from the path
-    const pathParts = imagePath.split('/');
-    if (pathParts.length >= 3) {
-      const contentType = pathParts[2]; // e.g., 'news', 'tapestries', etc.
-      return imagePath.replace(`/content/${contentType}/`, `/images/${contentType}/`);
-    }
-    
-    // If we can't infer the content type, use a general replacement
-    return imagePath.replace('/content/', '/images/');
-  }
-  
-  // For relative paths, prefix with /images/news/
-  if (!imagePath.startsWith('/') && !imagePath.startsWith('http')) {
-    // Make sure we don't add redundant 'images/' prefix
-    if (imagePath.startsWith('images/')) {
-      return `/images/news/${imagePath.replace('images/', '')}`;
-    }
-    return `/images/news/${imagePath}`;
-  }
-  
-  // If it's an absolute path to a placeholder or external URL, leave it as is
-  return imagePath;
-}
 
 // Get all blog posts across all categories
-export function getAllBlogPosts(): BlogPost[] {
-  // Ensure the directory exists
-  if (!fs.existsSync(newsDirectory)) {
-    console.warn(`News directory not found: ${newsDirectory}`);
-    return [];
-  }
+export async function getAllBlogPosts(): Promise<BlogPost[]> {
+  try {
+    // Get category slugs for nested content processing
+    const categoryList = blogCategories.map(cat => cat.slug);
+    
+    // Use the new content-core utility to get all nested content
+    const allContentItems = await getAllNestedContent('news', categoryList);
 
-  const allPosts: BlogPost[] = [];
+    const allPosts: BlogPost[] = [];
 
-  // Loop through each category directory
-  for (const category of blogCategories) {
-    const categoryDir = path.join(newsDirectory, category.slug);
-
-    // Skip if category directory doesn't exist
-    if (!fs.existsSync(categoryDir)) {
-      continue;
-    }
-
-    // Get all markdown files in this category
-    const filenames = fs
-      .readdirSync(categoryDir)
-      .filter((filename) => filename.endsWith('.md'));
-
-    // Process each file
-    for (const filename of filenames) {
-      // Extract slug from filename, ensuring we get the full slug without date prefix
-      const slug = slugFromFilename(filename);
-      console.log(`Processing file: ${filename}, extracted slug: ${slug}`);
-      const fullPath = path.join(categoryDir, filename);
-
+    for (const item of allContentItems) {
       try {
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
-        const { data, content } = matter(fileContents);
+        const data = item.frontmatter;
+        const content = item.content;
 
-        // Extract date from filename if not in frontmatter
+        // Extract date from frontmatter or use filename extraction
         let postDate = data['date'];
         if (!postDate) {
-          // Extract YYMMDD from filename
-          const dateMatch = filename.match(/^(\d{6})/);
-          if (dateMatch && dateMatch[1]) {
-            const dateStr = dateMatch[1];
-            // Convert YYMMDD to YYYY-MM-DD
-            const year = '20' + dateStr.substring(0, 2);
-            const month = dateStr.substring(2, 4);
-            const day = dateStr.substring(4, 6);
-            postDate = `${year}-${month}-${day}`;
-          }
+          // Try to extract from slug if it has date prefix
+          const extractedDate = extractDateFromFilename(item.slug);
+          postDate = extractedDate;
         }
 
-        // Convert image path to public directory
-        let imagePath = convertImagePath(data['image']);
+        // Convert image path to public directory structure
+        let imagePath = convertImagePath(data['image'], 'news');
         
         // Fix image paths to remove redundant 'images/' segment
         if (imagePath) {
-          // Handle multiple patterns of redundant 'images/' in path
           imagePath = imagePath.replace('/images/news/images/', '/images/news/');
           imagePath = imagePath.replace('/images/images/', '/images/');
         }
 
+        // Extract category from frontmatter (set by content-core)
+        const category = data['category'] || 'project-updates';
+
         allPosts.push({
-          slug,
+          slug: item.slug,
           title: data['title'] || '',
           date: postDate || '',
-          excerpt: data['excerpt'] || '',
-          category: category.slug,
+          excerpt: item.excerpt || data['excerpt'] || '',
+          category: category as BlogCategory,
           featured: data['featured'] || false,
           image: imagePath,
           content,
@@ -191,67 +118,46 @@ export function getAllBlogPosts(): BlogPost[] {
           videoUrl: data['videoUrl'] || undefined,
         });
       } catch (error) {
-        console.error(`Error processing ${fullPath}:`, error);
+        console.error(`Error processing blog post ${item.slug}:`, error);
       }
     }
-  }
 
-  // Sort posts by date (newest first)
-  return allPosts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
+    // Sort posts by date (newest first)
+    return allPosts.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    );
+  } catch (error) {
+    console.error('Error getting all blog posts:', error);
+    return [];
+  }
 }
 
 // Get a single blog post by slug
-export function getBlogPostBySlug(slug: string): BlogPost | null {
-  // We need to search in all category directories
-  for (const category of blogCategories) {
-    const categoryDir = path.join(newsDirectory, category.slug);
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+  try {
+    // Search through all categories to find the blog post
+    for (const category of blogCategories) {
+      const categoryContent = await getAllNestedContent('news', [category.slug]);
+      
+      // Find the post with matching slug
+      const matchingPost = categoryContent.find(item => item.slug === slug);
+      
+      if (matchingPost) {
+        const data = matchingPost.frontmatter;
+        const content = matchingPost.content;
 
-    // Skip if category directory doesn't exist
-    if (!fs.existsSync(categoryDir)) {
-      continue;
-    }
-
-    // Look for files that end with the slug (more robust matching)
-    const files = fs
-      .readdirSync(categoryDir)
-      .filter((filename) => {
-        const fileSlug = slugFromFilename(filename);
-        const match = fileSlug === slug;
-        console.log(`Comparing: fileSlug '${fileSlug}' with requested slug '${slug}', match: ${match}`);
-        return match;
-      });
-
-    if (files.length > 0 && files[0]) {
-      const filename = files[0];
-      const fullPath = path.join(categoryDir, filename);
-
-      try {
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
-        const { data, content } = matter(fileContents);
-
-        // Extract date from filename if not in frontmatter
+        // Extract date from frontmatter or filename
         let postDate = data['date'];
         if (!postDate) {
-          // Extract YYMMDD from filename
-          const dateMatch = filename.match(/^(\d{6})/);
-          if (dateMatch && dateMatch[1]) {
-            const dateStr = dateMatch[1];
-            // Convert YYMMDD to YYYY-MM-DD
-            const year = '20' + dateStr.substring(0, 2);
-            const month = dateStr.substring(2, 4);
-            const day = dateStr.substring(4, 6);
-            postDate = `${year}-${month}-${day}`;
-          }
+          const extractedDate = extractDateFromFilename(slug);
+          postDate = extractedDate;
         }
         
         // Convert image path to public directory
-        let imagePath = convertImagePath(data['image']);
+        let imagePath = convertImagePath(data['image'], 'news');
         
         // Fix image paths to remove redundant 'images/' segment
         if (imagePath) {
-          // Handle multiple patterns of redundant 'images/' in path
           imagePath = imagePath.replace('/images/news/images/', '/images/news/');
           imagePath = imagePath.replace('/images/images/', '/images/');
         }
@@ -260,7 +166,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
           slug,
           title: data['title'] || '',
           date: postDate || '',
-          excerpt: data['excerpt'] || '',
+          excerpt: matchingPost.excerpt || data['excerpt'] || '',
           category: category.slug,
           featured: data['featured'] || false,
           image: imagePath,
@@ -268,30 +174,31 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
           author: data['author'] || null,
           videoUrl: data['videoUrl'] || undefined,
         };
-      } catch (error) {
-        console.error(`Error processing ${fullPath}:`, error);
       }
     }
-  }
 
-  return null;
+    return null;
+  } catch (error) {
+    console.error(`Error getting blog post by slug ${slug}:`, error);
+    return null;
+  }
 }
 
 // Get featured blog posts
-export function getFeaturedBlogPosts(): BlogPost[] {
-  const allPosts = getAllBlogPosts();
+export async function getFeaturedBlogPosts(): Promise<BlogPost[]> {
+  const allPosts = await getAllBlogPosts();
   return allPosts.filter((post) => post.featured);
 }
 
 // Get latest blog posts
-export function getLatestBlogPosts(count = 3): BlogPost[] {
-  const allPosts = getAllBlogPosts();
+export async function getLatestBlogPosts(count = 3): Promise<BlogPost[]> {
+  const allPosts = await getAllBlogPosts();
   return allPosts.slice(0, count);
 }
 
 // Get blog posts by category
-export function getBlogPostsByCategory(category: BlogCategory): BlogPost[] {
-  const allPosts = getAllBlogPosts();
+export async function getBlogPostsByCategory(category: BlogCategory): Promise<BlogPost[]> {
+  const allPosts = await getAllBlogPosts();
   return allPosts.filter((post) => post.category === category);
 }
 

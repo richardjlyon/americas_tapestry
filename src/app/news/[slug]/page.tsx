@@ -13,7 +13,7 @@ import { markdownToHtml } from '@/lib/markdown';
 import { PageSection } from '@/components/ui/page-section';
 
 export async function generateStaticParams() {
-  const posts = getAllBlogPosts();
+  const posts = await getAllBlogPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -43,7 +43,7 @@ export default async function BlogPostPage({
   params,
 }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -69,9 +69,10 @@ export default async function BlogPostPage({
     .replace(/src="\/images\/images\//g, 'src="/images/');
 
   // Get related posts from the same category
-  const relatedPosts = getBlogPostsByCategory(
+  const relatedPostsAll = await getBlogPostsByCategory(
     post.category as BlogCategory,
-  ).filter((p) => p.slug !== post.slug); // Exclude current post
+  );
+  const relatedPosts = relatedPostsAll.filter((p) => p.slug !== post.slug); // Exclude current post
 
   // Category info would be used for metadata if needed
   // const categoryInfo = getCategoryBySlug(post.category);

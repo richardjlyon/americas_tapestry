@@ -12,7 +12,7 @@ import { markdownToHtml } from '@/lib/markdown';
 // }
 
 export async function getSponsor(slug: string) {
-  return getSponsorBySlug(slug);
+  return await getSponsorBySlug(slug);
 }
 
 export async function getMarkdownHtml(content: string) {
@@ -51,5 +51,5 @@ export async function getSponsorData(slug: string) {
 }
 
 export async function getAllSponsorsData() {
-  return getAllSponsors();
+  return await getAllSponsors();
 }

@@ -25,7 +25,7 @@ export default async function CategoryPage({
     notFound();
   }
 
-  const posts = getBlogPostsByCategory(category as BlogCategory);
+  const posts = await getBlogPostsByCategory(category as BlogCategory);
 
   return (
     <>

@@ -45,11 +45,9 @@ export function TeamCard({
       return personSvgFallback;
     }
 
-    // Image path - state directors, illustrators, historical partners, and project director use flattened structure, others use subfolders
-    if (member.groupSlug === 'state-directors' || member.groupSlug === 'illustrators' || member.groupSlug === 'historical-partners' || member.groupSlug === 'project-director') {
-      return `/images/team/${member.groupSlug}/${member.slug}.jpg`;
-    }
-    return `/images/team/${member.groupSlug}/${member.slug}/${member.slug}.jpg`;
+    // All team images follow the nested directory structure that mirrors content organization
+    // /images/team/{groupSlug}/{memberSlug}.jpg
+    return `/images/team/${member.groupSlug}/${member.slug}.jpg`;
   };
 
   // Flatten all team members into a single array - keep it simple

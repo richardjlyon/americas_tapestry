@@ -5,8 +5,9 @@ import { getTeamGroups } from "@/lib/team";
 import { ContentCard } from "@/components/ui/content-card";
 import { Button } from "@/components/ui/button";
 
-export function TeamSection() {
-  const teamGroups = getTeamGroups().filter(
+export async function TeamSection() {
+  const allTeamGroups = await getTeamGroups();
+  const teamGroups = allTeamGroups.filter(
     (group) => group.slug !== "project-director",
   );
 

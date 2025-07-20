@@ -26,7 +26,7 @@ const statusTextColors = {
 };
 
 export async function generateStaticParams() {
-  const tapestries = getAllTapestries();
+  const tapestries = await getAllTapestries();
 
   return tapestries.map((tapestry) => ({
     slug: tapestry.slug,
@@ -40,7 +40,7 @@ export default async function TapestryPage({
 }) {
   // Wait for params to be fully available
   const { slug } = await params;
-  const tapestry = getTapestryBySlug(slug);
+  const tapestry = await getTapestryBySlug(slug);
 
   if (!tapestry) {
     notFound();
@@ -68,7 +68,7 @@ export default async function TapestryPage({
 
   // Get all team members for this state using the utility function
   const { stateDirectors, historicalPartners, illustrators, stitchingGroups } =
-    getTeamMembersByState(tapestry.title);
+    await getTeamMembersByState(tapestry.title);
 
   const hasTeamMembers =
     stateDirectors?.length > 0 ||

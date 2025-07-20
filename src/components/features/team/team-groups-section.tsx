@@ -5,8 +5,8 @@ import { ContentCard } from '@/components/ui/content-card';
 import { getTeamGroups } from '@/lib/team';
 import { Button } from '@/components/ui/button';
 
-export function TeamGroupsSection() {
-  const teamGroups = getTeamGroups();
+export async function TeamGroupsSection() {
+  const teamGroups = await getTeamGroups();
 
   return (
     <div className="content-spacing-md">

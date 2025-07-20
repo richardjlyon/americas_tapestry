@@ -1,6 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import { getAllContent, getContentBySlug } from './content-core';
 import { extractExcerpt } from './markdown';
 
 export interface Sponsor {
@@ -39,70 +37,48 @@ function formatSponsorName(nameFromData: string | undefined, slug: string): stri
  * 
  * @returns Array of sponsor objects
  */
-export function getAllSponsors(): Sponsor[] {
-  const sponsorsDirectory = path.join(process.cwd(), 'content/sponsors');
-
-  // Get all directories in the sponsors directory (excluding README.md)
-  let sponsorFolders: string[] = [];
+export async function getAllSponsors(): Promise<Sponsor[]> {
   try {
-    sponsorFolders = fs
-      .readdirSync(sponsorsDirectory, { withFileTypes: true })
-      .filter((dirent) => dirent.isDirectory())
-      .map((dirent) => dirent.name);
+    // Use content-core to get all sponsor content
+    const sponsorContent = await getAllContent('sponsors');
+
+    const sponsors: Sponsor[] = sponsorContent
+      .filter(item => item.slug !== 'README') // Exclude README files
+      .map((item) => {
+        const data = item.frontmatter;
+        const content = item.content;
+
+        // Use simple convention: /images/sponsors/{slug}-logo.png
+        const logoPath = `/images/sponsors/${item.slug}-logo.png`;
+
+        // Create an excerpt from the content or use provided one
+        const excerpt = item.excerpt || extractExcerpt(content);
+
+        // Format the display name
+        const displayName = formatSponsorName(data['name'], item.slug);
+
+        // Return the sponsor data
+        return {
+          slug: item.slug,
+          name: displayName,
+          website: data['website'] || '#',
+          tier: data['tier'] || 'Supporter',
+          location: data['location'] || '',
+          partnership_year: data['partnership_year'],
+          logo: `${item.slug}-logo.png`,
+          logoPath,
+          order: data['order'] || 999,
+          content,
+          excerpt,
+        } as Sponsor;
+      });
+
+    // Sort alphabetically by name
+    return sponsors.sort((a, b) => a.name.localeCompare(b.name));
   } catch (error) {
-    console.error('Error reading sponsors directory:', error);
+    console.error('Error getting all sponsors:', error);
     return [];
   }
-
-  const sponsors = sponsorFolders
-    .map((folder) => {
-      // Use the folder name as the slug
-      const slug = folder;
-
-      // Get the full path to the folder
-      const folderPath = path.join(sponsorsDirectory, folder);
-
-      // Read the index.md file
-      const indexPath = path.join(folderPath, 'index.md');
-
-      if (!fs.existsSync(indexPath)) {
-        console.warn(`No index.md found in ${folderPath}`);
-        return null;
-      }
-
-      const fileContents = fs.readFileSync(indexPath, 'utf8');
-
-      // Parse the frontmatter and content
-      const { data, content } = matter(fileContents);
-
-      // Use simple convention: /images/sponsors/{slug}-logo.png
-      const logoPath = `/images/sponsors/${folder}-logo.png`;
-
-      // Create an excerpt from the content
-      const excerpt = extractExcerpt(content);
-
-      // Format the display name
-      const displayName = formatSponsorName(data['name'], folder);
-
-      // Return the sponsor data
-      return {
-        slug,
-        name: displayName,
-        website: data['website'] || '#',
-        tier: data['tier'] || 'Supporter',
-        location: data['location'] || '',
-        partnership_year: data['partnership_year'],
-        logo: `${folder}-logo.png`,
-        logoPath,
-        order: data['order'] || 999,
-        content,
-        excerpt,
-      } as Sponsor;
-    })
-    .filter(Boolean) as Sponsor[];
-
-  // Just sort alphabetically by name
-  return sponsors.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 /**
@@ -111,38 +87,42 @@ export function getAllSponsors(): Sponsor[] {
  * @param slug Sponsor slug
  * @returns Sponsor object or null if not found
  */
-export function getSponsorBySlug(slug: string): Sponsor | null {
-  const sponsorsDirectory = path.join(process.cwd(), 'content/sponsors');
-  const folderPath = path.join(sponsorsDirectory, slug);
-  const indexPath = path.join(folderPath, 'index.md');
+export async function getSponsorBySlug(slug: string): Promise<Sponsor | null> {
+  try {
+    // Use content-core to get the specific sponsor content
+    const sponsorItem = await getContentBySlug('sponsors', slug);
 
-  if (!fs.existsSync(indexPath)) {
+    if (!sponsorItem) {
+      return null;
+    }
+
+    const data = sponsorItem.frontmatter;
+    const content = sponsorItem.content;
+
+    // Use simple convention: /images/sponsors/{slug}-logo.png
+    const logoPath = `/images/sponsors/${slug}-logo.png`;
+
+    // Create an excerpt from the content or use provided one
+    const excerpt = sponsorItem.excerpt || extractExcerpt(content);
+      
+    // Format the display name
+    const displayName = formatSponsorName(data['name'], slug);
+
+    return {
+      slug,
+      name: displayName,
+      website: data['website'] || '#',
+      tier: data['tier'] || 'Supporter',
+      location: data['location'] || '',
+      partnership_year: data['partnership_year'],
+      logo: `${slug}-logo.png`,
+      logoPath,
+      order: data['order'] || 999,
+      content,
+      excerpt,
+    } as Sponsor;
+  } catch (error) {
+    console.error(`Error getting sponsor by slug ${slug}:`, error);
     return null;
   }
-
-  const fileContents = fs.readFileSync(indexPath, 'utf8');
-  const { data, content } = matter(fileContents);
-
-  // Use simple convention: /images/sponsors/{slug}-logo.png
-  const logoPath = `/images/sponsors/${slug}-logo.png`;
-
-  // Create an excerpt from the content
-  const excerpt = extractExcerpt(content);
-    
-  // Format the display name
-  const displayName = formatSponsorName(data['name'], slug);
-
-  return {
-    slug,
-    name: displayName,
-    website: data['website'] || '#',
-    tier: data['tier'] || 'Supporter',
-    location: data['location'] || '',
-    partnership_year: data['partnership_year'],
-    logo: `${slug}-logo.png`,
-    logoPath,
-    order: data['order'] || 999,
-    content,
-    excerpt,
-  } as Sponsor;
 }

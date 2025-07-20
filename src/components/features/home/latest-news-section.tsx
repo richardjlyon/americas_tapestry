@@ -7,9 +7,9 @@ import { getFeaturedBlogPosts, getLatestBlogPosts } from "@/lib/blog";
 import { ContentCard } from "@/components/ui/content-card";
 import { Button } from "@/components/ui/button";
 
-export function LatestNewsSection() {
-  const featuredPosts = getFeaturedBlogPosts() || [];
-  const latestPosts = getLatestBlogPosts(3) || [];
+export async function LatestNewsSection() {
+  const featuredPosts = (await getFeaturedBlogPosts()) || [];
+  const latestPosts = (await getLatestBlogPosts(3)) || [];
 
   // Get the first featured post, if any
   const featuredPost = featuredPosts.length > 0 ? featuredPosts[0] : null;

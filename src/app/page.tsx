@@ -12,8 +12,8 @@ import { TapestriesSection } from '@/components/features/home/tapestries-section
 import { TeamSection } from '@/components/features/home/team-section';
 import { GetInTouchSection } from '@/components/features/home/get-in-touch-section';
 
-export default function Home() {
-  const allTapestries = getAllTapestries();
+export default async function Home() {
+  const allTapestries = await getAllTapestries();
 
   // Filter for tapestries that have both a valid status and an image
   const eligibleTapestries = allTapestries.filter((tapestry) => {

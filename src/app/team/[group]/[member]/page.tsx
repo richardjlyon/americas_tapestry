@@ -5,11 +5,11 @@ import { PageSection } from '@/components/ui/page-section';
 import { MemberCard } from '@/components/features/team/member-card';
 
 export async function generateStaticParams() {
-  const groups = getTeamGroups();
+  const groups = await getTeamGroups();
   const params = [];
 
   for (const group of groups) {
-    const members = getTeamMembersByGroup(group.slug);
+    const members = await getTeamMembersByGroup(group.slug);
 
     for (const member of members) {
       params.push({

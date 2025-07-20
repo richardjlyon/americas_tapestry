@@ -5,15 +5,15 @@ import { remark } from 'remark';
 import html from 'remark-html';
 
 export async function getGroup(slug: string) {
-  return getTeamGroup(slug);
+  return await getTeamGroup(slug);
 }
 
 export async function getMembers(groupSlug: string) {
-  return getTeamMembersByGroup(groupSlug);
+  return await getTeamMembersByGroup(groupSlug);
 }
 
 export async function getMember(groupSlug: string, memberSlug: string) {
-  return getTeamMember(groupSlug, memberSlug);
+  return await getTeamMember(groupSlug, memberSlug);
 }
 
 export async function getMarkdownHtml(content: string) {

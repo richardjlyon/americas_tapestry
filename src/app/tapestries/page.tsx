@@ -2,8 +2,8 @@ import { InteractiveColoniesMap } from '@/components/features/tapestries/interac
 import { TapestryGrid } from '@/components/features/tapestries/tapestry-grid';
 import { getAllTapestries } from '@/lib/tapestries';
 import { PageSection } from '@/components/ui/page-section';
-export default function TapestriesPage() {
-  const tapestries = getAllTapestries();
+export default async function TapestriesPage() {
+  const tapestries = await getAllTapestries();
 
   return (
     <>
