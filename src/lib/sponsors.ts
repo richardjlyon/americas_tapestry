@@ -18,41 +18,6 @@ export interface Sponsor {
   excerptHtml?: string;
 }
 
-/**
- * Find a logo file in the sponsor's directory
- * 
- * @param folderPath Path to the sponsor's directory
- * @param slug Sponsor's slug
- * @param logoFromData Logo filename from frontmatter (if any)
- * @returns The filename of the logo or undefined if not found
- */
-function findLogoFile(folderPath: string, slug: string, logoFromData?: string): string | undefined {
-  // If logo specified in frontmatter, use that
-  if (logoFromData) {
-    return logoFromData;
-  }
-  
-  // Check for common logo filenames
-  const commonNames = [
-    `${slug}-logo.png`, 
-    `${slug}-logo.jpg`, 
-    `${slug}-logo.jpeg`,
-    `${slug}.png`, 
-    `${slug}.jpg`, 
-    `${slug}.jpeg`,
-    'logo.png', 
-    'logo.jpg', 
-    'logo.jpeg'
-  ];
-  
-  for (const name of commonNames) {
-    if (fs.existsSync(path.join(folderPath, name))) {
-      return name;
-    }
-  }
-  
-  return undefined;
-}
 
 /**
  * Format a sponsor name from slug or data
@@ -110,13 +75,8 @@ export function getAllSponsors(): Sponsor[] {
       // Parse the frontmatter and content
       const { data, content } = matter(fileContents);
 
-      // Find logo file
-      const logoFileName = findLogoFile(folderPath, folder, data['logo']);
-      
-      // Construct logo path using content directory
-      const logoPath = logoFileName 
-        ? `/content/sponsors/${folder}/${logoFileName}`
-        : `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data['name'] || 'Sponsor')}`;
+      // Use simple convention: /images/sponsors/{slug}-logo.png
+      const logoPath = `/images/sponsors/${folder}-logo.png`;
 
       // Create an excerpt from the content
       const excerpt = extractExcerpt(content);
@@ -132,7 +92,7 @@ export function getAllSponsors(): Sponsor[] {
         tier: data['tier'] || 'Supporter',
         location: data['location'] || '',
         partnership_year: data['partnership_year'],
-        logo: logoFileName,
+        logo: `${folder}-logo.png`,
         logoPath,
         order: data['order'] || 999,
         content,
@@ -163,13 +123,8 @@ export function getSponsorBySlug(slug: string): Sponsor | null {
   const fileContents = fs.readFileSync(indexPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  // Find logo file
-  const logoFileName = findLogoFile(folderPath, slug, data['logo']);
-  
-  // Construct logo path using content directory
-  const logoPath = logoFileName 
-    ? `/content/sponsors/${slug}/${logoFileName}`
-    : `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(data['name'] || 'Sponsor')}`;
+  // Use simple convention: /images/sponsors/{slug}-logo.png
+  const logoPath = `/images/sponsors/${slug}-logo.png`;
 
   // Create an excerpt from the content
   const excerpt = extractExcerpt(content);
@@ -184,7 +139,7 @@ export function getSponsorBySlug(slug: string): Sponsor | null {
     tier: data['tier'] || 'Supporter',
     location: data['location'] || '',
     partnership_year: data['partnership_year'],
-    logo: logoFileName,
+    logo: `${slug}-logo.png`,
     logoPath,
     order: data['order'] || 999,
     content,

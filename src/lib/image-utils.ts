@@ -42,6 +42,18 @@ function convertContentPathToPublic(contentPath: string): string {
   }
   
   if (contentPath.startsWith('/content/sponsors/')) {
+    // Handle sponsor logos - they are now in flat structure
+    // Convert /content/sponsors/sponsor-name/logo.png to /images/sponsors/sponsor-name-logo.png
+    const sponsorPath = contentPath.replace('/content/sponsors/', '');
+    const pathParts = sponsorPath.split('/');
+    if (pathParts.length >= 2) {
+      const sponsorSlug = pathParts[0];
+      const filename = pathParts[pathParts.length - 1];
+      // If it's a logo file, use the flat structure
+      if (filename && filename.includes('logo')) {
+        return `/images/sponsors/${sponsorSlug}-logo.png`;
+      }
+    }
     return contentPath.replace('/content/sponsors/', '/images/sponsors/');
   }
   

@@ -1,6 +1,6 @@
 import { PageSection } from '@/components/ui/page-section';
 import { SponsorCard } from '@/components/features/sponsors/sponsor-card';
-import { getAllSponsorsData } from '@/app/actions/sponsor-actions';
+import { getAllSponsorsData, getMarkdownHtml } from '@/app/actions/sponsor-actions';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -14,9 +14,17 @@ export const metadata = {
 export default async function SponsorsPage() {
   const sponsors = await getAllSponsorsData();
 
+  // Process markdown excerpts for all sponsors
+  const sponsorsWithHtml = await Promise.all(
+    sponsors.map(async (sponsor) => ({
+      ...sponsor,
+      excerptHtml: sponsor.excerpt ? await getMarkdownHtml(sponsor.excerpt) : '',
+    }))
+  );
+
   // Group sponsors by tier if available
   const sponsorsByTier: Record<string, any[]> = {};
-  sponsors.forEach((sponsor) => {
+  sponsorsWithHtml.forEach((sponsor) => {
     if (sponsor.tier) {
       if (!sponsorsByTier[sponsor.tier]) {
         sponsorsByTier[sponsor.tier] = [];
@@ -26,7 +34,7 @@ export default async function SponsorsPage() {
   });
 
   // Get sponsors without tiers
-  const untieredSponsors = sponsors.filter((s) => !s.tier);
+  const untieredSponsors = sponsorsWithHtml.filter((s) => !s.tier);
 
   return (
     <>
@@ -67,13 +75,18 @@ export default async function SponsorsPage() {
                         key={sponsor.slug}
                         sponsor={sponsor}
                         featured={true}
+                        excerptHtml={sponsor.excerptHtml}
                       />
                     ))}
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {tierSponsors.map((sponsor) => (
-                      <SponsorCard key={sponsor.slug} sponsor={sponsor} />
+                      <SponsorCard 
+                        key={sponsor.slug} 
+                        sponsor={sponsor} 
+                        excerptHtml={sponsor.excerptHtml}
+                      />
                     ))}
                   </div>
                 )}
@@ -91,10 +104,14 @@ export default async function SponsorsPage() {
             )}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {(Object.keys(sponsorsByTier).length === 0
-                ? sponsors
+                ? sponsorsWithHtml
                 : untieredSponsors
               ).map((sponsor) => (
-                <SponsorCard key={sponsor.slug} sponsor={sponsor} />
+                <SponsorCard 
+                  key={sponsor.slug} 
+                  sponsor={sponsor} 
+                  excerptHtml={sponsor.excerptHtml}
+                />
               ))}
             </div>
           </div>
