@@ -51,9 +51,8 @@ export function SponsorshipSection() {
 
         <p className="text-1xl md:text-2xl leading-tight mb-4">
           Join distinguished organizations in supporting{" "}
-          <em>America's Tapestry</em>
-          and align your brand with our mission of preserving and celebrating
-          America's diverse cultural heritage.
+          <em>America's Tapestry</em> and align your brand with our mission of
+          preserving and celebrating America's diverse cultural heritage.
         </p>
 
         <p className="text-1xl md:text-2xl leading-tight mb-6">

@@ -1,5 +1,5 @@
-import { PageSection } from '@/components/ui/page-section';
-import { ReadingContainer } from '@/components/ui/reading-container';
+import { PageSection } from "@/components/ui/page-section";
+import { ReadingContainer } from "@/components/ui/reading-container";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -16,14 +16,14 @@ export default function PrivacyPolicyPage() {
           <h2>Newsletter Subscription</h2>
           <p>
             When you subscribe to our newsletter, we only collect your email
-            address. We use it solely to send you updates and information
-            you've requested.
+            address. We use it solely to send you updates and information you've
+            requested.
           </p>
           <h2>Data Storage</h2>
           <p>
-            We don't store any of your personal information on our servers.
-            Your email address is the only data we keep, and it's used
-            exclusively for our newsletter.
+            We don't store any of your personal information on our servers. Your
+            email address is the only data we keep, and it's used exclusively
+            for our newsletter.
           </p>
           <h2>Anonymous Usage Metrics</h2>
           <p>
@@ -44,16 +44,16 @@ export default function PrivacyPolicyPage() {
           </p>
           <h2>Questions?</h2>
           <p>
-            If you have any questions about this policy, feel free to
+            If you have any questions about this policy, feel free to{" "}
             <a href="/contact">contact us</a>. We're here to help!
           </p>
 
           <p className="text-sm text-gray-600 mt-8">
-            Last updated:{' '}
-            {new Date().toLocaleDateString('en-US', {
-              month: 'long',
-              day: 'numeric',
-              year: 'numeric',
+            Last updated:{" "}
+            {new Date().toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
             })}
           </p>
         </ReadingContainer>
