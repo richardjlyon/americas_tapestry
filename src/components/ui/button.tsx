@@ -20,13 +20,13 @@ const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
         
         // Colonial theme variants
-        'colonial-primary': 'font-serif rounded-md bg-colonial-burgundy text-colonial-parchment border border-colonial-burgundy hover:bg-colonial-navy hover:border-colonial-navy shadow-md transition-all duration-300',
-        'colonial-secondary': 'font-serif rounded-md bg-colonial-navy text-colonial-parchment border border-colonial-navy hover:bg-colonial-burgundy hover:border-colonial-burgundy shadow-md transition-all duration-300',
-        'colonial-gold': 'font-serif rounded-md bg-colonial-gold text-colonial-navy border border-colonial-gold hover:bg-colonial-navy hover:text-colonial-parchment hover:border-colonial-navy shadow-md transition-all duration-300',
-        'colonial-outline': 'font-serif rounded-md border border-colonial-navy text-colonial-navy bg-transparent hover:bg-colonial-navy hover:text-colonial-parchment shadow-md transition-all duration-300',
-        'colonial-ghost': 'font-serif rounded-md text-colonial-navy hover:bg-colonial-navy/10 transition-all duration-300',
-        'colonial-parchment': 'font-serif rounded-md bg-colonial-parchment text-colonial-navy border border-colonial-gold/30 hover:bg-colonial-parchment/80 hover:border-colonial-gold/50 shadow-sm transition-all duration-300',
-        'colonial-stone': 'font-serif rounded-md bg-colonial-stone text-colonial-navy border border-colonial-stone hover:bg-colonial-stone/80 shadow-md transition-all duration-300',
+        'colonial-primary': 'font-serif rounded-md bg-colonial-burgundy text-colonial-parchment border border-colonial-burgundy hover:bg-colonial-burgundy/80 hover:text-white hover:border-colonial-burgundy/80 shadow-md transition-all duration-300',
+        'colonial-secondary': 'font-serif rounded-md bg-colonial-navy text-colonial-parchment border border-colonial-navy hover:bg-colonial-navy/80 hover:text-white hover:border-colonial-navy/80 shadow-md transition-all duration-300',
+        'colonial-gold': 'font-serif rounded-md bg-colonial-gold text-colonial-navy border border-colonial-gold hover:bg-colonial-gold/90 hover:text-colonial-navy hover:border-colonial-gold/90 shadow-md transition-all duration-300',
+        'colonial-outline': 'font-serif rounded-md border border-colonial-navy text-colonial-navy bg-transparent hover:bg-colonial-navy hover:text-white shadow-md transition-all duration-300',
+        'colonial-ghost': 'font-serif rounded-md text-colonial-navy hover:bg-colonial-navy/15 hover:text-colonial-navy transition-all duration-300',
+        'colonial-parchment': 'font-serif rounded-md bg-colonial-parchment text-colonial-navy border border-colonial-gold/30 hover:bg-colonial-parchment/90 hover:text-colonial-navy hover:border-colonial-gold/70 shadow-sm transition-all duration-300',
+        'colonial-stone': 'font-serif rounded-md bg-colonial-stone text-colonial-navy border border-colonial-stone hover:bg-colonial-stone/90 hover:text-colonial-navy shadow-md transition-all duration-300',
       },
       size: {
         default: 'h-10 px-4 py-2',

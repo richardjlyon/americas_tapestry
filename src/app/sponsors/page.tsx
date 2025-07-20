@@ -1,9 +1,7 @@
 import { PageSection } from '@/components/ui/page-section';
 import { SponsorCard } from '@/components/features/sponsors/sponsor-card';
 import { getAllSponsorsData, getMarkdownHtml } from '@/app/actions/sponsor-actions';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { SponsorshipSection } from '@/components/features/home/sponsorship-section';
 
 export const metadata = {
   title: "Our Sponsors | America's Tapestry",
@@ -117,27 +115,11 @@ export default async function SponsorsPage() {
           </div>
         )}
 
-        {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <h3 className="text-xl font-bold text-colonial-navy mb-4">
-            Become a Sponsor
-          </h3>
-          <p className="font-serif text-colonial-navy/80 max-w-2xl mx-auto mb-6">
-            Join these distinguished organizations in supporting America's
-            Tapestry. Your sponsorship helps us preserve and celebrate our
-            nation's diverse cultural heritage through art, education, and
-            community engagement.
-          </p>
-          <Button
-            asChild
-            className="rounded-full bg-colonial-burgundy hover:bg-colonial-burgundy/90 text-colonial-parchment"
-          >
-            <Link href="/support#sponsorship">
-              View Sponsorship Opportunities
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
+      </PageSection>
+
+      {/* Partnership Opportunities Section */}
+      <PageSection spacing="normal" background="vintage-paper">
+        <SponsorshipSection />
       </PageSection>
     </>
   );

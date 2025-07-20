@@ -166,8 +166,8 @@ export function AccessibleAudioPlayer({
           <Button
             type="button"
             variant="outline"
-            size="sm"
-            className="h-8 w-8 p-0 rounded-full"
+            size="icon"
+            className="h-8 w-8 rounded-full"
             onClick={togglePlay}
             onKeyDown={handleKeyDown}
             aria-label={isPlaying ? 'Pause' : 'Play'}
@@ -206,8 +206,8 @@ export function AccessibleAudioPlayer({
             <Button
               type="button"
               variant="ghost"
-              size="sm"
-              className="h-8 w-8 p-0"
+              size="icon"
+              className="h-8 w-8"
               onClick={toggleMute}
               aria-label={isMuted ? 'Unmute' : 'Mute'}
               aria-pressed={isMuted}

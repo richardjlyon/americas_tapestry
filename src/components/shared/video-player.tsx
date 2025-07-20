@@ -68,7 +68,7 @@ export function VideoPlayer({
           variant="ghost"
           size="sm"
           onClick={togglePlay}
-          className="text-colonial-parchment hover:text-colonial-gold hover:bg-transparent text-xs sm:text-sm p-1 sm:p-2"
+          className="text-colonial-parchment hover:text-colonial-gold hover:bg-transparent text-xs sm:text-sm"
         >
           {isPlaying ? (
             <>
@@ -87,7 +87,7 @@ export function VideoPlayer({
           variant="ghost"
           size="sm"
           asChild
-          className="text-colonial-parchment hover:text-colonial-gold hover:bg-transparent text-xs sm:text-sm p-1 sm:p-2"
+          className="text-colonial-parchment hover:text-colonial-gold hover:bg-transparent text-xs sm:text-sm"
         >
           <a href={highResSrc} target="_blank" rel="noopener noreferrer">
             <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />

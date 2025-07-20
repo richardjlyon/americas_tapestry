@@ -111,7 +111,7 @@ export function SupportMerchandise() {
               </p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90">
+              <Button variant="colonial-gold" className="w-full rounded-full">
                 View in Store <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
             </CardFooter>

@@ -244,23 +244,23 @@ export function InteractiveTimeline({ tapestries }: InteractiveTimelineProps) {
                 <div className="flex space-x-2">
                   <Button
                     variant="outline"
-                    size="sm"
+                    size="icon"
                     onClick={() => navigateEvent('prev')}
                     disabled={filteredEvents.indexOf(activeEvent) === 0}
-                    className="h-8 w-8 p-0 rounded-full"
+                    className="h-8 w-8 rounded-full"
                     aria-label="Previous event"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </Button>
                   <Button
                     variant="outline"
-                    size="sm"
+                    size="icon"
                     onClick={() => navigateEvent('next')}
                     disabled={
                       filteredEvents.indexOf(activeEvent) ===
                       filteredEvents.length - 1
                     }
-                    className="h-8 w-8 p-0 rounded-full"
+                    className="h-8 w-8 rounded-full"
                     aria-label="Next event"
                   >
                     <ChevronRight className="h-4 w-4" />

@@ -157,7 +157,7 @@ export function SupportVolunteer() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full rounded-full bg-colonial-navy text-colonial-parchment hover:bg-colonial-navy/90">
+                  <Button variant="colonial-secondary" className="w-full rounded-full">
                     Apply for This Role
                   </Button>
                 </CardFooter>
@@ -282,7 +282,8 @@ export function SupportVolunteer() {
 
           <div className="text-center">
             <Button
-              className="rounded-full bg-colonial-navy text-colonial-parchment hover:bg-colonial-navy/90"
+              variant="colonial-secondary"
+              className="rounded-full"
               size="lg"
             >
               Apply to Volunteer Today
