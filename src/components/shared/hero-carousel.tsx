@@ -29,7 +29,6 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Debug carousel issues
   useEffect(() => {
     // Debugging code removed
   }, []);

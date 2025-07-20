@@ -282,16 +282,22 @@ export function measureTime<T>(
     if (result instanceof Promise) {
       return result.finally(() => {
         const end = performance.now();
-        console.log(`${label}: ${(end - start).toFixed(2)}ms`);
+        if (process.env['NODE_ENV'] === 'development') {
+          console.log(`${label}: ${(end - start).toFixed(2)}ms`);
+        }
       });
     } else {
       const end = performance.now();
-      console.log(`${label}: ${(end - start).toFixed(2)}ms`);
+      if (process.env['NODE_ENV'] === 'development') {
+        console.log(`${label}: ${(end - start).toFixed(2)}ms`);
+      }
       return result;
     }
   } catch (error) {
     const end = performance.now();
-    console.log(`${label} (error): ${(end - start).toFixed(2)}ms`);
+    if (process.env['NODE_ENV'] === 'development') {
+      console.log(`${label} (error): ${(end - start).toFixed(2)}ms`);
+    }
     throw error;
   }
 }

@@ -28,7 +28,7 @@ interface ResourceItem {
   downloadUrl: string;
 }
 
-// Dummy data for educational resources
+// Educational resources
 const lessonPlans: ResourceItem[] = [
   {
     title: 'Colonial America: The Thirteen Colonies',

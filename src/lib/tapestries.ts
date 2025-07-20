@@ -348,14 +348,3 @@ export async function getTapestryBySlug(slug: string): Promise<TapestryEntry | n
   }
 }
 
-// Add this debug function at the end of the file
-export async function debugTapestryColonies() {
-  const tapestries = await getAllTapestries();
-  console.log('All tapestries with their slugs:');
-  tapestries.forEach((tapestry) => {
-    console.log(
-      `Slug: ${tapestry.slug}, Title: ${tapestry.title}, Status: ${tapestry.status}`,
-    );
-  });
-  return tapestries;
-}

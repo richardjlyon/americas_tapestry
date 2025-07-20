@@ -33,7 +33,7 @@ interface Artefact {
   relatedColony?: string;
 }
 
-// Dummy data for artefacts
+// Historical artefacts
 const artefacts: Artefact[] = [
   {
     title: 'Embroidered Sampler by Mary Williams',

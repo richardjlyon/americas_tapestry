@@ -26,11 +26,9 @@ export async function subscribeToNewsletter(formData: NewsletterFormData) {
     
     if (isJwt) {
       // Use MailerLite API v3
-      console.log('Using MailerLite API v3');
       response = await subscribeWithV3(validatedData, apiKey);
     } else {
       // Use MailerLite API v2
-      console.log('Using MailerLite API v2');
       response = await subscribeWithV2(validatedData, apiKey);
     }
     
@@ -69,7 +67,6 @@ async function subscribeWithV3(
     status: 'active',
   };
 
-  console.log('MailerLite v3 request:', JSON.stringify(body));
 
   // Send request to MailerLite API v3
   const response = await fetch(endpoint, {
@@ -81,11 +78,7 @@ async function subscribeWithV3(
     body: JSON.stringify(body),
   });
 
-  // Log the raw response for debugging
-  console.log('MailerLite v3 response status:', response.status);
-  
   const responseText = await response.text();
-  console.log('MailerLite v3 response body:', responseText);
   
   if (!response.ok) {
     let errorData;
@@ -114,14 +107,6 @@ async function subscribeWithV3(
     };
   }
   
-  // Try to parse the successful response
-  let responseData;
-  try {
-    responseData = JSON.parse(responseText);
-    console.log('MailerLite v3 success data:', responseData);
-  } catch (e) {
-    console.log('MailerLite v3 success (non-JSON):', responseText);
-  }
 
   return {
     success: true,
@@ -147,7 +132,6 @@ async function subscribeWithV2(
     resubscribe: true,
   };
 
-  console.log('MailerLite v2 request:', JSON.stringify(body));
 
   // Send request to MailerLite API v2
   const response = await fetch(endpoint, {
@@ -159,11 +143,7 @@ async function subscribeWithV2(
     body: JSON.stringify(body),
   });
 
-  // Log the raw response for debugging
-  console.log('MailerLite v2 response status:', response.status);
-  
   const responseText = await response.text();
-  console.log('MailerLite v2 response body:', responseText);
   
   if (!response.ok) {
     let errorData;
@@ -191,14 +171,6 @@ async function subscribeWithV2(
     };
   }
   
-  // Try to parse the successful response
-  let responseData;
-  try {
-    responseData = JSON.parse(responseText);
-    console.log('MailerLite v2 success data:', responseData);
-  } catch (e) {
-    console.log('MailerLite v2 success (non-JSON):', responseText);
-  }
 
   return {
     success: true,

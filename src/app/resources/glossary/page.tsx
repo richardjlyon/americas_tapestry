@@ -18,7 +18,7 @@ interface GlossaryTerm {
   category: 'stitches' | 'materials' | 'tools' | 'techniques';
 }
 
-// Dummy data for glossary terms
+// Glossary terms
 const glossaryTerms: GlossaryTerm[] = [
   {
     term: 'Crewel Embroidery',

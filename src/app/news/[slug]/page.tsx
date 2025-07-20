@@ -49,13 +49,6 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  // Debug logging
-  console.log('Post data:', {
-    title: post.title,
-    category: post.category,
-    videoUrl: post.videoUrl,
-    image: post.image,
-  });
 
   // Convert markdown to HTML using our modified function
   let contentHtml = await markdownToHtml(post.content);

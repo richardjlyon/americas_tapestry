@@ -15,17 +15,14 @@ import {
 export function SiteBreadcrumb() {
   const pathname = usePathname();
 
-  console.log("Breadcrumb pathname:", pathname);
 
   // Skip rendering breadcrumbs on home page
   if (pathname === "/") {
-    console.log("Skipping breadcrumb on home page");
     return null;
   }
 
   // Create breadcrumb segments from pathname
   const pathSegments = pathname.split("/").filter((segment) => segment !== "");
-  console.log("Breadcrumb segments:", pathSegments);
 
   // Format segment names for display
   const formatSegmentName = (segment: string) => {
