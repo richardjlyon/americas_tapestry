@@ -1,6 +1,6 @@
 ---
 name: "Mary Van Tyne"
-role: "State Director"
+role: "Co-State Director"
 state: "Pennsylvania"
 summary: "Award-winning embroiderer with over 100 exhibition recognitions balances extensive volunteer service with community-focused nonprofit work addressing socioeconomic mobility challenges."
 ---

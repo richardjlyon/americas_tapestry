@@ -1,6 +1,6 @@
 ---
 name: "Raven Fagelson"
-role: "State Director"
+role: "Co-State Director"
 state: "Pennsylvania"
 summary: "Certified embroidery teacher and Royal School of Needlework graduate exhibits award-winning crewelwork across multiple states while writing technical software documentation professionally."
 ---

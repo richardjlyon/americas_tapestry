@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import { MemberCard } from '@/components/features/team/member-card';
-import type { TeamGroup, TeamMember } from '@/lib/team';
+import { MemberCard } from "@/components/features/team/member-card";
+import { QuestionnaireSection } from "@/components/features/team/questionnaire-section";
+import type { TeamGroup, TeamMember } from "@/lib/team";
 
 export interface GroupContentProps {
   group: TeamGroup;
@@ -10,7 +11,9 @@ export interface GroupContentProps {
 
 export function GroupContent({ group, members }: GroupContentProps) {
   // Filter out members with visible set to false
-  const visibleMembers = members.filter((member) => member['visible'] !== false);
+  const visibleMembers = members.filter(
+    (member) => member["visible"] !== false,
+  );
 
   return (
     <>
@@ -20,10 +23,17 @@ export function GroupContent({ group, members }: GroupContentProps) {
         {group.longDescription || group.description}
       </div>
 
+      {/* Show questionnaire section only for stitching groups */}
+      {group.slug === "stitching-groups" && <QuestionnaireSection />}
+
       {visibleMembers.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {visibleMembers.map((member) => (
-            <MemberCard key={`${member.groupSlug}-${member.slug}`} member={member} variant="grid" />
+            <MemberCard
+              key={`${member.groupSlug}-${member.slug}`}
+              member={member}
+              variant="grid"
+            />
           ))}
         </div>
       ) : (
