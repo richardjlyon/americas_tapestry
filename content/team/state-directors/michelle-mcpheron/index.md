@@ -1,6 +1,6 @@
 ---
 name: "Michelle McPheron"
-role: "State Director"
+role: "Co-State Director"
 state: "New Hampshire"
 summary: ""
 ---

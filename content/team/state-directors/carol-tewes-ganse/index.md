@@ -1,6 +1,6 @@
 ---
 name: "Carol Tewes Ganse"
-role: "State Director"
+role: "Co-State Director"
 state: "New Hampshire"
 summary: ""
 ---
