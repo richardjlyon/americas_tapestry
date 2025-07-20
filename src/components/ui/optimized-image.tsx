@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image, { ImageProps } from 'next/image';
 import { getContextualBlurPlaceholder, getImageSizes } from '@/lib/image-utils';
 import { cn } from '@/lib/utils';
@@ -44,11 +44,37 @@ export function OptimizedImage({
   enableBlurPlaceholder = true,
   sizes,
   className,
+  priority = false,
   ...props
 }: OptimizedImageProps) {
   const [hasError, setHasError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [currentSrc, setCurrentSrc] = useState(src);
+  const [isInView, setIsInView] = useState(priority);
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    if (priority) return; // Skip intersection observer for priority images
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: '50px' } // Start loading 50px before entering viewport
+    );
+    
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+    
+    return () => observer.disconnect();
+  }, [priority]);
 
   // Handle image load error
   const handleError = () => {
@@ -60,12 +86,11 @@ export function OptimizedImage({
       // If fallback also fails, show error state
       setHasError(true);
     }
-    setIsLoading(false);
   };
 
   // Handle successful image load
   const handleLoad = () => {
-    setIsLoading(false);
+    setHasLoaded(true);
     setHasError(false);
   };
 
@@ -93,19 +118,42 @@ export function OptimizedImage({
     );
   }
 
+  const shouldLoad = priority || isInView;
+
+  // If not in view yet, show skeleton placeholder
+  if (!shouldLoad) {
+    const skeletonStyle = props.fill 
+      ? {} 
+      : { aspectRatio: '4/3' };
+      
+    return (
+      <div 
+        ref={containerRef}
+        className={cn(
+          'bg-gray-200 animate-pulse',
+          props.fill && 'absolute inset-0',
+          className
+        )}
+        style={skeletonStyle}
+        role="img"
+        aria-label={`Loading ${alt}`}
+      />
+    );
+  }
+
   // Prepare image props
   const imageProps: ImageProps = {
     src: currentSrc,
     alt,
     sizes: sizes || getImageSizes(role),
-    className: cn(
+    className: props.fill ? undefined : cn(
       'transition-opacity duration-300',
-      isLoading && 'opacity-0',
-      !isLoading && 'opacity-100',
+      hasLoaded ? 'opacity-100' : 'opacity-0',
       className
     ),
     onLoad: handleLoad,
     onError: handleError,
+    priority,
     ...props,
   };
 
@@ -115,11 +163,30 @@ export function OptimizedImage({
     (imageProps as any).blurDataURL = getContextualBlurPlaceholder(currentSrc);
   }
 
+  // For fill images, we need to handle the container differently
+  if (props.fill) {
+    return (
+      <div ref={containerRef} className="relative w-full h-full">
+        <Image
+          {...imageProps}
+          alt={alt}
+          className={cn(
+            'transition-opacity duration-300',
+            hasLoaded ? 'opacity-100' : 'opacity-0',
+            className // Apply the passed className (including transforms) to the Image
+          )}
+        />
+      </div>
+    );
+  }
+
   return (
-    <Image
-      {...imageProps}
-      alt={alt}
-    />
+    <div ref={containerRef} className="relative">
+      <Image
+        {...imageProps}
+        alt={alt}
+      />
+    </div>
   );
 }
 

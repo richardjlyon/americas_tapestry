@@ -8,6 +8,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { cn } from '@/lib/utils';
 import type { TapestryEntry } from '@/lib/tapestries';
 import { OptimizedImage } from '@/components/ui/optimized-image';
+import { getImagePath } from '@/lib/image-utils';
 
 interface HeroCarouselProps {
   tapestries: TapestryEntry[];
@@ -67,6 +68,48 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  // Smart preloading for adjacent slides
+  useEffect(() => {
+    if (validTapestries.length <= 1) return;
+
+    // Function to preload an image
+    const preloadImage = (tapestry: TapestryEntry) => {
+      if (!tapestry) return;
+      
+      const imagePath = getImagePath(tapestry.imagePath || tapestry.thumbnail || '');
+      if (!imagePath) return;
+
+      // Create a link element for preloading
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = imagePath;
+      link.type = 'image/webp';
+      
+      // Add to document head
+      document.head.appendChild(link);
+      
+      // Clean up after 10 seconds to avoid memory leaks
+      setTimeout(() => {
+        if (document.head.contains(link)) {
+          document.head.removeChild(link);
+        }
+      }, 10000);
+    };
+
+    // Calculate adjacent slide indices
+    const nextIndex = (currentIndex + 1) % validTapestries.length;
+    const prevIndex = currentIndex === 0 ? validTapestries.length - 1 : currentIndex - 1;
+
+    // Preload adjacent slides
+    if (validTapestries[nextIndex]) {
+      preloadImage(validTapestries[nextIndex]);
+    }
+    if (validTapestries[prevIndex] && prevIndex !== nextIndex) {
+      preloadImage(validTapestries[prevIndex]);
+    }
+  }, [currentIndex, validTapestries]);
 
   // Set up autoplay
   useEffect(() => {
