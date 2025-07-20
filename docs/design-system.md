@@ -279,17 +279,85 @@ Use status badges to indicate project progress:
 
 ### Page Structure
 
+#### PageSection Component
+
+The `PageSection` component provides consistent vertical spacing with a simplified system:
+
 ```tsx
 import { PageSection } from '@/components/ui/page-section';
 
-<PageSection className="section-padding">
-  {/* Page content */}
-</PageSection>
+// Standard spacing options
+<PageSection spacing="tight">     {/* py-8 md:py-12 - For closely related content */}
+<PageSection spacing="normal">    {/* py-12 md:py-16 - Default for most content */}
+<PageSection spacing="spacious">  {/* py-16 md:py-24 - For major section breaks */}
 
 // With decorative pin
-<PageSection className="page-section-pin">
+<PageSection spacing="normal" hasPin={true}>
   {/* Content with needle decoration */}
 </PageSection>
+
+// With background textures
+<PageSection spacing="normal" background="vintage-paper">
+  {/* Content with textured background */}
+</PageSection>
+```
+
+**Spacing Guidelines:**
+- `tight`: Related content sections, sub-sections
+- `normal`: Standard content sections (default) 
+- `spacious`: Major page divisions, hero sections
+
+#### ReadingContainer Component
+
+The `ReadingContainer` component provides optimal readability for text content:
+
+```tsx
+import { ReadingContainer } from '@/components/ui/reading-container';
+
+// Optimal reading width (recommended for articles)
+<ReadingContainer width="article" background="paper">
+  <h2>Article Title</h2>
+  <p>Long-form content with optimal line length for readability...</p>
+</ReadingContainer>
+
+// Mixed content width
+<ReadingContainer width="content" background="parchment">
+  {/* Content with images, text, and other elements */}
+</ReadingContainer>
+
+// Wide content width
+<ReadingContainer width="wide" background="none">
+  {/* Visual content that needs more space */}
+</ReadingContainer>
+```
+
+**Width Options:**
+- `article` (max-w-3xl): ~65 characters, optimal for reading
+- `content` (max-w-4xl): ~80 characters, good for mixed content  
+- `wide` (max-w-5xl): ~100 characters, for visual content
+
+**Background Options:**
+- `paper`: Vintage paper texture (vintage-paper)
+- `parchment`: Authentic parchment texture (authentic-parchment)
+- `none`: No background texture
+
+#### Standard Content Page Pattern
+
+```tsx
+export default function ContentPage() {
+  return (
+    <>
+      <h1 className="page-heading">Page Title</h1>
+      <p className="lead-text">Optional lead text</p>
+      
+      <PageSection spacing="normal">
+        <ReadingContainer width="article" background="paper">
+          {/* All page content */}
+        </ReadingContainer>
+      </PageSection>
+    </>
+  );
+}
 ```
 
 ### Grid Layouts
@@ -315,6 +383,8 @@ import { PageSection } from '@/components/ui/page-section';
 ✅ **Maintain proper contrast** - Ensure text is readable on all backgrounds  
 ✅ **Use rounded buttons** - Colonial buttons should have rounded-full class  
 ✅ **Include transitions** - Add smooth transitions for interactive elements  
+✅ **Use ReadingContainer for content** - Ensures optimal line length and consistency  
+✅ **Use simplified spacing system** - Stick to tight/normal/spacious options  
 
 ### Don'ts
 
@@ -323,6 +393,8 @@ import { PageSection } from '@/components/ui/page-section';
 ❌ **Don't overuse gold** - Gold should be used sparingly for highlights  
 ❌ **Don't ignore accessibility** - Maintain WCAG contrast requirements  
 ❌ **Don't use modern UI patterns** - Keep the colonial aesthetic consistent  
+❌ **Don't use deprecated spacing props** - Use the new spacing system instead of paddingTop/paddingBottom  
+❌ **Don't create manual containers** - Use ReadingContainer instead of custom max-width + ContentCard combinations  
 
 ### Accessibility
 
@@ -333,6 +405,43 @@ import { PageSection } from '@/components/ui/page-section';
 - Support keyboard navigation
 
 ## Migration Guide
+
+### From Old Layout Patterns to ReadingContainer
+
+Replace manual container patterns with the unified ReadingContainer:
+
+```tsx
+// Before - Manual container pattern
+<PageSection paddingTop="none">
+  <div className="max-w-3xl mx-auto">
+    <ContentCard className="content-typography vintage-paper" padding="large">
+      {content}
+    </ContentCard>
+  </div>
+</PageSection>
+
+// After - Using ReadingContainer
+<PageSection spacing="normal">
+  <ReadingContainer width="article" background="paper">
+    {content}
+  </ReadingContainer>
+</PageSection>
+```
+
+### From Old Spacing System to Simplified System
+
+Replace complex padding combinations:
+
+```tsx
+// Before - Complex spacing (25 possible combinations)
+<PageSection paddingTop="large" paddingBottom="medium">
+<PageSection paddingTop="none" paddingBottom="small">
+
+// After - Simplified spacing (3 meaningful options)
+<PageSection spacing="normal">
+<PageSection spacing="tight">
+<PageSection spacing="spacious">
+```
 
 ### From Old Button Components
 
@@ -361,6 +470,29 @@ className="bg-[#102542] text-[#f4e9d5]"
 
 // After
 className="bg-colonial-navy text-colonial-parchment"
+```
+
+### Content Page Migration
+
+Replace inconsistent content patterns:
+
+```tsx
+// Before - Various patterns
+<div className="p-6 md:p-8">
+  <div className="content-typography" dangerouslySetInnerHTML={{ __html: content }} />
+</div>
+
+// Or
+<ContentCard className="overflow-hidden p-0 max-w-4xl mx-auto vintage-paper">
+  <div className="content-typography p-6 md:p-8">
+    {content}
+  </div>
+</ContentCard>
+
+// After - Unified pattern
+<ReadingContainer width="content" background="paper">
+  <div dangerouslySetInnerHTML={{ __html: content }} />
+</ReadingContainer>
 ```
 
 ## Performance Considerations

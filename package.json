@@ -7,7 +7,9 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "build:clean": "rm -rf .next && next build",
         "start": "next start",
+        "start:clean": "npm run build:clean && npm run start",
         "lint": "next lint",
         "format": "npx @biomejs/biome format --write ./src/app ./src/components ./src/lib ./src/hooks",
         "analyze": "cross-env ANALYZE=true next build",

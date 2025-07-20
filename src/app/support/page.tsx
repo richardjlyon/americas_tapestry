@@ -32,7 +32,7 @@ export default function SupportPage() {
       </p>
 
       {/* Support Options Navigation */}
-      <PageSection paddingTop="small">
+      <PageSection spacing="tight">
         {/* Set this to 4 columns if merchandise is available */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Merchandise */}
@@ -146,7 +146,7 @@ export default function SupportPage() {
       </PageSection> */}
 
       {/* Donations Section */}
-      <PageSection id="donations" paddingTop="none" className="scroll-mt-24">
+      <PageSection id="donations" spacing="normal" className="scroll-mt-24">
         <SupportDonations />
       </PageSection>
 
@@ -156,7 +156,7 @@ export default function SupportPage() {
       </PageSection> */}
 
       {/* Sponsorship Section */}
-      <PageSection id="sponsorship" paddingTop="none" className="scroll-mt-24">
+      <PageSection id="sponsorship" spacing="normal" className="scroll-mt-24">
         <SupportSponsorship />
       </PageSection>
 

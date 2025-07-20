@@ -1,27 +1,28 @@
-import { getTapestryBySlug, getAllTapestries } from '@/lib/tapestries';
-import { notFound } from 'next/navigation';
-import { remark } from 'remark';
-import html from 'remark-html';
-import { AccessibleAudioPlayer } from '@/components/shared/accessible-audio-player';
-import { FullImageViewer } from '@/components/shared/full-image-viewer';
-import { TeamCard } from '@/components/features/tapestries/team-card';
-import { getTeamMembersByState } from '@/lib/team';
-import { PageSection } from '@/components/ui/page-section';
-import { getImagePath } from '@/lib/image-utils';
+import { getTapestryBySlug, getAllTapestries } from "@/lib/tapestries";
+import { notFound } from "next/navigation";
+import { remark } from "remark";
+import html from "remark-html";
+import { AccessibleAudioPlayer } from "@/components/shared/accessible-audio-player";
+import { FullImageViewer } from "@/components/shared/full-image-viewer";
+import { TeamCard } from "@/components/features/tapestries/team-card";
+import { getTeamMembersByState } from "@/lib/team";
+import { PageSection } from "@/components/ui/page-section";
+import { ReadingContainer } from "@/components/ui/reading-container";
+import { getImagePath } from "@/lib/image-utils";
 
 // Status color mapping
 const statusColors = {
-  'Not Started': 'bg-colonial-navy/70',
-  Designed: 'bg-colonial-navy',
-  'In Production': 'bg-colonial-burgundy',
-  Finished: 'bg-colonial-gold',
+  "Not Started": "bg-colonial-navy/70",
+  Designed: "bg-colonial-navy",
+  "In Production": "bg-colonial-burgundy",
+  Finished: "bg-colonial-gold",
 };
 
 const statusTextColors = {
-  'Not Started': 'text-colonial-parchment',
-  Designed: 'text-colonial-parchment',
-  'In Production': 'text-colonial-parchment',
-  Finished: 'text-colonial-navy',
+  "Not Started": "text-colonial-parchment",
+  Designed: "text-colonial-parchment",
+  "In Production": "text-colonial-parchment",
+  Finished: "text-colonial-navy",
 };
 
 export async function generateStaticParams() {
@@ -49,19 +50,21 @@ export default async function TapestryPage({
   const processedContent = await remark().use(html).process(tapestry.content);
   const contentHtml = processedContent.toString();
 
-  const statusColor = statusColors[tapestry.status] || 'bg-colonial-navy/70';
+  const statusColor = statusColors[tapestry.status] || "bg-colonial-navy/70";
   const statusTextColor =
-    statusTextColors[tapestry.status] || 'text-colonial-parchment';
+    statusTextColors[tapestry.status] || "text-colonial-parchment";
 
   // Get the image source path and ensure it uses the new structure
-  const imageSrc = tapestry.imagePath 
+  const imageSrc = tapestry.imagePath
     ? getImagePath(tapestry.imagePath)
-    : (tapestry.thumbnail 
-      ? getImagePath(tapestry.thumbnail) 
-      : '/placeholder.svg?height=600&width=800');
+    : tapestry.thumbnail
+      ? getImagePath(tapestry.thumbnail)
+      : "/placeholder.svg?height=600&width=800";
 
   // Handle audio path
-  const audioSrc = tapestry.audioPath ? getImagePath(tapestry.audioPath) : undefined;
+  const audioSrc = tapestry.audioPath
+    ? getImagePath(tapestry.audioPath)
+    : undefined;
 
   // Get all team members for this state using the utility function
   const { stateDirectors, historicalPartners, illustrators, stitchingGroups } =
@@ -79,44 +82,51 @@ export default async function TapestryPage({
 
       <div className="lead-text">{tapestry.summary}</div>
 
-      <PageSection paddingTop="none" paddingBottom="small" hasPin={true}>
-        {/* Tapestry image with full image viewer capability */}
-        <FullImageViewer
-          imageSrc={imageSrc}
-          altText={tapestry.title}
-          status={tapestry.status}
-          statusColor={statusColor}
-          statusTextColor={statusTextColor}
-        />
+      <PageSection spacing="normal">
+        {/* Tapestry image */}
+        <div className="mb-8 md:mb-12">
+          <FullImageViewer
+            imageSrc={imageSrc}
+            altText={tapestry.title}
+            status={tapestry.status}
+            statusColor={statusColor}
+            statusTextColor={statusTextColor}
+          />
+        </div>
 
-        <div className="p-6 md:p-8">
+        {/* Content container */}
+        <ReadingContainer width="content" background="paper">
           {audioSrc && (
             <div className="mb-8">
               <AccessibleAudioPlayer
                 src={audioSrc}
                 title={`Audio Description: ${tapestry.title} Tapestry`}
-                {...(tapestry.audioDescription && { description: tapestry.audioDescription })}
+                {...(tapestry.audioDescription && {
+                  description: tapestry.audioDescription,
+                })}
               />
             </div>
           )}
 
-          <div
-            className="content-typography"
-            dangerouslySetInnerHTML={{ __html: contentHtml }}
-          />
-        </div>
-      </PageSection>
+          <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        </ReadingContainer>
 
-      {/* Team card section */}
-      <PageSection paddingTop="none">
+        {/* Pin separator */}
+        <div className="flex justify-center pt-8 pb-2">
+          <div className="page-section-pin-bottom" />
+        </div>
+
+        {/* Team section */}
         {hasTeamMembers && (
-          <TeamCard
-            stateName={tapestry.title}
-            stateDirectors={stateDirectors}
-            historicalPartners={historicalPartners}
-            illustrators={illustrators}
-            stitchingGroups={stitchingGroups}
-          />
+          <div className="pt-6">
+            <TeamCard
+              stateName={tapestry.title}
+              stateDirectors={stateDirectors}
+              historicalPartners={historicalPartners}
+              illustrators={illustrators}
+              stitchingGroups={stitchingGroups}
+            />
+          </div>
         )}
       </PageSection>
     </>

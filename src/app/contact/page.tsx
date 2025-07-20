@@ -23,7 +23,7 @@ export default function ContactPage() {
         please reach out.
       </p>
 
-      <PageSection paddingTop="none">
+      <PageSection spacing="normal">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-8">
           <div>
             {/* Send a message */}

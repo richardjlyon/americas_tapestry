@@ -167,6 +167,16 @@
         background-size: contain;
     }
 
+    .page-section-pin-bottom {
+        width: 100%;
+        max-width: 300px;
+        height: 50px;
+        background-image: url('/needle.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
     /* Content spacing utilities */
     .content-spacing-sm > * + * {
         @apply mt-4 md:mt-6;

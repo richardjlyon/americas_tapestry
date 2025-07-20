@@ -85,7 +85,7 @@ export default async function BlogPostPage({
       </div>
 
       {/* Content Section */}
-      <PageSection paddingTop="none" paddingBottom="none">
+      <PageSection spacing="normal">
         <BlogPostContent post={post} contentHtml={contentHtml} />
       </PageSection>
 

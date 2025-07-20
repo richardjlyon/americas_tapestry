@@ -16,8 +16,13 @@ export interface PageSectionProps {
   container?: boolean;
   className?: string;
   hasPin?: boolean;
-  spacing?: 'none' | 'small' | 'medium' | 'large' | 'default';
+  pinPosition?: 'top' | 'bottom';
+  // New simplified spacing system
+  spacing?: 'tight' | 'normal' | 'spacious';
+  // Deprecated - maintained for backward compatibility
+  /** @deprecated Use spacing prop instead */
   paddingTop?: 'none' | 'small' | 'medium' | 'large' | 'default';
+  /** @deprecated Use spacing prop instead */
   paddingBottom?: 'none' | 'small' | 'medium' | 'large' | 'default';
 }
 
@@ -28,41 +33,59 @@ export function PageSection({
   container = true,
   className,
   hasPin = false,
-  spacing = 'default',
-  paddingTop = 'large',
-  paddingBottom = 'large',
+  pinPosition = 'top',
+  spacing = 'normal',
+  paddingTop,
+  paddingBottom,
 }: PageSectionProps) {
   // Determine padding classes based on spacing props
   const getPaddingClass = () => {
-    // If individual padding props are provided, they take precedence
-    const topPadding = paddingTop ? paddingTop : spacing;
-    const bottomPadding = paddingBottom ? paddingBottom : spacing;
+    // If deprecated padding props are provided, use backward compatibility
+    if (paddingTop || paddingBottom) {
+      const topPadding = paddingTop || 'large';
+      const bottomPadding = paddingBottom || 'large';
 
-    const topClass = {
-      none: 'pt-0',
-      small: 'pt-3 md:pt-8',
-      medium: 'pt-8 md:pt-12',
-      large: 'pt-12 md:pt-16',
-      default: 'pt-12 md:pt-16 lg:pt-20',
-    }[topPadding];
+      const topClass = {
+        none: 'pt-0',
+        small: 'pt-3 md:pt-8',
+        medium: 'pt-8 md:pt-12',
+        large: 'pt-12 md:pt-16',
+        default: 'pt-12 md:pt-16 lg:pt-20',
+      }[topPadding];
 
-    const bottomClass = {
-      none: 'pb-0',
-      small: 'pb-6 md:pb-8',
-      medium: 'pb-8 md:pb-12',
-      large: 'pb-12 md:pb-16',
-      default: 'pb-12 md:pb-16 lg:pb-20',
-    }[bottomPadding];
+      const bottomClass = {
+        none: 'pb-0',
+        small: 'pb-6 md:pb-8',
+        medium: 'pb-8 md:pb-12',
+        large: 'pb-12 md:pb-16',
+        default: 'pb-12 md:pb-16 lg:pb-20',
+      }[bottomPadding];
 
-    return `${topClass} ${bottomClass}`;
+      return `${topClass} ${bottomClass}`;
+    }
+
+    // Use new simplified spacing system
+    const spacingClasses = {
+      tight: 'py-8 md:py-12',      // For closely related content
+      normal: 'py-12 md:py-16',    // Default for most content (equivalent to old 'large')
+      spacious: 'py-16 md:py-24'   // For major section breaks (equivalent to old 'default')
+    };
+
+    return spacingClasses[spacing];
   };
+
+  const sectionContent = container ? (
+    <div className="container mx-auto">{children}</div>
+  ) : (
+    children
+  );
 
   return (
     <section
       {...(id && { id })}
       className={cn(
         'page-section',
-        hasPin && 'page-section-pin',
+        hasPin && pinPosition === 'top' && 'page-section-pin',
         getPaddingClass(),
         {
           'linen-texture': background === 'linen-texture',
@@ -76,10 +99,11 @@ export function PageSection({
         className,
       )}
     >
-      {container ? (
-        <div className="container mx-auto">{children}</div>
-      ) : (
-        children
+      {sectionContent}
+      {hasPin && pinPosition === 'bottom' && (
+        <div className="flex justify-center pt-4 pb-2">
+          <div className="page-section-pin-bottom" />
+        </div>
       )}
     </section>
   );
