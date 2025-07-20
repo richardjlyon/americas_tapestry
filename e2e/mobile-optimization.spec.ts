@@ -8,7 +8,7 @@
  * - Core Web Vitals on mobile
  */
 
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 test.describe('Mobile Optimization Performance', () => {
   
@@ -48,13 +48,17 @@ test.describe('Mobile Optimization Performance', () => {
     
     // Check that images are loading (not all have error state)
     const loadedImages = await images.evaluateAll((imgs) => 
-      imgs.filter(img => img.complete && img.naturalHeight > 0).length
+      imgs.filter((img): img is HTMLImageElement => 
+        img instanceof HTMLImageElement && img.complete && img.naturalHeight > 0
+      ).length
     );
     expect(loadedImages).toBeGreaterThan(0);
     
     // Should not have massive unoptimized images
     const imageSources = await images.evaluateAll((imgs) => 
-      imgs.map(img => img.src).filter(src => src.includes('/images/'))
+      imgs.filter((img): img is HTMLImageElement => img instanceof HTMLImageElement)
+          .map(img => img.src)
+          .filter(src => src.includes('/images/'))
     );
     
     // None should be the massive original files (these would be 15MB+)
@@ -262,7 +266,9 @@ test.describe('Mobile Optimization Performance', () => {
     
     if (imageCount > 0) {
       const imagesWithoutAlt = await images.evaluateAll((imgs) => 
-        imgs.filter(img => !img.alt || img.alt.trim() === '').length
+        imgs.filter((img): img is HTMLImageElement => 
+          img instanceof HTMLImageElement && (!img.alt || img.alt.trim() === '')
+        ).length
       );
       
       // Most images should have alt text (allow some decorative images)
@@ -302,11 +308,13 @@ test.describe('Desktop vs Mobile Performance Comparison', () => {
     await page.goto('/tapestries', { waitUntil: 'domcontentloaded' });
     
     const mobileImages = await page.locator('img').evaluateAll((imgs) => 
-      imgs.map(img => ({
-        src: img.src,
-        naturalWidth: img.naturalWidth,
-        displayWidth: img.clientWidth
-      })).filter(img => img.src.includes('/images/'))
+      imgs.filter((img): img is HTMLImageElement => img instanceof HTMLImageElement)
+          .map(img => ({
+            src: img.src,
+            naturalWidth: img.naturalWidth,
+            displayWidth: img.clientWidth
+          }))
+          .filter(img => img.src.includes('/images/'))
     );
     
     // Check desktop
@@ -314,11 +322,13 @@ test.describe('Desktop vs Mobile Performance Comparison', () => {
     await page.goto('/tapestries', { waitUntil: 'domcontentloaded' });
     
     const desktopImages = await page.locator('img').evaluateAll((imgs) => 
-      imgs.map(img => ({
-        src: img.src,
-        naturalWidth: img.naturalWidth,
-        displayWidth: img.clientWidth
-      })).filter(img => img.src.includes('/images/'))
+      imgs.filter((img): img is HTMLImageElement => img instanceof HTMLImageElement)
+          .map(img => ({
+            src: img.src,
+            naturalWidth: img.naturalWidth,
+            displayWidth: img.clientWidth
+          }))
+          .filter(img => img.src.includes('/images/'))
     );
     
     // Mobile images should generally be smaller or equal

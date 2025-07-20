@@ -64,7 +64,7 @@ const mockWindowProperties = (properties: Partial<Window & { connection?: any }>
     });
   }
   
-  if (properties.userAgent) {
+  if ('userAgent' in properties) {
     Object.defineProperty(navigator, 'userAgent', {
       writable: true,
       configurable: true,
@@ -93,7 +93,7 @@ describe('Mobile Device Detection', () => {
     mockWindowProperties({ 
       innerWidth: 1024,
       userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X)'
-    });
+    } as any);
     
     // Mock touch capability
     Object.defineProperty(window, 'ontouchstart', {
@@ -109,7 +109,7 @@ describe('Mobile Device Detection', () => {
     mockWindowProperties({ 
       innerWidth: 1024,
       userAgent: 'Mozilla/5.0 (Linux; Android 11; SM-G991B)'
-    });
+    } as any);
     
     Object.defineProperty(navigator, 'maxTouchPoints', {
       writable: true,
@@ -130,11 +130,9 @@ describe('Connection-Aware Hook', () => {
 
   test('returns unknown connection type when API not available', () => {
     // Ensure mobile detection returns false
-    Object.defineProperty(navigator, 'userAgent', {
-      writable: true,
-      configurable: true,
-      value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-    });
+    mockWindowProperties({
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    } as any);
     delete window.ontouchstart;
     Object.defineProperty(navigator, 'maxTouchPoints', {
       writable: true,
@@ -156,7 +154,7 @@ describe('Connection-Aware Hook', () => {
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
       }
-    });
+    } as any);
 
     const { result } = renderHook(() => useConnectionAware());
     
@@ -175,7 +173,7 @@ describe('Connection-Aware Hook', () => {
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
       }
-    });
+    } as any);
 
     const { result } = renderHook(() => useConnectionAware());
     expect(result.current.type).toBe('fast');
@@ -191,7 +189,7 @@ describe('Connection-Aware Hook', () => {
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
       }
-    });
+    } as any);
 
     const { result } = renderHook(() => useConnectionAware());
     expect(result.current.type).toBe('slow');
@@ -243,7 +241,7 @@ describe('Mobile-Optimized Image Paths', () => {
     mockWindowProperties({ 
       innerWidth: 1024,
       userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-    });
+    } as any);
     
     // Ensure touch is not detected
     delete window.ontouchstart;
@@ -286,7 +284,7 @@ describe('Mobile-Optimized Image Paths', () => {
     mockWindowProperties({ 
       innerWidth: 1920,
       userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-    });
+    } as any);
     
     const slowResult = getAdaptiveImagePath(basePath, 'hero', 'slow');
     const fastResult = getAdaptiveImagePath(basePath, 'hero', 'fast');
@@ -324,7 +322,7 @@ describe('OptimizedImage Component', () => {
     // Mock IntersectionObserver
     mockObserve = jest.fn();
     mockDisconnect = jest.fn();
-    mockIntersectionObserver = jest.fn().mockImplementation((callback) => ({
+    mockIntersectionObserver = jest.fn().mockImplementation((_callback) => ({
       observe: mockObserve,
       unobserve: jest.fn(),
       disconnect: mockDisconnect,
@@ -353,7 +351,7 @@ describe('OptimizedImage Component', () => {
     mockWindowProperties({ 
       innerWidth: 1024,
       userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-    });
+    } as any);
     
     delete window.ontouchstart;
     Object.defineProperty(navigator, 'maxTouchPoints', {
@@ -394,7 +392,7 @@ describe('OptimizedImage Component', () => {
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
       }
-    });
+    } as any);
 
     render(
       <OptimizedImage
@@ -537,7 +535,7 @@ describe('OptimizedImage Component', () => {
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
       }
-    });
+    } as any);
 
     render(
       <OptimizedImage
@@ -568,7 +566,7 @@ describe('Integration Tests', () => {
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
       }
-    });
+    } as any);
 
     const basePath = '/images/tapestries/test.jpg';
     const result = getAdaptiveImagePath(basePath, 'hero', 'slow');
@@ -580,7 +578,7 @@ describe('Integration Tests', () => {
     mockWindowProperties({ 
       innerWidth: 1920,
       userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-    });
+    } as any);
     
     // Ensure not mobile
     delete window.ontouchstart;
@@ -618,7 +616,6 @@ describe('Performance Validation', () => {
   test('mobile optimizations reduce bandwidth usage', () => {
     mockWindowProperties({ innerWidth: 480 });
     
-    const desktopPath = getAdaptiveImagePath('/test.jpg', 'hero', 'fast');
     const mobilePath = getMobileOptimizedPath('/test.jpg', 'hero');
     
     // Mobile should use smaller variants
