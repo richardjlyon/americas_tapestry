@@ -3,7 +3,7 @@ name: "Fraunces Tavern Museum"
 role: "Historical Partner"
 state: "New York"
 summary: "Distinguished colonial museum housed in landmark edifice preserves revolution-era heritage through unparalleled eighteenth-century collections."
-location: "XXX"
+location: "New York, New York"
 moreInformation: "https://www.frauncestavernmuseum.org/"
 ---
 

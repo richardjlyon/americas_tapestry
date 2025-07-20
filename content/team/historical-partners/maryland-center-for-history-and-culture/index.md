@@ -3,7 +3,7 @@ name: "Maryland Center For History And Culture"
 role: "Historical Partner"
 state: "Maryland"
 summary: "The Maryland Center for History and Culture stands as Baltimore's premier institution dedicated to preserving and interpreting the state's rich heritage."
-location: "XXX"
+location: "Baltimore, Maryland"
 moreInformation: "https://www.mdhistory.org/"
 ---
 

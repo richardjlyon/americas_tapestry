@@ -3,7 +3,7 @@ name: "New Hampshire Historical Society"
 role: "Historical Partner"
 state: "New Hampshire"
 summary: "Esteemed state heritage institution integrates extensive colonial archives with dynamic public programming for authentic historical engagement."
-location: "XXX"
+location: "Concord, New Hampshire"
 moreInformation: "https://www.nhhistory.org/"
 ---
 

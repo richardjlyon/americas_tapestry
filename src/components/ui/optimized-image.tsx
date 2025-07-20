@@ -81,14 +81,20 @@ export function OptimizedImage({
     return () => observer.disconnect();
   }, [priority, strategy.intersectionMargin]);
 
-  // Handle image load error
+  // Handle image load error with multiple fallback levels
   const handleError = () => {
+    console.warn(`Image failed to load: ${currentSrc}`);
+    
     if (currentSrc !== fallbackSrc) {
       // Try fallback image first
       setCurrentSrc(fallbackSrc);
       setHasError(false);
+    } else if (currentSrc !== '/placeholder.svg') {
+      // Try generic placeholder
+      setCurrentSrc('/placeholder.svg');
+      setHasError(false);
     } else {
-      // If fallback also fails, show error state
+      // If all fallbacks fail, show error state
       setHasError(true);
     }
   };

@@ -33,36 +33,11 @@ export function TeamCard({
     setFailedImages((prev) => ({ ...prev, [id]: true }));
   };
 
-  // Updated function to get the appropriate image source using public directory paths
+  // Simplified function to get image source - single image per person
   const getImageSrc = (member: TeamMember) => {
     // If image already failed, use placeholder
     if (failedImages[member.slug]) {
       return personSvgFallback;
-    }
-
-    // For state directors, try face image first if available
-    if (member.groupSlug === 'state-directors') {
-      // Check if this director has a face image and it hasn't failed to load
-      if (member['hasFaceImage'] && !failedImages[`${member.slug}-face`]) {
-        // Use public images directory path for face images
-        return `/images/team/state-directors/${member.slug}/${member.slug}-face.jpg`;
-      }
-      // If face image has failed but regular image hasn't been tried yet
-      if (
-        failedImages[`${member.slug}-face`] &&
-        !failedImages[`${member.slug}`]
-      ) {
-        return `/images/team/state-directors/${member.slug}/${member.slug}.jpg`;
-      }
-      // If both failed, use SVG fallback
-      return personSvgFallback;
-    }
-
-    // For historical partners - use the public images directory
-    if (member.groupSlug === 'historical-partners') {
-      return failedImages[`${member.slug}`]
-        ? personSvgFallback
-        : `/images/team/historical-partners/${member.slug}/${member.slug}.jpg`;
     }
 
     // For stitching groups use SVG fallback
@@ -70,10 +45,11 @@ export function TeamCard({
       return personSvgFallback;
     }
 
-    // Default image path for other groups (using public images directory)
-    return failedImages[`${member.slug}`]
-      ? personSvgFallback
-      : `/images/team/${member.groupSlug}/${member.slug}/${member.slug}.jpg`;
+    // Image path - state directors, illustrators, historical partners, and project director use flattened structure, others use subfolders
+    if (member.groupSlug === 'state-directors' || member.groupSlug === 'illustrators' || member.groupSlug === 'historical-partners' || member.groupSlug === 'project-director') {
+      return `/images/team/${member.groupSlug}/${member.slug}.jpg`;
+    }
+    return `/images/team/${member.groupSlug}/${member.slug}/${member.slug}.jpg`;
   };
 
   // Flatten all team members into a single array - keep it simple
@@ -116,19 +92,7 @@ export function TeamCard({
                       style={{
                         objectPosition: member.imagePosition || 'center',
                       }}
-                      onError={() => {
-                        // For state directors with face images, we need to track face failures separately
-                        if (
-                          member.groupSlug === 'state-directors' &&
-                          member['hasFaceImage'] &&
-                          !failedImages[`${member.slug}-face`]
-                        ) {
-                          handleImageError(`${member.slug}-face`);
-                        } else {
-                          // For all other failures, mark the entire image as failed
-                          handleImageError(member.slug);
-                        }
-                      }}
+                      onError={() => handleImageError(member.slug)}
                     />
                   </div>
 

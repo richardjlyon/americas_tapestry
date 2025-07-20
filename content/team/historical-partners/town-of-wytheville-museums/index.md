@@ -3,7 +3,7 @@ name: "Town Of Wytheville Museums"
 role: "Historical Partner"
 state: "Virginia"
 summary: "Historic Wytheville: where Appalachian stories come alive"
-location: "XXX"
+location: "Wytheville, Virginia"
 moreInformation: "https://museums.wytheville.org/"
 ---
 

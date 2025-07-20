@@ -1,7 +1,7 @@
 ---
 name: Alyssa Ruby
 role: "Illustrator"
-state: Massachussets
+state: "Massachusetts"
 ---
 
 Alyssa Ruby, currently residing in Winchester, Virginia, is an

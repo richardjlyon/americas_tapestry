@@ -3,7 +3,7 @@ name: "Rhode Island Historical Society"
 role: "Historical Partner"
 state: "Rhode Island"
 summary: "Historical society maintains definitive state archives, offering scholarly colonial expertise while engaging communities through innovative exhibitions and educational programming."
-location: "XXX"
+location: "Providence, Rhode Island"
 moreInformation: "https://www.rihs.org/"
 ---
 

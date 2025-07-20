@@ -32,13 +32,20 @@ export function MemberCard({
   const [imgError, setImgError] = useState(false);
   const [contentHtml, setContentHtml] = useState('');
 
-  // Handle image load error
+  // Handle image load error with fallback chain
   const handleImageError = () => {
-    console.error(
-      `Failed to load image: ${member['imagePath']} for ${member.name}`,
-    );
-    setImgError(true);
-    setImgSrc(placeholderPath);
+    console.warn(`Image failed to load: ${imgSrc} for ${member.name}`);
+    
+    if (imgSrc !== '/placeholder-user.jpg' && imgSrc !== placeholderPath) {
+      // Try generic user placeholder first
+      setImgSrc('/placeholder-user.jpg');
+    } else if (imgSrc !== placeholderPath) {
+      // Try the specific placeholder
+      setImgSrc(placeholderPath);
+    } else {
+      // All fallbacks failed, show error state
+      setImgError(true);
+    }
   };
 
   // Process markdown content

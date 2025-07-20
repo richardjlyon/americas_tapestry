@@ -3,7 +3,7 @@ name: "Connecticut Old State House"
 role: "Historical Partner"
 state: "Connecticut"
 summary: "An esteemed historical landmark preserving cultural heritage while providing expert archival resources and hosting public educational programs in a central, high-visibility location."
-location: "XXX"
+location: "Hartford, Connecticut"
 moreInformation: "https://wp.cga.ct.gov/osh/"
 ---
 

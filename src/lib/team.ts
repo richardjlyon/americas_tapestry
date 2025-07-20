@@ -83,8 +83,13 @@ export function getTeamGroups(): TeamGroup[] {
   }
 }
 
-// Generate image path based on member slug and group slug - use public directory
+// Generate image path based on member slug and group slug - flattened structure
 function getTeamMemberImagePath(groupSlug: string, memberSlug: string): string {
+  if (groupSlug === 'state-directors' || groupSlug === 'illustrators' || groupSlug === 'historical-partners' || groupSlug === 'project-director') {
+    // State directors, illustrators, historical partners, and project director use flattened structure
+    return `/images/team/${groupSlug}/${memberSlug}.jpg`;
+  }
+  // Other groups still use subfolder structure
   return `/images/team/${groupSlug}/${memberSlug}/${memberSlug}.jpg`;
 }
 
@@ -125,18 +130,7 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
         imagePath = getTeamMemberImagePath(group, dirName);
       }
 
-      // Check if a face image exists (using the naming convention: name-face.jpg)
-      const faceImagePath = `/images/team/${group}/${dirName}/${dirName}-face.jpg`;
-      
-      // Check the actual file path in the public directory
-      const actualFaceImagePath = path.join(
-        process.cwd(),
-        `public/images/team/${group}/${dirName}/${dirName}-face.jpg`,
-      );
-
-      // Dynamically check if the face image file exists
-      const hasFaceImage =
-        group === 'state-directors' && fs.existsSync(actualFaceImagePath);
+      // Face images have been removed - using single image per person
 
       // Check if required fields exist in data
       if (!data['name'] || !data['role']) {
@@ -152,8 +146,6 @@ export function getTeamMembersByGroup(group: string): TeamMember[] {
         content,
         groupSlug: group,
         imagePath,
-        faceImagePath,
-        hasFaceImage,
         ...data,
       } as TeamMember;
     })
