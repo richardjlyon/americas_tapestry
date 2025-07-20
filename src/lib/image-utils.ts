@@ -101,18 +101,18 @@ export function getImageSizes(role: 'hero' | 'card' | 'thumbnail' | 'feature' | 
     case 'hero':
       return '100vw';
     case 'feature':
-      return '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw';
+      return '(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw';
     case 'card':
-      return '(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw';
+      return '(max-width: 480px) 95vw, (max-width: 768px) 45vw, (max-width: 1200px) 30vw, 25vw';
     case 'thumbnail':
-      return '(max-width: 768px) 25vw, 15vw';
+      return '(max-width: 480px) 40vw, (max-width: 768px) 25vw, 15vw';
+    case 'gallery':
+      return '(max-width: 480px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 50vw, 33vw';
     case 'banner':
       return '100vw';
-    case 'gallery':
-      return '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
     case 'full':
     default:
-      return '(max-width: 1024px) 100vw, 1024px';
+      return '(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1024px';
   }
 }
 
@@ -243,27 +243,94 @@ export function getResponsiveImageSources(basePath: string, role: 'hero' | 'gall
 }
 
 /**
+ * Detect if user is on a mobile device
+ * Uses multiple heuristics for better detection
+ * 
+ * @returns boolean indicating if device is mobile
+ */
+export function isMobileDevice(): boolean {
+  if (typeof window === 'undefined') return false;
+  
+  // Check viewport width
+  const isMobileViewport = window.innerWidth <= 768;
+  
+  // Check user agent
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isMobileUserAgent = /mobi|android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+  
+  // Check for touch capability
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  return isMobileViewport || (isMobileUserAgent && isTouchDevice);
+}
+
+/**
  * Get mobile-optimized image path
  * Returns smaller, more compressed variants for mobile devices
  * Part of Phase 4 Mobile Optimization
  * 
  * @param imagePath - Original image path
  * @param role - Image role for appropriate sizing
+ * @param forceOptimization - Force mobile optimization regardless of device detection
  * @returns Optimized path for mobile devices
  */
-export function getMobileOptimizedPath(imagePath: string, role: 'hero' | 'gallery' | 'thumbnail' | 'card' = 'gallery'): string {
-  // For mobile, prefer smaller, more compressed variants
-  if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+export function getMobileOptimizedPath(
+  imagePath: string, 
+  role: 'hero' | 'gallery' | 'thumbnail' | 'card' = 'gallery',
+  forceOptimization: boolean = false
+): string {
+  // For mobile devices or when forced, prefer smaller, more compressed variants
+  if (forceOptimization || isMobileDevice()) {
     const baseName = imagePath.replace(/\.[^/.]+$/, '');
     
-    // Choose appropriate mobile size based on role
+    // Choose appropriate mobile size based on role with more aggressive optimization
     const mobileSize = role === 'hero' ? '1024w' : 
                      role === 'gallery' ? '640w' :
-                     role === 'card' ? '600w' : '400w';
+                     role === 'card' ? '400w' : '200w'; // Smaller for thumbnails
     
     return `${baseName}-${mobileSize}.webp`;
   }
   return imagePath;
+}
+
+/**
+ * Get connection and device-aware image path
+ * Combines mobile detection with connection awareness for optimal image serving
+ * 
+ * @param imagePath - Original image path
+ * @param role - Image role for appropriate sizing
+ * @param connectionType - Connection speed type
+ * @returns Optimized path based on device and connection
+ */
+export function getAdaptiveImagePath(
+  imagePath: string,
+  role: 'hero' | 'gallery' | 'thumbnail' | 'card' = 'gallery',
+  connectionType: 'slow' | 'fast' | 'unknown' = 'unknown'
+): string {
+  const baseName = imagePath.replace(/\.[^/.]+$/, '');
+  
+  // Determine optimal size based on device and connection
+  let size: string;
+  
+  // Check if it's mobile device (if window is available)
+  const isMobile = typeof window !== 'undefined' ? isMobileDevice() : false;
+  
+  if (connectionType === 'slow' || isMobile) {
+    // Use smaller sizes for slow connections or mobile
+    size = role === 'hero' ? '640w' : 
+           role === 'gallery' ? '400w' :
+           role === 'card' ? '300w' : '200w';
+  } else {
+    // Use larger sizes for fast connections on desktop
+    size = role === 'hero' ? '1920w' : 
+           role === 'gallery' ? '1024w' :
+           role === 'card' ? '600w' : '400w';
+  }
+  
+  // Choose format based on connection speed
+  const format = connectionType === 'slow' ? 'webp' : 'avif';
+  
+  return `${baseName}-${size}.${format}`;
 }
 
 /**

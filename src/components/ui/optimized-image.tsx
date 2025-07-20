@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image, { ImageProps } from 'next/image';
 import { getContextualBlurPlaceholder, getImageSizes } from '@/lib/image-utils';
 import { cn } from '@/lib/utils';
+import { useConnectionAware, getConnectionAwareStrategy } from '@/hooks/use-connection-aware';
 
 interface OptimizedImageProps extends Omit<ImageProps, 'placeholder' | 'blurDataURL'> {
   src: string;
@@ -53,7 +54,11 @@ export function OptimizedImage({
   const [hasLoaded, setHasLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Intersection Observer for lazy loading
+  // Connection-aware loading strategy
+  const connectionInfo = useConnectionAware();
+  const strategy = getConnectionAwareStrategy(connectionInfo);
+
+  // Intersection Observer for lazy loading with connection-aware margins
   useEffect(() => {
     if (priority) return; // Skip intersection observer for priority images
     
@@ -66,7 +71,7 @@ export function OptimizedImage({
           }
         });
       },
-      { rootMargin: '50px' } // Start loading 50px before entering viewport
+      { rootMargin: strategy.intersectionMargin } // Use connection-aware margin
     );
     
     if (containerRef.current) {
@@ -74,7 +79,7 @@ export function OptimizedImage({
     }
     
     return () => observer.disconnect();
-  }, [priority]);
+  }, [priority, strategy.intersectionMargin]);
 
   // Handle image load error
   const handleError = () => {
@@ -141,7 +146,7 @@ export function OptimizedImage({
     );
   }
 
-  // Prepare image props
+  // Prepare image props with connection-aware optimizations
   const imageProps: ImageProps = {
     src: currentSrc,
     alt,
@@ -154,11 +159,13 @@ export function OptimizedImage({
     onLoad: handleLoad,
     onError: handleError,
     priority,
+    quality: strategy.quality, // Use connection-aware quality
     ...props,
   };
 
-  // Add blur placeholder if enabled
-  if (enableBlurPlaceholder && !('placeholder' in props)) {
+  // Add blur placeholder if enabled (always enable for slow connections)
+  const shouldUseBlurPlaceholder = enableBlurPlaceholder || strategy.enableBlurPlaceholder;
+  if (shouldUseBlurPlaceholder && !('placeholder' in props)) {
     (imageProps as any).placeholder = 'blur';
     (imageProps as any).blurDataURL = getContextualBlurPlaceholder(currentSrc);
   }
