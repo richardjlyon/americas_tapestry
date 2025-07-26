@@ -2,7 +2,7 @@
 title: "July 2025 Update"
 date: "2025-07-09T10:51:26-05:00"
 excerpt: "Podcast feature, stitching events, and more!"
-image: "/images/news/july-2025/stitching-events-collage.jpg"
+image: "/images/news/july-2025/north-carolina-detail.png"
 featured: false
 ---
 
