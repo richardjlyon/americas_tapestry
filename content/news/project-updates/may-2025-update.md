@@ -6,17 +6,17 @@ image: "/images/news/tracing-rhode-island.jpg"
 featured: false
 ---
 
-## Greetings, Everyone!
+**Greetings, Everyone!**
 
 The month of May is upon us! In light of the prodigious April showers, I hope you are all savoring the
 spring blossoms that this month inevitably brings.
 
-## What's New?
+**What's New?**
 
 12 of the 13 panels are now in production. How exciting is that? As your state commences embroidery or is in the
 preparatory phase, please reach out with any questions you may have. **Please note**, email rather than phone or text is best this month!
 
-## Behind the Stitches
+**Behind the Stitches**
 
 As many of you know, I hand trace each of the designs onto linen using a massive light board. This process can take between 4 - 8 hours depending on the complexity of the design. I used a Frixxon heat activated pen, allowing for any lines to be removed with light steam or heat. Many a podcast was listened to as the hours went by!
 
@@ -35,14 +35,14 @@ What a thrill it was to watch as the inaugural stitch occurred! We cannot wait t
 
 ![Stiching the New York panel](/images/news/stitiching-new-york-panel.jpg)
 
-## Sponsorship Announcement!
+**Sponsorship Announcement!**
 
 I am so thrilled to announce an exciting new sponsorship with California-based Fleur De Paris, a needlepoint distributor. Established in 1975, the company has built an exceptional reputation as a wholesale distributor and importer of premium-quality materials for cross-stitching, knitting, crochet, embroidery, and other needlework crafts. They will be generously supplying our embroiderers with
 specialty flosses that will enhance each stitch design.
 
 ![Stiching the New York panel](/images/news/fleur-de-paris.jpg)
 
-## We've Gone Viral!
+**We've Gone Viral!**
 
 Well, almost! Be sure to follow & share our Facebook & Instagram pages to keep up to date with recent developments. I have been crafting 90 second videos to document each state's progress as they begin stitching. Have a look!
 
@@ -50,7 +50,7 @@ The Pennsylvania Tapestry team has created their own Instagram account - why not
 
 Thinking about creating a social media account for your state panel? Go for it!
 
-## May Spotlight: North Carolina
+**May Spotlight: North Carolina**
 
 This month we are thrilled to spotlight the North Carolina Panel, illustrated by Kacy Momon, a first year art student at Savannah
 College of Art & Design.
@@ -77,7 +77,7 @@ only supported the revolutionary cause but placed themselves at great risk by po
 The panel will be stitched under the leadership of Gail Smith in historic sites across North Carolina, thanks to our partnership
 with the North Carolina Department of Natural and Cultural Resources.
 
-## What's Next?
+**What's Next?**
 
 Let the stitching commence! No doubt there will be logistical concerns to iron out as the process gets started. Be sure to share
 and send photos to inspire and motivate our other states!

@@ -12,7 +12,7 @@ Happy February! While we often feel need to hibernate this time of
 year, we at America’s Tapestry have shaken off those winter cobwebs,
 rolled our sleeves up, and burned the midnight oil!
 
-## What’s New
+**What's New**
 
 We have prepared our first panel for stitching. The design for the
 Georgia Panel has been carefully laid out on a piece of 55” x 65” linen
@@ -38,7 +38,7 @@ Be sure to check out the [talented illustrators](/team/illustrators/)
 from across the country who are working on completing the illustrations
 for America’s Tapestry.
 
-## February Spotlight - New York
+**February Spotlight - New York**
 
 This month we are returning to our Spotlight Series to showcase the
 [New York Panel](/tapestries/new-york/). The design features the Birch
@@ -81,7 +81,7 @@ organizations. We are excited for them to get underway!
 ![Van Schaick Mansion, Albany
 NY](/images/news/images/van-schaick-mansion.webp)
 
-## What’s Next?
+**What's Next?**
 
 We are preparing the New Jersey & New York panels for stitching.
 
@@ -92,7 +92,7 @@ Panels. Stay tuned for some very exciting updates on their progress.
 Think you may need an embroidery frame for your state’s panel? Reach
 out and let’s find a solution.
 
-## Attention--Stitchers Needed!
+**Attention--Stitchers Needed!**
 
 That’s right--we are still seeking talented stitchers in the state of
 **South Carolina**. Think you know the right person or organization?

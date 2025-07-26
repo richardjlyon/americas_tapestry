@@ -12,7 +12,7 @@ Happy New Year! May I take this opportunity to wish you all the best
 for 2025. After the preparations of 2024, this is the year that work on
 America’s Tapestry truly begins. How exciting!
 
-## What’s New
+**What's New**
 
 Following our November Zoom conference with David Brashear, director of
 the Muscarelle Museum of Art, we travelled to Williamsburg, VA in
@@ -59,7 +59,7 @@ newsletter through our website. It would help us grow our community if
 you could invite your familty and friends to sign up, by forwarding
 them a link to our contact page: https://americastapestry.com/contact.
 
-## What’s Next?
+**What's Next?**
 
 Hold on to your hats: stitching commences this month in three of our
 states! Georgia at the Atlanta History Center, New Jersey at Saint
@@ -80,7 +80,9 @@ That’s right - we are still seeking talented stitchers from the
 following states. Think you know the right person or organization? Send
 them our info and invite them to join!
 
-    Rhode Island     North Carolina     South Carolina
+- Rhode Island
+- North Carolina
+- South Carolina
 
 That's all for this month. Thanks for reading, and happy stitching!
 

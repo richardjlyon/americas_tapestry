@@ -22,7 +22,7 @@ the project & we are so grateful for the team Deborah Berger and Robin
 Starnes have assembled. We cannot wait to see what magic they create
 over the next 14 months.
 
-## March Spotlight - The New Hampshire Panel
+**March Spotlight - The New Hampshire Panel**
 
 This panel illustrates [New Hampshire’s](/tapestries/new-hampshire) role at the forefront of
 independence, depicting the Pine Tree Riot of 1772 which was one of the
@@ -44,7 +44,7 @@ process within the context of the museum’s collection.
 Our New Hampshire State Director is Carol Tewes Ganse, who has
 assembled a team of stitchers from throughout the state.
 
-## What's Next?
+**What's Next?**
 
 Another busy month is ahead! We are preparing the Pennsylvania &
 Connecticut Panels to be sent out to their respective organizations.
@@ -55,7 +55,7 @@ illustrators!
 As your state begins preparations to receive your panel, [let me know]() if
 you need any framing materials.
 
-## Attention - State Director Needed!
+**Attention - State Director Needed!**
 
 While we have been astounded at the number of stitchers and leaders who
 have come forward from across the 13 states, we are still in need of a

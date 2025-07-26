@@ -8,7 +8,7 @@ featured: false
 
 **Happy April! I hope you all are well and enjoying the many beautiful experiences spring has to offer. Time to pack away all our woolens and prepare for sunnier days to come!**
 
-## What's new
+**What's new**
 
 We had the wonderful opportunity to attend VA250's [A Common Cause to All](https://va250.org/a-common-cause-to-all-2025/) Conference at Colonial Williamsburg. Virginia's 250 Commission invited planners from across the U.S. to learn & discuss what each state was up to for our Semiquincentennial. With 40 states in attendance, it was the largest gathering in the conference's three year history.
 
@@ -26,7 +26,7 @@ The state of the art classroom, just off the museum's main lobby, is the perfect
 
 ![Tracing the Viginia panel](/images/news/virginia-tracing.jpg)
 
-## April Spotlight - The Connecticut panel
+**April Spotlight - The Connecticut panel**
 
 This month we are thrilled to present [the Connecticut Panel](tapestries/connecticut), depicting the various activities of the "Provision State." In the foreground, editor Hannah Bunce Watson is shown at work on The Connecticut Courant. Upon her husband's death, Hannah inherited the newspaper and became one of the first female editors in chief at just 27 years old in 1778. She used the newspaper to spread information about the Revolution & to further the Patriot cause.
 
@@ -36,7 +36,7 @@ Additional patriotic activities can be seen throughout the panel, highlighting t
 
 The design was completed by the incredibly talented [Sarah Naidich](/team/illustrators/sarah-naidich), a student at the Rhode Island School of Design. Her work has been recognized by Doodle 4 Google, Scholastic Art and Writing, Celebrating Art, and the Fairfax County Student Human Rights Commission. The Connecticut Panel is directed by Laura Kasowitz, founder of the [Hartford Stitch](https://www.hartfordstitch.com/) in West Hartford.
 
-## What's next
+**What's next**
 
 All remaining panels will be sent to our State Directors this month. Please get in touch with any questions regarding the logistics of transportation & materials!
 

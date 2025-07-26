@@ -1,7 +1,7 @@
 ---
-title: “June 2025 Update"
-date: "2025-05-09T10:51:26-05:00"
-excerpt: “Exhibition Preparation, PA Stitching Spotlight, and Massachusetts Panel Spotlight”
+title: "June 2025 Update"
+date: "2025-06-09T10:51:26-05:00"
+excerpt: "Exhibition Preparation, PA Stitching Spotlight, and Massachusetts Panel Spotlight"
 image: "/images/news/pennsylvania-stitchers.jpg"
 featured: false
 ---
@@ -10,7 +10,7 @@ featured: false
 
 Happy June! I hope you are all keeping well and healthy. It amazes me how quickly the time has flown by this spring. While no doubt stitching is keeping everyone busy, be sure to enjoy the beautiful weather while you can!
 
-## What's New?
+**What's New?**
 
 **Exhibition Preparation**
 
@@ -42,7 +42,7 @@ I am thrilled to share that Seton Hill University has allocated $20,000 for the 
 
 We are still awaiting news on our funding application from the PA250 Commission as well as the National Endowment for the Arts (NEA). We have applied for next year’s round of NEA funding in the hopes that one of our two applications will be successful. Given the incredible progress the Tapestry has made in the past year, our application is stronger than ever.
 
-## Chocolate Making as a Patriotic Act?
+**Chocolate Making as a Patriotic Act?**
 
 This month we are highlighting the state of Massachusetts, where the tasty practice of chocolate making takes center stage.
 
@@ -54,7 +54,7 @@ In the Massachusetts Panel, Boston merchant and chocolate maker Caleb Davis tend
 
 Enslaved labor played a critical role in the success of chocolate making, as many young men were trained to grind chocolate and as a result, ran away in attempts to work as paid skilled chocolate makers.
 
-## What’s Next?
+**What's Next?**
 
 We hope the Tapestry will gain increasing media attention this summer as our stitchers begin to work at historic sites across the original 13 states. I will be sure to share any coverage in our future newsletters!
 

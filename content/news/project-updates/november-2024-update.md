@@ -12,7 +12,7 @@ Happy November! I hope you have been well and are preparing for the
 upcoming holiday festivities. As we all know, they will be here before
 you know it!
 
-## What's New
+**What's New**
 
 We remain thrilled that the [Coby
 Foundation](https://cobyfoundation.org/) has awarded us $20,000 to
@@ -36,7 +36,7 @@ world.
 
 ![Muscarelle Art Museum](/images/news/images/muscarelle-art-museum.jpg)
 
-## November Showcase - Georgia
+**November Showcase - Georgia**
 
 As we are quickly approaching 2025, we will be featuring different
 states in our newsletter to present their progress thus far. This month
@@ -68,25 +68,27 @@ Berger](/team/state-directors/deborah-berger), EGA National Director of
 Education. Deborah is mobilizing stitchers from all needlework
 organizations in the greater Atlanta area to work on the project.
 
-## Timeline
+**Timeline**
 
 We anticipate for a minimum of three states to begin stitching in
 January, with the remaining 10 to begin later in spring 2025.
 
-## What's Next?
+**What's Next?**
 
 We are busy finalizing designs for each state. Next month we will
 feature New Jersey and the role of the Ladies of Trenton, who
 fundraised an astounding $15,000 for the Patriot Cause.
 
-## ATTENTION - Stitchers Needed!
+**ATTENTION - Stitchers Needed!**
 
 That's right - we are still seeking talented stitchers from the
 following states. Think you know the right person or organization? Send
 them our info!
 
-_Rhode Island_ _North & South Carolina_ _New Hampshire_
+- Rhode Island
+- North & South Carolina
+- New Hampshire
 
-## Need to Get in Touch?
+**Need to Get in Touch?**
 
 We want to hear from YOU! Contact us [here](/contact).
