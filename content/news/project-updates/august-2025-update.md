@@ -1,7 +1,7 @@
 ---
 title: "August 2025 Update"
 date: "2025-08-21T10:51:26-05:00"
-excerpt: "Summer stitching, state fair visits, and talented spotlights!"
+excerpt: "Summer stitching, state fair visits, and talent spotlights!"
 image: "/images/news/2025-08/10.jpg"
 featured: false
 ---
@@ -16,11 +16,11 @@ As we approach the final stretch of summer, our talented stitchers across all 13
 
 All our 13 states have been actively engaged in the fabrication of each panel. Behind every beautiful stitch is a talented embroiderer and a meticulous stitching plan prepared by our fantastic state directors.
 
-![](/images/news/2025-08/1.jpg)
+![Detail of the Pennsylvania panel](/images/news/2025-08/1.jpg)
 
 Pennsylvania directors **Mary Van Tyne** & **Raven Fagelson** explored many stitch designs to best reflect the artistry of the original illustration by artist **Maggie Weng**. Be sure to examine these images closely to check out all the beautiful techniques used in the different elements of their panel.
 
-![](/images/news/2025-08/2.png)
+![A sample of stitches on the Pennsylvania panel](/images/news/2025-08/2.png)
 
 **Did you Know?** _Each panel is 35" x 45", or 1,575 square inches. For every square inch of stitching, there is approximately one hour of work. Now that's a lot of hours!_
 
@@ -28,7 +28,7 @@ Pennsylvania directors **Mary Van Tyne** & **Raven Fagelson** explored many stit
 
 This past month I had the wonderful opportunity to attend the **Royal School of Needlework Scotland Stitch Social** in Glasgow, where I had the pleasure of meeting Paula Reynolds, the coordinator of the [Renfrewshire Tapestry](https://qzwbpg.clicks.mlsend.com/ty/cl/eyJ2Ijoie1wiYVwiOjEyNjQ1MzksXCJsXCI6MTYyMzU1Njc2MzMwMzI5OTA4LFwiclwiOjE2MjM1NTc0ODMzNzA5MjE0MH0iLCJzIjoiYWY4YjUzYjJlNDRmNTE4MyJ9). I even had the opportunity to do a little stitching! Many thanks to the Royal School of Needlework for the invitation and to Carol Ganse for the introduction!
 
-![](/images/news/2025-08/3.png)
+![Stefan stitching on the Renfrewshire tapestry](/images/news/2025-08/3.png)
 
 **A Collaboration at Virginia's Colonial Capital**
 
@@ -42,7 +42,7 @@ _"We're willing to teach," Theron said, "People come in with no experience. We h
 
 **In the Press**
 
-The Shaler Journal featured the **Pennsylvania panel** directed by Mary Van Tyne and Raven Fagelson at the Glenshaw Public Library. The article highlighted the incredible community engagement and the beautiful techniques being employed in their panel work.  [You can read the article here.](https://qzwbpg.clicks.mlsend.com/ty/cl/eyJ2Ijoie1wiYVwiOjEyNjQ1MzksXCJsXCI6MTYyMzU1Njc2MzYxNzg3MTk5LFwiclwiOjE2MjM1NTc0ODMzNzA5MjE0MH0iLCJzIjoiMTY2ZmMxNGEzODY2MmI3NCJ9)
+The Shaler Journal featured the **Pennsylvania panel** directed by Mary Van Tyne and Raven Fagelson at the Glenshaw Public Library. The article highlighted the incredible community engagement and the beautiful techniques being employed on their panel.  [You can read the article here.](https://qzwbpg.clicks.mlsend.com/ty/cl/eyJ2Ijoie1wiYVwiOjEyNjQ1MzksXCJsXCI6MTYyMzU1Njc2MzYxNzg3MTk5LFwiclwiOjE2MjM1NTc0ODMzNzA5MjE0MH0iLCJzIjoiMTY2ZmMxNGEzODY2MmI3NCJ9)
 
 ![](/images/news/2025-08/5.png)
 
@@ -50,27 +50,27 @@ The Shaler Journal featured the **Pennsylvania panel** directed by Mary Van Tyne
 
 North Carolina director **Gail Smith** stitched with **Kim Meyers Robertson**, President of the New Bern Women's Club, at [Tryon Palace](https://qzwbpg.clicks.mlsend.com/ty/cl/eyJ2Ijoie1wiYVwiOjEyNjQ1MzksXCJsXCI6MTYyMzU1Njc2MzY4MDc4NjU3LFwiclwiOjE2MjM1NTc0ODMzNzA5MjE0MH0iLCJzIjoiZGJhMmM3OGFlYWRiMzU1NiJ9) during the July 4th Celebration. Many thanks to the [North Carolina Department of Natural and Cultural Resources](https://qzwbpg.clicks.mlsend.com/ty/cl/eyJ2Ijoie1wiYVwiOjEyNjQ1MzksXCJsXCI6MTYyMzU1Njc2MzczMzIxNTM5LFwiclwiOjE2MjM1NTc0ODMzNzA5MjE0MH0iLCJzIjoiYTkwNjQ0MzI2YTRjNGY3YyJ9) for inviting us to be part of this patriotic celebration!
 
-![](/images/news/2025-08/6.png)
+![Gail Smith and Kim Meyers Robertson stitching on the North Carolina panel](/images/news/2025-08/6.png)
 
 **It Takes a Village!**
 
 South Carolina director **Karen Wallach** has been busy with her embroidery team in Clover, SC! Check out their incredible work thus far. These slip stitched motifs are being carefully worked in embroidery hoops before being applied to the completed panel. Incredible work, ladies!
 
-![](/images/news/2025-08/7.png)
+![It's all smiles at the South Carolina stitching group](/images/news/2025-08/7.png)
 
 **The Governor Takes a Stitch**
 
 Who says politics and embroidery can't coexist? Delaware directors **Amy Gilley** & **Becky Gutin** traveled with the Delaware panel to the State Fair, where they had a visit from **Governor Matt Meyer** & **Lt. Governor Kyle Evans Gay** who tried their hand at a few stitches. Thank you to both Governor Meyer & Lt. Governor Evans Gay for supporting our project!
 
-![](/images/news/2025-08/8.jpg)
+![The Governor takes a stitch or two](/images/news/2025-08/8.jpg)
 
 **Every Stitch for Every Branch**
 
 New Jersey Co-Director **Carol Prevost** places many careful stitches on an evergreen tree in the tapestry panel in Mt. Holly, NJ. Fabulous work, Carol!
 
-![](/images/news/2025-08/9.png)
+![Carol shows off her detail on the New Jersey panel](/images/news/2025-08/9.png)
 
-![](/images/news/2025-08/10.jpg)
+![A detail from the New Jersey panel](/images/news/2025-08/10.jpg)
 
 **Stitcher Spotlight: Meet Nancy Cook!**
 
@@ -83,4 +83,5 @@ She has used a variety of stitches on the South Carolina panel, including the ch
 That's all for now. Thanks for reading and happy stitching,
 
 Stefan Romero
+
 Project Director
