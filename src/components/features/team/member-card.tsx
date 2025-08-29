@@ -9,6 +9,7 @@ import html from 'remark-html';
 import { getImageSizes } from '@/lib/image-utils';
 import { StitchingGroupPlaceholder } from './stitching-group-placeholder';
 import { ContentCard } from '@/components/ui/content-card';
+import { ImageLightbox } from '@/components/ui/image-lightbox';
 
 interface MemberCardProps {
   member: TeamMember;
@@ -37,6 +38,7 @@ export function MemberCard({
   const [imgSrc, setImgSrc] = useState<string>(teamImagePath);
   const [imgError, setImgError] = useState(false);
   const [contentHtml, setContentHtml] = useState('');
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   // Handle image load error with fallback chain
   const handleImageError = () => {
@@ -174,27 +176,45 @@ export function MemberCard({
           <div className="md:flex">
             <div className="md:w-1/3 lg:w-1/4">
               <div className="h-80 md:h-full relative">
-                {imgSrc && !imgError ? (
+                {imgSrc && !imgError && !imgSrc.includes('placeholder') ? (
+                  <div 
+                    className="cursor-pointer hover:opacity-90 transition-opacity"
+                    onClick={() => setLightboxOpen(true)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setLightboxOpen(true);
+                      }
+                    }}
+                    aria-label={`View full size image of ${member.name}`}
+                  >
+                    <Image
+                      src={imgSrc}
+                      alt={member.name}
+                      fill
+                      sizes={getImageSizes('thumbnail')}
+                      className="object-contain bg-gray-50"
+                      style={{
+                        objectPosition: member.imagePosition || 'center',
+                      }}
+                      priority
+                      onError={handleImageError}
+                    />
+                  </div>
+                ) : (
                   <Image
-                    src={imgSrc}
-                    alt={member.name}
+                    src={imgSrc && !imgError ? imgSrc : "/images/placeholders/placeholder-user.jpg"}
+                    alt={`${member.name}${imgSrc && !imgError ? '' : ' - placeholder'}`}
                     fill
                     sizes={getImageSizes('thumbnail')}
                     className="object-cover"
                     style={{
                       objectPosition: member.imagePosition || 'center',
                     }}
-                    priority
-                          onError={handleImageError}
+                    onError={handleImageError}
                   />
-                ) : (
-                  <Image
-                    src="/images/placeholders/placeholder-user.jpg"
-                    alt={`${member.name} - placeholder`}
-                    fill
-                    sizes={getImageSizes('thumbnail')}
-                    className="object-cover"
-                        />
                 )}
               </div>
             </div>
@@ -225,6 +245,15 @@ export function MemberCard({
             </div>
           </div>
         </ContentCard>
+        
+        {/* Image Lightbox */}
+        <ImageLightbox
+          isOpen={lightboxOpen}
+          onClose={() => setLightboxOpen(false)}
+          src={imgSrc}
+          alt={member.name}
+          title={`${member.name} - ${member.role}${member.state ? `, ${member.state}` : ''}`}
+        />
       </div>
     );
   }
