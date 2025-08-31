@@ -3,8 +3,6 @@ import { NewsletterSignup } from '@/components/features/newsletter/newsletter-si
 import { Mail } from 'lucide-react';
 import { PageSection } from '@/components/ui/page-section';
 import { ContentCard } from '@/components/ui/content-card';
-import Image from 'next/image';
-import { getImageSizes } from '@/lib/image-utils';
 
 export const metadata = {
   title: "Contact Us | America's Tapestry",
