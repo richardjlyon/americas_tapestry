@@ -79,17 +79,6 @@ export default function ContactPage() {
                 </a>
               </p>
             </ContentCard>
-
-            {/* letter image */}
-            <div className="relative mx-auto max-w-md mt-4 aspect-square">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/letter-BWuLNcfXG3VHpLMxMiOjxj8utfA2wo.png"
-                alt="Embroidered envelope illustration"
-                fill
-                sizes={getImageSizes('feature')}
-                className="object-contain rounded-lg w-2/3 mx-auto"
-              />
-            </div>
           </div>
         </div>
       </PageSection>

@@ -24,7 +24,4 @@ This artwork captures Connecticut's critical role as the "Provision State" durin
 
 In the foreground, Hannah Bunce Watson is shown at work on her husband's newspaper, The Connecticut Courant, which she inherited after his death. At just 27 years old, Watson became one of America's first female publishers, using the paper to advocate for the patriot cause and disseminate revolutionary news. Soldiers of the 7th Connecticut Regiment appear in the upper right corner, including Prince Simbo, an African American who fought for liberty alongside white & Black soldiers. In the upper background stands Jonathan Trumbull's War Office in Lebanon, known as "The Pentagon of the Revolution," where pivotal meetings were held to coordinate military and logistical efforts. This artwork beautifully integrates Connecticut's industrial, agricultural, and human contributions to America's fight for independence.
 
-
-
-
-
+**To learn about where to stitch, please visit [Hartford Stitch](https://www.hartfordstitch.com/americastapestry)**.

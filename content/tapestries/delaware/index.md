@@ -24,4 +24,4 @@ This evocative artwork captures a pivotal moment in the American Revolution, hig
 
 Fisher also collaborated with the Cape Henlopen Lighthouse keeper to establish a system of signals for early warnings of enemy movements. His innovative tactics included creating a "circuit riding" intelligence network to expedite communication with Philadelphia and employing underwater defenses, such as cheveaux de frise, to damage enemy ships. This painting vividly portrays Fisher’s dedication and ingenuity as he works to protect the colonies’ vital waterways during the fight for independence.
 
-Be sure to follow the [Delaware Panel Facebook Page](https://www.facebook.com/groups/1676507616321926/?rdid=0L5xXgFGyDvm4NCS&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fg%2F1GHRQagYT6%2F) for further updates.
+Be sure to follow the [Delaware Panel Facebook Page](https://www.facebook.com/groups/1676507616321926/?rdid=0L5xXgFGyDvm4NCS&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fg%2F1GHRQagYT6%2F) to learn about where to stitch.

@@ -41,4 +41,4 @@ of a US Flag. In addition, she was paid for sewing a number of flags
 for the Pennsylvania army & navy, along with military blankets & drum
 cases.
 
-Be sure to follow the [Pennsylvania Tapestry’s Instagram Page](https://www.instagram.com/americastapestry.pa/) for additional updates.
+Be sure to follow the [Pennsylvania Tapestry’s Instagram Page](https://www.instagram.com/americastapestry.pa/) to learn about where to stitch.
