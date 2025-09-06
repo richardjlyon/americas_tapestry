@@ -13,7 +13,6 @@ const navigationItems = [
   { name: 'Tapestries', href: '/tapestries' },
   { name: 'Team', href: '/team' },
   { name: 'News', href: '/news' },
-  { name: 'Resources', href: '/resources' },
   { name: 'Sponsors', href: '/sponsors' },
   { name: 'Contact', href: '/contact' },
 ];
