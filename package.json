@@ -9,6 +9,8 @@
     },
     "scripts": {
         "dev": "next dev",
+        "dev:linux": "chromium --remote-debugging-port=9222 --headless & sleep 2 && next dev",
+        "dev:mac": "next dev",
         "build": "next build",
         "build:clean": "rm -rf .next && next build",
         "start": "next start",
