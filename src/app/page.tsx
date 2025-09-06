@@ -27,10 +27,9 @@ export default async function Home() {
   // Combine carousel images with eligible tapestries
   const allCarouselItems = [...carouselImages, ...eligibleTapestries];
 
-  // Shuffle and select random items for the carousel
+  // Shuffle all items for the carousel
   const randomCarouselItems = [...allCarouselItems]
-    .sort(() => 0.5 - Math.random())
-    .slice(0, Math.min(10, allCarouselItems.length)); // Show up to 10 items in carousel
+    .sort(() => 0.5 - Math.random());
 
   // Keep random tapestries for the tapestries section (only actual tapestries)
   const randomTapestries = [...eligibleTapestries]
