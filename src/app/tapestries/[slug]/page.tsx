@@ -119,6 +119,41 @@ export default async function TapestryPage({
           )}
 
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+
+          {/* Resources section */}
+          {tapestry.resources && tapestry.resources.length > 0 && (
+            <div className="mt-8 pt-8 border-t border-colonial-navy/20">
+              <h2 className="font-serif text-2xl font-normal mb-6 text-colonial-navy">
+                Resources
+              </h2>
+              <ul className="space-y-4">
+                {tapestry.resources.map((resource, index) => {
+                  // Construct the full resource URL using the convention
+                  const resourceUrl = `/docs/tapestry-resources/${tapestry.slug}/${resource.url}`;
+                  
+                  return (
+                    <li key={index} className="flex items-baseline space-x-3">
+                      <span className="inline-block w-2 h-2 rounded-full bg-colonial-burgundy flex-shrink-0" />
+                      <div className="flex-1">
+                        <a
+                          href={resourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-colonial-navy hover:text-colonial-burgundy font-medium underline"
+                        >
+                          {resource.title}
+                        </a>
+                        <span className="text-sm text-colonial-navy/70 ml-2">({resource.kind})</span>
+                        {resource.description && (
+                          <p className="text-colonial-navy/80 text-base mt-1">{resource.description}</p>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
         </ReadingContainer>
 
         {/* Pin separator */}

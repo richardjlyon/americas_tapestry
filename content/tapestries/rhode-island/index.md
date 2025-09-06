@@ -18,6 +18,11 @@ timelineEvents:
   - date: "1790-05-29"
     title: "Rhode Island Joins the Union"
     description: "Rhode Island became the 13th and final original colony to ratify the Constitution and join the United States, after initially refusing due to concerns about federal power."
+resources:
+  - title: "Rhode Island Tapestry Tour Calendar"
+    description: "A PDF calendar listing the Rhode Island tapestry's tour dates."
+    kind: "PDF"
+    url: "rhode-island-tapestry-project-tour-calendar.pdf"
 ---
 
 The Rhode Island tapestry panel captures the state's pivotal contributions to the Revolution.

@@ -16,6 +16,7 @@
         "start": "next start",
         "start:clean": "npm run build:clean && npm run start",
         "lint": "next lint",
+        "typecheck": "tsc --noEmit",
         "format": "npx @biomejs/biome format --write ./src/app ./src/components ./src/lib ./src/hooks",
         "analyze": "cross-env ANALYZE=true next build",
         "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",

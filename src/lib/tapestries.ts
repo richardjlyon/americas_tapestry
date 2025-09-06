@@ -16,6 +16,14 @@ export interface TimelineEvent {
   description: string;
 }
 
+// Define the structure for resources
+export interface TapestryResource {
+  title: string;
+  description: string;
+  kind: string;
+  url: string;
+}
+
 // Validate that a status is one of the allowed values
 export function isValidStatus(status: string): status is TapestryStatus {
   return ['Not Started', 'Designed', 'In Production', 'Finished'].includes(
@@ -36,6 +44,7 @@ export interface TapestryEntry {
   colony?: string | null;
   status: TapestryStatus;
   timelineEvents?: TimelineEvent[];
+  resources?: TapestryResource[];
 }
 
 // Keep this for backward compatibility with image/audio finding functions (used in helper functions)
@@ -320,6 +329,7 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
         colony: data['colony'] || null,
         status,
         timelineEvents: data['timelineEvents'] || [],
+        resources: data['resources'] || [],
       } as TapestryEntry);
     }
 
@@ -402,6 +412,7 @@ export async function getTapestryBySlug(
       colony: data['colony'] || null,
       status,
       timelineEvents: data['timelineEvents'] || [],
+      resources: data['resources'] || [],
     } as TapestryEntry;
   } catch (error) {
     console.error(`Error getting tapestry ${slug}:`, error);
