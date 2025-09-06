@@ -100,6 +100,7 @@ export function MemberCard({
               sizes={getImageSizes('thumbnail')}
               className={cn(
                 "transition-transform duration-500 hover:scale-105",
+                // Force fresh deployment: 250 commission logos need object-contain
                 member.groupSlug === '250-commission' 
                   ? "object-contain" 
                   : "object-cover"
