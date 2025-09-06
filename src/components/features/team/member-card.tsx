@@ -89,27 +89,40 @@ export function MemberCard({
           className,
         )}
       >
-        <div className="aspect-[3/4] relative overflow-hidden">
+        <div className={cn(
+          "relative overflow-hidden",
+          member.groupSlug === '250-commission' 
+            ? "aspect-[3/2] flex items-center justify-center p-4" 
+            : "aspect-[3/4]"
+        )}>
           {member.groupSlug === 'stitching-groups' ? (
             <StitchingGroupPlaceholder name={member.name} />
           ) : !imgError ? (
-            <Image
-              src={imgSrc}
-              alt={member.name}
-              fill
-              sizes={getImageSizes('thumbnail')}
-              className={cn(
-                "transition-transform duration-500 hover:scale-105",
-                // Force fresh deployment: 250 commission logos need object-contain
-                member.groupSlug === '250-commission' 
-                  ? "object-contain" 
-                  : "object-cover"
-              )}
-              style={{
-                objectPosition: member.imagePosition || 'center',
-              }}
-              onError={handleImageError}
-            />
+            member.groupSlug === '250-commission' ? (
+              <Image
+                src={imgSrc}
+                alt={member.name}
+                width={300}
+                height={200}
+                className="object-contain max-w-full max-h-full transition-transform duration-500 hover:scale-105"
+                style={{
+                  objectPosition: member.imagePosition || 'center',
+                }}
+                onError={handleImageError}
+              />
+            ) : (
+              <Image
+                src={imgSrc}
+                alt={member.name}
+                fill
+                sizes={getImageSizes('thumbnail')}
+                className="object-cover object-center transition-transform duration-500 hover:scale-105"
+                style={{
+                  objectPosition: member.imagePosition || 'center',
+                }}
+                onError={handleImageError}
+              />
+            )
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gray-100">
               <div className="text-colonial-navy/40 text-center p-4">
@@ -191,7 +204,12 @@ export function MemberCard({
         <ContentCard className="overflow-hidden p-0">
           <div className="md:flex">
             <div className="md:w-1/3 lg:w-1/4 pt-6 md:pt-8">
-              <div className="h-80 md:h-80 relative">
+              <div className={cn(
+                "relative",
+                member.groupSlug === '250-commission' 
+                  ? "h-80 md:h-80 flex items-center justify-center p-4" 
+                  : "h-80 md:h-80"
+              )}>
                 {imgSrc && !imgError && !imgSrc.includes('placeholder') ? (
                   <div
                     className="cursor-pointer hover:opacity-90 transition-opacity h-full w-full"
@@ -206,20 +224,35 @@ export function MemberCard({
                     }}
                     aria-label={`View full size image of ${member.name}`}
                   >
-                    <Image
-                      src={imgSrc}
-                      alt={member.name}
-                      fill
-                      sizes={getImageSizes('thumbnail')}
-                      className="object-contain"
-                      style={{
-                        objectPosition: member.imagePosition 
-                          ? member.imagePosition.replace(/center$/, 'top').replace(/bottom$/, 'top')
-                          : 'top',
-                      }}
-                      priority
-                      onError={handleImageError}
-                    />
+                    {member.groupSlug === '250-commission' ? (
+                      <Image
+                        src={imgSrc}
+                        alt={member.name}
+                        width={300}
+                        height={200}
+                        className="object-contain max-w-full max-h-full"
+                        style={{
+                          objectPosition: member.imagePosition || 'center',
+                        }}
+                        priority
+                        onError={handleImageError}
+                      />
+                    ) : (
+                      <Image
+                        src={imgSrc}
+                        alt={member.name}
+                        fill
+                        sizes={getImageSizes('thumbnail')}
+                        className="object-contain"
+                        style={{
+                          objectPosition: member.imagePosition 
+                            ? member.imagePosition.replace(/center$/, 'top').replace(/bottom$/, 'top')
+                            : 'top',
+                        }}
+                        priority
+                        onError={handleImageError}
+                      />
+                    )}
                   </div>
                 ) : (
                   <Image
