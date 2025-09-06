@@ -1,5 +1,5 @@
-import { PageSection } from "@/components/ui/page-section";
-import { ReadingContainer } from "@/components/ui/reading-container";
+import { PageSection } from '@/components/ui/page-section';
+import { ReadingContainer } from '@/components/ui/reading-container';
 
 export default function PrivacyPolicyPage() {
   return (
@@ -44,16 +44,16 @@ export default function PrivacyPolicyPage() {
           </p>
           <h2>Questions?</h2>
           <p>
-            If you have any questions about this policy, feel free to{" "}
+            If you have any questions about this policy, feel free to{' '}
             <a href="/contact">contact us</a>. We're here to help!
           </p>
 
           <p className="text-sm text-gray-600 mt-8">
-            Last updated:{" "}
-            {new Date().toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-              year: "numeric",
+            Last updated:{' '}
+            {new Date().toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
             })}
           </p>
         </ReadingContainer>

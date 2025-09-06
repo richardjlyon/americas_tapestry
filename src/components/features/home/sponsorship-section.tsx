@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Award, ArrowRight, Download } from "lucide-react";
+import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Award, ArrowRight, Download } from 'lucide-react';
 
 export function SponsorshipSection() {
   return (
@@ -50,7 +50,7 @@ export function SponsorshipSection() {
         </div>
 
         <p className="text-1xl md:text-2xl leading-tight mb-4">
-          Join distinguished organizations in supporting{" "}
+          Join distinguished organizations in supporting{' '}
           <em>America's Tapestry</em> and align your brand with our mission of
           preserving and celebrating America's diverse cultural heritage.
         </p>

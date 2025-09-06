@@ -75,11 +75,17 @@ export function InteractiveTimeline({ tapestries }: InteractiveTimelineProps) {
 
   // Get earliest and latest dates for scaling
   const earliestDate = useMemo(
-    () => (allEvents.length > 0 && allEvents[0] ? new Date(allEvents[0].date) : new Date(1600, 0, 1)),
-    [allEvents]
+    () =>
+      allEvents.length > 0 && allEvents[0]
+        ? new Date(allEvents[0].date)
+        : new Date(1600, 0, 1),
+    [allEvents],
   );
-  const lastEvent = allEvents.length > 0 ? allEvents[allEvents.length - 1] : null;
-  const latestDate = lastEvent ? new Date(lastEvent.date) : new Date(1800, 0, 1);
+  const lastEvent =
+    allEvents.length > 0 ? allEvents[allEvents.length - 1] : null;
+  const latestDate = lastEvent
+    ? new Date(lastEvent.date)
+    : new Date(1800, 0, 1);
   const timespan = latestDate.getTime() - earliestDate.getTime();
 
   // Calculate position along timeline based on date

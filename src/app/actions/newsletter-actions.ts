@@ -17,13 +17,13 @@ export async function subscribeToNewsletter(formData: NewsletterFormData) {
   try {
     // Validate form data
     const validatedData = newsletterSchema.parse(formData);
-    
+
     // Determine if we have a JWT (v3) or API key (v2)
     const apiKey = process.env['MAILERLITE_API_KEY'] || '';
     const isJwt = apiKey.startsWith('ey'); // JWT tokens start with 'ey'
-    
+
     let response;
-    
+
     if (isJwt) {
       // Use MailerLite API v3
       response = await subscribeWithV3(validatedData, apiKey);
@@ -31,7 +31,7 @@ export async function subscribeToNewsletter(formData: NewsletterFormData) {
       // Use MailerLite API v2
       response = await subscribeWithV2(validatedData, apiKey);
     }
-    
+
     return response;
   } catch (error) {
     console.error('Error in subscribeToNewsletter:', error);
@@ -49,10 +49,7 @@ export async function subscribeToNewsletter(formData: NewsletterFormData) {
   }
 }
 
-async function subscribeWithV3(
-  data: NewsletterFormData,
-  token: string
-) {
+async function subscribeWithV3(data: NewsletterFormData, token: string) {
   // MailerLite API v3 endpoint for adding subscribers
   const endpoint = 'https://connect.mailerlite.com/api/subscribers';
 
@@ -67,19 +64,18 @@ async function subscribeWithV3(
     status: 'active',
   };
 
-
   // Send request to MailerLite API v3
   const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(body),
   });
 
   const responseText = await response.text();
-  
+
   if (!response.ok) {
     let errorData;
     try {
@@ -92,8 +88,10 @@ async function subscribeWithV3(
     }
 
     // Check if email already exists
-    if (response.status === 409 || 
-        (errorData.message && errorData.message.includes('already exists'))) {
+    if (
+      response.status === 409 ||
+      (errorData.message && errorData.message.includes('already exists'))
+    ) {
       return {
         success: true,
         message:
@@ -106,7 +104,6 @@ async function subscribeWithV3(
       message: `Failed to subscribe: ${errorData.message || 'Unknown error'}. Please try again later.`,
     };
   }
-  
 
   return {
     success: true,
@@ -115,10 +112,7 @@ async function subscribeWithV3(
   };
 }
 
-async function subscribeWithV2(
-  data: NewsletterFormData,
-  apiKey: string
-) {
+async function subscribeWithV2(data: NewsletterFormData, apiKey: string) {
   // MailerLite API v2 endpoint for adding subscribers
   const endpoint = 'https://api.mailerlite.com/api/v2/subscribers';
 
@@ -132,7 +126,6 @@ async function subscribeWithV2(
     resubscribe: true,
   };
 
-
   // Send request to MailerLite API v2
   const response = await fetch(endpoint, {
     method: 'POST',
@@ -144,7 +137,7 @@ async function subscribeWithV2(
   });
 
   const responseText = await response.text();
-  
+
   if (!response.ok) {
     let errorData;
     try {
@@ -170,7 +163,6 @@ async function subscribeWithV2(
       message: `Failed to subscribe: ${errorData.message || 'Unknown error'}. Please try again later.`,
     };
   }
-  
 
   return {
     success: true,

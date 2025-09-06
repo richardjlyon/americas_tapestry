@@ -1,6 +1,9 @@
 import { PageSection } from '@/components/ui/page-section';
 import { SponsorCard } from '@/components/features/sponsors/sponsor-card';
-import { getAllSponsorsData, getMarkdownHtml } from '@/app/actions/sponsor-actions';
+import {
+  getAllSponsorsData,
+  getMarkdownHtml,
+} from '@/app/actions/sponsor-actions';
 import { SponsorshipSection } from '@/components/features/home/sponsorship-section';
 
 export const metadata = {
@@ -16,8 +19,10 @@ export default async function SponsorsPage() {
   const sponsorsWithHtml = await Promise.all(
     sponsors.map(async (sponsor) => ({
       ...sponsor,
-      excerptHtml: sponsor.excerpt ? await getMarkdownHtml(sponsor.excerpt) : '',
-    }))
+      excerptHtml: sponsor.excerpt
+        ? await getMarkdownHtml(sponsor.excerpt)
+        : '',
+    })),
   );
 
   // Group sponsors by tier if available
@@ -80,9 +85,9 @@ export default async function SponsorsPage() {
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {tierSponsors.map((sponsor) => (
-                      <SponsorCard 
-                        key={sponsor.slug} 
-                        sponsor={sponsor} 
+                      <SponsorCard
+                        key={sponsor.slug}
+                        sponsor={sponsor}
                         excerptHtml={sponsor.excerptHtml}
                       />
                     ))}
@@ -105,16 +110,15 @@ export default async function SponsorsPage() {
                 ? sponsorsWithHtml
                 : untieredSponsors
               ).map((sponsor) => (
-                <SponsorCard 
-                  key={sponsor.slug} 
-                  sponsor={sponsor} 
+                <SponsorCard
+                  key={sponsor.slug}
+                  sponsor={sponsor}
                   excerptHtml={sponsor.excerptHtml}
                 />
               ))}
             </div>
           </div>
         )}
-
       </PageSection>
 
       {/* Partnership Opportunities Section */}

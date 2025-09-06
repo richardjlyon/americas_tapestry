@@ -7,11 +7,7 @@ export async function ProjectDirectorSection() {
 
   return (
     projectDirector && (
-      <MemberCard
-        member={projectDirector}
-        variant="full"
-        width="two-thirds"
-      />
+      <MemberCard member={projectDirector} variant="full" width="two-thirds" />
     )
   );
 }

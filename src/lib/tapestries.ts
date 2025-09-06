@@ -45,15 +45,19 @@ export interface TapestryEntry {
 // Updated to prefer optimized responsive variants over original large files
 function findImageInDirectory(tapestrySlug: string): string | null {
   // Look in the public/images/tapestries directory instead of content directory
-  const publicImagePath = path.join(process.cwd(), 'public/images/tapestries', tapestrySlug);
-  
+  const publicImagePath = path.join(
+    process.cwd(),
+    'public/images/tapestries',
+    tapestrySlug,
+  );
+
   if (!fs.existsSync(publicImagePath)) return null;
 
   const files = fs.readdirSync(publicImagePath);
 
   // Priority order for formats: AVIF > WebP > original files
   const formatPriority = ['.avif', '.webp', '.jpg', '.jpeg', '.png'];
-  
+
   // Look for main image file, preferring optimized formats
   for (const format of formatPriority) {
     // First try to find responsive variant (1024w is good balance for main images)
@@ -140,8 +144,12 @@ function findImageInDirectory(tapestrySlug: string): string | null {
 // Helper function to find audio files in a directory
 function findAudioInDirectory(tapestrySlug: string): string | null {
   // Look in the public/images/tapestries directory instead of content directory
-  const publicImagePath = path.join(process.cwd(), 'public/images/tapestries', tapestrySlug);
-  
+  const publicImagePath = path.join(
+    process.cwd(),
+    'public/images/tapestries',
+    tapestrySlug,
+  );
+
   if (!fs.existsSync(publicImagePath)) return null;
 
   const files = fs.readdirSync(publicImagePath);
@@ -163,6 +171,45 @@ function findAudioInDirectory(tapestrySlug: string): string | null {
   return null;
 }
 
+// Function to get carousel images as TapestryEntry-like objects
+export function getCarouselImages(): TapestryEntry[] {
+  try {
+    const carouselPath = path.join(process.cwd(), 'public/images/carousel');
+
+    if (!fs.existsSync(carouselPath)) {
+      console.warn('Carousel directory not found');
+      return [];
+    }
+
+    const files = fs.readdirSync(carouselPath);
+    const imageFiles = files.filter((file) => {
+      const ext = path.extname(file).toLowerCase();
+      return ['.jpg', '.jpeg', '.png', '.webp', '.avif'].includes(ext);
+    });
+
+    // Sort files by name to ensure consistent ordering
+    imageFiles.sort();
+
+    return imageFiles.map((file, index) => ({
+      slug: `carousel-${index + 1}`,
+      title: `Carousel Image ${index + 1}`,
+      summary: '',
+      thumbnail: `/images/carousel/${file}`,
+      background_color: 'bg-colonial-navy',
+      content: '',
+      imagePath: `/images/carousel/${file}`,
+      audioPath: null,
+      audioDescription: '',
+      colony: null,
+      status: 'In Progress' as TapestryStatus,
+      timelineEvents: [],
+    }));
+  } catch (error) {
+    console.error('Error loading carousel images:', error);
+    return [];
+  }
+}
+
 export async function getAllTapestries(): Promise<TapestryEntry[]> {
   try {
     // Use content-core to get all tapestry content
@@ -177,7 +224,9 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
 
       // Validate status or set default
       const status =
-        data['status'] && isValidStatus(data['status']) ? data['status'] : 'Not Started';
+        data['status'] && isValidStatus(data['status'])
+          ? data['status']
+          : 'Not Started';
 
       // Find the main image in the directory
       const imagePath = findImageInDirectory(slug);
@@ -190,12 +239,16 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
       let thumbnail = data['thumbnail'];
       if (!thumbnail) {
         // Look for thumbnail in the public images directory
-        const publicImagePath = path.join(process.cwd(), 'public/images/tapestries', slug);
-        
+        const publicImagePath = path.join(
+          process.cwd(),
+          'public/images/tapestries',
+          slug,
+        );
+
         if (fs.existsSync(publicImagePath)) {
           const files = fs.readdirSync(publicImagePath);
           const formatPriority = ['.avif', '.webp', '.jpg', '.jpeg', '.png'];
-          
+
           // Find optimized thumbnail variants first
           for (const format of formatPriority) {
             // Try responsive thumbnail variants (640w is good for thumbnails)
@@ -243,11 +296,13 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
             thumbnail = imagePath;
           } else if (!thumbnail) {
             // Use placeholder as last resort
-            thumbnail = '/images/placeholders/tapestry-placeholder.svg?height=600&width=800';
+            thumbnail =
+              '/images/placeholders/tapestry-placeholder.svg?height=600&width=800';
           }
         } else {
           // Use placeholder as last resort
-          thumbnail = '/images/placeholders/tapestry-placeholder.svg?height=600&width=800';
+          thumbnail =
+            '/images/placeholders/tapestry-placeholder.svg?height=600&width=800';
         }
       }
 
@@ -278,7 +333,9 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
   }
 }
 
-export async function getTapestryBySlug(slug: string): Promise<TapestryEntry | null> {
+export async function getTapestryBySlug(
+  slug: string,
+): Promise<TapestryEntry | null> {
   try {
     // Use content-core to get the specific tapestry content
     const tapestryItem = await getContentBySlug('tapestries', slug);
@@ -292,7 +349,9 @@ export async function getTapestryBySlug(slug: string): Promise<TapestryEntry | n
 
     // Validate status or set default
     const status =
-      data['status'] && isValidStatus(data['status']) ? data['status'] : 'Not Started';
+      data['status'] && isValidStatus(data['status'])
+        ? data['status']
+        : 'Not Started';
 
     // Find the main image in the directory
     const imagePath = findImageInDirectory(slug);
@@ -304,8 +363,12 @@ export async function getTapestryBySlug(slug: string): Promise<TapestryEntry | n
     let thumbnail = data['thumbnail'];
     if (!thumbnail) {
       // Look for thumbnail in the public images directory
-      const publicImagePath = path.join(process.cwd(), 'public/images/tapestries', slug);
-      
+      const publicImagePath = path.join(
+        process.cwd(),
+        'public/images/tapestries',
+        slug,
+      );
+
       if (fs.existsSync(publicImagePath)) {
         const thumbnailFile = fs
           .readdirSync(publicImagePath)
@@ -347,4 +410,3 @@ export async function getTapestryBySlug(slug: string): Promise<TapestryEntry | n
     return null;
   }
 }
-

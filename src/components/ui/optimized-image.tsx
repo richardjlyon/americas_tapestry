@@ -4,12 +4,23 @@ import { useState, useEffect, useRef } from 'react';
 import Image, { ImageProps } from 'next/image';
 import { getContextualBlurPlaceholder, getImageSizes } from '@/lib/image-utils';
 import { cn } from '@/lib/utils';
-import { useConnectionAware, getConnectionAwareStrategy } from '@/hooks/use-connection-aware';
+import {
+  useConnectionAware,
+  getConnectionAwareStrategy,
+} from '@/hooks/use-connection-aware';
 
-interface OptimizedImageProps extends Omit<ImageProps, 'placeholder' | 'blurDataURL'> {
+interface OptimizedImageProps
+  extends Omit<ImageProps, 'placeholder' | 'blurDataURL'> {
   src: string;
   alt: string;
-  role?: 'hero' | 'card' | 'thumbnail' | 'feature' | 'banner' | 'gallery' | 'full';
+  role?:
+    | 'hero'
+    | 'card'
+    | 'thumbnail'
+    | 'feature'
+    | 'banner'
+    | 'gallery'
+    | 'full';
   fallbackSrc?: string;
   showErrorMessage?: boolean;
   errorClassName?: string;
@@ -18,14 +29,14 @@ interface OptimizedImageProps extends Omit<ImageProps, 'placeholder' | 'blurData
 
 /**
  * OptimizedImage - A wrapper around Next.js Image component with advanced features
- * 
+ *
  * Features:
  * - Automatic blur placeholders based on image content type
  * - Error handling with fallback images
  * - Contextual sizing based on image role
  * - Loading states and error states
  * - Accessibility improvements
- * 
+ *
  * @param src - Image source URL
  * @param alt - Alt text for accessibility
  * @param role - Image role for automatic sizing (default: 'gallery')
@@ -61,30 +72,30 @@ export function OptimizedImage({
   // Intersection Observer for lazy loading with connection-aware margins
   useEffect(() => {
     if (priority) return; // Skip intersection observer for priority images
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsInView(true);
             observer.disconnect();
           }
         });
       },
-      { rootMargin: strategy.intersectionMargin } // Use connection-aware margin
+      { rootMargin: strategy.intersectionMargin }, // Use connection-aware margin
     );
-    
+
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }
-    
+
     return () => observer.disconnect();
   }, [priority, strategy.intersectionMargin]);
 
   // Handle image load error with multiple fallback levels
   const handleError = () => {
     console.warn(`Image failed to load: ${currentSrc}`);
-    
+
     if (currentSrc !== fallbackSrc) {
       // Try fallback image first
       setCurrentSrc(fallbackSrc);
@@ -108,11 +119,11 @@ export function OptimizedImage({
   // If error state and no fallback worked
   if (hasError) {
     return (
-      <div 
+      <div
         className={cn(
           'flex items-center justify-center bg-gray-100 text-gray-500 text-sm',
           errorClassName,
-          className
+          className,
         )}
         role="img"
         aria-label={alt}
@@ -133,17 +144,15 @@ export function OptimizedImage({
 
   // If not in view yet, show skeleton placeholder
   if (!shouldLoad) {
-    const skeletonStyle = props.fill 
-      ? {} 
-      : { aspectRatio: '4/3' };
-      
+    const skeletonStyle = props.fill ? {} : { aspectRatio: '4/3' };
+
     return (
-      <div 
+      <div
         ref={containerRef}
         className={cn(
           'bg-gray-200 animate-pulse',
           props.fill && 'absolute inset-0',
-          className
+          className,
         )}
         style={skeletonStyle}
         role="img"
@@ -157,11 +166,13 @@ export function OptimizedImage({
     src: currentSrc,
     alt,
     sizes: sizes || getImageSizes(role),
-    className: props.fill ? undefined : cn(
-      'transition-opacity duration-300',
-      hasLoaded ? 'opacity-100' : 'opacity-0',
-      className
-    ),
+    className: props.fill
+      ? undefined
+      : cn(
+          'transition-opacity duration-300',
+          hasLoaded ? 'opacity-100' : 'opacity-0',
+          className,
+        ),
     onLoad: handleLoad,
     onError: handleError,
     priority,
@@ -170,7 +181,8 @@ export function OptimizedImage({
   };
 
   // Add blur placeholder if enabled (always enable for slow connections)
-  const shouldUseBlurPlaceholder = enableBlurPlaceholder || strategy.enableBlurPlaceholder;
+  const shouldUseBlurPlaceholder =
+    enableBlurPlaceholder || strategy.enableBlurPlaceholder;
   if (shouldUseBlurPlaceholder && !('placeholder' in props)) {
     (imageProps as any).placeholder = 'blur';
     (imageProps as any).blurDataURL = getContextualBlurPlaceholder(currentSrc);
@@ -186,7 +198,7 @@ export function OptimizedImage({
           className={cn(
             'transition-opacity duration-300',
             hasLoaded ? 'opacity-100' : 'opacity-0',
-            className // Apply the passed className (including transforms) to the Image
+            className, // Apply the passed className (including transforms) to the Image
           )}
         />
       </div>
@@ -195,10 +207,7 @@ export function OptimizedImage({
 
   return (
     <div ref={containerRef} className="relative">
-      <Image
-        {...imageProps}
-        alt={alt}
-      />
+      <Image {...imageProps} alt={alt} />
     </div>
   );
 }
@@ -212,7 +221,10 @@ export function OptimizedImageWithFallback({
   alt,
   fallbackSrc = '/images/placeholders/placeholder.svg',
   ...props
-}: Omit<OptimizedImageProps, 'role' | 'showErrorMessage' | 'errorClassName' | 'enableBlurPlaceholder'>) {
+}: Omit<
+  OptimizedImageProps,
+  'role' | 'showErrorMessage' | 'errorClassName' | 'enableBlurPlaceholder'
+>) {
   const [currentSrc, setCurrentSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
 
@@ -223,14 +235,7 @@ export function OptimizedImageWithFallback({
     }
   };
 
-  return (
-    <Image
-      {...props}
-      src={currentSrc}
-      alt={alt}
-      onError={handleError}
-    />
-  );
+  return <Image {...props} src={currentSrc} alt={alt} onError={handleError} />;
 }
 
 export default OptimizedImage;

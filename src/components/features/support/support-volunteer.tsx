@@ -157,7 +157,10 @@ export function SupportVolunteer() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="colonial-secondary" className="w-full rounded-full">
+                  <Button
+                    variant="colonial-secondary"
+                    className="w-full rounded-full"
+                  >
                     Apply for This Role
                   </Button>
                 </CardFooter>

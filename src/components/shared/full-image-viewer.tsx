@@ -30,8 +30,10 @@ export function FullImageViewer({
   return (
     <div className="relative">
       {/* Image container with conditional aspect ratio */}
-      <div 
-        className={isFullView ? 'w-full relative' : 'aspect-[16/9] w-full relative'} 
+      <div
+        className={
+          isFullView ? 'w-full relative' : 'aspect-[16/9] w-full relative'
+        }
         style={{ height: isFullView ? 'auto' : undefined }}
       >
         {isFullView ? (

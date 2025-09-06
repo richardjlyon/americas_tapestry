@@ -18,7 +18,9 @@ export interface ContentMetadata {
  * Core content reading utility - replaces file duplication approach
  * Reads markdown files directly from content/ directory
  */
-export async function getAllContent(contentType: string): Promise<ContentItem[]> {
+export async function getAllContent(
+  contentType: string,
+): Promise<ContentItem[]> {
   const contentDirectory = path.join(process.cwd(), 'content', contentType);
 
   if (!fs.existsSync(contentDirectory)) {
@@ -42,9 +44,11 @@ export async function getAllContent(contentType: string): Promise<ContentItem[]>
         }
       } else if (item.name === 'index.md' || item.name.endsWith('.md')) {
         // Skip README files and other non-content markdown
-        if (item.name.toLowerCase() === 'readme.md' || 
-            item.name.toLowerCase() === 'schema.md' ||
-            item.name.toLowerCase() === 'image-guidelines.md') {
+        if (
+          item.name.toLowerCase() === 'readme.md' ||
+          item.name.toLowerCase() === 'schema.md' ||
+          item.name.toLowerCase() === 'image-guidelines.md'
+        ) {
           continue;
         }
 
@@ -75,10 +79,11 @@ export async function getAllContent(contentType: string): Promise<ContentItem[]>
               .replace(/\[(.+?)\]\(.+?\)/g, '$1') // Remove links
               .replace(/\n+/g, ' ') // Replace newlines with spaces
               .trim();
-            
-            excerpt = plainText.length > 150 
-              ? plainText.substring(0, 150) + '...'
-              : plainText;
+
+            excerpt =
+              plainText.length > 150
+                ? plainText.substring(0, 150) + '...'
+                : plainText;
           }
 
           allContent.push({
@@ -103,26 +108,28 @@ export async function getAllContent(contentType: string): Promise<ContentItem[]>
  */
 export async function getContentBySlug(
   contentType: string,
-  slug: string
+  slug: string,
 ): Promise<ContentItem | null> {
   const allContent = await getAllContent(contentType);
-  return allContent.find(item => item.slug === slug) || null;
+  return allContent.find((item) => item.slug === slug) || null;
 }
 
 /**
  * Generate static params for Next.js from content
  */
 export async function generateContentStaticParams(
-  contentType: string
+  contentType: string,
 ): Promise<{ slug: string }[]> {
   const content = await getAllContent(contentType);
-  return content.map(item => ({ slug: item.slug }));
+  return content.map((item) => ({ slug: item.slug }));
 }
 
 /**
  * Get content metadata only (without full content) - useful for listings
  */
-export async function getContentMetadata(contentType: string): Promise<ContentMetadata[]> {
+export async function getContentMetadata(
+  contentType: string,
+): Promise<ContentMetadata[]> {
   const contentDirectory = path.join(process.cwd(), 'content', contentType);
 
   if (!fs.existsSync(contentDirectory)) {
@@ -144,9 +151,11 @@ export async function getContentMetadata(contentType: string): Promise<ContentMe
           processDirectory(fullPath, currentPath);
         }
       } else if (item.name === 'index.md' || item.name.endsWith('.md')) {
-        if (item.name.toLowerCase() === 'readme.md' || 
-            item.name.toLowerCase() === 'schema.md' ||
-            item.name.toLowerCase() === 'image-guidelines.md') {
+        if (
+          item.name.toLowerCase() === 'readme.md' ||
+          item.name.toLowerCase() === 'schema.md' ||
+          item.name.toLowerCase() === 'image-guidelines.md'
+        ) {
           continue;
         }
 
@@ -184,7 +193,7 @@ export async function getContentMetadata(contentType: string): Promise<ContentMe
  */
 export async function getAllNestedContent(
   contentType: string,
-  categories?: string[]
+  categories?: string[],
 ): Promise<ContentItem[]> {
   const contentDirectory = path.join(process.cwd(), 'content', contentType);
 
@@ -199,22 +208,32 @@ export async function getAllNestedContent(
   if (categories && categories.length > 0) {
     for (const category of categories) {
       const categoryDir = path.join(contentDirectory, category);
-      
+
       if (!fs.existsSync(categoryDir)) {
         continue;
       }
 
-      const categoryContent = await processContentDirectory(categoryDir, category);
+      const categoryContent = await processContentDirectory(
+        categoryDir,
+        category,
+      );
       allContent.push(...categoryContent);
     }
   } else {
     // Process all subdirectories as categories
     const items = fs.readdirSync(contentDirectory, { withFileTypes: true });
-    
+
     for (const item of items) {
-      if (item.isDirectory() && !item.name.startsWith('.') && item.name !== 'images') {
+      if (
+        item.isDirectory() &&
+        !item.name.startsWith('.') &&
+        item.name !== 'images'
+      ) {
         const categoryDir = path.join(contentDirectory, item.name);
-        const categoryContent = await processContentDirectory(categoryDir, item.name);
+        const categoryContent = await processContentDirectory(
+          categoryDir,
+          item.name,
+        );
         allContent.push(...categoryContent);
       }
     }
@@ -228,7 +247,7 @@ export async function getAllNestedContent(
  */
 async function processContentDirectory(
   directory: string,
-  category?: string
+  category?: string,
 ): Promise<ContentItem[]> {
   const content: ContentItem[] = [];
 
@@ -248,7 +267,7 @@ async function processContentDirectory(
 
         // Extract slug, handling date prefixes in filenames
         let slug = path.basename(file.name, '.md');
-        
+
         // Remove date prefix if present (YYMMDD- format)
         if (/^\d{6}-/.test(slug)) {
           slug = slug.replace(/^\d{6}-/, '');
@@ -264,16 +283,15 @@ async function processContentDirectory(
             .replace(/\[(.+?)\]\(.+?\)/g, '$1')
             .replace(/\n+/g, ' ')
             .trim();
-          
-          excerpt = plainText.length > 150 
-            ? plainText.substring(0, 150) + '...'
-            : plainText;
+
+          excerpt =
+            plainText.length > 150
+              ? plainText.substring(0, 150) + '...'
+              : plainText;
         }
 
         // Add category to frontmatter if provided
-        const enhancedFrontmatter = category 
-          ? { ...data, category }
-          : data;
+        const enhancedFrontmatter = category ? { ...data, category } : data;
 
         content.push({
           slug,
@@ -293,27 +311,30 @@ async function processContentDirectory(
 /**
  * Utility to convert image paths from content/ references to public/images/
  */
-export function convertImagePath(imagePath: string | undefined, contentType?: string): string {
+export function convertImagePath(
+  imagePath: string | undefined,
+  contentType?: string,
+): string {
   if (!imagePath || imagePath.trim() === '') {
     return '/images/placeholders/placeholder.svg';
   }
-  
+
   // If path is already using the /images/ format, leave it as is
   if (imagePath.startsWith('/images/')) {
     return imagePath;
   }
-  
+
   // If the path starts with /content/, convert to public directory format
   if (imagePath.startsWith('/content/')) {
     return imagePath.replace('/content/', '/images/');
   }
-  
+
   // For relative paths, prefix with appropriate /images/ subdirectory
   if (!imagePath.startsWith('/') && !imagePath.startsWith('http')) {
     const imagePrefix = contentType ? `/images/${contentType}/` : '/images/';
     return `${imagePrefix}${imagePath}`;
   }
-  
+
   // If it's an absolute path or external URL, leave it as is
   return imagePath;
 }

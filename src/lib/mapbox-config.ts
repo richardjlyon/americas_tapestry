@@ -1,9 +1,12 @@
 // Mapbox configuration
-export const MAPBOX_ACCESS_TOKEN = process.env['NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN'] || '';
+export const MAPBOX_ACCESS_TOKEN =
+  process.env['NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN'] || '';
 
 // Map style - using a colonial-themed style
 // You can replace this with your own custom style from Mapbox Studio
-export const MAPBOX_STYLE = process.env['NEXT_PUBLIC_DEFAULT_MAPBOX_STYLE'] || 'mapbox://styles/mapbox/light-v11';
+export const MAPBOX_STYLE =
+  process.env['NEXT_PUBLIC_DEFAULT_MAPBOX_STYLE'] ||
+  'mapbox://styles/mapbox/light-v11';
 
 // Default map center for the 13 colonies region (roughly centered on Pennsylvania)
 export const DEFAULT_CENTER = {

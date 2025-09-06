@@ -13,7 +13,13 @@ interface ImageLightboxProps {
   title?: string;
 }
 
-export function ImageLightbox({ isOpen, onClose, src, alt, title }: ImageLightboxProps) {
+export function ImageLightbox({
+  isOpen,
+  onClose,
+  src,
+  alt,
+  title,
+}: ImageLightboxProps) {
   // Handle ESC key press
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -37,10 +43,10 @@ export function ImageLightbox({ isOpen, onClose, src, alt, title }: ImageLightbo
   if (!isOpen) return null;
 
   return (
-    <div 
+    <div
       className={cn(
-        "fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4",
-        "animate-in fade-in duration-200"
+        'fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4',
+        'animate-in fade-in duration-200',
       )}
       onClick={onClose}
     >
@@ -54,7 +60,7 @@ export function ImageLightbox({ isOpen, onClose, src, alt, title }: ImageLightbo
       </button>
 
       {/* Image container */}
-      <div 
+      <div
         className="relative max-h-[90vh] max-w-[90vw] bg-white rounded-lg overflow-hidden shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >

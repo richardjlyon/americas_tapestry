@@ -1,28 +1,38 @@
-import { HeroCarousel } from "@/components/shared/hero-carousel";
-import { LatestNewsSection } from "@/components/features/home/latest-news-section";
-import { getAllTapestries } from "@/lib/tapestries";
+import { HeroCarousel } from '@/components/shared/hero-carousel';
+import { LatestNewsSection } from '@/components/features/home/latest-news-section';
+import { getAllTapestries, getCarouselImages } from '@/lib/tapestries';
 
-import { PageSection } from "@/components/ui/page-section";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { PageSection } from '@/components/ui/page-section';
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 
-import { AboutSection } from "@/components/features/home/about-section";
-import { SponsorshipSection } from "@/components/features/home/sponsorship-section";
-import { VisionSection } from "@/components/features/home/vision-section";
-import { TapestriesSection } from "@/components/features/home/tapestries-section";
-import { TeamSection } from "@/components/features/home/team-section";
-import { GetInTouchSection } from "@/components/features/home/get-in-touch-section";
+import { AboutSection } from '@/components/features/home/about-section';
+import { SponsorshipSection } from '@/components/features/home/sponsorship-section';
+import { VisionSection } from '@/components/features/home/vision-section';
+import { TapestriesSection } from '@/components/features/home/tapestries-section';
+import { TeamSection } from '@/components/features/home/team-section';
+import { GetInTouchSection } from '@/components/features/home/get-in-touch-section';
 
 export default async function Home() {
   const allTapestries = await getAllTapestries();
+  const carouselImages = getCarouselImages();
 
   // Filter for tapestries that have both a valid status and an image
   const eligibleTapestries = allTapestries.filter((tapestry) => {
     const hasImage = !!(tapestry.imagePath || tapestry.thumbnail);
-    const isInProgress = tapestry.status !== "Not Started";
+    const isInProgress = tapestry.status !== 'Not Started';
     return isInProgress && hasImage;
   });
 
+  // Combine carousel images with eligible tapestries
+  const allCarouselItems = [...carouselImages, ...eligibleTapestries];
+
+  // Shuffle and select random items for the carousel
+  const randomCarouselItems = [...allCarouselItems]
+    .sort(() => 0.5 - Math.random())
+    .slice(0, Math.min(10, allCarouselItems.length)); // Show up to 10 items in carousel
+
+  // Keep random tapestries for the tapestries section (only actual tapestries)
   const randomTapestries = [...eligibleTapestries]
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
@@ -32,7 +42,7 @@ export default async function Home() {
       <Header />
       <main className="flex-1 woven-linen content-spacing-sm">
         {/* Hero Section with Carousel */}
-        <HeroCarousel tapestries={randomTapestries} />
+        <HeroCarousel tapestries={randomCarouselItems} />
 
         {/* About Section */}
         <PageSection paddingTop="small">

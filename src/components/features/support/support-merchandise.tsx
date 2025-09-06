@@ -27,7 +27,8 @@ const merchandiseItems: MerchandiseItem[] = [
     description:
       "High-quality prints of our tapestry panels, available in various sizes. Each print includes historical context and information about the tapestry's creation.",
     price: '$25.00 - $75.00',
-    image: '/images/placeholders/placeholder.svg?height=300&width=400&text=Tapestry+Print',
+    image:
+      '/images/placeholders/placeholder.svg?height=300&width=400&text=Tapestry+Print',
   },
   {
     id: 'embroidery-kit',
@@ -35,8 +36,7 @@ const merchandiseItems: MerchandiseItem[] = [
     description:
       'Learn traditional embroidery techniques with our beginner-friendly kit. Includes patterns inspired by our tapestries, quality materials, and step-by-step instructions.',
     price: '$45.00',
-    image:
-      '/support/colonial-embroidery-kit.png',
+    image: '/support/colonial-embroidery-kit.png',
   },
   {
     id: 'book',
@@ -44,7 +44,8 @@ const merchandiseItems: MerchandiseItem[] = [
     description:
       "Our beautifully illustrated book documenting the creation of America's Tapestry, with detailed photographs, historical essays, and behind-the-scenes insights.",
     price: '$59.95',
-    image: '/images/placeholders/placeholder.svg?height=300&width=400&text=Tapestry+Book',
+    image:
+      '/images/placeholders/placeholder.svg?height=300&width=400&text=Tapestry+Book',
   },
   {
     id: 'apparel',
@@ -52,7 +53,8 @@ const merchandiseItems: MerchandiseItem[] = [
     description:
       'T-shirts, tote bags, and accessories featuring designs from our tapestry collection. Made from quality materials with a portion of proceeds supporting our educational programs.',
     price: '$15.00 - $35.00',
-    image: '/images/placeholders/placeholder.svg?height=300&width=400&text=Apparel',
+    image:
+      '/images/placeholders/placeholder.svg?height=300&width=400&text=Apparel',
   },
 ];
 

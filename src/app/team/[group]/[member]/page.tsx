@@ -27,8 +27,7 @@ export default async function TeamMemberPage({
 }: { params: Promise<{ group: string; member: string }> }) {
   // Use a server action to fetch all the data we need
   const { group: groupSlug, member: memberSlug } = await params;
-  const { member, group } =
-    await getTeamMemberData(groupSlug, memberSlug);
+  const { member, group } = await getTeamMemberData(groupSlug, memberSlug);
 
   if (!member || !group) {
     notFound();
@@ -39,11 +38,7 @@ export default async function TeamMemberPage({
     <PageSection paddingTop="none" paddingBottom="large">
       <h1 className="page-heading ">{group.name}</h1>
 
-      <MemberCard
-        member={member}
-        variant="full"
-        width="two-thirds"
-      />
+      <MemberCard member={member} variant="full" width="two-thirds" />
     </PageSection>
   );
 }

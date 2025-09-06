@@ -1,4 +1,8 @@
-import { getAllNestedContent, convertImagePath, extractDateFromFilename } from './content-core';
+import {
+  getAllNestedContent,
+  convertImagePath,
+  extractDateFromFilename,
+} from './content-core';
 
 export interface BlogPost {
   slug: string;
@@ -68,13 +72,12 @@ export const blogCategories: CategoryInfo[] = [
   },
 ];
 
-
 // Get all blog posts across all categories
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   try {
     // Get category slugs for nested content processing
-    const categoryList = blogCategories.map(cat => cat.slug);
-    
+    const categoryList = blogCategories.map((cat) => cat.slug);
+
     // Use the new content-core utility to get all nested content
     const allContentItems = await getAllNestedContent('news', categoryList);
 
@@ -95,10 +98,13 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 
         // Convert image path to public directory structure
         let imagePath = convertImagePath(data['image'], 'news');
-        
+
         // Fix image paths to remove redundant 'images/' segment
         if (imagePath) {
-          imagePath = imagePath.replace('/images/news/images/', '/images/news/');
+          imagePath = imagePath.replace(
+            '/images/news/images/',
+            '/images/news/',
+          );
           imagePath = imagePath.replace('/images/images/', '/images/');
         }
 
@@ -133,15 +139,19 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 }
 
 // Get a single blog post by slug
-export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+export async function getBlogPostBySlug(
+  slug: string,
+): Promise<BlogPost | null> {
   try {
     // Search through all categories to find the blog post
     for (const category of blogCategories) {
-      const categoryContent = await getAllNestedContent('news', [category.slug]);
-      
+      const categoryContent = await getAllNestedContent('news', [
+        category.slug,
+      ]);
+
       // Find the post with matching slug
-      const matchingPost = categoryContent.find(item => item.slug === slug);
-      
+      const matchingPost = categoryContent.find((item) => item.slug === slug);
+
       if (matchingPost) {
         const data = matchingPost.frontmatter;
         const content = matchingPost.content;
@@ -152,13 +162,16 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
           const extractedDate = extractDateFromFilename(slug);
           postDate = extractedDate;
         }
-        
+
         // Convert image path to public directory
         let imagePath = convertImagePath(data['image'], 'news');
-        
+
         // Fix image paths to remove redundant 'images/' segment
         if (imagePath) {
-          imagePath = imagePath.replace('/images/news/images/', '/images/news/');
+          imagePath = imagePath.replace(
+            '/images/news/images/',
+            '/images/news/',
+          );
           imagePath = imagePath.replace('/images/images/', '/images/');
         }
 
@@ -197,7 +210,9 @@ export async function getLatestBlogPosts(count = 3): Promise<BlogPost[]> {
 }
 
 // Get blog posts by category
-export async function getBlogPostsByCategory(category: BlogCategory): Promise<BlogPost[]> {
+export async function getBlogPostsByCategory(
+  category: BlogCategory,
+): Promise<BlogPost[]> {
   const allPosts = await getAllBlogPosts();
   return allPosts.filter((post) => post.category === category);
 }

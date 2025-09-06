@@ -18,21 +18,22 @@ interface MemberCardProps {
   className?: string;
 }
 
-export function MemberCard({ 
-  member, 
-  variant = 'grid', 
+export function MemberCard({
+  member,
+  variant = 'grid',
   width = 'two-thirds',
-  className 
+  className,
 }: MemberCardProps) {
   const placeholderPath = `/images/placeholders/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
-  
+
   // State management for image loading and content processing
   // Don't load images for:
   // 1. Stitching groups
   // 2. Group index files (these have description but no role, or slug matches group name)
   const isGroupIndexFile = member['description'] && !member['role'];
-  const shouldUseImage = member.groupSlug !== 'stitching-groups' && !isGroupIndexFile;
-  const teamImagePath = shouldUseImage 
+  const shouldUseImage =
+    member.groupSlug !== 'stitching-groups' && !isGroupIndexFile;
+  const teamImagePath = shouldUseImage
     ? `/images/team/${member.groupSlug}/${member.slug}.jpg`
     : placeholderPath;
   const [imgSrc, setImgSrc] = useState<string>(teamImagePath);
@@ -43,8 +44,11 @@ export function MemberCard({
   // Handle image load error with fallback chain
   const handleImageError = () => {
     console.warn(`Image failed to load: ${imgSrc} for ${member.name}`);
-    
-    if (imgSrc !== '/images/placeholders/placeholder-user.jpg' && imgSrc !== placeholderPath) {
+
+    if (
+      imgSrc !== '/images/placeholders/placeholder-user.jpg' &&
+      imgSrc !== placeholderPath
+    ) {
       // Try generic user placeholder first
       setImgSrc('/images/placeholders/placeholder-user.jpg');
     } else if (imgSrc !== placeholderPath) {
@@ -59,7 +63,8 @@ export function MemberCard({
   // Process markdown content
   useEffect(() => {
     const processContent = async () => {
-      const contentToProcess = variant === 'full' ? member.content : member.content.split('\n\n')[0];
+      const contentToProcess =
+        variant === 'full' ? member.content : member.content.split('\n\n')[0];
 
       try {
         const processedContent = await remark()
@@ -108,7 +113,9 @@ export function MemberCard({
           )}
         </div>
         <div className="p-5 flex-grow flex flex-col">
-          <h3 className="text-xl font-bold text-colonial-navy">{member.name}</h3>
+          <h3 className="text-xl font-bold text-colonial-navy">
+            {member.name}
+          </h3>
           <p className="font-serif text-colonial-burgundy mb-3">
             {member.role}
             {member.state ? `, ${member.state}` : ''}
@@ -116,7 +123,10 @@ export function MemberCard({
 
           {member.groupSlug === 'stitching-groups' && member['more_info'] && (
             <div className="mt-auto pt-4">
-              <a href={`${member['more_info']}`} className="inline-block text-link">
+              <a
+                href={`${member['more_info']}`}
+                className="inline-block text-link"
+              >
                 More info →
               </a>
             </div>
@@ -177,7 +187,7 @@ export function MemberCard({
             <div className="md:w-1/3 lg:w-1/4">
               <div className="h-80 md:h-full relative">
                 {imgSrc && !imgError && !imgSrc.includes('placeholder') ? (
-                  <div 
+                  <div
                     className="cursor-pointer hover:opacity-90 transition-opacity"
                     onClick={() => setLightboxOpen(true)}
                     role="button"
@@ -205,7 +215,11 @@ export function MemberCard({
                   </div>
                 ) : (
                   <Image
-                    src={imgSrc && !imgError ? imgSrc : "/images/placeholders/placeholder-user.jpg"}
+                    src={
+                      imgSrc && !imgError
+                        ? imgSrc
+                        : '/images/placeholders/placeholder-user.jpg'
+                    }
                     alt={`${member.name}${imgSrc && !imgError ? '' : ' - placeholder'}`}
                     fill
                     sizes={getImageSizes('thumbnail')}
@@ -245,7 +259,7 @@ export function MemberCard({
             </div>
           </div>
         </ContentCard>
-        
+
         {/* Image Lightbox */}
         <ImageLightbox
           isOpen={lightboxOpen}
@@ -260,7 +274,12 @@ export function MemberCard({
 
   // Simple variant (compact version)
   return (
-    <div className={cn('bg-white rounded-lg shadow-sm border border-colonial-navy/10 p-4', className)}>
+    <div
+      className={cn(
+        'bg-white rounded-lg shadow-sm border border-colonial-navy/10 p-4',
+        className,
+      )}
+    >
       <div className="flex items-center space-x-4">
         <div className="w-16 h-16 relative rounded-full overflow-hidden flex-shrink-0">
           {!imgError ? (
@@ -278,13 +297,18 @@ export function MemberCard({
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gray-100">
               <div className="text-colonial-navy/40 text-xs text-center">
-                {member.name.split(' ').map(n => n[0]).join('')}
+                {member.name
+                  .split(' ')
+                  .map((n) => n[0])
+                  .join('')}
               </div>
             </div>
           )}
         </div>
         <div className="flex-grow">
-          <h4 className="text-lg font-semibold text-colonial-navy">{member.name}</h4>
+          <h4 className="text-lg font-semibold text-colonial-navy">
+            {member.name}
+          </h4>
           <p className="font-serif text-colonial-burgundy text-sm">
             {member.role}
             {member.state ? `, ${member.state}` : ''}

@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { SectionHeader } from "@/components/ui/section-header";
-import { Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { SectionHeader } from '@/components/ui/section-header';
+import { Mail } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export function GetInTouchSection() {
   return (

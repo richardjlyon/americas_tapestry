@@ -75,8 +75,10 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
     // Function to preload an image
     const preloadImage = (tapestry: TapestryEntry) => {
       if (!tapestry) return;
-      
-      const imagePath = getImagePath(tapestry.imagePath || tapestry.thumbnail || '');
+
+      const imagePath = getImagePath(
+        tapestry.imagePath || tapestry.thumbnail || '',
+      );
       if (!imagePath) return;
 
       // Create a link element for preloading
@@ -85,10 +87,10 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
       link.as = 'image';
       link.href = imagePath;
       link.type = 'image/webp';
-      
+
       // Add to document head
       document.head.appendChild(link);
-      
+
       // Clean up after 10 seconds to avoid memory leaks
       setTimeout(() => {
         if (document.head.contains(link)) {
@@ -99,7 +101,8 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
 
     // Calculate adjacent slide indices
     const nextIndex = (currentIndex + 1) % validTapestries.length;
-    const prevIndex = currentIndex === 0 ? validTapestries.length - 1 : currentIndex - 1;
+    const prevIndex =
+      currentIndex === 0 ? validTapestries.length - 1 : currentIndex - 1;
 
     // Preload adjacent slides
     if (validTapestries[nextIndex]) {
@@ -127,7 +130,8 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
-            backgroundImage: "url('/images/placeholders/placeholder.svg?height=1080&width=1920')",
+            backgroundImage:
+              "url('/images/placeholders/placeholder.svg?height=1080&width=1920')",
             filter: 'brightness(0.7)',
           }}
         />
@@ -148,7 +152,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
   // Safely get the current tapestry or fallback to the first one
   const safeIndex = currentIndex < validTapestries.length ? currentIndex : 0;
   const currentTapestry = validTapestries[safeIndex];
-  
+
   // Return null if no valid tapestry is available
   if (!currentTapestry) {
     return null;

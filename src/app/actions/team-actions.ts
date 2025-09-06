@@ -1,4 +1,4 @@
-"use server";
+'use server';
 
 import { getTeamGroup, getTeamMembersByGroup, getTeamMember } from '@/lib/team';
 import { remark } from 'remark';
@@ -36,10 +36,10 @@ export async function getFormattedGroupName(slug: string) {
 export async function getTeamData(groupSlug: string) {
   const group = await getGroup(groupSlug);
   const members = await getMembers(groupSlug);
-  
+
   return {
     group,
-    members
+    members,
   };
 }
 
@@ -47,16 +47,16 @@ export async function getTeamMemberData(groupSlug: string, memberSlug: string) {
   const member = await getMember(groupSlug, memberSlug);
   const group = await getGroup(groupSlug);
   const formattedGroupName = await getFormattedGroupName(groupSlug);
-  
+
   let contentHtml = '';
   if (member) {
     contentHtml = await getMarkdownHtml(member.content);
   }
-  
+
   return {
     member,
     group,
     formattedGroupName,
-    contentHtml
+    contentHtml,
   };
 }

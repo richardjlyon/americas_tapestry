@@ -139,14 +139,14 @@ const MenubarCheckboxItem = React.forwardRef<
         className,
       )}
       {...props}
-  >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-      <MenubarPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
-      </MenubarPrimitive.ItemIndicator>
-    </span>
-    {children}
-  </MenubarPrimitive.CheckboxItem>
+    >
+      <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+        <MenubarPrimitive.ItemIndicator>
+          <Check className="h-4 w-4" />
+        </MenubarPrimitive.ItemIndicator>
+      </span>
+      {children}
+    </MenubarPrimitive.CheckboxItem>
   );
 });
 MenubarCheckboxItem.displayName = MenubarPrimitive.CheckboxItem.displayName;

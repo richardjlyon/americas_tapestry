@@ -1,12 +1,12 @@
-import Link from "next/link";
-import Image from "next/image";
-import { ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { PageSection } from "@/components/ui/page-section";
-import { getAllSponsors } from "@/lib/sponsors";
-import { getSponsorData } from "@/app/actions/sponsor-actions";
-import { getImagePath, getImageSizes } from "@/lib/image-utils";
-import { notFound } from "next/navigation";
+import Link from 'next/link';
+import Image from 'next/image';
+import { ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { PageSection } from '@/components/ui/page-section';
+import { getAllSponsors } from '@/lib/sponsors';
+import { getSponsorData } from '@/app/actions/sponsor-actions';
+import { getImagePath, getImageSizes } from '@/lib/image-utils';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   const sponsors = await getAllSponsors();
@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!sponsor) {
     return {
       title: "Sponsor Not Found | America's Tapestry",
-      description: "The requested sponsor could not be found.",
+      description: 'The requested sponsor could not be found.',
     };
   }
 
@@ -51,18 +51,18 @@ export default async function SponsorPage({
 
   // Define tier colors with fallback
   const tierColors: Record<string, string> = {
-    Platinum: "bg-slate-300 text-slate-900",
-    Gold: "bg-amber-300 text-amber-900",
-    Silver: "bg-gray-300 text-gray-900",
-    Bronze: "bg-amber-700 text-amber-50",
-    Supporter: "bg-blue-100 text-blue-800",
+    Platinum: 'bg-slate-300 text-slate-900',
+    Gold: 'bg-amber-300 text-amber-900',
+    Silver: 'bg-gray-300 text-gray-900',
+    Bronze: 'bg-amber-700 text-amber-50',
+    Supporter: 'bg-blue-100 text-blue-800',
   };
 
   // Get tier color or default
   const tierColor =
     sponsor.tier && tierColors[sponsor.tier]
       ? tierColors[sponsor.tier]
-      : "bg-gray-100 text-gray-800";
+      : 'bg-gray-100 text-gray-800';
 
   return (
     <>
@@ -88,7 +88,7 @@ export default async function SponsorPage({
                 {(sponsor.location || sponsor.partnership_year) && (
                   <p className="text-colonial-navy/70">
                     {sponsor.location}
-                    {sponsor.location && sponsor.partnership_year && " • "}
+                    {sponsor.location && sponsor.partnership_year && ' • '}
                     {sponsor.partnership_year &&
                       `Partner since ${sponsor.partnership_year}`}
                   </p>
@@ -100,7 +100,7 @@ export default async function SponsorPage({
                   src={getImagePath(sponsor.logoPath)}
                   alt={`${sponsor.name} logo`}
                   fill
-                  sizes={getImageSizes("thumbnail")}
+                  sizes={getImageSizes('thumbnail')}
                   className="object-contain"
                 />
               </div>
@@ -122,7 +122,7 @@ export default async function SponsorPage({
                 </Link>
               </Button>
 
-              {sponsor.website && sponsor.website !== "#" && (
+              {sponsor.website && sponsor.website !== '#' && (
                 <Button
                   asChild
                   variant="ghost"

@@ -1,7 +1,10 @@
 'use client';
 
 import { OptimizedImage } from '@/components/ui/optimized-image';
-import { getResponsiveImageSources, hasResponsiveVariants } from '@/lib/image-utils';
+import {
+  getResponsiveImageSources,
+  hasResponsiveVariants,
+} from '@/lib/image-utils';
 
 interface ResponsivePictureProps {
   src: string;
@@ -20,7 +23,7 @@ interface ResponsivePictureProps {
 /**
  * ResponsivePicture - Modern responsive image component with AVIF/WebP support
  * Part of Phase 2 Performance Optimization
- * 
+ *
  * Features:
  * - Modern picture element with multiple source formats
  * - AVIF format for maximum compression (supported browsers)
@@ -29,7 +32,7 @@ interface ResponsivePictureProps {
  * - Responsive srcSets for optimal loading at different viewport sizes
  * - Progressive enhancement - falls back to OptimizedImage if variants unavailable
  * - Seamless integration with existing OptimizedImage features
- * 
+ *
  * @param src - Image source URL
  * @param alt - Alt text for accessibility
  * @param role - Image role for automatic sizing and responsive behavior
@@ -53,11 +56,11 @@ export function ResponsivePicture({
   fill,
   width,
   height,
-  quality = 80
+  quality = 80,
 }: ResponsivePictureProps) {
   // Check if we have responsive variants available
   const hasVariants = hasResponsiveVariants(src, role);
-  
+
   // If no responsive variants available, fall back to OptimizedImage
   if (!hasVariants) {
     const imageProps: any = {
@@ -68,36 +71,28 @@ export function ResponsivePicture({
       priority,
       enableBlurPlaceholder,
       style,
-      quality
+      quality,
     };
-    
+
     // Only add fill, width, height if they are defined
     if (fill !== undefined) imageProps.fill = fill;
     if (width !== undefined) imageProps.width = width;
     if (height !== undefined) imageProps.height = height;
-    
+
     return <OptimizedImage {...imageProps} />;
   }
-  
+
   // Get responsive sources for modern picture element
   const { avif, webp, fallback, sizes } = getResponsiveImageSources(src, role);
-  
+
   return (
     <picture className={className} style={style}>
       {/* AVIF source - best compression, modern browsers */}
-      <source 
-        srcSet={avif} 
-        type="image/avif" 
-        sizes={sizes}
-      />
-      
+      <source srcSet={avif} type="image/avif" sizes={sizes} />
+
       {/* WebP source - good compression, wide browser support */}
-      <source 
-        srcSet={webp} 
-        type="image/webp" 
-        sizes={sizes}
-      />
-      
+      <source srcSet={webp} type="image/webp" sizes={sizes} />
+
       {/* Fallback img element using OptimizedImage for all its features */}
       <OptimizedImage
         src={fallback}

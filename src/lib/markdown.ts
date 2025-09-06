@@ -51,18 +51,18 @@ export async function markdownToHtml(
   try {
     // Fix image paths in markdown content before processing
     let processableContent = content;
-    
+
     // Find markdown image syntax and fix paths
     // ![alt text](/images/news/images/file.jpg) -> ![alt text](/images/news/file.jpg)
     processableContent = processableContent.replace(
-      /!\[(.*?)\]\(\/images\/news\/images\/(.*?)\)/g, 
-      '![$1](/images/news/$2)'
+      /!\[(.*?)\]\(\/images\/news\/images\/(.*?)\)/g,
+      '![$1](/images/news/$2)',
     );
-    
+
     // ![alt text](/images/images/file.jpg) -> ![alt text](/images/file.jpg)
     processableContent = processableContent.replace(
-      /!\[(.*?)\]\(\/images\/images\/(.*?)\)/g, 
-      '![$1](/images/$2)'
+      /!\[(.*?)\]\(\/images\/images\/(.*?)\)/g,
+      '![$1](/images/$2)',
     );
 
     // Process the markdown content
@@ -104,9 +104,7 @@ export function extractExcerpt(content: string, maxLength = 160): string {
 
     // Get the first paragraph
     const paragraphs = contentWithoutHeadings.split('\n\n');
-    const firstParagraph = (paragraphs[0] || '')
-      .replace(/\n/g, ' ')
-      .trim();
+    const firstParagraph = (paragraphs[0] || '').replace(/\n/g, ' ').trim();
 
     // Truncate if needed
     if (firstParagraph.length <= maxLength) {

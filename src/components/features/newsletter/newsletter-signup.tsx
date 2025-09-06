@@ -46,13 +46,11 @@ export function NewsletterSignup() {
       const response = await subscribeToNewsletter(data);
       setFormResponse(response);
 
-
       if (response.success) {
         reset();
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-
 
       setFormResponse({
         success: false,

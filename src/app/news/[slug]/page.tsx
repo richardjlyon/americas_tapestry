@@ -35,7 +35,7 @@ function addImageCaptions(htmlContent: string): string {
           ${caption}
         </figure>
       `;
-    }
+    },
   );
 }
 
@@ -49,13 +49,12 @@ export default async function BlogPostPage({
     notFound();
   }
 
-
   // Convert markdown to HTML using our modified function
   let contentHtml = await markdownToHtml(post.content);
 
   // Add captions to images
   contentHtml = addImageCaptions(contentHtml);
-  
+
   // Fix redundant image paths in the HTML content
   contentHtml = contentHtml
     .replace(/src="\/images\/news\/images\//g, 'src="/images/news/')

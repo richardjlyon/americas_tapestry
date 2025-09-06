@@ -66,9 +66,9 @@ export function PageSection({
 
     // Use new simplified spacing system
     const spacingClasses = {
-      tight: 'py-8 md:py-12',      // For closely related content
-      normal: 'py-12 md:py-16',    // Default for most content (equivalent to old 'large')
-      spacious: 'py-16 md:py-24'   // For major section breaks (equivalent to old 'default')
+      tight: 'py-8 md:py-12', // For closely related content
+      normal: 'py-12 md:py-16', // Default for most content (equivalent to old 'large')
+      spacious: 'py-16 md:py-24', // For major section breaks (equivalent to old 'default')
     };
 
     return spacingClasses[spacing];

@@ -16,25 +16,27 @@ export interface Sponsor {
   excerptHtml?: string;
 }
 
-
 /**
  * Format a sponsor name from slug or data
- * 
+ *
  * @param nameFromData Name from frontmatter data (if any)
  * @param slug Sponsor slug
  * @returns Formatted display name
  */
-function formatSponsorName(nameFromData: string | undefined, slug: string): string {
+function formatSponsorName(
+  nameFromData: string | undefined,
+  slug: string,
+): string {
   const baseName = nameFromData || slug.replace(/-/g, ' ');
   return baseName
     .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 }
 
 /**
  * Get all sponsors
- * 
+ *
  * @returns Array of sponsor objects
  */
 export async function getAllSponsors(): Promise<Sponsor[]> {
@@ -43,7 +45,7 @@ export async function getAllSponsors(): Promise<Sponsor[]> {
     const sponsorContent = await getAllContent('sponsors');
 
     const sponsors: Sponsor[] = sponsorContent
-      .filter(item => item.slug !== 'README') // Exclude README files
+      .filter((item) => item.slug !== 'README') // Exclude README files
       .map((item) => {
         const data = item.frontmatter;
         const content = item.content;
@@ -83,7 +85,7 @@ export async function getAllSponsors(): Promise<Sponsor[]> {
 
 /**
  * Get a single sponsor by slug
- * 
+ *
  * @param slug Sponsor slug
  * @returns Sponsor object or null if not found
  */
@@ -104,7 +106,7 @@ export async function getSponsorBySlug(slug: string): Promise<Sponsor | null> {
 
     // Create an excerpt from the content or use provided one
     const excerpt = sponsorItem.excerpt || extractExcerpt(content);
-      
+
     // Format the display name
     const displayName = formatSponsorName(data['name'], slug);
 

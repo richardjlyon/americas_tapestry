@@ -5,97 +5,102 @@
 @layer base {
   :root {
     /* Define color variables for shadcn/ui integration */
-    --background: 39 33% 86%;     /* colonial-parchment */
-    --foreground: 212 60% 16%;    /* colonial-navy */
-    --card: 0 0% 100%;            /* white */
+    --background: 39 33% 86%; /* colonial-parchment */
+    --foreground: 212 60% 16%; /* colonial-navy */
+    --card: 0 0% 100%; /* white */
     --card-foreground: 212 60% 16%; /* colonial-navy */
-    --popover: 39 33% 86%;        /* colonial-parchment */
+    --popover: 39 33% 86%; /* colonial-parchment */
     --popover-foreground: 212 60% 16%; /* colonial-navy */
-    --primary: 212 60% 16%;       /* colonial-navy */
+    --primary: 212 60% 16%; /* colonial-navy */
     --primary-foreground: 39 33% 86%; /* colonial-parchment */
-    --secondary: 350 70% 26%;     /* colonial-burgundy */
+    --secondary: 350 70% 26%; /* colonial-burgundy */
     --secondary-foreground: 39 33% 86%; /* colonial-parchment */
-    --muted: 33 19% 82%;          /* colonial-stone */
+    --muted: 33 19% 82%; /* colonial-stone */
     --muted-foreground: 212 60% 16%; /* colonial-navy */
-    --accent: 47 97% 46%;         /* colonial-gold #e8b903 */
+    --accent: 47 97% 46%; /* colonial-gold #e8b903 */
     --accent-foreground: 212 60% 16%; /* colonial-navy */
-    --destructive: 0 65% 51%;     /* red */
+    --destructive: 0 65% 51%; /* red */
     --destructive-foreground: 39 33% 86%; /* colonial-parchment */
-    --border: 33 19% 82%;         /* colonial-stone */
-    --input: 33 19% 82%;          /* colonial-stone */
-    --ring: 47 97% 46%;           /* colonial-gold #e8b903 */
+    --border: 33 19% 82%; /* colonial-stone */
+    --input: 33 19% 82%; /* colonial-stone */
+    --ring: 47 97% 46%; /* colonial-gold #e8b903 */
 
     --radius: 0.5rem;
   }
 }
 
 @layer base {
-    /* Base styles for border and body */
-    * {
-        @apply border-border;
-    }
+  /* Base styles for border and body */
+  * {
+    @apply border-border;
+  }
 
-    body {
-        @apply bg-background text-foreground;
-    }
+  body {
+    @apply bg-background text-foreground;
+  }
 
-    /* Base typography */
-    p {
-        @apply font-serif text-lg sm:text-xl leading-relaxed text-foreground/90;
-    }
+  /* Base typography */
+  p {
+    @apply font-serif text-lg sm:text-xl leading-relaxed text-foreground/90;
+  }
 
-    p + p {
-        @apply mt-4;
-    }
+  p + p {
+    @apply mt-4;
+  }
 
-    /* Heading styles */
-    h1, h2, h3, h4, h5, h6 {
-        @apply font-sans font-bold text-foreground;
-    }
+  /* Heading styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans font-bold text-foreground;
+  }
 
-    h1 {
-        @apply text-4xl md:text-5xl tracking-tight;
-    }
+  h1 {
+    @apply text-4xl md:text-5xl tracking-tight;
+  }
 
-    h2 {
-        @apply text-3xl md:text-4xl tracking-tight;
-    }
+  h2 {
+    @apply text-3xl md:text-4xl tracking-tight;
+  }
 
-    h3 {
-        @apply text-2xl md:text-3xl;
-    }
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
 
-    h4 {
-        @apply text-xl md:text-2xl;
-    }
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
 
-    /* Link styles */
-    a {
-        @apply text-secondary font-medium transition-colors hover:text-secondary/80;
-    }
+  /* Link styles */
+  a {
+    @apply text-secondary font-medium transition-colors hover:text-secondary/80;
+  }
 }
 
 @layer components {
-    /***************************************
-     * TYPOGRAPHY COMPONENTS
-     ***************************************/
+  /***************************************
+   * TYPOGRAPHY COMPONENTS
+   ***************************************/
 
-    /* Heading styles */
-    .page-heading {
-        @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-center tracking-tight;
-    }
+  /* Heading styles */
+  .page-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-center tracking-tight;
+  }
 
-    .section-title {
-        @apply text-2xl text-3xl md:text-4xl font-bold tracking-tight text-foreground;
-    }
+  .section-title {
+    @apply text-2xl text-3xl md:text-4xl font-bold tracking-tight text-foreground;
+  }
 
-    .lead-text {
-        @apply text-lg md:text-2xl font-medium text-foreground/80 font-serif max-w-3xl mx-auto text-center;
-    }
+  .lead-text {
+    @apply text-lg md:text-2xl font-medium text-foreground/80 font-serif max-w-3xl mx-auto text-center;
+  }
 
-    /* Rich text content area */
-    .content-typography {
-        @apply prose prose-lg md:prose-xl max-w-none
+  /* Rich text content area */
+  .content-typography {
+    @apply prose prose-lg md:prose-xl max-w-none
             prose-headings:font-sans
             prose-headings:text-foreground
             prose-h2:text-xl
@@ -116,219 +121,223 @@
             prose-blockquote:font-serif
             prose-blockquote:italic
             prose-blockquote:leading-tight;
-    }
+  }
 
-    .content-typography > p:first-of-type {
-        @apply mt-0;
-    }
+  .content-typography > p:first-of-type {
+    @apply mt-0;
+  }
 
-    /* Image caption styles */
-    .image-with-caption {
-        @apply my-8 mx-auto max-w-full;
-    }
+  /* Image caption styles */
+  .image-with-caption {
+    @apply my-8 mx-auto max-w-full;
+  }
 
-    .image-with-caption img {
-        @apply w-full rounded-md shadow-md mx-auto;
-    }
+  .image-with-caption img {
+    @apply w-full rounded-md shadow-md mx-auto;
+  }
 
-    .image-with-caption figcaption {
-        @apply text-center text-sm text-foreground/70 italic mt-2 font-serif max-w-prose mx-auto;
-    }
+  .image-with-caption figcaption {
+    @apply text-center text-sm text-foreground/70 italic mt-2 font-serif max-w-prose mx-auto;
+  }
 
-    /***************************************
-     * LAYOUT COMPONENTS
-     ***************************************/
+  /***************************************
+   * LAYOUT COMPONENTS
+   ***************************************/
 
-    /* Section layouts */
-    .section-padding {
-        @apply py-12 sm:py-16 md:py-20 lg:py-24;
-    }
+  /* Section layouts */
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
 
-    .page-section {
-        @apply pb-6 md:pt-4 md:pb-12;
-    }
+  .page-section {
+    @apply pb-6 md:pt-4 md:pb-12;
+  }
 
-    .page-section-pin {
-        @apply relative pb-16;
-    }
+  .page-section-pin {
+    @apply relative pb-16;
+  }
 
-    .page-section-pin::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 300px;
-        height: 50px;
-        background-image: url('/images/ui/needle.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
+  .page-section-pin::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 300px;
+    height: 50px;
+    background-image: url("/images/ui/needle.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
 
-    .page-section-pin-bottom {
-        width: 100%;
-        max-width: 300px;
-        height: 50px;
-        background-image: url('/images/ui/needle.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
+  .page-section-pin-bottom {
+    width: 100%;
+    max-width: 300px;
+    height: 50px;
+    background-image: url("/images/ui/needle.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
 
-    /* Content spacing utilities */
-    .content-spacing-sm > * + * {
-        @apply mt-4 md:mt-6;
-    }
+  /* Content spacing utilities */
+  .content-spacing-sm > * + * {
+    @apply mt-4 md:mt-6;
+  }
 
-    .content-spacing-md > * + * {
-        @apply mt-6 md:mt-8;
-    }
+  .content-spacing-md > * + * {
+    @apply mt-6 md:mt-8;
+  }
 
-    .content-spacing-lg > * + * {
-        @apply mt-8 md:mt-12;
-    }
+  .content-spacing-lg > * + * {
+    @apply mt-8 md:mt-12;
+  }
 
-    /* Margin utilities */
-    .mb-content-sm {
-        @apply mb-4 md:mb-6;
-    }
+  /* Margin utilities */
+  .mb-content-sm {
+    @apply mb-4 md:mb-6;
+  }
 
-    .mb-content-md {
-        @apply mb-6 md:mb-8;
-    }
+  .mb-content-md {
+    @apply mb-6 md:mb-8;
+  }
 
-    .mb-content-lg {
-        @apply mb-8 md:mb-12;
-    }
+  .mb-content-lg {
+    @apply mb-8 md:mb-12;
+  }
 
-    /***************************************
-     * UI COMPONENTS
-     ***************************************/
+  /***************************************
+   * UI COMPONENTS
+   ***************************************/
 
-    /* Hero elements */
-    .hero-content-box {
-        @apply bg-primary/50 backdrop-blur-sm p-6 md:p-8 rounded-lg inline-block shadow-lg transition-opacity duration-500;
-    }
+  /* Hero elements */
+  .hero-content-box {
+    @apply bg-primary/50 backdrop-blur-sm p-6 md:p-8 rounded-lg inline-block shadow-lg transition-opacity duration-500;
+  }
 
-    /* Carousel components */
-    .embla {
-        @apply overflow-hidden;
-    }
+  /* Carousel components */
+  .embla {
+    @apply overflow-hidden;
+  }
 
-    .embla__container {
-        @apply flex;
-    }
+  .embla__container {
+    @apply flex;
+  }
 
-    .embla__slide {
-        @apply min-w-0;
-    }
+  .embla__slide {
+    @apply min-w-0;
+  }
 
-    /* Status indicators */
-    .status-badge {
-        @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
-    }
+  /* Status indicators */
+  .status-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
 
-    .status-not-started {
-        @apply bg-primary text-white;
-    }
+  .status-not-started {
+    @apply bg-primary text-white;
+  }
 
-    .status-designed {
-        @apply bg-colonial-navy text-colonial-parchment;
-    }
+  .status-designed {
+    @apply bg-colonial-navy text-colonial-parchment;
+  }
 
-    .status-in-production {
-        @apply bg-secondary text-white;
-    }
+  .status-in-production {
+    @apply bg-secondary text-white;
+  }
 
-    .status-finished {
-        @apply bg-accent text-primary;
-    }
+  .status-finished {
+    @apply bg-accent text-primary;
+  }
 
-    /***************************************
-     * BACKGROUND TEXTURES
-     ***************************************/
+  /***************************************
+   * BACKGROUND TEXTURES
+   ***************************************/
 
-    /* Textured backgrounds */
-    .linen-texture {
-        background-color: #f5f1e6 !important; /* colonial-linenTexture */
-        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23dfcca1' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-    }
+  /* Textured backgrounds */
+  .linen-texture {
+    background-color: #f5f1e6 !important; /* colonial-linenTexture */
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23dfcca1' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
 
-    .woven-linen {
-        background-color: #f7f3ea !important; /* colonial-linenWoven */
-        background-image:
-            linear-gradient(90deg, rgba(197, 186, 161, 0.05) 50%, transparent 50%),
-            linear-gradient(rgba(197, 186, 161, 0.05) 50%, transparent 50%);
-        background-size: 4px 4px;
-        box-shadow: inset 0 0 100px rgba(209, 198, 180, 0.1);
-    }
+  .woven-linen {
+    background-color: #f7f3ea !important; /* colonial-linenWoven */
+    background-image: linear-gradient(
+        90deg,
+        rgba(197, 186, 161, 0.05) 50%,
+        transparent 50%
+      ), linear-gradient(rgba(197, 186, 161, 0.05) 50%, transparent 50%);
+    background-size: 4px 4px;
+    box-shadow: inset 0 0 100px rgba(209, 198, 180, 0.1);
+  }
 
-    .vintage-paper {
-        background-color: #f8f3e6 !important; /* colonial-vintagePaper */
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
-        box-shadow: inset 0 0 80px rgba(185, 161, 126, 0.2) !important;
-    }
+  .vintage-paper {
+    background-color: #f8f3e6 !important; /* colonial-vintagePaper */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
+    box-shadow: inset 0 0 80px rgba(185, 161, 126, 0.2) !important;
+  }
 
-    /* Specific styling for form inputs with vintage paper texture */
-    input.vintage-paper,
-    textarea.vintage-paper {
-        background-color: #f8f3e6 !important;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
-        box-shadow: inset 0 0 30px rgba(185, 161, 126, 0.15) !important;
-        border-color: rgba(185, 161, 126, 0.4) !important;
-        color: #5a4a3a !important;
-    }
+  /* Specific styling for form inputs with vintage paper texture */
+  input.vintage-paper,
+  textarea.vintage-paper {
+    background-color: #f8f3e6 !important;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
+    box-shadow: inset 0 0 30px rgba(185, 161, 126, 0.15) !important;
+    border-color: rgba(185, 161, 126, 0.4) !important;
+    color: #5a4a3a !important;
+  }
 
-    .authentic-parchment {
-        background-color: #f4e9d5 !important; /* colonial-parchment */
-        background-image:
-            linear-gradient(to right, rgba(209, 186, 145, 0.07) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(209, 186, 145, 0.07) 1px, transparent 1px);
-        background-size: 28px 28px;
-        position: relative;
-    }
+  .authentic-parchment {
+    background-color: #f4e9d5 !important; /* colonial-parchment */
+    background-image: linear-gradient(
+        to right,
+        rgba(209, 186, 145, 0.07) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(209, 186, 145, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+    position: relative;
+  }
 
-    .authentic-parchment::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-        z-index: 0;
-        opacity: 0.5;
-    }
+  .authentic-parchment::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    z-index: 0;
+    opacity: 0.5;
+  }
 
-    /***************************************
-     * PRINT STYLES
-     ***************************************/
+  /***************************************
+   * PRINT STYLES
+   ***************************************/
 
-    header,
-    footer {
-        @apply print:hidden;
-    }
+  header,
+  footer {
+    @apply print:hidden;
+  }
 }
 
 @layer utilities {
-    /***************************************
-     * ANIMATION UTILITIES
-     ***************************************/
+  /***************************************
+   * ANIMATION UTILITIES
+   ***************************************/
 
-    .animate-ken-burns {
-        animation: ken-burns 10s ease-in-out infinite alternate;
-    }
+  .animate-ken-burns {
+    animation: ken-burns 10s ease-in-out infinite alternate;
+  }
 
-    /***************************************
-     * TEXT UTILITIES
-     ***************************************/
+  /***************************************
+   * TEXT UTILITIES
+   ***************************************/
 
-    /* Standardized link styling for use outside content-typography */
-    .text-link {
-        @apply text-secondary underline decoration-secondary/30 underline-offset-2 font-medium
+  /* Standardized link styling for use outside content-typography */
+  .text-link {
+    @apply text-secondary underline decoration-secondary/30 underline-offset-2 font-medium
         hover:text-secondary hover:decoration-secondary/70;
-    }
-
+  }
 }

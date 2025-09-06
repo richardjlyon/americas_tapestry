@@ -11,7 +11,11 @@ interface SponsorCardProps {
   excerptHtml?: string;
 }
 
-export function SponsorCard({ sponsor, featured = false, excerptHtml }: SponsorCardProps) {
+export function SponsorCard({
+  sponsor,
+  featured = false,
+  excerptHtml,
+}: SponsorCardProps) {
   // Define tier colors with fallback
   const tierColors: Record<string, string> = {
     Platinum: 'bg-slate-300 text-slate-900',
@@ -28,12 +32,16 @@ export function SponsorCard({ sponsor, featured = false, excerptHtml }: SponsorC
       : 'bg-gray-100 text-gray-800';
 
   return (
-    <div className={`bg-white rounded-lg shadow-md border border-colonial-navy/10 overflow-hidden transition-all hover:shadow-lg ${featured ? 'border-colonial-gold' : ''}`}>
+    <div
+      className={`bg-white rounded-lg shadow-md border border-colonial-navy/10 overflow-hidden transition-all hover:shadow-lg ${featured ? 'border-colonial-gold' : ''}`}
+    >
       <div className="p-6">
         {/* Tier Badge */}
         {sponsor.tier && (
           <div className="flex justify-center mb-4">
-            <span className={`px-3 py-1 rounded-full text-xs font-medium ${tierColor}`}>
+            <span
+              className={`px-3 py-1 rounded-full text-xs font-medium ${tierColor}`}
+            >
               {sponsor.tier}
             </span>
           </div>
@@ -57,7 +65,7 @@ export function SponsorCard({ sponsor, featured = false, excerptHtml }: SponsorC
           <h3 className="text-2xl font-bold text-colonial-navy mb-3">
             {sponsor.name}
           </h3>
-          
+
           {sponsor.location && (
             <p className="text-base text-colonial-navy/70 mb-2">
               {sponsor.location}
@@ -75,7 +83,7 @@ export function SponsorCard({ sponsor, featured = false, excerptHtml }: SponsorC
         {(excerptHtml || sponsor.excerpt) && (
           <div className="mb-6">
             {excerptHtml ? (
-              <div 
+              <div
                 className="text-base text-colonial-navy/80 line-clamp-4 content-typography prose prose-sm max-w-none"
                 dangerouslySetInnerHTML={{ __html: excerptHtml }}
               />
@@ -95,9 +103,7 @@ export function SponsorCard({ sponsor, featured = false, excerptHtml }: SponsorC
             size="sm"
             className="text-colonial-burgundy border-colonial-burgundy hover:bg-colonial-burgundy/10"
           >
-            <Link href={`/sponsors/${sponsor.slug}`}>
-              Learn More
-            </Link>
+            <Link href={`/sponsors/${sponsor.slug}`}>Learn More</Link>
           </Button>
 
           {sponsor.website && sponsor.website !== '#' && (

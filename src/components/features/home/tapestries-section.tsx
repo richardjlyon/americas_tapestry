@@ -35,7 +35,12 @@ export function TapestriesSection({
       </div>
 
       <div className="text-center mt-10 md:mt-12">
-        <Button asChild variant="colonial-primary" size="lg" className="text-base">
+        <Button
+          asChild
+          variant="colonial-primary"
+          size="lg"
+          className="text-base"
+        >
           <Link href="/tapestries">
             Explore All Thirteen Colonies{' '}
             <ArrowRight className="h-4 w-4 ml-2" />

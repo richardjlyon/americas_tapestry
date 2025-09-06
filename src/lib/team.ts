@@ -29,7 +29,7 @@ export interface TeamGroup {
 // Handles both group index files and individual member files
 async function getTeamContentForGroup(group: string) {
   const groupDirectory = path.join(process.cwd(), 'content', 'team', group);
-  
+
   if (!fs.existsSync(groupDirectory)) {
     console.warn(`Team group directory not found: ${groupDirectory}`);
     return [];
@@ -46,11 +46,11 @@ async function getTeamContentForGroup(group: string) {
       try {
         const fileContents = fs.readFileSync(fullPath, 'utf8');
         const { data, content: markdownContent } = matter(fileContents);
-        
+
         content.push({
           slug: group, // Group index gets the group name as slug
           frontmatter: data,
-          content: markdownContent
+          content: markdownContent,
         });
       } catch (error) {
         console.error(`Error processing group index ${fullPath}:`, error);
@@ -58,16 +58,16 @@ async function getTeamContentForGroup(group: string) {
     } else if (item.isDirectory()) {
       // This should be a member directory
       const memberIndexPath = path.join(fullPath, 'index.md');
-      
+
       if (fs.existsSync(memberIndexPath)) {
         try {
           const fileContents = fs.readFileSync(memberIndexPath, 'utf8');
           const { data, content: markdownContent } = matter(fileContents);
-          
+
           content.push({
             slug: item.name, // Member gets their directory name as slug
             frontmatter: data,
-            content: markdownContent
+            content: markdownContent,
           });
         } catch (error) {
           console.error(`Error processing member ${memberIndexPath}:`, error);
@@ -80,13 +80,15 @@ async function getTeamContentForGroup(group: string) {
 }
 
 // Read team group data from the directory structure
-export async function getTeamGroup(slug: string): Promise<TeamGroup | undefined> {
+export async function getTeamGroup(
+  slug: string,
+): Promise<TeamGroup | undefined> {
   try {
     // Use content-core to get the team group index content
     const teamContent = await getAllContent('team');
-    
+
     // Find the group's index content by looking for slug match
-    const groupContent = teamContent.find(item => {
+    const groupContent = teamContent.find((item) => {
       // Check if this is a group index file by checking the path structure
       // Groups have index.md files directly in their directories
       return item.slug === slug;
@@ -121,7 +123,7 @@ export async function getTeamGroups(): Promise<TeamGroup[]> {
 
     // Filter for group index files - these should be at the top level of each group directory
     // and contain group metadata like name, description, order
-    const groupIndexItems = teamContent.filter(item => {
+    const groupIndexItems = teamContent.filter((item) => {
       // Look for items that have group-specific frontmatter
       return item.frontmatter['name'] && item.frontmatter['description'];
     });
@@ -150,8 +152,9 @@ export async function getTeamGroups(): Promise<TeamGroup[]> {
   }
 }
 
-
-export async function getTeamMembersByGroup(group: string): Promise<TeamMember[]> {
+export async function getTeamMembersByGroup(
+  group: string,
+): Promise<TeamMember[]> {
   try {
     // Get all team content for this specific group using direct directory processing
     const groupSpecificContent = await getTeamContentForGroup(group);
@@ -221,7 +224,10 @@ export async function getProjectDirector(): Promise<TeamMember | null> {
   return directors.length > 0 && directors[0] ? directors[0] : null;
 }
 
-export async function getTeamMember(group: string, slug: string): Promise<TeamMember | null> {
+export async function getTeamMember(
+  group: string,
+  slug: string,
+): Promise<TeamMember | null> {
   const members = await getTeamMembersByGroup(group);
   return members.find((member) => member.slug === slug) || null;
 }
@@ -235,7 +241,9 @@ export async function getTeamMembersByState(stateName: string) {
   );
 
   // Find historical partners
-  const historicalPartnersAll = await getTeamMembersByGroup('historical-partners');
+  const historicalPartnersAll = await getTeamMembersByGroup(
+    'historical-partners',
+  );
   const historicalPartners = historicalPartnersAll.filter(
     (member) => member.state === stateName,
   );

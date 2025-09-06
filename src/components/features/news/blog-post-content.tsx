@@ -15,9 +15,9 @@ export function BlogPostContent({ post, contentHtml }: BlogPostContentProps) {
 
   return (
     <div className="mt-16">
-      <ReadingContainer 
-        width="content" 
-        background="paper" 
+      <ReadingContainer
+        width="content"
+        background="paper"
         className="overflow-hidden p-0"
       >
         {/* Category banner */}
@@ -27,10 +27,10 @@ export function BlogPostContent({ post, contentHtml }: BlogPostContentProps) {
 
         {/* Content section */}
         <div className="p-6 md:p-8">
-          <PostMetadata 
-            date={post.date} 
+          <PostMetadata
+            date={post.date}
             {...(post.author && { author: post.author })}
-            className="mb-3" 
+            className="mb-3"
           />
           <MarkdownContent html={contentHtml} />
         </div>

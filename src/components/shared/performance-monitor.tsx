@@ -1,7 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getPerformanceMonitor, type PerformanceMetric, type WebVitalsMetrics } from '@/lib/performance';
+import {
+  getPerformanceMonitor,
+  type PerformanceMetric,
+  type WebVitalsMetrics,
+} from '@/lib/performance';
 
 interface PerformanceMonitorProps {
   /**
@@ -16,27 +20,30 @@ interface PerformanceMonitorProps {
 
 /**
  * PerformanceMonitor component for tracking Core Web Vitals
- * 
+ *
  * Usage:
  * ```tsx
  * // In your root layout or app component
  * <PerformanceMonitor showWidget={process.env['NODE_ENV'] === 'development'} />
  * ```
  */
-export function PerformanceMonitor({ showWidget = false, onMetric }: PerformanceMonitorProps) {
+export function PerformanceMonitor({
+  showWidget = false,
+  onMetric,
+}: PerformanceMonitorProps) {
   const [metrics, setMetrics] = useState<WebVitalsMetrics>({});
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const monitor = getPerformanceMonitor();
-    
+
     // Set up metric callback
     monitor.onMetric((metric) => {
-      setMetrics(prev => ({
+      setMetrics((prev) => ({
         ...prev,
         [metric.name]: metric,
       }));
-      
+
       if (onMetric) {
         onMetric(metric);
       }
@@ -54,10 +61,7 @@ export function PerformanceMonitor({ showWidget = false, onMetric }: Performance
   return (
     <>
       {/* Performance widget toggle */}
-      <div 
-        className="fixed bottom-4 right-4 z-50"
-        style={{ zIndex: 9999 }}
-      >
+      <div className="fixed bottom-4 right-4 z-50" style={{ zIndex: 9999 }}>
         <button
           onClick={() => setIsVisible(!isVisible)}
           className="bg-blue-600 text-white px-3 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition-colors"
@@ -69,7 +73,7 @@ export function PerformanceMonitor({ showWidget = false, onMetric }: Performance
 
       {/* Performance widget */}
       {isVisible && (
-        <div 
+        <div
           className="fixed bottom-16 right-4 bg-white border border-gray-300 rounded-lg shadow-xl p-4 z-50 max-w-sm"
           style={{ zIndex: 9999 }}
         >
@@ -91,7 +95,9 @@ export function PerformanceMonitor({ showWidget = false, onMetric }: Performance
                 {Object.entries(metrics).map(([name, metric]) => (
                   <div key={name} className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className={`w-2 h-2 rounded-full ${getMetricColor(metric.rating)}`} />
+                      <span
+                        className={`w-2 h-2 rounded-full ${getMetricColor(metric.rating)}`}
+                      />
                       <span className="text-sm font-medium">{name}</span>
                     </div>
                     <div className="text-right">
@@ -104,12 +110,14 @@ export function PerformanceMonitor({ showWidget = false, onMetric }: Performance
                     </div>
                   </div>
                 ))}
-                
+
                 {/* Summary */}
                 <div className="pt-2 border-t border-gray-200">
                   <div className="flex items-center justify-between text-sm">
                     <span>Overall Score</span>
-                    <span className={`font-semibold ${getOverallScoreColor(summary)}`}>
+                    <span
+                      className={`font-semibold ${getOverallScoreColor(summary)}`}
+                    >
                       {getOverallScore(summary)}%
                     </span>
                   </div>
@@ -154,8 +162,8 @@ function formatMetricValue(name: string, value: number): string {
  */
 function getOverallScore(metrics: PerformanceMetric[]): number {
   if (metrics.length === 0) return 0;
-  
-  const scores = metrics.map(metric => {
+
+  const scores = metrics.map((metric) => {
     switch (metric.rating) {
       case 'good':
         return 100;
@@ -167,8 +175,9 @@ function getOverallScore(metrics: PerformanceMetric[]): number {
         return 0;
     }
   });
-  
-  const average = scores.reduce((sum, score) => sum + score, 0 as number) / scores.length;
+
+  const average =
+    scores.reduce((sum, score) => sum + score, 0 as number) / scores.length;
   return Math.round(average) as 0 | 20 | 60 | 100;
 }
 
@@ -177,7 +186,7 @@ function getOverallScore(metrics: PerformanceMetric[]): number {
  */
 function getOverallScoreColor(metrics: PerformanceMetric[]): string {
   const score = getOverallScore(metrics);
-  
+
   if (score >= 80) return 'text-green-600';
   if (score >= 60) return 'text-yellow-600';
   return 'text-red-600';
@@ -188,21 +197,21 @@ function getOverallScoreColor(metrics: PerformanceMetric[]): string {
  */
 export function usePerformanceMetrics() {
   const [metrics, setMetrics] = useState<WebVitalsMetrics>({});
-  
+
   useEffect(() => {
     const monitor = getPerformanceMonitor();
-    
+
     monitor.onMetric((metric) => {
-      setMetrics(prev => ({
+      setMetrics((prev) => ({
         ...prev,
         [metric.name]: metric,
       }));
     });
-    
+
     // Get current metrics
     setMetrics(monitor.getMetrics());
   }, []);
-  
+
   return metrics;
 }
 

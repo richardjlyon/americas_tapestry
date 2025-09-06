@@ -29,7 +29,10 @@ export interface WebVitalsMetrics {
 /**
  * Get performance rating based on metric thresholds
  */
-function getPerformanceRating(name: string, value: number): 'good' | 'needs-improvement' | 'poor' {
+function getPerformanceRating(
+  name: string,
+  value: number,
+): 'good' | 'needs-improvement' | 'poor' {
   const thresholds = {
     FCP: { good: 1800, poor: 3000 }, // milliseconds
     LCP: { good: 2500, poor: 4000 }, // milliseconds
@@ -55,30 +58,32 @@ export function trackWebVitals(onMetric: (metric: PerformanceMetric) => void) {
   if (typeof window === 'undefined') return;
 
   // Import web-vitals dynamically to avoid SSR issues
-  import('web-vitals').then(({ onCLS, onFCP, onFID, onINP, onLCP, onTTFB }) => {
-    const handleMetric = (metric: any) => {
-      const performanceMetric: PerformanceMetric = {
-        name: metric.name,
-        value: metric.value,
-        rating: getPerformanceRating(metric.name, metric.value),
-        delta: metric.delta,
-        id: metric.id,
-        timestamp: Date.now(),
+  import('web-vitals')
+    .then(({ onCLS, onFCP, onFID, onINP, onLCP, onTTFB }) => {
+      const handleMetric = (metric: any) => {
+        const performanceMetric: PerformanceMetric = {
+          name: metric.name,
+          value: metric.value,
+          rating: getPerformanceRating(metric.name, metric.value),
+          delta: metric.delta,
+          id: metric.id,
+          timestamp: Date.now(),
+        };
+
+        onMetric(performanceMetric);
       };
 
-      onMetric(performanceMetric);
-    };
-
-    // Track all Core Web Vitals
-    onCLS(handleMetric);
-    onFCP(handleMetric);
-    onFID(handleMetric);
-    onINP(handleMetric);
-    onLCP(handleMetric);
-    onTTFB(handleMetric);
-  }).catch(error => {
-    console.warn('Failed to load web-vitals:', error);
-  });
+      // Track all Core Web Vitals
+      onCLS(handleMetric);
+      onFCP(handleMetric);
+      onFID(handleMetric);
+      onINP(handleMetric);
+      onLCP(handleMetric);
+      onTTFB(handleMetric);
+    })
+    .catch((error) => {
+      console.warn('Failed to load web-vitals:', error);
+    });
 }
 
 /**
@@ -87,10 +92,15 @@ export function trackWebVitals(onMetric: (metric: PerformanceMetric) => void) {
 export function logPerformanceMetric(metric: PerformanceMetric) {
   if (process.env['NODE_ENV'] !== 'development') return;
 
-  const emoji = metric.rating === 'good' ? '🟢' : metric.rating === 'needs-improvement' ? '🟡' : '🔴';
+  const emoji =
+    metric.rating === 'good'
+      ? '🟢'
+      : metric.rating === 'needs-improvement'
+        ? '🟡'
+        : '🔴';
   console.log(
     `${emoji} ${metric.name}: ${metric.value}ms (${metric.rating})`,
-    metric
+    metric,
   );
 }
 
@@ -128,25 +138,27 @@ export class PerformanceMonitor {
   private metrics: WebVitalsMetrics = {};
   private callbacks: Array<(metric: PerformanceMetric) => void> = [];
 
-  constructor(options: { 
-    enableLogging?: boolean; 
-    enableAnalytics?: boolean; 
-  } = {}) {
+  constructor(
+    options: {
+      enableLogging?: boolean;
+      enableAnalytics?: boolean;
+    } = {},
+  ) {
     const { enableLogging = false, enableAnalytics = false } = options;
 
     trackWebVitals((metric) => {
       this.metrics[metric.name as keyof WebVitalsMetrics] = metric;
-      
+
       if (enableLogging) {
         logPerformanceMetric(metric);
       }
-      
+
       if (enableAnalytics) {
         sendToAnalytics(metric);
       }
 
       // Execute custom callbacks
-      this.callbacks.forEach(callback => callback(metric));
+      this.callbacks.forEach((callback) => callback(metric));
     });
   }
 
@@ -168,9 +180,10 @@ export class PerformanceMonitor {
   } {
     const metrics = Object.values(this.metrics);
     const summary = {
-      good: metrics.filter(m => m.rating === 'good').length,
-      needsImprovement: metrics.filter(m => m.rating === 'needs-improvement').length,
-      poor: metrics.filter(m => m.rating === 'poor').length,
+      good: metrics.filter((m) => m.rating === 'good').length,
+      needsImprovement: metrics.filter((m) => m.rating === 'needs-improvement')
+        .length,
+      poor: metrics.filter((m) => m.rating === 'poor').length,
       total: metrics.length,
     };
 
@@ -189,7 +202,7 @@ export class PerformanceMonitor {
    */
   hasGoodVitals(): boolean {
     const coreMetrics = ['LCP', 'FID', 'CLS'] as const;
-    return coreMetrics.every(metric => {
+    return coreMetrics.every((metric) => {
       const m = this.metrics[metric];
       return m && m.rating === 'good';
     });
@@ -272,13 +285,13 @@ export function getPerformanceMonitor(): PerformanceMonitor {
  */
 export function measureTime<T>(
   label: string,
-  fn: () => T | Promise<T>
+  fn: () => T | Promise<T>,
 ): T | Promise<T> {
   const start = performance.now();
-  
+
   try {
     const result = fn();
-    
+
     if (result instanceof Promise) {
       return result.finally(() => {
         const end = performance.now();

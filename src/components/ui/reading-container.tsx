@@ -13,18 +13,18 @@ export function ReadingContainer({
   children,
   width = 'content',
   background = 'paper',
-  className
+  className,
 }: ReadingContainerProps) {
   const widthClasses = {
-    article: 'max-w-3xl',  // ~600-700px, optimal reading width
-    content: 'max-w-4xl',  // ~800-900px, mixed content
-    wide: 'max-w-5xl'      // ~1000px, visual content
+    article: 'max-w-3xl', // ~600-700px, optimal reading width
+    content: 'max-w-4xl', // ~800-900px, mixed content
+    wide: 'max-w-5xl', // ~1000px, visual content
   };
 
   const backgroundClasses = {
     paper: 'vintage-paper',
     parchment: 'authentic-parchment',
-    none: ''
+    none: '',
   };
 
   return (
@@ -33,7 +33,7 @@ export function ReadingContainer({
         className={cn(
           'content-typography',
           backgroundClasses[background],
-          className
+          className,
         )}
         padding="large"
       >

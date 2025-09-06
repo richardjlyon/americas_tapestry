@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { SectionHeader } from "@/components/ui/section-header";
-import { BlogCard } from "@/components/features/blog/blog-card";
-import { FeaturedPost } from "@/components/features/blog/featured-post";
-import { getFeaturedBlogPosts, getLatestBlogPosts } from "@/lib/blog";
-import { ContentCard } from "@/components/ui/content-card";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { SectionHeader } from '@/components/ui/section-header';
+import { BlogCard } from '@/components/features/blog/blog-card';
+import { FeaturedPost } from '@/components/features/blog/featured-post';
+import { getFeaturedBlogPosts, getLatestBlogPosts } from '@/lib/blog';
+import { ContentCard } from '@/components/ui/content-card';
+import { Button } from '@/components/ui/button';
 
 export async function LatestNewsSection() {
   const featuredPosts = (await getFeaturedBlogPosts()) || [];

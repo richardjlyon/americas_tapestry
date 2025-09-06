@@ -1,28 +1,28 @@
-import { getTapestryBySlug, getAllTapestries } from "@/lib/tapestries";
-import { notFound } from "next/navigation";
-import { remark } from "remark";
-import html from "remark-html";
-import { AccessibleAudioPlayer } from "@/components/shared/accessible-audio-player";
-import { FullImageViewer } from "@/components/shared/full-image-viewer";
-import { TeamCard } from "@/components/features/tapestries/team-card";
-import { getTeamMembersByState } from "@/lib/team";
-import { PageSection } from "@/components/ui/page-section";
-import { ReadingContainer } from "@/components/ui/reading-container";
-import { getImagePath } from "@/lib/image-utils";
+import { getTapestryBySlug, getAllTapestries } from '@/lib/tapestries';
+import { notFound } from 'next/navigation';
+import { remark } from 'remark';
+import html from 'remark-html';
+import { AccessibleAudioPlayer } from '@/components/shared/accessible-audio-player';
+import { FullImageViewer } from '@/components/shared/full-image-viewer';
+import { TeamCard } from '@/components/features/tapestries/team-card';
+import { getTeamMembersByState } from '@/lib/team';
+import { PageSection } from '@/components/ui/page-section';
+import { ReadingContainer } from '@/components/ui/reading-container';
+import { getImagePath } from '@/lib/image-utils';
 
 // Status color mapping
 const statusColors = {
-  "Not Started": "bg-colonial-navy/70",
-  Designed: "bg-colonial-navy",
-  "In Production": "bg-colonial-burgundy",
-  Finished: "bg-colonial-gold",
+  'Not Started': 'bg-colonial-navy/70',
+  Designed: 'bg-colonial-navy',
+  'In Production': 'bg-colonial-burgundy',
+  Finished: 'bg-colonial-gold',
 };
 
 const statusTextColors = {
-  "Not Started": "text-colonial-parchment",
-  Designed: "text-colonial-parchment",
-  "In Production": "text-colonial-parchment",
-  Finished: "text-colonial-navy",
+  'Not Started': 'text-colonial-parchment',
+  Designed: 'text-colonial-parchment',
+  'In Production': 'text-colonial-parchment',
+  Finished: 'text-colonial-navy',
 };
 
 export async function generateStaticParams() {
@@ -50,16 +50,16 @@ export default async function TapestryPage({
   const processedContent = await remark().use(html).process(tapestry.content);
   const contentHtml = processedContent.toString();
 
-  const statusColor = statusColors[tapestry.status] || "bg-colonial-navy/70";
+  const statusColor = statusColors[tapestry.status] || 'bg-colonial-navy/70';
   const statusTextColor =
-    statusTextColors[tapestry.status] || "text-colonial-parchment";
+    statusTextColors[tapestry.status] || 'text-colonial-parchment';
 
   // Get the image source path and ensure it uses the new structure
   const imageSrc = tapestry.imagePath
     ? getImagePath(tapestry.imagePath)
     : tapestry.thumbnail
       ? getImagePath(tapestry.thumbnail)
-      : "/images/placeholders/placeholder.svg?height=600&width=800";
+      : '/images/placeholders/placeholder.svg?height=600&width=800';
 
   // Handle audio path
   const audioSrc = tapestry.audioPath

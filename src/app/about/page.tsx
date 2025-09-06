@@ -1,6 +1,6 @@
-import { PageSection } from "@/components/ui/page-section";
-import { ReadingContainer } from "@/components/ui/reading-container";
-import Image from "next/image";
+import { PageSection } from '@/components/ui/page-section';
+import { ReadingContainer } from '@/components/ui/reading-container';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (

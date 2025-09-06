@@ -42,7 +42,10 @@ export function VideoPlayer({
       <video
         ref={videoRef}
         className="w-full h-full object-cover"
-        poster={poster || '/images/placeholders/placeholder.svg?height=1920&width=1080'}
+        poster={
+          poster ||
+          '/images/placeholders/placeholder.svg?height=1920&width=1080'
+        }
         onEnded={() => setIsPlaying(false)}
         onClick={togglePlay}
         playsInline // Better mobile experience

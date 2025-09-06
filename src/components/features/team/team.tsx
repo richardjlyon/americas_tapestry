@@ -60,7 +60,9 @@ export function Team() {
           >
             <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-colonial-navy/10 flex-shrink-0 mx-auto sm:mx-0 relative">
               <Image
-                src={getImagePath(member.image || '/images/placeholders/placeholder.svg')}
+                src={getImagePath(
+                  member.image || '/images/placeholders/placeholder.svg',
+                )}
                 alt={member.name}
                 fill
                 sizes={getImageSizes('thumbnail')}

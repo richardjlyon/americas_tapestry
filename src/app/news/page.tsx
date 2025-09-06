@@ -1,10 +1,7 @@
 import { CategoryFilter } from '@/components/features/news/category-filter';
 import { NewsGrid } from '@/components/features/news/news-grid';
 import { FeaturedPosts } from '@/components/features/news/featured-posts';
-import {
-  getAllBlogPosts,
-  getFeaturedBlogPosts,
-} from '@/lib/blog';
+import { getAllBlogPosts, getFeaturedBlogPosts } from '@/lib/blog';
 import { PageSection } from '@/components/ui/page-section';
 
 export default async function NewsPage() {

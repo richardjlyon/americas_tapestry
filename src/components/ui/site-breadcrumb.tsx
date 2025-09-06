@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,27 +10,26 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from '@/components/ui/breadcrumb';
 
 export function SiteBreadcrumb() {
   const pathname = usePathname();
 
-
   // Skip rendering breadcrumbs on home page
-  if (pathname === "/") {
+  if (pathname === '/') {
     return null;
   }
 
   // Create breadcrumb segments from pathname
-  const pathSegments = pathname.split("/").filter((segment) => segment !== "");
+  const pathSegments = pathname.split('/').filter((segment) => segment !== '');
 
   // Format segment names for display
   const formatSegmentName = (segment: string) => {
     // Handle dynamic route parameters that might show up as actual values
-    if (segment.startsWith("[") && segment.endsWith("]")) {
-      return segment.slice(1, -1).replace(/-/g, " ");
+    if (segment.startsWith('[') && segment.endsWith(']')) {
+      return segment.slice(1, -1).replace(/-/g, ' ');
     }
-    return segment.replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase());
+    return segment.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase());
   };
 
   return (
@@ -53,7 +52,7 @@ export function SiteBreadcrumb() {
 
             {pathSegments.map((segment, index) => {
               const isLastItem = index === pathSegments.length - 1;
-              const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
+              const href = `/${pathSegments.slice(0, index + 1).join('/')}`;
               const label = formatSegmentName(segment);
 
               return (
