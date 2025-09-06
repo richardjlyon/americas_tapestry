@@ -28,8 +28,9 @@ export default async function Home() {
   const allCarouselItems = [...carouselImages, ...eligibleTapestries];
 
   // Shuffle all items for the carousel
-  const randomCarouselItems = [...allCarouselItems]
-    .sort(() => 0.5 - Math.random());
+  const randomCarouselItems = [...allCarouselItems].sort(
+    () => 0.5 - Math.random(),
+  );
 
   // Keep random tapestries for the tapestries section (only actual tapestries)
   const randomTapestries = [...eligibleTapestries]
