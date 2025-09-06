@@ -5,6 +5,7 @@ import html from 'remark-html';
 import { AccessibleAudioPlayer } from '@/components/shared/accessible-audio-player';
 import { FullImageViewer } from '@/components/shared/full-image-viewer';
 import { TeamCard } from '@/components/features/tapestries/team-card';
+import { MemberCard } from '@/components/features/team/member-card';
 import { getTeamMembersByState } from '@/lib/team';
 import { PageSection } from '@/components/ui/page-section';
 import { ReadingContainer } from '@/components/ui/reading-container';
@@ -67,7 +68,7 @@ export default async function TapestryPage({
     : undefined;
 
   // Get all team members for this state using the utility function
-  const { stateDirectors, historicalPartners, illustrators, stitchingGroups } =
+  const { stateDirectors, historicalPartners, illustrators, stitchingGroups, commissionPartners } =
     await getTeamMembersByState(tapestry.title);
 
   const hasTeamMembers =
@@ -75,6 +76,8 @@ export default async function TapestryPage({
     historicalPartners?.length > 0 ||
     illustrators?.length > 0 ||
     stitchingGroups?.length > 0;
+
+  const hasCommissionPartner = commissionPartners?.length > 0;
 
   return (
     <>
@@ -127,6 +130,34 @@ export default async function TapestryPage({
               stitchingGroups={stitchingGroups}
             />
           </div>
+        )}
+
+        {/* 250 Commission Partner section */}
+        {hasCommissionPartner && (
+          <>
+            {/* Pin separator */}
+            <div className="flex justify-center pt-8 pb-2">
+              <div className="page-section-pin-bottom" />
+            </div>
+            
+            <div className="pt-6">
+              <h2 className="font-serif text-center text-2xl font-normal pb-4 md:pb-8">
+                250 Commission Partner
+              </h2>
+              <div className="flex justify-center">
+                <div className="w-full max-w-sm">
+                  {commissionPartners.map((partner) => (
+                    <div key={`${partner.groupSlug}-${partner.slug}`}>
+                      <MemberCard
+                        member={partner}
+                        variant="grid"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </>
         )}
       </PageSection>
     </>

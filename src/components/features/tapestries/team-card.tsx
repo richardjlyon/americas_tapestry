@@ -95,18 +95,25 @@ export function TeamCard({
                   </div>
 
                   {/* details */}
-                  <div className="text-center w-full">
-                    <h3 className="font-sans text-lg font-bold text-colonial-burgundy">
-                      {member.role || 'Team Member'}
-                    </h3>
-                    <p className="font-normal text-colonial-navy mb-1 pb-0">
-                      {member.name || member.slug}
-                    </p>
-                    {(member['description'] || member['summary']) && (
-                      <p className="text-sm text-gray-700 mt-0 pt-0">
-                        {member['description'] || member['summary']}
+                  <div className="text-center w-full flex-grow flex flex-col">
+                    <div className="flex-grow">
+                      <h3 className="font-sans text-lg font-bold text-colonial-burgundy">
+                        {member.role || 'Team Member'}
+                      </h3>
+                      <p className="font-normal text-colonial-navy mb-1 pb-0">
+                        {member.name || member.slug}
                       </p>
-                    )}
+                      {(member['description'] || member['summary']) && (
+                        <p className="text-sm text-gray-700 mt-0 pt-0">
+                          {member['description'] || member['summary']}
+                        </p>
+                      )}
+                    </div>
+                    <div className="mt-auto pt-4">
+                      <span className="inline-block text-link">
+                        Read more →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </CardContent>

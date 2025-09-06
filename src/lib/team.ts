@@ -265,10 +265,17 @@ export async function getTeamMembersByState(stateName: string) {
     (member) => member.state === stateName,
   );
 
+  // Find 250 commission partners
+  const commissionPartnersAll = await getTeamMembersByGroup('250-commission');
+  const commissionPartners = commissionPartnersAll.filter(
+    (member) => member.state === stateName,
+  );
+
   return {
     stateDirectors,
     historicalPartners,
     illustrators,
     stitchingGroups,
+    commissionPartners,
   };
 }

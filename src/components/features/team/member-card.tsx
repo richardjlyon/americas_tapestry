@@ -98,7 +98,12 @@ export function MemberCard({
               alt={member.name}
               fill
               sizes={getImageSizes('thumbnail')}
-              className="object-cover transition-transform duration-500 hover:scale-105"
+              className={cn(
+                "transition-transform duration-500 hover:scale-105",
+                member.groupSlug === '250-commission' 
+                  ? "object-contain" 
+                  : "object-cover"
+              )}
               style={{
                 objectPosition: member.imagePosition || 'center',
               }}
@@ -184,11 +189,11 @@ export function MemberCard({
       <div className={cn(`mb-4 md:mb-8 ${widthClass}`, className)}>
         <ContentCard className="overflow-hidden p-0">
           <div className="md:flex">
-            <div className="md:w-1/3 lg:w-1/4">
-              <div className="h-80 md:h-full relative">
+            <div className="md:w-1/3 lg:w-1/4 pt-6 md:pt-8">
+              <div className="h-80 md:h-80 relative">
                 {imgSrc && !imgError && !imgSrc.includes('placeholder') ? (
                   <div
-                    className="cursor-pointer hover:opacity-90 transition-opacity"
+                    className="cursor-pointer hover:opacity-90 transition-opacity h-full w-full"
                     onClick={() => setLightboxOpen(true)}
                     role="button"
                     tabIndex={0}
@@ -205,9 +210,11 @@ export function MemberCard({
                       alt={member.name}
                       fill
                       sizes={getImageSizes('thumbnail')}
-                      className="object-contain bg-gray-50"
+                      className="object-contain"
                       style={{
-                        objectPosition: member.imagePosition || 'center',
+                        objectPosition: member.imagePosition 
+                          ? member.imagePosition.replace(/center$/, 'top').replace(/bottom$/, 'top')
+                          : 'top',
                       }}
                       priority
                       onError={handleImageError}
