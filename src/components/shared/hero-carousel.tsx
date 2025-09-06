@@ -224,9 +224,15 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
               size="lg"
               className="text-base pointer-events-auto"
             >
-              <Link href={`/tapestries/${currentTapestry.slug}`}>
-                Explore the {currentTapestry.title} tapestry
-              </Link>
+              {currentTapestry.slug.startsWith('carousel-') ? (
+                <Link href="https://www.americastapestry.com/tapestries">
+                  Explore the tapestries
+                </Link>
+              ) : (
+                <Link href={`/tapestries/${currentTapestry.slug}`}>
+                  Explore the {currentTapestry.title} tapestry
+                </Link>
+              )}
             </Button>
           </div>
         </div>
