@@ -33,8 +33,10 @@ export function MemberCard({
   const isGroupIndexFile = member['description'] && !member['role'];
   const shouldUseImage =
     member.groupSlug !== 'stitching-groups' && !isGroupIndexFile;
+  // Use .png for stitching-venues, .jpg for others
+  const imageExtension = member.groupSlug === 'stitching-venues' ? 'png' : 'jpg';
   const teamImagePath = shouldUseImage
-    ? `/images/team/${member.groupSlug}/${member.slug}.jpg`
+    ? `/images/team/${member.groupSlug}/${member.slug}.${imageExtension}`
     : placeholderPath;
   const [imgSrc, setImgSrc] = useState<string>(teamImagePath);
   const [imgError, setImgError] = useState(false);
@@ -89,12 +91,14 @@ export function MemberCard({
           className,
         )}
       >
-        <div className={cn(
-          "relative overflow-hidden",
-          member.groupSlug === '250-commission' 
-            ? "aspect-[3/2] flex items-center justify-center p-4" 
-            : "aspect-[3/4]"
-        )}>
+        <div
+          className={cn(
+            'relative overflow-hidden',
+            member.groupSlug === '250-commission'
+              ? 'aspect-[3/2] flex items-center justify-center p-4'
+              : 'aspect-[3/4]',
+          )}
+        >
           {member.groupSlug === 'stitching-groups' ? (
             <StitchingGroupPlaceholder name={member.name} />
           ) : !imgError ? (
@@ -204,12 +208,14 @@ export function MemberCard({
         <ContentCard className="overflow-hidden p-0">
           <div className="md:flex">
             <div className="md:w-1/3 lg:w-1/4 pt-6 md:pt-8">
-              <div className={cn(
-                "relative",
-                member.groupSlug === '250-commission' 
-                  ? "h-80 md:h-80 flex items-center justify-center p-4" 
-                  : "h-80 md:h-80"
-              )}>
+              <div
+                className={cn(
+                  'relative',
+                  member.groupSlug === '250-commission'
+                    ? 'h-80 md:h-80 flex items-center justify-center p-4'
+                    : 'h-80 md:h-80',
+                )}
+              >
                 {imgSrc && !imgError && !imgSrc.includes('placeholder') ? (
                   <div
                     className="cursor-pointer hover:opacity-90 transition-opacity h-full w-full"
@@ -245,8 +251,10 @@ export function MemberCard({
                         sizes={getImageSizes('thumbnail')}
                         className="object-contain"
                         style={{
-                          objectPosition: member.imagePosition 
-                            ? member.imagePosition.replace(/center$/, 'top').replace(/bottom$/, 'top')
+                          objectPosition: member.imagePosition
+                            ? member.imagePosition
+                                .replace(/center$/, 'top')
+                                .replace(/bottom$/, 'top')
                             : 'top',
                         }}
                         priority

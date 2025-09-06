@@ -1,9 +1,9 @@
-import React from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { ContentCard } from "@/components/ui/content-card";
-import { getTeamGroups } from "@/lib/team";
-import { Button } from "@/components/ui/button";
+import React from 'react';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { ContentCard } from '@/components/ui/content-card';
+import { getTeamGroups } from '@/lib/team';
+import { Button } from '@/components/ui/button';
 
 export async function TeamGroupsSection() {
   const teamGroups = await getTeamGroups();
@@ -19,7 +19,7 @@ export async function TeamGroupsSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         {teamGroups
-          .filter((group) => group.slug !== "project-director")
+          .filter((group) => group.slug !== 'project-director')
           .map((group) => (
             <ContentCard
               key={group.slug}

@@ -68,8 +68,14 @@ export default async function TapestryPage({
     : undefined;
 
   // Get all team members for this state using the utility function
-  const { stateDirectors, historicalPartners, illustrators, stitchingGroups, commissionPartners } =
-    await getTeamMembersByState(tapestry.title);
+  const {
+    stateDirectors,
+    historicalPartners,
+    illustrators,
+    stitchingGroups,
+    commissionPartners,
+    stitchingVenues,
+  } = await getTeamMembersByState(tapestry.title);
 
   const hasTeamMembers =
     stateDirectors?.length > 0 ||
@@ -78,6 +84,7 @@ export default async function TapestryPage({
     stitchingGroups?.length > 0;
 
   const hasCommissionPartner = commissionPartners?.length > 0;
+  const hasStitchingVenues = stitchingVenues?.length > 0;
 
   return (
     <>
@@ -139,7 +146,7 @@ export default async function TapestryPage({
             <div className="flex justify-center pt-8 pb-2">
               <div className="page-section-pin-bottom" />
             </div>
-            
+
             <div className="pt-6">
               <h2 className="font-serif text-center text-2xl font-normal pb-4 md:pb-8">
                 250 Commission Partner
@@ -148,13 +155,35 @@ export default async function TapestryPage({
                 <div className="w-full max-w-sm">
                   {commissionPartners.map((partner) => (
                     <div key={`${partner.groupSlug}-${partner.slug}`}>
-                      <MemberCard
-                        member={partner}
-                        variant="grid"
-                      />
+                      <MemberCard member={partner} variant="grid" />
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* Stitching Venues section */}
+        {hasStitchingVenues && (
+          <>
+            {/* Pin separator */}
+            <div className="flex justify-center pt-8 pb-2">
+              <div className="page-section-pin-bottom" />
+            </div>
+
+            <div className="pt-6">
+              <h2 className="font-serif text-center text-2xl font-normal pb-4 md:pb-8">
+                Stitching Venues
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {stitchingVenues.map((venue) => (
+                  <MemberCard
+                    key={`${venue.groupSlug}-${venue.slug}`}
+                    member={venue}
+                    variant="grid"
+                  />
+                ))}
               </div>
             </div>
           </>

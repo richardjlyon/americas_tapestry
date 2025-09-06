@@ -1,7 +1,7 @@
 ---
 name: "Historical Partners"
 description: "Museums, archives, and cultural institutions that provide historical expertise and resources to ensure authenticity."
-order: 3
+order: 2
 ---
 
 Our Historical Partners are the prestigious museums, archives, and

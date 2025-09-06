@@ -271,11 +271,18 @@ export async function getTeamMembersByState(stateName: string) {
     (member) => member.state === stateName,
   );
 
+  // Find stitching venues
+  const stitchingVenuesAll = await getTeamMembersByGroup('stitching-venues');
+  const stitchingVenues = stitchingVenuesAll
+    .filter((member) => member.state === stateName)
+    .sort((a, b) => (a['order'] || 999) - (b['order'] || 999));
+
   return {
     stateDirectors,
     historicalPartners,
     illustrators,
     stitchingGroups,
     commissionPartners,
+    stitchingVenues,
   };
 }
