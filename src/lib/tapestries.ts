@@ -198,8 +198,6 @@ export function getCarouselImages(): TapestryEntry[] {
       background_color: 'bg-colonial-navy',
       content: '',
       imagePath: `/images/carousel/${file}`,
-      audioPath: undefined,
-      audioDescription: '',
       colony: null,
       status: 'In Progress' as TapestryStatus,
       timelineEvents: [],
