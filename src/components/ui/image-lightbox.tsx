@@ -12,8 +12,8 @@ interface ImageLightboxProps {
   alt: string;
   title?: string;
   showNavigation?: boolean;
-  onPrevious?: () => void;
-  onNext?: () => void;
+  onPrevious?: (() => void) | undefined;
+  onNext?: (() => void) | undefined;
 }
 
 export function ImageLightbox({
