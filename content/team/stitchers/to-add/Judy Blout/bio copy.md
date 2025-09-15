@@ -1,0 +1,2 @@
+Judy Blout is an embroiderer on the North Carolina tapestry panel. A resident of Raleigh, she has been stitching for over 30 years. Having learn embroidery through her mother and aunt, Judy has primarily practiced cross stitch. While working on the panel, Judy has utilized the smyrna stitch. Learning about the projected through her local EGA Chapter, Judy decided to join her fellow chapter members and participate in this historical undertaking. Judy looks forward to celebrating America’s milestone anniversary next year! 
+

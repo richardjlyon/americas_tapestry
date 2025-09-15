@@ -1,0 +1,10 @@
+---
+name: "Thomas E. Shaw Gardner"
+role: "Stitcher"
+state: "Delaware"
+images: ["thomas-e-shaw-gardner-work1.jpg", "thomas-e-shaw-gardner-work2.jpg"]
+---
+
+Thomas E. Shaw Gardener is an embroiderer on the Delaware tapestry panel. A resident of Elkton, MD, he has been stitching for over 20 years. Having originally learned embroidery through an embroidery kit given to him by his mother while in high school, Thomas has furthered his techniques through reading and research. He has practiced beading, canvaswork or needlepoint, surface embroidery including crewel, and raised embroidery.
+
+While working on the panel, Thomas has utilized long n short, split, buttonhole, Bayeux, straight, and back stitch. His favorite is the Turkey rug stitch. While originally from New Jersey, Thomas has lived in Maryland for ten years. Thomas was interested in joining the project after learning about it through the Brandywine Embroiderers' Guild of America Chapter. Since joining America's Tapestry, Thomas has discovered a great deal about Major Fisher, Lewes, and Delaware's contribution to the Revolution.

@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import Image from 'next/image';
-import { X } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ImageLightboxProps {
@@ -11,6 +11,9 @@ interface ImageLightboxProps {
   src: string;
   alt: string;
   title?: string;
+  showNavigation?: boolean;
+  onPrevious?: () => void;
+  onNext?: () => void;
 }
 
 export function ImageLightbox({
@@ -19,26 +22,33 @@ export function ImageLightbox({
   src,
   alt,
   title,
+  showNavigation = false,
+  onPrevious,
+  onNext,
 }: ImageLightboxProps) {
-  // Handle ESC key press
+  // Handle keyboard navigation
   useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
+    const handleKeydown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
+      } else if (showNavigation && e.key === 'ArrowLeft' && onPrevious) {
+        onPrevious();
+      } else if (showNavigation && e.key === 'ArrowRight' && onNext) {
+        onNext();
       }
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEsc);
+      document.addEventListener('keydown', handleKeydown);
       // Prevent body scroll when modal is open
       document.body.style.overflow = 'hidden';
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEsc);
+      document.removeEventListener('keydown', handleKeydown);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, showNavigation, onPrevious, onNext]);
 
   if (!isOpen) return null;
 
@@ -58,6 +68,33 @@ export function ImageLightbox({
       >
         <X className="h-6 w-6" />
       </button>
+
+      {/* Navigation buttons */}
+      {showNavigation && onPrevious && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrevious();
+          }}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 text-white hover:text-gray-300 transition-colors bg-black/30 rounded-full"
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="h-8 w-8" />
+        </button>
+      )}
+
+      {showNavigation && onNext && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 text-white hover:text-gray-300 transition-colors bg-black/30 rounded-full"
+          aria-label="Next image"
+        >
+          <ChevronRight className="h-8 w-8" />
+        </button>
+      )}
 
       {/* Image container */}
       <div

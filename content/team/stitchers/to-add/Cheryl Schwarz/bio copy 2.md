@@ -1,0 +1,2 @@
+Cheryl Schwarz is an embroiderer on the Delaware tapestry panel. A resident of Hurlock, MD, she has been stitching for over 20 years. Having learn embroidery through the Embroiderers’ Guild of America courses, Cheryl has practiced cross stitch, canvaswork or needlepoint, and knitting. While working on the Delaware panel, Cheryl has primarily utilized cross stitch and has learned a few new techniques while working on the water vignette. Interested in learning more about American History, Cheryl has enjoyed learning more about Delaware’s Paul Revere, Henry Fisher. 
+

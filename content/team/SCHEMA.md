@@ -90,6 +90,15 @@ moreInformation: string  # Organization website or social media URL
 - Use `imagePosition` to adjust image cropping if needed
 - Stitching groups use placeholder graphics instead of photos
 
+#### Multi-Image Support
+```yaml
+images: string[]         # Optional array of image filenames (e.g., ['work1.jpg', 'work2.jpg'])
+```
+- If `images` array is provided, displays as a gallery with lightbox functionality
+- If `images` array is empty/undefined, falls back to single image pattern `{slug}.jpg`
+- Images should be placed in `/public/images/team/{group}/` directory
+- Use descriptive filenames: `{slug}-work{number}.{ext}` (e.g., `brunilda-rodriguez-work1.jpg`)
+
 ### URLs
 - Always include protocol: `https://example.com` not `example.com`
 - Verify all external links are active

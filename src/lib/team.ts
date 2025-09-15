@@ -13,6 +13,7 @@ export interface TeamMember {
   state?: string; // Single state assignment
   states?: string[]; // Multiple state assignments
   moreInformation?: string;
+  images?: string[]; // NEW: Support multiple images
   [key: string]: any; // For additional frontmatter fields
 }
 

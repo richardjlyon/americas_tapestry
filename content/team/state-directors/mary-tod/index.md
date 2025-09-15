@@ -5,3 +5,5 @@ state: "Maryland"
 summary: "A Baltimore-based needleworker."
 imagePosition: "center top"
 ---
+
+Mary is needleworker based in Baltimore, Maryland.

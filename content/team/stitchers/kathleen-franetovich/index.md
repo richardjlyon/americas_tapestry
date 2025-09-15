@@ -1,0 +1,7 @@
+---
+name: "Kathleen Franetovich"
+role: "Stitcher"
+state: "Maryland"
+---
+
+Kathleen Franetovich is an embroiderer on the Maryland tapestry panel. A resident of Bel Air, she has been stitching for over 50 years. Having learn embroidery from her mother, Kathleen has practiced counted work that isn't cross stitch, pulled or drawn thread embroidery, surface embroidery including crewel, and raised embroidery. While working on the panel, Kathleen has utilized stem stitch. Kathleen is excited to be contributing to this historical project and very much looks forward to seeing the completed product.
