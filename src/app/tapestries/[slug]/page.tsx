@@ -130,7 +130,7 @@ export default async function TapestryPage({
                 {tapestry.resources.map((resource, index) => {
                   // Construct the full resource URL using the convention
                   const resourceUrl = `/docs/tapestry-resources/${tapestry.slug}/${resource.url}`;
-                  
+
                   return (
                     <li key={index} className="flex items-baseline space-x-3">
                       <span className="inline-block w-2 h-2 rounded-full bg-colonial-burgundy flex-shrink-0" />
@@ -143,9 +143,13 @@ export default async function TapestryPage({
                         >
                           {resource.title}
                         </a>
-                        <span className="text-sm text-colonial-navy/70 ml-2">({resource.kind})</span>
+                        <span className="text-sm text-colonial-navy/70 ml-2">
+                          ({resource.kind})
+                        </span>
                         {resource.description && (
-                          <p className="text-colonial-navy/80 text-base mt-1">{resource.description}</p>
+                          <p className="text-colonial-navy/80 text-base mt-1">
+                            {resource.description}
+                          </p>
                         )}
                       </div>
                     </li>
