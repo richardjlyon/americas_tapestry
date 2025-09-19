@@ -1,4 +1,4 @@
-export function StitchingGroupPlaceholder({ name }: { name: string }) {
+export function StitchingGroupPlaceholder() {
   return (
     <svg
       viewBox="0 0 400 400"
@@ -76,16 +76,6 @@ export function StitchingGroupPlaceholder({ name }: { name: string }) {
         stroke="#cdc7b8"
         strokeWidth="2"
       />
-
-      {/* Group name text */}
-      <text
-        x="200"
-        y="280"
-        textAnchor="middle"
-        className="font-serif text-lg fill-colonial-navy"
-      >
-        {name}
-      </text>
     </svg>
   );
 }

@@ -104,7 +104,7 @@ export function MemberCard({
     return (
       <div
         className={cn(
-          'bg-white rounded-lg shadow-md overflow-hidden border border-colonial-navy/10 h-full flex flex-col',
+          'bg-white rounded-lg shadow-md overflow-hidden border border-colonial-navy/10 h-full flex flex-col min-w-0',
           className,
         )}
       >
@@ -123,7 +123,7 @@ export function MemberCard({
             </div>
           )}
           {member.groupSlug === 'stitching-groups' && !member['image'] ? (
-            <StitchingGroupPlaceholder name={member.name} />
+            <StitchingGroupPlaceholder />
           ) : !imgError ? (
             member.groupSlug === '250-commission' ? (
               <Image
@@ -158,8 +158,8 @@ export function MemberCard({
             </div>
           )}
         </div>
-        <div className="p-5 flex-grow flex flex-col">
-          <h3 className="text-xl font-bold text-colonial-navy">
+        <div className="p-5 flex-grow flex flex-col min-w-0 overflow-hidden">
+          <h3 className="text-xl font-bold text-colonial-navy break-words hyphens-auto" style={{ wordBreak: 'break-word', hyphens: 'auto' }}>
             {member.name}
           </h3>
           <p className="font-serif text-colonial-burgundy mb-3">
