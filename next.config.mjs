@@ -22,16 +22,12 @@ const nextConfig = {
       },
     ],
   },
-  // Exclude content files from serverless function bundles
+  // Exclude unnecessary files from serverless function bundles (but keep content!)
   outputFileTracingExcludes: {
     '*': [
-      'content/**/*',
-      'public/content/**/*',
       'public/images/**/*',
       'public/video/**/*',
       'scripts/**/*',
-      '**/*.md',
-      '**/*.mdx',
       'node_modules/@swc/core-linux-x64-gnu/**/*',
       'node_modules/@swc/core-linux-x64-musl/**/*',
       'node_modules/@next/swc-linux-x64-gnu/**/*',
