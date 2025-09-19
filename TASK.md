@@ -1,7 +1,3 @@
-# Exhibitions feature
+# Modal popup
 
-This feture adds an "Exhibitions" between "Team" and "News" in the navbar. We will create a single page that displays information about exhibition venues. Venues are stored at content/exhibitions. Images are stored at public/images/exhibitions
-
-Create a card for each exhibition, one per row. See visual-guide-exhibitions.jpg for layout. Use existing stylings for font, weight, and size where appropriate (e.g. "More Informaton ->")
-
-IMPORTANT: use serena mcp for code examination. use playwright mcp to validate design
+This feature introduces a modal pop-up to allow us to direct the user's attention to new information. The content will be spectified in content/popup/index.md. The popup will appear over the main index page. A cookie will be set to ensure that the popup is not shown on subsequent visits to minimise annoyance.

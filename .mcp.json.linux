@@ -14,7 +14,7 @@
     },
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem@latest", "/Users/richardlyon"]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem@latest", "/home/rjl"]
     },
     "brave-search": {
       "command": "npx",
@@ -24,7 +24,7 @@
       }
     },
     "serena": {
-      "command": "/Users/richardlyon/.claude/serena-mcp-wrapper.sh",
+      "command": "/home/rjl/.claude/serena-mcp-wrapper.sh",
       "args": []
     }
   }

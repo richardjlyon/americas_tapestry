@@ -68,3 +68,4 @@ playwright/.cache/
 #PRPs/
 #CLAUDE.md
 #TASK.md
+.mcp.json
