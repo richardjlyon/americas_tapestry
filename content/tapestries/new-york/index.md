@@ -47,7 +47,9 @@ in Dunmore’s famous Ethiopian Regiment.
 The lower right hand corner depicts a family en route to their new home
 in Nova Scotia as citizens of the British Crown.
 
-The New York Panel is directed by Jenni Paperman and will be stitched
+The New York Panel is directed by Jenni Paperman and is being stitched
 at the [Van Schaick Mansion](http://www.vanschaickmansion.org/) in
 Albany by the Capitol District Chapter of the EGA alongside other
-organizations. We are excited for them to get underway!
+organizations.
+
+To learn more or get involved, please [send us a message](http://americastapestry.com/contact).
