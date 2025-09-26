@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { SupportDonations } from "@/components/features/support/support-donations";
+// import { SupportDonations } from "@/components/features/support/support-donations";
 import { SupportSponsorship } from "@/components/features/support/support-sponsorship";
 import { PageSection } from "@/components/ui/page-section";
 
