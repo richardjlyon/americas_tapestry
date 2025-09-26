@@ -1,16 +1,16 @@
-import Link from 'next/link';
-import { ArrowRight, Heart, Users, Award } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import Link from "next/link";
+import { ArrowRight, Heart, Users, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { SupportDonations } from '@/components/features/support/support-donations';
-import { SupportSponsorship } from '@/components/features/support/support-sponsorship';
-import { PageSection } from '@/components/ui/page-section';
+} from "@/components/ui/card";
+import { SupportDonations } from "@/components/features/support/support-donations";
+import { SupportSponsorship } from "@/components/features/support/support-sponsorship";
+import { PageSection } from "@/components/ui/page-section";
 
 export const metadata = {
   title: "Support Our Project | America's Tapestry",
@@ -146,9 +146,9 @@ export default function SupportPage() {
       </PageSection> */}
 
       {/* Donations Section */}
-      <PageSection id="donations" spacing="normal" className="scroll-mt-24">
+      {/*<PageSection id="donations" spacing="normal" className="scroll-mt-24">
         <SupportDonations />
-      </PageSection>
+      </PageSection>*/}
 
       {/* Volunteer Section */}
       {/* <PageSection id="volunteer" paddingTop="none" className="scroll-mt-24">
