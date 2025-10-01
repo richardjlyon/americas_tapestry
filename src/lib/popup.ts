@@ -31,18 +31,19 @@ export async function getPopupContent(): Promise<PopupContent | null> {
       content: popup.content,
       slug: popup.slug,
     };
-  } catch {
+  } catch (error) {
+    console.error('Error loading popup content:', error);
     return null;
   }
 }
 
 export async function shouldShowPopup(popupContent: PopupContent): Promise<boolean> {
-  const cookieStore = await cookies();
-  const cookieValue = cookieStore.get('popup-state')?.value;
-
-  if (!cookieValue) return true;
-
   try {
+    const cookieStore = await cookies();
+    const cookieValue = cookieStore.get('popup-state')?.value;
+
+    if (!cookieValue) return true;
+
     const state: PopupState = JSON.parse(cookieValue);
 
     // Show if version changed
@@ -53,7 +54,9 @@ export async function shouldShowPopup(popupContent: PopupContent): Promise<boole
     if (daysSinceDismissed > popupContent.showDuration) return true;
 
     return false;
-  } catch {
+  } catch (error) {
+    // If cookie reading fails, default to showing the popup
+    console.error('Error reading popup state:', error);
     return true;
   }
 }

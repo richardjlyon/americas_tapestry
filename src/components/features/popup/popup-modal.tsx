@@ -25,8 +25,12 @@ export function PopupModal({ content, initialOpen }: PopupModalProps) {
   useEffect(() => {
     // Convert markdown content to HTML when component mounts
     const convertContent = async () => {
-      const html = await markdownToHtml(content.content, { removeH1: true });
-      setContentHtml(html);
+      try {
+        const html = await markdownToHtml(content.content, { removeH1: true });
+        setContentHtml(html);
+      } catch (error) {
+        console.error('Error converting markdown:', error);
+      }
     };
 
     convertContent();
@@ -36,11 +40,13 @@ export function PopupModal({ content, initialOpen }: PopupModalProps) {
     setOpen(false);
 
     if (permanent) {
-      await dismissPopup(content.version);
+      try {
+        await dismissPopup(content.version);
+      } catch (error) {
+        console.error('Error dismissing popup:', error);
+      }
     }
   };
-
-  if (!open) return null;
 
   return (
     <Dialog open={open} onOpenChange={(open) => !open && handleDismiss()}>
