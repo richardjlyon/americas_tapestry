@@ -37,21 +37,23 @@ export function BlogPostContent({ post, contentHtml }: BlogPostContentProps) {
 
         {/* Video section - only show if videoUrl exists */}
         {post.videoUrl && (
-          <video
-            className="w-full"
-            controls
-            preload="metadata"
-            poster={post.image || '/images/placeholders/placeholder.svg'}
-          >
-            {/* WebM first for modern browsers (if available) */}
-            {post.videoWebm && (
-              <source src={post.videoWebm} type="video/webm" />
-            )}
-            {/* MP4 fallback for all browsers */}
-            <source src={post.videoUrl} type="video/mp4" />
-            <track kind="captions" src="#" label="English" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="flex justify-center bg-black">
+            <video
+              className="w-full max-h-[70vh] object-contain"
+              controls
+              preload="metadata"
+              poster={post.image || '/images/placeholders/placeholder.svg'}
+            >
+              {/* WebM first for modern browsers (if available) */}
+              {post.videoWebm && (
+                <source src={post.videoWebm} type="video/webm" />
+              )}
+              {/* MP4 fallback for all browsers */}
+              <source src={post.videoUrl} type="video/mp4" />
+              <track kind="captions" src="#" label="English" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         )}
       </ReadingContainer>
     </div>
