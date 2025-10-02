@@ -38,7 +38,7 @@ export function BlogPostContent({ post, contentHtml }: BlogPostContentProps) {
         {/* Video section - only show if videoUrl exists */}
         {post.videoUrl && (
           <video
-            className="w-full aspect-video"
+            className="w-full"
             controls
             preload="metadata"
             poster={post.image || '/images/placeholders/placeholder.svg'}

@@ -63,7 +63,7 @@ export function VideoPlayer({
     >
       <video
         ref={videoRef}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain"
         poster={
           poster ||
           '/images/placeholders/placeholder.svg?height=1920&width=1080'
