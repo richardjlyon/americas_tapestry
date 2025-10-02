@@ -13,9 +13,6 @@ import { TapestriesSection } from '@/components/features/home/tapestries-section
 import { TeamSection } from '@/components/features/home/team-section';
 import { GetInTouchSection } from '@/components/features/home/get-in-touch-section';
 
-import { PopupWrapper } from '@/components/features/popup/popup-wrapper';
-import { getPopupContent } from '@/lib/popup';
-
 export default async function Home() {
   const allTapestries = await getAllTapestries();
   const carouselImages = getCarouselImages();
@@ -40,15 +37,9 @@ export default async function Home() {
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
 
-  // Popup logic - client-side check will determine if it shows
-  const popupContent = await getPopupContent();
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-
-      {/* Popup Modal */}
-      {popupContent && <PopupWrapper content={popupContent} />}
 
       <main className="flex-1 woven-linen content-spacing-sm">
         {/* Hero Section with Carousel */}
