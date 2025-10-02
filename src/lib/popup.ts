@@ -37,7 +37,9 @@ export async function getPopupContent(): Promise<PopupContent | null> {
   }
 }
 
-export async function shouldShowPopup(popupContent: PopupContent): Promise<boolean> {
+export async function shouldShowPopup(
+  popupContent: PopupContent,
+): Promise<boolean> {
   try {
     const cookieStore = await cookies();
     const cookieValue = cookieStore.get('popup-state')?.value;
@@ -50,7 +52,8 @@ export async function shouldShowPopup(popupContent: PopupContent): Promise<boole
     if (state.version !== popupContent.version) return true;
 
     // Show if duration expired
-    const daysSinceDismissed = (Date.now() - state.timestamp) / (1000 * 60 * 60 * 24);
+    const daysSinceDismissed =
+      (Date.now() - state.timestamp) / (1000 * 60 * 60 * 24);
     if (daysSinceDismissed > popupContent.showDuration) return true;
 
     return false;

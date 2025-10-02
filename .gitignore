@@ -29,7 +29,7 @@ playwright/.cache/
 
 # Keep these test files in git:
 # e2e/refactor-safety.spec.ts
-# __tests__/component-integrity.test.tsx  
+# __tests__/component-integrity.test.tsx
 # __tests__/simple-smoke.test.tsx
 # jest.config.js
 # jest.setup.js
@@ -69,3 +69,14 @@ playwright/.cache/
 #CLAUDE.md
 #TASK.md
 .mcp.json
+.serena/
+
+# Large video files (hosted on GitHub Releases)
+public/video/**/*.mp4
+public/video/**/*.webm
+public/video/**/*.mov
+public/video/**/*.avi
+# But keep thumbnails
+!public/video/**/*.jpg
+!public/video/**/*.jpeg
+!public/video/**/*.png

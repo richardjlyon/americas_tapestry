@@ -159,7 +159,10 @@ export function MemberCard({
           )}
         </div>
         <div className="p-5 flex-grow flex flex-col min-w-0 overflow-hidden">
-          <h3 className="text-xl font-bold text-colonial-navy break-words hyphens-auto" style={{ wordBreak: 'break-word', hyphens: 'auto' }}>
+          <h3
+            className="text-xl font-bold text-colonial-navy break-words hyphens-auto"
+            style={{ wordBreak: 'break-word', hyphens: 'auto' }}
+          >
             {member.name}
           </h3>
           <p className="font-serif text-colonial-burgundy mb-3">
@@ -172,11 +175,11 @@ export function MemberCard({
               <div className="mt-auto pt-4">
                 <a
                   href={`${member.moreInformation}`}
-                  className="inline-block font-serif text-colonial-burgundy hover:underline"
+                  className="inline-block font-serif text-colonial-burgundy hover:underline text-base"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  More information →
+                  {member.moreInformation}
                 </a>
               </div>
             )}
@@ -400,11 +403,16 @@ export function MemberCard({
               />
               {member.moreInformation && (
                 <div className="mt-auto pt-4">
+                  <p className="font-serif text-colonial-navy text-lg mb-2">
+                    To learn more, please visit:
+                  </p>
                   <a
                     href={`${member.moreInformation}`}
-                    className="inline-block text-link"
+                    className="inline-block text-link text-lg"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    More information →
+                    {member.moreInformation}
                   </a>
                 </div>
               )}

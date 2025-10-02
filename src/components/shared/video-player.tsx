@@ -5,14 +5,27 @@ import { Play, Pause, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
+interface VideoSource {
+  webm?: string;
+  mp4: string; // Required for fallback
+}
+
 interface VideoPlayerProps {
-  src: string;
-  highResSrc: string;
+  // New unified approach
+  sources?: {
+    standard: VideoSource; // Standard quality
+    highRes?: VideoSource; // Optional high-res
+  };
   poster?: string;
   className?: string;
+
+  // DEPRECATED: Keep for backward compatibility
+  src?: string;
+  highResSrc?: string;
 }
 
 export function VideoPlayer({
+  sources,
   src,
   highResSrc,
   poster,
@@ -20,6 +33,15 @@ export function VideoPlayer({
 }: VideoPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Handle backward compatibility
+  const videoSources = sources ?? {
+    standard: { mp4: src! } as VideoSource,
+    highRes: highResSrc ? ({ mp4: highResSrc } as VideoSource) : undefined,
+  };
+
+  // Use standard quality for main player
+  const mainSource = videoSources.standard;
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -50,7 +72,10 @@ export function VideoPlayer({
         onClick={togglePlay}
         playsInline // Better mobile experience
       >
-        <source src={src} type="video/mp4" />
+        {/* WebM first for modern browsers */}
+        {mainSource.webm && <source src={mainSource.webm} type="video/webm" />}
+        {/* MP4 fallback for all browsers */}
+        <source src={mainSource.mp4} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -86,18 +111,24 @@ export function VideoPlayer({
           )}
         </Button>
 
-        <Button
-          variant="ghost"
-          size="sm"
-          asChild
-          className="text-colonial-parchment hover:text-colonial-gold hover:bg-transparent text-xs sm:text-sm"
-        >
-          <a href={highResSrc} target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-            <span className="hidden sm:inline">High Resolution</span>
-            <span className="sm:hidden">HD</span>
-          </a>
-        </Button>
+        {videoSources.highRes && (
+          <Button
+            variant="ghost"
+            size="sm"
+            asChild
+            className="text-colonial-parchment hover:text-colonial-gold hover:bg-transparent text-xs sm:text-sm"
+          >
+            <a
+              href={videoSources.highRes.webm || videoSources.highRes.mp4}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">High Resolution</span>
+              <span className="sm:hidden">HD</span>
+            </a>
+          </Button>
+        )}
       </div>
     </div>
   );

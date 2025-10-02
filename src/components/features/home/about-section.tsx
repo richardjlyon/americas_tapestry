@@ -29,8 +29,8 @@ export function AboutSection() {
       <div className="relative flex justify-center">
         <div className="w-full md:max-w-[350px] lg:max-w-[400px]">
           <VideoPlayer
-            src="/video/250305-short-promotional/250305-short-promotional-v2-lowres.mp4"
-            highResSrc="/video/250305-short-promotional/250305-short-promotional-v2.mp4"
+            src="https://github.com/richardjlyon/americas_tapestry/releases/download/video-assets-v1.0/250305-short-promotional-v2-lowres.mp4"
+            highResSrc="https://github.com/richardjlyon/americas_tapestry/releases/download/video-assets-v1.0/250305-short-promotional-v2.mp4"
             poster="/video/250305-short-promotional/250305-short-promotional-v2-poster.png"
             className="aspect-[9/16] w-full"
           />

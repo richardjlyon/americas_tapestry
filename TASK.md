@@ -1,3 +1,5 @@
-# Modal popup
+# Video component optimisation
 
-This feature introduces a modal pop-up to allow us to direct the user's attention to new information. The content will be spectified in content/popup/index.md. The popup will appear over the main index page. A cookie will be set to ensure that the popup is not shown on subsequent visits to minimise annoyance.
+We will be adding a series (13) of videos. We need to optimise space on the server. /Users/richardlyon/dev/americas_tapestry/public/video/250928-tapestry-talk-georgia
+
+Refactor the video component to provide a .webm version for compatible browsers and fall back to .mp4. Help me ensure that video assets use a consistent nameing convention for topmatter video specification

@@ -63,17 +63,10 @@ export function PopupModal({ content, initialOpen }: PopupModalProps) {
         </DialogDescription>
 
         <div className="flex gap-2 justify-end">
-          <Button
-            variant="outline"
-            onClick={() => handleDismiss(false)}
-          >
+          <Button variant="outline" onClick={() => handleDismiss(false)}>
             Close
           </Button>
-          <Button
-            onClick={() => handleDismiss(true)}
-          >
-            Don't show again
-          </Button>
+          <Button onClick={() => handleDismiss(true)}>Don't show again</Button>
         </div>
       </DialogContent>
     </Dialog>

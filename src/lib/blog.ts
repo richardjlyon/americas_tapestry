@@ -14,7 +14,9 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   author?: string;
-  videoUrl?: string;
+  videoUrl?: string; // MP4 video URL (backward compatible)
+  videoWebm?: string; // WebM video URL (optional, new)
+  draft?: boolean; // Optional draft flag to hide posts
 }
 
 // Update the BlogCategory type to include "videos"
@@ -122,16 +124,18 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
           content,
           author: data['author'] || null,
           videoUrl: data['videoUrl'] || undefined,
+          videoWebm: data['videoWebm'] || undefined,
+          draft: data['draft'] || false,
         });
       } catch (error) {
         console.error(`Error processing blog post ${item.slug}:`, error);
       }
     }
 
-    // Sort posts by date (newest first)
-    return allPosts.sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-    );
+    // Filter out draft posts and sort by date (newest first)
+    return allPosts
+      .filter((post) => !post.draft)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   } catch (error) {
     console.error('Error getting all blog posts:', error);
     return [];
@@ -175,7 +179,7 @@ export async function getBlogPostBySlug(
           imagePath = imagePath.replace('/images/images/', '/images/');
         }
 
-        return {
+        const post: BlogPost = {
           slug,
           title: data['title'] || '',
           date: postDate || '',
@@ -186,7 +190,16 @@ export async function getBlogPostBySlug(
           content,
           author: data['author'] || null,
           videoUrl: data['videoUrl'] || undefined,
+          videoWebm: data['videoWebm'] || undefined,
+          draft: data['draft'] || false,
         };
+
+        // Don't return draft posts
+        if (post.draft) {
+          return null;
+        }
+
+        return post;
       }
     }
 
