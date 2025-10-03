@@ -8,4 +8,4 @@ videoUrl: "https://github.com/richardjlyon/americas_tapestry/releases/download/v
 videoWebm: "https://github.com/richardjlyon/americas_tapestry/releases/download/video-assets-v1.0/tapestry-talk-georgia.webm"
 ---
 
-We travel to Georgia's beautiful Atlanta History Center in Downtown Atlanta to talk to Georgia Director Robin Starnes about her team's work to date.
+We travel to Georgia's beautiful Atlanta History Center to talk to Georgia Director Robin Starnes about her team's work to date.
