@@ -1,17 +1,9 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Heart } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Button } from "@/components/ui/button";
+import { Heart } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 // interface DonationTier {
 //   id: string;
@@ -101,48 +93,42 @@ export function SupportDonations() {
         </p>
       </div>
 
-      <div className="w-full flex justify-center p-8">
-        <div className="w-full max-w-xl">
-          <Card className="bg-white shadow-md border border-colonial-navy/10">
-            <CardHeader>
-              <CardTitle className="text-xl text-colonial-navy">
-                How to Donate
-              </CardTitle>
-              <CardDescription>
-                Thank you so much! Here's how to donate via Seton Hill
-                University's donation page...
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4 text-xl">
-              The button below takes you to Seton Hill University's donation
-              page. When completing the form, please select "Designation: Other"
-              and then type "America's Tapestry" in the "Other" field.
-              <div className="relative my-4 aspect-video overflow-hidden rounded-md border border-colonial-navy/10 shadow-lg">
-                <Image
-                  src="/images/content/donation-example.png"
-                  alt="Example of donation form showing 'Designation Other' selected and 'America's Tapestry' typed in the field."
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="pt-4 border-t border-colonial-navy/10">
-                <p className="text-sm text-colonial-navy/70">
-                  If you encounter difficulties giving online, please call Seton
-                  Hill University help line at 1-877-SHU-GIFT (748.4438)
-                </p>
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button
-                asChild
-                className="w-full rounded-full bg-colonial-burgundy text-colonial-parchment hover:bg-colonial-burgundy/90"
-              >
-                <Link href="https://alumni.setonhill.edu/GiveSHU">
-                  Proceed to Donation
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+      <div className="w-full flex flex-col items-center gap-8 p-8">
+        <div className="w-full max-w-3xl text-center space-y-4">
+          <h3 className="text-2xl font-bold text-colonial-navy">
+            How to Donate
+          </h3>
+          <p className="text-lg text-colonial-navy/80">
+            The button below takes you to Seton Hill University's donation page.
+            When completing the form, please select "Designation: Other" and
+            then type "America's Tapestry" in the "Other" field as in the
+            illustration below:
+          </p>
+        </div>
+
+        <div className="relative w-full max-w-3xl aspect-video rounded-lg overflow-hidden drop-shadow-2xl">
+          <Image
+            src="/images/content/donation-example.png"
+            alt="Example of donation form showing 'Designation Other' selected and 'America's Tapestry' typed in the field."
+            fill
+            className="object-contain"
+          />
+        </div>
+
+        <p className="text-sm text-center text-colonial-navy/70">
+          If you encounter difficulties giving online, please call Seton Hill
+          University help line at 1-877-SHU-GIFT (748.4438)
+        </p>
+
+        <div className="w-full max-w-xl space-y-6">
+          <Button
+            asChild
+            className="w-full rounded-full bg-colonial-burgundy text-colonial-parchment hover:bg-colonial-burgundy/90 py-6 text-lg"
+          >
+            <Link href="https://alumni.setonhill.edu/g/giveshu">
+              Proceed to Donation
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

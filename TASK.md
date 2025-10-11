@@ -1,5 +1,3 @@
-# Video component optimisation
+# Dolls front page section
 
-We will be adding a series (13) of videos. We need to optimise space on the server. /Users/richardlyon/dev/americas_tapestry/public/video/250928-tapestry-talk-georgia
-
-Refactor the video component to provide a .webm version for compatible browsers and fall back to .mp4. Help me ensure that video assets use a consistent nameing convention for topmatter video specification
+This refactor removes the "Team" section from the front page and replaces it with "Support our Project". Then read our doll merchandising site here: https://www.stefanromero.com/. Then create a section that promotes the merchandise my inviting the visitor to purchase a Liberty doll in order to support the project. Keep it tasteful. include a large image taken from the site

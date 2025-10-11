@@ -80,3 +80,4 @@ public/video/**/*.avi
 !public/video/**/*.jpg
 !public/video/**/*.jpeg
 !public/video/**/*.png
+.playwright-mcp/
