@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import { Fragment } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -56,7 +56,7 @@ export function SiteBreadcrumb() {
               const label = formatSegmentName(segment);
 
               return (
-                <React.Fragment key={segment}>
+                <Fragment key={segment}>
                   <BreadcrumbItem>
                     {isLastItem ? (
                       <BreadcrumbPage className="font-bold font-sans">
@@ -74,7 +74,7 @@ export function SiteBreadcrumb() {
                     )}
                   </BreadcrumbItem>
                   {!isLastItem && <BreadcrumbSeparator />}
-                </React.Fragment>
+                </Fragment>
               );
             })}
           </BreadcrumbList>

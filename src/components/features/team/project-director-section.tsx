@@ -1,4 +1,3 @@
-import React from 'react';
 import { MemberCard } from '@/components/features/team/member-card';
 import { getProjectDirector } from '@/lib/team';
 
