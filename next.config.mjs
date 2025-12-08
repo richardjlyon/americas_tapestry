@@ -13,7 +13,9 @@ const nextConfig = {
     localPatterns: [
       {
         pathname: '/images/**',
-        search: '',
+      },
+      {
+        pathname: '/support/**',
       },
     ],
     remotePatterns: [
