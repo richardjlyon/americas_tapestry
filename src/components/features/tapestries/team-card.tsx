@@ -40,8 +40,11 @@ export function TeamCard({
       return personSvgFallback;
     }
 
-    // For stitching groups use SVG fallback
+    // For stitching groups, check if they have an image defined in frontmatter
     if (member.groupSlug === 'stitching-groups') {
+      if (member['image']) {
+        return `/images/team/${member.groupSlug}/${member['image']}`;
+      }
       return personSvgFallback;
     }
 
