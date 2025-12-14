@@ -7,4 +7,4 @@ image: "/video/tapestry-talk/tt-ep2-south-carolina/tt-ep2-south-carolina.jpg"
 videoUrl: "https://github.com/richardjlyon/americas_tapestry/releases/download/video-assets-v1.0/tt-ep2-south-carolina.mp4"
 ---
 
-TODO: Add description for South Carolina Tapestry Talk episode.
+We travel to South Carolina to talk to Director Karen Wallach about her team's work to date.
