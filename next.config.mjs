@@ -5,8 +5,11 @@ const nextConfig = {
   },
   images: {
     formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Optimized device sizes - reduced from 8 to 6 breakpoints to decrease optimization count
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    // Optimized image sizes - removed 384 to reduce variants
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    // Cache optimized images for 1 year
     minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
@@ -16,6 +19,9 @@ const nextConfig = {
       },
       {
         pathname: '/support/**',
+      },
+      {
+        pathname: '/video/**',
       },
     ],
     remotePatterns: [
