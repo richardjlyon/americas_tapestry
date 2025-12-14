@@ -64,8 +64,8 @@ function findImageInDirectory(tapestrySlug: string): string | null {
 
   const files = fs.readdirSync(publicImagePath);
 
-  // Priority order for formats: AVIF > WebP > original files
-  const formatPriority = ['.avif', '.webp', '.jpg', '.jpeg', '.png'];
+  // Priority order for formats: WebP > original files (AVIF removed - not in R2 manifest)
+  const formatPriority = ['.webp', '.jpg', '.jpeg', '.png'];
 
   // Look for main image file, preferring optimized formats
   for (const format of formatPriority) {
@@ -254,7 +254,7 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
 
         if (fs.existsSync(publicImagePath)) {
           const files = fs.readdirSync(publicImagePath);
-          const formatPriority = ['.avif', '.webp', '.jpg', '.jpeg', '.png'];
+          const formatPriority = ['.webp', '.jpg', '.jpeg', '.png'];
 
           // Find optimized thumbnail variants first
           for (const format of formatPriority) {

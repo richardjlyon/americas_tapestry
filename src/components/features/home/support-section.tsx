@@ -32,7 +32,7 @@ export function SupportSection() {
           {/* Image Section - Left side on desktop, full width on mobile */}
           <div className="w-full md:w-1/3 relative aspect-[3/2] overflow-hidden group">
             <Image
-              src="/support/liberty-dolls.jpg"
+              src="/images/support/liberty-dolls.jpg"
               alt="Handcrafted Liberty dolls by Stefan Romero - Limited edition art dolls supporting America's Tapestry"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"

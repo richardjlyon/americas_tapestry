@@ -1,2 +1,3 @@
 [tools]
+jq = "latest"
 node = "24.11"
