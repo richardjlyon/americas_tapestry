@@ -1,5 +1,39 @@
 import { remark } from 'remark';
 import html from 'remark-html';
+import imageManifest from './image-manifest.json';
+
+// Type for manifest entries
+interface ManifestEntry {
+  variants: Record<number, string>;
+  originalSize: number;
+  hash: string;
+}
+
+type ImageManifest = Record<string, ManifestEntry>;
+
+const manifest = imageManifest as ImageManifest;
+
+/**
+ * Replace image paths with R2 URLs from the manifest
+ * Uses the 1024w variant as default for markdown images
+ */
+function replaceImagePathsWithR2(htmlContent: string): string {
+  // Match img tags and replace src with R2 URL if available
+  return htmlContent.replace(
+    /<img\s+([^>]*?)src="(\/images\/[^"]+)"([^>]*)>/g,
+    (match, before, src, after) => {
+      const entry = manifest[src];
+      if (entry && entry.variants) {
+        // Use 1024w variant for markdown content (good balance of quality/size)
+        const r2Url = entry.variants[1024] || entry.variants[1920] || entry.variants[640];
+        if (r2Url) {
+          return `<img ${before}src="${r2Url}"${after}>`;
+        }
+      }
+      return match;
+    }
+  );
+}
 
 /**
  * Process YouTube iframe embeds to ensure they are safe and responsive
@@ -75,6 +109,9 @@ export async function markdownToHtml(
 
     // Convert to string and process YouTube embeds
     let htmlContent = processYouTubeEmbeds(processedContent.toString());
+
+    // Replace image paths with R2 URLs
+    htmlContent = replaceImagePathsWithR2(htmlContent);
 
     // Optionally remove the first h1 tag if requested (useful for pages that already have an h1)
     if (options.removeH1) {

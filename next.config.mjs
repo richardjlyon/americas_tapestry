@@ -4,27 +4,21 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   images: {
+    // Use custom loader for R2-hosted images (eliminates Vercel image optimization costs)
+    loader: 'custom',
+    loaderFile: './src/lib/cloudflare-loader.ts',
+    // Still allow these formats for any images not using custom loader
     formats: ['image/webp', 'image/avif'],
-    // Optimized device sizes - reduced from 8 to 6 breakpoints to decrease optimization count
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-    // Optimized image sizes - removed 384 to reduce variants
-    imageSizes: [16, 32, 48, 64, 96, 128, 256],
-    // Cache optimized images for 1 year
-    minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    localPatterns: [
-      {
-        pathname: '/images/**',
-      },
-      {
-        pathname: '/support/**',
-      },
-      {
-        pathname: '/video/**',
-      },
-    ],
+    // Remote patterns for R2 and other external sources
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pub-93847b5093894cc7874bdee71704b7b5.r2.dev',
+        port: '',
+        pathname: '/**',
+      },
       {
         protocol: 'https',
         hostname: 'hebbkx1anhila5yf.public.blob.vercel-storage.com',
