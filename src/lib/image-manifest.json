@@ -3733,5 +3733,491 @@
     },
     "originalSize": 801665,
     "hash": "b6492c14"
+  },
+  "/images/becky-gutin.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/becky-gutin-640w-fa1f64a8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/becky-gutin-1024w-fa1f64a8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/becky-gutin-1920w-fa1f64a8.webp"
+    },
+    "originalSize": 1942679,
+    "hash": "fa1f64a8"
+  },
+  "/images/brunilda-rodriguez-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/brunilda-rodriguez-work1-640w-73a98d3f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/brunilda-rodriguez-work1-1024w-73a98d3f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/brunilda-rodriguez-work1-1920w-73a98d3f.webp"
+    },
+    "originalSize": 4713427,
+    "hash": "73a98d3f"
+  },
+  "/images/brunilda-rodriguez-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/brunilda-rodriguez-work2-640w-8e0b2e82.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/brunilda-rodriguez-work2-1024w-8e0b2e82.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/brunilda-rodriguez-work2-1920w-8e0b2e82.webp"
+    },
+    "originalSize": 7283428,
+    "hash": "8e0b2e82"
+  },
+  "/images/brunilda-rodriguez-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/brunilda-rodriguez-work3-640w-9f63e556.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/brunilda-rodriguez-work3-1024w-9f63e556.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/brunilda-rodriguez-work3-1920w-9f63e556.webp"
+    },
+    "originalSize": 7089062,
+    "hash": "9f63e556"
+  },
+  "/images/cheryl-schwarz-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/cheryl-schwarz-work1-640w-6be8f232.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/cheryl-schwarz-work1-1024w-6be8f232.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/cheryl-schwarz-work1-1920w-6be8f232.webp"
+    },
+    "originalSize": 213038,
+    "hash": "6be8f232"
+  },
+  "/images/cheryl-schwarz-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/cheryl-schwarz-work2-640w-49268855.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/cheryl-schwarz-work2-1024w-49268855.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/cheryl-schwarz-work2-1920w-49268855.webp"
+    },
+    "originalSize": 2437538,
+    "hash": "49268855"
+  },
+  "/images/cheryl-schwarz-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/cheryl-schwarz-work3-640w-c7fb793f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/cheryl-schwarz-work3-1024w-c7fb793f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/cheryl-schwarz-work3-1920w-c7fb793f.webp"
+    },
+    "originalSize": 2445492,
+    "hash": "c7fb793f"
+  },
+  "/images/corinne-burr-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work1-640w-d74ef30b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work1-1024w-d74ef30b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work1-1920w-d74ef30b.webp"
+    },
+    "originalSize": 205890,
+    "hash": "d74ef30b"
+  },
+  "/images/corinne-burr-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work2-640w-d9897f43.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work2-1024w-d9897f43.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work2-1920w-d9897f43.webp"
+    },
+    "originalSize": 685133,
+    "hash": "d9897f43"
+  },
+  "/images/corinne-burr-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work3-640w-402f53b6.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work3-1024w-402f53b6.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work3-1920w-402f53b6.webp"
+    },
+    "originalSize": 432827,
+    "hash": "402f53b6"
+  },
+  "/images/corinne-burr-work4.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work4-640w-667ca4b9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work4-1024w-667ca4b9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/corinne-burr-work4-1920w-667ca4b9.webp"
+    },
+    "originalSize": 371477,
+    "hash": "667ca4b9"
+  },
+  "/images/elle-sheaffer.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/elle-sheaffer-640w-183a2ff9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/elle-sheaffer-1024w-183a2ff9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/elle-sheaffer-1920w-183a2ff9.webp"
+    },
+    "originalSize": 3868347,
+    "hash": "183a2ff9"
+  },
+  "/images/graciela-white-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/graciela-white-work1-640w-e52ea1da.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/graciela-white-work1-1024w-e52ea1da.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/graciela-white-work1-1920w-e52ea1da.webp"
+    },
+    "originalSize": 2448249,
+    "hash": "e52ea1da"
+  },
+  "/images/jenni-paperman.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/jenni-paperman-640w-e3053522.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/jenni-paperman-1024w-e3053522.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/jenni-paperman-1920w-e3053522.webp"
+    },
+    "originalSize": 106223,
+    "hash": "e3053522"
+  },
+  "/images/joan-flanigan-clarke-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work1-640w-04fd1599.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work1-1024w-04fd1599.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work1-1920w-04fd1599.webp"
+    },
+    "originalSize": 437662,
+    "hash": "04fd1599"
+  },
+  "/images/joan-flanigan-clarke-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work2-640w-15040c8e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work2-1024w-15040c8e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work2-1920w-15040c8e.webp"
+    },
+    "originalSize": 3724256,
+    "hash": "15040c8e"
+  },
+  "/images/joan-flanigan-clarke-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work3-640w-ca29f80f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work3-1024w-ca29f80f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work3-1920w-ca29f80f.webp"
+    },
+    "originalSize": 5074389,
+    "hash": "ca29f80f"
+  },
+  "/images/joan-flanigan-clarke-work4.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work4-640w-f67bf86b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work4-1024w-f67bf86b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joan-flanigan-clarke-work4-1920w-f67bf86b.webp"
+    },
+    "originalSize": 6661117,
+    "hash": "f67bf86b"
+  },
+  "/images/joanne-c-aker.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joanne-c-aker-640w-fbcc876e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joanne-c-aker-1024w-fbcc876e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/joanne-c-aker-1920w-fbcc876e.webp"
+    },
+    "originalSize": 1814963,
+    "hash": "fbcc876e"
+  },
+  "/images/kathleen-anderson.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/kathleen-anderson-640w-cfb44cf7.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/kathleen-anderson-1024w-cfb44cf7.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/kathleen-anderson-1920w-cfb44cf7.webp"
+    },
+    "originalSize": 5451578,
+    "hash": "cfb44cf7"
+  },
+  "/images/lauren-thie.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/lauren-thie-640w-35c3754c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/lauren-thie-1024w-35c3754c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/lauren-thie-1920w-35c3754c.webp"
+    },
+    "originalSize": 177007,
+    "hash": "35c3754c"
+  },
+  "/images/linda-worrell.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/linda-worrell-640w-5bb2195d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/linda-worrell-1024w-5bb2195d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/linda-worrell-1920w-5bb2195d.webp"
+    },
+    "originalSize": 2641346,
+    "hash": "5bb2195d"
+  },
+  "/images/margaret-baselice-work1.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work1-640w-5428fa8f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work1-1024w-5428fa8f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work1-1920w-5428fa8f.webp"
+    },
+    "originalSize": 3961093,
+    "hash": "5428fa8f"
+  },
+  "/images/margaret-baselice-work2.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work2-640w-b8611ad2.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work2-1024w-b8611ad2.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work2-1920w-b8611ad2.webp"
+    },
+    "originalSize": 3103483,
+    "hash": "b8611ad2"
+  },
+  "/images/margaret-baselice-work3.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work3-640w-47ea9346.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work3-1024w-47ea9346.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work3-1920w-47ea9346.webp"
+    },
+    "originalSize": 5849758,
+    "hash": "47ea9346"
+  },
+  "/images/margaret-baselice-work4.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work4-640w-8bedc4ec.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work4-1024w-8bedc4ec.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work4-1920w-8bedc4ec.webp"
+    },
+    "originalSize": 3493231,
+    "hash": "8bedc4ec"
+  },
+  "/images/margaret-baselice-work5.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work5-640w-d5c617db.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work5-1024w-d5c617db.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/margaret-baselice-work5-1920w-d5c617db.webp"
+    },
+    "originalSize": 299650,
+    "hash": "d5c617db"
+  },
+  "/images/marianne-p-hearsey.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/marianne-p-hearsey-640w-70965812.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/marianne-p-hearsey-1024w-70965812.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/marianne-p-hearsey-1920w-70965812.webp"
+    },
+    "originalSize": 1512519,
+    "hash": "70965812"
+  },
+  "/images/mary-w-cohn-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work1-640w-47348c29.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work1-1024w-47348c29.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work1-1920w-47348c29.webp"
+    },
+    "originalSize": 6097630,
+    "hash": "47348c29"
+  },
+  "/images/mary-w-cohn-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work2-640w-514506e0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work2-1024w-514506e0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work2-1920w-514506e0.webp"
+    },
+    "originalSize": 5255829,
+    "hash": "514506e0"
+  },
+  "/images/mary-w-cohn-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work3-640w-26130ff6.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work3-1024w-26130ff6.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work3-1920w-26130ff6.webp"
+    },
+    "originalSize": 2433469,
+    "hash": "26130ff6"
+  },
+  "/images/mary-w-cohn-work4.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work4-640w-67c48917.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work4-1024w-67c48917.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work4-1920w-67c48917.webp"
+    },
+    "originalSize": 1942525,
+    "hash": "67c48917"
+  },
+  "/images/mary-w-cohn-work5.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work5-640w-6aeb714a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work5-1024w-6aeb714a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-w-cohn-work5-1920w-6aeb714a.webp"
+    },
+    "originalSize": 1858832,
+    "hash": "6aeb714a"
+  },
+  "/images/maureen-farrell-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work1-640w-13691e6c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work1-1024w-13691e6c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work1-1920w-13691e6c.webp"
+    },
+    "originalSize": 1291828,
+    "hash": "13691e6c"
+  },
+  "/images/maureen-farrell-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work2-640w-bc5972cc.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work2-1024w-bc5972cc.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work2-1920w-bc5972cc.webp"
+    },
+    "originalSize": 1792785,
+    "hash": "bc5972cc"
+  },
+  "/images/maureen-farrell-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work3-640w-60d3f0a2.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work3-1024w-60d3f0a2.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work3-1920w-60d3f0a2.webp"
+    },
+    "originalSize": 1921221,
+    "hash": "60d3f0a2"
+  },
+  "/images/maureen-farrell-work4.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work4-640w-e1ca0d70.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work4-1024w-e1ca0d70.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maureen-farrell-work4-1920w-e1ca0d70.webp"
+    },
+    "originalSize": 322297,
+    "hash": "e1ca0d70"
+  },
+  "/images/nancy-cook.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/nancy-cook-640w-b07af782.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/nancy-cook-1024w-b07af782.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/nancy-cook-1920w-b07af782.webp"
+    },
+    "originalSize": 4100581,
+    "hash": "b07af782"
+  },
+  "/images/patti-tideman.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/patti-tideman-640w-6ee5001c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/patti-tideman-1024w-6ee5001c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/patti-tideman-1920w-6ee5001c.webp"
+    },
+    "originalSize": 2879432,
+    "hash": "6ee5001c"
+  },
+  "/images/sarah-luginbuhl-work1.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work1-640w-5e3ecd31.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work1-1024w-5e3ecd31.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work1-1920w-5e3ecd31.webp"
+    },
+    "originalSize": 1670160,
+    "hash": "5e3ecd31"
+  },
+  "/images/sarah-luginbuhl-work2.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work2-640w-9921c4cd.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work2-1024w-9921c4cd.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work2-1920w-9921c4cd.webp"
+    },
+    "originalSize": 9490382,
+    "hash": "9921c4cd"
+  },
+  "/images/sarah-luginbuhl-work3.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work3-640w-4e8d7653.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work3-1024w-4e8d7653.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work3-1920w-4e8d7653.webp"
+    },
+    "originalSize": 6075423,
+    "hash": "4e8d7653"
+  },
+  "/images/sarah-luginbuhl-work4.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work4-640w-30c6f65c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work4-1024w-30c6f65c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sarah-luginbuhl-work4-1920w-30c6f65c.webp"
+    },
+    "originalSize": 7485866,
+    "hash": "30c6f65c"
+  },
+  "/images/thomas-e-shaw-gardner-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/thomas-e-shaw-gardner-work1-640w-10f90fa3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/thomas-e-shaw-gardner-work1-1024w-10f90fa3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/thomas-e-shaw-gardner-work1-1920w-10f90fa3.webp"
+    },
+    "originalSize": 65035,
+    "hash": "10f90fa3"
+  },
+  "/images/thomas-e-shaw-gardner-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/thomas-e-shaw-gardner-work2-640w-995856f3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/thomas-e-shaw-gardner-work2-1024w-995856f3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/thomas-e-shaw-gardner-work2-1920w-995856f3.webp"
+    },
+    "originalSize": 4131972,
+    "hash": "995856f3"
+  },
+  "/images/team/stitchers/tracy-blanchard-work1.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work1-640w-d418da3e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work1-1024w-d418da3e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work1-1920w-d418da3e.webp"
+    },
+    "originalSize": 880425,
+    "hash": "d418da3e"
+  },
+  "/images/team/stitchers/tracy-blanchard-work2.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work2-640w-88326faa.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work2-1024w-88326faa.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work2-1920w-88326faa.webp"
+    },
+    "originalSize": 7473639,
+    "hash": "88326faa"
+  },
+  "/images/team/stitchers/tracy-blanchard-work3.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work3-640w-85fdba17.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work3-1024w-85fdba17.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work3-1920w-85fdba17.webp"
+    },
+    "originalSize": 4809261,
+    "hash": "85fdba17"
+  },
+  "/images/team/stitchers/tracy-blanchard-work4.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work4-640w-4c323715.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work4-1024w-4c323715.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work4-1920w-4c323715.webp"
+    },
+    "originalSize": 111855,
+    "hash": "4c323715"
+  },
+  "/images/team/stitchers/tracy-blanchard-work5.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work5-640w-7b44a1c0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work5-1024w-7b44a1c0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work5-1920w-7b44a1c0.webp"
+    },
+    "originalSize": 1550675,
+    "hash": "7b44a1c0"
+  },
+  "/images/valerie-stasalovich-work1.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/valerie-stasalovich-work1-640w-33a9bf3a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/valerie-stasalovich-work1-1024w-33a9bf3a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/valerie-stasalovich-work1-1920w-33a9bf3a.webp"
+    },
+    "originalSize": 5680090,
+    "hash": "33a9bf3a"
+  },
+  "/images/valerie-stasalovich-work2.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/valerie-stasalovich-work2-640w-5bbb1a5c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/valerie-stasalovich-work2-1024w-5bbb1a5c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/valerie-stasalovich-work2-1920w-5bbb1a5c.webp"
+    },
+    "originalSize": 3450285,
+    "hash": "5bbb1a5c"
+  },
+  "/images/valerie-stasalovich-work3.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/valerie-stasalovich-work3-640w-c204364a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/valerie-stasalovich-work3-1024w-c204364a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/valerie-stasalovich-work3-1920w-c204364a.webp"
+    },
+    "originalSize": 2518753,
+    "hash": "c204364a"
+  },
+  "/images/victoria-marston.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/victoria-marston-640w-c29aac50.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/victoria-marston-1024w-c29aac50.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/victoria-marston-1920w-c29aac50.webp"
+    },
+    "originalSize": 1075419,
+    "hash": "c29aac50"
   }
 }
