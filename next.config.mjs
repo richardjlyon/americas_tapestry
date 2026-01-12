@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+// Build verification: Node 24.11.1 compatibility test
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: false,
