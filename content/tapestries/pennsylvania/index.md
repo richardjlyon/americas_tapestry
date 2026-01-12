@@ -20,25 +20,8 @@ timelineEvents:
     description: "The Constitutional Convention in Philadelphia concluded with the signing of the United States Constitution, creating the framework for the American government."
 ---
 
-The Pennsylvania Panel depicts the activities of flag workers over 300
-miles from each other in the Keystone State. Despite geographic
-limitations, both Westmoreland County & Philadelphia were at the
-forefront of the Revolution. The left side of the panel depicts the
-fabrication of Westmoreland County’s “Don’t Tread On Me” Flag, which
-can be viewed today at the Fort Pitt Museum in Point State Park. The
-flag was flown by one of the first military units established west of
-the Allegheny Mountains & features the native Pennsylvania rattlesnake
-rendered into a political symbol by Benjamin Franklin.
+The Pennsylvania Panel depicts flags flown over 300 miles from each other in the Keystone State. Despite geographic limitations, both Westmoreland County & Philadelphia were at the forefront of the Revolution. The left side of the panel depicts the fabrication of Westmoreland County’s “Don’t Tread On Me” Flag, which can be viewed today at the Fort Pitt Museum in Point State Park. The flag was flown by one of the first military units established west of the Allegheny Mountains & features the native Pennsylvania rattlesnake rendered into a political symbol by Benjamin Franklin.
 
-On the right hand side of the panel, flag maker Rebecca Young works at
-fabricating a flag for the Pennsylvania Navy. While the historical
-record has designated Betsy Ross at the premier flag maker of the
-Revolution, Philadelphia was comprised of many female business owners
-who utilized their skills in service to the Revolution. During the
-wartime years, Young was commissioned to make the Grand Union Flag
-around 1775, designating her as one of the first verified flag makers
-of a US Flag. In addition, she was paid for sewing a number of flags
-for the Pennsylvania army & navy, along with military blankets & drum
-cases.
+On the right hand side of the panel, flag maker Rebecca Young works at fabricating a flag for the Pennsylvania Navy. While the historical record has designated Betsy Ross at the premier flag maker of the Revolution, Philadelphia was comprised of many female business owners who utilized their skills in service to the Revolution. During the wartime years, Young was commissioned to make the Grand Union Flag around 1775, designating her as one of the first verified flag makers of a US Flag. In addition, she was paid for sewing a number of flags for the Pennsylvania army & navy, along with military blankets & drum cases.
 
-Be sure to follow the [Pennsylvania Tapestry’s Instagram Page](https://www.instagram.com/americastapestry.pa/) to learn about where to stitch.
+Follow the [[Pennsylvania Tapestry’s Instagram Page | https://www.instagram.com/americastapestry.pa/]] to learn about where to stitch.
