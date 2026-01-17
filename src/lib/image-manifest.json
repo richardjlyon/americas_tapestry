@@ -3727,9 +3727,9 @@
   },
   "/images/support/liberty-dolls.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/support/liberty-dolls-640w-b6492c14.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/support/liberty-dolls-1024w-b6492c14.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/support/liberty-dolls-1920w-b6492c14.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/liberty-dolls-640w-b6492c14.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/liberty-dolls-1024w-b6492c14.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/liberty-dolls-1920w-b6492c14.webp"
     },
     "originalSize": 801665,
     "hash": "b6492c14"
@@ -4219,5 +4219,14 @@
     },
     "originalSize": 1075419,
     "hash": "c29aac50"
+  },
+  "/images/liberty-dolls.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/liberty-dolls-640w-b6492c14.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/liberty-dolls-1024w-b6492c14.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/liberty-dolls-1920w-b6492c14.webp"
+    },
+    "originalSize": 801665,
+    "hash": "b6492c14"
   }
 }
