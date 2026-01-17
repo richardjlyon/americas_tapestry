@@ -24,4 +24,4 @@ The Pennsylvania Panel depicts flags flown over 300 miles from each other in the
 
 On the right hand side of the panel, flag maker Rebecca Young works at fabricating a flag for the Pennsylvania Navy. While the historical record has designated Betsy Ross at the premier flag maker of the Revolution, Philadelphia was comprised of many female business owners who utilized their skills in service to the Revolution. During the wartime years, Young was commissioned to make the Grand Union Flag around 1775, designating her as one of the first verified flag makers of a US Flag. In addition, she was paid for sewing a number of flags for the Pennsylvania army & navy, along with military blankets & drum cases.
 
-Follow the [[Pennsylvania Tapestry’s Instagram Page | https://www.instagram.com/americastapestry.pa/]] to learn about where to stitch.
+Follow the [Pennsylvania Tapestry’s Instagram Page](https://www.instagram.com/americastapestry.pa/) to learn about where to stitch.

@@ -30,4 +30,4 @@ The New Hampshire Panel is being created at the Millyard Museum in Manchester, w
 
 Our New Hampshire State Co-Directors are Carol Tewes Ganse & Michelle McPheron, needleworkers who have assembled a team of stitchers from throughout the state.
 
-Be sure to follow the [[New Hampshire Panel Instagram Page | https://www.instagram.com/americastapestrynh/]] to learn about where to stitch.
+Be sure to follow the [New Hampshire Panel Instagram Page](https://www.instagram.com/americastapestrynh/) to learn about where to stitch.
