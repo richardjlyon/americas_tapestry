@@ -2888,15 +2888,6 @@
     "originalSize": 512204,
     "hash": "62ee77d9"
   },
-  "/images/team/state-directors/sally-poole.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/sally-poole-640w-8f8aa649.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/sally-poole-1024w-8f8aa649.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/sally-poole-1920w-8f8aa649.webp"
-    },
-    "originalSize": 1986412,
-    "hash": "8f8aa649"
-  },
   "/images/team/stitchers/becky-gutin.jpg": {
     "variants": {
       "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/becky-gutin-640w-fa1f64a8.webp",
@@ -2996,15 +2987,6 @@
     "originalSize": 371477,
     "hash": "667ca4b9"
   },
-  "/images/team/stitchers/elle-sheaffer.jpeg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/elle-sheaffer-640w-183a2ff9.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/elle-sheaffer-1024w-183a2ff9.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/elle-sheaffer-1920w-183a2ff9.webp"
-    },
-    "originalSize": 3868347,
-    "hash": "183a2ff9"
-  },
   "/images/team/stitchers/graciela-white-work1.jpg": {
     "variants": {
       "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/graciela-white-work1-640w-e52ea1da.webp",
@@ -3068,15 +3050,6 @@
     "originalSize": 1814963,
     "hash": "fbcc876e"
   },
-  "/images/team/stitchers/kathleen-anderson.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kathleen-anderson-640w-cfb44cf7.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kathleen-anderson-1024w-cfb44cf7.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kathleen-anderson-1920w-cfb44cf7.webp"
-    },
-    "originalSize": 5451578,
-    "hash": "cfb44cf7"
-  },
   "/images/team/stitchers/lauren-thie.jpg": {
     "variants": {
       "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lauren-thie-640w-35c3754c.webp",
@@ -3139,15 +3112,6 @@
     },
     "originalSize": 299650,
     "hash": "d5c617db"
-  },
-  "/images/team/stitchers/marianne-p-hearsey.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marianne-p-hearsey-640w-70965812.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marianne-p-hearsey-1024w-70965812.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marianne-p-hearsey-1920w-70965812.webp"
-    },
-    "originalSize": 1512519,
-    "hash": "70965812"
   },
   "/images/team/stitchers/mary-w-cohn-work1.jpg": {
     "variants": {
@@ -3238,24 +3202,6 @@
     },
     "originalSize": 4100581,
     "hash": "b07af782"
-  },
-  "/images/team/stitchers/patti-tideman.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/patti-tideman-640w-6ee5001c.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/patti-tideman-1024w-6ee5001c.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/patti-tideman-1920w-6ee5001c.webp"
-    },
-    "originalSize": 2879432,
-    "hash": "6ee5001c"
-  },
-  "/images/team/stitchers/sarah-luginbuhl-work1.jpeg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work1-640w-5e3ecd31.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work1-1024w-5e3ecd31.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work1-1920w-5e3ecd31.webp"
-    },
-    "originalSize": 1670160,
-    "hash": "5e3ecd31"
   },
   "/images/team/stitchers/sarah-luginbuhl-work2.jpeg": {
     "variants": {
@@ -3833,15 +3779,6 @@
     "originalSize": 371477,
     "hash": "667ca4b9"
   },
-  "/images/elle-sheaffer.jpeg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/elle-sheaffer-640w-183a2ff9.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/elle-sheaffer-1024w-183a2ff9.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/elle-sheaffer-1920w-183a2ff9.webp"
-    },
-    "originalSize": 3868347,
-    "hash": "183a2ff9"
-  },
   "/images/graciela-white-work1.jpg": {
     "variants": {
       "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/graciela-white-work1-640w-e52ea1da.webp",
@@ -3904,15 +3841,6 @@
     },
     "originalSize": 1814963,
     "hash": "fbcc876e"
-  },
-  "/images/kathleen-anderson.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/kathleen-anderson-640w-cfb44cf7.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/kathleen-anderson-1024w-cfb44cf7.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/kathleen-anderson-1920w-cfb44cf7.webp"
-    },
-    "originalSize": 5451578,
-    "hash": "cfb44cf7"
   },
   "/images/lauren-thie.jpg": {
     "variants": {
@@ -4228,5 +4156,932 @@
     },
     "originalSize": 801665,
     "hash": "b6492c14"
+  },
+  "/images/250-commission/connecticut.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/connecticut-640w-2a7100bc.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/connecticut-1024w-2a7100bc.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/connecticut-1920w-2a7100bc.webp"
+    },
+    "originalSize": 94503,
+    "hash": "2a7100bc"
+  },
+  "/images/250-commission/delaware.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/delaware-640w-7f5b69a1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/delaware-1024w-7f5b69a1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/delaware-1920w-7f5b69a1.webp"
+    },
+    "originalSize": 135429,
+    "hash": "7f5b69a1"
+  },
+  "/images/250-commission/maryland.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/maryland-640w-72e86006.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/maryland-1024w-72e86006.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/maryland-1920w-72e86006.webp"
+    },
+    "originalSize": 31009,
+    "hash": "72e86006"
+  },
+  "/images/250-commission/virginia.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/virginia-640w-f80c60de.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/virginia-1024w-f80c60de.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/250-commission/virginia-1920w-f80c60de.webp"
+    },
+    "originalSize": 61296,
+    "hash": "f80c60de"
+  },
+  "/images/historical-partners/atlanta-history-center.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/atlanta-history-center-640w-42e522c3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/atlanta-history-center-1024w-42e522c3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/atlanta-history-center-1920w-42e522c3.webp"
+    },
+    "originalSize": 76705,
+    "hash": "42e522c3"
+  },
+  "/images/historical-partners/coastal-heritage-society-of-savannah.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/coastal-heritage-society-of-savannah-640w-affe7411.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/coastal-heritage-society-of-savannah-1024w-affe7411.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/coastal-heritage-society-of-savannah-1920w-affe7411.webp"
+    },
+    "originalSize": 1722064,
+    "hash": "affe7411"
+  },
+  "/images/historical-partners/connecticut-old-state-house.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/connecticut-old-state-house-640w-907fc200.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/connecticut-old-state-house-1024w-907fc200.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/connecticut-old-state-house-1920w-907fc200.webp"
+    },
+    "originalSize": 113187,
+    "hash": "907fc200"
+  },
+  "/images/historical-partners/fraunces-tavern-museum.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/fraunces-tavern-museum-640w-b23a6ade.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/fraunces-tavern-museum-1024w-b23a6ade.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/fraunces-tavern-museum-1920w-b23a6ade.webp"
+    },
+    "originalSize": 362368,
+    "hash": "b23a6ade"
+  },
+  "/images/historical-partners/fuller-craft-museum.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/fuller-craft-museum-640w-0013dc25.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/fuller-craft-museum-1024w-0013dc25.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/fuller-craft-museum-1920w-0013dc25.webp"
+    },
+    "originalSize": 226642,
+    "hash": "0013dc25"
+  },
+  "/images/historical-partners/historic-lewes.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/historic-lewes-640w-908f8efb.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/historic-lewes-1024w-908f8efb.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/historic-lewes-1920w-908f8efb.webp"
+    },
+    "originalSize": 135874,
+    "hash": "908f8efb"
+  },
+  "/images/historical-partners/lewes-history-museum.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/lewes-history-museum-640w-908f8efb.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/lewes-history-museum-1024w-908f8efb.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/lewes-history-museum-1920w-908f8efb.webp"
+    },
+    "originalSize": 135874,
+    "hash": "908f8efb"
+  },
+  "/images/historical-partners/maryland-center-for-history-and-culture.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/maryland-center-for-history-and-culture-640w-bdaa1152.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/maryland-center-for-history-and-culture-1024w-bdaa1152.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/maryland-center-for-history-and-culture-1920w-bdaa1152.webp"
+    },
+    "originalSize": 437936,
+    "hash": "bdaa1152"
+  },
+  "/images/historical-partners/md-250-commission.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/md-250-commission-640w-72e86006.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/md-250-commission-1024w-72e86006.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/md-250-commission-1920w-72e86006.webp"
+    },
+    "originalSize": 31009,
+    "hash": "72e86006"
+  },
+  "/images/historical-partners/millyard-museum.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/millyard-museum-640w-d3d0adba.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/millyard-museum-1024w-d3d0adba.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/millyard-museum-1920w-d3d0adba.webp"
+    },
+    "originalSize": 1231465,
+    "hash": "d3d0adba"
+  },
+  "/images/historical-partners/new-hampshire-historical-society.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/new-hampshire-historical-society-640w-67f8cd55.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/new-hampshire-historical-society-1024w-67f8cd55.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/new-hampshire-historical-society-1920w-67f8cd55.webp"
+    },
+    "originalSize": 616544,
+    "hash": "67f8cd55"
+  },
+  "/images/historical-partners/north-carolina-department-of-natural-and-cultural-resources.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/north-carolina-department-of-natural-and-cultural-resources-640w-b5116bec.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/north-carolina-department-of-natural-and-cultural-resources-1024w-b5116bec.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/north-carolina-department-of-natural-and-cultural-resources-1920w-b5116bec.webp"
+    },
+    "originalSize": 15807086,
+    "hash": "b5116bec"
+  },
+  "/images/historical-partners/passaic-county-department-of-historic-and-cultural-affairs.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/passaic-county-department-of-historic-and-cultural-affairs-640w-c86b4fc0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/passaic-county-department-of-historic-and-cultural-affairs-1024w-c86b4fc0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/passaic-county-department-of-historic-and-cultural-affairs-1920w-c86b4fc0.webp"
+    },
+    "originalSize": 452023,
+    "hash": "c86b4fc0"
+  },
+  "/images/historical-partners/rhode-island-historical-society.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/rhode-island-historical-society-640w-39fd3631.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/rhode-island-historical-society-1024w-39fd3631.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/rhode-island-historical-society-1920w-39fd3631.webp"
+    },
+    "originalSize": 219084,
+    "hash": "39fd3631"
+  },
+  "/images/historical-partners/seton-hill-university.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/seton-hill-university-640w-a55422c6.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/seton-hill-university-1024w-a55422c6.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/seton-hill-university-1920w-a55422c6.webp"
+    },
+    "originalSize": 256993,
+    "hash": "a55422c6"
+  },
+  "/images/historical-partners/town-of-wytheville-museums.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/town-of-wytheville-museums-640w-e97f36a3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/town-of-wytheville-museums-1024w-e97f36a3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/town-of-wytheville-museums-1920w-e97f36a3.webp"
+    },
+    "originalSize": 269130,
+    "hash": "e97f36a3"
+  },
+  "/images/historical-partners/william-and-mary.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/william-and-mary-640w-e41d935d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/william-and-mary-1024w-e41d935d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historical-partners/william-and-mary-1920w-e41d935d.webp"
+    },
+    "originalSize": 1607055,
+    "hash": "e41d935d"
+  },
+  "/images/illustrators/abena-apatu.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/abena-apatu-640w-a7abee01.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/abena-apatu-1024w-a7abee01.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/abena-apatu-1920w-a7abee01.webp"
+    },
+    "originalSize": 573570,
+    "hash": "a7abee01"
+  },
+  "/images/illustrators/alyssa-ruby.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/alyssa-ruby-640w-c7b62de4.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/alyssa-ruby-1024w-c7b62de4.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/alyssa-ruby-1920w-c7b62de4.webp"
+    },
+    "originalSize": 503074,
+    "hash": "c7b62de4"
+  },
+  "/images/illustrators/ava-buccino.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/ava-buccino-640w-355d58da.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/ava-buccino-1024w-355d58da.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/ava-buccino-1920w-355d58da.webp"
+    },
+    "originalSize": 639371,
+    "hash": "355d58da"
+  },
+  "/images/illustrators/diana-branzan.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/diana-branzan-640w-41e6733d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/diana-branzan-1024w-41e6733d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/diana-branzan-1920w-41e6733d.webp"
+    },
+    "originalSize": 962353,
+    "hash": "41e6733d"
+  },
+  "/images/illustrators/elizabeth-long.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/elizabeth-long-640w-177165b6.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/elizabeth-long-1024w-177165b6.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/elizabeth-long-1920w-177165b6.webp"
+    },
+    "originalSize": 482497,
+    "hash": "177165b6"
+  },
+  "/images/illustrators/james-washington.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/james-washington-640w-204ab751.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/james-washington-1024w-204ab751.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/james-washington-1920w-204ab751.webp"
+    },
+    "originalSize": 670109,
+    "hash": "204ab751"
+  },
+  "/images/illustrators/kacy-momon.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/kacy-momon-640w-8c3a6c68.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/kacy-momon-1024w-8c3a6c68.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/kacy-momon-1920w-8c3a6c68.webp"
+    },
+    "originalSize": 215791,
+    "hash": "8c3a6c68"
+  },
+  "/images/illustrators/maggie-weng.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/maggie-weng-640w-0aa0ad3d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/maggie-weng-1024w-0aa0ad3d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/maggie-weng-1920w-0aa0ad3d.webp"
+    },
+    "originalSize": 83646,
+    "hash": "0aa0ad3d"
+  },
+  "/images/illustrators/rachel-genito.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/rachel-genito-640w-cf28fa60.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/rachel-genito-1024w-cf28fa60.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/rachel-genito-1920w-cf28fa60.webp"
+    },
+    "originalSize": 1246938,
+    "hash": "cf28fa60"
+  },
+  "/images/illustrators/sarah-naidich.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/sarah-naidich-640w-cc3ce5e7.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/sarah-naidich-1024w-cc3ce5e7.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/sarah-naidich-1920w-cc3ce5e7.webp"
+    },
+    "originalSize": 741788,
+    "hash": "cc3ce5e7"
+  },
+  "/images/illustrators/stefan-romero.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/stefan-romero-640w-714c42bd.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/stefan-romero-1024w-714c42bd.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/stefan-romero-1920w-714c42bd.webp"
+    },
+    "originalSize": 666797,
+    "hash": "714c42bd"
+  },
+  "/images/illustrators/ysemay-dercon.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/ysemay-dercon-640w-f2015871.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/ysemay-dercon-1024w-f2015871.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/illustrators/ysemay-dercon-1920w-f2015871.webp"
+    },
+    "originalSize": 8096602,
+    "hash": "f2015871"
+  },
+  "/images/project-director/stefan-romero.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/project-director/stefan-romero-640w-714c42bd.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/project-director/stefan-romero-1024w-714c42bd.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/project-director/stefan-romero-1920w-714c42bd.webp"
+    },
+    "originalSize": 666797,
+    "hash": "714c42bd"
+  },
+  "/images/stitching-groups/capital-district-chapter-image.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/capital-district-chapter-image-640w-b568eca5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/capital-district-chapter-image-1024w-b568eca5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/capital-district-chapter-image-1920w-b568eca5.webp"
+    },
+    "originalSize": 1075453,
+    "hash": "b568eca5"
+  },
+  "/images/stitching-groups/cardinal-chapter-image.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/cardinal-chapter-image-640w-4325f396.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/cardinal-chapter-image-1024w-4325f396.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/cardinal-chapter-image-1920w-4325f396.webp"
+    },
+    "originalSize": 174851,
+    "hash": "4325f396"
+  },
+  "/images/stitching-groups/colonial-west-jersey-image.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/colonial-west-jersey-image-640w-db0f0a80.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/colonial-west-jersey-image-1024w-db0f0a80.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/colonial-west-jersey-image-1920w-db0f0a80.webp"
+    },
+    "originalSize": 1545278,
+    "hash": "db0f0a80"
+  },
+  "/images/stitching-groups/constellation-chapter-image.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/constellation-chapter-image-640w-da63a3c2.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/constellation-chapter-image-1024w-da63a3c2.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/constellation-chapter-image-1920w-da63a3c2.webp"
+    },
+    "originalSize": 947936,
+    "hash": "da63a3c2"
+  },
+  "/images/stitching-groups/dogwood-chapter-image.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/dogwood-chapter-image-640w-4d45fdfe.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/dogwood-chapter-image-1024w-4d45fdfe.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/dogwood-chapter-image-1920w-4d45fdfe.webp"
+    },
+    "originalSize": 504597,
+    "hash": "4d45fdfe"
+  },
+  "/images/stitching-groups/hagerstown-chapter-image.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/hagerstown-chapter-image-640w-969e78e9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/hagerstown-chapter-image-1024w-969e78e9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/hagerstown-chapter-image-1920w-969e78e9.webp"
+    },
+    "originalSize": 15765694,
+    "hash": "969e78e9"
+  },
+  "/images/stitching-groups/hartford-stitch-image.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/hartford-stitch-image-640w-4a1fd9b2.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/hartford-stitch-image-1024w-4a1fd9b2.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/hartford-stitch-image-1920w-4a1fd9b2.webp"
+    },
+    "originalSize": 2198838,
+    "hash": "4a1fd9b2"
+  },
+  "/images/stitching-groups/mayflower-historic-samplet-guild-image.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/mayflower-historic-samplet-guild-image-640w-6db66006.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/mayflower-historic-samplet-guild-image-1024w-6db66006.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/mayflower-historic-samplet-guild-image-1920w-6db66006.webp"
+    },
+    "originalSize": 109184,
+    "hash": "6db66006"
+  },
+  "/images/stitching-groups/new-hampshire-needleworkers.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/new-hampshire-needleworkers-640w-0bc01575.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/new-hampshire-needleworkers-1024w-0bc01575.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/new-hampshire-needleworkers-1920w-0bc01575.webp"
+    },
+    "originalSize": 959977,
+    "hash": "0bc01575"
+  },
+  "/images/stitching-groups/pioneer-valley-chapter-image.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/pioneer-valley-chapter-image-640w-a8b82ff9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/pioneer-valley-chapter-image-1024w-a8b82ff9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/pioneer-valley-chapter-image-1920w-a8b82ff9.webp"
+    },
+    "originalSize": 416813,
+    "hash": "a8b82ff9"
+  },
+  "/images/stitching-groups/princeton-image.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/princeton-image-640w-d2effbb2.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/princeton-image-1024w-d2effbb2.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/princeton-image-1920w-d2effbb2.webp"
+    },
+    "originalSize": 435656,
+    "hash": "d2effbb2"
+  },
+  "/images/stitching-groups/rose-and-thistle-image.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/rose-and-thistle-image-640w-810ff3df.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/rose-and-thistle-image-1024w-810ff3df.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/rose-and-thistle-image-1920w-810ff3df.webp"
+    },
+    "originalSize": 11138052,
+    "hash": "810ff3df"
+  },
+  "/images/stitching-groups/the-stitchery-logo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/the-stitchery-logo-640w-4665f370.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/the-stitchery-logo-1024w-4665f370.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/the-stitchery-logo-1920w-4665f370.webp"
+    },
+    "originalSize": 12347705,
+    "hash": "4665f370"
+  },
+  "/images/stitching-groups/three-rivers-chapter-image.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/three-rivers-chapter-image-640w-ec434132.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/three-rivers-chapter-image-1024w-ec434132.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-groups/three-rivers-chapter-image-1920w-ec434132.webp"
+    },
+    "originalSize": 1337624,
+    "hash": "ec434132"
+  },
+  "/images/stitching-venues/atlanta-history-center.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/atlanta-history-center-640w-973030ae.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/atlanta-history-center-1024w-973030ae.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/atlanta-history-center-1920w-973030ae.webp"
+    },
+    "originalSize": 747520,
+    "hash": "973030ae"
+  },
+  "/images/stitching-venues/biggs-museum-of-art.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/biggs-museum-of-art-640w-b65b5c9d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/biggs-museum-of-art-1024w-b65b5c9d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/biggs-museum-of-art-1920w-b65b5c9d.webp"
+    },
+    "originalSize": 879849,
+    "hash": "b65b5c9d"
+  },
+  "/images/stitching-venues/butler-mccook-house.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/butler-mccook-house-640w-4aeb03c8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/butler-mccook-house-1024w-4aeb03c8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/butler-mccook-house-1920w-4aeb03c8.webp"
+    },
+    "originalSize": 840162,
+    "hash": "4aeb03c8"
+  },
+  "/images/stitching-venues/charlotte-museum.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/charlotte-museum-640w-d56ba307.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/charlotte-museum-1024w-d56ba307.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/charlotte-museum-1920w-d56ba307.webp"
+    },
+    "originalSize": 358892,
+    "hash": "d56ba307"
+  },
+  "/images/stitching-venues/charter-oak-cultural-center.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/charter-oak-cultural-center-640w-bc2c1c78.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/charter-oak-cultural-center-1024w-bc2c1c78.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/charter-oak-cultural-center-1920w-bc2c1c78.webp"
+    },
+    "originalSize": 1232811,
+    "hash": "bc2c1c78"
+  },
+  "/images/stitching-venues/christmas-in-odessa.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/christmas-in-odessa-640w-12eba62c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/christmas-in-odessa-1024w-12eba62c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/christmas-in-odessa-1920w-12eba62c.webp"
+    },
+    "originalSize": 2155938,
+    "hash": "12eba62c"
+  },
+  "/images/stitching-venues/connecticut-museum-of-culture-and-history.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/connecticut-museum-of-culture-and-history-640w-c3e907f1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/connecticut-museum-of-culture-and-history-1024w-c3e907f1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/connecticut-museum-of-culture-and-history-1920w-c3e907f1.webp"
+    },
+    "originalSize": 837268,
+    "hash": "c3e907f1"
+  },
+  "/images/stitching-venues/delaware-history-museum.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/delaware-history-museum-640w-1e40a9aa.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/delaware-history-museum-1024w-1e40a9aa.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/delaware-history-museum-1920w-1e40a9aa.webp"
+    },
+    "originalSize": 859959,
+    "hash": "1e40a9aa"
+  },
+  "/images/stitching-venues/fuller-craft.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/fuller-craft-640w-f3397a49.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/fuller-craft-1024w-f3397a49.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/fuller-craft-1920w-f3397a49.webp"
+    },
+    "originalSize": 858910,
+    "hash": "f3397a49"
+  },
+  "/images/stitching-venues/glenshaw-public-library.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/glenshaw-public-library-640w-83cf5e15.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/glenshaw-public-library-1024w-83cf5e15.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/glenshaw-public-library-1920w-83cf5e15.webp"
+    },
+    "originalSize": 1677899,
+    "hash": "83cf5e15"
+  },
+  "/images/stitching-venues/historic-odessa.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/historic-odessa-640w-653628fe.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/historic-odessa-1024w-653628fe.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/historic-odessa-1920w-653628fe.webp"
+    },
+    "originalSize": 2745518,
+    "hash": "653628fe"
+  },
+  "/images/stitching-venues/maryland-center-for-history-and-culture.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/maryland-center-for-history-and-culture-640w-c6700c63.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/maryland-center-for-history-and-culture-1024w-c6700c63.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/maryland-center-for-history-and-culture-1920w-c6700c63.webp"
+    },
+    "originalSize": 1795755,
+    "hash": "c6700c63"
+  },
+  "/images/stitching-venues/millyard-museum.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/millyard-museum-640w-70faa292.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/millyard-museum-1024w-70faa292.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/millyard-museum-1920w-70faa292.webp"
+    },
+    "originalSize": 511934,
+    "hash": "70faa292"
+  },
+  "/images/stitching-venues/muscarelle-museum-of-art.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/muscarelle-museum-of-art-640w-9217a272.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/muscarelle-museum-of-art-1024w-9217a272.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/muscarelle-museum-of-art-1920w-9217a272.webp"
+    },
+    "originalSize": 580519,
+    "hash": "9217a272"
+  },
+  "/images/stitching-venues/nathan-hale-homestead.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/nathan-hale-homestead-640w-71409770.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/nathan-hale-homestead-1024w-71409770.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/nathan-hale-homestead-1920w-71409770.webp"
+    },
+    "originalSize": 2483305,
+    "hash": "71409770"
+  },
+  "/images/stitching-venues/new-britain-museum-of-american-art.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/new-britain-museum-of-american-art-640w-91a11d95.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/new-britain-museum-of-american-art-1024w-91a11d95.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/new-britain-museum-of-american-art-1920w-91a11d95.webp"
+    },
+    "originalSize": 676289,
+    "hash": "91a11d95"
+  },
+  "/images/stitching-venues/new-castle-county-courthouse.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/new-castle-county-courthouse-640w-07a95f7b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/new-castle-county-courthouse-1024w-07a95f7b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/new-castle-county-courthouse-1920w-07a95f7b.webp"
+    },
+    "originalSize": 1958070,
+    "hash": "07a95f7b"
+  },
+  "/images/stitching-venues/noah-webster-house.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/noah-webster-house-640w-006bc9e7.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/noah-webster-house-1024w-006bc9e7.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/noah-webster-house-1920w-006bc9e7.webp"
+    },
+    "originalSize": 999401,
+    "hash": "006bc9e7"
+  },
+  "/images/stitching-venues/rehoboth-beach-museum.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/rehoboth-beach-museum-640w-2a13241e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/rehoboth-beach-museum-1024w-2a13241e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/rehoboth-beach-museum-1920w-2a13241e.webp"
+    },
+    "originalSize": 959587,
+    "hash": "2a13241e"
+  },
+  "/images/stitching-venues/slater-mill.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/slater-mill-640w-56f034e1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/slater-mill-1024w-56f034e1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/slater-mill-1920w-56f034e1.webp"
+    },
+    "originalSize": 1913629,
+    "hash": "56f034e1"
+  },
+  "/images/stitching-venues/south-county-museum.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/south-county-museum-640w-8fed335c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/south-county-museum-1024w-8fed335c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/south-county-museum-1920w-8fed335c.webp"
+    },
+    "originalSize": 1375953,
+    "hash": "8fed335c"
+  },
+  "/images/stitching-venues/st-pauls-lutheran-church.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/st-pauls-lutheran-church-640w-f0c53099.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/st-pauls-lutheran-church-1024w-f0c53099.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/st-pauls-lutheran-church-1920w-f0c53099.webp"
+    },
+    "originalSize": 1002276,
+    "hash": "f0c53099"
+  },
+  "/images/stitching-venues/the-hartford-stitch.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/the-hartford-stitch-640w-6b1db9e5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/the-hartford-stitch-1024w-6b1db9e5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/the-hartford-stitch-1920w-6b1db9e5.webp"
+    },
+    "originalSize": 8036065,
+    "hash": "6b1db9e5"
+  },
+  "/images/stitching-venues/the-stitchery.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/the-stitchery-640w-f48b8670.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/the-stitchery-1024w-f48b8670.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/the-stitchery-1920w-f48b8670.webp"
+    },
+    "originalSize": 28000165,
+    "hash": "f48b8670"
+  },
+  "/images/stitching-venues/van-schaick-mansion.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/van-schaick-mansion-640w-ec97ff15.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/van-schaick-mansion-1024w-ec97ff15.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/van-schaick-mansion-1920w-ec97ff15.webp"
+    },
+    "originalSize": 1600333,
+    "hash": "ec97ff15"
+  },
+  "/images/stitching-venues/william-hall-library.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/william-hall-library-640w-6f9001bc.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/william-hall-library-1024w-6f9001bc.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/william-hall-library-1920w-6f9001bc.webp"
+    },
+    "originalSize": 5336470,
+    "hash": "6f9001bc"
+  },
+  "/images/stitching-venues/winterthur.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/winterthur-640w-8d339a35.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/winterthur-1024w-8d339a35.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/winterthur-1920w-8d339a35.webp"
+    },
+    "originalSize": 8346130,
+    "hash": "8d339a35"
+  },
+  "/images/stitching-venues/work-and-culture.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/work-and-culture-640w-a7d4588f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/work-and-culture-1024w-a7d4588f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/stitching-venues/work-and-culture-1920w-a7d4588f.webp"
+    },
+    "originalSize": 597746,
+    "hash": "a7d4588f"
+  },
+  "/images/elle-sheaffer.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/elle-sheaffer-640w-5ce39aa9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/elle-sheaffer-1024w-5ce39aa9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/elle-sheaffer-1920w-5ce39aa9.webp"
+    },
+    "originalSize": 3438817,
+    "hash": "5ce39aa9"
+  },
+  "/images/kathleen-anderson.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/kathleen-anderson-640w-9e058155.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/kathleen-anderson-1024w-9e058155.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/kathleen-anderson-1920w-9e058155.webp"
+    },
+    "originalSize": 4840086,
+    "hash": "9e058155"
+  },
+  "/images/tracy-blanchard-work1.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work1-640w-d418da3e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work1-1024w-d418da3e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work1-1920w-d418da3e.webp"
+    },
+    "originalSize": 880425,
+    "hash": "d418da3e"
+  },
+  "/images/tracy-blanchard-work2.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work2-640w-88326faa.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work2-1024w-88326faa.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work2-1920w-88326faa.webp"
+    },
+    "originalSize": 7473639,
+    "hash": "88326faa"
+  },
+  "/images/tracy-blanchard-work3.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work3-640w-85fdba17.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work3-1024w-85fdba17.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work3-1920w-85fdba17.webp"
+    },
+    "originalSize": 4809261,
+    "hash": "85fdba17"
+  },
+  "/images/tracy-blanchard-work4.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work4-640w-4c323715.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work4-1024w-4c323715.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work4-1920w-4c323715.webp"
+    },
+    "originalSize": 111855,
+    "hash": "4c323715"
+  },
+  "/images/tracy-blanchard-work5.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work5-640w-7b44a1c0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work5-1024w-7b44a1c0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work5-1920w-7b44a1c0.webp"
+    },
+    "originalSize": 1550675,
+    "hash": "7b44a1c0"
+  },
+  "/images/amy-gilley.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/amy-gilley-640w-85b1d73d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/amy-gilley-1024w-85b1d73d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/amy-gilley-1920w-85b1d73d.webp"
+    },
+    "originalSize": 1853578,
+    "hash": "85b1d73d"
+  },
+  "/images/carol-prevost.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carol-prevost-640w-2ad9a970.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carol-prevost-1024w-2ad9a970.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carol-prevost-1920w-2ad9a970.webp"
+    },
+    "originalSize": 826824,
+    "hash": "2ad9a970"
+  },
+  "/images/carol-tewes-ganse.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carol-tewes-ganse-640w-496046c4.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carol-tewes-ganse-1024w-496046c4.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carol-tewes-ganse-1920w-496046c4.webp"
+    },
+    "originalSize": 6272870,
+    "hash": "496046c4"
+  },
+  "/images/catherine-theron.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/catherine-theron-640w-db95c0f6.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/catherine-theron-1024w-db95c0f6.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/catherine-theron-1920w-db95c0f6.webp"
+    },
+    "originalSize": 124600,
+    "hash": "db95c0f6"
+  },
+  "/images/deborah-berger.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/deborah-berger-640w-0264e63d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/deborah-berger-1024w-0264e63d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/deborah-berger-1920w-0264e63d.webp"
+    },
+    "originalSize": 1468105,
+    "hash": "0264e63d"
+  },
+  "/images/denise-de-more.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/denise-de-more-640w-f792bc04.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/denise-de-more-1024w-f792bc04.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/denise-de-more-1920w-f792bc04.webp"
+    },
+    "originalSize": 197439,
+    "hash": "f792bc04"
+  },
+  "/images/jennifer-paperman.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/jennifer-paperman-640w-12c54bca.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/jennifer-paperman-1024w-12c54bca.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/jennifer-paperman-1920w-12c54bca.webp"
+    },
+    "originalSize": 416774,
+    "hash": "12c54bca"
+  },
+  "/images/karen-katin.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/karen-katin-640w-4665f370.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/karen-katin-1024w-4665f370.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/karen-katin-1920w-4665f370.webp"
+    },
+    "originalSize": 12347705,
+    "hash": "4665f370"
+  },
+  "/images/karen-wallach.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/karen-wallach-640w-1a5d745e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/karen-wallach-1024w-1a5d745e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/karen-wallach-1920w-1a5d745e.webp"
+    },
+    "originalSize": 61650,
+    "hash": "1a5d745e"
+  },
+  "/images/laura-kasowitz.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/laura-kasowitz-640w-e6f6299e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/laura-kasowitz-1024w-e6f6299e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/laura-kasowitz-1920w-e6f6299e.webp"
+    },
+    "originalSize": 1032358,
+    "hash": "e6f6299e"
+  },
+  "/images/mary-tod.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-tod-640w-393ace05.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-tod-1024w-393ace05.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-tod-1920w-393ace05.webp"
+    },
+    "originalSize": 10843,
+    "hash": "393ace05"
+  },
+  "/images/mary-van-tyne.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-van-tyne-640w-18c7498a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-van-tyne-1024w-18c7498a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/mary-van-tyne-1920w-18c7498a.webp"
+    },
+    "originalSize": 951419,
+    "hash": "18c7498a"
+  },
+  "/images/raven-fagelson.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/raven-fagelson-640w-62ee77d9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/raven-fagelson-1024w-62ee77d9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/raven-fagelson-1920w-62ee77d9.webp"
+    },
+    "originalSize": 512204,
+    "hash": "62ee77d9"
+  },
+  "/images/sally-poole.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sally-poole-640w-4ed5654c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sally-poole-1024w-4ed5654c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sally-poole-1920w-4ed5654c.webp"
+    },
+    "originalSize": 1664556,
+    "hash": "4ed5654c"
+  },
+  "/images/team/state-directors/sally-poole.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/sally-poole-640w-4ed5654c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/sally-poole-1024w-4ed5654c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/sally-poole-1920w-4ed5654c.webp"
+    },
+    "originalSize": 1664556,
+    "hash": "4ed5654c"
+  },
+  "/images/team/stitchers/elle-sheaffer.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/elle-sheaffer-640w-5ce39aa9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/elle-sheaffer-1024w-5ce39aa9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/elle-sheaffer-1920w-5ce39aa9.webp"
+    },
+    "originalSize": 3438817,
+    "hash": "5ce39aa9"
+  },
+  "/images/team/stitchers/kathleen-anderson.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kathleen-anderson-640w-9e058155.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kathleen-anderson-1024w-9e058155.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kathleen-anderson-1920w-9e058155.webp"
+    },
+    "originalSize": 4840086,
+    "hash": "9e058155"
+  },
+  "/images/team/stitchers/marianne-p-hearsey.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marianne-p-hearsey-640w-d23f8af8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marianne-p-hearsey-1024w-d23f8af8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marianne-p-hearsey-1920w-d23f8af8.webp"
+    },
+    "originalSize": 1461523,
+    "hash": "d23f8af8"
+  },
+  "/images/team/stitchers/patti-tideman.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/patti-tideman-640w-9148fd5d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/patti-tideman-1024w-9148fd5d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/patti-tideman-1920w-9148fd5d.webp"
+    },
+    "originalSize": 2516715,
+    "hash": "9148fd5d"
+  },
+  "/images/team/stitchers/sarah-luginbuhl-work1.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work1-640w-a913ea2b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work1-1024w-a913ea2b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work1-1920w-a913ea2b.webp"
+    },
+    "originalSize": 1663007,
+    "hash": "a913ea2b"
   }
 }
