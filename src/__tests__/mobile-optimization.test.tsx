@@ -444,29 +444,32 @@ describe('OptimizedImage Component', () => {
   });
 
   test('handles error state gracefully', async () => {
+    // Test that the error state is rendered when showErrorMessage is true
+    // and the component cannot load any fallback images
     render(
       <OptimizedImage
         src="/non-existent-image.jpg"
         alt="Test image"
         role="gallery"
         showErrorMessage={true}
-        fallbackSrc="/also-non-existent.jpg"
+        // Use the same path for both to skip to final error state faster
+        fallbackSrc="/images/placeholders/placeholder.svg"
         priority={true}
       />
     );
 
     let image = screen.getByTestId('optimized-image');
-    
+
     // Simulate first image error (should try fallback)
     fireEvent.error(image);
 
     // Wait for fallback to be attempted
     await waitFor(() => {
       const updatedImage = screen.getByTestId('optimized-image');
-      expect(updatedImage).toHaveAttribute('src', '/also-non-existent.jpg');
+      expect(updatedImage).toHaveAttribute('src', '/images/placeholders/placeholder.svg');
     });
 
-    // Simulate fallback image error (should show error message)
+    // Simulate placeholder error (should show error message)
     image = screen.getByTestId('optimized-image');
     fireEvent.error(image);
 

@@ -25,13 +25,14 @@ function replaceImagePathsWithR2(htmlContent: string): string {
       const entry = manifest[src];
       if (entry && entry.variants) {
         // Use 1024w variant for markdown content (good balance of quality/size)
-        const r2Url = entry.variants[1024] || entry.variants[1920] || entry.variants[640];
+        const r2Url =
+          entry.variants[1024] || entry.variants[1920] || entry.variants[640];
         if (r2Url) {
           return `<img ${before}src="${r2Url}"${after}>`;
         }
       }
       return match;
-    }
+    },
   );
 }
 

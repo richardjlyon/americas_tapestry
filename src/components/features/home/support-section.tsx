@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Heart } from "lucide-react";
-import { SectionHeader } from "@/components/ui/section-header";
-import { ContentCard } from "@/components/ui/content-card";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight, Heart } from 'lucide-react';
+import { SectionHeader } from '@/components/ui/section-header';
+import { ContentCard } from '@/components/ui/content-card';
+import { Button } from '@/components/ui/button';
 
 /**
  * Support Section Component
@@ -19,7 +19,7 @@ export function SupportSection() {
         title="Support Our Project"
         description={
           <>
-            Help preserve America's cultural heritage by supporting{" "}
+            Help preserve America's cultural heritage by supporting{' '}
             <em>America's Tapestry</em> through the purchase of exquisite
             handcrafted Liberty dolls—tomorrow's heirlooms that celebrate our
             nation's founding story.
@@ -66,7 +66,7 @@ export function SupportSection() {
               </p>
 
               <p>
-                All proceeds from each purchase support{" "}
+                All proceeds from each purchase support{' '}
                 <em className="text-colonial-navy">America's Tapestry</em>,
                 helping fund our educational programs, exhibitions, and the
                 preservation of traditional needlework arts.
@@ -84,7 +84,7 @@ export function SupportSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Explore Liberty Doll Collection{" "}
+                  Explore Liberty Doll Collection{' '}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
