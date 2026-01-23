@@ -205,13 +205,19 @@ async function existsInR2(client, bucket, key) {
 
 /**
  * Process a single image file
+ * @param {string} pathPrefix - Optional prefix from --path argument (e.g., "team/stitching-venues")
  */
-async function processImage(file, r2Client, bucket, publicUrl, manifest, stats) {
+async function processImage(file, r2Client, bucket, publicUrl, manifest, stats, pathPrefix = '') {
   const baseName = path.basename(file.name, file.ext);
-  const dirPath = path.dirname(file.relativePath);
+
+  // Build full relative path including any --path prefix
+  const fullRelativePath = pathPrefix
+    ? `${pathPrefix}/${file.relativePath}`
+    : file.relativePath;
+  const dirPath = path.dirname(fullRelativePath);
 
   // Original path for manifest lookup (e.g., "/images/carousel/image.jpg")
-  const originalPath = `/images/${file.relativePath}`;
+  const originalPath = `/images/${fullRelativePath}`;
 
   // Skip if already in manifest and not forcing
   if (manifest[originalPath] && !forceReprocess) {
@@ -391,7 +397,7 @@ async function main() {
 
     process.stdout.write(`${progress} ${file.relativePath}...`);
 
-    await processImage(file, r2Client, bucket, publicUrl, manifest, stats);
+    await processImage(file, r2Client, bucket, publicUrl, manifest, stats, pathArg);
 
     if (stats.errors.length > 0 && stats.errors[stats.errors.length - 1].file === file.relativePath) {
       // Error was logged in processImage

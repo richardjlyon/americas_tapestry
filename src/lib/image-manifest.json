@@ -3673,9 +3673,9 @@
   },
   "/images/support/liberty-dolls.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/liberty-dolls-640w-b6492c14.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/liberty-dolls-1024w-b6492c14.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/liberty-dolls-1920w-b6492c14.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/support/liberty-dolls-640w-b6492c14.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/support/liberty-dolls-1024w-b6492c14.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/support/liberty-dolls-1920w-b6492c14.webp"
     },
     "originalSize": 801665,
     "hash": "b6492c14"
@@ -4069,45 +4069,45 @@
   },
   "/images/team/stitchers/tracy-blanchard-work1.jpeg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work1-640w-d418da3e.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work1-1024w-d418da3e.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work1-1920w-d418da3e.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work1-640w-d418da3e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work1-1024w-d418da3e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work1-1920w-d418da3e.webp"
     },
     "originalSize": 880425,
     "hash": "d418da3e"
   },
   "/images/team/stitchers/tracy-blanchard-work2.jpeg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work2-640w-88326faa.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work2-1024w-88326faa.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work2-1920w-88326faa.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work2-640w-88326faa.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work2-1024w-88326faa.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work2-1920w-88326faa.webp"
     },
     "originalSize": 7473639,
     "hash": "88326faa"
   },
   "/images/team/stitchers/tracy-blanchard-work3.jpeg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work3-640w-85fdba17.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work3-1024w-85fdba17.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work3-1920w-85fdba17.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work3-640w-85fdba17.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work3-1024w-85fdba17.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work3-1920w-85fdba17.webp"
     },
     "originalSize": 4809261,
     "hash": "85fdba17"
   },
   "/images/team/stitchers/tracy-blanchard-work4.jpeg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work4-640w-4c323715.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work4-1024w-4c323715.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work4-1920w-4c323715.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work4-640w-4c323715.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work4-1024w-4c323715.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work4-1920w-4c323715.webp"
     },
     "originalSize": 111855,
     "hash": "4c323715"
   },
   "/images/team/stitchers/tracy-blanchard-work5.jpeg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work5-640w-7b44a1c0.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work5-1024w-7b44a1c0.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tracy-blanchard-work5-1920w-7b44a1c0.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work5-640w-7b44a1c0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work5-1024w-7b44a1c0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-work5-1920w-7b44a1c0.webp"
     },
     "originalSize": 1550675,
     "hash": "7b44a1c0"
@@ -5083,5 +5083,266 @@
     },
     "originalSize": 1663007,
     "hash": "a913ea2b"
+  },
+  "/images/atlanta-history-center.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/atlanta-history-center-640w-973030ae.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/atlanta-history-center-1024w-973030ae.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/atlanta-history-center-1920w-973030ae.webp"
+    },
+    "originalSize": 747520,
+    "hash": "973030ae"
+  },
+  "/images/biggs-museum-of-art.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/biggs-museum-of-art-640w-b65b5c9d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/biggs-museum-of-art-1024w-b65b5c9d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/biggs-museum-of-art-1920w-b65b5c9d.webp"
+    },
+    "originalSize": 879849,
+    "hash": "b65b5c9d"
+  },
+  "/images/butler-mccook-house.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/butler-mccook-house-640w-4aeb03c8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/butler-mccook-house-1024w-4aeb03c8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/butler-mccook-house-1920w-4aeb03c8.webp"
+    },
+    "originalSize": 840162,
+    "hash": "4aeb03c8"
+  },
+  "/images/charlotte-museum.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/charlotte-museum-640w-d56ba307.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/charlotte-museum-1024w-d56ba307.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/charlotte-museum-1920w-d56ba307.webp"
+    },
+    "originalSize": 358892,
+    "hash": "d56ba307"
+  },
+  "/images/charter-oak-cultural-center.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/charter-oak-cultural-center-640w-bc2c1c78.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/charter-oak-cultural-center-1024w-bc2c1c78.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/charter-oak-cultural-center-1920w-bc2c1c78.webp"
+    },
+    "originalSize": 1232811,
+    "hash": "bc2c1c78"
+  },
+  "/images/christmas-in-odessa.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/christmas-in-odessa-640w-12eba62c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/christmas-in-odessa-1024w-12eba62c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/christmas-in-odessa-1920w-12eba62c.webp"
+    },
+    "originalSize": 2155938,
+    "hash": "12eba62c"
+  },
+  "/images/connecticut-museum-of-culture-and-history.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/connecticut-museum-of-culture-and-history-640w-c3e907f1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/connecticut-museum-of-culture-and-history-1024w-c3e907f1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/connecticut-museum-of-culture-and-history-1920w-c3e907f1.webp"
+    },
+    "originalSize": 837268,
+    "hash": "c3e907f1"
+  },
+  "/images/delaware-history-museum.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/delaware-history-museum-640w-1e40a9aa.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/delaware-history-museum-1024w-1e40a9aa.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/delaware-history-museum-1920w-1e40a9aa.webp"
+    },
+    "originalSize": 859959,
+    "hash": "1e40a9aa"
+  },
+  "/images/fuller-craft.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/fuller-craft-640w-f3397a49.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/fuller-craft-1024w-f3397a49.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/fuller-craft-1920w-f3397a49.webp"
+    },
+    "originalSize": 858910,
+    "hash": "f3397a49"
+  },
+  "/images/glenshaw-public-library.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/glenshaw-public-library-640w-83cf5e15.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/glenshaw-public-library-1024w-83cf5e15.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/glenshaw-public-library-1920w-83cf5e15.webp"
+    },
+    "originalSize": 1677899,
+    "hash": "83cf5e15"
+  },
+  "/images/historic-odessa.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historic-odessa-640w-653628fe.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historic-odessa-1024w-653628fe.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/historic-odessa-1920w-653628fe.webp"
+    },
+    "originalSize": 2745518,
+    "hash": "653628fe"
+  },
+  "/images/maryland-center-for-history-and-culture.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maryland-center-for-history-and-culture-640w-c6700c63.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maryland-center-for-history-and-culture-1024w-c6700c63.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/maryland-center-for-history-and-culture-1920w-c6700c63.webp"
+    },
+    "originalSize": 1795755,
+    "hash": "c6700c63"
+  },
+  "/images/millyard-museum.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/millyard-museum-640w-70faa292.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/millyard-museum-1024w-70faa292.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/millyard-museum-1920w-70faa292.webp"
+    },
+    "originalSize": 511934,
+    "hash": "70faa292"
+  },
+  "/images/muscarelle-museum-of-art.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/muscarelle-museum-of-art-640w-9217a272.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/muscarelle-museum-of-art-1024w-9217a272.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/muscarelle-museum-of-art-1920w-9217a272.webp"
+    },
+    "originalSize": 580519,
+    "hash": "9217a272"
+  },
+  "/images/nathan-hale-homestead.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/nathan-hale-homestead-640w-71409770.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/nathan-hale-homestead-1024w-71409770.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/nathan-hale-homestead-1920w-71409770.webp"
+    },
+    "originalSize": 2483305,
+    "hash": "71409770"
+  },
+  "/images/new-britain-museum-of-american-art.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/new-britain-museum-of-american-art-640w-91a11d95.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/new-britain-museum-of-american-art-1024w-91a11d95.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/new-britain-museum-of-american-art-1920w-91a11d95.webp"
+    },
+    "originalSize": 676289,
+    "hash": "91a11d95"
+  },
+  "/images/new-castle-county-courthouse.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/new-castle-county-courthouse-640w-07a95f7b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/new-castle-county-courthouse-1024w-07a95f7b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/new-castle-county-courthouse-1920w-07a95f7b.webp"
+    },
+    "originalSize": 1958070,
+    "hash": "07a95f7b"
+  },
+  "/images/noah-webster-house.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/noah-webster-house-640w-006bc9e7.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/noah-webster-house-1024w-006bc9e7.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/noah-webster-house-1920w-006bc9e7.webp"
+    },
+    "originalSize": 999401,
+    "hash": "006bc9e7"
+  },
+  "/images/rehoboth-beach-museum.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/rehoboth-beach-museum-640w-2a13241e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/rehoboth-beach-museum-1024w-2a13241e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/rehoboth-beach-museum-1920w-2a13241e.webp"
+    },
+    "originalSize": 959587,
+    "hash": "2a13241e"
+  },
+  "/images/slater-mill.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/slater-mill-640w-56f034e1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/slater-mill-1024w-56f034e1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/slater-mill-1920w-56f034e1.webp"
+    },
+    "originalSize": 1913629,
+    "hash": "56f034e1"
+  },
+  "/images/south-county-museum.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/south-county-museum-640w-8fed335c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/south-county-museum-1024w-8fed335c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/south-county-museum-1920w-8fed335c.webp"
+    },
+    "originalSize": 1375953,
+    "hash": "8fed335c"
+  },
+  "/images/st-pauls-lutheran-church.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/st-pauls-lutheran-church-640w-f0c53099.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/st-pauls-lutheran-church-1024w-f0c53099.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/st-pauls-lutheran-church-1920w-f0c53099.webp"
+    },
+    "originalSize": 1002276,
+    "hash": "f0c53099"
+  },
+  "/images/the-hartford-stitch.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/the-hartford-stitch-640w-6b1db9e5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/the-hartford-stitch-1024w-6b1db9e5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/the-hartford-stitch-1920w-6b1db9e5.webp"
+    },
+    "originalSize": 8036065,
+    "hash": "6b1db9e5"
+  },
+  "/images/the-stitchery.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/the-stitchery-640w-f48b8670.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/the-stitchery-1024w-f48b8670.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/the-stitchery-1920w-f48b8670.webp"
+    },
+    "originalSize": 28000165,
+    "hash": "f48b8670"
+  },
+  "/images/van-schaick-mansion.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/van-schaick-mansion-640w-ec97ff15.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/van-schaick-mansion-1024w-ec97ff15.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/van-schaick-mansion-1920w-ec97ff15.webp"
+    },
+    "originalSize": 1600333,
+    "hash": "ec97ff15"
+  },
+  "/images/william-hall-library.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/william-hall-library-640w-6f9001bc.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/william-hall-library-1024w-6f9001bc.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/william-hall-library-1920w-6f9001bc.webp"
+    },
+    "originalSize": 5336470,
+    "hash": "6f9001bc"
+  },
+  "/images/winterthur.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/winterthur-640w-8d339a35.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/winterthur-1024w-8d339a35.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/winterthur-1920w-8d339a35.webp"
+    },
+    "originalSize": 8346130,
+    "hash": "8d339a35"
+  },
+  "/images/work-and-culture.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/work-and-culture-640w-a7d4588f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/work-and-culture-1024w-a7d4588f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/work-and-culture-1920w-a7d4588f.webp"
+    },
+    "originalSize": 597746,
+    "hash": "a7d4588f"
+  },
+  "/images/team/stitching-venues/pequot-library.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-venues/pequot-library-640w-a320498b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-venues/pequot-library-1024w-a320498b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-venues/pequot-library-1920w-a320498b.webp"
+    },
+    "originalSize": 2312947,
+    "hash": "a320498b"
   }
 }
