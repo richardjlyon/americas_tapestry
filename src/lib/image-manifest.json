@@ -5344,5 +5344,14 @@
     },
     "originalSize": 2312947,
     "hash": "a320498b"
+  },
+  "/images/team/state-directors/deborah-barlow.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/deborah-barlow-640w-9b70fd38.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/deborah-barlow-1024w-9b70fd38.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/deborah-barlow-1920w-9b70fd38.webp"
+    },
+    "originalSize": 128605,
+    "hash": "9b70fd38"
   }
 }
