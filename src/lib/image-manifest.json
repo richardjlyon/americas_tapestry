@@ -5479,5 +5479,68 @@
     },
     "originalSize": 688429,
     "hash": "342bbe48"
+  },
+  "/images/team/stitchers/carol-andrews.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/carol-andrews-640w-47f21fdc.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/carol-andrews-1024w-47f21fdc.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/carol-andrews-1920w-47f21fdc.webp"
+    },
+    "originalSize": 199746,
+    "hash": "47f21fdc"
+  },
+  "/images/team/stitchers/ginger-iorizzo-work1.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-work1-640w-9847ce35.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-work1-1024w-9847ce35.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-work1-1920w-9847ce35.webp"
+    },
+    "originalSize": 954366,
+    "hash": "9847ce35"
+  },
+  "/images/team/stitchers/ginger-iorizzo-work2.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-work2-640w-c8be3ed3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-work2-1024w-c8be3ed3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-work2-1920w-c8be3ed3.webp"
+    },
+    "originalSize": 6151554,
+    "hash": "c8be3ed3"
+  },
+  "/images/team/stitchers/ginger-iorizzo-work3.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-work3-640w-db0053ed.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-work3-1024w-db0053ed.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-work3-1920w-db0053ed.webp"
+    },
+    "originalSize": 974597,
+    "hash": "db0053ed"
+  },
+  "/images/team/stitchers/julianne-besznyak.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/julianne-besznyak-640w-0ca9f9a3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/julianne-besznyak-1024w-0ca9f9a3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/julianne-besznyak-1920w-0ca9f9a3.webp"
+    },
+    "originalSize": 1027741,
+    "hash": "0ca9f9a3"
+  },
+  "/images/team/stitchers/nancy-nelson.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/nancy-nelson-640w-3a5ea976.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/nancy-nelson-1024w-3a5ea976.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/nancy-nelson-1920w-3a5ea976.webp"
+    },
+    "originalSize": 5534623,
+    "hash": "3a5ea976"
+  },
+  "/images/team/stitchers/sandra-golbert.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sandra-golbert-640w-ab6ab73c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sandra-golbert-1024w-ab6ab73c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sandra-golbert-1920w-ab6ab73c.webp"
+    },
+    "originalSize": 102589,
+    "hash": "ab6ab73c"
   }
 }
