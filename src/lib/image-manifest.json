@@ -5740,5 +5740,131 @@
     },
     "originalSize": 1258937,
     "hash": "8ccc799a"
+  },
+  "/images/news/2025-12/01.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/01-640w-f8c3abb5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/01-1024w-f8c3abb5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/01-1920w-f8c3abb5.webp"
+    },
+    "originalSize": 863021,
+    "hash": "f8c3abb5"
+  },
+  "/images/news/2025-12/02.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/02-640w-a92ad953.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/02-1024w-a92ad953.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/02-1920w-a92ad953.webp"
+    },
+    "originalSize": 609616,
+    "hash": "a92ad953"
+  },
+  "/images/news/2025-12/03.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/03-640w-0cf133e5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/03-1024w-0cf133e5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/03-1920w-0cf133e5.webp"
+    },
+    "originalSize": 1948419,
+    "hash": "0cf133e5"
+  },
+  "/images/news/2025-12/04.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/04-640w-3fb127d0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/04-1024w-3fb127d0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/04-1920w-3fb127d0.webp"
+    },
+    "originalSize": 1972074,
+    "hash": "3fb127d0"
+  },
+  "/images/news/2025-12/05.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/05-640w-c742e8ca.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/05-1024w-c742e8ca.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/05-1920w-c742e8ca.webp"
+    },
+    "originalSize": 391051,
+    "hash": "c742e8ca"
+  },
+  "/images/news/2025-12/06.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/06-640w-3e248576.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/06-1024w-3e248576.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/06-1920w-3e248576.webp"
+    },
+    "originalSize": 581759,
+    "hash": "3e248576"
+  },
+  "/images/news/2025-12/07.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/07-640w-52b3cd24.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/07-1024w-52b3cd24.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/07-1920w-52b3cd24.webp"
+    },
+    "originalSize": 529429,
+    "hash": "52b3cd24"
+  },
+  "/images/news/2025-12/08.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/08-640w-979d6b73.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/08-1024w-979d6b73.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/08-1920w-979d6b73.webp"
+    },
+    "originalSize": 700138,
+    "hash": "979d6b73"
+  },
+  "/images/news/2025-12/09.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/09-640w-ff623e33.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/09-1024w-ff623e33.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/09-1920w-ff623e33.webp"
+    },
+    "originalSize": 766344,
+    "hash": "ff623e33"
+  },
+  "/images/news/2025-12/10.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/10-640w-fa8022d0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/10-1024w-fa8022d0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/10-1920w-fa8022d0.webp"
+    },
+    "originalSize": 747290,
+    "hash": "fa8022d0"
+  },
+  "/images/news/2025-12/11.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/11-640w-ee1808ac.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/11-1024w-ee1808ac.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/11-1920w-ee1808ac.webp"
+    },
+    "originalSize": 77502,
+    "hash": "ee1808ac"
+  },
+  "/images/news/2025-12/12.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/12-640w-0a49c070.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/12-1024w-0a49c070.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/12-1920w-0a49c070.webp"
+    },
+    "originalSize": 1173958,
+    "hash": "0a49c070"
+  },
+  "/images/news/2025-12/13.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/13-640w-fc5fab76.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/13-1024w-fc5fab76.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/13-1920w-fc5fab76.webp"
+    },
+    "originalSize": 218689,
+    "hash": "fc5fab76"
+  },
+  "/images/news/2025-12/14.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/14-640w-85d6e0b1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/14-1024w-85d6e0b1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2025-12/14-1920w-85d6e0b1.webp"
+    },
+    "originalSize": 8623,
+    "hash": "85d6e0b1"
   }
 }
