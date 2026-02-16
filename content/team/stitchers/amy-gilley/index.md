@@ -2,6 +2,7 @@
 name: "Amy Gilley"
 role: "Stitcher"
 state: "Delaware"
+images: ["amy-gilley-work1.jpg", "amy-gilley-work2.jpg", "amy-gilley-work3.jpg", "amy-gilley-work4.jpg"]
 ---
 
 Amy Gilley resides in Wilmington, DE and is the co-director of the Delaware panel. She began stitching about 30 years ago when she began purchasing needlework kits. Shortly after, Amy began to take classes in embroidery. While cross stitch remains a favorite of Amy's, she has practiced beading, cross stitch, canvas work, and counted work. So far, Amy has had the opportunity to stitch on the Delaware and the Pennsylvania tapestry panel. 
