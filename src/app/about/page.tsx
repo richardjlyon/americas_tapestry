@@ -28,70 +28,66 @@ export default function AboutPage() {
             On July 4th 2026, our nation will commemorate the 250th anniversary
             of the signing of the Declaration of Independence. All over the
             United States, communities will be holding events to illustrate and
-            mark our unique history, and to look forward to our next 250 years.
+            mark our unique history, and to look forward to the next 250 years.
           </p>
 
           <p>
-            Organizing one such event is 27 year-old artist and researcher
-            Stefan Romero. Stefan is a graduate of Carnegie Mellon University's
-            prestigious College of Fine Arts, where he specialized in the dress
-            and textiles of Colonial America. As a Fulbright Scholar, Stefan
-            deepened his understanding of the discipline through his Masters
-            Degree at the University of Glasgow in Scotland.
+            Organizing one such event is 28 year-old costume designer and fiber
+            artist Stefan Romero. Stefan is a graduate of Carnegie Mellon
+            University&apos;s College of Fine Arts, where he specialized in the
+            dress and textiles of Colonial America. As a Fulbright Scholar,
+            Stefan deepened his understanding of the discipline through his
+            Masters Degree at the University of Glasgow in Scotland.
           </p>
 
           <p>
             In collaboration with William & Mary (VA), Seton Hill University
             (PA), and a number of carefully selected historical and craft
-            organizations, Stefan is creating a unique exhibition: "America's
-            Tapestry".
+            organizations, Stefan is creating a once-in-a-generation fiber arts
+            project.
           </p>
 
           <p>
-            The exhibition features 13 hand embroidered panels, one for each of
-            the original colonies. The embroidery will be conducted by talented
-            artisans from New Hampshire to Georgia. The panels illustrate the
-            diverse stories of individual contributions–many overlooked–that
-            reveal each colony's struggle for Independence. Historical
-            associations from across the states have volunteered to collaborate
-            on the panels' historical imagery and have generously agreed to host
-            the stitchers as they work.
+            America&apos;s Tapestry features 13 hand embroidered panels, one for
+            each of the original colonies. The embroidery is currently being
+            conducted by volunteers from ages of 5 to 96 from New Hampshire to
+            Georgia. The panels illustrate stories of individual
+            contributions – many overlooked – that reveal each colony&apos;s
+            struggle for independence. Historical associations from across the
+            states have volunteered to collaborate on the panels&apos; imagery
+            and have generously agreed to host the stitchers as they work.
           </p>
 
           <blockquote>
-            "The idea came to me while on a work assignment in Europe after
-            visiting 'The Great Tapestry of Scotland'", says Stefan. "I was
-            deeply moved by the richness and drama of Scotland's story as it
-            unfolded from panel to panel. As the product of many talented
-            individuals working across the country to create a harmonious whole,
-            it seemed to characterize one of the defining features of the
-            American experiment."
+            &ldquo;The idea came to me while on a work assignment in Europe
+            after visiting &lsquo;The Great Tapestry of Scotland&rsquo;&rdquo;,
+            says Stefan. &ldquo;I was deeply moved by the richness and drama of
+            Scotland&apos;s story as it unfolded from panel to panel. As the
+            product of many talented individuals working across the country to
+            create a harmonious whole, it seemed to characterize one of the
+            defining features of the American experiment.&rdquo;
           </blockquote>
 
           <p>
-            Stefan will be working with chapters of the Embroidery Guild of
-            America across the Eastern Seaboard to embroider the panels. After
-            the inaugural display at William & Mary's historic campus–a stone's
-            throw away from Colonial Williamsburg, "America's Tapestry" will
-            tour a number of other historic venues throughout the East Coast.
+            Over 1,000 volunteers have joined America&apos;s Tapestry to
+            embroider the panels, with local directors guiding the effort in
+            each of the participating states. After their inaugural display at
+            William & Mary&apos;s Muscarelle Museum of Art – a stone&apos;s
+            throw away from Colonial Williamsburg, America&apos;s Tapestry will
+            tour a number of other historic venues throughout the East Coast for
+            a two year traveling exhibition.
           </p>
 
           <p>
-            While many talented volunteers have already come forward to stitch
-            the panels, a project of this magnitude requires considerable
-            manpower. Interested EGA members are encouraged to volunteer to work
-            on this historic project. Each panel will be stitched from July 2025
-            to June 2026 at a historic institution within the original 13
-            states. All materials will be provided.
+            If you may be interested in volunteering to complete this historic
+            effort, do not hesitate to reach out. All volunteers are welcome,
+            regardless of age or experience with needle art.
           </p>
 
-          <blockquote>
-            "It is a privilege for me to represent our Nation with a needlework
-            project that will be a legacy product of this historic occasion. As
-            we look forward to our next 250 years, it is more important than
-            ever to preserve a definitive art form that has contributed so much
-            to our country's distinct artistic identity."
-          </blockquote>
+          <p>
+            Please explore our website to learn more about the many talented
+            artists and volunteers who are making this project possible.
+          </p>
         </ReadingContainer>
       </PageSection>
     </>
