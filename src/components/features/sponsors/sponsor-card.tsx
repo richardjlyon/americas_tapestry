@@ -48,17 +48,19 @@ export function SponsorCard({
         )}
 
         {/* Logo */}
-        <div className="flex justify-center mb-4">
-          <div className="h-20 w-32 relative">
-            <Image
-              src={getImagePath(sponsor.logoPath)}
-              alt={`${sponsor.name} logo`}
-              fill
-              sizes={getImageSizes('thumbnail')}
-              className="object-contain"
-            />
+        {sponsor.logo && (
+          <div className="flex justify-center mb-4">
+            <div className="h-20 w-32 relative">
+              <Image
+                src={getImagePath(sponsor.logoPath)}
+                alt={`${sponsor.name} logo`}
+                fill
+                sizes={getImageSizes('thumbnail')}
+                className="object-contain"
+              />
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Sponsor Info */}
         <div className="text-center mb-4">

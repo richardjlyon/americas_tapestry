@@ -51,7 +51,9 @@ export async function getAllSponsors(): Promise<Sponsor[]> {
         const content = item.content;
 
         // Use simple convention: /images/sponsors/{slug}-logo.png
-        const logoPath = `/images/sponsors/${item.slug}-logo.png`;
+        // If frontmatter explicitly sets logo to "none", skip the logo
+        const hasLogo = data['logo'] !== 'none';
+        const logoPath = hasLogo ? `/images/sponsors/${item.slug}-logo.png` : '';
 
         // Create an excerpt from the content or use provided one
         const excerpt = item.excerpt || extractExcerpt(content);
@@ -67,7 +69,7 @@ export async function getAllSponsors(): Promise<Sponsor[]> {
           tier: data['tier'] || 'Supporter',
           location: data['location'] || '',
           partnership_year: data['partnership_year'],
-          logo: `${item.slug}-logo.png`,
+          logo: hasLogo ? `${item.slug}-logo.png` : '',
           logoPath,
           order: data['order'] || 999,
           content,
@@ -102,7 +104,9 @@ export async function getSponsorBySlug(slug: string): Promise<Sponsor | null> {
     const content = sponsorItem.content;
 
     // Use simple convention: /images/sponsors/{slug}-logo.png
-    const logoPath = `/images/sponsors/${slug}-logo.png`;
+    // If frontmatter explicitly sets logo to "none", skip the logo
+    const hasLogo = data['logo'] !== 'none';
+    const logoPath = hasLogo ? `/images/sponsors/${slug}-logo.png` : '';
 
     // Create an excerpt from the content or use provided one
     const excerpt = sponsorItem.excerpt || extractExcerpt(content);
@@ -117,7 +121,7 @@ export async function getSponsorBySlug(slug: string): Promise<Sponsor | null> {
       tier: data['tier'] || 'Supporter',
       location: data['location'] || '',
       partnership_year: data['partnership_year'],
-      logo: `${slug}-logo.png`,
+      logo: hasLogo ? `${slug}-logo.png` : '',
       logoPath,
       order: data['order'] || 999,
       content,

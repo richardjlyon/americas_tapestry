@@ -1,6 +1,6 @@
-import { PageSection } from '@/components/ui/page-section';
-import { ReadingContainer } from '@/components/ui/reading-container';
-import Image from 'next/image';
+import { PageSection } from "@/components/ui/page-section";
+import { ReadingContainer } from "@/components/ui/reading-container";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -51,11 +51,11 @@ export default function AboutPage() {
             America&apos;s Tapestry features 13 hand embroidered panels, one for
             each of the original colonies. The embroidery is currently being
             conducted by volunteers from ages of 5 to 96 from New Hampshire to
-            Georgia. The panels illustrate stories of individual
-            contributions – many overlooked – that reveal each colony&apos;s
-            struggle for independence. Historical associations from across the
-            states have volunteered to collaborate on the panels&apos; imagery
-            and have generously agreed to host the stitchers as they work.
+            Georgia. The panels illustrate stories of individual contributions –
+            many overlooked – that reveal each colony&apos;s struggle for
+            independence. Historical associations from across the states have
+            volunteered to collaborate on the panels&apos; imagery and have
+            generously agreed to host the stitchers as they work.
           </p>
 
           <blockquote>

@@ -95,15 +95,17 @@ export default async function SponsorPage({
                 )}
               </div>
 
-              <div className="h-16 md:h-20 relative w-32 md:w-40">
-                <Image
-                  src={getImagePath(sponsor.logoPath)}
-                  alt={`${sponsor.name} logo`}
-                  fill
-                  sizes={getImageSizes('thumbnail')}
-                  className="object-contain"
-                />
-              </div>
+              {sponsor.logo && (
+                <div className="h-16 md:h-20 relative w-32 md:w-40">
+                  <Image
+                    src={getImagePath(sponsor.logoPath)}
+                    alt={`${sponsor.name} logo`}
+                    fill
+                    sizes={getImageSizes('thumbnail')}
+                    className="object-contain"
+                  />
+                </div>
+              )}
             </div>
 
             <div

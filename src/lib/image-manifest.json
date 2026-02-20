@@ -5902,5 +5902,14 @@
     },
     "originalSize": 33857,
     "hash": "e19a7313"
+  },
+  "/images/sponsors/nea-logo.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sponsors/nea-logo-640w-145b1185.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sponsors/nea-logo-1024w-145b1185.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sponsors/nea-logo-1920w-145b1185.webp"
+    },
+    "originalSize": 33100,
+    "hash": "145b1185"
   }
 }
