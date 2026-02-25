@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Heart } from 'lucide-react';
+import { ArrowRight, Heart, Gift } from 'lucide-react';
 import { SectionHeader } from '@/components/ui/section-header';
 import { ContentCard } from '@/components/ui/content-card';
 import { Button } from '@/components/ui/button';
@@ -27,7 +27,39 @@ export function SupportSection() {
         }
       />
 
+      {/* GoFundMe Donation Box */}
       <ContentCard className="overflow-hidden">
+        <div className="flex flex-col items-center text-center p-6 md:p-10">
+          <div className="flex-shrink-0 w-14 h-14 bg-colonial-burgundy/10 rounded-full flex items-center justify-center mb-5">
+            <Gift className="h-7 w-7 text-colonial-burgundy" />
+          </div>
+          <h3 className="text-xl md:text-2xl font-bold text-colonial-navy mb-3">
+            Donate to Support America&apos;s Tapestry
+          </h3>
+          <p className="font-serif text-colonial-navy/80 max-w-2xl mb-6">
+            Help us build a museum-quality art crate to safely transport our
+            thirteen irreplaceable embroidered panels on their two-year
+            exhibition tour across the original colonies.
+          </p>
+          <Button
+            asChild
+            variant="colonial-primary"
+            className="text-base py-2 px-8"
+          >
+            <Link
+              href="https://www.gofundme.com/f/donate-to-support-seton-hill-university"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Donate via GoFundMe{' '}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </ContentCard>
+
+      {/* Liberty Doll Collection */}
+      <ContentCard className="mt-8 overflow-hidden">
         <div className="flex flex-col md:flex-row gap-0">
           {/* Image Section - Left side on desktop, full width on mobile */}
           <div className="w-full md:w-1/3 relative aspect-[3/2] overflow-hidden group">
