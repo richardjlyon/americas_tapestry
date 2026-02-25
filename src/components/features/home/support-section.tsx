@@ -29,32 +29,53 @@ export function SupportSection() {
 
       {/* GoFundMe Donation Box */}
       <ContentCard className="overflow-hidden">
-        <div className="flex flex-col items-center text-center p-6 md:p-10">
-          <div className="flex-shrink-0 w-14 h-14 bg-colonial-burgundy/10 rounded-full flex items-center justify-center mb-5">
-            <Gift className="h-7 w-7 text-colonial-burgundy" />
+        <div className="flex flex-col md:flex-row gap-0">
+          {/* Content Section - Left side on desktop */}
+          <div className="w-full md:w-2/3 p-6 md:p-8 lg:p-12">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="flex-shrink-0 w-12 h-12 bg-colonial-burgundy/10 rounded-full flex items-center justify-center">
+                <Gift className="h-6 w-6 text-colonial-burgundy" />
+              </div>
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-colonial-navy mb-2">
+                  Donate to Support America&apos;s Tapestry
+                </h3>
+                <p className="font-serif text-colonial-navy/80">
+                  Help us build a museum-quality art crate to safely transport
+                  our thirteen irreplaceable embroidered panels on their
+                  two-year exhibition tour across the original colonies.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-6 border-t border-colonial-navy/10 flex justify-center">
+              <Button
+                asChild
+                variant="colonial-primary"
+                className="text-base py-2 px-6"
+              >
+                <Link
+                  href="https://www.gofundme.com/f/donate-to-support-seton-hill-university"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Donate via GoFundMe{' '}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-colonial-navy mb-3">
-            Donate to Support America&apos;s Tapestry
-          </h3>
-          <p className="font-serif text-colonial-navy/80 max-w-2xl mb-6">
-            Help us build a museum-quality art crate to safely transport our
-            thirteen irreplaceable embroidered panels on their two-year
-            exhibition tour across the original colonies.
-          </p>
-          <Button
-            asChild
-            variant="colonial-primary"
-            className="text-base py-2 px-8"
-          >
-            <Link
-              href="https://www.gofundme.com/f/donate-to-support-seton-hill-university"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Donate via GoFundMe{' '}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+
+          {/* Image Section - Right side on desktop, full width on mobile */}
+          <div className="w-full md:w-1/3 relative aspect-[3/2] overflow-hidden group">
+            <Image
+              src="/images/support/gofundme-hand-sewing.jpg"
+              alt="Volunteer hand-stitching an America's Tapestry embroidered panel"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
         </div>
       </ContentCard>
 
