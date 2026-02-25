@@ -234,3 +234,18 @@ export async function getBlogPostsByCategory(
 export function getCategoryBySlug(slug: string): CategoryInfo | undefined {
   return blogCategories.find((category) => category.slug === slug);
 }
+
+// Get a Tapestry Talk video for a specific state
+export async function getTapestryTalkByState(
+  stateName: string,
+): Promise<BlogPost | null> {
+  const allPosts = await getAllBlogPosts();
+  const targetTitle = `Tapestry Talk: ${stateName}`;
+  return (
+    allPosts.find(
+      (post) =>
+        post.category === 'videos' &&
+        post.title.toLowerCase() === targetTitle.toLowerCase(),
+    ) || null
+  );
+}

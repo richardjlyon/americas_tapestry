@@ -10,6 +10,8 @@ import { getTeamMembersByState } from '@/lib/team';
 import { PageSection } from '@/components/ui/page-section';
 import { ReadingContainer } from '@/components/ui/reading-container';
 import { getImagePath } from '@/lib/image-utils';
+import { getTapestryTalkByState } from '@/lib/blog';
+import { TapestryTalkSection } from '@/components/features/tapestries/tapestry-talk-section';
 
 // Status color mapping
 const statusColors = {
@@ -67,7 +69,12 @@ export default async function TapestryPage({
     ? getImagePath(tapestry.audioPath)
     : undefined;
 
-  // Get all team members for this state using the utility function
+  // Get all team members and tapestry talk video for this state
+  const [teamMembers, tapestryTalkVideo] = await Promise.all([
+    getTeamMembersByState(tapestry.title),
+    getTapestryTalkByState(tapestry.title),
+  ]);
+
   const {
     stateDirectors,
     historicalPartners,
@@ -75,7 +82,7 @@ export default async function TapestryPage({
     stitchingGroups,
     commissionPartners,
     stitchingVenues,
-  } = await getTeamMembersByState(tapestry.title);
+  } = teamMembers;
 
   const hasTeamMembers =
     stateDirectors?.length > 0 ||
@@ -159,6 +166,16 @@ export default async function TapestryPage({
             </div>
           )}
         </ReadingContainer>
+
+        {/* Tapestry Talk video section */}
+        {tapestryTalkVideo && (
+          <>
+            <div className="flex justify-center pt-8 pb-2">
+              <div className="page-section-pin-bottom" />
+            </div>
+            <TapestryTalkSection video={tapestryTalkVideo} />
+          </>
+        )}
 
         {/* Pin separator */}
         <div className="flex justify-center pt-8 pb-2">
