@@ -29,14 +29,14 @@ MODEL_ID = "eleven_multilingual_v2"
 OUTPUT_FORMAT = "mp3_44100_128"
 
 # Voice assignments per tapestry (voice_id from ElevenLabs)
-# Lily (Female) - XrExE9yKIg1WjnnlVkGX - Women's stories
+# Sarah (Female) - EXAVITQu4vr4xnSDxMaL - Women's stories
 # Bill L. Oxley (Male) - iiidtqDt9FBdT1vfBluA - Battle narratives
 # Josh (Male) - wSO34DbFKBGmeCNpJL5K - Georgia (Haitian battle)
 # George (Male) - GLSWsaquVBsIPLPPRi2s - Industrial/civilian/political stories
 VOICE_MAP = {
-    "north-carolina": ("Lily", "XrExE9yKIg1WjnnlVkGX"),
-    "new-jersey": ("Lily", "XrExE9yKIg1WjnnlVkGX"),
-    "pennsylvania": ("Lily", "XrExE9yKIg1WjnnlVkGX"),
+    "north-carolina": ("Lily", "EXAVITQu4vr4xnSDxMaL"),
+    "new-jersey": ("Lily", "EXAVITQu4vr4xnSDxMaL"),
+    "pennsylvania": ("Lily", "EXAVITQu4vr4xnSDxMaL"),
     "maryland": ("Bill L. Oxley", "iiidtqDt9FBdT1vfBluA"),
     "rhode-island": ("Bill L. Oxley", "iiidtqDt9FBdT1vfBluA"),
     "south-carolina": ("Bill L. Oxley", "iiidtqDt9FBdT1vfBluA"),
@@ -78,6 +78,17 @@ def list_voices(api_key):
     return voices
 
 
+# Pronunciation hints: word -> phonetic spelling for TTS
+# Add entries here when the AI mispronounces proper nouns
+PRONUNCIATIONS = {
+    "Edenton": "Eedenton",
+    "Wythe": "With",
+    "lead mines": "ledd mines",
+    "lead mine": "ledd mine",
+    "lead ore": "ledd ore",
+}
+
+
 def extract_body_text(md_path):
     """Extract body text from markdown file, stripping frontmatter."""
     text = md_path.read_text(encoding="utf-8")
@@ -92,6 +103,10 @@ def extract_body_text(md_path):
     # Minimal cleanup: strip markdown link syntax and italic markers
     body = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", body)  # [text](url) -> text
     body = re.sub(r"_([^_]+)_", r"\1", body)  # _italic_ -> italic
+
+    # Apply pronunciation hints
+    for word, phonetic in PRONUNCIATIONS.items():
+        body = body.replace(word, phonetic)
 
     return body
 
