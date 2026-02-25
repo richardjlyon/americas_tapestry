@@ -20,12 +20,10 @@ timelineEvents:
     description: "American forces under General Daniel Morgan defeated the British under Lieutenant Colonel Banastre Tarleton in one of the most decisive tactical victories of the Revolutionary War."
 ---
 
-The South Carolina tapestry commemorates the role the backcountry played in the American Revolution.
+The South Carolina panel highlights the many young people who served in the American Revolution.
 
-The upper vignette commemorates the often overlooked Cherokee War of 1776, fought in several Southern colonies including South Carolina. Throughout the year, the Cherokee launched a series of attacks in coordination with the British army against colonial frontier settlements throughout Western South Carolina. The Cherokee had allied with the British during the American Revolution in hopes of preserving their native land which was under increasing threat of colonial encroachment.
+At age 13, South Carolina resident John McCord volunteered to serve with Captain Joseph Pickens. Considered too small for field duty, the young Patriot engaged in the work of a camp follower -- shelling corn, caring for the ill, and carrying messages.
 
-Captain Francis Salvador, who became the first Jewish American killed in the Revolution, is illustrated on horseback. Catawba General New River is seen with his musket poised. The Catawba Indians allied with the Patriots early in 1775 in the hopes of preserving their ancestral land. Until his death in 1804, New River fought for hunting and land rights for his people.
+The upper vignette illustrates the Cherokee War of 1776. The Cherokee Tribe launched a series of attacks in coordination with the British army against colonial frontier settlements throughout western South Carolina. This action aimed to quell westward expansion and stifle colonial unrest. However, with the destruction of over 50 Cherokee towns by the end of the year, colonists eliminated the ongoing threat of waging a two-front war.
 
-The lower image depicts John McCord, a 13 year old resident of the Long Canes District. His family was Scotch-Irish immigrants who first established themselves in Virginia before journeying southward. At age 13, McCord volunteered to serve with Captain Joseph Pickens. Considered too small for field duty, the young Patriot engaged in the important work of a camp follower, shelling corn, assisting with food preparation, caring for the ill, and carrying messages. John would later serve as a soldier in the Continental Army and eventually petition for a military pension in 1832.
-
-The Pension Act of June 7, 1832 granted every surviving officer and soldier who served at least two years in the Continental Army or other eligible units full pay for life. It was the most inclusive and generous pension act for Revolutionary War veterans up to that time.
+Captain Francis Salvador, the first Jewish American killed in the Revolution, is embroidered on horseback. Catawba General New River and a frontiersman are featured alongside the Captain. The Catawba Indians allied with the Patriots in 1775, believing an early partnership would secure rights to their ancestral territory.

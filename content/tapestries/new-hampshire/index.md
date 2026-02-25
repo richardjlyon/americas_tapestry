@@ -20,14 +20,12 @@ timelineEvents:
     description: "New Hampshire became the ninth state to ratify the U.S. Constitution, providing the necessary majority to officially establish the United States government under the Constitution."
 ---
 
-The New Hampshire Tapestry celebrates the state's pioneering revolutionary spirit.
+The New Hampshire panel depicts the state at the forefront of the independence movement.
 
-The panel illustrates New Hampshire’s role at the forefront of independence, depicting the Pine Tree Riot of 1772 which was one of the first major disputes of royal authority. The lower left hand vignette pays tribute to the raid of Fort William & Mary in 1774. Considered one of the first significant armed attacks of the American Revolution, the raid set the stage for future conflict with Great Britain. The gunpowder & cannons seized from the fort were distributed across the colonies and utilized at the Battle of Bunker Hill the following year.
+The Pine Tree Riot of 1772 (lower right) was one of the first major disputes of royal authority, as citizens defied the Crown’s exclusive right to chop down New Hampshire pine trees wider than 12 inches in diameter for shipbuilding.
 
-The upper portion of the panel depicts the role of the Coosuk Abenaki band in defending the vulnerable Northern border, which was subject to frequent conflict. Colonel Timothy Bedel established strong ties to this Abenaki Community of Coos, New Hampshire, on the Connecticut River to facilitate recruitment of members to the Patriot cause. Despite its history as a frequent war zone between the French & British for supremacy of the territory, these Coosuk band members retained their foothold in a land with significant spiritual and economic importance to their people. Through his promise of material support and protection, Bedel recruited soldiers & scouts. The panel features Bedel and Chief Philip, an Abenaki Patriot, deep in discussion. Despite their significant contribution to the Revolution, these Abenaki were denied protection in their homeland after the Revolution as fellow Patriots seized territory belonging to the tribe. Philip and his tribal citizens remained along with the settlers as he worked to secure hunting, fishing and planting rights for future generations.
+The lower left-hand vignette pays tribute to the raid of Fort William & Mary in 1774. Considered one of the first significant armed attacks of the American Revolution, the raid featured colonists who seized gunpowder and cannon utilized at the Battle of Bunker Hill the following year.
 
-The New Hampshire Panel is being created at the Millyard Museum in Manchester, where visitors can observe the stitching process within the context of the museum’s vast collection.
+The upper portion of the panel depicts the role of the Abenaki Tribe in defending the vulnerable Northern border, which was subject to frequent conflict with British forces from Canada. Patriot Timothy Bedel established strong ties with Chief Philip and the Abenaki community living on the Connecticut River to recruit members into a critical defense force.
 
-Our New Hampshire State Co-Directors are Carol Tewes Ganse & Michelle McPheron, needleworkers who have assembled a team of stitchers from throughout the state.
-
-Be sure to follow the [New Hampshire Panel Instagram Page](https://www.instagram.com/americastapestrynh/) to learn about where to stitch.
+Despite their significant contribution to the Revolution, these Abenaki were denied protection in their homeland after the Revolution as fellow Patriots seized territory belonging to the tribe.

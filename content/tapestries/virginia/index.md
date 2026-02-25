@@ -20,25 +20,10 @@ timelineEvents:
     description: "Virginia native George Washington was inaugurated as the first President of the United States, beginning a tradition of Virginia-born presidents that would include Jefferson, Madison, and Monroe."
 ---
 
-The Virginia Panel pays tribute to the lead mines of Wythe County,
-Virginia, integral to the production of musket balls for the Continental
-Army. Composed of enslaved, convicted, and imported labor, the mine was
-a melting pot of cultures and backgrounds whose forced labored in
-dangerous, dark conditions from sunup to sundown ensured American
-independence.
+The Virginia panel pays tribute to the lead mines of Wythe County, Virginia, integral to the production of musket balls for the Continental Army.
 
-Our illustration depicts the Welsh miners who were hired to revive the
-failing lead mine. Subject to the same conditions as other laborerers,
-they toiled alongside enslaved men who were hired out by their masters
-as well as convicts, who were serving their sentences in the mine.
+The panel depicts Welsh miners who were hired and brought to the colony to revive the failing mines. Subject to the same conditions as other laborers, they worked alongside enslaved men who were hired out by their masters as well as convicts who were serving out their sentences. Once the lead ore was excavated from the mines, it was transported to a smelting furnace and transformed into ammunition for muskets and rifles.
 
-The Tapestry spotlights an enslaved man named Aberdeen in the upper
-right hand corner, who defied his Loyalist master’s orders to join the
-British cause & volunteered to enlist with the Continentals. Despite
-being led away from the line of action to the lead mine of Wythe
-County, Aberdeen served seven long years at the mine. After writing a
-petition to the House of Delegates explaining his service to the
-Patriot cause, Aberdeen received his freedom in 1783.
+An enslaved man named Aberdeen (upper right) defied his Loyalist master’s orders to join the British and volunteered to enlist with the Continentals. Despite being led away from the line of action to Wythe County, Aberdeen served in the mines for seven years. After writing a petition to the House of Delegates explaining his service to the Patriot cause, Aberdeen received his freedom in 1783.
 
-The tapestry is being stitched at the Muscarelle Museum of Art on William & Mary's Campus
-in Williamsburg, VA, under the leadership of Catherine Theron. 
+It is believed that the shots fired during the last conflict of the war, the Battle of Yorktown, used musket balls derived from the mines of Wythe County.

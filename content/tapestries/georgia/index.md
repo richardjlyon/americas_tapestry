@@ -20,22 +20,12 @@ timelineEvents:
     description: "Georgia became the fourth state to ratify the United States Constitution, unanimously approving the document and joining the new nation."
 ---
 
-The Georgia Tapestry depicts the _Chasseurs Volontaires de
-Saint-Domingue_, the Creole militia unit that participated in the Battle
-of Savannah in 1779. The unit was made up of both enslaved and free
-soldiers from Saint-Domingue who fought either for income or for their
-freedom. The Battle of Savannah was one of the most diverse battles of
-the Revolution, featuring French, Creole, Native American, English,
-Scottish, and Colonial forces. This panel was designed in collaboration
-with the Coastal Heritage Society of Savannah.
+The Georgia panel depicts the Chasseurs Volontaires de Saint-Domingue, the Haitian militia unit that participated in the Battle of Savannah in 1779. The Chasseurs were the largest unit of Black soldiers to participate in the American Revolution.
 
-The Georgia Panel is being stitched at the [Atlanta History
-Center](/team/historical-partners/#atlanta-history-center), a premier
-museum and research center. The Museum holds one of the largest
-archives of Civil War artifacts in the United States. Stitchers will
-work in the museum's state-of-the-art rotunda, allowing all visitors to
-engage with both the panel's history as well as the stitchers to learn
-about their organization.
+Over 500 men enlisted from Haiti, then known as the French colony of Saint-Domingue. These troops were recruited out of an effort by the French to support the American colonists in the southern theater of the war. The regiment was made up of both formerly enslaved and free soldiers from all echelons of Saint-Domingue society.
 
-Our Georgia Director is Robin Starnes, the EGA Dogwood Chapter Membership Chair. Robin is mobilizing stitchers from all needlework organizations in the greater Atlanta area to work
-on the project.
+Fought to liberate the city from British occupation, the Siege of Savannah became the second deadliest battle of the American Revolution. While the operation ended in defeat, the Chasseurs are credited with holding back the British army to allow for American and French forces to retreat.
+
+Upon returning home, the Chasseurs Volontaires -- inspired by the ideals their American counterparts had fought for -- are considered to be a major catalyst for the Haitian Revolution of 1791.
+
+According to Haitian legend, a drummer boy at the Battle of Savannah (bottom left), was Henri Christophe, the future leader of independent Haiti.

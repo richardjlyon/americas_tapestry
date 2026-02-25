@@ -20,19 +20,10 @@ timelineEvents:
     description: "New Jersey became the third state to ratify the United States Constitution, unanimously approving the document and joining the new nation."
 ---
 
-The state design features the many roles New Jersey women undertook
-during the Revolution, including raising a phenomenal $15,000 for the
-patriot cause. Our historical advisor, [Passaic County Department of
-Cultural and Historical
-Affairs](https://americastapestry.com/team/historical-partners/#dcha),
-conducted a significant amount of research on the fascinating lives of
-those living in the Dey Mansion in Passaic County. Famously, the Dey
-Family hosted Generals Lafayette and Washington at the Mansion in 1780.
+The New Jersey panel highlights the many roles women undertook in Passaic County during the American Revolution.
 
-The lower right hand vignette features a smallpox innoculation administered by Senior Surgeon of the Continental Army Dr. Bodo Otto. Dr. Otto was tasked with establishing a military hospital in Trenton, New Jersey, specifically to inoculate troops against smallpox. This initiative was critical in safeguarding the health of soldier during a time when disease posed a severe threat to military effectiveness.
+As the Dey family hosted General Washington and the Continental Army in 1780 at their estate, free and enslaved women of the household worked to facilitate the needs of the troops and to support fundraising efforts. Women of the household prepared food (middle left) and fabricated clothing for Continental soldiers (middle right). As county leaders of the philanthropic group the "Ladies of Trenton," matriarch Hester Dey and her daughter-in-law (lower left) raised over $15,000 for the Continental Army.
 
-Our New Jersey Directors are Carol Prevost and Kiki Haumann. The stitching
-is being conducted by members of the Colonial West Jersey EGA Chapter in
-partnership with the Princeton EGA Chapter.
+The lower right vignette features a smallpox inoculation administered by Senior Surgeon of the Continental Army Dr. Bodo Otto. German-born Dr. Otto was tasked with establishing a military hospital in Trenton to inoculate troops against smallpox.
 
-To learn more or get involved, please [send us a message](http://americastapestry.com/contact).
+This initiative was critical in safeguarding the health of soldiers during a time when smallpox was more lethal to the Continental Army than British forces.

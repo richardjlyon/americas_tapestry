@@ -9,6 +9,7 @@ const nextConfig = {
     loaderFile: './src/lib/cloudflare-loader.ts',
     // Still allow these formats for any images not using custom loader
     formats: ['image/webp', 'image/avif'],
+    qualities: [75, 85],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     // Remote patterns for R2 and other external sources
