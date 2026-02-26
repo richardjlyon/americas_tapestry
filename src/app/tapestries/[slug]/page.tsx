@@ -118,9 +118,6 @@ export default async function TapestryPage({
               <AccessibleAudioPlayer
                 src={audioSrc}
                 title={`Audio Description: ${tapestry.title} Tapestry`}
-                {...(tapestry.audioDescription && {
-                  description: tapestry.audioDescription,
-                })}
               />
             </div>
           )}

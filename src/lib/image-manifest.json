@@ -5911,5 +5911,14 @@
     },
     "originalSize": 33100,
     "hash": "145b1185"
+  },
+  "/images/support/gofundme-hand-sewing.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/support/gofundme-hand-sewing-640w-c01db2b8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/support/gofundme-hand-sewing-1024w-c01db2b8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/support/gofundme-hand-sewing-1920w-c01db2b8.webp"
+    },
+    "originalSize": 728237,
+    "hash": "c01db2b8"
   }
 }
