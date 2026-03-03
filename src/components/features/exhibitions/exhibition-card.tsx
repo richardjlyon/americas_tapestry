@@ -10,9 +10,9 @@ interface ExhibitionCardProps {
 
 export function ExhibitionCard({ exhibition }: ExhibitionCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg flex h-[224px]">
-      {/* Image - 1:1 aspect ratio, fills full height with zero margins */}
-      <div className="relative w-[224px] h-[224px] flex-shrink-0">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg flex flex-col md:flex-row md:h-[224px]">
+      {/* Image - full width on mobile, fixed square on md+ */}
+      <div className="relative w-full h-48 md:w-[224px] md:h-[224px] flex-shrink-0">
         <Image
           src={getImagePath(exhibition.imagePath)}
           alt={`${exhibition.name} venue`}
