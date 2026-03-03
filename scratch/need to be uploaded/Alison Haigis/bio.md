@@ -1,0 +1,2 @@
+Alison Haigis is an embroiderer on the Connecticut tapestry panel. A resident of Tolland, she has been stitching for over 40 years. Having learned embroidery from her mother, Alison has practiced quilting including piecework and surface embroidery including crewel. While working on the panel, Alison has utilized the outline stitch. Alison joined the project out of a desire to support the Hartford Stitch, the organization hosting the Connecticut panel of America’s Tapestry. 
+

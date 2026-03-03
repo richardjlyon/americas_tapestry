@@ -1,0 +1,8 @@
+---
+name: "Sherry McCredie"
+role: "Stitcher"
+state: "New York"
+images: ["sherry-mccredie-work1.jpeg", "sherry-mccredie-work2.jpeg", "sherry-mccredie-work3.jpeg", "sherry-mccredie-work4.jpeg", "sherry-mccredie-work5.jpeg"]
+---
+
+Sherry McCredie is an embroiderer on the New York tapestry panel. A resident of Duanesburg, she has been stitching for over 50 years. Having learned embroidery through her mother and grandmother, Sherry has practiced cross stitch, canvaswork or needlepoint, counted Work that isn't cross stitch, pulled or drawn thread embroidery, surface embroidery including crewel, and raised embroidery. While working on the panel, Sherry has utilized the chain stitch, stem stitch, and couching. While working on the panel, Sherry has learned a new stitch - the Griffin stitch! Sherry was inspired to join the America's Tapestry project to support her local Embroiderers' Guild of America Chapter. As we approach our nation's 250th anniversary, Sherry hopes for peace and that we continue to care for our neighbors.

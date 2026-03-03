@@ -1,0 +1,8 @@
+---
+name: "Donna Morrison"
+role: "Stitcher"
+state: "Connecticut"
+images: ["donna-morrison-work1.jpeg", "donna-morrison-work2.jpeg", "donna-morrison-work3.jpeg"]
+---
+
+Donna Morrison is an embroiderer on the Connecticut tapestry panel. A resident of West Hartford, she has been stitching for over 50 years. Having learned embroidery from the Girl Scouts, Donna has practiced surface embroidery including crewel, raised embroidery, knitting, and crochet. While working on the panel, Donna has utilized the outline and stem stitch. The French knot stitch is her favorite! Having lived in Connecticut for 48 years, Donna wanted to be part of something to celebrate the 250th anniversary of our country. While working on the panel, Donna has discovered that Connecticut has the oldest continuously operating newspaper.

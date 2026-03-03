@@ -1,0 +1,8 @@
+---
+name: "Marie DiTaranto"
+role: "Stitcher"
+state: "Connecticut"
+images: ["marie-ditaranto-work1.jpg"]
+---
+
+Marie DiTaranto is an embroiderer on the Connecticut tapestry panel. A resident of West Hartford, she has been stitching for over 50 years. Having learned embroidery from her mother at 6 years old, Marie has practiced beading, cross stitch, canvaswork or needlepoint, counted Work that isn't cross stitch, surface embroidery including crewel, raised embroidery, knitting, crochet, and smocking. While working on the state panel, Marie has utilized back stitch, outline stitch, satin stitch, and French knots. After seeing an article in the local newspaper, Marie decided to join the America's Tapestry effort. She used to belong to a chapter of the Smocking Arts Guild of America and missed stitching with other people. While working on the Connecticut panel, Marie has enjoyed learning about the Hartford Courant, which is depicted on the state panel.
