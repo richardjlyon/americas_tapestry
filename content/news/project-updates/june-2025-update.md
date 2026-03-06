@@ -50,7 +50,7 @@ During the American Revolution, chocolate production became both a practical nec
 
 ![Massachusetts Illustration](/images/news/massachusetts-illustration.jpg)
 
-In the Massachusetts Panel, Boston merchant and chocolate maker Caleb Davis tends to his storefront while an enslaved man grinds chocolate on a matate, a stone used for grinding grain and seeds. Davis was a member of the Sons of Liberty & the Boston Committee of Correspondence, and eventually nominated as an elector for Suffolk County in the first presidential election.
+In the Massachusetts Panel, Boston merchant and chocolate maker Caleb Davis tends to his storefront while an enslaved man grinds chocolate on a metate, a stone used for grinding grain and seeds. Davis was a member of the Sons of Liberty & the Boston Committee of Correspondence, and eventually nominated as an elector for Suffolk County in the first presidential election.
 
 Enslaved labor played a critical role in the success of chocolate making, as many young men were trained to grind chocolate and as a result, ran away in attempts to work as paid skilled chocolate makers.
 
