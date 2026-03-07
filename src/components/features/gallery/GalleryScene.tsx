@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { KeyboardControls } from '@react-three/drei';
 import GalleryRoom from './GalleryRoom';
+import TapestryWall from './TapestryWall';
 import PlayerControls from './PlayerControls';
 import { KEY_MAP, START_POSITION, ROOM_CONFIG } from './constants';
 
@@ -26,6 +28,9 @@ export default function GalleryScene(): React.ReactElement {
         }}
       >
         <GalleryRoom />
+        <Suspense fallback={null}>
+          <TapestryWall />
+        </Suspense>
         <PlayerControls />
       </Canvas>
     </KeyboardControls>
