@@ -1,125 +1,99 @@
-# Requirements: Technical Debt Cleanup
+# Requirements: Virtual Gallery v2.0
 
-**Derived from:** Research analysis (2026-01-17)
+**Defined:** 2026-03-06
+**Core Value:** Bring the tapestries to life through an immersive 3D gallery experience
 
-## Functional Requirements
+## v1 Requirements
 
-### FR-1: Preserve All Existing Functionality
-All current site features must continue to work identically after refactoring:
-- Tapestry pages with images, timelines, maps
-- Team pages with member cards and group organization
-- Blog/news section with categories
-- Interactive colonial map
-- Contact form and newsletter signup
-- Hero carousel
-- Responsive design
-- Image optimization via Cloudflare R2
+### 3D Scene
 
-**Validation:** Visual regression tests, E2E tests
+- [ ] **SCENE-01**: Gallery room rendered with correct Gallery 7 floor plan dimensions (~26'x23')
+- [ ] **SCENE-02**: White/cream walls and wood-tone floor materials applied
+- [ ] **SCENE-03**: Museum-quality lighting (ambient + spotlights on tapestries)
+- [ ] **SCENE-04**: Camera starts at gallery entrance facing inward
 
-### FR-2: Error Visibility
-Errors must be surfaced to developers, not swallowed silently:
-- Content loading failures must log with context
-- Image loading failures must show fallback state
-- API failures must return meaningful error messages
+### Navigation
 
-**Validation:** Unit tests for error paths
+- [ ] **NAV-01**: User can move with WASD and arrow keys
+- [ ] **NAV-02**: User can look around with mouse (pointer lock on click)
+- [ ] **NAV-03**: User cannot walk through walls (collision detection)
+- [ ] **NAV-04**: Instructions overlay shown on first visit ("WASD to move, mouse to look, click artwork")
+- [ ] **NAV-05**: Exit button returns user to main site
 
-## Non-Functional Requirements
+### Tapestry Display
 
-### NFR-1: Type Safety
-Zero `any` usage in production code:
-- All 22 explicit `any` annotations replaced with proper types
-- All 19 `as any` assertions replaced with type guards or proper types
-- External APIs (Navigator, web-vitals, Mapbox) have proper type definitions
+- [ ] **TAP-01**: All 13 colony tapestries displayed as framed images on gallery walls
+- [ ] **TAP-02**: Tapestry textures loaded from existing 1024w images
+- [ ] **TAP-03**: User can click a tapestry to open detail overlay
+- [ ] **TAP-04**: Detail overlay shows tapestry title, colony, and description
 
-**Validation:** `tsc --noEmit` with strict mode, no `any` in grep results
+### Loading & Performance
 
-### NFR-2: No Duplicate Code
-Single source of truth for all utilities:
-- Remove duplicate hook files (use-toast.ts, use-mobile.tsx)
-- Consolidate 5 content loader patterns into reusable functions
-- No identical code blocks across components
+- [ ] **PERF-01**: Loading screen with progress indicator while 3D scene initializes
+- [ ] **PERF-02**: 3D bundle code-split and dynamically imported (no impact on other pages)
+- [ ] **PERF-03**: Gallery route isolated behind `ssr: false` dynamic import
 
-**Validation:** No duplicate files, similarity analysis tools
+### Mobile Fallback
 
-### NFR-3: No Dead Code
-All code must be reachable and necessary:
-- Remove empty useEffect hooks
-- Remove unused exports
-- Remove or enable commented-out features
-- Remove debug files from production
+- [ ] **MOB-01**: Mobile devices shown a 2D gallery grid instead of 3D scene
+- [ ] **MOB-02**: Mobile gallery displays all 13 tapestries with tap-to-detail
 
-**Validation:** Static analysis, no commented feature blocks
+## v2 Requirements
 
-### NFR-4: Security Hardening
-Protect against common vulnerabilities:
-- Sanitize all HTML rendered via dangerouslySetInnerHTML (6 locations)
-- Add error boundaries to prevent full app crashes
-- Implement rate limiting on server actions
+Deferred to future milestone. Tracked but not in current roadmap.
 
-**Validation:** Security audit, error boundary coverage
+### Polish & Differentiators
 
-### NFR-5: Maintainable File Sizes
-No file exceeds 400 lines:
-- sidebar.tsx (771 lines) must be split
-- member-card.tsx (497 lines) must be split
-- colonial-data-explorer.tsx (453 lines) must be split
-- image-utils.ts (438 lines) must be split
+- **DIFF-01**: Smooth camera transitions (lerp toward tapestry on click)
+- **DIFF-02**: Proximity highlight glow on unvisited tapestries
+- **DIFF-03**: High-res zoom in detail overlay (2560w pinch/scroll zoom)
+- **DIFF-04**: Mini-map showing user position and tapestry locations
+- **DIFF-05**: Guided tour mode (auto-walk path visiting each tapestry in colonial order)
+- **DIFF-06**: Ambient gallery sound with mute toggle
 
-**Validation:** Line count analysis
+## Out of Scope
 
-### NFR-6: Production Logging
-Replace console.* with structured logging:
-- Remove or replace 57 console statements
-- Implement log levels (error, warn, info, debug)
-- Conditionally disable verbose logging in production
+| Feature | Reason |
+|---------|--------|
+| Mobile 3D controls (virtual joystick, gyroscope) | Universally frustrating UX; 2D fallback is better |
+| VR headset support (WebXR) | Massive complexity for tiny audience |
+| Multiplayer / avatars | Social features add enormous complexity with minimal gallery value |
+| Photorealistic rendering (PBR, ray tracing) | Overkill for clean museum aesthetic; increases load time |
+| Multiple rooms / hallways | Scope explosion; Gallery 7 only for v2.0 |
+| Audio guide / spatial narration | Requires recording/TTS for 13 tapestries; defer to overlay play button later |
+| Tapestry animations (fabric waving) | Distracting; needlework is meant to be still |
+| Physics engine | Simple wall collision is sufficient for rectangular room |
+| User-generated content | Moderation burden; off-topic for curated museum |
+| Customizable gallery layout | Fixed curatorial layout matches real gallery |
+| Procedural room generation | 13 fixed pieces in a known room; hand-place everything |
 
-**Validation:** No console.* in grep results (except intentional)
+## Traceability
 
-### NFR-7: Async File Operations
-No synchronous filesystem operations:
-- Replace 26 sync fs operations with async equivalents
-- Use fs.promises API
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| SCENE-01 | TBD | Pending |
+| SCENE-02 | TBD | Pending |
+| SCENE-03 | TBD | Pending |
+| SCENE-04 | TBD | Pending |
+| NAV-01 | TBD | Pending |
+| NAV-02 | TBD | Pending |
+| NAV-03 | TBD | Pending |
+| NAV-04 | TBD | Pending |
+| NAV-05 | TBD | Pending |
+| TAP-01 | TBD | Pending |
+| TAP-02 | TBD | Pending |
+| TAP-03 | TBD | Pending |
+| TAP-04 | TBD | Pending |
+| PERF-01 | TBD | Pending |
+| PERF-02 | TBD | Pending |
+| PERF-03 | TBD | Pending |
+| MOB-01 | TBD | Pending |
+| MOB-02 | TBD | Pending |
 
-**Validation:** No readdirSync/readFileSync in grep results
-
-## Constraints
-
-### C-1: Red/Green/Refactor Discipline
-Every refactor must:
-1. Have tests that capture current behavior (RED would fail if behavior changed)
-2. Make the change
-3. Verify tests still pass (GREEN)
-
-### C-2: Visual Continuity
-No visual changes to the site:
-- Playwright visual regression tests for key pages
-- Screenshot comparison before/after each refactor phase
-
-### C-3: Incremental Commits
-Each refactor is a discrete, revertible commit:
-- One logical change per commit
-- Clear commit messages explaining the refactor
-
-### C-4: No Feature Changes
-Refactors must not alter user-visible behavior:
-- No new features
-- No UI/UX changes
-- No functionality additions
-
-## Priority Matrix
-
-| Requirement | Impact | Effort | Priority |
-|-------------|--------|--------|----------|
-| NFR-4 Security | High | Low | 1 - Critical |
-| FR-2 Error Visibility | High | Low | 2 - High |
-| NFR-2 Duplicates | Medium | Low | 3 - High |
-| NFR-3 Dead Code | Low | Low | 4 - Medium |
-| NFR-6 Logging | Medium | Medium | 5 - Medium |
-| NFR-1 Type Safety | Medium | Medium | 6 - Medium |
-| NFR-5 File Sizes | Medium | High | 7 - Low |
-| NFR-7 Async FS | Low | High | 8 - Low |
+**Coverage:**
+- v1 requirements: 18 total
+- Mapped to phases: 0
+- Unmapped: 18
 
 ---
-*Requirements derived from research: 2026-01-17*
+*Requirements defined: 2026-03-06*
