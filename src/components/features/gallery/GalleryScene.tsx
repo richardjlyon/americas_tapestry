@@ -1,22 +1,33 @@
 import { Canvas } from '@react-three/fiber';
+import { KeyboardControls } from '@react-three/drei';
+import GalleryRoom from './GalleryRoom';
+import PlayerControls from './PlayerControls';
+import { KEY_MAP, START_POSITION, ROOM_CONFIG } from './constants';
 
 /**
- * GalleryScene - R3F Canvas with proof-of-life 3D scene
+ * GalleryScene - Composed 3D gallery scene with room and controls
+ *
+ * Renders the Gallery 7 L-shaped room with first-person navigation.
+ * KeyboardControls wraps Canvas (not inside it) per drei requirements.
+ * Camera starts at the entrance facing north into the room.
  *
  * This component is dynamically imported with ssr: false by GalleryClient,
- * so it is guaranteed to run only in the browser. It renders a simple
- * orange box as proof that the R3F pipeline is working correctly.
- *
- * This scene will be replaced with the full gallery environment in Plan 02.
+ * so it is guaranteed to run only in the browser.
  */
 export default function GalleryScene(): React.ReactElement {
   return (
-    <Canvas camera={{ fov: 75, position: [0, 2, 5] }}>
-      <ambientLight intensity={0.5} />
-      <mesh>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color="orange" />
-      </mesh>
-    </Canvas>
+    <KeyboardControls map={KEY_MAP}>
+      <Canvas
+        camera={{
+          fov: 75,
+          position: [START_POSITION.x, ROOM_CONFIG.eyeHeight, START_POSITION.z],
+          near: 0.1,
+          far: 100,
+        }}
+      >
+        <GalleryRoom />
+        <PlayerControls />
+      </Canvas>
+    </KeyboardControls>
   );
 }
