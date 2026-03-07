@@ -12,7 +12,7 @@ Transform the America's Tapestry site from a flat content experience into an imm
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: 3D Foundation & Navigation** - Navigable empty room with SSR-safe 3D pipeline
+- [x] **Phase 1: 3D Foundation & Navigation** - Navigable empty room with SSR-safe 3D pipeline
 - [ ] **Phase 2: Tapestries on Walls** - All 13 colony tapestries displayed as framed images
 - [ ] **Phase 3: Interaction & Overlay** - Click-to-inspect detail panel with UX chrome
 - [ ] **Phase 4: Lighting & Materials** - Museum-quality environment polish
@@ -33,8 +33,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Install R3F stack and establish SSR-safe dynamic import pipeline
-- [ ] 01-02-PLAN.md -- Build Gallery 7 room geometry and first-person navigation controls
+- [x] 01-01-PLAN.md -- Install R3F stack and establish SSR-safe dynamic import pipeline
+- [x] 01-02-PLAN.md -- Build Gallery 7 room geometry and first-person navigation controls
 
 ### Phase 2: Tapestries on Walls
 **Goal**: All 13 colony tapestries are visible as framed artwork on the gallery walls
@@ -99,7 +99,7 @@ Note: Phase 4 depends on Phase 2 (not Phase 3), so it could run in parallel with
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. 3D Foundation & Navigation | 0/2 | Not started | - |
+| 1. 3D Foundation & Navigation | 2/2 | ✓ Complete | 2026-03-07 |
 | 2. Tapestries on Walls | 0/TBD | Not started | - |
 | 3. Interaction & Overlay | 0/TBD | Not started | - |
 | 4. Lighting & Materials | 0/TBD | Not started | - |

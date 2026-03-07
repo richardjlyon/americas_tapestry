@@ -7,16 +7,16 @@
 
 ### 3D Scene
 
-- [ ] **SCENE-01**: Gallery room rendered with correct Gallery 7 floor plan dimensions (~26'x23')
+- [x] **SCENE-01**: Gallery room rendered with correct Gallery 7 floor plan dimensions (~26'x23')
 - [ ] **SCENE-02**: White/cream walls and wood-tone floor materials applied
 - [ ] **SCENE-03**: Museum-quality lighting (ambient + spotlights on tapestries)
-- [ ] **SCENE-04**: Camera starts at gallery entrance facing inward
+- [x] **SCENE-04**: Camera starts at gallery entrance facing inward
 
 ### Navigation
 
-- [ ] **NAV-01**: User can move with WASD and arrow keys
-- [ ] **NAV-02**: User can look around with mouse (pointer lock on click)
-- [ ] **NAV-03**: User cannot walk through walls (collision detection)
+- [x] **NAV-01**: User can move with WASD and arrow keys
+- [x] **NAV-02**: User can look around with mouse (pointer lock on click)
+- [x] **NAV-03**: User cannot walk through walls (collision detection)
 - [ ] **NAV-04**: Instructions overlay shown on first visit ("WASD to move, mouse to look, click artwork")
 - [ ] **NAV-05**: Exit button returns user to main site
 
@@ -30,8 +30,8 @@
 ### Loading & Performance
 
 - [ ] **PERF-01**: Loading screen with progress indicator while 3D scene initializes
-- [ ] **PERF-02**: 3D bundle code-split and dynamically imported (no impact on other pages)
-- [ ] **PERF-03**: Gallery route isolated behind `ssr: false` dynamic import
+- [x] **PERF-02**: 3D bundle code-split and dynamically imported (no impact on other pages)
+- [x] **PERF-03**: Gallery route isolated behind `ssr: false` dynamic import
 
 ### Mobile Fallback
 
@@ -71,13 +71,13 @@ Deferred to future milestone. Tracked but not in current roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SCENE-01 | Phase 1 | Pending |
+| SCENE-01 | Phase 1 | Complete |
 | SCENE-02 | Phase 4 | Pending |
 | SCENE-03 | Phase 4 | Pending |
-| SCENE-04 | Phase 1 | Pending |
-| NAV-01 | Phase 1 | Pending |
-| NAV-02 | Phase 1 | Pending |
-| NAV-03 | Phase 1 | Pending |
+| SCENE-04 | Phase 1 | Complete |
+| NAV-01 | Phase 1 | Complete |
+| NAV-02 | Phase 1 | Complete |
+| NAV-03 | Phase 1 | Complete |
 | NAV-04 | Phase 3 | Pending |
 | NAV-05 | Phase 3 | Pending |
 | TAP-01 | Phase 2 | Pending |
@@ -85,8 +85,8 @@ Deferred to future milestone. Tracked but not in current roadmap.
 | TAP-03 | Phase 3 | Pending |
 | TAP-04 | Phase 3 | Pending |
 | PERF-01 | Phase 3 | Pending |
-| PERF-02 | Phase 1 | Pending |
-| PERF-03 | Phase 1 | Pending |
+| PERF-02 | Phase 1 | Complete |
+| PERF-03 | Phase 1 | Complete |
 | MOB-01 | Phase 5 | Pending |
 | MOB-02 | Phase 5 | Pending |
 
