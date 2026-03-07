@@ -44,10 +44,10 @@ Plans:
   1. All 13 tapestries are displayed on gallery walls as framed images in appropriate positions
   2. Tapestry textures are loaded from existing 1024w images and are legible when the user walks close
   3. Tapestries have visible frames that distinguish them from the wall surface
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 02-01: TBD
+- [ ] 02-01-PLAN.md -- Display all 13 colony tapestries as framed artwork on gallery walls
 
 ### Phase 3: Interaction & Overlay
 **Goal**: Visitor can click any tapestry to learn about it, with clear guidance and navigation
@@ -100,7 +100,7 @@ Note: Phase 4 depends on Phase 2 (not Phase 3), so it could run in parallel with
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
 | 1. 3D Foundation & Navigation | 2/2 | ✓ Complete | 2026-03-07 |
-| 2. Tapestries on Walls | 0/TBD | Not started | - |
+| 2. Tapestries on Walls | 0/1 | Not started | - |
 | 3. Interaction & Overlay | 0/TBD | Not started | - |
 | 4. Lighting & Materials | 0/TBD | Not started | - |
 | 5. Mobile Fallback | 0/TBD | Not started | - |
