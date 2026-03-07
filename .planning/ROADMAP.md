@@ -30,11 +30,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User cannot walk through walls -- movement stops at wall boundaries
   4. Camera starts at the gallery entrance facing inward
   5. The 3D bundle is code-split and dynamically imported -- navigating other site pages loads zero Three.js code
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Install R3F stack and establish SSR-safe dynamic import pipeline
+- [ ] 01-02-PLAN.md -- Build Gallery 7 room geometry and first-person navigation controls
 
 ### Phase 2: Tapestries on Walls
 **Goal**: All 13 colony tapestries are visible as framed artwork on the gallery walls
@@ -99,7 +99,7 @@ Note: Phase 4 depends on Phase 2 (not Phase 3), so it could run in parallel with
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. 3D Foundation & Navigation | 0/TBD | Not started | - |
+| 1. 3D Foundation & Navigation | 0/2 | Not started | - |
 | 2. Tapestries on Walls | 0/TBD | Not started | - |
 | 3. Interaction & Overlay | 0/TBD | Not started | - |
 | 4. Lighting & Materials | 0/TBD | Not started | - |
