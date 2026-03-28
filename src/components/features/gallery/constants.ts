@@ -118,28 +118,27 @@ export interface TapestryPlacement {
  *   - East wall alcove (x=13, faces west): South Carolina
  *   - North wall alcove (z=-39.04, faces south): Virginia
  *
- * Group A (1024x1317, displayHeight=5.14): CT, MD, MA, NH, NJ, NC, RI, SC, VA
- * Group B (1024x1434, displayHeight=5.6): DE, GA, NY, PA
+ * All tapestries: 40" x 50" = 3.33ft x 4.17ft display size
  */
 export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
-  // South wall LEFT (faces north, rotation [0,0,0])
+  // South wall LEFT (faces north into room, rotation [0, PI, 0])
   {
     slug: 'connecticut',
     name: 'Connecticut',
     imagePath: '/images/tapestries/connecticut/connecticut-tapestry-1024w.jpg',
     position: [3.5, 5.0, 0],
-    rotation: [0, 0, 0],
-    displayWidth: 4,
-    displayHeight: 5.14,
+    rotation: [0, Math.PI, 0],
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
   {
     slug: 'delaware',
     name: 'Delaware',
     imagePath: '/images/tapestries/delaware/delaware-tapestry-1024w.jpg',
     position: [9.5, 5.0, 0],
-    rotation: [0, 0, 0],
-    displayWidth: 4,
-    displayHeight: 5.6,
+    rotation: [0, Math.PI, 0],
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
   // West wall (faces east, rotation [0, PI/2, 0])
   {
@@ -148,8 +147,8 @@ export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
     imagePath: '/images/tapestries/georgia/georgia-tapestry-main-1024w.jpg',
     position: [0, 5.0, -4.0],
     rotation: [0, Math.PI / 2, 0],
-    displayWidth: 4,
-    displayHeight: 5.6,
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
   {
     slug: 'maryland',
@@ -157,8 +156,8 @@ export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
     imagePath: '/images/tapestries/maryland/maryland-tapestry-1024w.jpg',
     position: [0, 5.0, -11.5],
     rotation: [0, Math.PI / 2, 0],
-    displayWidth: 4,
-    displayHeight: 5.14,
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
   {
     slug: 'massachusetts',
@@ -166,8 +165,8 @@ export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
     imagePath: '/images/tapestries/massachusetts/massachusetts-tapestry-main-1024w.jpg',
     position: [0, 5.0, -19.0],
     rotation: [0, Math.PI / 2, 0],
-    displayWidth: 4,
-    displayHeight: 5.14,
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
   {
     slug: 'new-hampshire',
@@ -175,8 +174,8 @@ export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
     imagePath: '/images/tapestries/new-hampshire/new-hampshire-tapestry-main-1024w.jpg',
     position: [0, 5.0, -26.5],
     rotation: [0, Math.PI / 2, 0],
-    displayWidth: 4,
-    displayHeight: 5.14,
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
   {
     slug: 'new-jersey',
@@ -184,8 +183,8 @@ export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
     imagePath: '/images/tapestries/new-jersey/new-jersey-tapestry-main-1024w.jpg',
     position: [0, 5.0, -33.5],
     rotation: [0, Math.PI / 2, 0],
-    displayWidth: 4,
-    displayHeight: 5.14,
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
   // East wall main (faces west, rotation [0, -PI/2, 0])
   {
@@ -194,8 +193,8 @@ export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
     imagePath: '/images/tapestries/new-york/new-york-tapestry-main-1024w.jpg',
     position: [26.17, 5.0, -5.0],
     rotation: [0, -Math.PI / 2, 0],
-    displayWidth: 4,
-    displayHeight: 5.6,
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
   {
     slug: 'north-carolina',
@@ -203,8 +202,8 @@ export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
     imagePath: '/images/tapestries/north-carolina/north-carolina-tapestry-main-1024w.jpg',
     position: [26.17, 5.0, -11.5],
     rotation: [0, -Math.PI / 2, 0],
-    displayWidth: 4,
-    displayHeight: 5.14,
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
   {
     slug: 'pennsylvania',
@@ -212,18 +211,18 @@ export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
     imagePath: '/images/tapestries/pennsylvania/pennsylvania-tapestry-main-1024w.jpg',
     position: [26.17, 5.0, -18.0],
     rotation: [0, -Math.PI / 2, 0],
-    displayWidth: 4,
-    displayHeight: 5.6,
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
-  // North wall main east (faces south, rotation [0, PI, 0])
+  // North wall main east (faces south into room, rotation [0, 0, 0])
   {
     slug: 'rhode-island',
     name: 'Rhode Island',
     imagePath: '/images/tapestries/rhode-island/rhode-island-tapestry-main-1024w.jpg',
     position: [19.6, 5.0, -23.0],
-    rotation: [0, Math.PI, 0],
-    displayWidth: 4,
-    displayHeight: 5.14,
+    rotation: [0, 0, 0],
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
   // East wall alcove (faces west, rotation [0, -PI/2, 0])
   {
@@ -232,18 +231,18 @@ export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
     imagePath: '/images/tapestries/south-carolina/south-carolina-tapestry-main-1024w.jpg',
     position: [13.0, 5.0, -31.0],
     rotation: [0, -Math.PI / 2, 0],
-    displayWidth: 4,
-    displayHeight: 5.14,
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
-  // North wall alcove (faces south, rotation [0, PI, 0])
+  // North wall alcove (faces south into room, rotation [0, 0, 0])
   {
     slug: 'virginia',
     name: 'Virginia',
     imagePath: '/images/tapestries/virginia/viginia-tapestry-main-1024w.jpg',
     position: [6.5, 5.0, -39.04],
-    rotation: [0, Math.PI, 0],
-    displayWidth: 4,
-    displayHeight: 5.14,
+    rotation: [0, 0, 0],
+    displayWidth: 3.33,
+    displayHeight: 4.17,
   },
 ];
 

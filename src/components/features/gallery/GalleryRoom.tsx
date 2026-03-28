@@ -24,7 +24,11 @@ const CEILING_COLOR = '#FAFAFA'; // near-white
  *   Origin at south-west corner, floor level
  *   X+ = east, Z- = north, Y+ = up
  */
-export default function GalleryRoom(): React.ReactElement {
+interface GalleryRoomProps {
+  hideCeiling?: boolean;
+}
+
+export default function GalleryRoom({ hideCeiling = false }: GalleryRoomProps): React.ReactElement {
   return (
     <group>
       {/* ---- Lighting ---- */}
@@ -47,22 +51,26 @@ export default function GalleryRoom(): React.ReactElement {
       </mesh>
 
       {/* ---- Ceilings ---- */}
-      {/* Main ceiling */}
-      <mesh
-        position={[main.width / 2, main.height, -main.depth / 2]}
-        rotation={[Math.PI / 2, 0, 0]}
-      >
-        <planeGeometry args={[main.width, main.depth]} />
-        <meshStandardMaterial color={CEILING_COLOR} side={THREE.DoubleSide} />
-      </mesh>
-      {/* Alcove ceiling */}
-      <mesh
-        position={[alcove.width / 2, alcove.height, -(main.depth + alcove.depth / 2)]}
-        rotation={[Math.PI / 2, 0, 0]}
-      >
-        <planeGeometry args={[alcove.width, alcove.depth]} />
-        <meshStandardMaterial color={CEILING_COLOR} side={THREE.DoubleSide} />
-      </mesh>
+      {!hideCeiling && (
+        <>
+          {/* Main ceiling */}
+          <mesh
+            position={[main.width / 2, main.height, -main.depth / 2]}
+            rotation={[Math.PI / 2, 0, 0]}
+          >
+            <planeGeometry args={[main.width, main.depth]} />
+            <meshStandardMaterial color={CEILING_COLOR} side={THREE.DoubleSide} />
+          </mesh>
+          {/* Alcove ceiling */}
+          <mesh
+            position={[alcove.width / 2, alcove.height, -(main.depth + alcove.depth / 2)]}
+            rotation={[Math.PI / 2, 0, 0]}
+          >
+            <planeGeometry args={[alcove.width, alcove.depth]} />
+            <meshStandardMaterial color={CEILING_COLOR} side={THREE.DoubleSide} />
+          </mesh>
+        </>
+      )}
 
       {/* ---- Walls ---- */}
 

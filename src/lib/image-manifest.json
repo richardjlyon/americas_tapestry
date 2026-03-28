@@ -6262,5 +6262,23 @@
     },
     "originalSize": 41964,
     "hash": "e3c6837a"
+  },
+  "/images/exhibitions/museum-work-culture.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/museum-work-culture-640w-7712f65c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/museum-work-culture-1024w-7712f65c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/museum-work-culture-1920w-7712f65c.webp"
+    },
+    "originalSize": 629385,
+    "hash": "7712f65c"
+  },
+  "/images/exhibitions/new-york-state-museum-albany.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/new-york-state-museum-albany-640w-cfd04298.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/new-york-state-museum-albany-1024w-cfd04298.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/new-york-state-museum-albany-1920w-cfd04298.webp"
+    },
+    "originalSize": 187377,
+    "hash": "cfd04298"
   }
 }

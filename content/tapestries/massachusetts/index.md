@@ -24,6 +24,6 @@ The Massachusetts panel pays tribute to the patriotic practice of chocolate maki
 
 Chocolate became both a practical necessity and a sign of allegiance to the revolutionary cause. Taxes imposed on imported goods leveraged "drinking chocolate" as the American alternative to British tea. As cacao beans were typically smuggled into North America by colonial merchants, tax was avoided. During the war, it was included in soldiers' rations to provide energy, nutrition, and comfort, serving as an edible morale booster for the Continental Army.
 
-Within the panel, Boston merchant Caleb Davis tends to his storefront while an enslaved man grinds chocolate on a matate, a stone used for grinding grain and seeds. Enslaved people were often trained to perform skilled trades such as chocolate making.
+Within the panel, Boston merchant Caleb Davis tends to his storefront while an enslaved man grinds chocolate on a metate, a stone used for grinding grain and seeds. Enslaved people were often trained to perform skilled trades such as chocolate making.
 
 The upper vignette depicts the loading of cacao beans on the Venezuela coast to be shipped to the colonies, while the lower motif illustrates chocolate being delivered to Fort Ticonderoga.
