@@ -20,6 +20,28 @@ export default async function ExhibitionsPage() {
             <ExhibitionCard key={exhibition.slug} exhibition={exhibition} />
           ))}
         </div>
+
+        <p className="text-center text-xl mt-12 w-full lg:w-2/3 mx-auto">
+          Additional confirmed venues include{' '}
+          <a
+            href="https://www.mdhistory.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold underline hover:opacity-80"
+          >
+            The Maryland Center For History And Culture
+          </a>{' '}
+          and{' '}
+          <a
+            href="https://www.atlantahistorycenter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold underline hover:opacity-80"
+          >
+            The Atlanta History Center
+          </a>
+          . Please revisit this page for further updates.
+        </p>
       </PageSection>
     </>
   );
