@@ -2,6 +2,7 @@
 name: "Linda M. Hartman"
 role: "Stitcher"
 state: "Pennsylvania"
+images: ["linda-m-hartman-work1.jpg", "linda-m-hartman-work2.jpg", "linda-m-hartman-work3.jpg", "linda-m-hartman-work4.jpg", "linda-m-hartman-work5.jpg"]
 ---
 
 Linda M. Hartman is an embroiderer who has contributed to the Connecticut, Massachusetts, New Hampshire, Pennsylvania, and Rhode Island tapestry panels. A resident of Glenshaw, Pennsylvania, she has been stitching for over 50 years. Linda learned to embroider probably from her mother when she was a young girl. Prior to joining America's Tapestry, she practiced cross stitch, canvaswork, needlepoint, and lace making.

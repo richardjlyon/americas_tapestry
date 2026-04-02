@@ -63,6 +63,9 @@ playwright/.cache/
 .vercel
 
 
+# Scratch/working files
+scratch/
+
 # AI
 #.claude/
 #PRPs/

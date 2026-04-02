@@ -2,6 +2,7 @@
 name: "Vicki Blanchard"
 role: "Stitcher"
 state: "New Hampshire"
+images: ["vicki-blanchard-work1.jpeg", "vicki-blanchard-work2.jpeg", "vicki-blanchard-work3.jpeg", "vicki-blanchard-work4.jpeg"]
 ---
 
 Vicki Blanchard is an embroiderer who has contributed to the Connecticut, Massachusetts, New Hampshire, and Rhode Island tapestry panels. A resident of Hillsborough, New Hampshire, she has been stitching on and off for 50 years since she was a teenager. Vicki learned needlework from her 4-H leader, Wendy Otterson. Prior to joining America's Tapestry, she practiced beading, quilting, surface embroidery including crewel, knitting, crochet, and rug hooking.

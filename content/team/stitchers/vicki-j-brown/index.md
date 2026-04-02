@@ -2,6 +2,7 @@
 name: "Vicki J. Brown"
 role: "Stitcher"
 state: "New Hampshire"
+images: ["vicki-j-brown-work1.jpg", "vicki-j-brown-work2.jpg", "vicki-j-brown-work3.jpg", "vicki-j-brown-work4.jpg", "vicki-j-brown-work5.jpg"]
 ---
 
 Vicki J. Brown is an embroiderer on the New Hampshire tapestry panel. A resident of East Kingston, New Hampshire, she has been stitching for over 50 years. Vicki's mother taught her basic embroidery stitches when she was in elementary school. She embroidered many pillowcases and dish towels before teaching herself more stitches from a Coats & Clark mini-book called "100 Embroidery Stitches," published in 1964, which she acquired in 1973 and still refers to today. Prior to joining America's Tapestry, she practiced surface embroidery including crewel and raised embroidery.

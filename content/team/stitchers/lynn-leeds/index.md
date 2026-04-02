@@ -2,6 +2,7 @@
 name: "Lynn Leeds"
 role: "Stitcher"
 state: "New Jersey"
+images: ["lynn-leeds-work1.jpeg", "lynn-leeds-work2.jpg", "lynn-leeds-work3.jpeg", "lynn-leeds-work4.jpg"]
 ---
 
 Lynn Leeds is an embroiderer on the New Jersey tapestry panel. A resident of Medford, New Jersey, she has been stitching for one to five years. Lynn learned her craft through YouTube tutorials and has practiced cross stitch, canvaswork, needlepoint, and quilting including piecework and applique. Her family lived in New Jersey before the Revolutionary War, giving her a personal connection to the state's history.

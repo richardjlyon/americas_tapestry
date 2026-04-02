@@ -2,6 +2,7 @@
 name: "Sherry Gould"
 role: "Stitcher"
 state: "New Hampshire"
+images: ["sherry-gould-work1.jpg"]
 ---
 
 Sherry Gould is an embroiderer who has contributed to the Massachusetts and New Hampshire tapestry panels. A resident of Warner, New Hampshire, she has been stitching for over 50 years. Sherry learned to cross stitch when she was younger by reading books and practicing. Prior to joining America's Tapestry, she practiced beading, cross stitch, quilting, knitting, crochet, and spinning wool, flax, and milkweed, as well as twining fabric from hand-spun fibers.

@@ -2,6 +2,7 @@
 name: "Laura Morrison"
 role: "Stitcher"
 state: "New Hampshire"
+images: ["laura-morrison-work1.jpg", "laura-morrison-work2.jpg", "laura-morrison-work3.jpg", "laura-morrison-work4.jpg", "laura-morrison-work5.jpg"]
 ---
 
 Laura Morrison is an embroiderer on the New Hampshire tapestry panel. A resident of Concord, New Hampshire, she has been stitching for over 30 years and is self-taught. Prior to joining America's Tapestry, Laura practiced cross stitch, surface embroidery including crewel, knitting, and crochet.
