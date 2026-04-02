@@ -6280,5 +6280,68 @@
     },
     "originalSize": 187377,
     "hash": "cfd04298"
+  },
+  "/images/team/stitchers/jill-johnson-mayes-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-work1-640w-4bf21b40.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-work1-1024w-4bf21b40.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-work1-1920w-4bf21b40.webp"
+    },
+    "originalSize": 3562758,
+    "hash": "4bf21b40"
+  },
+  "/images/team/stitchers/jill-johnson-mayes-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-work2-640w-2649917e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-work2-1024w-2649917e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-work2-1920w-2649917e.webp"
+    },
+    "originalSize": 195179,
+    "hash": "2649917e"
+  },
+  "/images/team/stitchers/jill-johnson-mayes-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-work3-640w-508c761f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-work3-1024w-508c761f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-work3-1920w-508c761f.webp"
+    },
+    "originalSize": 156647,
+    "hash": "508c761f"
+  },
+  "/images/team/stitchers/judy-laning-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-work1-640w-1b5a5f39.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-work1-1024w-1b5a5f39.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-work1-1920w-1b5a5f39.webp"
+    },
+    "originalSize": 3107905,
+    "hash": "1b5a5f39"
+  },
+  "/images/team/stitchers/judy-laning-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-work2-640w-cc94aa87.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-work2-1024w-cc94aa87.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-work2-1920w-cc94aa87.webp"
+    },
+    "originalSize": 1888393,
+    "hash": "cc94aa87"
+  },
+  "/images/team/stitchers/judy-laning.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-640w-87db9fe8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-1024w-87db9fe8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-1920w-87db9fe8.webp"
+    },
+    "originalSize": 387802,
+    "hash": "87db9fe8"
+  },
+  "/images/team/stitchers/regina-thek.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/regina-thek-640w-9c2ca9d3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/regina-thek-1024w-9c2ca9d3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/regina-thek-1920w-9c2ca9d3.webp"
+    },
+    "originalSize": 74930,
+    "hash": "9c2ca9d3"
   }
 }
