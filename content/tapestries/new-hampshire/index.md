@@ -18,6 +18,11 @@ timelineEvents:
   - date: "1788-06-21"
     title: "Ninth State to Ratify the Constitution"
     description: "New Hampshire became the ninth state to ratify the U.S. Constitution, providing the necessary majority to officially establish the United States government under the Constitution."
+resources:
+  - title: "New Hampshire America's Tapestry"
+    description: "A PDF document about the New Hampshire America's Tapestry."
+    kind: "PDF"
+    url: "new-hampshire-americas-tapestry.pdf"
 ---
 
 The New Hampshire panel depicts the state at the forefront of the independence movement.

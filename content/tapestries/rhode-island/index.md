@@ -18,11 +18,6 @@ timelineEvents:
   - date: "1790-05-29"
     title: "Rhode Island Joins the Union"
     description: "Rhode Island became the 13th and final original colony to ratify the Constitution and join the United States, after initially refusing due to concerns about federal power."
-resources:
-  - title: "Rhode Island Tapestry Tour Calendar"
-    description: "A PDF calendar listing the Rhode Island tapestry's tour dates."
-    kind: "PNG"
-    url: "rhode-island-tapestry-project-tour-calendar.png"
 ---
 
 The state panel highlights the 1st Rhode Island Regiment, one of the first American military units consisting of Black and Indigenous soldiers.
