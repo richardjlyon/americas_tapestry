@@ -23,6 +23,10 @@ resources:
     description: "A PDF document about the New Hampshire America's Tapestry."
     kind: "PDF"
     url: "new-hampshire-americas-tapestry.pdf"
+  - title: "Bradford Bridge Article"
+    description: "A PDF article about the New Hampshire volunteers in the Bradford Bridge."
+    kind: "PDF"
+    url: "bradford-bridge-article.pdf"
 ---
 
 The New Hampshire panel depicts the state at the forefront of the independence movement.
