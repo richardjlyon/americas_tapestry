@@ -51,6 +51,8 @@ state: string | string[]  # State assignment (single string or array)
 summary: string          # Brief description for listings
 order: number           # Display order within group
 imagePosition: string   # CSS object-position (e.g., "left center", "top")
+portrait: string        # Optional dedicated portrait image filename (under /images/team/[group]/); overrides images[0] and the {slug}.{ext} fallback for the primary display image only
+portraitPosition: string # CSS object-position for the portrait image; falls back to imagePosition if absent
 visible: boolean        # Hide from display (default: true)
 ---
 ```
@@ -98,6 +100,19 @@ images: string[]         # Optional array of image filenames (e.g., ['work1.jpg'
 - If `images` array is empty/undefined, falls back to single image pattern `{slug}.jpg`
 - Images should be placed in `/public/images/team/{group}/` directory
 - Use descriptive filenames: `{slug}-work{number}.{ext}` (e.g., `brunilda-rodriguez-work1.jpg`)
+
+#### Portrait Override
+
+```yaml
+portrait: string         # Optional dedicated portrait image filename
+portraitPosition: string # Optional CSS object-position for the portrait
+```
+
+- If `portrait` is set, it overrides `images[0]` and the `{slug}.{ext}` convention for the **primary display image only** — this includes the thumbnail in listings (grid variant), the single image on the member detail page, and the avatar on state/colony pages.
+- The `images[]` gallery (thumbnail strip and lightbox on the full member page) is **not** affected by `portrait` — galleries continue to iterate over `images[]` as usual.
+- Images should be placed in `/public/images/team/[group]/` (same directory as `images[]`).
+- `portraitPosition` controls cropping for the portrait image. If omitted, it falls back to `imagePosition`, and then to the component's default (`center`, or `top` on the full member page).
+- Does not apply to stitching groups (which use the `image` field) or override state-director `{member}-face.jpg` resolution elsewhere in the site.
 
 ### URLs
 - Always include protocol: `https://example.com` not `example.com`
