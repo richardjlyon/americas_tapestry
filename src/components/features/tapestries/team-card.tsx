@@ -34,6 +34,7 @@ export function TeamCard({
   };
 
   // Simplified function to get image source - single image per person
+  // Portrait field overrides the default {slug}.jpg when set.
   const getImageSrc = (member: TeamMember) => {
     // If image already failed, use placeholder
     if (failedImages[member.slug]) {
@@ -46,6 +47,11 @@ export function TeamCard({
         return `/images/team/${member.groupSlug}/${member['image']}`;
       }
       return personSvgFallback;
+    }
+
+    // Dedicated portrait overrides the {slug}.jpg convention for the primary thumbnail
+    if (member.portrait) {
+      return `/images/team/${member.groupSlug}/${member.portrait}`;
     }
 
     // All team images follow the nested directory structure that mirrors content organization
@@ -91,7 +97,9 @@ export function TeamCard({
                       sizes="(max-width: 768px) 128px, 128px"
                       className="object-cover"
                       style={{
-                        objectPosition: member.imagePosition || 'center',
+                        objectPosition: member.portrait
+                          ? (member.portraitPosition ?? member.imagePosition ?? 'center')
+                          : (member.imagePosition || 'center'),
                       }}
                       onError={() => handleImageError(member.slug)}
                     />

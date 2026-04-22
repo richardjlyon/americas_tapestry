@@ -26,11 +26,22 @@ export function MemberCard({
 }: MemberCardProps) {
   const placeholderPath = `/images/placeholders/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
 
+  const hasPortrait =
+    Boolean(member.portrait) && member.groupSlug !== 'stitching-groups';
+
   // Image handling supporting both single image and multiple images
   const getImageSrc = (imageIndex: number = 0) => {
     // For stitching groups, use the single image field if available
     if (member.groupSlug === 'stitching-groups' && member['image']) {
       return `/images/team/${member.groupSlug}/${member['image']}`;
+    }
+    // Dedicated portrait overrides images[0] / {slug}.{ext} for the primary image only
+    if (
+      imageIndex === 0 &&
+      member.portrait &&
+      member.groupSlug !== 'stitching-groups'
+    ) {
+      return `/images/team/${member.groupSlug}/${member.portrait}`;
     }
     // For other groups, use existing logic with images array
     const imageExtension =
@@ -133,7 +144,9 @@ export function MemberCard({
                 height={200}
                 className="object-contain max-w-full max-h-full transition-transform duration-500 hover:scale-105"
                 style={{
-                  objectPosition: member.imagePosition || 'center',
+                  objectPosition: hasPortrait
+                    ? (member.portraitPosition ?? member.imagePosition ?? 'center')
+                    : (member.imagePosition || 'center'),
                 }}
                 onError={handleImageError}
               />
@@ -145,7 +158,9 @@ export function MemberCard({
                 sizes={getImageSizes('thumbnail')}
                 className="object-cover object-center transition-transform duration-500 hover:scale-105"
                 style={{
-                  objectPosition: member.imagePosition || 'center',
+                  objectPosition: hasPortrait
+                    ? (member.portraitPosition ?? member.imagePosition ?? 'center')
+                    : (member.imagePosition || 'center'),
                 }}
                 onError={handleImageError}
               />
@@ -271,7 +286,9 @@ export function MemberCard({
                       sizes={getImageSizes('thumbnail')}
                       className="object-contain"
                       style={{
-                        objectPosition: member.imagePosition || 'center',
+                        objectPosition: hasPortrait
+                          ? (member.portraitPosition ?? member.imagePosition ?? 'center')
+                          : (member.imagePosition || 'center'),
                       }}
                       priority
                       onError={handleImageError}
@@ -343,7 +360,9 @@ export function MemberCard({
                           height={200}
                           className="object-contain max-w-full max-h-full"
                           style={{
-                            objectPosition: member.imagePosition || 'center',
+                            objectPosition: hasPortrait
+                              ? (member.portraitPosition ?? member.imagePosition ?? 'center')
+                              : (member.imagePosition || 'center'),
                           }}
                           priority
                           onError={handleImageError}
@@ -356,11 +375,13 @@ export function MemberCard({
                           sizes={getImageSizes('thumbnail')}
                           className="object-contain"
                           style={{
-                            objectPosition: member.imagePosition
-                              ? member.imagePosition
-                                  .replace(/center$/, 'top')
-                                  .replace(/bottom$/, 'top')
-                              : 'top',
+                            objectPosition: hasPortrait
+                              ? (member.portraitPosition ?? member.imagePosition ?? 'top')
+                              : (member.imagePosition
+                                  ? member.imagePosition
+                                      .replace(/center$/, 'top')
+                                      .replace(/bottom$/, 'top')
+                                  : 'top'),
                           }}
                           priority
                           onError={handleImageError}
@@ -379,7 +400,9 @@ export function MemberCard({
                       sizes={getImageSizes('thumbnail')}
                       className="object-cover"
                       style={{
-                        objectPosition: member.imagePosition || 'center',
+                        objectPosition: hasPortrait
+                          ? (member.portraitPosition ?? member.imagePosition ?? 'center')
+                          : (member.imagePosition || 'center'),
                       }}
                       onError={handleImageError}
                     />
@@ -467,7 +490,9 @@ export function MemberCard({
               sizes="64px"
               className="object-cover"
               style={{
-                objectPosition: member.imagePosition || 'center',
+                objectPosition: hasPortrait
+                  ? (member.portraitPosition ?? member.imagePosition ?? 'center')
+                  : (member.imagePosition || 'center'),
               }}
               onError={handleImageError}
             />

@@ -10,6 +10,8 @@ export interface TeamMember {
   content: string;
   groupSlug: string;
   imagePosition?: string; // Control image positioning (e.g., "center", "top", "left 30% center")
+  portrait?: string; // Optional dedicated portrait filename under /images/team/{groupSlug}/ — overrides images[0] and {slug}.{ext} for the primary display image only
+  portraitPosition?: string; // CSS object-position for the portrait image; falls back to imagePosition when absent
   state?: string; // Single state assignment
   states?: string[]; // Multiple state assignments
   moreInformation?: string;
