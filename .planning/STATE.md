@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-03-06)
 Phase: 1 of 5 (3D Foundation & Navigation)
 Plan: 2 of 2 in current phase
 Status: All plans complete, awaiting verification
-Last activity: 2026-03-07 -- Completed 01-02-PLAN.md (Gallery 7 room & navigation, human-verified)
+Last activity: 2026-04-22 - Completed quick task 260422-rdd: Add optional portrait and portraitPosition fields to team member frontmatter, and update rendering to use them as the primary/thumbnail image when set
 
 Progress: [##........] 20%
 
@@ -60,6 +60,12 @@ None yet.
 - ~~drei v9.x exact version needs verification~~ RESOLVED: upgraded to drei 10.7.7
 - ~~Three.js 0.170 compatibility with Turbopack~~ RESOLVED: React 19 + R3F 9 works with Turbopack in dev
 - ~~Vercel deploy compatibility~~ RESOLVED: Preview deploy verified working
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260422-rdd | Add optional portrait and portraitPosition fields to team member frontmatter, and update rendering to use them as the primary/thumbnail image when set | 2026-04-22 | 3864d3c | [260422-rdd-add-optional-portrait-and-portraitpositi](./quick/260422-rdd-add-optional-portrait-and-portraitpositi/) |
 
 ## Session Continuity
 
