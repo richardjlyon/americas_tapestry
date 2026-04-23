@@ -2,12 +2,8 @@
 name: "Jill Johnson-Martin"
 role: "Stitcher"
 state: "Virginia"
-images:
-  [
-    "jill-johnson-mayes-work1.jpg",
-    "jill-johnson-mayes-work2.jpg",
-    "jill-johnson-mayes-work3.jpg",
-  ]
+portrait: "jill-johnson-mayes-portrait.jpg"
+images: ["jill-johnson-mayes-work2.jpg", "jill-johnson-mayes-work3.jpg"]
 ---
 
 Jill Johnson-Martin is an embroiderer on the Virginia tapestry panel. A resident of Williamsburg, Virginia, she has been stitching since kindergarten. Jill learned to embroider in school in Stockholm, Sweden, where the Swedes taught every boy and girl how to sew, weave, and do handwork. Prior to joining America's Tapestry, she practiced cross stitch and rug stitching, and worked on a variety of projects including pillows and household items. She also sewed clothes and curtains.

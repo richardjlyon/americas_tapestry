@@ -2,7 +2,7 @@
 name: "Julianne Besznyak"
 role: "Stitcher"
 state: "Delaware"
-images: ["julianne-besznyak.jpeg"]
+portrait: "julianne-besznyak-portrait.jpeg"
 ---
 
 Julianne Besznyak is an embroiderer on the Delaware tapestry panel. A resident of Newark, DE, she has been stitching for over 50 years. Having learned embroidery through the Girl Scouts, Julianne has practiced cross stitch, quilting, knitting, and crochet, amongst other disciplines. While working on the panel, Julianne has primarily stitched using the straight stitch. Julianne was inspired to join our project after visiting Christmas in Odessa, where the Delaware panel was being embroidered. Julianne hopes that America's 250th anniversary celebration will unify our country.

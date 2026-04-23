@@ -2,7 +2,7 @@
 name: "Laurie Buchar"
 role: "Stitcher"
 state: "New Hampshire"
-images: ["laurie-buchar-work1.jpeg"]
+portrait: "laurie-buchar-portrait.jpeg"
 ---
 
 Laurie Buchar is an embroiderer on the New Hampshire tapestry panel. A resident of Bradford, New Hampshire, she has been stitching for less than a year, having learned from Connie Clark. Prior to joining America's Tapestry, Laurie practiced knitting.

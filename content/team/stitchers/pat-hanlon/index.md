@@ -2,7 +2,8 @@
 name: "Pat Hanlon"
 role: "Stitcher"
 state: "Connecticut"
-images: ["pat-hanlon-work1.jpeg", "pat-hanlon-work2.jpeg"]
+portrait: "pat-hanlon-portrait.jpeg"
+images: ["pat-hanlon-work1.jpeg"]
 ---
 
 Pat Hanlon is an embroiderer on the Connecticut tapestry panel. A resident of West Hartford, Connecticut for 35 years, she has been stitching for over 30 years after learning from a friend. Prior to joining America's Tapestry, Pat practiced cross stitch, quilting including piecework and applique, surface embroidery including crewel, knitting, and crochet.

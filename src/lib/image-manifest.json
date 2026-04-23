@@ -6775,5 +6775,212 @@
     },
     "originalSize": 837939,
     "hash": "90c4c1f8"
+  },
+  "/images/sponsors/nea/NEA_Logo.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sponsors/nea/NEA_Logo-640w-145b1185.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sponsors/nea/NEA_Logo-1024w-145b1185.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/sponsors/nea/NEA_Logo-1920w-145b1185.webp"
+    },
+    "originalSize": 33100,
+    "hash": "145b1185"
+  },
+  "/images/team/stitchers/cheryl-schwarz-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/cheryl-schwarz-portrait-640w-6be8f232.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/cheryl-schwarz-portrait-1024w-6be8f232.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/cheryl-schwarz-portrait-1920w-6be8f232.webp"
+    },
+    "originalSize": 213038,
+    "hash": "6be8f232"
+  },
+  "/images/team/stitchers/elle-sheaffer-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/elle-sheaffer-portrait-640w-5ce39aa9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/elle-sheaffer-portrait-1024w-5ce39aa9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/elle-sheaffer-portrait-1920w-5ce39aa9.webp"
+    },
+    "originalSize": 3438817,
+    "hash": "5ce39aa9"
+  },
+  "/images/team/stitchers/fran-roscello-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/fran-roscello-portrait-640w-721d8793.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/fran-roscello-portrait-1024w-721d8793.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/fran-roscello-portrait-1920w-721d8793.webp"
+    },
+    "originalSize": 322938,
+    "hash": "721d8793"
+  },
+  "/images/team/stitchers/ginger-iorizzo-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-portrait-640w-9847ce35.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-portrait-1024w-9847ce35.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/ginger-iorizzo-portrait-1920w-9847ce35.webp"
+    },
+    "originalSize": 954366,
+    "hash": "9847ce35"
+  },
+  "/images/team/stitchers/jill-johnson-mayes-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-portrait-640w-c65eaac4.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-portrait-1024w-c65eaac4.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jill-johnson-mayes-portrait-1920w-c65eaac4.webp"
+    },
+    "originalSize": 2855752,
+    "hash": "c65eaac4"
+  },
+  "/images/team/stitchers/judy-laning-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-portrait-640w-87db9fe8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-portrait-1024w-87db9fe8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/judy-laning-portrait-1920w-87db9fe8.webp"
+    },
+    "originalSize": 387802,
+    "hash": "87db9fe8"
+  },
+  "/images/team/stitchers/julianne-besznyak-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/julianne-besznyak-portrait-640w-0ca9f9a3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/julianne-besznyak-portrait-1024w-0ca9f9a3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/julianne-besznyak-portrait-1920w-0ca9f9a3.webp"
+    },
+    "originalSize": 1027741,
+    "hash": "0ca9f9a3"
+  },
+  "/images/team/stitchers/lauren-thie-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lauren-thie-portrait-640w-35c3754c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lauren-thie-portrait-1024w-35c3754c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lauren-thie-portrait-1920w-35c3754c.webp"
+    },
+    "originalSize": 177007,
+    "hash": "35c3754c"
+  },
+  "/images/team/stitchers/laurie-buchar-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/laurie-buchar-portrait-640w-f81276a8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/laurie-buchar-portrait-1024w-f81276a8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/laurie-buchar-portrait-1920w-f81276a8.webp"
+    },
+    "originalSize": 835139,
+    "hash": "f81276a8"
+  },
+  "/images/team/stitchers/lynn-leeds-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lynn-leeds-portrait-640w-d26e0e46.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lynn-leeds-portrait-1024w-d26e0e46.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lynn-leeds-portrait-1920w-d26e0e46.webp"
+    },
+    "originalSize": 833373,
+    "hash": "d26e0e46"
+  },
+  "/images/team/stitchers/margaret-baselice-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/margaret-baselice-portrait-640w-d5c617db.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/margaret-baselice-portrait-1024w-d5c617db.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/margaret-baselice-portrait-1920w-d5c617db.webp"
+    },
+    "originalSize": 299650,
+    "hash": "d5c617db"
+  },
+  "/images/team/stitchers/marianne-p-hearsey-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marianne-p-hearsey-portrait-640w-d23f8af8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marianne-p-hearsey-portrait-1024w-d23f8af8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marianne-p-hearsey-portrait-1920w-d23f8af8.webp"
+    },
+    "originalSize": 1461523,
+    "hash": "d23f8af8"
+  },
+  "/images/team/stitchers/marie-ditaranto-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marie-ditaranto-portrait-640w-2766a109.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marie-ditaranto-portrait-1024w-2766a109.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/marie-ditaranto-portrait-1920w-2766a109.webp"
+    },
+    "originalSize": 527550,
+    "hash": "2766a109"
+  },
+  "/images/team/stitchers/pat-hanlon-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/pat-hanlon-portrait-640w-27901a8c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/pat-hanlon-portrait-1024w-27901a8c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/pat-hanlon-portrait-1920w-27901a8c.webp"
+    },
+    "originalSize": 666385,
+    "hash": "27901a8c"
+  },
+  "/images/team/stitchers/patti-tideman-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/patti-tideman-portrait-640w-9148fd5d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/patti-tideman-portrait-1024w-9148fd5d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/patti-tideman-portrait-1920w-9148fd5d.webp"
+    },
+    "originalSize": 2516715,
+    "hash": "9148fd5d"
+  },
+  "/images/team/stitchers/regina-thek-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/regina-thek-portrait-640w-9c2ca9d3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/regina-thek-portrait-1024w-9c2ca9d3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/regina-thek-portrait-1920w-9c2ca9d3.webp"
+    },
+    "originalSize": 74930,
+    "hash": "9c2ca9d3"
+  },
+  "/images/team/stitchers/sarah-luginbuhl-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-portrait-640w-a913ea2b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-portrait-1024w-a913ea2b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-portrait-1920w-a913ea2b.webp"
+    },
+    "originalSize": 1663007,
+    "hash": "a913ea2b"
+  },
+  "/images/team/stitchers/thomas-e-shaw-gardner-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/thomas-e-shaw-gardner-portrait-640w-10f90fa3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/thomas-e-shaw-gardner-portrait-1024w-10f90fa3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/thomas-e-shaw-gardner-portrait-1920w-10f90fa3.webp"
+    },
+    "originalSize": 65035,
+    "hash": "10f90fa3"
+  },
+  "/images/team/stitchers/tracy-blanchard-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-portrait-640w-7b44a1c0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-portrait-1024w-7b44a1c0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/tracy-blanchard-portrait-1920w-7b44a1c0.webp"
+    },
+    "originalSize": 1550675,
+    "hash": "7b44a1c0"
+  },
+  "/images/team/stitchers/vicki-blanchard-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-blanchard-portrait-640w-0fcdcad0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-blanchard-portrait-1024w-0fcdcad0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-blanchard-portrait-1920w-0fcdcad0.webp"
+    },
+    "originalSize": 545886,
+    "hash": "0fcdcad0"
+  },
+  "/images/team/stitchers/vicki-j-brown-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-j-brown-portrait-640w-90c4c1f8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-j-brown-portrait-1024w-90c4c1f8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-j-brown-portrait-1920w-90c4c1f8.webp"
+    },
+    "originalSize": 837939,
+    "hash": "90c4c1f8"
+  },
+  "/images/team/stitchers/victoria-marston-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/victoria-marston-portrait-640w-c29aac50.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/victoria-marston-portrait-1024w-c29aac50.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/victoria-marston-portrait-1920w-c29aac50.webp"
+    },
+    "originalSize": 1075419,
+    "hash": "c29aac50"
   }
 }
