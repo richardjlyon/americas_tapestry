@@ -4,7 +4,7 @@ summary: Defending the Delaware Bay
 background_color: "bg-blue-800"
 audioDescription: "This audio description provides a detailed verbal account of the Delaware Tapestry, which depicts the state's early colonial history and its role as the first state to ratify the Constitution."
 colony: "DE"
-status: "In Production"
+status: "Finished"
 timelineEvents:
   - date: "1638-03-29"
     title: "New Sweden Colony Established"
