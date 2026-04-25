@@ -6982,5 +6982,59 @@
     },
     "originalSize": 1075419,
     "hash": "c29aac50"
+  },
+  "/images/team/stitching-groups/charlottes-web-chapter-image.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/charlottes-web-chapter-image-640w-1503e2df.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/charlottes-web-chapter-image-1024w-1503e2df.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/charlottes-web-chapter-image-1920w-1503e2df.webp"
+    },
+    "originalSize": 229887,
+    "hash": "1503e2df"
+  },
+  "/images/team/stitching-groups/river-hills-monday-stitchers-image.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/river-hills-monday-stitchers-image-640w-6aa0cb36.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/river-hills-monday-stitchers-image-1024w-6aa0cb36.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/river-hills-monday-stitchers-image-1920w-6aa0cb36.webp"
+    },
+    "originalSize": 185438,
+    "hash": "6aa0cb36"
+  },
+  "/images/team/stitching-groups/southminster-image.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/southminster-image-640w-2ea30548.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/southminster-image-1024w-2ea30548.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/southminster-image-1920w-2ea30548.webp"
+    },
+    "originalSize": 118327,
+    "hash": "2ea30548"
+  },
+  "/images/team/stitching-groups/tribal-gathering-image.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/tribal-gathering-image-640w-b4115f6e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/tribal-gathering-image-1024w-b4115f6e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/tribal-gathering-image-1920w-b4115f6e.webp"
+    },
+    "originalSize": 190881,
+    "hash": "b4115f6e"
+  },
+  "/images/team/stitching-groups/usc-native-american-studies-center-image.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/usc-native-american-studies-center-image-640w-8a2fde66.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/usc-native-american-studies-center-image-1024w-8a2fde66.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/usc-native-american-studies-center-image-1920w-8a2fde66.webp"
+    },
+    "originalSize": 249504,
+    "hash": "8a2fde66"
+  },
+  "/images/team/stitching-groups/york-county-image.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/york-county-image-640w-e604d60a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/york-county-image-1024w-e604d60a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitching-groups/york-county-image-1920w-e604d60a.webp"
+    },
+    "originalSize": 150166,
+    "hash": "e604d60a"
   }
 }
