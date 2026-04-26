@@ -7198,5 +7198,176 @@
     },
     "originalSize": 1547122,
     "hash": "5bc7289c"
+  },
+  "/images/team/stitchers/annelies-van-der-wateren-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-portrait-640w-9d09a612.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-portrait-1024w-9d09a612.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-portrait-1920w-9d09a612.webp"
+    },
+    "originalSize": 343504,
+    "hash": "9d09a612"
+  },
+  "/images/team/stitchers/annelies-van-der-wateren-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-work1-640w-50ccb5af.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-work1-1024w-50ccb5af.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-work1-1920w-50ccb5af.webp"
+    },
+    "originalSize": 354725,
+    "hash": "50ccb5af"
+  },
+  "/images/team/stitchers/annelies-van-der-wateren-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-work2-640w-0e449ef0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-work2-1024w-0e449ef0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-work2-1920w-0e449ef0.webp"
+    },
+    "originalSize": 308143,
+    "hash": "0e449ef0"
+  },
+  "/images/team/stitchers/annelies-van-der-wateren-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-work3-640w-09c1cae1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-work3-1024w-09c1cae1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/annelies-van-der-wateren-work3-1920w-09c1cae1.webp"
+    },
+    "originalSize": 321607,
+    "hash": "09c1cae1"
+  },
+  "/images/team/stitchers/heidi-levesque-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work1-640w-8f324215.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work1-1024w-8f324215.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work1-1920w-8f324215.webp"
+    },
+    "originalSize": 1029728,
+    "hash": "8f324215"
+  },
+  "/images/team/stitchers/heidi-levesque-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work2-640w-4caa37bf.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work2-1024w-4caa37bf.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work2-1920w-4caa37bf.webp"
+    },
+    "originalSize": 937205,
+    "hash": "4caa37bf"
+  },
+  "/images/team/stitchers/kimberly-a-whitworth-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-portrait-640w-028f51e5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-portrait-1024w-028f51e5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-portrait-1920w-028f51e5.webp"
+    },
+    "originalSize": 309689,
+    "hash": "028f51e5"
+  },
+  "/images/team/stitchers/kimberly-a-whitworth-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work1-640w-3c8cb979.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work1-1024w-3c8cb979.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work1-1920w-3c8cb979.webp"
+    },
+    "originalSize": 576255,
+    "hash": "3c8cb979"
+  },
+  "/images/team/stitchers/kimberly-a-whitworth-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work2-640w-5e863b14.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work2-1024w-5e863b14.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work2-1920w-5e863b14.webp"
+    },
+    "originalSize": 401037,
+    "hash": "5e863b14"
+  },
+  "/images/team/stitchers/lisa-duffin-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lisa-duffin-portrait-640w-32ee9336.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lisa-duffin-portrait-1024w-32ee9336.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lisa-duffin-portrait-1920w-32ee9336.webp"
+    },
+    "originalSize": 88286,
+    "hash": "32ee9336"
+  },
+  "/images/team/stitchers/lisa-duffin-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lisa-duffin-work1-640w-4f2b563e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lisa-duffin-work1-1024w-4f2b563e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lisa-duffin-work1-1920w-4f2b563e.webp"
+    },
+    "originalSize": 73593,
+    "hash": "4f2b563e"
+  },
+  "/images/team/stitchers/lisa-duffin-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lisa-duffin-work2-640w-43894a4c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lisa-duffin-work2-1024w-43894a4c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/lisa-duffin-work2-1920w-43894a4c.webp"
+    },
+    "originalSize": 78852,
+    "hash": "43894a4c"
+  },
+  "/images/team/stitchers/violet-anderson-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/violet-anderson-work1-640w-67fbdfe7.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/violet-anderson-work1-1024w-67fbdfe7.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/violet-anderson-work1-1920w-67fbdfe7.webp"
+    },
+    "originalSize": 763075,
+    "hash": "67fbdfe7"
+  },
+  "/images/team/stitchers/violet-anderson-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/violet-anderson-work2-640w-598a8e1d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/violet-anderson-work2-1024w-598a8e1d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/violet-anderson-work2-1920w-598a8e1d.webp"
+    },
+    "originalSize": 794993,
+    "hash": "598a8e1d"
+  },
+  "/images/team/stitchers/violet-anderson-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/violet-anderson-work3-640w-795905d2.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/violet-anderson-work3-1024w-795905d2.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/violet-anderson-work3-1920w-795905d2.webp"
+    },
+    "originalSize": 760890,
+    "hash": "795905d2"
+  },
+  "/images/team/stitchers/erin-vogel-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work1-640w-cc754dff.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work1-1024w-cc754dff.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work1-1920w-cc754dff.webp"
+    },
+    "originalSize": 424244,
+    "hash": "cc754dff"
+  },
+  "/images/team/stitchers/erin-vogel-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work2-640w-529b264a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work2-1024w-529b264a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work2-1920w-529b264a.webp"
+    },
+    "originalSize": 771030,
+    "hash": "529b264a"
+  },
+  "/images/team/stitchers/erin-vogel-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work3-640w-9099c032.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work3-1024w-9099c032.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work3-1920w-9099c032.webp"
+    },
+    "originalSize": 782226,
+    "hash": "9099c032"
+  },
+  "/images/team/stitchers/erin-vogel-work4.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work4-640w-33d0f1ed.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work4-1024w-33d0f1ed.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/erin-vogel-work4-1920w-33d0f1ed.webp"
+    },
+    "originalSize": 698374,
+    "hash": "33d0f1ed"
   }
 }
