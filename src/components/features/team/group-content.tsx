@@ -23,8 +23,8 @@ export function GroupContent({ group, members }: GroupContentProps) {
         {group.longDescription || group.description}
       </div>
 
-      {/* Show questionnaire section only for stitching groups */}
-      {group.slug === 'stitching-groups' && <QuestionnaireSection />}
+      {/* Show questionnaire section only for stitchers */}
+      {group.slug === 'stitchers' && <QuestionnaireSection />}
 
       {visibleMembers.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
