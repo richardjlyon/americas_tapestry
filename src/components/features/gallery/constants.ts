@@ -238,7 +238,7 @@ export const TAPESTRY_PLACEMENTS: TapestryPlacement[] = [
   {
     slug: 'virginia',
     name: 'Virginia',
-    imagePath: '/images/tapestries/virginia/viginia-tapestry-main-1024w.jpg',
+    imagePath: '/images/tapestries/virginia/virginia-tapestry-main-1024w.jpg',
     position: [6.5, 5.0, -39.04],
     rotation: [0, 0, 0],
     displayWidth: 3.33,

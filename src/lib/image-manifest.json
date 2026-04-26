@@ -2348,114 +2348,6 @@
     "originalSize": 124894,
     "hash": "1a25f39c"
   },
-  "/images/tapestries/virginia/viginia-tapestry-main-1024w.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1024w-640w-7be5e1ec.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1024w-1024w-7be5e1ec.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1024w-1920w-7be5e1ec.webp"
-    },
-    "originalSize": 290148,
-    "hash": "7be5e1ec"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-main-1024w.webp": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1024w-640w-b7fc5e2d.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1024w-1024w-b7fc5e2d.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1024w-1920w-b7fc5e2d.webp"
-    },
-    "originalSize": 258290,
-    "hash": "b7fc5e2d"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-main-1920w.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1920w-640w-8077981d.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1920w-1024w-8077981d.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1920w-1920w-8077981d.webp"
-    },
-    "originalSize": 784166,
-    "hash": "8077981d"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-main-1920w.webp": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1920w-640w-dec41fc3.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1920w-1024w-dec41fc3.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-1920w-1920w-dec41fc3.webp"
-    },
-    "originalSize": 656094,
-    "hash": "dec41fc3"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-main-2560w.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-2560w-640w-08940b1f.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-2560w-1024w-08940b1f.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-2560w-1920w-08940b1f.webp"
-    },
-    "originalSize": 1205888,
-    "hash": "08940b1f"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-main-2560w.webp": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-2560w-640w-f59b836f.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-2560w-1024w-f59b836f.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-2560w-1920w-f59b836f.webp"
-    },
-    "originalSize": 964084,
-    "hash": "f59b836f"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-main-640w.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-640w-640w-40ef7551.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-640w-1024w-40ef7551.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-640w-1920w-40ef7551.webp"
-    },
-    "originalSize": 135196,
-    "hash": "40ef7551"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-main-640w.webp": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-640w-640w-b7ca4222.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-640w-1024w-b7ca4222.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-main-640w-1920w-b7ca4222.webp"
-    },
-    "originalSize": 129020,
-    "hash": "b7ca4222"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-thumbnail-1024w.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-1024w-640w-6efee694.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-1024w-1024w-6efee694.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-1024w-1920w-6efee694.webp"
-    },
-    "originalSize": 152418,
-    "hash": "6efee694"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-thumbnail-1024w.webp": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-1024w-640w-f8db1d4e.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-1024w-1024w-f8db1d4e.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-1024w-1920w-f8db1d4e.webp"
-    },
-    "originalSize": 123332,
-    "hash": "f8db1d4e"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-thumbnail-640w.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-640w-640w-9badf648.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-640w-1024w-9badf648.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-640w-1920w-9badf648.webp"
-    },
-    "originalSize": 75523,
-    "hash": "9badf648"
-  },
-  "/images/tapestries/virginia/viginia-tapestry-thumbnail-640w.webp": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-640w-640w-7397aefa.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-640w-1024w-7397aefa.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/viginia-tapestry-thumbnail-640w-1920w-7397aefa.webp"
-    },
-    "originalSize": 64710,
-    "hash": "7397aefa"
-  },
   "/images/team/250-commission/connecticut.jpg": {
     "variants": {
       "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/250-commission/connecticut-640w-2a7100bc.webp",
@@ -7036,5 +6928,113 @@
     },
     "originalSize": 150166,
     "hash": "e604d60a"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-main-1024w.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1024w-640w-7be5e1ec.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1024w-1024w-7be5e1ec.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1024w-1920w-7be5e1ec.webp"
+    },
+    "originalSize": 290148,
+    "hash": "7be5e1ec"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-main-1024w.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1024w-640w-b7fc5e2d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1024w-1024w-b7fc5e2d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1024w-1920w-b7fc5e2d.webp"
+    },
+    "originalSize": 258290,
+    "hash": "b7fc5e2d"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-main-1920w.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-640w-8077981d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1024w-8077981d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1920w-8077981d.webp"
+    },
+    "originalSize": 784166,
+    "hash": "8077981d"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-main-1920w.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-640w-dec41fc3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1024w-dec41fc3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1920w-dec41fc3.webp"
+    },
+    "originalSize": 656094,
+    "hash": "dec41fc3"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-main-2560w.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-640w-08940b1f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1024w-08940b1f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1920w-08940b1f.webp"
+    },
+    "originalSize": 1205888,
+    "hash": "08940b1f"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-main-2560w.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-640w-f59b836f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1024w-f59b836f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1920w-f59b836f.webp"
+    },
+    "originalSize": 964084,
+    "hash": "f59b836f"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-main-640w.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-640w-640w-40ef7551.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-640w-1024w-40ef7551.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-640w-1920w-40ef7551.webp"
+    },
+    "originalSize": 135196,
+    "hash": "40ef7551"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-main-640w.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-640w-640w-b7ca4222.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-640w-1024w-b7ca4222.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-640w-1920w-b7ca4222.webp"
+    },
+    "originalSize": 129020,
+    "hash": "b7ca4222"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-thumbnail-1024w.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-1024w-640w-6efee694.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-1024w-1024w-6efee694.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-1024w-1920w-6efee694.webp"
+    },
+    "originalSize": 152418,
+    "hash": "6efee694"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-thumbnail-1024w.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-1024w-640w-f8db1d4e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-1024w-1024w-f8db1d4e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-1024w-1920w-f8db1d4e.webp"
+    },
+    "originalSize": 123332,
+    "hash": "f8db1d4e"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-thumbnail-640w.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-640w-640w-9badf648.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-640w-1024w-9badf648.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-640w-1920w-9badf648.webp"
+    },
+    "originalSize": 75523,
+    "hash": "9badf648"
+  },
+  "/images/tapestries/virginia/virginia-tapestry-thumbnail-640w.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-640w-640w-7397aefa.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-640w-1024w-7397aefa.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-thumbnail-640w-1920w-7397aefa.webp"
+    },
+    "originalSize": 64710,
+    "hash": "7397aefa"
   }
 }
