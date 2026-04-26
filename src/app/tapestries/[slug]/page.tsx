@@ -80,6 +80,7 @@ export default async function TapestryPage({
     historicalPartners,
     illustrators,
     stitchingGroups,
+    stitchers,
     commissionPartners,
     stitchingVenues,
   } = teamMembers;
@@ -88,7 +89,8 @@ export default async function TapestryPage({
     stateDirectors?.length > 0 ||
     historicalPartners?.length > 0 ||
     illustrators?.length > 0 ||
-    stitchingGroups?.length > 0;
+    stitchingGroups?.length > 0 ||
+    stitchers?.length > 0;
 
   const hasCommissionPartner = commissionPartners?.length > 0;
   const hasStitchingVenues = stitchingVenues?.length > 0;
@@ -188,6 +190,7 @@ export default async function TapestryPage({
               historicalPartners={historicalPartners}
               illustrators={illustrators}
               stitchingGroups={stitchingGroups}
+              stitchers={stitchers}
             />
           </div>
         )}

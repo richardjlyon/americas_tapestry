@@ -268,6 +268,12 @@ export async function getTeamMembersByState(stateName: string) {
     (member) => member.state === stateName,
   );
 
+  // Find individual stitchers assigned to this state
+  const stitchersAll = await getTeamMembersByGroup('stitchers');
+  const stitchers = stitchersAll.filter(
+    (member) => member.state === stateName,
+  );
+
   // Find 250 commission partners
   const commissionPartnersAll = await getTeamMembersByGroup('250-commission');
   const commissionPartners = commissionPartnersAll.filter(
@@ -285,6 +291,7 @@ export async function getTeamMembersByState(stateName: string) {
     historicalPartners,
     illustrators,
     stitchingGroups,
+    stitchers,
     commissionPartners,
     stitchingVenues,
   };

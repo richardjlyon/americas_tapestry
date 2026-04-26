@@ -13,6 +13,7 @@ interface TeamCardProps {
   illustrators?: TeamMember[] | null;
   stateDirectors?: TeamMember[] | null;
   stitchingGroups?: TeamMember[] | null;
+  stitchers?: TeamMember[] | null;
 }
 
 export function TeamCard({
@@ -21,6 +22,7 @@ export function TeamCard({
   illustrators,
   stateDirectors,
   stitchingGroups,
+  stitchers,
 }: TeamCardProps) {
   // Track image load failures
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
@@ -61,10 +63,11 @@ export function TeamCard({
 
   // Flatten all team members into a single array - keep it simple
   const teamMembers = [
-    ...(Array.isArray(historicalPartners) ? historicalPartners : []),
-    ...(Array.isArray(illustrators) ? illustrators : []),
     ...(Array.isArray(stateDirectors) ? stateDirectors : []),
+    ...(Array.isArray(illustrators) ? illustrators : []),
+    ...(Array.isArray(historicalPartners) ? historicalPartners : []),
     ...(Array.isArray(stitchingGroups) ? stitchingGroups : []),
+    ...(Array.isArray(stitchers) ? stitchers : []),
   ].filter(Boolean);
 
   // If no team members, don't render anything
