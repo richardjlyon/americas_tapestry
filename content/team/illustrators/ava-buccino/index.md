@@ -12,6 +12,3 @@ and the collection and study of insects!
 
 Check out their work:
 [https://avabuccino.myportfolio.com/](https://avabuccino.myportfolio.com/)
-
-Follow them at:
-[https://www.instagram.com/ava.buccino/](https://www.instagram.com/ava.buccino/)
