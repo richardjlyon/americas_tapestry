@@ -4,7 +4,7 @@ summary: Fraunces Tavern - Birch Trials & Freedom
 background_color: "bg-orange-900"
 audioDescription: "This audio description narrates the details of the New York Tapestry, which depicts the state's evolution from Dutch colony to British possession to American state, and its emergence as a center of commerce and immigration."
 colony: "NY"
-status: "In Production"
+status: "Finished"
 timelineEvents:
   - date: "1624-05-01"
     title: "New Amsterdam Founded"
