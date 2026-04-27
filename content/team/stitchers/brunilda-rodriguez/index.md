@@ -2,6 +2,7 @@
 name: "Brunilda Rodriguez"
 role: "Stitcher"
 state: "New Jersey"
+portrait: "brunilda-rodriguez-portrait.jpeg"
 images: ["brunilda-rodriguez-work1.jpg", "brunilda-rodriguez-work2.jpg", "brunilda-rodriguez-work3.jpg"]
 ---
 

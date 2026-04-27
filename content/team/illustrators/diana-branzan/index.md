@@ -10,5 +10,5 @@ She is inspired by small daily moments from her walks, children's picture books,
 and vintage band posters. Her work ranges from children's media to editorial 
 illustration and surface design. Diana's work has been recognized by the Society of Illustrators. 
 
-website: https://dianabranzan.com
+website: [dianabranzan.com](https://dianabranzan.com)
 instagram: @dibranzan

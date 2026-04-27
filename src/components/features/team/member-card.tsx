@@ -16,6 +16,7 @@ interface MemberCardProps {
   variant?: 'grid' | 'full' | 'simple';
   width?: 'full' | 'two-thirds' | 'half';
   className?: string;
+  contentHtml?: string;
 }
 
 export function MemberCard({
@@ -23,6 +24,7 @@ export function MemberCard({
   variant = 'grid',
   width = 'two-thirds',
   className,
+  contentHtml: initialContentHtml,
 }: MemberCardProps) {
   const placeholderPath = `/images/placeholders/placeholder-state-director.svg?height=600&width=450&text=${encodeURIComponent(member.name)}`;
 
@@ -67,7 +69,7 @@ export function MemberCard({
   const teamImagePath = shouldUseImage ? getImageSrc() : placeholderPath;
   const [imgSrc, setImgSrc] = useState<string>(teamImagePath);
   const [imgError, setImgError] = useState(false);
-  const [contentHtml, setContentHtml] = useState('');
+  const [contentHtml, setContentHtml] = useState(initialContentHtml ?? '');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -90,8 +92,10 @@ export function MemberCard({
     }
   };
 
-  // Process markdown content
+  // Process markdown content client-side only when no pre-rendered HTML was provided
   useEffect(() => {
+    if (initialContentHtml !== undefined) return;
+
     const processContent = async () => {
       const contentToProcess =
         variant === 'full' ? member.content : member.content.split('\n\n')[0];
@@ -108,7 +112,7 @@ export function MemberCard({
     };
 
     processContent();
-  }, [member.content, variant]);
+  }, [member.content, variant, initialContentHtml]);
 
   // Grid variant (similar to TeamMemberCard)
   if (variant === 'grid') {

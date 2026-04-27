@@ -17,3 +17,5 @@ where he assisted on an exhibition in the Borders Region of Scotland,
 traveled to London to work on a period film set, and examined diaries
 at the archives of the University of Georgia. Stefan is excited to see
 where his work takes him next.
+
+To find out more abour Stefan's work, visit [Stefan Romero Design](https://www.sromerodesign.com).

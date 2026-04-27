@@ -1,6 +1,6 @@
 ---
 name: "Becky Gutin"
-role: "Co-State Director & Stitcher"
+role: "Stitcher"
 state: "Delaware"
 ---
 

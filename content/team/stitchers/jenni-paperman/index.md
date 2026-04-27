@@ -1,6 +1,6 @@
 ---
 name: "Jenni Paperman"
-role: "New York Panel Director & Stitcher"
+role: "Stitcher"
 state: "New York"
 ---
 

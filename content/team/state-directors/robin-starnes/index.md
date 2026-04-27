@@ -3,6 +3,7 @@ name: "Robin Starnes"
 role: "State Director"
 state: "Georgia"
 summary: "-"
+portrait: "robin-starnes-portrait.jpg"
 ---
 
 Robin Starnes is a member of the Dogwood Chapter of EGA and

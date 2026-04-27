@@ -7369,5 +7369,23 @@
     },
     "originalSize": 698374,
     "hash": "33d0f1ed"
+  },
+  "/images/team/state-directors/robin-starnes-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/robin-starnes-portrait-640w-ecb67a1f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/robin-starnes-portrait-1024w-ecb67a1f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/robin-starnes-portrait-1920w-ecb67a1f.webp"
+    },
+    "originalSize": 1423773,
+    "hash": "ecb67a1f"
+  },
+  "/images/team/stitchers/brunilda-rodriguez-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brunilda-rodriguez-portrait-640w-a7a6bbfe.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brunilda-rodriguez-portrait-1024w-a7a6bbfe.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brunilda-rodriguez-portrait-1920w-a7a6bbfe.webp"
+    },
+    "originalSize": 87816,
+    "hash": "a7a6bbfe"
   }
 }

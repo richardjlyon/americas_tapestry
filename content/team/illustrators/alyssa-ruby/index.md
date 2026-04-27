@@ -23,4 +23,4 @@ utilizes Adobe Photoshop to create custom digital murals that are then
 printed on a large scale and installed.
 
 You can find more of her art and installation work at her website here:
-https://www.alyssaruby.com, and her instagram @bluebunnyruby.
+[alyssaruby.com](https://www.alyssaruby.com), and her instagram @bluebunnyruby.
