@@ -7387,5 +7387,167 @@
     },
     "originalSize": 87816,
     "hash": "a7a6bbfe"
+  },
+  "/images/team/stitchers/brenda-jordan-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-portrait-640w-ebeb8760.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-portrait-1024w-ebeb8760.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-portrait-1920w-ebeb8760.webp"
+    },
+    "originalSize": 108644,
+    "hash": "ebeb8760"
+  },
+  "/images/team/stitchers/brenda-jordan-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-work1-640w-b0d619cf.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-work1-1024w-b0d619cf.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-work1-1920w-b0d619cf.webp"
+    },
+    "originalSize": 784007,
+    "hash": "b0d619cf"
+  },
+  "/images/team/stitchers/brenda-jordan-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-work2-640w-c60f19a5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-work2-1024w-c60f19a5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-work2-1920w-c60f19a5.webp"
+    },
+    "originalSize": 300564,
+    "hash": "c60f19a5"
+  },
+  "/images/team/stitchers/brenda-jordan-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-work3-640w-b0931d28.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-work3-1024w-b0931d28.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/brenda-jordan-work3-1920w-b0931d28.webp"
+    },
+    "originalSize": 444543,
+    "hash": "b0931d28"
+  },
+  "/images/team/stitchers/dorothy-waits-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/dorothy-waits-portrait-640w-77e59eb1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/dorothy-waits-portrait-1024w-77e59eb1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/dorothy-waits-portrait-1920w-77e59eb1.webp"
+    },
+    "originalSize": 131413,
+    "hash": "77e59eb1"
+  },
+  "/images/team/stitchers/heidi-levesque-work3.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work3-640w-1bf4ce8c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work3-1024w-1bf4ce8c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work3-1920w-1bf4ce8c.webp"
+    },
+    "originalSize": 3164099,
+    "hash": "1bf4ce8c"
+  },
+  "/images/team/stitchers/heidi-levesque-work4.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work4-640w-400297e5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work4-1024w-400297e5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work4-1920w-400297e5.webp"
+    },
+    "originalSize": 2774288,
+    "hash": "400297e5"
+  },
+  "/images/team/stitchers/heidi-levesque-work5.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work5-640w-f02502f0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work5-1024w-f02502f0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work5-1920w-f02502f0.webp"
+    },
+    "originalSize": 3559412,
+    "hash": "f02502f0"
+  },
+  "/images/team/stitchers/heidi-levesque-work6.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work6-640w-bcf2eeb3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work6-1024w-bcf2eeb3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work6-1920w-bcf2eeb3.webp"
+    },
+    "originalSize": 2029109,
+    "hash": "bcf2eeb3"
+  },
+  "/images/team/stitchers/heidi-levesque-work7.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work7-640w-71401708.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work7-1024w-71401708.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/heidi-levesque-work7-1920w-71401708.webp"
+    },
+    "originalSize": 2509716,
+    "hash": "71401708"
+  },
+  "/images/team/stitchers/kimberly-a-whitworth-work3.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work3-640w-98880a6d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work3-1024w-98880a6d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work3-1920w-98880a6d.webp"
+    },
+    "originalSize": 670945,
+    "hash": "98880a6d"
+  },
+  "/images/team/stitchers/kimberly-a-whitworth-work4.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work4-640w-af610fdb.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work4-1024w-af610fdb.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/kimberly-a-whitworth-work4-1920w-af610fdb.webp"
+    },
+    "originalSize": 467583,
+    "hash": "af610fdb"
+  },
+  "/images/team/stitchers/randy-maynor-portrait.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/randy-maynor-portrait-640w-049b9932.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/randy-maynor-portrait-1024w-049b9932.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/randy-maynor-portrait-1920w-049b9932.webp"
+    },
+    "originalSize": 2373817,
+    "hash": "049b9932"
+  },
+  "/images/team/stitchers/vicki-coco-portrait.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-portrait-640w-5b8349e4.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-portrait-1024w-5b8349e4.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-portrait-1920w-5b8349e4.webp"
+    },
+    "originalSize": 103460,
+    "hash": "5b8349e4"
+  },
+  "/images/team/stitchers/vicki-coco-work1.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work1-640w-1bd54c59.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work1-1024w-1bd54c59.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work1-1920w-1bd54c59.webp"
+    },
+    "originalSize": 3040419,
+    "hash": "1bd54c59"
+  },
+  "/images/team/stitchers/vicki-coco-work2.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work2-640w-12c26c09.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work2-1024w-12c26c09.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work2-1920w-12c26c09.webp"
+    },
+    "originalSize": 4280300,
+    "hash": "12c26c09"
+  },
+  "/images/team/stitchers/vicki-coco-work3.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work3-640w-3f1eea07.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work3-1024w-3f1eea07.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work3-1920w-3f1eea07.webp"
+    },
+    "originalSize": 4178213,
+    "hash": "3f1eea07"
+  },
+  "/images/team/stitchers/vicki-coco-work4.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work4-640w-1cbf054a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work4-1024w-1cbf054a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/vicki-coco-work4-1920w-1cbf054a.webp"
+    },
+    "originalSize": 3330774,
+    "hash": "1cbf054a"
   }
 }
