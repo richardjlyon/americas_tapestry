@@ -7549,5 +7549,149 @@
     },
     "originalSize": 3330774,
     "hash": "1cbf054a"
+  },
+  "/images/team/historical-partners/maryland-state-archives.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/historical-partners/maryland-state-archives-640w-3a1ff1e2.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/historical-partners/maryland-state-archives-1024w-3a1ff1e2.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/historical-partners/maryland-state-archives-1920w-3a1ff1e2.webp"
+    },
+    "originalSize": 2326404,
+    "hash": "3a1ff1e2"
+  },
+  "/images/team/state-directors/michelle-mcpheron.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/michelle-mcpheron-640w-2e6fcccc.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/michelle-mcpheron-1024w-2e6fcccc.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/michelle-mcpheron-1920w-2e6fcccc.webp"
+    },
+    "originalSize": 121622,
+    "hash": "2e6fcccc"
+  },
+  "/images/news/2026-05/01.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/01-640w-060849a0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/01-1024w-060849a0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/01-1920w-060849a0.webp"
+    },
+    "originalSize": 1357954,
+    "hash": "060849a0"
+  },
+  "/images/news/2026-05/02.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/02-640w-25b4f6cf.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/02-1024w-25b4f6cf.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/02-1920w-25b4f6cf.webp"
+    },
+    "originalSize": 464440,
+    "hash": "25b4f6cf"
+  },
+  "/images/news/2026-05/03.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/03-640w-f3a21bd9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/03-1024w-f3a21bd9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/03-1920w-f3a21bd9.webp"
+    },
+    "originalSize": 2019817,
+    "hash": "f3a21bd9"
+  },
+  "/images/news/2026-05/04.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/04-640w-6b744c5b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/04-1024w-6b744c5b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/04-1920w-6b744c5b.webp"
+    },
+    "originalSize": 185956,
+    "hash": "6b744c5b"
+  },
+  "/images/news/2026-05/05.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/05-640w-c06b271d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/05-1024w-c06b271d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/05-1920w-c06b271d.webp"
+    },
+    "originalSize": 130664,
+    "hash": "c06b271d"
+  },
+  "/images/news/2026-05/06.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/06-640w-9335103e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/06-1024w-9335103e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/06-1920w-9335103e.webp"
+    },
+    "originalSize": 1669984,
+    "hash": "9335103e"
+  },
+  "/images/news/2026-05/07.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/07-640w-3d55ee8b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/07-1024w-3d55ee8b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/07-1920w-3d55ee8b.webp"
+    },
+    "originalSize": 1326038,
+    "hash": "3d55ee8b"
+  },
+  "/images/news/2026-05/08.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/08-640w-d98a3922.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/08-1024w-d98a3922.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/08-1920w-d98a3922.webp"
+    },
+    "originalSize": 1945036,
+    "hash": "d98a3922"
+  },
+  "/images/news/2026-05/09.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/09-640w-b4a94787.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/09-1024w-b4a94787.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/09-1920w-b4a94787.webp"
+    },
+    "originalSize": 2893454,
+    "hash": "b4a94787"
+  },
+  "/images/news/2026-05/10.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/10-640w-a308664a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/10-1024w-a308664a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/10-1920w-a308664a.webp"
+    },
+    "originalSize": 2107558,
+    "hash": "a308664a"
+  },
+  "/images/news/2026-05/11.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/11-640w-233b070e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/11-1024w-233b070e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/11-1920w-233b070e.webp"
+    },
+    "originalSize": 1586318,
+    "hash": "233b070e"
+  },
+  "/images/news/2026-05/12.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/12-640w-40404726.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/12-1024w-40404726.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/12-1920w-40404726.webp"
+    },
+    "originalSize": 1269051,
+    "hash": "40404726"
+  },
+  "/images/news/2026-05/13.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/13-640w-84428313.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/13-1024w-84428313.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/13-1920w-84428313.webp"
+    },
+    "originalSize": 2058745,
+    "hash": "84428313"
+  },
+  "/images/news/2026-05/14.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/14-640w-88e6f469.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/14-1024w-88e6f469.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-05/14-1920w-88e6f469.webp"
+    },
+    "originalSize": 25933,
+    "hash": "88e6f469"
   }
 }
