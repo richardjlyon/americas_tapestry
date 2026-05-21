@@ -31,31 +31,31 @@ export function MemberCard({
   const hasPortrait =
     Boolean(member.portrait) && member.groupSlug !== 'stitching-groups';
 
-  // Image handling supporting both single image and multiple images.
-  // When `portrait` is set, it occupies index 0 and the `images` array
-  // is shown starting at index 1 (no images entry is skipped).
-  const getImageSrc = (imageIndex: number = 0) => {
-    // For stitching groups, use the single image field if available
+  // Resolve the full ordered list of image filenames for this member.
+  // Single source of truth: index 0 is the primary image, the rest are
+  // shown as thumbnails. When `portrait` is set, it occupies index 0
+  // and any `images` array entries follow it.
+  const imageFilenames: string[] = (() => {
     if (member.groupSlug === 'stitching-groups' && member['image']) {
-      return `/images/team/${member.groupSlug}/${member['image']}`;
+      return [member['image']];
     }
-    if (imageIndex === 0 && hasPortrait) {
-      return `/images/team/${member.groupSlug}/${member.portrait}`;
+    const extras = member.images ?? [];
+    if (hasPortrait) {
+      return [member.portrait as string, ...extras];
     }
-    const imageExtension =
-      member.groupSlug === 'stitching-venues' ? 'png' : 'jpg';
-    const images = member.images || [`${member.slug}.${imageExtension}`];
-    const adjustedIndex = hasPortrait ? imageIndex - 1 : imageIndex;
-    return `/images/team/${member.groupSlug}/${images[adjustedIndex]}`;
+    if (extras.length > 0) {
+      return extras;
+    }
+    const extension = member.groupSlug === 'stitching-venues' ? 'png' : 'jpg';
+    return [`${member.slug}.${extension}`];
+  })();
+
+  const getImageSrc = (imageIndex: number = 0) => {
+    const filename = imageFilenames[imageIndex] ?? imageFilenames[0];
+    return `/images/team/${member.groupSlug}/${filename}`;
   };
 
-  const getImageCount = () => {
-    if (member.groupSlug === 'stitching-groups') {
-      return 1;
-    }
-    const baseCount = member.images ? member.images.length : 1;
-    return hasPortrait ? baseCount + 1 : baseCount;
-  };
+  const getImageCount = () => imageFilenames.length;
 
   // State management for image loading and content processing
   // Don't load images for:
@@ -297,7 +297,7 @@ export function MemberCard({
 
                   {/* Thumbnail Grid */}
                   <div className="grid grid-cols-2 gap-1">
-                    {(hasPortrait ? member.images! : member.images!.slice(1)).map((_, index) => (
+                    {imageFilenames.slice(1).map((_, index) => (
                       <div
                         key={index + 1}
                         className="relative h-16 cursor-pointer hover:opacity-90 transition-opacity"
