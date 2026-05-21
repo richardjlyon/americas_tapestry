@@ -6560,15 +6560,6 @@
     "originalSize": 1141611,
     "hash": "d35300e6"
   },
-  "/images/team/stitchers/pat-hanlon-work1.jpeg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/pat-hanlon-work1-640w-5b5bbbd8.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/pat-hanlon-work1-1024w-5b5bbbd8.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/pat-hanlon-work1-1920w-5b5bbbd8.webp"
-    },
-    "originalSize": 899578,
-    "hash": "5b5bbbd8"
-  },
   "/images/team/stitchers/pat-hanlon-work2.jpeg": {
     "variants": {
       "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/pat-hanlon-work2-640w-6404ea69.webp",
@@ -7693,5 +7684,14 @@
     },
     "originalSize": 25933,
     "hash": "88e6f469"
+  },
+  "/images/team/stitchers/pat-hanlon-work1.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/pat-hanlon-work1-640w-68a76752.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/pat-hanlon-work1-1024w-68a76752.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/pat-hanlon-work1-1920w-68a76752.webp"
+    },
+    "originalSize": 903726,
+    "hash": "68a76752"
   }
 }
