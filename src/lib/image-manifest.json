@@ -3077,24 +3077,6 @@
     "originalSize": 4428194,
     "hash": "ad0a5f06"
   },
-  "/images/team/stitchers/sarah-luginbuhl-work2.jpeg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work2-640w-ad1d6630.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work2-1024w-ad1d6630.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work2-1920w-ad1d6630.webp"
-    },
-    "originalSize": 8500192,
-    "hash": "ad1d6630"
-  },
-  "/images/team/stitchers/sarah-luginbuhl-work3.jpeg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work3-640w-68a13888.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work3-1024w-68a13888.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work3-1920w-68a13888.webp"
-    },
-    "originalSize": 5502562,
-    "hash": "68a13888"
-  },
   "/images/team/stitchers/sarah-luginbuhl-work4.jpeg": {
     "variants": {
       "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work4-640w-9c7cb4fc.webp",
@@ -7711,5 +7693,23 @@
     },
     "originalSize": 105191,
     "hash": "83b2b693"
+  },
+  "/images/team/stitchers/sarah-luginbuhl-work2.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work2-640w-64b2d88a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work2-1024w-64b2d88a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work2-1920w-64b2d88a.webp"
+    },
+    "originalSize": 8973065,
+    "hash": "64b2d88a"
+  },
+  "/images/team/stitchers/sarah-luginbuhl-work3.jpeg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work3-640w-54834e74.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work3-1024w-54834e74.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/sarah-luginbuhl-work3-1920w-54834e74.webp"
+    },
+    "originalSize": 5523046,
+    "hash": "54834e74"
   }
 }
