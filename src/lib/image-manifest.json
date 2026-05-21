@@ -2717,15 +2717,6 @@
     "originalSize": 197439,
     "hash": "f792bc04"
   },
-  "/images/team/state-directors/jennifer-paperman.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/jennifer-paperman-640w-12c54bca.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/jennifer-paperman-1024w-12c54bca.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/jennifer-paperman-1920w-12c54bca.webp"
-    },
-    "originalSize": 416774,
-    "hash": "12c54bca"
-  },
   "/images/team/state-directors/karen-katin.jpg": {
     "variants": {
       "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/karen-katin-640w-4665f370.webp",
@@ -2887,15 +2878,6 @@
     },
     "originalSize": 2134098,
     "hash": "262ea401"
-  },
-  "/images/team/stitchers/jenni-paperman.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-640w-83b2b693.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-1024w-83b2b693.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-1920w-83b2b693.webp"
-    },
-    "originalSize": 105191,
-    "hash": "83b2b693"
   },
   "/images/team/stitchers/joan-flanigan-clarke-work1.jpg": {
     "variants": {
@@ -7693,5 +7675,41 @@
     },
     "originalSize": 903726,
     "hash": "68a76752"
+  },
+  "/images/team/state-directors/jennifer-paperman.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/jennifer-paperman-640w-9a06f31f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/jennifer-paperman-1024w-9a06f31f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/state-directors/jennifer-paperman-1920w-9a06f31f.webp"
+    },
+    "originalSize": 330610,
+    "hash": "9a06f31f"
+  },
+  "/images/team/stitchers/jenni-paperman-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-portrait-640w-9a06f31f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-portrait-1024w-9a06f31f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-portrait-1920w-9a06f31f.webp"
+    },
+    "originalSize": 330610,
+    "hash": "9a06f31f"
+  },
+  "/images/team/stitchers/jenni-paperman-work1.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-work1-640w-25053e13.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-work1-1024w-25053e13.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-work1-1920w-25053e13.webp"
+    },
+    "originalSize": 429073,
+    "hash": "25053e13"
+  },
+  "/images/team/stitchers/jenni-paperman-work2.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-work2-640w-83b2b693.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-work2-1024w-83b2b693.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/team/stitchers/jenni-paperman-work2-1920w-83b2b693.webp"
+    },
+    "originalSize": 105191,
+    "hash": "83b2b693"
   }
 }
