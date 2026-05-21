@@ -31,34 +31,30 @@ export function MemberCard({
   const hasPortrait =
     Boolean(member.portrait) && member.groupSlug !== 'stitching-groups';
 
-  // Image handling supporting both single image and multiple images
+  // Image handling supporting both single image and multiple images.
+  // When `portrait` is set, it occupies index 0 and the `images` array
+  // is shown starting at index 1 (no images entry is skipped).
   const getImageSrc = (imageIndex: number = 0) => {
     // For stitching groups, use the single image field if available
     if (member.groupSlug === 'stitching-groups' && member['image']) {
       return `/images/team/${member.groupSlug}/${member['image']}`;
     }
-    // Dedicated portrait overrides images[0] / {slug}.{ext} for the primary image only
-    if (
-      imageIndex === 0 &&
-      member.portrait &&
-      member.groupSlug !== 'stitching-groups'
-    ) {
+    if (imageIndex === 0 && hasPortrait) {
       return `/images/team/${member.groupSlug}/${member.portrait}`;
     }
-    // For other groups, use existing logic with images array
     const imageExtension =
       member.groupSlug === 'stitching-venues' ? 'png' : 'jpg';
     const images = member.images || [`${member.slug}.${imageExtension}`];
-    return `/images/team/${member.groupSlug}/${images[imageIndex]}`;
+    const adjustedIndex = hasPortrait ? imageIndex - 1 : imageIndex;
+    return `/images/team/${member.groupSlug}/${images[adjustedIndex]}`;
   };
 
   const getImageCount = () => {
-    // For stitching groups, always 1 (single image or placeholder)
     if (member.groupSlug === 'stitching-groups') {
       return 1;
     }
-    // For other groups, return actual images count
-    return member.images ? member.images.length : 1;
+    const baseCount = member.images ? member.images.length : 1;
+    return hasPortrait ? baseCount + 1 : baseCount;
   };
 
   // State management for image loading and content processing
@@ -301,7 +297,7 @@ export function MemberCard({
 
                   {/* Thumbnail Grid */}
                   <div className="grid grid-cols-2 gap-1">
-                    {member.images!.slice(1).map((_, index) => (
+                    {(hasPortrait ? member.images! : member.images!.slice(1)).map((_, index) => (
                       <div
                         key={index + 1}
                         className="relative h-16 cursor-pointer hover:opacity-90 transition-opacity"
