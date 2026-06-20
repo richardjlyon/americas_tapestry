@@ -7702,5 +7702,122 @@
     },
     "originalSize": 5523046,
     "hash": "54834e74"
+  },
+  "/images/tapestries/connecticut/connecticut-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-photo-640w-b6290c5b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-photo-1024w-b6290c5b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-photo-1920w-b6290c5b.webp"
+    },
+    "originalSize": 12130000,
+    "hash": "b6290c5b"
+  },
+  "/images/tapestries/delaware/delaware-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-photo-640w-a94b2e78.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-photo-1024w-a94b2e78.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-photo-1920w-a94b2e78.webp"
+    },
+    "originalSize": 7706074,
+    "hash": "a94b2e78"
+  },
+  "/images/tapestries/georgia/georgia-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-photo-640w-ef82c641.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-photo-1024w-ef82c641.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-photo-1920w-ef82c641.webp"
+    },
+    "originalSize": 9057523,
+    "hash": "ef82c641"
+  },
+  "/images/tapestries/maryland/maryland-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-photo-640w-a4d9416a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-photo-1024w-a4d9416a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-photo-1920w-a4d9416a.webp"
+    },
+    "originalSize": 7905066,
+    "hash": "a4d9416a"
+  },
+  "/images/tapestries/massachusetts/massachusetts-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-photo-640w-e73e56b3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-photo-1024w-e73e56b3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-photo-1920w-e73e56b3.webp"
+    },
+    "originalSize": 12176344,
+    "hash": "e73e56b3"
+  },
+  "/images/tapestries/new-hampshire/new-hampshire-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-photo-640w-14637278.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-photo-1024w-14637278.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-photo-1920w-14637278.webp"
+    },
+    "originalSize": 3745043,
+    "hash": "14637278"
+  },
+  "/images/tapestries/new-jersey/new-jersey-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-photo-640w-157dbfee.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-photo-1024w-157dbfee.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-photo-1920w-157dbfee.webp"
+    },
+    "originalSize": 10828754,
+    "hash": "157dbfee"
+  },
+  "/images/tapestries/new-york/new-york-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-photo-640w-d34afef5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-photo-1024w-d34afef5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-photo-1920w-d34afef5.webp"
+    },
+    "originalSize": 9445976,
+    "hash": "d34afef5"
+  },
+  "/images/tapestries/north-carolina/north-carolina-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-photo-640w-f7d56269.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-photo-1024w-f7d56269.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-photo-1920w-f7d56269.webp"
+    },
+    "originalSize": 11019344,
+    "hash": "f7d56269"
+  },
+  "/images/tapestries/pennsylvania/pennsylvania-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-photo-640w-3ff01aa2.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-photo-1024w-3ff01aa2.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-photo-1920w-3ff01aa2.webp"
+    },
+    "originalSize": 8847656,
+    "hash": "3ff01aa2"
+  },
+  "/images/tapestries/rhode-island/rhode-island-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-photo-640w-4c59a2e5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-photo-1024w-4c59a2e5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-photo-1920w-4c59a2e5.webp"
+    },
+    "originalSize": 8784970,
+    "hash": "4c59a2e5"
+  },
+  "/images/tapestries/south-carolina/south-carolina-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-photo-640w-74ded9aa.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-photo-1024w-74ded9aa.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-photo-1920w-74ded9aa.webp"
+    },
+    "originalSize": 10848067,
+    "hash": "74ded9aa"
+  },
+  "/images/tapestries/virginia/virginia-photo.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-photo-640w-008b5898.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-photo-1024w-008b5898.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-photo-1920w-008b5898.webp"
+    },
+    "originalSize": 10266795,
+    "hash": "008b5898"
   }
 }
