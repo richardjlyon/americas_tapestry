@@ -213,6 +213,7 @@ export default async function TapestryPage({
           <div className="pt-6">
             <TeamCard
               stateName={tapestry.title}
+              stateSlug={tapestry.slug}
               stateDirectors={stateDirectors}
               historicalPartners={historicalPartners}
               illustrators={illustrators}

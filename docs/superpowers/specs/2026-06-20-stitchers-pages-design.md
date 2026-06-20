@@ -55,7 +55,8 @@ on the public npm registry (adding it would break `npm install`).
 - For each of the 13 state tabs:
   - Walk rows, tracking the current `▶` section marker.
   - For each data row (col A is a digit), build `"<First> <Last>"`.
-  - Strip trailing `*` and surrounding whitespace from the assembled name.
+  - Strip trailing `*` and `•` annotation markers and surrounding whitespace from the assembled name.
+  - Apply an owner-approved `NAME_OVERRIDES` map to clean affiliation/title-prefixed and note-annotated cells (chiefly Delaware): drop org affiliations and personal titles, drop note-style parentheticals, keep alternate-surname parentheticals. (DE guests dedupe 550→549 once a duplicate is revealed.)
   - Dedupe within each section (case-insensitive compare, keep first spelling).
 - Emit `src/lib/data/stitchers.json`:
   ```json

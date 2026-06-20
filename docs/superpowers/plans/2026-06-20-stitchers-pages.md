@@ -12,14 +12,15 @@
 
 - Stitcher list rendering is **plain text, no chrome or adornment**: bold group name, then names on the next line.
 - Names are listed **comma-separated in a flowing paragraph**.
-- All trailing `*` characters are **stripped** from names; no asterisk legend anywhere.
+- All trailing `*` **and** `•` annotation markers are **stripped** from names; no legend anywhere.
+- Affiliation/title-prefixed and note-annotated name cells (chiefly Delaware) are cleaned via an owner-approved `NAME_OVERRIDES` map in the build script: drop org affiliations, drop personal titles, drop note-style parentheticals, keep alternate-surname parentheticals.
 - Per-state chip label: exactly `Meet the {State} Stitchers` (e.g. `Meet the Connecticut Stitchers`).
 - Aggregate chip label: exactly `Meet all of the stitchers`.
 - Aggregate page: **dedupe (case-insensitive) + sort by last name** within each section.
 - State slug scheme: `name.toLowerCase().replace(/\s+/g, '-')` — matches existing tapestry slugs (`connecticut`, `new-hampshire`, …).
 - Section labels (display): `State Directors`, `Core Volunteers`, `Guest Volunteers`.
 - Source xlsx: `/Users/rjl/Downloads/AmericasTapestry_Master_6_7.xlsx`. The 13 state tabs each use `▶  STATE DIRECTOR(S)`, `▶  CORE VOLUNTEERS`, `▶  GUEST VOLUNTEERS` markers in column A; data rows have a digit in column A, First Name in col B, Last Name in col C.
-- Expected counts (Directors/Core/Guest) after dedupe: CT 1/8/161, DE 2/5/550, GA 1/6/8, MD 5/29/79, MA 1/5/27, NH 2/18/60, NJ 2/5/101, NY 1/13/44, NC 1/9/124, PA 2/24/242, RI 1/5/164, SC 1/27/100, VA 1/5/112.
+- Expected counts (Directors/Core/Guest) after dedupe + cleanup: CT 1/8/161, DE 2/5/549 (raw 550; cleanup reveals one duplicate — Beth Bowersock), GA 1/6/8, MD 5/29/79, MA 1/5/27, NH 2/18/60, NJ 2/5/101, NY 1/13/44, NC 1/9/124, PA 2/24/242, RI 1/5/164, SC 1/27/100, VA 1/5/112.
 
 ---
 

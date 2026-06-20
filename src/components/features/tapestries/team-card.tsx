@@ -6,9 +6,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import type { TeamMember } from '@/lib/team';
 import { PageSection } from '@/components/ui/page-section';
 import { useState } from 'react';
+import { StitcherLinkCard } from '@/components/features/stitchers/stitcher-link-card';
 
 interface TeamCardProps {
   stateName: string;
+  stateSlug: string;
   historicalPartners?: TeamMember[] | null;
   illustrators?: TeamMember[] | null;
   stateDirectors?: TeamMember[] | null;
@@ -17,7 +19,8 @@ interface TeamCardProps {
 }
 
 export function TeamCard({
-  stateName: _stateName,
+  stateName,
+  stateSlug,
   historicalPartners,
   illustrators,
   stateDirectors,
@@ -134,6 +137,11 @@ export function TeamCard({
             </Card>
           </Link>
         ))}
+
+        <StitcherLinkCard
+          href={`/stitchers/${stateSlug}`}
+          label={`Meet the ${stateName} Stitchers`}
+        />
       </div>
     </PageSection>
   );
