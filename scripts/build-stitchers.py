@@ -26,9 +26,55 @@ SECTION_MAP = {
     "GUEST VOLUNTEER": "guestVolunteers",
 }
 
+# Explicit cleanups for source rows that pack affiliations/titles/notes into the
+# name cells (chiefly Delaware). Keyed by the assembled, marker-stripped name.
+# Owner-approved (2026-06-20): drop org affiliations, drop personal titles, drop
+# note-style parentheticals; keep alternate-surname parentheticals.
+NAME_OVERRIDES = {
+    "Bryce (4 years old)": "Bryce",
+    "YouDee (University of Delaware mascot)": "YouDee",
+    "Col. David Hall Chapter, NSDAR, Hilda Chaski Adams": "Hilda Chaski Adams",
+    "WRDE News, Drew Bellinger": "Drew Bellinger",
+    "State House Representative, Honorable Alonna Berry": "Alonna Berry",
+    "Col. David Hall Chapter Regent, NSDAR, Beth Bowersock": "Beth Bowersock",
+    "Lewes City Council, Honorable Trina Brown-Hicks": "Trina Brown-Hicks",
+    "Col. David Hall Chapter, NSDAR, Lana Browne": "Lana Browne",
+    "Jeanne H. Buckworth (96 years old)": "Jeanne H. Buckworth",
+    "Col. David Hall Chapter, NSDAR, Barbara A Campbell": "Barbara A Campbell",
+    "Col. David Hall Chapter, NSDAR, Valerie Dunkle": "Valerie Dunkle",
+    "Col. David Hall DAR, Eileen Edelin": "Eileen Edelin",
+    "Col. David Hall Chapter, NSDAR, Jo Ferguson": "Jo Ferguson",
+    "DE SAR Society President, Troy Foxwell": "Troy Foxwell",
+    "DE State Regent, NSDAR, Carolynn Foxwell": "Carolynn Foxwell",
+    "NBC10, Tim Furlong": "Tim Furlong",
+    "Delaware, Lt. Governor Kyle Evans Gay": "Kyle Evans Gay",
+    "5th grade, Felix Gibb": "Felix Gibb",
+    "Lewes County Council Member, Honorable Jane Gruenebaum": "Jane Gruenebaum",
+    "Col. David Hall Chapter, NSDAR, Debora Hansen": "Debora Hansen",
+    "Col. David Hall Chapter Librarian, NSDAR; DE State America250! Chair, NSDAR, Mary Alice Kelly": "Mary Alice Kelly",
+    "Col. David Hall Chapter, NSDAR, Diane Lane": "Diane Lane",
+    "Col. David Hall Chapter, NSDAR, Susan Lynn Leathery": "Susan Lynn Leathery",
+    "Col. David Hall Chapter, NSDAR, Gari Lewis": "Gari Lewis",
+    "Hailey, Miss Delaware Mack": "Hailey Mack",
+    "Mayor of Lewes, Honorable Amy Marasco": "Amy Marasco",
+    "Col. David Hall Chapter, NSDAR, Linda Mecham": "Linda Mecham",
+    "Delaware, Governor Matt Meyer": "Matt Meyer",
+    "Col. David Hall Chapter Treasurer, NSDAR, DeAnna Poling": "DeAnna Poling",
+    "Erik Raser-Schramm (DE250)": "Erik Raser-Schramm",
+    "Cheryl Schultz (70th birthday)": "Cheryl Schultz",
+    "Jr., Harvey C., Mayor of Odessa Smith": "Harvey C. Smith Jr.",
+    "State House Representative, Honorable Claire Snyder-Hall": "Claire Snyder-Hall",
+    "Seashore Needlepoint Guild, Melanie Steinmetz": "Melanie Steinmetz",
+    "Past Historian General, NSDAR, Ginger Trader": "Ginger Trader",
+    "Miss Delaware Teen USA, Cali Williams": "Cali Williams",
+    "Col. David Hall Chapter Chaplain, NSDAR, Nancy Shallcross Witmer": "Nancy Shallcross Witmer",
+    "Col. David Hall Chapter, NSDAR, Janet Wolf": "Janet Wolf",
+    "Pat Edwards, MD": "Pat Edwards",
+}
+
 
 def clean(value: str) -> str:
-    return re.sub(r"\s+", " ", str(value or "").replace("*", "")).strip()
+    return re.sub(r"\s+", " ", str(value or "").replace("*", "").replace("•", "")).strip()
 
 
 def section_key(marker: str):
@@ -59,6 +105,7 @@ def main() -> None:
                 continue
             if current and first_cell is not None and str(first_cell).strip().isdigit():
                 name = clean(f"{clean(row[1])} {clean(row[2])}")
+                name = NAME_OVERRIDES.get(name, name)
                 if name:
                     buckets[current].append(name)
 
