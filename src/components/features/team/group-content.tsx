@@ -2,6 +2,7 @@
 
 import { MemberCard } from '@/components/features/team/member-card';
 import { QuestionnaireSection } from '@/components/features/team/questionnaire-section';
+import { StitcherLinkCard } from '@/components/features/stitchers/stitcher-link-card';
 import type { TeamGroup, TeamMember } from '@/lib/team';
 
 export interface GroupContentProps {
@@ -41,6 +42,13 @@ export function GroupContent({ group, members }: GroupContentProps) {
           <p className="font-serif text-colonial-navy/70 text-lg">
             No team members found in this group.
           </p>
+        </div>
+      )}
+
+      {/* Link to the full aggregated stitcher list (stitchers group only) */}
+      {group.slug === 'stitchers' && (
+        <div className="flex justify-center mt-8">
+          <StitcherLinkCard href="/stitchers" label="Meet all of the stitchers" />
         </div>
       )}
     </>

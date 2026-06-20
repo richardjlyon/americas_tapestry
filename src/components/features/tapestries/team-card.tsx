@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import type { TeamMember } from '@/lib/team';
 import { PageSection } from '@/components/ui/page-section';
 import { useState } from 'react';
-import { Users } from 'lucide-react';
+import { StitcherLinkCard } from '@/components/features/stitchers/stitcher-link-card';
 
 interface TeamCardProps {
   stateName: string;
@@ -16,35 +16,6 @@ interface TeamCardProps {
   stateDirectors?: TeamMember[] | null;
   stitchingGroups?: TeamMember[] | null;
   stitchers?: TeamMember[] | null;
-}
-
-function StitcherLinkCard({ href, label }: { href: string; label: string }) {
-  return (
-    <Link
-      href={href}
-      className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-[300px]"
-    >
-      <Card className="border border-colonial-parchment/60 overflow-hidden hover:shadow-md transition-shadow h-full">
-        <CardContent className="pb-0 mb-0 h-full">
-          <div className="flex flex-col items-center p-4 h-full">
-            <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-colonial-burgundy flex items-center justify-center bg-colonial-parchment/30">
-              <Users className="w-12 h-12 text-colonial-burgundy" aria-hidden="true" />
-            </div>
-            <div className="text-center w-full flex-grow flex flex-col">
-              <div className="flex-grow">
-                <h3 className="font-sans text-lg font-bold text-colonial-burgundy">
-                  {label}
-                </h3>
-              </div>
-              <div className="mt-auto pt-4">
-                <span className="inline-block text-link">View list →</span>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    </Link>
-  );
 }
 
 export function TeamCard({
@@ -171,7 +142,6 @@ export function TeamCard({
           href={`/stitchers/${stateSlug}`}
           label={`Meet the ${stateName} Stitchers`}
         />
-        <StitcherLinkCard href="/stitchers" label="Meet all of the stitchers" />
       </div>
     </PageSection>
   );
