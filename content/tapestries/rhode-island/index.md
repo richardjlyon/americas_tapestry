@@ -4,7 +4,7 @@ summary: The Battle of Rhode Island
 background_color: "bg-purple-900"
 audioDescription: "This audio description narrates the details of the Rhode Island Tapestry, which depicts the state's founding as a haven for religious freedom by Roger Williams and its maritime and industrial heritage."
 colony: "RI"
-status: "In Production"
+status: "Finished"
 timelineEvents:
   - date: "1636-06-01"
     title: "Providence Founded"

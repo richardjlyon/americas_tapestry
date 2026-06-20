@@ -4,7 +4,7 @@ summary: Women on the home front
 background_color: "bg-yellow-800"
 audioDescription: "This audio description provides a detailed verbal account of the New Jersey Tapestry, which depicts the state's crucial role during the Revolutionary War and its diverse cultural heritage."
 colony: "NJ"
-status: "In Production"
+status: "Finished"
 timelineEvents:
   - date: "1664-06-24"
     title: "New Jersey Colony Established"

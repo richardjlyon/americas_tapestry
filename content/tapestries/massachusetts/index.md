@@ -4,7 +4,7 @@ summary: Patriotic chocolate making
 background_color: "bg-red-900"
 audioDescription: "This audio description narrates the details of the Massachusetts Tapestry, which celebrates the state's pivotal role in the founding of America and its continued influence on education and innovation."
 colony: "MA"
-status: "In Production"
+status: "Finished"
 timelineEvents:
   - date: "1620-12-21"
     title: "Pilgrims Land at Plymouth Rock"

@@ -4,7 +4,7 @@ summary: The Edenton Tea Party
 background_color: "bg-teal-900"
 audioDescription: "This audio description provides a detailed verbal account of the North Carolina Tapestry, which depicts the state's early colonial history, its independent spirit during the Revolution, and its diverse geographical regions."
 colony: "NC"
-status: "In Production"
+status: "Finished"
 ---
 
 The North Carolina panel illustrates the Edenton Tea Party, one of the earliest recorded instances of organized political action by women in the American colonies.

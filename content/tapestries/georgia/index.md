@@ -4,7 +4,7 @@ summary: Haitian soldiers fighting for America's freedom
 background_color: "bg-slate-900"
 audioDescription: "This audio description provides a detailed verbal account of the Georgia Tapestry, which depicts the Chasseurs Volontaires de Saint-Domingue, the Creole militia unit that participated in the Battle of Savannah in 1779."
 colony: "GA"
-status: "In Production"
+status: "Finished"
 timelineEvents:
   - date: "1733-02-12"
     title: "Georgia Colony Founded"
