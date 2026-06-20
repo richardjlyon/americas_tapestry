@@ -97,11 +97,23 @@ This was chosen over:
 - Display: a **contained, centered card** (≈`max-w-2xl`) holding the
   illustration, styled to match the existing card/parchment idiom. No status
   badge, no expand/collapse toggle.
-- Caption beneath the image: **"The original illustration our stitchers worked
-  from."**
+- Caption beneath the image **names the artist and links to their illustrator
+  detail page**:
+  - One illustrator: *"The original illustration by [Artist Name], the artwork
+    our stitchers worked from."* — `[Artist Name]` is a `<Link>` to
+    `/team/illustrators/{slug}`.
+  - Multiple illustrators: list all names (each linked), joined naturally.
+  - No illustrator on record: graceful fallback to *"The original illustration
+    our stitchers worked from."* (no link).
+- The page already fetches `illustrators` for the state via
+  `getTeamMembersByState(tapestry.title)` (used by the Team section) — reuse that
+  array; no new data fetch. Derive `{ name, href }` per illustrator where
+  `href = /team/illustrators/{illustrator.slug}`.
 - Extract a small presentational component
   `src/components/features/tapestries/artwork-card.tsx` to keep the page file
-  focused. It takes the resolved artwork image src + alt + caption.
+  focused. Props: resolved artwork image `src`, `alt`, and an `artists`
+  array (`{ name, href }[]`). The component renders the caption (with `<Link>`s)
+  and falls back to the generic caption when `artists` is empty.
 
 ### 4. Unchanged
 
@@ -115,7 +127,10 @@ This was chosen over:
 - `npm run build` succeeds (clear `.next` cache and rebuild if webpack/cache
   errors appear — do not disable features).
 - `/tapestries/connecticut` and 1–2 other states: hero shows the photograph; the
-  new "Original Artwork" card shows the illustration with the caption.
+  new "Original Artwork" card shows the illustration with a caption naming the
+  artist; the artist name links to `/team/illustrators/{slug}`.
+- A state with no illustrator on record falls back to the generic caption with no
+  broken link.
 - `/tapestries` grid and the homepage show photographs.
 - All 13 photo crops spot-checked and confirmed by the user.
 - `src/lib/image-manifest.json` gained 13 `{slug}-main.jpg` entries; existing
