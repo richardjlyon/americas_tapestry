@@ -42,14 +42,16 @@ NJ 2/5/101, NY 1/13/44, NC 1/9/124, PA 2/24/242, RI 1/5/164, SC 1/27/100, VA 1/5
 
 ## Architecture
 
-### 1. Build script — `scripts/build-stitchers.mjs`
+### 1. Build script — `scripts/build-stitchers.py`
 
-A standalone, re-runnable Node script (matches existing `scripts/*.mjs` convention).
+A standalone, re-runnable Python script (matches existing
+`scripts/generate-audio-descriptions.py`). Python chosen over Node because
+`openpyxl` is already available and the SheetJS `xlsx` npm package is no longer
+on the public npm registry (adding it would break `npm install`).
 
 - Reads the xlsx (path configurable, defaults to the Downloads file; accept override
-  via `process.argv[2]`).
-- Uses an xlsx parser. Prefer a dependency already present; otherwise add `xlsx`
-  (SheetJS) as a **devDependency** only (script is build-time, not shipped).
+  via `sys.argv[1]`).
+- Uses `openpyxl` (already installed).
 - For each of the 13 state tabs:
   - Walk rows, tracking the current `▶` section marker.
   - For each data row (col A is a digit), build `"<First> <Last>"`.
@@ -144,7 +146,7 @@ verified to agree during testing.
 
 ## Verification
 
-1. Run `node scripts/build-stitchers.mjs`; confirm logged counts match the table
+1. Run `python3 scripts/build-stitchers.py`; confirm logged counts match the table
    (e.g. Connecticut 1/8/161) and JSON exists.
 2. Grep `stitchers.json` for `*` → none in names.
 3. `npm run build` succeeds; `/stitchers` and every `/stitchers/<state>` prerender.
@@ -154,7 +156,7 @@ verified to agree during testing.
 
 ## Implementation Order
 
-1. `scripts/build-stitchers.mjs` → generate `stitchers.json`; verify counts.
+1. `scripts/build-stitchers.py` → generate `stitchers.json`; verify counts.
 2. `src/lib/stitchers.ts`.
 3. `stitcher-sections.tsx`.
 4. Routes `/stitchers` and `/stitchers/[state]`.

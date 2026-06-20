@@ -72,9 +72,11 @@ We are creating **two new types of page** to document all of the stitchers.
 - Aggregate dedupe: **Dedupe + sort alphabetically by last name** per section
 - Data pipeline: **One-time Node script (scripts/build-stitchers.mjs) → committed src/lib/data/stitchers.json**
 
-## Full design spec
-See `2026-06-20-stitchers-pages-design.md` (approved by user). Implementation
-order is listed at the bottom of that spec.
+## Full design spec & plan
+- Spec: `2026-06-20-stitchers-pages-design.md` (approved by user).
+- Implementation plan: `docs/superpowers/plans/2026-06-20-stitchers-pages.md`
+  (6 tasks, TDD where applicable). NOTE: build script is Python (openpyxl), not
+  Node — SheetJS xlsx is no longer on the public npm registry.
 
 ## Current Status
 - [x] Wrote this recovery file
@@ -82,6 +84,5 @@ order is listed at the bottom of that spec.
 - [x] Inspected spreadsheet tabs and column layout
 - [x] Brainstormed design decisions with user (all confirmed above)
 - [x] Wrote final design spec (design.md) — approved by user
-- [ ] User reviews written spec
-- [ ] Write implementation plan (writing-plans skill)
-- [ ] Implement
+- [x] Wrote implementation plan (plans/2026-06-20-stitchers-pages.md)
+- [ ] Execute plan (Tasks 1-6)
