@@ -2,6 +2,16 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
+> **Post-implementation revision (shipped, master `ba476ba`):** Task 5 below
+> appends *two* chips to the tapestry team grid. As shipped, only the **per-state**
+> chip stays on the tapestry grid; the **aggregate** "Meet all of the stitchers"
+> chip was moved to the `/team/stitchers` group page (rendered in
+> `src/components/features/team/group-content.tsx`, stitchers group only, below the
+> member cards). The chip markup was extracted to a shared component
+> `src/components/features/stitchers/stitcher-link-card.tsx`, and a new
+> `src/app/stitchers/layout.tsx` (wrapping `PageLayout`) was added so the stitcher
+> routes render the site header/footer. See the design spec for the as-built detail.
+
 **Goal:** Add per-state and aggregate "stitcher" pages listing every volunteer, reachable from two new chips on each tapestry's "Team Behind the Tapestry" grid.
 
 **Architecture:** A one-time Python script parses the master xlsx into a committed `stitchers.json`. A small lib reads/transforms it. A shared server component renders three plain-text sections. Two static routes (`/stitchers`, `/stitchers/[state]`) render those sections. Two CTA chips are appended to the existing `TeamCard` grid.

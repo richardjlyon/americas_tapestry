@@ -1,16 +1,23 @@
 # Stitcher Pages — Design Spec
 
 Date: 2026-06-20
-Status: Approved (pending spec review)
+Status: Shipped to production (master `ba476ba`). Reflects as-built design.
 Working/recovery file: `2026-06-20-stitchers-pages-plan.md`
+
+> **Revision (as shipped):** During review the aggregate chip was moved off the
+> tapestry team grid. The tapestry grid now carries only the per-state chip; the
+> single "Meet all of the stitchers" chip lives once on the `/team/stitchers`
+> group page. The two stitcher routes also got their own `layout.tsx` so they
+> render the site header/footer. Sections 4–5 below describe the shipped design.
 
 ## Goal
 
 Document every volunteer ("stitcher") for America's Tapestry by adding:
 
-1. **Per-state stitcher pages** reached from a new chip on each tapestry's
+1. **Per-state stitcher pages** reached from a chip on each tapestry's
    "The Team Behind the Tapestry" grid.
-2. **A single aggregate stitcher page** reached from a second chip on the same grid.
+2. **A single aggregate stitcher page** reached from a chip on the
+   `/team/stitchers` group page (below the stitcher cards).
 
 Source of truth: `/Users/rjl/Downloads/AmericasTapestry_Master_6_7.xlsx`.
 
@@ -117,26 +124,40 @@ Server component (no interactivity).
   - H1 `"{name} Stitchers"`, then `<StitcherSections>`.
 - `src/app/stitchers/page.tsx`
   - H1 `"All Stitchers"`, then `<StitcherSections>` from `getAggregatedStitchers()`.
+- `src/app/stitchers/layout.tsx`
+  - Wraps children in `PageLayout` (the same wrapper the other top-level routes
+    use, e.g. `src/app/tapestries/layout.tsx`) so both stitcher routes render the
+    site header and footer. The root layout does not include `PageLayout`.
 
-Both use the existing page layout primitives (`PageSection` / `ReadingContainer`)
-to stay visually consistent while keeping the list itself unadorned.
+Both pages use the existing page layout primitives (`PageSection` /
+`ReadingContainer`) to stay visually consistent while keeping the list itself
+unadorned.
 
-### 5. Team grid chips — `src/components/features/tapestries/team-card.tsx`
+### 5. Chips — shared `StitcherLinkCard` component
 
-- Add prop `stateSlug: string`.
-- After the mapped member chips, append two CTA chips that reuse the same
-  `Link` + `Card` sizing as member chips:
-  - Circular frame containing a centered `Users` icon from `lucide-react`
-    (in place of the portrait), a bold label, and a `→` affordance.
-  - Per-state: label `Meet the {stateName} Stitchers` → `/stitchers/{stateSlug}`.
-  - Aggregate: label `Meet all of the stitchers` → `/stitchers`.
-- A small internal helper component renders a CTA chip (label + href) to avoid
-  duplication.
+The CTA chip is a shared component:
+`src/components/features/stitchers/stitcher-link-card.tsx`. It reuses the member
+chips' `Link` + `Card` sizing: a circular frame with a centered `Users` icon
+(`lucide-react`), a bold label, and a `View list →` affordance.
 
-Update the call site in `src/app/tapestries/[slug]/page.tsx` to pass
-`stateSlug={tapestry.slug}`. Because the chip href uses the actual tapestry slug,
-the per-state link is guaranteed to match the route; the JSON slug scheme is
-verified to agree during testing.
+It is rendered in two places:
+
+1. **Per-state chip — tapestry team grid**
+   (`src/components/features/tapestries/team-card.tsx`):
+   - `TeamCard` takes prop `stateSlug: string`.
+   - One chip is appended after the member chips:
+     `Meet the {stateName} Stitchers` → `/stitchers/{stateSlug}`.
+   - The call site in `src/app/tapestries/[slug]/page.tsx` passes
+     `stateSlug={tapestry.slug}`, so the href uses the real tapestry slug and is
+     guaranteed to match the route (the JSON slug scheme is verified to agree).
+
+2. **Aggregate chip — Stitchers group page**
+   (`src/components/features/team/group-content.tsx`):
+   - Rendered only when `group.slug === 'stitchers'`, below the member-card grid,
+     centered: `Meet all of the stitchers` → `/stitchers`.
+
+This keeps the single "all stitchers" entry point in one logical place rather
+than repeating it on all 13 tapestry pages.
 
 ## Out of Scope / YAGNI
 
@@ -151,15 +172,20 @@ verified to agree during testing.
    (e.g. Connecticut 1/8/161) and JSON exists.
 2. Grep `stitchers.json` for `*` → none in names.
 3. `npm run build` succeeds; `/stitchers` and every `/stitchers/<state>` prerender.
-4. Visit a tapestry page (e.g. Connecticut): two new chips appear at the end of
-   the team grid and navigate correctly.
-5. Confirm `/stitchers` sections are deduped + alphabetical by last name.
+4. Visit a tapestry page (e.g. Connecticut): the per-state "Meet the {State}
+   Stitchers" chip appears at the end of the team grid and navigates correctly;
+   no aggregate chip is present there.
+5. Visit `/team/stitchers`: the "Meet all of the stitchers" chip appears below
+   the stitcher cards and navigates to `/stitchers`.
+6. Confirm `/stitchers` and `/stitchers/<state>` render the site header/footer.
+7. Confirm `/stitchers` sections are deduped + alphabetical by last name.
 
 ## Implementation Order
 
 1. `scripts/build-stitchers.py` → generate `stitchers.json`; verify counts.
 2. `src/lib/stitchers.ts`.
 3. `stitcher-sections.tsx`.
-4. Routes `/stitchers` and `/stitchers/[state]`.
-5. CTA chips in `team-card.tsx` + pass `stateSlug` from tapestry page.
+4. Routes `/stitchers` and `/stitchers/[state]` + `stitchers/layout.tsx`.
+5. Shared `StitcherLinkCard`; per-state chip in `team-card.tsx` (pass `stateSlug`
+   from tapestry page); aggregate chip in `group-content.tsx` (stitchers group).
 6. Build + verify.
