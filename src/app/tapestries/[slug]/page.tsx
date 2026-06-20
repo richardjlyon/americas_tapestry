@@ -12,6 +12,7 @@ import { ReadingContainer } from '@/components/ui/reading-container';
 import { getImagePath } from '@/lib/image-utils';
 import { getTapestryTalkByState } from '@/lib/blog';
 import { TapestryTalkSection } from '@/components/features/tapestries/tapestry-talk-section';
+import { ArtworkCard } from '@/components/features/tapestries/artwork-card';
 
 // Status color mapping
 const statusColors = {
@@ -84,6 +85,11 @@ export default async function TapestryPage({
     commissionPartners,
     stitchingVenues,
   } = teamMembers;
+
+  const artworkArtists = (illustrators ?? []).map((illustrator) => ({
+    name: illustrator.name,
+    href: `/team/${illustrator.groupSlug}/${illustrator.slug}`,
+  }));
 
   const hasTeamMembers =
     stateDirectors?.length > 0 ||
@@ -173,6 +179,27 @@ export default async function TapestryPage({
               <div className="page-section-pin-bottom" />
             </div>
             <TapestryTalkSection video={tapestryTalkVideo} />
+          </>
+        )}
+
+        {/* Original Artwork section */}
+        {tapestry.artworkPath && (
+          <>
+            {/* Pin separator */}
+            <div className="flex justify-center pt-8 pb-2">
+              <div className="page-section-pin-bottom" />
+            </div>
+
+            <div className="pt-6">
+              <h2 className="font-serif text-center text-2xl font-normal pb-4 md:pb-8">
+                Original Artwork
+              </h2>
+              <ArtworkCard
+                src={tapestry.artworkPath}
+                alt={`${tapestry.title} original illustration`}
+                artists={artworkArtists}
+              />
+            </div>
           </>
         )}
 
