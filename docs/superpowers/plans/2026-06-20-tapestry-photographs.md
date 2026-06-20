@@ -11,8 +11,9 @@
 ## Global Constraints
 
 - Image source-of-truth: original `.DNG` files in `~/Downloads/America_s Tapestry Photos/` — never delete; keep for re-crops.
-- Photo output path convention: `public/images/tapestries/{slug}/{slug}-main.jpg` (lowercase, spaces→hyphens; `{slug}` matches existing content dirs in `content/tapestries/`).
-- Do NOT modify `findImageInDirectory()` or rename/overwrite any existing `{slug}-tapestry-*` file (Approach A — artwork stays put).
+- Photo output path convention: `public/images/tapestries/{slug}/{slug}-photo.jpg` (lowercase, spaces→hyphens; `{slug}` matches existing content dirs in `content/tapestries/`). All 13 photos are portrait-oriented (Task 1, already committed).
+- Do NOT modify `findImageInDirectory()` or rename/overwrite any existing `{slug}-tapestry-*` file (artwork stays put). The photo becomes the main image via a new `findPhotoInDirectory()` that the data getters PREFER over the existing resolver — not by relying on the resolver's `main` branch.
+- Existing artwork filenames are INCONSISTENT across states: some are `{slug}-tapestry-{w}w.{ext}` (e.g. connecticut), others `{slug}-tapestry-main-{w}w.{ext}` with dedicated `{slug}-tapestry-thumbnail-{w}w.{ext}` variants (e.g. georgia). `findArtworkInDirectory()` must match `-tapestry-` AND exclude `thumbnail`.
 - Caption copy (exact): `The original illustration by {artist}, the artwork our stitchers worked from.` Fallback when no artist: `The original illustration our stitchers worked from.`
 - Section heading (exact): `Original Artwork`.
 - Artist link target: `/team/illustrators/{slug}` (i.e. `/team/{groupSlug}/{slug}`).
@@ -40,9 +41,9 @@
 
 ## File Structure
 
-- `public/images/tapestries/{slug}/{slug}-main.jpg` — **create** (13 files): the cropped photograph source.
-- `src/lib/image-manifest.json` — **modify**: gains 13 `{slug}-main.jpg` → R2 variant entries (written by the script).
-- `src/lib/tapestries.ts` — **modify**: add `artworkPath` to `TapestryEntry`, add `findArtworkInDirectory()`, populate `artworkPath` in `getTapestryBySlug` and `getAllTapestries`.
+- `public/images/tapestries/{slug}/{slug}-photo.jpg` — **create** (13 files): the cropped photograph source. (Done in Task 1, committed.)
+- `src/lib/image-manifest.json` — **modify**: gains 13 `{slug}-photo.jpg` → R2 variant entries (written by the script).
+- `src/lib/tapestries.ts` — **modify**: add `artworkPath` to `TapestryEntry`, add `findPhotoInDirectory()` and `findArtworkInDirectory()`, make `imagePath`/`thumbnail` prefer the photo, populate `artworkPath` in `getTapestryBySlug` and `getAllTapestries`.
 - `src/components/features/tapestries/artwork-card.tsx` — **create**: presentational card for the original artwork + artist caption.
 - `src/app/tapestries/[slug]/page.tsx` — **modify**: derive artist links from `illustrators`, render the new "Original Artwork" section before the Team section.
 - `src/__tests__/tapestry-artwork.test.tsx` — **create**: unit tests for `findArtworkInDirectory` / `artworkPath` and the `ArtworkCard` component.
@@ -120,8 +121,8 @@ git commit -m "feat: add cropped photographs of mounted tapestries"
 - Modify: `src/lib/image-manifest.json` (written by the script)
 
 **Interfaces:**
-- Consumes: the 13 `{slug}-main.jpg` files from Task 1; R2 credentials in `.env.local` (`R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`).
-- Produces: 13 new manifest entries keyed `/images/tapestries/{slug}/{slug}-main.jpg`, each with R2 WebP variant URLs. Existing `{slug}-tapestry-*` entries unchanged.
+- Consumes: the 13 `{slug}-photo.jpg` files from Task 1; R2 credentials in `.env.local` (`R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`).
+- Produces: 13 new manifest entries keyed `/images/tapestries/{slug}/{slug}-photo.jpg`, each with R2 WebP variant URLs. Existing `{slug}-tapestry-*` entries unchanged.
 
 - [ ] **Step 1: Dry-run to confirm exactly the 13 new files are detected**
 
@@ -129,7 +130,7 @@ git commit -m "feat: add cropped photographs of mounted tapestries"
 node scripts/optimize-and-upload.mjs --path=tapestries --dry-run
 ```
 
-Expected: output lists the 13 `{slug}-main.jpg` files as new/to-process and reports existing `{slug}-tapestry-*` variants as skipped (already in manifest).
+Expected: output lists the 13 `{slug}-photo.jpg` files as new/to-process and reports existing `{slug}-tapestry-*` variants as skipped (already in manifest).
 
 - [ ] **Step 2: Run the real optimize + upload**
 
@@ -142,10 +143,10 @@ Expected: `Processed: 13` (one per state), `Uploaded: 39 variants` (13 × 3 widt
 - [ ] **Step 3: Verify the manifest gained the 13 entries**
 
 ```bash
-node -e "const m=require('./src/lib/image-manifest.json'); const k=Object.keys(m).filter(x=>/\/[a-z-]+-main\.jpg$/.test(x)&&x.includes('tapestries')); console.log('main entries:',k.length); console.log(k.slice(0,3).join('\n'))"
+node -e "const m=require('./src/lib/image-manifest.json'); const k=Object.keys(m).filter(x=>/\/[a-z-]+-photo\.jpg$/.test(x)&&x.includes('tapestries')); console.log('photo entries:',k.length); console.log(k.slice(0,3).join('\n'))"
 ```
 
-Expected: `main entries: 13` and sample paths like `/images/tapestries/connecticut/connecticut-main.jpg`.
+Expected: `photo entries: 13` and sample paths like `/images/tapestries/connecticut/connecticut-photo.jpg`.
 
 - [ ] **Step 4: Commit the manifest**
 
@@ -163,34 +164,50 @@ git commit -m "chore: publish tapestry photographs to R2 (manifest)"
 - Test: `src/__tests__/tapestry-artwork.test.tsx`
 
 **Interfaces:**
-- Consumes: `public/images/tapestries/{slug}/` directory contents (existing `{slug}-tapestry-*` artwork files; the `{slug}-main.jpg` from Task 1).
+- Consumes: `public/images/tapestries/{slug}/` directory contents — the `{slug}-photo.jpg` from Task 1, plus existing artwork files that are named EITHER `{slug}-tapestry-{w}w.{ext}` (e.g. connecticut) OR `{slug}-tapestry-main-{w}w.{ext}` with separate `{slug}-tapestry-thumbnail-{w}w.{ext}` files (e.g. georgia).
 - Produces:
-  - `findArtworkInDirectory(tapestrySlug: string): string | null` — returns a public path to the original-artwork variant (prefers `{slug}-tapestry-1024w.webp`) or `null`.
+  - `findPhotoInDirectory(tapestrySlug: string): string | null` — returns the public path to `{slug}-photo.*` (prefers `.webp`, then `.jpg`) or `null`.
+  - `findArtworkInDirectory(tapestrySlug: string): string | null` — returns the original-artwork variant: a `-tapestry-` file that is NOT a `thumbnail` (prefers the `-1024w` variant) or `null`.
   - `TapestryEntry.artworkPath?: string` — populated in both `getTapestryBySlug` and `getAllTapestries`.
-  - `TapestryEntry.imagePath` now resolves to `/images/tapestries/{slug}/{slug}-main.jpg` (the photograph), because `{slug}-main.jpg` exists and the resolver's `main` branch selects it. (No code change to the resolver.)
+  - `TapestryEntry.imagePath` and `TapestryEntry.thumbnail` now PREFER the photo (`{slug}-photo.jpg`) when present, falling back to the existing `findImageInDirectory()` / thumbnail logic. `findImageInDirectory()` is NOT modified.
 
 - [ ] **Step 1: Write the failing tests**
 
 Create `src/__tests__/tapestry-artwork.test.tsx`:
 
 ```tsx
-import { getTapestryBySlug, findArtworkInDirectory } from '@/lib/tapestries';
+import {
+  getTapestryBySlug,
+  findArtworkInDirectory,
+  findPhotoInDirectory,
+} from '@/lib/tapestries';
 
 describe('tapestry artwork data layer', () => {
-  it('findArtworkInDirectory returns the original artwork variant', () => {
-    const p = findArtworkInDirectory('connecticut');
-    expect(p).toMatch(/\/images\/tapestries\/connecticut\/connecticut-tapestry-.*\.(webp|jpg|jpeg|png|avif)$/);
+  it('findPhotoInDirectory returns the photograph for a state', () => {
+    expect(findPhotoInDirectory('connecticut')).toMatch(/connecticut-photo\.jpg$/);
+  });
+
+  it('findArtworkInDirectory returns the artwork, excluding thumbnails', () => {
+    // connecticut: {slug}-tapestry-{w}w naming
+    expect(findArtworkInDirectory('connecticut')).toMatch(
+      /\/images\/tapestries\/connecticut\/connecticut-tapestry-.*\.(webp|jpg|jpeg|png|avif)$/,
+    );
+    // georgia: {slug}-tapestry-main-{w}w naming, with separate -thumbnail- files
+    const g = findArtworkInDirectory('georgia');
+    expect(g).toMatch(/georgia-tapestry-main-/);
+    expect(g).not.toMatch(/thumbnail/);
   });
 
   it('findArtworkInDirectory returns null for an unknown slug', () => {
     expect(findArtworkInDirectory('atlantis')).toBeNull();
   });
 
-  it('getTapestryBySlug exposes artworkPath (artwork) and imagePath (photo)', async () => {
-    const t = await getTapestryBySlug('connecticut');
+  it('getTapestryBySlug: imagePath/thumbnail are the photo, artworkPath is the artwork', async () => {
+    const t = await getTapestryBySlug('georgia');
     expect(t).not.toBeNull();
-    expect(t!.artworkPath).toMatch(/connecticut-tapestry-/);
-    expect(t!.imagePath).toMatch(/connecticut-main\.jpg$/);
+    expect(t!.imagePath).toMatch(/georgia-photo\.jpg$/);
+    expect(t!.thumbnail).toMatch(/georgia-photo\.jpg$/);
+    expect(t!.artworkPath).toMatch(/georgia-tapestry-main-/);
   });
 });
 ```
@@ -198,7 +215,7 @@ describe('tapestry artwork data layer', () => {
 - [ ] **Step 2: Run the tests to verify they fail**
 
 Run: `npm test -- --testPathPattern=tapestry-artwork`
-Expected: FAIL — `findArtworkInDirectory` is not exported / `artworkPath` is undefined.
+Expected: FAIL — `findPhotoInDirectory` / `findArtworkInDirectory` are not exported.
 
 - [ ] **Step 3: Add `artworkPath` to the interface**
 
@@ -208,14 +225,40 @@ In `src/lib/tapestries.ts`, in the `TapestryEntry` interface, add after `imagePa
   artworkPath?: string;
 ```
 
-- [ ] **Step 4: Add and export `findArtworkInDirectory`**
+- [ ] **Step 4: Add and export `findPhotoInDirectory` and `findArtworkInDirectory`**
 
-In `src/lib/tapestries.ts`, directly after the `findImageInDirectory` function, add:
+In `src/lib/tapestries.ts`, directly after the `findImageInDirectory` function (do NOT modify `findImageInDirectory` itself), add:
 
 ```ts
+// Find the PHOTOGRAPH of the finished, mounted tapestry: {slug}-photo.*.
+// This becomes the main image and thumbnail, preferred over the resolver.
+export function findPhotoInDirectory(tapestrySlug: string): string | null {
+  const publicImagePath = path.join(
+    process.cwd(),
+    'public/images/tapestries',
+    tapestrySlug,
+  );
+
+  if (!fs.existsSync(publicImagePath)) return null;
+
+  const files = fs.readdirSync(publicImagePath);
+  const formatPriority = ['.webp', '.jpg', '.jpeg', '.png', '.avif'];
+
+  for (const format of formatPriority) {
+    const file = files.find(
+      (f) => path.extname(f).toLowerCase() === format && f.includes('-photo'),
+    );
+    if (file) return `/images/tapestries/${tapestrySlug}/${file}`;
+  }
+
+  return null;
+}
+
 // Find the ORIGINAL ARTWORK image (the design illustration the stitchers worked
-// from). These are the legacy {slug}-tapestry-* files, kept in place after the
-// photographs ({slug}-main.*) became the main image.
+// from): the {slug}-tapestry-* files, EXCLUDING the {slug}-tapestry-thumbnail-*
+// variants. Artwork naming is inconsistent across states ({slug}-tapestry-{w}w
+// and {slug}-tapestry-main-{w}w), so match on "-tapestry-" and exclude
+// "thumbnail".
 export function findArtworkInDirectory(tapestrySlug: string): string | null {
   const publicImagePath = path.join(
     process.cwd(),
@@ -232,20 +275,27 @@ export function findArtworkInDirectory(tapestrySlug: string): string | null {
   for (const format of formatPriority) {
     const variant = files.find((file) => {
       const ext = path.extname(file).toLowerCase();
+      const lower = file.toLowerCase();
       return (
         ext === format &&
-        file.includes('-tapestry-') &&
+        lower.includes('-tapestry-') &&
+        !lower.includes('thumbnail') &&
         file.includes('-1024w')
       );
     });
     if (variant) return `/images/tapestries/${tapestrySlug}/${variant}`;
   }
 
-  // Fallback: any artwork-named file.
+  // Fallback: any non-thumbnail artwork file.
   for (const format of formatPriority) {
     const variant = files.find((file) => {
       const ext = path.extname(file).toLowerCase();
-      return ext === format && file.includes('-tapestry-');
+      const lower = file.toLowerCase();
+      return (
+        ext === format &&
+        lower.includes('-tapestry-') &&
+        !lower.includes('thumbnail')
+      );
     });
     if (variant) return `/images/tapestries/${tapestrySlug}/${variant}`;
   }
@@ -254,28 +304,60 @@ export function findArtworkInDirectory(tapestrySlug: string): string | null {
 }
 ```
 
-- [ ] **Step 5: Populate `artworkPath` in `getTapestryBySlug`**
+- [ ] **Step 5: Prefer the photo for `imagePath`/`thumbnail` + set `artworkPath` in `getAllTapestries`**
 
-In `src/lib/tapestries.ts`, find the object returned by `getTapestryBySlug` (the block that sets `imagePath,`). Immediately after the `imagePath,` line in that returned object, add:
+In `src/lib/tapestries.ts`, inside `getAllTapestries`, find the line `const imagePath = findImageInDirectory(slug);` (inside the per-tapestry loop) and replace it with:
 
 ```ts
-    artworkPath: findArtworkInDirectory(slug) || undefined,
+      const photoPath = findPhotoInDirectory(slug);
+      const imagePath = photoPath || findImageInDirectory(slug);
 ```
 
-- [ ] **Step 6: Populate `artworkPath` in `getAllTapestries`**
+Then, a few lines below, change the thumbnail initializer from:
 
-In `src/lib/tapestries.ts`, find the object pushed/returned inside `getAllTapestries` (the other block that sets `imagePath,`). Immediately after its `imagePath,` line, add the same line:
+```ts
+      let thumbnail = data['thumbnail'];
+```
+
+to:
+
+```ts
+      let thumbnail = data['thumbnail'] || photoPath;
+```
+
+Then, in the `tapestries.push({ ... })` object, immediately after the `imagePath,` line, add:
+
+```ts
+        artworkPath: findArtworkInDirectory(slug) || undefined,
+```
+
+- [ ] **Step 6: Prefer the photo for `imagePath`/`thumbnail` + set `artworkPath` in `getTapestryBySlug`**
+
+In `src/lib/tapestries.ts`, inside `getTapestryBySlug`, find the line `const imagePath = findImageInDirectory(slug);` and replace it with:
+
+```ts
+    const photoPath = findPhotoInDirectory(slug);
+    const imagePath = photoPath || findImageInDirectory(slug);
+```
+
+Then change `let thumbnail = data['thumbnail'];` (in this function) to:
+
+```ts
+    let thumbnail = data['thumbnail'] || photoPath;
+```
+
+Then, in this function's returned object, immediately after the `imagePath,` line, add:
 
 ```ts
       artworkPath: findArtworkInDirectory(slug) || undefined,
 ```
 
-(Match the surrounding indentation in each location.)
+(Match the surrounding indentation at each location.)
 
 - [ ] **Step 7: Run the tests to verify they pass**
 
 Run: `npm test -- --testPathPattern=tapestry-artwork`
-Expected: PASS (3 passing).
+Expected: PASS (4 passing).
 
 - [ ] **Step 8: Typecheck and commit**
 
@@ -529,12 +611,12 @@ git commit -m "feat: add Original Artwork section to tapestry pages"
 ## Self-Review
 
 **Spec coverage:**
-- Replace main image with photo → Task 1 (crop), Task 2 (publish), Task 3 (resolver selects `{slug}-main.jpg`). ✓
-- Photos everywhere (grid + carousel) → flows from `thumbnail`→`imagePath` fallback (verified during brainstorming); confirmed visually in Task 5 Step 6. ✓
+- Replace main image with photo → Task 1 (crop, rotate to portrait), Task 2 (publish), Task 3 (`findPhotoInDirectory` makes `{slug}-photo.jpg` the `imagePath`). ✓
+- Photos everywhere (grid + carousel) → Task 3 makes `thumbnail` prefer the photo too; confirmed visually in Task 5 Step 6. ✓
 - New "Original Artwork" section before Team, contained card + caption → Task 4 + Task 5. ✓
 - Artist name in caption, linked to illustrator page, graceful fallback → Task 4 (component logic + tests for 1/0/many) + Task 5 (derive artists). ✓
-- Tight crop to navy border with spot-check → Task 1 Steps 1 & 3. ✓
-- Approach A, no resolver change, artwork untouched → Task 3 (additive only). ✓
+- Tight crop to navy border with spot-check → Task 1 Steps 1 & 3 (done, user-confirmed). ✓
+- No resolver change, artwork untouched → Task 3 (additive only; `findImageInDirectory` unmodified). ✓
 - Manifest gains 13 entries, artwork unchanged → Task 2 Step 3. ✓
 
 **Placeholder scan:** No TBD/TODO; all code and commands are concrete. ✓
