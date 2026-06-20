@@ -39,6 +39,7 @@ export interface TapestryEntry {
   background_color: string;
   content: string;
   imagePath?: string;
+  artworkPath?: string;
   audioPath?: string;
   audioDescription?: string;
   colony?: string | null;
@@ -152,6 +153,79 @@ function findImageInDirectory(tapestrySlug: string): string | null {
   return null;
 }
 
+// Find the PHOTOGRAPH of the finished, mounted tapestry: {slug}-photo.*.
+// This becomes the main image and thumbnail, preferred over the resolver.
+export function findPhotoInDirectory(tapestrySlug: string): string | null {
+  const publicImagePath = path.join(
+    process.cwd(),
+    'public/images/tapestries',
+    tapestrySlug,
+  );
+
+  if (!fs.existsSync(publicImagePath)) return null;
+
+  const files = fs.readdirSync(publicImagePath);
+  const formatPriority = ['.webp', '.jpg', '.jpeg', '.png', '.avif'];
+
+  for (const format of formatPriority) {
+    const file = files.find(
+      (f) => path.extname(f).toLowerCase() === format && f.includes('-photo'),
+    );
+    if (file) return `/images/tapestries/${tapestrySlug}/${file}`;
+  }
+
+  return null;
+}
+
+// Find the ORIGINAL ARTWORK image (the design illustration the stitchers worked
+// from): the {slug}-tapestry-* files, EXCLUDING the {slug}-tapestry-thumbnail-*
+// variants. Artwork naming is inconsistent across states ({slug}-tapestry-{w}w
+// and {slug}-tapestry-main-{w}w), so match on "-tapestry-" and exclude
+// "thumbnail".
+export function findArtworkInDirectory(tapestrySlug: string): string | null {
+  const publicImagePath = path.join(
+    process.cwd(),
+    'public/images/tapestries',
+    tapestrySlug,
+  );
+
+  if (!fs.existsSync(publicImagePath)) return null;
+
+  const files = fs.readdirSync(publicImagePath);
+  const formatPriority = ['.webp', '.jpg', '.jpeg', '.png', '.avif'];
+
+  // Prefer the 1024w artwork variant.
+  for (const format of formatPriority) {
+    const variant = files.find((file) => {
+      const ext = path.extname(file).toLowerCase();
+      const lower = file.toLowerCase();
+      return (
+        ext === format &&
+        lower.includes('-tapestry-') &&
+        !lower.includes('thumbnail') &&
+        file.includes('-1024w')
+      );
+    });
+    if (variant) return `/images/tapestries/${tapestrySlug}/${variant}`;
+  }
+
+  // Fallback: any non-thumbnail artwork file.
+  for (const format of formatPriority) {
+    const variant = files.find((file) => {
+      const ext = path.extname(file).toLowerCase();
+      const lower = file.toLowerCase();
+      return (
+        ext === format &&
+        lower.includes('-tapestry-') &&
+        !lower.includes('thumbnail')
+      );
+    });
+    if (variant) return `/images/tapestries/${tapestrySlug}/${variant}`;
+  }
+
+  return null;
+}
+
 // Helper function to find audio files in a directory
 function findAudioInDirectory(tapestrySlug: string): string | null {
   // Look in the public/images/tapestries directory instead of content directory
@@ -238,14 +312,15 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
           : 'Not Started';
 
       // Find the main image in the directory
-      const imagePath = findImageInDirectory(slug);
+      const photoPath = findPhotoInDirectory(slug);
+      const imagePath = photoPath || findImageInDirectory(slug);
 
       // Find audio description file
       const audioPath = findAudioInDirectory(slug);
 
       // Construct the thumbnail path - either from frontmatter or by convention
       // Updated to prefer optimized responsive variants over original files
-      let thumbnail = data['thumbnail'];
+      let thumbnail = data['thumbnail'] || photoPath;
       if (!thumbnail) {
         // Look for thumbnail in the public images directory
         const publicImagePath = path.join(
@@ -324,6 +399,7 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
         background_color: data['background_color'],
         content,
         imagePath,
+        artworkPath: findArtworkInDirectory(slug) || undefined,
         audioPath,
         audioDescription:
           data['audioDescription'] ||
@@ -364,13 +440,14 @@ export async function getTapestryBySlug(
         : 'Not Started';
 
     // Find the main image in the directory
-    const imagePath = findImageInDirectory(slug);
+    const photoPath = findPhotoInDirectory(slug);
+    const imagePath = photoPath || findImageInDirectory(slug);
 
     // Find audio description file
     const audioPath = findAudioInDirectory(slug);
 
     // Construct the thumbnail path - either from frontmatter or by convention
-    let thumbnail = data['thumbnail'];
+    let thumbnail = data['thumbnail'] || photoPath;
     if (!thumbnail) {
       // Look for thumbnail in the public images directory
       const publicImagePath = path.join(
@@ -407,6 +484,7 @@ export async function getTapestryBySlug(
       background_color: data['background_color'],
       content,
       imagePath,
+      artworkPath: findArtworkInDirectory(slug) || undefined,
       audioPath,
       audioDescription:
         data['audioDescription'] ||
