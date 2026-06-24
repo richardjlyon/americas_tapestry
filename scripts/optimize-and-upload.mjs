@@ -346,23 +346,42 @@ async function main() {
   // Initialize R2 client
   const r2Client = createR2Client();
 
-  // Determine source directory
-  const sourceDir = pathArg
+  // Determine source path (--path may point at a single file or a directory)
+  const sourcePath = pathArg
     ? path.join(PROJECT_ROOT, 'public', 'images', pathArg)
     : path.join(PROJECT_ROOT, 'public', 'images');
 
-  console.log(`📁 Source: ${path.relative(PROJECT_ROOT, sourceDir)}`);
+  console.log(`📁 Source: ${path.relative(PROJECT_ROOT, sourcePath)}`);
   console.log(`🚫 Excluding: ${CONFIG.excludeDirs.join(', ')}`);
   console.log(`📐 Sizes: ${CONFIG.sizes.join(', ')}px\n`);
 
-  // Get all image files
+  // Get image files. A --path argument may be a single file or a directory.
+  // For a single file the relative path IS pathArg, so no extra prefix is added.
   console.log('🔍 Scanning for images...');
 
   let imageFiles;
+  let processPrefix = pathArg || '';
   try {
-    imageFiles = await getImageFiles(sourceDir);
+    const sourceStat = await fs.stat(sourcePath);
+    if (sourceStat.isFile()) {
+      const ext = path.extname(sourcePath).toLowerCase();
+      if (!CONFIG.imageExtensions.includes(ext)) {
+        console.error(`❌ ${pathArg} is not a supported image type (${CONFIG.imageExtensions.join(', ')})`);
+        process.exit(1);
+      }
+      imageFiles = [{
+        fullPath: sourcePath,
+        relativePath: pathArg,
+        name: path.basename(sourcePath),
+        ext,
+        size: sourceStat.size,
+      }];
+      processPrefix = '';
+    } else {
+      imageFiles = await getImageFiles(sourcePath);
+    }
   } catch (error) {
-    console.error(`❌ Could not read directory: ${error.message}`);
+    console.error(`❌ Could not read path: ${error.message}`);
     process.exit(1);
   }
 
@@ -397,7 +416,7 @@ async function main() {
 
     process.stdout.write(`${progress} ${file.relativePath}...`);
 
-    await processImage(file, r2Client, bucket, publicUrl, manifest, stats, pathArg);
+    await processImage(file, r2Client, bucket, publicUrl, manifest, stats, processPrefix);
 
     if (stats.errors.length > 0 && stats.errors[stats.errors.length - 1].file === file.relativePath) {
       // Error was logged in processImage
@@ -406,10 +425,16 @@ async function main() {
     }
   }
 
-  // Save manifest
-  console.log('\n📝 Saving manifest...');
-  const manifestPath = await saveManifest(manifest);
-  console.log(`✅ Manifest saved to: ${path.relative(PROJECT_ROOT, manifestPath)}`);
+  // Save manifest — but NEVER during a dry run. Writing it in dry-run mode would
+  // record entries pointing at R2 objects that were never uploaded; a later real
+  // run would then skip them (already in manifest), causing silent 404s in prod.
+  if (isDryRun) {
+    console.log('\n📋 Dry run — manifest NOT written (no changes made).');
+  } else {
+    console.log('\n📝 Saving manifest...');
+    const manifestPath = await saveManifest(manifest);
+    console.log(`✅ Manifest saved to: ${path.relative(PROJECT_ROOT, manifestPath)}`);
+  }
 
   // Print summary
   console.log('\n📊 Summary:');

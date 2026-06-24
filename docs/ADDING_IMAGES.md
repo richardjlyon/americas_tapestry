@@ -50,7 +50,7 @@ node scripts/optimize-and-upload.mjs --path=news/2025-12/my-photo.jpg
 # Entire directory
 node scripts/optimize-and-upload.mjs --path=news/2025-12
 
-# Preview without uploading (dry run)
+# Preview only — makes no changes (no upload, no manifest write)
 node scripts/optimize-and-upload.mjs --path=news/2025-12 --dry-run
 ```
 
@@ -89,7 +89,7 @@ git push
 |---------|-------------|
 | `node scripts/optimize-and-upload.mjs` | Process all images |
 | `--path=<path>` | Process specific file or directory |
-| `--dry-run` | Preview without uploading |
+| `--dry-run` | Preview only — no upload and no manifest write (safe no-op) |
 | `--force` | Re-process even if already uploaded |
 | `--skip-upload` | Optimize locally only |
 
@@ -109,6 +109,13 @@ The image hasn't been processed. Run the optimization script:
 ```bash
 node scripts/optimize-and-upload.mjs --path=path/to/image.jpg
 ```
+
+### Verifying references before deploy
+`npm run check:images` scans all content and reports any image reference that
+would 404 (not in the manifest **and** missing from `public/`). It runs
+automatically as part of `npm run build`, so a broken reference fails the build
+rather than shipping silently. Images that exist in `public/` but aren't in the
+manifest are reported as warnings (they serve unoptimized — run the upload script).
 
 ### Images not updating after re-upload
 Use the `--force` flag to regenerate:

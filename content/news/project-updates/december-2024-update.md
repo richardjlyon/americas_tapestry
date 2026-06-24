@@ -44,7 +44,7 @@ who conducted a significant amount of research on the fascinating lives
 of those living in the Dey Mansion in Passaic County. Famously, the Dey
 Family hosted Generals Lafayette and Washington at the Mansion in 1780.
 
-![New Jersey Tapestry](/images/tapestries/new-jersey/new-jersey-tapestry-main.webp)
+![New Jersey Tapestry](/images/tapestries/new-jersey/new-jersey-tapestry-main-1024w.webp)
 
 The stitching will be conducted by members of the **Colonial West EGA
 Chapter** in partnership with the **Princeton EGA Chapter**. With their

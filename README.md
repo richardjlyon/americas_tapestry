@@ -20,9 +20,14 @@ npm run start
 # Lint code
 npm run lint
 
-# Copy content images to public directory (run after adding new content)
-node scripts/copy-to-public.mjs
+# Verify every image referenced by content resolves (also runs in `build`)
+npm run check:images
 ```
+
+> **Adding images?** Images are served from Cloudflare R2, not committed `public/`
+> output. Place files under `public/images/` and run
+> `node scripts/optimize-and-upload.mjs`. See **docs/ADDING_IMAGES.md** for the
+> full guide. (The old `scripts/copy-to-public.mjs` flow is obsolete.)
 
 ## Content Management Workflow
 
@@ -35,24 +40,33 @@ node scripts/copy-to-public.mjs
 
 2. **Add Content Files**
 
-   - Create `index.md` with colony information
-   - Add images using consistent naming:
-     - `[colony]-tapestry-main.jpg` (main image)
-     - `[colony]-tapestry-thumbnail.png` (thumbnail)
-   - Add audio description if available:
+   - Create `index.md` with colony information (frontmatter + body)
+   - Add the audio description if available, in `content/tapestries/[colony]/`:
      - `[colony]-audio-description.mp3`
 
-3. **Run Copy Script**
+3. **Add Images (Cloudflare R2 pipeline)**
+
+   Images are served from Cloudflare R2, **not** from `content/`. Place image
+   files under `public/images/tapestries/[colony]/` using consistent naming:
+
+   - `[colony]-tapestry-main.jpg` (main image)
+   - `[colony]-tapestry-thumbnail.png` (thumbnail)
+
+   Then optimize and upload them:
 
    ```
-   node scripts/copy-to-public.mjs
+   node scripts/optimize-and-upload.mjs --path=tapestries/[colony]
    ```
 
-   This copies your images to the public directory automatically..
+   This converts each image to WebP at multiple widths, uploads to R2, and
+   updates `src/lib/image-manifest.json`. Commit the updated manifest with the
+   images. See **docs/ADDING_IMAGES.md** for the full guide.
 
-4. **Restart/Rebuild**
+4. **Verify & Rebuild**
+   - Confirm every referenced image resolves: `npm run check:images`
+     (this also runs automatically as part of `npm run build`)
    - In development: `npm run dev`
-   - For production: `npm run build && npm run start`
+   - For production: `npm run build`
 
 ### Best Practices
 
@@ -86,19 +100,22 @@ node scripts/copy-to-public.mjs
    content/
      └── tapestries/
          ├── connecticut/
-         │   ├── connecticut-tapestry-main.jpg
-         │   ├── connecticut-tapestry-thumbnail.png
          │   ├── connecticut-audio-description.mp3
          │   └── index.md
-         ├── delaware/
-         │   └── ...
+         └── ...
+
+   public/images/tapestries/
+         ├── connecticut/
+         │   ├── connecticut-tapestry-main.jpg
+         │   └── connecticut-tapestry-thumbnail.png
          └── ...
    ```
 
 2. **Image Serving**
-   - Images are served from `/public/images/tapestries/`
-   - Images are automatically copied from the content directory
-   - Original content organization remains intact
+   - Images live under `/public/images/...` and are served from Cloudflare R2
+     (pre-optimized to WebP) via `src/lib/image-manifest.json`.
+   - Add new images with `scripts/optimize-and-upload.mjs` — see docs/ADDING_IMAGES.md.
+   - SVGs and files under `placeholders/` are served directly from `public/`.
 
 ## Project Structure
 
