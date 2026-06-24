@@ -15,7 +15,7 @@
 - **No commerce logic in the repo:** no cart, checkout, payment code, or new environment secrets.
 - Launch scope is **Tier 1 prints only**: per-colony poster + premium giclée + framed, the "All 13 Colonies" composite poster, and an **Artist Edition (printed signature)**. No textiles, gifts, calendar, or hand-signed drops.
 - **Proof gate:** configure ONE colony end-to-end and order a physical proof before scaling to all 13.
-- Store subdomain assumed `shop.americastapestry.org`. If the real apex domain differs, update `SHOP_BASE_URL` in `src/lib/shop-links.ts` only.
+- Store subdomain is confirmed `shop.americastapestry.com` (main site is `www.americastapestry.com`). If it ever changes, update `SHOP_BASE_URL` in `src/lib/shop-links.ts` only.
 - The 13 canonical colony slugs are: `connecticut`, `delaware`, `georgia`, `maryland`, `massachusetts`, `new-hampshire`, `new-jersey`, `new-york`, `north-carolina`, `pennsylvania`, `rhode-island`, `south-carolina`, `virginia`.
 - Follow existing repo conventions: `next/link` for internal routes, plain `<a target="_blank" rel="noopener noreferrer">` for the external store, the `Button` component (`@/components/ui/button`) with `asChild` for link-buttons, and colonial style variants.
 
@@ -27,7 +27,7 @@ These tasks are done in Shopify/Printful, not the repo. They have no unit tests;
 
 ### Task A1: Create the dedicated Shopify store
 - [ ] Create a new Shopify store (not the doll store); set brand name, logo, colours to match America's Tapestry.
-- [ ] Add the custom domain `shop.americastapestry.org` (or confirm the correct subdomain; if different, note it for Task B1).
+- [ ] Add the custom domain `shop.americastapestry.com`.
 - [ ] Create one collection titled **Fine-Art Prints** with handle `fine-art-prints`.
 
 **Acceptance:** Store reachable at the subdomain; empty `fine-art-prints` collection exists.
@@ -60,7 +60,7 @@ These tasks are done in Shopify/Printful, not the repo. They have no unit tests;
 **Acceptance:** Approved composite image file ready for Printful upload.
 
 ### Task A6: Exhibition QR + newsletter announce
-- [ ] Generate a QR code pointing to `https://americastapestry.org/shop`; hand off for exhibition signage.
+- [ ] Generate a QR code pointing to `https://americastapestry.com/shop`; hand off for exhibition signage.
 - [ ] Draft and send the launch announcement to the existing MailerLite list.
 
 **Acceptance:** QR delivered; newsletter sent at launch.
@@ -130,7 +130,7 @@ Expected: FAIL — cannot find module `@/lib/shop-links`.
  * product goes live; leave it null to fall back to the collection page. This
  * keeps every link valid during the staged rollout / proof gate.
  */
-export const SHOP_BASE_URL = 'https://shop.americastapestry.org';
+export const SHOP_BASE_URL = 'https://shop.americastapestry.com';
 export const PRINTS_COLLECTION_PATH = '/collections/fine-art-prints';
 
 /** Colony slug -> Shopify product handle (or null until that product is live). */

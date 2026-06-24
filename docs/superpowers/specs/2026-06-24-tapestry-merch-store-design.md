@@ -62,7 +62,7 @@ Four levers make this unusually monetisable:
 ## Architecture
 
 ```
-americastapestry.org (Next.js / Vercel)        shop.americastapestry.org (Shopify, hosted theme)
+americastapestry.com (Next.js / Vercel)        shop.americastapestry.com (Shopify, hosted theme)
  ├─ nav: "Shop"  ──────────────────────────────▶  store homepage
  ├─ /shop  (lightweight intro page) ───────────▶  collection: "Fine-Art Prints"
  └─ /tapestries/[slug]                             └─ Printful auto-prints + ships direct
@@ -86,7 +86,7 @@ the tapestry site. Goal: live before July 4.
 ### Phase 2 — Fast-follow (only if it sells)
 
 Port the `stefanromerodolls` headless template into a branded headless
-storefront on `shop.americastapestry.org`, reusing ~80–90% of proven code
+storefront on `shop.americastapestry.com`, reusing ~80–90% of proven code
 (Shopify client, cart, `ProductCard`, `AddToCart`, gallery, sync script). New
 work: brand/messaging, and wiring Printful into the headless order flow.
 Revenue from Phase 1 justifies the effort. The template's value does not
@@ -173,7 +173,7 @@ No cart, checkout, payment code, or new environment secrets enter the repo.
 
 ## Launch checklist (Phase 1, deadline-driven)
 
-1. Create new Shopify store; set brand, domain `shop.americastapestry.org`.
+1. Create new Shopify store; set brand, domain `shop.americastapestry.com`.
 2. Install + connect Printful app.
 3. Configure **one** colony (3 formats) end-to-end; order a physical proof.
 4. On proof approval, configure remaining 12 colonies + composite + Artist Edition.
