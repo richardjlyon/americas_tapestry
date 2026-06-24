@@ -3,6 +3,14 @@ import { NewsGrid } from '@/components/features/news/news-grid';
 import { FeaturedPosts } from '@/components/features/news/featured-posts';
 import { getAllBlogPosts, getFeaturedBlogPosts } from '@/lib/blog';
 import { PageSection } from '@/components/ui/page-section';
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'News',
+  description:
+    "Updates, events, and historical insights from the America's Tapestry project.",
+  path: '/news',
+});
 
 export default async function NewsPage() {
   const allPosts = await getAllBlogPosts();

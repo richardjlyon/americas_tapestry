@@ -12,6 +12,14 @@ import { VisionSection } from '@/components/features/home/vision-section';
 import { TapestriesSection } from '@/components/features/home/tapestries-section';
 import { SupportSection } from '@/components/features/home/support-section';
 import { GetInTouchSection } from '@/components/features/home/get-in-touch-section';
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'Embroidering the Story of the 13 Colonies',
+  description:
+    "America's Tapestry tells the stories of the original thirteen colonies through embroidery, created for America's 250th anniversary.",
+  path: '/',
+});
 
 export default async function Home() {
   const allTapestries = await getAllTapestries();

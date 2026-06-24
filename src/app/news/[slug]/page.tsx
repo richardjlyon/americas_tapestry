@@ -11,6 +11,8 @@ import type { BlogCategory } from '@/lib/blog';
 import { notFound } from 'next/navigation';
 import { markdownToHtml } from '@/lib/markdown';
 import { PageSection } from '@/components/ui/page-section';
+import { pageMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts();
@@ -18,6 +20,27 @@ export async function generateStaticParams() {
   return posts.map((post) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug);
+
+  if (!post) {
+    return { title: "Article Not Found | America's Tapestry" };
+  }
+
+  return pageMetadata({
+    title: post.title,
+    description:
+      post.excerpt || `${post.title} — an update from America's Tapestry.`,
+    path: `/news/${slug}`,
+    image: post.image || undefined,
+  });
 }
 
 // Function to add captions to images in HTML

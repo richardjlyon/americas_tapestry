@@ -8,11 +8,32 @@ import {
 import type { BlogCategory } from '@/lib/blog';
 import { notFound } from 'next/navigation';
 import { PageSection } from '@/components/ui/page-section';
+import { pageMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
   return blogCategories.map((category) => ({
     category: category.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}): Promise<Metadata> {
+  const { category } = await params;
+  const info = getCategoryBySlug(category);
+
+  if (!info) {
+    return { title: "News | America's Tapestry" };
+  }
+
+  return pageMetadata({
+    title: `${info.name} | News`,
+    description: info.description || `${info.name} from America's Tapestry.`,
+    path: `/news/category/${category}`,
+  });
 }
 
 export default async function CategoryPage({

@@ -1,8 +1,10 @@
 import type React from 'react';
+import type { Metadata } from 'next';
 import './globals.css';
 import { Montserrat, EB_Garamond } from 'next/font/google';
 import { ThemeProvider } from '@/components/shared/theme-provider';
 import { Analytics } from '@vercel/analytics/react';
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, DEFAULT_OG_IMAGE } from '@/lib/seo';
 
 // Load Montserrat as the sans-serif font
 const montserrat = Montserrat({
@@ -19,11 +21,27 @@ const ebGaramond = EB_Garamond({
   display: 'swap',
 });
 
-export const metadata = {
-  title: "America's Tapestry",
-  description:
-    'A visual exploration of cultural diversity across the American landscape',
-  generator: 'v0.dev',
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  // Plain default title (no template): per-page helpers return fully-formed
+  // titles already ending in the site name, so a template would double-suffix.
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    siteName: SITE_NAME,
+    type: 'website',
+    locale: 'en_US',
+    url: SITE_URL,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: [{ url: DEFAULT_OG_IMAGE }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
+  },
 };
 
 export default function RootLayout({

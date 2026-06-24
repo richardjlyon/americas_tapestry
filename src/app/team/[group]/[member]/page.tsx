@@ -3,6 +3,8 @@ import { getTeamMemberData } from '@/app/actions/team-actions';
 import { notFound } from 'next/navigation';
 import { PageSection } from '@/components/ui/page-section';
 import { MemberCard } from '@/components/features/team/member-card';
+import { pageMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const groups = await getTeamGroups();
@@ -20,6 +22,25 @@ export async function generateStaticParams() {
   }
 
   return params;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ group: string; member: string }>;
+}): Promise<Metadata> {
+  const { group: groupSlug, member: memberSlug } = await params;
+  const { member, group } = await getTeamMemberData(groupSlug, memberSlug);
+
+  if (!member || !group) {
+    return { title: "Team Member Not Found | America's Tapestry" };
+  }
+
+  return pageMetadata({
+    title: member.name,
+    description: `${member.name} — ${member.role}, ${group.name} for America's Tapestry.`,
+    path: `/team/${groupSlug}/${memberSlug}`,
+  });
 }
 
 export default async function TeamMemberPage({

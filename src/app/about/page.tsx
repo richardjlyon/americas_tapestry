@@ -1,6 +1,14 @@
 import { PageSection } from "@/components/ui/page-section";
 import { ReadingContainer } from "@/components/ui/reading-container";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "About",
+  description:
+    "Learn about America's Tapestry — its mission, history, and the team creating thirteen embroidered panels for America's 250th anniversary.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

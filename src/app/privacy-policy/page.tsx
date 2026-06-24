@@ -1,5 +1,12 @@
 import { PageSection } from '@/components/ui/page-section';
 import { ReadingContainer } from '@/components/ui/reading-container';
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'Privacy Policy',
+  description: "Privacy policy for the America's Tapestry website.",
+  path: '/privacy-policy',
+});
 
 export default function PrivacyPolicyPage() {
   return (

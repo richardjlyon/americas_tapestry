@@ -13,6 +13,8 @@ import { getImagePath } from '@/lib/image-utils';
 import { getTapestryTalkByState } from '@/lib/blog';
 import { TapestryTalkSection } from '@/components/features/tapestries/tapestry-talk-section';
 import { ArtworkCard } from '@/components/features/tapestries/artwork-card';
+import { pageMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 
 // Status color mapping
 const statusColors = {
@@ -35,6 +37,28 @@ export async function generateStaticParams() {
   return tapestries.map((tapestry) => ({
     slug: tapestry.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const tapestry = await getTapestryBySlug(slug);
+
+  if (!tapestry) {
+    return { title: "Tapestry Not Found | America's Tapestry" };
+  }
+
+  return pageMetadata({
+    title: tapestry.title,
+    description:
+      tapestry.summary ||
+      `Explore the ${tapestry.title} panel of America's Tapestry.`,
+    path: `/tapestries/${slug}`,
+    image: tapestry.imagePath || undefined,
+  });
 }
 
 export default async function TapestryPage({

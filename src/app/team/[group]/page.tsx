@@ -3,12 +3,34 @@ import { getTeamData } from '@/app/actions/team-actions';
 import { GroupContent } from '@/components/features/team/group-content';
 import { notFound } from 'next/navigation';
 import { PageSection } from '@/components/ui/page-section';
+import { pageMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const groups = await getTeamGroups();
   return groups.map((group) => ({
     group: group.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ group: string }>;
+}): Promise<Metadata> {
+  const { group: groupSlug } = await params;
+  const groups = await getTeamGroups();
+  const group = groups.find((g) => g.slug === groupSlug);
+
+  if (!group) {
+    return { title: "Team | America's Tapestry" };
+  }
+
+  return pageMetadata({
+    title: group.name,
+    description: `Meet the ${group.name} behind America's Tapestry.`,
+    path: `/team/${groupSlug}`,
+  });
 }
 
 export default async function TeamGroupPage({

@@ -1,6 +1,14 @@
 import { getAllExhibitions } from '@/lib/exhibitions';
 import { ExhibitionCard } from '@/components/features/exhibitions/exhibition-card';
 import { PageSection } from '@/components/ui/page-section';
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'Exhibitions',
+  description:
+    "Where to see America's Tapestry on display — current and upcoming exhibitions across the original colonies.",
+  path: '/exhibitions',
+});
 
 export default async function ExhibitionsPage() {
   const exhibitions = await getAllExhibitions();

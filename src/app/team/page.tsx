@@ -1,6 +1,14 @@
 import { ProjectDirectorSection } from '@/components/features/team/project-director-section';
 import { TeamGroupsSection } from '@/components/features/team/team-groups-section';
 import { PageSection } from '@/components/ui/page-section';
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'Our Team',
+  description:
+    "Meet the project directors, state directors, illustrators, historical partners, and stitchers behind America's Tapestry.",
+  path: '/team',
+});
 
 export default async function TeamPage() {
   return (

@@ -2,6 +2,15 @@ import { InteractiveColoniesMap } from '@/components/features/tapestries/interac
 import { TapestryGrid } from '@/components/features/tapestries/tapestry-grid';
 import { getAllTapestries } from '@/lib/tapestries';
 import { PageSection } from '@/components/ui/page-section';
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'The Tapestry Collection',
+  description:
+    "Explore all thirteen embroidered panels of America's Tapestry — one for each original colony.",
+  path: '/tapestries',
+});
+
 export default async function TapestriesPage() {
   const tapestries = await getAllTapestries();
 
