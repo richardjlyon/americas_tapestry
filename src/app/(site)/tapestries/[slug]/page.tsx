@@ -13,6 +13,7 @@ import { getImagePath } from '@/lib/image-utils';
 import { getTapestryTalkByState } from '@/lib/blog';
 import { TapestryTalkSection } from '@/components/features/tapestries/tapestry-talk-section';
 import { ArtworkCard } from '@/components/features/tapestries/artwork-card';
+import { BuyPrintCallout } from '@/components/features/shop/buy-print-callout';
 import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 
@@ -195,6 +196,8 @@ export default async function TapestryPage({
             </div>
           )}
         </ReadingContainer>
+
+        <BuyPrintCallout colonySlug={slug} colonyName={tapestry.title} />
 
         {/* Tapestry Talk video section */}
         {tapestryTalkVideo && (
