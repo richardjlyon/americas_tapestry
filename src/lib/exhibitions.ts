@@ -1,5 +1,6 @@
 import { getAllContent, getContentBySlug } from './content-core';
 import { extractExcerpt } from './markdown';
+import { exhibitionSchema, validateFrontmatter } from './content-schemas';
 
 export interface Exhibition {
   slug: string;
@@ -63,7 +64,10 @@ export async function getAllExhibitions(): Promise<Exhibition[]> {
     const exhibitions: Exhibition[] = exhibitionContent
       .filter((item) => item.slug !== 'README') // Exclude README files
       .map((item) => {
-        const data = item.frontmatter;
+        const data = validateFrontmatter(exhibitionSchema, item.frontmatter, {
+          contentType: 'exhibition',
+          slug: item.slug,
+        });
         const content = item.content;
 
         // Convert image field to imagePath using /images/exhibitions/
@@ -123,7 +127,11 @@ export async function getExhibitionBySlug(
       return null;
     }
 
-    const data = exhibitionItem.frontmatter;
+    const data = validateFrontmatter(
+      exhibitionSchema,
+      exhibitionItem.frontmatter,
+      { contentType: 'exhibition', slug },
+    );
     const content = exhibitionItem.content;
 
     // Convert image field to imagePath using /images/exhibitions/

@@ -1,5 +1,6 @@
 import { getAllContent, getContentBySlug } from './content-core';
 import { extractExcerpt, markdownToHtml } from './markdown';
+import { sponsorSchema, validateFrontmatter } from './content-schemas';
 
 export interface Sponsor {
   slug: string;
@@ -47,7 +48,10 @@ export async function getAllSponsors(): Promise<Sponsor[]> {
     const sponsors: Sponsor[] = sponsorContent
       .filter((item) => item.slug !== 'README') // Exclude README files
       .map((item) => {
-        const data = item.frontmatter;
+        const data = validateFrontmatter(sponsorSchema, item.frontmatter, {
+          contentType: 'sponsor',
+          slug: item.slug,
+        });
         const content = item.content;
 
         // Use simple convention: /images/sponsors/{slug}-logo.png
@@ -100,7 +104,10 @@ export async function getSponsorBySlug(slug: string): Promise<Sponsor | null> {
       return null;
     }
 
-    const data = sponsorItem.frontmatter;
+    const data = validateFrontmatter(sponsorSchema, sponsorItem.frontmatter, {
+      contentType: 'sponsor',
+      slug,
+    });
     const content = sponsorItem.content;
 
     // Use simple convention: /images/sponsors/{slug}-logo.png
