@@ -7819,5 +7819,14 @@
     },
     "originalSize": 10266795,
     "hash": "008b5898"
+  },
+  "/images/news/2026-06/01.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-06/01-640w-47dea755.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-06/01-1024w-47dea755.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/2026-06/01-1920w-47dea755.webp"
+    },
+    "originalSize": 34674,
+    "hash": "47dea755"
   }
 }
