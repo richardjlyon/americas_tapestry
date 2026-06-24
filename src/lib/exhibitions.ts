@@ -1,10 +1,8 @@
-import { getAllContent, getContentBySlug } from './content-core';
+import type { z } from 'zod';
+import type { ContentItem } from './content-core';
 import { extractExcerpt } from './markdown';
-import {
-  exhibitionSchema,
-  validateFrontmatter,
-  FrontmatterValidationError,
-} from './content-schemas';
+import { exhibitionSchema } from './content-schemas';
+import { defineContentLoader } from './content-loader';
 
 export interface Exhibition {
   slug: string;
@@ -56,112 +54,58 @@ export function formatDateRange(startDate: string, endDate: string): string {
 }
 
 /**
- * Get all exhibitions sorted by start date
- *
- * @returns Array of exhibition objects
+ * Map validated exhibition frontmatter to an Exhibition object. Shared by
+ * getAll and getBySlug so the field defaults live in one place.
  */
-export async function getAllExhibitions(): Promise<Exhibition[]> {
-  try {
-    // Use content-core to get all exhibition content
-    const exhibitionContent = await getAllContent('exhibitions');
+function mapExhibition(
+  data: z.infer<typeof exhibitionSchema>,
+  item: ContentItem,
+): Exhibition {
+  // Convert image field to imagePath using /images/exhibitions/
+  const imagePath = `/images/exhibitions/${data['image']}`;
 
-    const exhibitions: Exhibition[] = exhibitionContent
-      .filter((item) => item.slug !== 'README') // Exclude README files
-      .map((item) => {
-        const data = validateFrontmatter(exhibitionSchema, item.frontmatter, {
-          contentType: 'exhibition',
-          slug: item.slug,
-        });
-        const content = item.content;
+  // Create an excerpt from the content or use provided one
+  const excerpt = item.excerpt || extractExcerpt(item.content);
 
-        // Convert image field to imagePath using /images/exhibitions/
-        const imagePath = `/images/exhibitions/${data['image']}`;
-
-        // Create an excerpt from the content or use provided one
-        const excerpt = item.excerpt || extractExcerpt(content);
-
-        // Return the exhibition data
-        return {
-          slug: item.slug,
-          name: data['name'] || item.slug.replace(/-/g, ' '),
-          state: data['state'] || '',
-          role: data['role'] || 'exhibition',
-          address: data['address'] || '',
-          startDate: data['startDate'] || '',
-          endDate: data['endDate'] || '',
-          moreInfo: data['moreInfo'],
-          image: data['image'] || `${item.slug}.png`,
-          imagePath,
-          content,
-          excerpt,
-        } as Exhibition;
-      });
-
-    // Sort by startDate chronologically
-    return exhibitions.sort((a, b) => {
-      try {
-        const dateA = new Date(a.startDate);
-        const dateB = new Date(b.startDate);
-        return dateA.getTime() - dateB.getTime();
-      } catch (error) {
-        console.warn('Error sorting exhibitions by date:', error);
-        return a.name.localeCompare(b.name); // Fallback to name sorting
-      }
-    });
-  } catch (error) {
-    if (error instanceof FrontmatterValidationError) throw error;
-    console.error('Error getting all exhibitions:', error);
-    return [];
-  }
+  return {
+    slug: item.slug,
+    name: data['name'] || item.slug.replace(/-/g, ' '),
+    state: data['state'] || '',
+    role: data['role'] || 'exhibition',
+    address: data['address'] || '',
+    startDate: data['startDate'] || '',
+    endDate: data['endDate'] || '',
+    moreInfo: data['moreInfo'],
+    image: data['image'] || `${item.slug}.png`,
+    imagePath,
+    content: item.content,
+    excerpt,
+  } as Exhibition;
 }
 
-/**
- * Get a single exhibition by slug
- *
- * @param slug Exhibition slug
- * @returns Exhibition object or null if not found
- */
-export async function getExhibitionBySlug(
-  slug: string,
-): Promise<Exhibition | null> {
-  try {
-    // Use content-core to get the specific exhibition content
-    const exhibitionItem = await getContentBySlug('exhibitions', slug);
-
-    if (!exhibitionItem) {
-      return null;
+const exhibitionsLoader = defineContentLoader<
+  Exhibition,
+  typeof exhibitionSchema
+>({
+  contentType: 'exhibitions',
+  label: 'exhibition',
+  schema: exhibitionSchema,
+  map: mapExhibition,
+  // Sort by startDate chronologically, falling back to name on bad dates
+  sort: (a, b) => {
+    try {
+      const dateA = new Date(a.startDate);
+      const dateB = new Date(b.startDate);
+      return dateA.getTime() - dateB.getTime();
+    } catch (error) {
+      console.warn('Error sorting exhibitions by date:', error);
+      return a.name.localeCompare(b.name);
     }
+  },
+});
 
-    const data = validateFrontmatter(
-      exhibitionSchema,
-      exhibitionItem.frontmatter,
-      { contentType: 'exhibition', slug },
-    );
-    const content = exhibitionItem.content;
+/** Get all exhibitions, sorted chronologically by start date. */
+export const getAllExhibitions = exhibitionsLoader.getAll;
 
-    // Convert image field to imagePath using /images/exhibitions/
-    const imagePath = `/images/exhibitions/${data['image']}`;
-
-    // Create an excerpt from the content or use provided one
-    const excerpt = exhibitionItem.excerpt || extractExcerpt(content);
-
-    return {
-      slug,
-      name: data['name'] || slug.replace(/-/g, ' '),
-      state: data['state'] || '',
-      role: data['role'] || 'exhibition',
-      address: data['address'] || '',
-      startDate: data['startDate'] || '',
-      endDate: data['endDate'] || '',
-      moreInfo: data['moreInfo'],
-      image: data['image'] || `${slug}.png`,
-      imagePath,
-      content,
-      excerpt,
-    } as Exhibition;
-  } catch (error) {
-    if (error instanceof FrontmatterValidationError) throw error;
-    console.error(`Error getting exhibition by slug ${slug}:`, error);
-    return null;
-  }
-}
+/** Get a single exhibition by slug, or null if not found. */
+export const getExhibitionBySlug = exhibitionsLoader.getBySlug;

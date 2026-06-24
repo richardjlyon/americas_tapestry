@@ -1,10 +1,8 @@
-import { getAllContent, getContentBySlug } from './content-core';
+import type { z } from 'zod';
+import type { ContentItem } from './content-core';
 import { extractExcerpt, markdownToHtml } from './markdown';
-import {
-  sponsorSchema,
-  validateFrontmatter,
-  FrontmatterValidationError,
-} from './content-schemas';
+import { sponsorSchema } from './content-schemas';
+import { defineContentLoader } from './content-loader';
 
 export interface Sponsor {
   slug: string;
@@ -40,111 +38,49 @@ function formatSponsorName(
 }
 
 /**
- * Get all sponsors
- *
- * @returns Array of sponsor objects
+ * Map validated sponsor frontmatter to a Sponsor object. Shared by getAll and
+ * getBySlug so the field defaults live in one place.
  */
-export async function getAllSponsors(): Promise<Sponsor[]> {
-  try {
-    // Use content-core to get all sponsor content
-    const sponsorContent = await getAllContent('sponsors');
+function mapSponsor(
+  data: z.infer<typeof sponsorSchema>,
+  item: ContentItem,
+): Sponsor {
+  // Use simple convention: /images/sponsors/{slug}-logo.png
+  // If frontmatter explicitly sets logo to "none", skip the logo
+  const hasLogo = data['logo'] !== 'none';
+  const logoPath = hasLogo ? `/images/sponsors/${item.slug}-logo.png` : '';
 
-    const sponsors: Sponsor[] = sponsorContent
-      .filter((item) => item.slug !== 'README') // Exclude README files
-      .map((item) => {
-        const data = validateFrontmatter(sponsorSchema, item.frontmatter, {
-          contentType: 'sponsor',
-          slug: item.slug,
-        });
-        const content = item.content;
+  // Create an excerpt from the content or use provided one
+  const excerpt = item.excerpt || extractExcerpt(item.content);
 
-        // Use simple convention: /images/sponsors/{slug}-logo.png
-        // If frontmatter explicitly sets logo to "none", skip the logo
-        const hasLogo = data['logo'] !== 'none';
-        const logoPath = hasLogo ? `/images/sponsors/${item.slug}-logo.png` : '';
-
-        // Create an excerpt from the content or use provided one
-        const excerpt = item.excerpt || extractExcerpt(content);
-
-        // Format the display name
-        const displayName = formatSponsorName(data['name'], item.slug);
-
-        // Return the sponsor data
-        return {
-          slug: item.slug,
-          name: displayName,
-          website: data['website'] || '#',
-          tier: data['tier'] || 'Supporter',
-          location: data['location'] || '',
-          partnership_year: data['partnership_year'],
-          logo: hasLogo ? `${item.slug}-logo.png` : '',
-          logoPath,
-          order: data['order'] || 999,
-          content,
-          excerpt,
-        } as Sponsor;
-      });
-
-    // Sort alphabetically by name
-    return sponsors.sort((a, b) => a.name.localeCompare(b.name));
-  } catch (error) {
-    if (error instanceof FrontmatterValidationError) throw error;
-    console.error('Error getting all sponsors:', error);
-    return [];
-  }
+  return {
+    slug: item.slug,
+    name: formatSponsorName(data['name'], item.slug),
+    website: data['website'] || '#',
+    tier: data['tier'] || 'Supporter',
+    location: data['location'] || '',
+    partnership_year: data['partnership_year'],
+    logo: hasLogo ? `${item.slug}-logo.png` : '',
+    logoPath,
+    order: data['order'] || 999,
+    content: item.content,
+    excerpt,
+  } as Sponsor;
 }
 
-/**
- * Get a single sponsor by slug
- *
- * @param slug Sponsor slug
- * @returns Sponsor object or null if not found
- */
-export async function getSponsorBySlug(slug: string): Promise<Sponsor | null> {
-  try {
-    // Use content-core to get the specific sponsor content
-    const sponsorItem = await getContentBySlug('sponsors', slug);
+const sponsorsLoader = defineContentLoader<Sponsor, typeof sponsorSchema>({
+  contentType: 'sponsors',
+  label: 'sponsor',
+  schema: sponsorSchema,
+  map: mapSponsor,
+  sort: (a, b) => a.name.localeCompare(b.name),
+});
 
-    if (!sponsorItem) {
-      return null;
-    }
+/** Get all sponsors, sorted alphabetically by name. */
+export const getAllSponsors = sponsorsLoader.getAll;
 
-    const data = validateFrontmatter(sponsorSchema, sponsorItem.frontmatter, {
-      contentType: 'sponsor',
-      slug,
-    });
-    const content = sponsorItem.content;
-
-    // Use simple convention: /images/sponsors/{slug}-logo.png
-    // If frontmatter explicitly sets logo to "none", skip the logo
-    const hasLogo = data['logo'] !== 'none';
-    const logoPath = hasLogo ? `/images/sponsors/${slug}-logo.png` : '';
-
-    // Create an excerpt from the content or use provided one
-    const excerpt = sponsorItem.excerpt || extractExcerpt(content);
-
-    // Format the display name
-    const displayName = formatSponsorName(data['name'], slug);
-
-    return {
-      slug,
-      name: displayName,
-      website: data['website'] || '#',
-      tier: data['tier'] || 'Supporter',
-      location: data['location'] || '',
-      partnership_year: data['partnership_year'],
-      logo: hasLogo ? `${slug}-logo.png` : '',
-      logoPath,
-      order: data['order'] || 999,
-      content,
-      excerpt,
-    } as Sponsor;
-  } catch (error) {
-    if (error instanceof FrontmatterValidationError) throw error;
-    console.error(`Error getting sponsor by slug ${slug}:`, error);
-    return null;
-  }
-}
+/** Get a single sponsor by slug, or null if not found. */
+export const getSponsorBySlug = sponsorsLoader.getBySlug;
 
 /**
  * Get a sponsor together with its rendered HTML content

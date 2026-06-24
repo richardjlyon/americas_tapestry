@@ -1,3 +1,4 @@
+import type { z } from 'zod';
 import { getAllContent } from './content-core';
 import {
   teamGroupSchema,
@@ -89,6 +90,23 @@ async function getTeamContentForGroup(group: string) {
   return content;
 }
 
+// Build a TeamGroup from validated group-index frontmatter + body.
+// Shared by getTeamGroup and getTeamGroups.
+function buildTeamGroup(
+  data: z.infer<typeof teamGroupSchema>,
+  content: string,
+  slug: string,
+): TeamGroup {
+  return {
+    ...data, // Include any additional frontmatter fields
+    name: data['name'],
+    slug,
+    description: data['description'],
+    longDescription: content.trim(),
+    order: data['order'],
+  } as TeamGroup;
+}
+
 // Read team group data from the directory structure
 export async function getTeamGroup(
   slug: string,
@@ -113,16 +131,8 @@ export async function getTeamGroup(
       contentType: 'team group',
       slug,
     });
-    const content = groupContent.content;
 
-    return {
-      ...data, // Include any additional frontmatter fields
-      name: data['name'],
-      slug: slug,
-      description: data['description'],
-      longDescription: content.trim(),
-      order: data['order'],
-    } as TeamGroup;
+    return buildTeamGroup(data, groupContent.content, slug);
   } catch (error) {
     if (error instanceof FrontmatterValidationError) throw error;
     console.error(`Error reading team group ${slug}:`, error);
@@ -149,16 +159,8 @@ export async function getTeamGroups(): Promise<TeamGroup[]> {
         contentType: 'team group',
         slug: item.slug,
       });
-      const content = item.content;
 
-      groups.push({
-        ...data, // Include any additional frontmatter fields
-        name: data['name'],
-        slug: item.slug,
-        description: data['description'],
-        longDescription: content.trim(),
-        order: data['order'],
-      } as TeamGroup);
+      groups.push(buildTeamGroup(data, item.content, item.slug));
     }
 
     // Sort by order field
