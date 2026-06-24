@@ -1,6 +1,19 @@
 import { z } from 'zod';
 
 /**
+ * Thrown when frontmatter fails schema validation. Loaders catch generic read
+ * errors and degrade gracefully (return []/null), but they re-throw this type
+ * so malformed frontmatter hard-fails the build instead of silently dropping
+ * content.
+ */
+export class FrontmatterValidationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'FrontmatterValidationError';
+  }
+}
+
+/**
  * Per-content-type zod schemas for markdown frontmatter validation.
  *
  * Schemas are derived from the ACTUAL frontmatter present across every file
@@ -14,10 +27,11 @@ import { z } from 'zod';
 /**
  * Run a zod schema against parsed frontmatter and fail loud on malformed data.
  *
- * On success returns the typed, parsed data. On failure throws an Error whose
- * message names the content type, the slug/filename, and a readable dump of the
- * zod issues so malformed content fails the build with an actionable message
- * instead of being silently dropped or accepted.
+ * On success returns the typed, parsed data. On failure throws a
+ * FrontmatterValidationError whose message names the content type, the
+ * slug/filename, and a readable dump of the zod issues so malformed content
+ * fails the build with an actionable message instead of being silently dropped
+ * or accepted.
  *
  * @param schema - The zod schema for the content type
  * @param data - The raw frontmatter object (gray-matter `data`)
@@ -37,7 +51,7 @@ export function validateFrontmatter<T extends z.ZodTypeAny>(
         return `  - ${path}: ${issue.message}`;
       })
       .join('\n');
-    throw new Error(
+    throw new FrontmatterValidationError(
       `Invalid frontmatter for ${context.contentType} "${context.slug}":\n${issues}`,
     );
   }

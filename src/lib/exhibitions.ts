@@ -1,6 +1,10 @@
 import { getAllContent, getContentBySlug } from './content-core';
 import { extractExcerpt } from './markdown';
-import { exhibitionSchema, validateFrontmatter } from './content-schemas';
+import {
+  exhibitionSchema,
+  validateFrontmatter,
+  FrontmatterValidationError,
+} from './content-schemas';
 
 export interface Exhibition {
   slug: string;
@@ -105,6 +109,7 @@ export async function getAllExhibitions(): Promise<Exhibition[]> {
       }
     });
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error('Error getting all exhibitions:', error);
     return [];
   }
@@ -155,6 +160,7 @@ export async function getExhibitionBySlug(
       excerpt,
     } as Exhibition;
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error(`Error getting exhibition by slug ${slug}:`, error);
     return null;
   }

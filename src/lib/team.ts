@@ -3,6 +3,7 @@ import {
   teamGroupSchema,
   teamMemberSchema,
   validateFrontmatter,
+  FrontmatterValidationError,
 } from './content-schemas';
 import { markdownToHtml } from './markdown';
 import fs from 'fs';
@@ -123,6 +124,7 @@ export async function getTeamGroup(
       order: data['order'],
     } as TeamGroup;
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error(`Error reading team group ${slug}:`, error);
     return undefined;
   }
@@ -162,6 +164,7 @@ export async function getTeamGroups(): Promise<TeamGroup[]> {
     // Sort by order field
     return groups.sort((a, b) => (a.order || 999) - (b.order || 999));
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error('Error reading team groups:', error);
     return [];
   }
@@ -226,6 +229,7 @@ export async function getTeamMembersByGroup(
       return 0;
     });
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error(`Error getting team members for group ${group}:`, error);
     return [];
   }

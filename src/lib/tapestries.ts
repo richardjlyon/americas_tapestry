@@ -1,5 +1,9 @@
 import { getAllContent, getContentBySlug } from './content-core';
-import { tapestrySchema, validateFrontmatter } from './content-schemas';
+import {
+  tapestrySchema,
+  validateFrontmatter,
+  FrontmatterValidationError,
+} from './content-schemas';
 import fs from 'fs';
 import path from 'path';
 
@@ -418,6 +422,7 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
     // Sort tapestries by title
     return tapestries.sort((a, b) => a.title.localeCompare(b.title));
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error('Error getting all tapestries:', error);
     return [];
   }
@@ -502,6 +507,7 @@ export async function getTapestryBySlug(
       resources: data['resources'] || [],
     } as TapestryEntry;
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error(`Error getting tapestry ${slug}:`, error);
     return null;
   }

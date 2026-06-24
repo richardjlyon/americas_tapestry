@@ -3,7 +3,11 @@ import {
   convertImagePath,
   extractDateFromFilename,
 } from './content-core';
-import { blogPostSchema, validateFrontmatter } from './content-schemas';
+import {
+  blogPostSchema,
+  validateFrontmatter,
+  FrontmatterValidationError,
+} from './content-schemas';
 
 export interface BlogPost {
   slug: string;
@@ -132,6 +136,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
           draft: data['draft'] || false,
         });
       } catch (error) {
+        if (error instanceof FrontmatterValidationError) throw error;
         console.error(`Error processing blog post ${item.slug}:`, error);
       }
     }
@@ -141,6 +146,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
       .filter((post) => !post.draft)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error('Error getting all blog posts:', error);
     return [];
   }
@@ -213,6 +219,7 @@ export async function getBlogPostBySlug(
 
     return null;
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error(`Error getting blog post by slug ${slug}:`, error);
     return null;
   }

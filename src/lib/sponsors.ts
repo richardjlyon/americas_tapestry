@@ -1,6 +1,10 @@
 import { getAllContent, getContentBySlug } from './content-core';
 import { extractExcerpt, markdownToHtml } from './markdown';
-import { sponsorSchema, validateFrontmatter } from './content-schemas';
+import {
+  sponsorSchema,
+  validateFrontmatter,
+  FrontmatterValidationError,
+} from './content-schemas';
 
 export interface Sponsor {
   slug: string;
@@ -84,6 +88,7 @@ export async function getAllSponsors(): Promise<Sponsor[]> {
     // Sort alphabetically by name
     return sponsors.sort((a, b) => a.name.localeCompare(b.name));
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error('Error getting all sponsors:', error);
     return [];
   }
@@ -135,6 +140,7 @@ export async function getSponsorBySlug(slug: string): Promise<Sponsor | null> {
       excerpt,
     } as Sponsor;
   } catch (error) {
+    if (error instanceof FrontmatterValidationError) throw error;
     console.error(`Error getting sponsor by slug ${slug}:`, error);
     return null;
   }
