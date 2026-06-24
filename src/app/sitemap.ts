@@ -15,7 +15,6 @@ const STATIC_PATHS = [
   '/news',
   '/exhibitions',
   '/sponsors',
-  '/support',
   '/contact',
   '/resources',
   '/resources/glossary',

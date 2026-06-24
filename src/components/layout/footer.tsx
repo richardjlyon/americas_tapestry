@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Instagram, Twitter, Facebook } from 'lucide-react';
 import { FooterNewsletter } from '@/components/features/newsletter/footer-newsletter';
-import { Button } from '@/components/ui/button';
 
 export function Footer() {
   return (
@@ -103,15 +102,6 @@ export function Footer() {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="flex justify-center mt-8">
-          <Button
-            asChild
-            className="bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90 font-medium"
-          >
-            <Link href="/support">Support our project</Link>
-          </Button>
         </div>
 
         <div className="mt-8 pt-8 text-center">

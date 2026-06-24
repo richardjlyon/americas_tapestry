@@ -52,7 +52,7 @@ This month we had our first director's meeting - it was the first time all Ameri
 
 **What's Next?**
 
-As we wait to hear the result of our $100,000 grant application to the [National Endowment for the Arts](https://www.arts.gov/), we are embarking on a sponsorship campaign to support our project. You can learn more by visiting our website under the [Support Our Project](/support) tab. Individuals can make donations directly to Seton Hill University while we begin to reach out to potential corporate sponsors.
+As we wait to hear the result of our $100,000 grant application to the [National Endowment for the Arts](https://www.arts.gov/), we are embarking on a sponsorship campaign to support our project. Individuals can make donations directly to Seton Hill University while we begin to reach out to potential corporate sponsors.
 
 I plan to share further updates each month as our stitchers make progress on the panels and host events at different locations throughout the original 13 states. For inquiries on where you can see our stitchers at work, do not hesitate to reach out!
 

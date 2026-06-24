@@ -127,9 +127,6 @@ My road trip concluded with a wonderful evening celebrating the New York panel, 
 If these photos leave you wondering how you can help our project, please consider donating by [clicking here](https://gofund.me/c17d6116e)!
 
 Any donation, no matter the size, ensures these beautiful pieces of needle art are carefully protected as they are enjoyed by visitors across the East Coast.
-
-If you would like to make a tax deductible donation, please [click here](https://www.americastapestry.com/support#donations) for instructions.
-
 That's all for now. Thanks for reading and happy stitching,
 
 Stefan Romero

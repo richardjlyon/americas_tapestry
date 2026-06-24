@@ -93,9 +93,6 @@ As both a history teacher and embroiderer, Sarah was drawn to America's Tapestry
 **P.S. - Want to be featured in our newsletter?** [Fill out our form!](https://docs.google.com/forms/d/e/1FAIpQLSe9nWq2jvC_kCPWZwOoHaF1CjK_akQb3AZ501v0NZ2f0agwCA/viewform)
 
 If these photos leave you wondering how you can help our project, **please [consider donating by clicking the link here!](https://gofund.me/c17d6116e)**
-
-**If you would like to make a tax deductible donation, please click [here](https://www.americastapestry.com/support#donations) for instructions.**
-
 ## Don't forget - Liberty needs YOU!
 
 ![](/images/news/2026-01/14.jpg)

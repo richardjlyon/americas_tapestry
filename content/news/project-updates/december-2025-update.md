@@ -93,9 +93,6 @@ A California native, Corinne has deeply enjoyed learning more about the history 
 If these photos leave you wondering how you can help our project, **please [consider donating by clicking the link here!](https://gofund.me/c17d6116e)**
 
 **Any donation, no matter the size, ensures these beautiful pieces of needle art are carefully protected as they are enjoyed by visitors across the East Coast.**
-
-**If you would like to make a tax deductible donation, please click [here](https://www.americastapestry.com/support#donations) for instructions.**
-
 That's all for now. Thanks for reading and happy holidays,
 
 Stefan Romero

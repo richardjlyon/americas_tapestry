@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Award, ArrowRight, Download } from 'lucide-react';
+import { Award, Download } from 'lucide-react';
 
 export function SponsorshipSection() {
   return (
@@ -63,13 +62,6 @@ export function SponsorshipSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button asChild variant="colonial-primary">
-            <Link href="/support#sponsorship">
-              View Sponsorship Opportunities
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-
           <Button asChild variant="colonial-secondary">
             <a
               href="/docs/Americas_Tapestry_Sponsorship_Proposal_FINAL.pdf"
