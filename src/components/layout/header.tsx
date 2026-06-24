@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 
 // Navigation items used in both desktop and mobile
 const navigationItems = [
@@ -91,15 +90,6 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Support Button - Desktop */}
-          <Button
-            variant="colonial-gold"
-            asChild
-            className="hidden xl:flex text-sm py-1.5 px-4 ml-8 font-sans"
-          >
-            <Link href="/support">Support our project</Link>
-          </Button>
-
           {/* Mobile Menu Toggle Button */}
           <button
             type="button"
@@ -141,20 +131,6 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <div className="pt-4 text-center">
-              <Button
-                variant="colonial-gold"
-                asChild
-                className="w-full sm:w-auto text-base font-sans"
-              >
-                <Link
-                  href="/support"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Support our project
-                </Link>
-              </Button>
-            </div>
           </nav>
         </div>
       </div>

@@ -7,10 +7,8 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 import { AboutSection } from '@/components/features/home/about-section';
-import { SponsorshipSection } from '@/components/features/home/sponsorship-section';
 import { VisionSection } from '@/components/features/home/vision-section';
 import { TapestriesSection } from '@/components/features/home/tapestries-section';
-import { SupportSection } from '@/components/features/home/support-section';
 import { GetInTouchSection } from '@/components/features/home/get-in-touch-section';
 import { pageMetadata } from '@/lib/seo';
 
@@ -68,19 +66,9 @@ export default async function Home() {
           <TapestriesSection randomTapestries={randomTapestries} />
         </PageSection>
 
-        {/* Support Section */}
-        <PageSection paddingTop="medium" background="vintage-paper">
-          <SupportSection />
-        </PageSection>
-
         {/* Latest News Section */}
         <PageSection paddingTop="medium">
           <LatestNewsSection />
-        </PageSection>
-
-        {/* Sponsorship Section */}
-        <PageSection paddingTop="medium" background="vintage-paper">
-          <SponsorshipSection />
         </PageSection>
 
         {/* Contact Section */}
