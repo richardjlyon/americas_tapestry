@@ -3,8 +3,6 @@ import { LatestNewsSection } from '@/components/features/home/latest-news-sectio
 import { getAllTapestries, getCarouselImages } from '@/lib/tapestries';
 
 import { PageSection } from '@/components/ui/page-section';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
 
 import { AboutSection } from '@/components/features/home/about-section';
 import { VisionSection } from '@/components/features/home/vision-section';
@@ -43,40 +41,36 @@ export default async function Home() {
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
 
+  // Site chrome (Header/Footer) is provided by the (site) route-group layout.
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
+    <>
+      {/* Hero Section with Carousel */}
+      <HeroCarousel tapestries={randomCarouselItems} />
 
-      <main className="flex-1 woven-linen content-spacing-sm">
-        {/* Hero Section with Carousel */}
-        <HeroCarousel tapestries={randomCarouselItems} />
+      {/* About Section */}
+      <PageSection paddingTop="small">
+        <AboutSection />
+      </PageSection>
 
-        {/* About Section */}
-        <PageSection paddingTop="small">
-          <AboutSection />
-        </PageSection>
+      {/* Vision Section */}
+      <PageSection paddingTop="medium" background="vintage-paper">
+        <VisionSection />
+      </PageSection>
 
-        {/* Vision Section */}
-        <PageSection paddingTop="medium" background="vintage-paper">
-          <VisionSection />
-        </PageSection>
+      {/* Tapestry Section */}
+      <PageSection paddingTop="medium">
+        <TapestriesSection randomTapestries={randomTapestries} />
+      </PageSection>
 
-        {/* Tapestry Section */}
-        <PageSection paddingTop="medium">
-          <TapestriesSection randomTapestries={randomTapestries} />
-        </PageSection>
+      {/* Latest News Section */}
+      <PageSection paddingTop="medium">
+        <LatestNewsSection />
+      </PageSection>
 
-        {/* Latest News Section */}
-        <PageSection paddingTop="medium">
-          <LatestNewsSection />
-        </PageSection>
-
-        {/* Contact Section */}
-        <PageSection paddingTop="medium">
-          <GetInTouchSection />
-        </PageSection>
-      </main>
-      <Footer />
-    </div>
+      {/* Contact Section */}
+      <PageSection paddingTop="medium">
+        <GetInTouchSection />
+      </PageSection>
+    </>
   );
 }
