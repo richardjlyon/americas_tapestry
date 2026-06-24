@@ -1,9 +1,7 @@
 import { PageSection } from '@/components/ui/page-section';
 import { SponsorCard } from '@/components/features/sponsors/sponsor-card';
-import {
-  getAllSponsorsData,
-  getMarkdownHtml,
-} from '@/app/actions/sponsor-actions';
+import { getAllSponsors } from '@/lib/sponsors';
+import { markdownToHtml } from '@/lib/markdown';
 import { SponsorshipSection } from '@/components/features/home/sponsorship-section';
 
 export const metadata = {
@@ -13,14 +11,14 @@ export const metadata = {
 };
 
 export default async function SponsorsPage() {
-  const sponsors = await getAllSponsorsData();
+  const sponsors = await getAllSponsors();
 
   // Process markdown excerpts for all sponsors
   const sponsorsWithHtml = await Promise.all(
     sponsors.map(async (sponsor) => ({
       ...sponsor,
       excerptHtml: sponsor.excerpt
-        ? await getMarkdownHtml(sponsor.excerpt)
+        ? await markdownToHtml(sponsor.excerpt)
         : '',
     })),
   );

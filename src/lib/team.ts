@@ -1,4 +1,5 @@
 import { getAllContent } from './content-core';
+import { markdownToHtml } from './markdown';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -233,6 +234,45 @@ export async function getTeamMember(
 ): Promise<TeamMember | null> {
   const members = await getTeamMembersByGroup(group);
   return members.find((member) => member.slug === slug) || null;
+}
+
+/**
+ * Get a team group together with its members
+ *
+ * @param groupSlug Group slug
+ * @returns The group (or undefined) and its members
+ */
+export async function getTeamData(groupSlug: string): Promise<{
+  group: TeamGroup | undefined;
+  members: TeamMember[];
+}> {
+  const group = await getTeamGroup(groupSlug);
+  const members = await getTeamMembersByGroup(groupSlug);
+
+  return { group, members };
+}
+
+/**
+ * Get a single team member together with their group and rendered HTML content
+ *
+ * @param groupSlug Group slug
+ * @param memberSlug Member slug
+ * @returns The member (or null), the group (or undefined), and the member's
+ *   markdown content rendered to HTML
+ */
+export async function getTeamMemberData(
+  groupSlug: string,
+  memberSlug: string,
+): Promise<{
+  member: TeamMember | null;
+  group: TeamGroup | undefined;
+  contentHtml: string;
+}> {
+  const member = await getTeamMember(groupSlug, memberSlug);
+  const group = await getTeamGroup(groupSlug);
+  const contentHtml = member ? await markdownToHtml(member.content) : '';
+
+  return { member, group, contentHtml };
 }
 
 // Get team members for a specific state/colony

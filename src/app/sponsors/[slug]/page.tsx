@@ -3,8 +3,7 @@ import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSection } from '@/components/ui/page-section';
-import { getAllSponsors } from '@/lib/sponsors';
-import { getSponsorData } from '@/app/actions/sponsor-actions';
+import { getAllSponsors, getSponsorData } from '@/lib/sponsors';
 import { getImagePath, getImageSizes } from '@/lib/image-utils';
 import { notFound } from 'next/navigation';
 

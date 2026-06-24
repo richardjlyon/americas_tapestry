@@ -1,5 +1,8 @@
-import { getTeamGroups, getTeamMembersByGroup } from '@/lib/team';
-import { getTeamMemberData } from '@/app/actions/team-actions';
+import {
+  getTeamGroups,
+  getTeamMembersByGroup,
+  getTeamMemberData,
+} from '@/lib/team';
 import { notFound } from 'next/navigation';
 import { PageSection } from '@/components/ui/page-section';
 import { MemberCard } from '@/components/features/team/member-card';
@@ -46,7 +49,7 @@ export async function generateMetadata({
 export default async function TeamMemberPage({
   params,
 }: { params: Promise<{ group: string; member: string }> }) {
-  // Use a server action to fetch all the data we need
+  // Fetch all the data we need for this member
   const { group: groupSlug, member: memberSlug } = await params;
   const { member, group, contentHtml } = await getTeamMemberData(
     groupSlug,

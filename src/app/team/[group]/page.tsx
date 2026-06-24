@@ -1,5 +1,4 @@
-import { getTeamGroups } from '@/lib/team';
-import { getTeamData } from '@/app/actions/team-actions';
+import { getTeamGroups, getTeamData } from '@/lib/team';
 import { GroupContent } from '@/components/features/team/group-content';
 import { notFound } from 'next/navigation';
 import { PageSection } from '@/components/ui/page-section';

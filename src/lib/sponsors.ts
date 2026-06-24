@@ -1,5 +1,5 @@
 import { getAllContent, getContentBySlug } from './content-core';
-import { extractExcerpt } from './markdown';
+import { extractExcerpt, markdownToHtml } from './markdown';
 
 export interface Sponsor {
   slug: string;
@@ -131,4 +131,19 @@ export async function getSponsorBySlug(slug: string): Promise<Sponsor | null> {
     console.error(`Error getting sponsor by slug ${slug}:`, error);
     return null;
   }
+}
+
+/**
+ * Get a sponsor together with its rendered HTML content
+ *
+ * @param slug Sponsor slug
+ * @returns The sponsor (or null) and its markdown content rendered to HTML
+ */
+export async function getSponsorData(
+  slug: string,
+): Promise<{ sponsor: Sponsor | null; contentHtml: string }> {
+  const sponsor = await getSponsorBySlug(slug);
+  const contentHtml = sponsor ? await markdownToHtml(sponsor.content) : '';
+
+  return { sponsor, contentHtml };
 }
