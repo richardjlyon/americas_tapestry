@@ -3,6 +3,7 @@ import {
   convertImagePath,
   extractDateFromFilename,
 } from './content-core';
+import { blogPostSchema, validateFrontmatter } from './content-schemas';
 
 export interface BlogPost {
   slug: string;
@@ -13,9 +14,9 @@ export interface BlogPost {
   image: string;
   excerpt: string;
   content: string;
-  author?: string;
-  videoUrl?: string; // MP4 video URL (backward compatible)
-  videoWebm?: string; // WebM video URL (optional, new)
+  author?: string | undefined;
+  videoUrl?: string | undefined; // MP4 video URL (backward compatible)
+  videoWebm?: string | undefined; // WebM video URL (optional, new)
   draft?: boolean; // Optional draft flag to hide posts
 }
 
@@ -87,11 +88,14 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 
     for (const item of allContentItems) {
       try {
-        const data = item.frontmatter;
+        const data = validateFrontmatter(blogPostSchema, item.frontmatter, {
+          contentType: 'blog post',
+          slug: item.slug,
+        });
         const content = item.content;
 
         // Extract date from frontmatter or use filename extraction
-        let postDate = data['date'];
+        let postDate: string | null = data['date'];
         if (!postDate) {
           // Try to extract from slug if it has date prefix
           const extractedDate = extractDateFromFilename(item.slug);
@@ -122,7 +126,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
           featured: data['featured'] || false,
           image: imagePath,
           content,
-          author: data['author'] || null,
+          author: data['author'] || undefined,
           videoUrl: data['videoUrl'] || undefined,
           videoWebm: data['videoWebm'] || undefined,
           draft: data['draft'] || false,
@@ -157,11 +161,15 @@ export async function getBlogPostBySlug(
       const matchingPost = categoryContent.find((item) => item.slug === slug);
 
       if (matchingPost) {
-        const data = matchingPost.frontmatter;
+        const data = validateFrontmatter(
+          blogPostSchema,
+          matchingPost.frontmatter,
+          { contentType: 'blog post', slug },
+        );
         const content = matchingPost.content;
 
         // Extract date from frontmatter or filename
-        let postDate = data['date'];
+        let postDate: string | null = data['date'];
         if (!postDate) {
           const extractedDate = extractDateFromFilename(slug);
           postDate = extractedDate;
@@ -188,7 +196,7 @@ export async function getBlogPostBySlug(
           featured: data['featured'] || false,
           image: imagePath,
           content,
-          author: data['author'] || null,
+          author: data['author'] || undefined,
           videoUrl: data['videoUrl'] || undefined,
           videoWebm: data['videoWebm'] || undefined,
           draft: data['draft'] || false,

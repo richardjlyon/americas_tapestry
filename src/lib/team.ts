@@ -1,4 +1,9 @@
 import { getAllContent } from './content-core';
+import {
+  teamGroupSchema,
+  teamMemberSchema,
+  validateFrontmatter,
+} from './content-schemas';
 import { markdownToHtml } from './markdown';
 import fs from 'fs';
 import path from 'path';
@@ -103,16 +108,19 @@ export async function getTeamGroup(
       return undefined;
     }
 
-    const data = groupContent.frontmatter;
+    const data = validateFrontmatter(teamGroupSchema, groupContent.frontmatter, {
+      contentType: 'team group',
+      slug,
+    });
     const content = groupContent.content;
 
     return {
+      ...data, // Include any additional frontmatter fields
       name: data['name'],
       slug: slug,
       description: data['description'],
       longDescription: content.trim(),
       order: data['order'],
-      ...data, // Include any additional frontmatter fields
     } as TeamGroup;
   } catch (error) {
     console.error(`Error reading team group ${slug}:`, error);
@@ -135,16 +143,19 @@ export async function getTeamGroups(): Promise<TeamGroup[]> {
     const groups: TeamGroup[] = [];
 
     for (const item of groupIndexItems) {
-      const data = item.frontmatter;
+      const data = validateFrontmatter(teamGroupSchema, item.frontmatter, {
+        contentType: 'team group',
+        slug: item.slug,
+      });
       const content = item.content;
 
       groups.push({
+        ...data, // Include any additional frontmatter fields
         name: data['name'],
         slug: item.slug,
         description: data['description'],
         longDescription: content.trim(),
         order: data['order'],
-        ...data, // Include any additional frontmatter fields
       } as TeamGroup);
     }
 
@@ -166,32 +177,29 @@ export async function getTeamMembersByGroup(
     const members: TeamMember[] = [];
 
     for (const item of groupSpecificContent) {
-      const data = item.frontmatter;
+      const rawData = item.frontmatter;
       const content = item.content;
 
       // Skip if this looks like a group index file rather than a member
       // Group index files have description but no role (they describe the group, not a person)
       // OR if the slug matches the group name (alternative slug generation)
-      if ((data['description'] && !data['role']) || item.slug === group) {
+      if ((rawData['description'] && !rawData['role']) || item.slug === group) {
         continue;
       }
 
-      // Team image paths are handled by the component using getImageSrc()
-
-      // Check if required fields exist in data
-      if (!data['name'] || !data['role']) {
-        console.warn(
-          `Missing required fields (name or role) for team member: ${item.slug} in group ${group}`,
-        );
-      }
+      // Validate member frontmatter (fails loud on malformed data)
+      const data = validateFrontmatter(teamMemberSchema, rawData, {
+        contentType: 'team member',
+        slug: `${group}/${item.slug}`,
+      });
 
       members.push({
+        ...data,
         slug: item.slug,
         name: data['name'] || item.slug, // Fallback to slug if name is missing
         role: data['role'] || 'Team Member', // Provide a default role if missing
         content,
         groupSlug: group,
-        ...data,
       } as TeamMember);
     }
 

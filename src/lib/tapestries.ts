@@ -1,4 +1,5 @@
 import { getAllContent, getContentBySlug } from './content-core';
+import { tapestrySchema, validateFrontmatter } from './content-schemas';
 import fs from 'fs';
 import path from 'path';
 
@@ -301,7 +302,10 @@ export async function getAllTapestries(): Promise<TapestryEntry[]> {
     const tapestries: TapestryEntry[] = [];
 
     for (const item of tapestryContent) {
-      const data = item.frontmatter;
+      const data = validateFrontmatter(tapestrySchema, item.frontmatter, {
+        contentType: 'tapestry',
+        slug: item.slug,
+      });
       const content = item.content;
       const slug = item.slug;
 
@@ -430,7 +434,10 @@ export async function getTapestryBySlug(
       return null;
     }
 
-    const data = tapestryItem.frontmatter;
+    const data = validateFrontmatter(tapestrySchema, tapestryItem.frontmatter, {
+      contentType: 'tapestry',
+      slug,
+    });
     const content = tapestryItem.content;
 
     // Validate status or set default
