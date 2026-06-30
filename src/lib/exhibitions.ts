@@ -20,18 +20,23 @@ export interface Exhibition {
 }
 
 /**
- * Format exhibition date from string to month/year format
- * Converts "1 January 2027" to "January 2027"
+ * Format exhibition date from string to day/month format
+ * Converts "19 June 2026" to "19 June", or "19 June 2026" when the year is kept
  *
  * @param dateString Date string from frontmatter
+ * @param includeYear Whether to append the year
  * @returns Formatted date string
  */
-function formatExhibitionDate(dateString: string): string {
+function formatExhibitionDate(
+  dateString: string,
+  includeYear: boolean,
+): string {
   try {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
+    return date.toLocaleDateString('en-GB', {
+      day: 'numeric',
       month: 'long',
-      year: 'numeric',
+      ...(includeYear ? { year: 'numeric' } : {}),
     });
   } catch (error) {
     console.warn(`Invalid date format: ${dateString}`);
@@ -41,16 +46,16 @@ function formatExhibitionDate(dateString: string): string {
 
 /**
  * Format date range for exhibition display
- * Returns "January 2027 - April 2027" format
+ * Returns "19 June – 6 September 2026" format (year shown once at the end)
  *
  * @param startDate Start date string
  * @param endDate End date string
  * @returns Formatted date range
  */
 export function formatDateRange(startDate: string, endDate: string): string {
-  const start = formatExhibitionDate(startDate);
-  const end = formatExhibitionDate(endDate);
-  return `${start} - ${end}`;
+  const start = formatExhibitionDate(startDate, false);
+  const end = formatExhibitionDate(endDate, true);
+  return `${start} – ${end}`;
 }
 
 /**
