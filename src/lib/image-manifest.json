@@ -7828,5 +7828,113 @@
     },
     "originalSize": 34674,
     "hash": "47dea755"
+  },
+  "/images/news/tapestry-talk/tt-ep1-georgia/tt-ep1-georgia.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep1-georgia/tt-ep1-georgia-640w-744a43c7.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep1-georgia/tt-ep1-georgia-1024w-744a43c7.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep1-georgia/tt-ep1-georgia-1920w-744a43c7.webp"
+    },
+    "originalSize": 182024,
+    "hash": "744a43c7"
+  },
+  "/images/news/tapestry-talk/tt-ep10-new-hampshire/tt-ep10-new-hampshire.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep10-new-hampshire/tt-ep10-new-hampshire-640w-78998664.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep10-new-hampshire/tt-ep10-new-hampshire-1024w-78998664.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep10-new-hampshire/tt-ep10-new-hampshire-1920w-78998664.webp"
+    },
+    "originalSize": 212990,
+    "hash": "78998664"
+  },
+  "/images/news/tapestry-talk/tt-ep12-massachusetts/tt-ep12-massachusetts.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep12-massachusetts/tt-ep12-massachusetts-640w-6884e556.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep12-massachusetts/tt-ep12-massachusetts-1024w-6884e556.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep12-massachusetts/tt-ep12-massachusetts-1920w-6884e556.webp"
+    },
+    "originalSize": 324259,
+    "hash": "6884e556"
+  },
+  "/images/news/tapestry-talk/tt-ep13-new-york/tt-ep13-new-york.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep13-new-york/tt-ep13-new-york-640w-a13de704.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep13-new-york/tt-ep13-new-york-1024w-a13de704.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep13-new-york/tt-ep13-new-york-1920w-a13de704.webp"
+    },
+    "originalSize": 286478,
+    "hash": "a13de704"
+  },
+  "/images/news/tapestry-talk/tt-ep2-south-carolina/tt-ep2-south-carolina.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep2-south-carolina/tt-ep2-south-carolina-640w-02a5abcd.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep2-south-carolina/tt-ep2-south-carolina-1024w-02a5abcd.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep2-south-carolina/tt-ep2-south-carolina-1920w-02a5abcd.webp"
+    },
+    "originalSize": 182623,
+    "hash": "02a5abcd"
+  },
+  "/images/news/tapestry-talk/tt-ep3-north-carolina/tt-ep3-north-carolina.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep3-north-carolina/tt-ep3-north-carolina-640w-838ff5ed.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep3-north-carolina/tt-ep3-north-carolina-1024w-838ff5ed.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep3-north-carolina/tt-ep3-north-carolina-1920w-838ff5ed.webp"
+    },
+    "originalSize": 192938,
+    "hash": "838ff5ed"
+  },
+  "/images/news/tapestry-talk/tt-ep4-virginia/tt-ep4-virginia.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep4-virginia/tt-ep4-virginia-640w-be5c3cdb.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep4-virginia/tt-ep4-virginia-1024w-be5c3cdb.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep4-virginia/tt-ep4-virginia-1920w-be5c3cdb.webp"
+    },
+    "originalSize": 141752,
+    "hash": "be5c3cdb"
+  },
+  "/images/news/tapestry-talk/tt-ep5-new-jersey/tt-ep5-new-jersey.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep5-new-jersey/tt-ep5-new-jersey-640w-8fca8db5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep5-new-jersey/tt-ep5-new-jersey-1024w-8fca8db5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep5-new-jersey/tt-ep5-new-jersey-1920w-8fca8db5.webp"
+    },
+    "originalSize": 155630,
+    "hash": "8fca8db5"
+  },
+  "/images/news/tapestry-talk/tt-ep6-maryland/tt-ep6-maryland.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep6-maryland/tt-ep6-maryland-640w-2d54c830.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep6-maryland/tt-ep6-maryland-1024w-2d54c830.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep6-maryland/tt-ep6-maryland-1920w-2d54c830.webp"
+    },
+    "originalSize": 238657,
+    "hash": "2d54c830"
+  },
+  "/images/news/tapestry-talk/tt-ep7-delaware/tt-ep7-delaware.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep7-delaware/tt-ep7-delaware-640w-16d0e30b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep7-delaware/tt-ep7-delaware-1024w-16d0e30b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep7-delaware/tt-ep7-delaware-1920w-16d0e30b.webp"
+    },
+    "originalSize": 221117,
+    "hash": "16d0e30b"
+  },
+  "/images/news/tapestry-talk/tt-ep8-pennsylvania/tt-ep8-pennsylvania.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep8-pennsylvania/tt-ep8-pennsylvania-640w-08b86d73.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep8-pennsylvania/tt-ep8-pennsylvania-1024w-08b86d73.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep8-pennsylvania/tt-ep8-pennsylvania-1920w-08b86d73.webp"
+    },
+    "originalSize": 210612,
+    "hash": "08b86d73"
+  },
+  "/images/news/tapestry-talk/tt-ep9-connecticut/tt-ep9-connecticut.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep9-connecticut/tt-ep9-connecticut-640w-32cd0a5e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep9-connecticut/tt-ep9-connecticut-1024w-32cd0a5e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/news/tapestry-talk/tt-ep9-connecticut/tt-ep9-connecticut-1920w-32cd0a5e.webp"
+    },
+    "originalSize": 353139,
+    "hash": "32cd0a5e"
   }
 }

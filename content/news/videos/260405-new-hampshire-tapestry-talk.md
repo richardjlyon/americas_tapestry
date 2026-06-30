@@ -3,7 +3,7 @@ title: "Tapestry Talk: New Hampshire"
 date: "2026-04-05"
 excerpt: "Tapestry Talk with New Hampshire's Co-Directors."
 featured: false
-image: "/video/tapestry-talk/tt-ep10-new-hampshire/tt-ep10-new-hampshire.jpg"
+image: "/images/news/tapestry-talk/tt-ep10-new-hampshire/tt-ep10-new-hampshire.jpg"
 videoUrl: "https://github.com/richardjlyon/americas_tapestry/releases/download/video-assets-v1.0/tt-ep10-new-hampshire.mp4"
 ---
 
