@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { getR2Url } from './cloudflare-loader';
 
 /**
  * Centralized SEO/metadata helpers.
@@ -34,6 +35,13 @@ export function pageMetadata({
   image = DEFAULT_OG_IMAGE,
 }: PageMetaInput): Metadata {
   const fullTitle = `${title} | ${SITE_NAME}`;
+  // Serve the social-share image from R2 when it has been migrated. OG/Twitter
+  // image tags are plain absolute URLs that bypass the next/image loader, so an
+  // unresolved local path is served full-resolution from Vercel (a tapestry
+  // master is ~3 MB) on every crawler/unfurl. getR2Url returns a pre-optimized
+  // WebP variant, or null for placeholders / external / un-migrated images, in
+  // which case we fall back to the original path.
+  const ogImage = getR2Url(image, 1200) ?? image;
   return {
     title: fullTitle,
     description,
@@ -45,13 +53,13 @@ export function pageMetadata({
       siteName: SITE_NAME,
       type: 'website',
       locale: 'en_US',
-      images: [{ url: image }],
+      images: [{ url: ogImage }],
     },
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
       description,
-      images: [image],
+      images: [ogImage],
     },
   };
 }
