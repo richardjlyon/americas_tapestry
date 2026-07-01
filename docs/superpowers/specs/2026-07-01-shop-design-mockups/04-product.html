@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Virginia Colony Postcards — America's Tapestry Shop</title>
+<title>Georgia Panel — Framed Print — America's Tapestry Shop</title>
 <!--
-  PRODUCT DETAIL /shop/product/virginia-postcards
+  PRODUCT DETAIL /shop/product/georgia-framed-print
   Image gallery + variant selector + price + Add to cart (hands off to Shopify checkout).
-  Variant selector demonstrates from-pricing + an out-of-stock variant that swaps
-  Add to cart -> Notify me (availability as button variant, no layout change).
+  Two variant axes — Size and Frame color — demonstrate from-pricing + an out-of-stock
+  swatch that swaps Add to cart -> Notify me (availability as button variant, no layout change).
   RESPONSIVE INTENT:
     - Desktop-first, ~1200px, 2-col (gallery / buy column).
     - <=900px: gallery stacks above buy column; thumbs go horizontal; related 3->2.
@@ -81,6 +81,7 @@
   .stage .plate::before{content:"";position:absolute;inset:14px;border:1px dashed rgba(244,233,213,.4);}
   .stage .flag{position:absolute;top:16px;left:16px;background:var(--navy);color:var(--parchment);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:7px 12px;z-index:2;}
   .stage .badge{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--navy);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:7px 11px;z-index:2;}
+  .stage .badge.commem{font-size:9px;padding:5px 9px;letter-spacing:.1em;}
   .stage .cap{position:relative;padding:22px 24px;color:var(--parchment);}
   .stage .cap .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;}
   .stage .cap .t{font-family:'EB Garamond',serif;font-size:24px;font-style:italic;margin-top:4px;}
@@ -111,6 +112,8 @@
   .sw.on::after{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:2px;background:var(--stitch);}
   .sw.disabled{color:#b3aa97;cursor:not-allowed;background:repeating-linear-gradient(135deg,#faf6ee 0 6px,#f2ebdc 6px 12px);}
   .sw.disabled small{color:#c0b7a3;}
+  /* frame-color swatches — small color dot above the label */
+  .sw .dot{display:block;width:16px;height:16px;border-radius:50%;margin:0 auto 6px;border:1px solid rgba(26,43,69,.2);}
 
   /* qty + add to cart */
   .cartrow{display:flex;gap:14px;align-items:stretch;margin:6px 0 16px;}
@@ -205,7 +208,7 @@
 </header>
 
 <div class="wrap">
-  <div class="crumb"><a href="01-landing.html">Shop</a> · <a href="02-state.html">Virginia</a> · <a href="03-catalog.html">Postcards</a> · <span>Colony Postcards</span></div>
+  <div class="crumb"><a href="01-landing.html">Shop</a> · <a href="02-state.html">Georgia</a> · <a href="03-catalog.html">Wall Art</a> · <span>Framed Print</span></div>
 </div>
 
 <!-- ================= PRODUCT ================= -->
@@ -222,11 +225,11 @@
       </div>
       <div class="stage">
         <div class="plate">
-          <span class="flag">Postcards</span>
-          <span class="badge">Bestseller</span>
+          <span class="flag">Framed Print</span>
+          <span class="badge commem">250th</span>
           <div class="cap">
-            <div class="k">Panel XIII · Virginia</div>
-            <div class="t">“Tobacco &amp; Tide” — Pack of 10</div>
+            <div class="k">Panel I · Georgia</div>
+            <div class="t">“Savannah &amp; the Coast” — Framed Print</div>
           </div>
         </div>
       </div>
@@ -234,41 +237,41 @@
 
     <!-- BUY COLUMN -->
     <div class="buy">
-      <div class="k">Virginia · Panel XIII</div>
-      <h1>Colony Postcards</h1>
-      <p class="sub serif">Ten cards drawn straight from the Tidewater panel — the tobacco leaf, the river, the ships at anchor. Printed on heavy uncoated stock with blank interiors, ready to write.</p>
+      <div class="k">Georgia · Panel I</div>
+      <h1>Georgia Panel — Framed Print</h1>
+      <p class="sub serif">The Savannah waterfront and coastal live oaks, rendered in hand-stitched thread and reproduced true to color. Archival print in a solid wood frame with museum mat, ready to hang.</p>
 
       <div class="pricerow">
-        <span class="price">$20</span>
-        <span class="avail">● In stock · ships in 2–3 days</span>
+        <span class="price"><span class="from">from</span>$90</span>
+        <span class="avail">● In stock · ships in 5–7 days</span>
       </div>
-      <div class="rating">★★★★★ <b>4.9</b> · 128 reviews</div>
+      <div class="rating">★★★★★ <b>4.9</b> · 86 reviews</div>
 
       <hr class="rule" />
 
-      <!-- VARIANT: pack size (from-pricing across variants; one is sold out -> Notify) -->
+      <!-- VARIANT: size (from-pricing across variants) -->
       <div class="opt-block">
-        <div class="lab"><span class="t">Pack size</span><span class="v">Pack of 10 · $20</span></div>
+        <div class="lab"><span class="t">Size</span><span class="v">Medium 18×24″ · $130</span></div>
         <div class="swatches">
-          <div class="sw">Single<small>$4</small></div>
-          <div class="sw on">Pack of 10<small>$20</small></div>
-          <div class="sw">Boxed 20<small>$36</small></div>
-          <div class="sw disabled">Collector<small>Sold out</small></div>
+          <div class="sw">Small<small>12×16″ · $90</small></div>
+          <div class="sw on">Medium<small>18×24″ · $130</small></div>
+          <div class="sw">Large<small>24×36″ · $180</small></div>
         </div>
       </div>
 
-      <!-- VARIANT: finish -->
+      <!-- VARIANT: frame color (one sold out -> Notify pattern preserved) -->
       <div class="opt-block">
-        <div class="lab"><span class="t">Finish</span><span class="v">Uncoated matte</span></div>
+        <div class="lab"><span class="t">Frame color</span><span class="v">Black</span></div>
         <div class="swatches">
-          <div class="sw on">Matte<small>Uncoated</small></div>
-          <div class="sw">Gilt edge<small>+$4</small></div>
+          <div class="sw on"><span class="dot" style="background:#1c1c1c"></span>Black</div>
+          <div class="sw"><span class="dot" style="background:#5b3a29"></span>Walnut</div>
+          <div class="sw disabled"><span class="dot" style="background:#c9a13b"></span>Gold<small>Sold out</small></div>
         </div>
       </div>
 
       <div class="cartrow">
         <div class="qty"><button aria-label="decrease">–</button><span>1</span><button aria-label="increase">+</button></div>
-        <button class="btn btn-primary btn-add">Add to cart — $20</button>
+        <button class="btn btn-primary btn-add">Add to cart — $130</button>
       </div>
       <!-- If the selected variant is sold out, this same button becomes:
            <button class="btn btn-ghost btn-add" disabled>Notify me when available</button> -->
@@ -287,15 +290,15 @@
         <div class="acc">
           <div class="row">
             <div class="h">Details <span class="pl">–</span></div>
-            <div class="b">Set of ten 4×6″ postcards, one design, printed on 120 lb uncoated stock in the United States. Blank interior. Each pack ships in a kraft sleeve with the panel story printed inside.</div>
+            <div class="b">Archival giclée print of the Georgia panel, in a solid wood frame with acid-free museum mat under UV-protective glazing. Made to order in the United States; frame color and size selected at checkout.</div>
           </div>
           <div class="row">
             <div class="h">The panel <span class="pl">+</span></div>
-            <div class="b hide">Panel XIII, the Colony of Virginia, was stitched by the Tidewater circle over eleven months. Every product in this shop is drawn from an original hand-embroidered panel.</div>
+            <div class="b hide">Panel I, the Colony of Georgia, was stitched by the Savannah circle over nine months. Every product in this shop is drawn from an original hand-embroidered panel.</div>
           </div>
           <div class="row">
             <div class="h">Shipping &amp; returns <span class="pl">+</span></div>
-            <div class="b hide">Ships in 2–3 business days. Free U.S. shipping over $75. 30-day returns on unopened packs. Proceeds support America's Tapestry, a nonprofit art project.</div>
+            <div class="b hide">Made to order; ships in 5–7 business days. Free U.S. shipping over $75. 30-day returns on unopened, undamaged frames. Proceeds support America's Tapestry, a nonprofit art project.</div>
           </div>
         </div>
       </div>
@@ -304,40 +307,40 @@
   </div>
 </section>
 
-<!-- ================= RELATED (more from Virginia) ================= -->
+<!-- ================= RELATED (more from Georgia) ================= -->
 <section class="related">
   <div class="wrap">
     <div class="head">
       <div>
-        <p class="eyebrow">tag: state:virginia</p>
-        <h2>More from the Virginia panel</h2>
+        <p class="eyebrow">tag: state:georgia</p>
+        <h2>More from the Georgia panel</h2>
       </div>
-      <a href="02-state.html">All Virginia →</a>
+      <a href="02-state.html">All Georgia →</a>
     </div>
     <div class="rel-grid">
       <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Poster</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Virginia<br>Panel Poster 18×24″</span></div></div>
-        <div class="info"><div class="k">Virginia</div><div class="nm">Panel Poster, 18×24″</div>
-          <div class="dsc serif">Offset print, heavy matte stock.</div><div class="price">$32</div></div>
+        <div class="shot"><span class="flag">Canvas Print</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Georgia<br>Canvas Print</span></div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Canvas Print</div>
+          <div class="dsc serif">Gallery-wrapped canvas, no frame needed.</div><div class="price"><span class="from">from</span>$90</div></div>
       </a>
       <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Giclée Print</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Virginia<br>Fine-Art Giclée</span></div></div>
-        <div class="info"><div class="k">Virginia</div><div class="nm">Fine-Art Giclée Print</div>
-          <div class="dsc serif">Archival cotton rag, three sizes.</div><div class="price"><span class="from">from</span>$85</div></div>
+        <div class="shot"><span class="flag">Metal &amp; Acrylic</span><span class="badge new">New</span>
+          <div class="inner"><span>Georgia<br>Metal &amp; Acrylic Print</span></div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Metal &amp; Acrylic Print</div>
+          <div class="dsc serif">HD metal or acrylic, vivid modern finish.</div><div class="price"><span class="from">from</span>$150</div></div>
       </a>
       <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Framed Edition</span><span class="badge new">New</span>
-          <div class="inner"><span>Virginia<br>Framed Panel Print</span></div></div>
-        <div class="info"><div class="k">Virginia</div><div class="nm">Framed Panel Edition</div>
-          <div class="dsc serif">Museum mat, solid maple frame.</div><div class="price"><span class="from">from</span>$240</div></div>
+        <div class="shot"><span class="flag">Art Print</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Georgia<br>Art Print</span></div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Art Print</div>
+          <div class="dsc serif">Unframed fine-art poster, archival stock.</div><div class="price"><span class="from">from</span>$25</div></div>
       </a>
       <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Artist Edition</span><span class="badge signed">Signed</span>
-          <div class="inner"><span>Virginia<br>Signed · Ltd. of 50</span></div></div>
-        <div class="info"><div class="k">Virginia · Signed</div><div class="nm">Artist Edition, Ltd. of 50</div>
-          <div class="dsc serif">Hand-numbered, signed by the maker.</div><div class="price">$650</div></div>
+        <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Georgia<br>Pack of 10</span></div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Postcards, Pack of 10</div>
+          <div class="dsc serif">Ten cards from the Savannah coast panel.</div><div class="price">$20</div></div>
       </a>
     </div>
   </div>
@@ -355,7 +358,7 @@
       <div><h4>Shop</h4>
         <a href="01-landing.html#picker">By State</a><a href="03-catalog.html">Full Catalog</a><a href="01-landing.html#doors">By Product</a><a href="03-catalog.html">All-States</a></div>
       <div><h4>Products</h4>
-        <a href="03-catalog.html">Postcards</a><a href="03-catalog.html">Giclée Prints</a><a href="03-catalog.html">Framed Editions</a><a href="03-catalog.html">Artist Editions</a></div>
+        <a href="03-catalog.html">Wall Art</a><a href="03-catalog.html">Greeting Cards</a><a href="03-catalog.html">Postcards</a><a href="03-catalog.html">2026 Calendar</a></div>
       <div><h4>Project</h4>
         <a href="#">The 13 Panels</a><a href="#">The Guild</a><a href="#">Exhibitions</a><a href="#">Contact</a></div>
     </div>

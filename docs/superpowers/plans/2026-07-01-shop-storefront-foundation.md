@@ -13,12 +13,26 @@
 - **Design source of truth:** the approved spec at `docs/superpowers/specs/2026-07-01-shop-design.md` and the four HTML mockups in `docs/superpowers/specs/2026-07-01-shop-design-mockups/`. Consult them for visual intent in later (UI) plans.
 - **Colors — use the repo's Tailwind tokens, NOT the mockup hexes.** Canonical: `colonial-navy #102542`, `colonial-gold #e8b903`, `colonial-burgundy #711322`, `colonial-parchment #f4e9d5`, `colonial-stone #d8d3c8`. (The standalone mockups used `#1a2b45`/`#6b1f2e`; ignore those — build against `colonial-*` classes.)
 - **Fonts:** `font-sans` = Montserrat (headings + UI), `font-serif` = EB Garamond (descriptive/italic copy). Use the Tailwind `font-sans` / `font-serif` classes.
-- **Two catalog axes:** `state` (13 values) and `type`. **Live products use FLAT tags** (e.g. Georgia postcards carry `["americas-tapestry","georgia","postcard"]`; the book carries `["americas-tapestry","book"]`). This plan maps flat tags to axes via known vocabulary lists — it does NOT require re-tagging.
+- **Two catalog axes:** `state` (13 values) and `type`, from FLAT tags (`americas-tapestry` + `<state>` + `<type>`). **Finalized taxonomy (see Taxonomy Update below + `PRODUCT_TAXONOMY.md`):** per-state — `framed-print`, `canvas`, `metal-print`, `art-print`, `greeting-cards`, `postcard`; collection-wide (no `<state>` tag) — `calendar`, `book`; Phase-2 recognized-but-unfeatured — `mug`, `tote`, `fridge-magnet`. Maps via known vocabulary lists; no re-tagging.
 - **Checkout:** hand off to Shopify via `checkoutUrl()` cart permalinks. No custom cart or checkout is built.
 - **Graceful degradation:** when `isShopifyConfigured` is `false`, Shopify functions return `[]` / `null`; nothing may throw. Callers render an empty/"coming soon" state.
 - **Server-only:** `src/lib/shopify.ts` keeps its `import 'server-only'` first line; the Storefront token must never reach the client bundle. `src/lib/catalog.ts` is isomorphic (no `server-only`, no env, no I/O).
 - **Tests:** live in `src/__tests__/*.test.ts`; import modules via the `@/` alias; run with `npm test`.
-- **Per-task verification:** every task ends green on `npm test`, `npm run typecheck`, and `npm run lint` before its commit.
+- **Per-task verification:** every task ends green on `npm test` and `npx tsc --noEmit` before its commit. NOTE: `npm run lint` (`next lint`) is broken repo-wide in this Next 16 repo (pre-existing); run `npx eslint <changed files>` directly if linting.
+
+---
+
+## Taxonomy Update (2026-07-01) — read before executing remaining tasks
+
+After Tasks 1–4 were implemented, the product taxonomy was finalized (`/Users/rjl/Code/gitea/americas-tapestry-shop/PRODUCT_TAXONOMY.md`) and the design spec updated. This changes the `type` vocabulary and adds price tiers and a type-group.
+
+- **Tasks 1, 3, 4 (Shopify layer, `filterProducts`, `searchProducts`) are logic-only and unaffected** — they stand as committed.
+- **Task 2's `PRODUCT_TYPES` values are superseded.** The old vocab (`poster`, `giclee`, `tote`, `mug`, `artist-edition`, `composite`) is replaced. Because Tasks 2/3/4 tests were committed using the removed slug `poster` (and an `artist-edition`+`signed` case), the correction (Task 7) also updates those committed tests.
+- New work is **Tasks 7 (vocab correction) → 8 (price tiers) → 9 (Wall-Art group)** below.
+
+**Recommended execution order for remaining work:** review Task 4 (already implemented) → **Task 7** → Task 5 → Task 6 → **Task 8** → **Task 9**. Task 7 goes first because it repairs the committed tests that Task 5's neighbors depend on.
+
+Finalized types: per-state `framed-print`, `canvas`, `metal-print`, `art-print`, `greeting-cards`, `postcard`; collection-wide (no `<state>` tag) `calendar`, `book`; Phase-2 recognized-but-unfeatured `mug`, `tote`, `fridge-magnet`. Price tiers: Under $25 / $25–50 / $50–150 / $150+. Type group: `wall-art` = framed-print + canvas + metal-print + art-print. Commemorative badge: tag `commemorative` → `250th`.
 
 ---
 
@@ -687,7 +701,7 @@ describe('facetCounts', () => {
   it('counts products per state and type, ignoring nulls', () => {
     const list = [
       toCatalogProduct(make({ tags: ['americas-tapestry', 'georgia', 'postcard'] })),
-      toCatalogProduct(make({ tags: ['americas-tapestry', 'georgia', 'poster'] })),
+      toCatalogProduct(make({ tags: ['americas-tapestry', 'georgia', 'canvas'] })),
       toCatalogProduct(make({ tags: ['americas-tapestry', 'book'] })),
     ];
     const { states, types } = facetCounts(list);
@@ -872,9 +886,249 @@ git commit -m "feat(shop): URL filter parse/serialize round-trip"
 
 ---
 
+### Task 7: Correct PRODUCT_TYPES to the finalized taxonomy
+
+Replaces the superseded type vocabulary with the finalized set, adds Phase-2 recognized types and the `commemorative`→`250th` badge, and repairs the already-committed Task 2/3/4 tests that referenced removed slugs.
+
+**Files:**
+- Modify: `src/lib/catalog.ts`
+- Modify: `src/__tests__/catalog.test.ts`
+
+**Interfaces:**
+- Consumes: existing `TypeVocab`, `MARKETING_BADGES`.
+- Produces: updated `PRODUCT_TYPES` (8 featured + 3 Phase-2 = 11 entries); new `export const PHASE2_TYPE_SLUGS: Set<string>`; badge vocab gains `commemorative → '250th'` and drops `signed`. `TYPE_SLUGS` (derived from `PRODUCT_TYPES`) now recognizes all 11.
+
+- [ ] **Step 1: Update the vocab assertion test (RED driver)**
+
+In `src/__tests__/catalog.test.ts`, in the `catalog vocab` test, replace the `PRODUCT_TYPES` assertion with the finalized set and a length check:
+
+```typescript
+    expect(PRODUCT_TYPES.map((t) => t.slug)).toEqual(
+      expect.arrayContaining(['framed-print', 'canvas', 'metal-print', 'art-print', 'greeting-cards', 'postcard', 'calendar', 'book']),
+    );
+    expect(PRODUCT_TYPES).toHaveLength(11);
+```
+
+- [ ] **Step 2: Run to verify it fails**
+
+Run: `npm test -- catalog`
+Expected: FAIL — old `PRODUCT_TYPES` still holds `poster`/`giclee`/etc. and has a different length.
+
+- [ ] **Step 3: Replace `PRODUCT_TYPES` and badges in `catalog.ts`**
+
+```typescript
+export const PRODUCT_TYPES: TypeVocab[] = [
+  { slug: 'framed-print', label: 'Framed Prints' },
+  { slug: 'canvas', label: 'Canvas Prints' },
+  { slug: 'metal-print', label: 'Metal & Acrylic Prints' },
+  { slug: 'art-print', label: 'Art Prints' },
+  { slug: 'greeting-cards', label: 'Greeting Card Sets' },
+  { slug: 'postcard', label: 'Postcards' },
+  { slug: 'calendar', label: '2026 Wall Calendar' },
+  { slug: 'book', label: 'Book' },
+  // Phase-2 long tail — recognized so tagged products render, but not featured.
+  { slug: 'mug', label: 'Mugs' },
+  { slug: 'tote', label: 'Tote Bags' },
+  { slug: 'fridge-magnet', label: 'Fridge Magnets' },
+];
+
+/** Phase-2 types: recognized/valid, but not surfaced as featured curated entries. */
+export const PHASE2_TYPE_SLUGS = new Set(['mug', 'tote', 'fridge-magnet']);
+```
+
+Update `MARKETING_BADGES` to:
+
+```typescript
+const MARKETING_BADGES: Record<string, string> = { bestseller: 'Bestseller', new: 'New', commemorative: '250th' };
+```
+
+(`TYPE_SLUGS = new Set(PRODUCT_TYPES.map((t) => t.slug))` is unchanged and now includes all 11.)
+
+- [ ] **Step 4: Repair the committed tests that used removed slugs**
+
+In `src/__tests__/catalog.test.ts`, apply these substitutions (they match this plan's Task 2/3/4 example code verbatim — read the file and replace in place):
+
+| Where | Old | New |
+|---|---|---|
+| Task 2 all-states test | `it('marks all-states products (book/composite) ...` | `it('marks all-states products (book/calendar) ...` (description only) |
+| Task 2 badges case | `tags: ['americas-tapestry', 'virginia', 'artist-edition', 'signed']` asserting `'Signed'` | `tags: ['americas-tapestry', 'virginia', 'framed-print', 'commemorative']`; assert `c.type === 'framed-print'` and `badges` contains `'250th'` (keep the `'Sold out'` assertion); update the `it(...)` text `bestseller/new/signed` → `bestseller/new/commemorative` |
+| Task 3 fixture + filter | `'poster'` (product `id: '2'` tag, and `types: ['poster']` in two assertions) | `'art-print'` (tag and both `types: ['art-print']`) |
+| Task 4 fixture + query | `title: 'Virginia Poster'`, tag `'poster'`, and `searchProducts(list, 'poster')` | `title: 'Virginia Art Print'`, tag `'art-print'`, and `searchProducts(list, 'art print')` (still expects `['2']`) |
+
+- [ ] **Step 5: Verify the full suite and commit**
+
+Run: `npm test && npx tsc --noEmit`
+Expected: all suites green (the vocab, filter, search, sort, facet tests all pass with the finalized types).
+
+```bash
+git add src/lib/catalog.ts src/__tests__/catalog.test.ts
+git commit -m "fix(shop): finalized product-type taxonomy + 250th badge; repair dependent tests"
+```
+
+---
+
+### Task 8: Price tiers
+
+Adds the "gifts by price" tier model: a `PRICE_TIERS` vocab, `tierOf(price)`, a `tiers` facet on `CatalogFilters` honored by `filterProducts`, and URL round-tripping of the `tier` param.
+
+**Files:**
+- Modify: `src/lib/catalog.ts`
+- Modify: `src/__tests__/catalog.test.ts`
+
+**Interfaces:**
+- Consumes: `CatalogProduct` (Task 2), `CatalogFilters` (Task 3), `filterProducts` (Task 3), `parseFilters`/`serializeFilters` (Task 6).
+- Produces:
+  - `interface PriceTier { slug: string; label: string; min: number; max: number | null }` and `export const PRICE_TIERS: PriceTier[]`
+  - `export function tierOf(price: number): string` (returns a tier slug; half-open `[min, max)` buckets)
+  - `CatalogFilters` gains `tiers: string[]`; `filterProducts` filters by tier (OR within the facet, AND across facets)
+  - `parseFilters`/`serializeFilters` read/write the `tier` query param
+
+- [ ] **Step 1: Write the failing tests (append)**
+
+```typescript
+import { PRICE_TIERS, tierOf } from '@/lib/catalog';
+
+describe('price tiers', () => {
+  it('buckets prices into the four tiers (half-open)', () => {
+    expect(PRICE_TIERS.map((t) => t.slug)).toEqual(['under-25', '25-50', '50-150', '150-plus']);
+    expect(tierOf(20)).toBe('under-25');
+    expect(tierOf(25)).toBe('25-50');
+    expect(tierOf(49.99)).toBe('25-50');
+    expect(tierOf(90)).toBe('50-150');
+    expect(tierOf(150)).toBe('150-plus');
+    expect(tierOf(300)).toBe('150-plus');
+  });
+  it('filterProducts filters by tier', () => {
+    const list = [
+      toCatalogProduct(make({ id: 'p', tags: ['americas-tapestry', 'georgia', 'postcard'], price: { amount: '20.0', currencyCode: 'USD' } })),
+      toCatalogProduct(make({ id: 'f', tags: ['americas-tapestry', 'georgia', 'framed-print'], price: { amount: '90.0', currencyCode: 'USD' } })),
+    ];
+    expect(filterProducts(list, { states: [], types: [], tiers: ['under-25'], availability: 'all', priceMin: null, priceMax: null }).map((x) => x.id)).toEqual(['p']);
+  });
+  it('parseFilters/serializeFilters round-trip the tier param', () => {
+    const q = { filters: { states: [], types: [], tiers: ['50-150'], availability: 'all' as const, priceMin: null, priceMax: null }, sort: 'featured' as const, q: '' };
+    expect(parseFilters(Object.fromEntries(serializeFilters(q))).filters.tiers).toEqual(['50-150']);
+  });
+});
+```
+
+Also add `tiers: []` to the existing `EMPTY` filter object in the `filterProducts` describe block and to the base `CatalogFilters` objects in the `parseFilters`/`serializeFilters` tests (required field).
+
+- [ ] **Step 2: Run to verify it fails**
+
+Run: `npm test -- catalog`
+Expected: FAIL — `PRICE_TIERS`/`tierOf` not exported and `tiers` not on `CatalogFilters`.
+
+- [ ] **Step 3: Implement (append to `catalog.ts`, and extend the existing pieces)**
+
+Append the tier vocab:
+
+```typescript
+export interface PriceTier { slug: string; label: string; min: number; max: number | null }
+export const PRICE_TIERS: PriceTier[] = [
+  { slug: 'under-25', label: 'Under $25', min: 0, max: 25 },
+  { slug: '25-50', label: '$25–50', min: 25, max: 50 },
+  { slug: '50-150', label: '$50–150', min: 50, max: 150 },
+  { slug: '150-plus', label: '$150+', min: 150, max: null },
+];
+const TIER_SLUGS = new Set(PRICE_TIERS.map((t) => t.slug));
+
+export function tierOf(price: number): string {
+  const t = PRICE_TIERS.find((t) => price >= t.min && (t.max === null || price < t.max));
+  return (t ?? PRICE_TIERS[PRICE_TIERS.length - 1]!).slug;
+}
+```
+
+Edit `CatalogFilters` to add `tiers: string[];`. In `filterProducts`, add this guard (before the `return true`):
+
+```typescript
+    if (filters.tiers.length && !filters.tiers.includes(tierOf(p.price))) return false;
+```
+
+In `parseFilters`, add to the returned `filters` object: `tiers: list(params['tier'], TIER_SLUGS),`. In `serializeFilters`, add: `if (f.tiers.length) p.set('tier', f.tiers.join(','));`.
+
+- [ ] **Step 4: Run to verify it passes**
+
+Run: `npm test -- catalog`
+Expected: PASS (including the updated round-trip and filter tests).
+
+- [ ] **Step 5: Verify and commit**
+
+Run: `npm test && npx tsc --noEmit`
+
+```bash
+git add src/lib/catalog.ts src/__tests__/catalog.test.ts
+git commit -m "feat(shop): price tiers (PRICE_TIERS, tierOf, tier facet + URL param)"
+```
+
+---
+
+### Task 9: Wall-Art type group
+
+Adds the type-group map so the FilterRail can render a "Wall Art" heading and the curated "Wall Art" entry can pre-filter the catalog.
+
+**Files:**
+- Modify: `src/lib/catalog.ts`
+- Modify: `src/__tests__/catalog.test.ts`
+
+**Interfaces:**
+- Consumes: nothing new.
+- Produces:
+  - `export const TYPE_GROUPS: Record<string, { label: string; types: string[] }>` with a `wall-art` entry
+  - `export function typesInGroup(group: string): string[]` (the type slugs in a group; `[]` if unknown)
+
+- [ ] **Step 1: Write the failing test (append)**
+
+```typescript
+import { TYPE_GROUPS, typesInGroup } from '@/lib/catalog';
+
+describe('type groups', () => {
+  it('defines Wall Art as the four print types', () => {
+    expect(TYPE_GROUPS['wall-art']?.label).toBe('Wall Art');
+    expect(typesInGroup('wall-art')).toEqual(['framed-print', 'canvas', 'metal-print', 'art-print']);
+  });
+  it('returns [] for an unknown group', () => {
+    expect(typesInGroup('nonsense')).toEqual([]);
+  });
+});
+```
+
+- [ ] **Step 2: Run to verify it fails**
+
+Run: `npm test -- catalog`
+Expected: FAIL — `TYPE_GROUPS`/`typesInGroup` not exported.
+
+- [ ] **Step 3: Implement (append to `catalog.ts`)**
+
+```typescript
+export const TYPE_GROUPS: Record<string, { label: string; types: string[] }> = {
+  'wall-art': { label: 'Wall Art', types: ['framed-print', 'canvas', 'metal-print', 'art-print'] },
+};
+
+export function typesInGroup(group: string): string[] {
+  return TYPE_GROUPS[group]?.types ?? [];
+}
+```
+
+- [ ] **Step 4: Run to verify it passes**
+
+Run: `npm test -- catalog`
+Expected: PASS.
+
+- [ ] **Step 5: Verify and commit**
+
+Run: `npm test && npx tsc --noEmit`
+
+```bash
+git add src/lib/catalog.ts src/__tests__/catalog.test.ts
+git commit -m "feat(shop): Wall-Art type group"
+```
+
+---
+
 ## Self-Review
 
-- **Spec coverage (this plan's scope):** filter facets State/Type/Price/Availability → Task 3; keyword search → Task 4; sort → Task 5; facet counts (the "N selected" / per-option counts in the FilterRail) → Task 5; URL-driven shareable filters → Task 6; tag→axis mapping incl. the flat-tag reconciliation → Task 2; variants/images/options for ProductDetail + book hero data → Task 1. UI rendering of these is explicitly out of scope (Plans 2–3).
+- **Spec coverage (this plan's scope):** filter facets State/Type/Price/Availability → Task 3; keyword search → Task 4; sort → Task 5; facet counts (the "N selected" / per-option counts in the FilterRail) → Task 5; URL-driven shareable filters → Task 6; tag→axis mapping → Task 2; **finalized product-type taxonomy + 250th badge → Task 7; price tiers (chips) → Task 8; Wall-Art type group → Task 9**; variants/images/options for ProductDetail + book hero data → Task 1. UI rendering of these is explicitly out of scope (Plans 2–3).
 - **Placeholder scan:** none — every code/test step contains complete code.
 - **Type consistency:** `CatalogProduct`, `CatalogFilters`, `SortKey`, `CatalogQuery` are defined once (Tasks 2/3/5/6) and referenced by exact name thereafter; `mapProductNode`/`ShopifyProduct` names match Task 1 and the `@/lib/shopify` module.
 

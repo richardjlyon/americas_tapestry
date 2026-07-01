@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Catalog — America's Tapestry Shop</title>
+<title>Wall Art — Catalog — America's Tapestry Shop</title>
 <!--
   CATALOG /shop — ONE FilterRail + ONE CatalogGrid + ONE ProductCard.
   Facets map directly to Shopify tags: state:* (13), type:*, price bucket, availability.
   New product lines appear the moment products are tagged — no new templates.
-  Shown: type=Postcards active, filtered to Connecticut, Massachusetts, Virginia,
-  plus an extensibility band proving the same grid absorbs heterogeneous lines.
+  Shown: Wall Art-led browse, filtered to Georgia, Pennsylvania, South Carolina —
+  Framed Print, Canvas Print, Metal & Acrylic Print, Art Print, plus gift-ready
+  Greeting-Card Set and Postcards — plus an extensibility band proving the same
+  grid absorbs the collection-wide Calendar and Book alongside more states.
   RESPONSIVE INTENT:
     - Desktop-first, ~1200px, 2-col (238px rail + grid).
     - <=900px: rail collapses behind a "Filters" button (drawer); grid 3->2.
@@ -115,6 +117,15 @@
   .opt input:checked ~ .txt::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--stitch);}
   .opt .ct{font-size:12px;color:var(--muted);}
   .facet .more{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--burgundy);cursor:pointer;margin-top:12px;display:inline-block;}
+  .facet .subgroup{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--burgundy);font-weight:800;margin:2px 0 6px;}
+  .facet .subgroup.two{margin-top:14px;}
+  .opt.sub{padding-left:13px;}
+  /* one-tap price tier chips, above the range slider */
+  .tier-chips{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 18px;}
+  .tier{font-size:12px;font-weight:700;color:var(--navy);border:1px solid #c8bfa9;padding:8px 12px;border-radius:var(--radius);cursor:pointer;position:relative;background:var(--white);}
+  .tier:hover{border-color:var(--gold);}
+  .tier.on{border-color:var(--navy);}
+  .tier.on::after{content:"";position:absolute;left:9px;right:9px;bottom:-3px;height:2px;background:var(--stitch);}
   .price-note{font-family:'EB Garamond',serif;font-size:15px;color:var(--navy);margin:2px 0 12px;}
   .range{position:relative;height:2px;background:var(--line);margin:16px 6px;}
   .range .fill{position:absolute;left:8%;right:34%;top:0;bottom:0;background:var(--gold);}
@@ -141,6 +152,7 @@
   .badge.new{background:var(--burgundy);color:#fff;}
   .badge.signed{background:var(--navy);color:var(--gold);}
   .badge.soon{background:rgba(26,43,69,.9);color:var(--parchment);}
+  .badge.commem{background:var(--gold);color:var(--navy);font-size:8px;padding:4px 8px;letter-spacing:.1em;}
   .card .shot .quick{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;background:var(--navy);color:var(--parchment);text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:12px;opacity:0;transform:translateY(8px);transition:all .25s;}
   .card .shot .quick.notify{background:transparent;color:var(--parchment);border:1px solid var(--gold);}
   .card:hover .shot .quick{opacity:1;transform:translateY(0);}
@@ -220,10 +232,10 @@
 <!-- ================= CATALOG HEAD ================= -->
 <div class="wrap">
   <div class="cat-head">
-    <div class="crumb"><a href="01-landing.html">Shop</a> · Catalog · <span>Postcards</span></div>
+    <div class="crumb"><a href="01-landing.html">Shop</a> · Catalog · <span>Wall Art</span></div>
     <p class="eyebrow">The Unified Catalog</p>
-    <h1>Postcards</h1>
-    <p class="serif">One grid for the whole shop. Filter by colony, product type, price, and availability — every product across all thirteen panels lives here, so new lines appear automatically as they're released.</p>
+    <h1>Wall Art</h1>
+    <p class="serif">One grid for the whole shop. Explore the collection's four wall-art formats — framed, canvas, metal &amp; acrylic, and unframed prints — across Georgia, Pennsylvania and South Carolina, plus gift-ready companions like postcards and greeting cards. New lines appear automatically as they're released.</p>
   </div>
 </div>
 
@@ -232,7 +244,7 @@
   <div class="wrap">
     <form class="field" onsubmit="return false">
       <span class="ic">⌕</span>
-      <input type="search" placeholder="Search the catalog — “Virginia print”, “tote”, “signed edition”…" />
+      <input type="search" placeholder="Search the catalog — “Georgia framed print”, “wall calendar”, “greeting cards”…" />
       <button class="go" type="submit">Search</button>
     </form>
   </div>
@@ -241,7 +253,7 @@
 <div class="wrap">
   <div class="toolbar">
     <div class="left">
-      <span class="count-label"><b>9</b> pieces</span>
+      <span class="count-label"><b>6</b> pieces</span>
     </div>
     <div class="right">
       <div class="sort">
@@ -260,10 +272,10 @@
 
   <div class="active-row">
     <span class="lbl">Filtering</span>
-    <span class="chip type">Type: Postcards <span class="x">✕</span></span>
-    <span class="chip">Connecticut <span class="x">✕</span></span>
-    <span class="chip">Massachusetts <span class="x">✕</span></span>
-    <span class="chip">Virginia <span class="x">✕</span></span>
+    <span class="chip type">Type: Wall Art <span class="x">✕</span></span>
+    <span class="chip">Georgia <span class="x">✕</span></span>
+    <span class="chip">Pennsylvania <span class="x">✕</span></span>
+    <span class="chip">South Carolina <span class="x">✕</span></span>
     <span class="clear">Clear all</span>
   </div>
 </div>
@@ -278,43 +290,51 @@
       <div class="facet">
         <h3>State <span class="sel">3 selected</span></h3>
         <p class="tag-hint" title="Shopify tag namespace — maps checkbox values to tag: state:*">tag: state:*</p>
-        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">Connecticut</span><span class="ct">6</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Delaware</span><span class="ct">4</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Georgia</span><span class="ct">5</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Maryland</span><span class="ct">5</span></label>
-        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">Massachusetts</span><span class="ct">7</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">New Hampshire</span><span class="ct">4</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">New Jersey</span><span class="ct">5</span></label>
-        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">Virginia</span><span class="ct">8</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Connecticut</span><span class="ct">6</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Delaware</span><span class="ct">6</span></label>
+        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">Georgia</span><span class="ct">6</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Maryland</span><span class="ct">6</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">New Jersey</span><span class="ct">6</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">New York</span><span class="ct">6</span></label>
+        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">Pennsylvania</span><span class="ct">6</span></label>
+        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">South Carolina</span><span class="ct">6</span></label>
         <span class="more">Show all 13 +</span>
       </div>
 
-      <!-- PRODUCT TYPE facet (tag: type:*) — 1 selected -->
+      <!-- PRODUCT TYPE facet (tag: type:*) — 4 selected (Wall Art subgroup) -->
       <div class="facet">
-        <h3>Product Type <span class="sel">1 selected</span></h3>
+        <h3>Product Type <span class="sel">4 selected</span></h3>
         <p class="tag-hint" title="Shopify tag namespace — maps checkbox values to tag: type:*">tag: type:*</p>
-        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">Postcards</span><span class="ct">13</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Posters</span><span class="ct">11</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Tote bags</span><span class="ct">9</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Mugs</span><span class="ct">10</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Giclée prints</span><span class="ct">13</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Framed editions</span><span class="ct">8</span></label>
-        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Artist Edition</span><span class="ct">6</span></label>
+        <p class="subgroup">Wall Art</p>
+        <label class="opt sub"><input type="checkbox" checked /><span class="box"></span><span class="txt">Framed Prints</span><span class="ct">13</span></label>
+        <label class="opt sub"><input type="checkbox" checked /><span class="box"></span><span class="txt">Canvas Prints</span><span class="ct">13</span></label>
+        <label class="opt sub"><input type="checkbox" checked /><span class="box"></span><span class="txt">Metal &amp; Acrylic</span><span class="ct">13</span></label>
+        <label class="opt sub"><input type="checkbox" checked /><span class="box"></span><span class="txt">Art Prints</span><span class="ct">13</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Greeting Cards</span><span class="ct">13</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Postcards</span><span class="ct">13</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Calendar</span><span class="ct">1</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Book</span><span class="ct">1</span></label>
       </div>
 
       <!-- PRICE facet -->
       <div class="facet">
         <h3>Price</h3>
-        <div class="price-note">$4 — $120</div>
+        <div class="tier-chips">
+          <span class="tier">Under $25</span>
+          <span class="tier">$25–50</span>
+          <span class="tier on">$50–150</span>
+          <span class="tier">$150+</span>
+        </div>
+        <div class="price-note">$20 — $300+</div>
         <div class="range"><div class="fill"></div><div class="knob a"></div><div class="knob b"></div></div>
       </div>
 
       <!-- AVAILABILITY facet -->
       <div class="facet">
         <h3>Availability</h3>
-        <label class="opt"><input type="radio" name="avail" checked /><span class="radio"></span><span class="txt">In stock</span><span class="ct">9</span></label>
-        <label class="opt"><input type="radio" name="avail" /><span class="radio"></span><span class="txt">Include pre-order</span><span class="ct">2</span></label>
-        <label class="opt"><input type="radio" name="avail" /><span class="radio"></span><span class="txt">All</span><span class="ct">11</span></label>
+        <label class="opt"><input type="radio" name="avail" checked /><span class="radio"></span><span class="txt">In stock</span><span class="ct">6</span></label>
+        <label class="opt"><input type="radio" name="avail" /><span class="radio"></span><span class="txt">Include pre-order</span><span class="ct">6</span></label>
+        <label class="opt"><input type="radio" name="avail" /><span class="radio"></span><span class="txt">All</span><span class="ct">6</span></label>
       </div>
     </aside>
 
@@ -323,66 +343,45 @@
       <div class="grid">
 
         <a class="card dk" href="04-product.html">
-          <div class="shot"><span class="flag">Postcards</span><span class="badge best">Bestseller</span>
-            <div class="inner"><span>Connecticut<br>Pack of 10</span></div><div class="quick">Quick add — $20</div></div>
-          <div class="info"><div class="k">Connecticut</div><div class="nm">Colony Postcards, Pack of 10</div>
-            <div class="dsc serif">Ten cards from the Charter Oak panel.</div><div class="price">$20</div></div>
+          <div class="shot"><span class="flag">Framed Print</span><span class="badge commem">250th</span>
+            <div class="inner"><span>Georgia<br>Framed Print</span></div><div class="quick">View sizes</div></div>
+          <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Framed Print</div>
+            <div class="dsc serif">Solid wood frame, museum mat, ready to hang.</div><div class="price"><span class="from">from</span>$90</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Canvas Print</span><span class="badge in">In stock</span>
+            <div class="inner"><span>Pennsylvania<br>Canvas Print</span></div><div class="quick">View sizes</div></div>
+          <div class="info"><div class="k">Pennsylvania</div><div class="nm">Pennsylvania Panel — Canvas Print</div>
+            <div class="dsc serif">Gallery-wrapped canvas, no frame needed.</div><div class="price"><span class="from">from</span>$90</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Metal &amp; Acrylic</span><span class="badge new">New</span>
+            <div class="inner"><span>South Carolina<br>Metal &amp; Acrylic Print</span></div><div class="quick">View sizes</div></div>
+          <div class="info"><div class="k">South Carolina</div><div class="nm">South Carolina Panel — Metal &amp; Acrylic Print</div>
+            <div class="dsc serif">HD metal or acrylic, vivid modern finish.</div><div class="price"><span class="from">from</span>$150</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Art Print</span><span class="badge in">In stock</span>
+            <div class="inner"><span>Georgia<br>Art Print</span></div><div class="quick">View sizes</div></div>
+          <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Art Print</div>
+            <div class="dsc serif">Unframed fine-art poster, archival stock.</div><div class="price"><span class="from">from</span>$25</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Greeting Cards</span><span class="badge commem">250th</span>
+            <div class="inner"><span>Pennsylvania<br>Greeting-Card Set</span></div><div class="quick">Quick add — $28</div></div>
+          <div class="info"><div class="k">Pennsylvania</div><div class="nm">Pennsylvania Panel — Greeting-Card Set</div>
+            <div class="dsc serif">Boxed note cards with envelopes, blank interior.</div><div class="price">$28</div></div>
         </a>
 
         <a class="card dk" href="04-product.html">
           <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
-            <div class="inner"><span>Massachusetts<br>Pack of 10</span></div><div class="quick">Quick add — $20</div></div>
-          <div class="info"><div class="k">Massachusetts</div><div class="nm">Colony Postcards, Pack of 10</div>
-            <div class="dsc serif">Ten cards from the Bay Colony panel.</div><div class="price">$20</div></div>
-        </a>
-
-        <a class="card dk" href="04-product.html">
-          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
-            <div class="inner"><span>Virginia<br>Pack of 10</span></div><div class="quick">Quick add — $20</div></div>
-          <div class="info"><div class="k">Virginia</div><div class="nm">Colony Postcards, Pack of 10</div>
-            <div class="dsc serif">Ten cards from the Tidewater panel.</div><div class="price">$20</div></div>
-        </a>
-
-        <a class="card dk" href="04-product.html">
-          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
-            <div class="inner"><span>Connecticut<br>Single · Charter Oak</span></div><div class="quick">Quick add — $4</div></div>
-          <div class="info"><div class="k">Connecticut</div><div class="nm">Single Card · “Charter Oak”</div>
-            <div class="dsc serif">Individual card, blank interior.</div><div class="price">$4</div></div>
-        </a>
-
-        <a class="card dk" href="04-product.html">
-          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
-            <div class="inner"><span>Massachusetts<br>Single · The Harbor</span></div><div class="quick">Quick add — $4</div></div>
-          <div class="info"><div class="k">Massachusetts</div><div class="nm">Single Card · “The Harbor”</div>
-            <div class="dsc serif">Individual card, blank interior.</div><div class="price">$4</div></div>
-        </a>
-
-        <a class="card dk" href="04-product.html">
-          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
-            <div class="inner"><span>Virginia<br>Single · Tobacco &amp; Tide</span></div><div class="quick">Quick add — $4</div></div>
-          <div class="info"><div class="k">Virginia</div><div class="nm">Single Card · “Tobacco &amp; Tide”</div>
-            <div class="dsc serif">Individual card, blank interior.</div><div class="price">$4</div></div>
-        </a>
-
-        <a class="card dk" href="04-product.html">
-          <div class="shot"><span class="flag">Postcards</span><span class="badge new">New</span>
-            <div class="inner"><span>Massachusetts<br>Boxed Set of 20</span></div><div class="quick">Quick add — $36</div></div>
-          <div class="info"><div class="k">Massachusetts</div><div class="nm">Boxed Postcard Set of 20</div>
-            <div class="dsc serif">Two panels, keepsake box.</div><div class="price">$36</div></div>
-        </a>
-
-        <a class="card dk" href="04-product.html">
-          <div class="shot"><span class="flag">Postcards</span><span class="badge soon">Coming soon</span>
-            <div class="inner"><span>Connecticut<br>Greeting · Folded</span></div><div class="quick notify">Notify me</div></div>
-          <div class="info"><div class="k">Connecticut</div><div class="nm">Folded Greeting Card &amp; Envelope</div>
-            <div class="dsc serif">Ships August · pre-order now.</div><div class="price">$6</div></div>
-        </a>
-
-        <a class="card dk" href="04-product.html">
-          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
-            <div class="inner"><span>Virginia<br>Collector Pack of 10</span></div><div class="quick">Quick add — $24</div></div>
-          <div class="info"><div class="k">Virginia · Collector</div><div class="nm">Gilt-Edge Collector Pack, 10</div>
-            <div class="dsc serif">Gold-foil edges, numbered sleeve.</div><div class="price">$24 <s>$28</s></div></div>
+            <div class="inner"><span>South Carolina<br>Pack of 10</span></div><div class="quick">Quick add — $20</div></div>
+          <div class="info"><div class="k">South Carolina</div><div class="nm">South Carolina Panel — Postcards, Pack of 10</div>
+            <div class="dsc serif">Ten cards from the Charleston harbor panel.</div><div class="price">$20</div></div>
         </a>
 
       </div>
@@ -401,36 +400,36 @@
   <div class="wrap">
     <div class="head">
       <div>
-        <p class="eyebrow">Same grid · other product types</p>
-        <h2>Other products from these three colonies</h2>
+        <p class="eyebrow">Same grid · collection-wide &amp; other states</p>
+        <h2>The calendar, the book, and every other panel</h2>
       </div>
-      <p class="note">Drop the Type filter and the same cards carry posters, prints and editions — no new page.</p>
+      <p class="note">Drop the State filter and the same card carries the Calendar, the Book and every other state — no new page.</p>
     </div>
-    <p class="sub serif">Connecticut, Massachusetts and Virginia also appear as posters, giclée prints, totes and signed editions. Tag a product <em>state:virginia · type:poster</em> in Shopify and it lands in this exact grid automatically.</p>
+    <p class="sub serif">Beyond Georgia, Pennsylvania and South Carolina, the same four wall-art formats extend to all thirteen panels — and two collection-wide pieces, the 2026 Wall Calendar and the hardcover book, join this exact grid. Tag a product <em>state:new-york · type:framed-print</em> in Shopify and it lands here automatically.</p>
     <div class="ext-grid">
       <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Poster</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Connecticut<br>Panel Poster 18×24″</span></div><div class="quick">Quick add — $32</div></div>
-        <div class="info"><div class="k">Connecticut</div><div class="nm">Panel Poster, 18×24″</div>
-          <div class="dsc serif">Offset print, heavy matte stock.</div><div class="price">$32</div></div>
+        <div class="shot"><span class="flag">Calendar</span><span class="badge new">New</span>
+          <div class="inner"><span>All 13 States<br>2026 Wall Calendar</span></div><div class="quick">View calendar</div></div>
+        <div class="info"><div class="k">All 13 States</div><div class="nm">2026 Wall Calendar</div>
+          <div class="dsc serif">Thirteen panels, a 250th-anniversary keepsake.</div><div class="price"><span class="from">from</span>$30</div></div>
       </a>
       <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Giclée Print</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Massachusetts<br>Fine-Art Giclée</span></div><div class="quick">View sizes</div></div>
-        <div class="info"><div class="k">Massachusetts</div><div class="nm">Fine-Art Giclée Print</div>
-          <div class="dsc serif">Archival cotton rag, three sizes.</div><div class="price"><span class="from">from</span>$85</div></div>
+        <div class="shot"><span class="flag">Book</span><span class="badge best">Bestseller</span>
+          <div class="inner"><span>The Collection<br>Hardcover Book</span></div><div class="quick">Quick add — $45</div></div>
+        <div class="info"><div class="k">The Collection</div><div class="nm">“A Nation's Story” — Hardcover</div>
+          <div class="dsc serif">The stories and craft behind all thirteen panels.</div><div class="price">$45</div></div>
       </a>
-      <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Framed Edition</span><span class="badge new">New</span>
-          <div class="inner"><span>Virginia<br>Framed Panel Print</span></div><div class="quick">View editions</div></div>
-        <div class="info"><div class="k">Virginia</div><div class="nm">Framed Panel Edition</div>
-          <div class="dsc serif">Museum mat, solid maple frame.</div><div class="price"><span class="from">from</span>$240</div></div>
+      <a class="card dk" href="04-product.html">
+        <div class="shot"><span class="flag">Framed Print</span><span class="badge in">In stock</span>
+          <div class="inner"><span>New York<br>Framed Print</span></div><div class="quick">View sizes</div></div>
+        <div class="info"><div class="k">New York</div><div class="nm">New York Panel — Framed Print</div>
+          <div class="dsc serif">Solid wood frame, museum mat, ready to hang.</div><div class="price"><span class="from">from</span>$90</div></div>
       </a>
-      <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Artist Edition</span><span class="badge signed">Signed</span>
-          <div class="inner"><span>Massachusetts<br>Signed · Ltd. of 50</span></div><div class="quick">View editions</div></div>
-        <div class="info"><div class="k">Massachusetts · Signed</div><div class="nm">Artist Edition, Ltd. of 50</div>
-          <div class="dsc serif">Hand-numbered, signed by the maker.</div><div class="price">$650</div></div>
+      <a class="card dk" href="04-product.html">
+        <div class="shot"><span class="flag">Canvas Print</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Virginia<br>Canvas Print</span></div><div class="quick">View sizes</div></div>
+        <div class="info"><div class="k">Virginia</div><div class="nm">Virginia Panel — Canvas Print</div>
+          <div class="dsc serif">Gallery-wrapped canvas, ready to hang.</div><div class="price"><span class="from">from</span>$90</div></div>
       </a>
     </div>
   </div>
@@ -448,7 +447,7 @@
       <div><h4>Shop</h4>
         <a href="01-landing.html#picker">By State</a><a href="03-catalog.html">Full Catalog</a><a href="01-landing.html#doors">By Product</a><a href="03-catalog.html">All-States</a></div>
       <div><h4>Products</h4>
-        <a href="03-catalog.html">Postcards</a><a href="03-catalog.html">Giclée Prints</a><a href="03-catalog.html">Framed Editions</a><a href="03-catalog.html">Artist Editions</a></div>
+        <a href="03-catalog.html">Wall Art</a><a href="03-catalog.html">Greeting Cards</a><a href="03-catalog.html">Postcards</a><a href="03-catalog.html">2026 Calendar</a></div>
       <div><h4>Project</h4>
         <a href="#">The 13 Panels</a><a href="#">The Guild</a><a href="#">Exhibitions</a><a href="#">Contact</a></div>
     </div>
