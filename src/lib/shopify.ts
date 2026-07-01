@@ -138,7 +138,7 @@ export async function getCollectionProducts(
     const edges = data.collection?.products.edges ?? [];
     return edges.map(({ node }) => mapProductNode(node));
   } catch (error) {
-    console.error('[shopify] getCollectionProducts failed:', error);
+    console.error('[shopify] getCollectionProducts failed:', error instanceof Error ? error.message : String(error));
     return [];
   }
 }
@@ -200,7 +200,7 @@ export async function getAllProducts(): Promise<ShopifyProduct[]> {
     }
     return out;
   } catch (error) {
-    console.error('[shopify] getAllProducts failed:', error);
+    console.error('[shopify] getAllProducts failed:', error instanceof Error ? error.message : String(error));
     return [];
   }
 }
@@ -250,6 +250,7 @@ export async function getProductByHandle(handle: string): Promise<ShopifyProduct
     const node = data.product;
     if (!node) return null;
     const base = mapProductNode({ ...node, variants: { edges: node.variants.edges.map((e) => ({ node: { id: e.node.id, availableForSale: e.node.availableForSale } })) } });
+    if (!base.tags.includes('americas-tapestry')) return null;
     return {
       ...base,
       availableForSale: node.variants.edges.some((e) => e.node.availableForSale),
@@ -258,7 +259,7 @@ export async function getProductByHandle(handle: string): Promise<ShopifyProduct
       variants: node.variants.edges.map((e) => e.node),
     };
   } catch (error) {
-    console.error('[shopify] getProductByHandle failed:', error);
+    console.error('[shopify] getProductByHandle failed:', error instanceof Error ? error.message : String(error));
     return null;
   }
 }
