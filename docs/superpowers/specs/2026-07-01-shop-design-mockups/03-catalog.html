@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catalog — America's Tapestry Shop</title>
+<!--
+  CATALOG /shop — ONE FilterRail + ONE CatalogGrid + ONE ProductCard.
+  Facets map directly to Shopify tags: state:* (13), type:*, price bucket, availability.
+  New product lines appear the moment products are tagged — no new templates.
+  Shown: type=Postcards active, filtered to Connecticut, Massachusetts, Virginia,
+  plus an extensibility band proving the same grid absorbs heterogeneous lines.
+  RESPONSIVE INTENT:
+    - Desktop-first, ~1200px, 2-col (238px rail + grid).
+    - <=900px: rail collapses behind a "Filters" button (drawer); grid 3->2.
+    - <=600px: grid 1 col; search/sort stack.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#1a2b45; --gold:#e8b903; --gold-dk:#d4a802;
+    --burgundy:#6b1f2e; --parchment:#f4e9d5; --cream:#fbf7ef; --white:#fff;
+    --ink:#1a2b45; --muted:#6a6a72; --line:#e6ddca; --maxw:1200px;
+    --stitch: repeating-linear-gradient(90deg, var(--gold) 0 7px, transparent 7px 13px);
+    /* subtle two-axis linen texture for warm light fields (graft: Heritage Textile) */
+    --linen: linear-gradient(90deg, rgba(107,31,46,.015) 1px, transparent 1px),
+             linear-gradient(0deg, rgba(26,43,69,.015) 1px, transparent 1px);
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--white);color:var(--ink);font-family:'Montserrat',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+  .serif{font-family:'EB Garamond',Georgia,serif;}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);}
+  .stitch{height:2px;border:0;width:64px;background:var(--stitch);margin:0;}
+  .stitch.center{margin:0 auto;}
+
+  /* header shared */
+  .announce{background:var(--navy);color:var(--parchment);text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:10px 20px;}
+  .announce b{color:var(--gold);font-weight:700;}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px;}
+  .brand{display:flex;flex-direction:column;line-height:1;}
+  .brand .name{font-weight:800;font-size:19px;letter-spacing:.02em;color:var(--navy);}
+  .brand .sub{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--burgundy);margin-top:5px;font-weight:700;}
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--navy);position:relative;padding:6px 0;}
+  .nav-links a.active{color:var(--burgundy);}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s;}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+  .nav-actions{display:flex;align-items:center;gap:22px;}
+  .cart{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;}
+  .cart .count{background:var(--burgundy);color:#fff;border-radius:999px;font-size:11px;min-width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px;}
+
+  /* catalog head */
+  .cat-head{padding:52px 0 26px;}
+  .crumb{font-size:12px;letter-spacing:.06em;color:var(--muted);margin-bottom:18px;}
+  .crumb a:hover{color:var(--gold);}
+  .cat-head h1{font-weight:800;font-size:44px;letter-spacing:-.01em;color:var(--navy);margin:6px 0 12px;}
+  .cat-head p{font-family:'EB Garamond',serif;font-size:18px;color:#3a4453;margin:0;max-width:62ch;}
+
+  /* prominent, front-and-center search (graft: Civic/Heritage) */
+  .searchbar{padding:24px 0 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .searchbar .field{position:relative;max-width:760px;margin:0 auto;}
+  .searchbar input{width:100%;font-family:'Montserrat';font-size:16px;font-weight:500;color:var(--navy);padding:18px 150px 18px 52px;border:1.5px solid var(--navy);background:var(--white);border-radius:var(--radius);}
+  .searchbar input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,185,3,.18);}
+  .searchbar .ic{position:absolute;left:20px;top:50%;transform:translateY(-50%);color:var(--navy);font-size:19px;}
+  .searchbar .go{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:var(--gold);color:var(--navy);border:none;font-family:'Montserrat';font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:12px 22px;border-radius:var(--radius);cursor:pointer;}
+  .searchbar .go:hover{background:var(--gold-dk);}
+
+  /* toolbar: result count + sort */
+  .toolbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 0;flex-wrap:wrap;}
+  .toolbar .left{display:flex;align-items:center;gap:16px;}
+  .count-label{font-size:13px;color:var(--muted);letter-spacing:.02em;}
+  .count-label b{color:var(--navy);font-weight:700;}
+  .toolbar .right{display:flex;align-items:center;gap:22px;}
+  .sort{display:flex;align-items:center;gap:10px;}
+  .sort label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+  .sort select{font-family:'Montserrat';font-size:13px;font-weight:600;color:var(--navy);border:none;border-bottom:1px solid var(--navy);background:transparent;padding:6px 22px 6px 2px;cursor:pointer;-webkit-appearance:none;appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%231a2b45'/></svg>");background-repeat:no-repeat;background-position:right 2px center;}
+  .filters-btn{display:none;}
+
+  /* active filter chips */
+  .active-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:6px 0 4px;}
+  .active-row .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+  .chip{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.02em;background:var(--navy);color:var(--parchment);padding:7px 12px;border-radius:var(--radius);}
+  .chip .x{font-size:13px;line-height:1;color:var(--gold);cursor:pointer;}
+  .chip.type{background:var(--burgundy);}
+  .clear{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--burgundy);cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+
+  /* layout: rail + grid */
+  .layout{display:grid;grid-template-columns:238px 1fr;gap:52px;padding:30px 0 40px;align-items:start;}
+
+  /* quiet minimal filter rail */
+  .rail{position:sticky;top:100px;}
+  .facet{padding:22px 0;border-bottom:1px solid var(--line);}
+  .facet:first-child{padding-top:4px;}
+  .facet h3{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);font-weight:800;margin:0 0 4px;display:flex;justify-content:space-between;align-items:center;}
+  .facet h3 .sel{color:var(--navy);font-weight:700;letter-spacing:.04em;font-size:10px;background:var(--gold);padding:2px 7px;border-radius:999px;}
+  .facet h3 .n{color:var(--muted);font-weight:600;letter-spacing:.04em;}
+  /* subtle preview/admin affordance exposing the Shopify tag namespace — NOT shopper body copy */
+  .facet .tag-hint{font-family:'EB Garamond',serif;font-style:italic;font-size:11px;color:#b3a888;letter-spacing:.02em;margin:0 0 12px;cursor:help;}
+  .opt{display:flex;align-items:center;gap:11px;padding:6px 0;cursor:pointer;font-size:14px;color:#3c4757;position:relative;}
+  .opt:hover{color:var(--navy);}
+  .opt input{position:absolute;opacity:0;pointer-events:none;}
+  .box{width:16px;height:16px;border:1px solid #c8bfa9;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;transition:all .15s;}
+  .opt input:checked + .box{background:var(--gold);border-color:var(--gold);}
+  .opt input:checked + .box::after{content:"✓";font-size:11px;font-weight:800;color:var(--navy);}
+  .opt input:checked ~ .txt{color:var(--navy);font-weight:600;}
+  .opt .txt{flex:1;position:relative;}
+  /* gold running-stitch underline on CHECKED options (graft: Heritage Textile) */
+  .opt input:checked ~ .txt::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--stitch);}
+  .opt .ct{font-size:12px;color:var(--muted);}
+  .facet .more{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--burgundy);cursor:pointer;margin-top:12px;display:inline-block;}
+  .price-note{font-family:'EB Garamond',serif;font-size:15px;color:var(--navy);margin:2px 0 12px;}
+  .range{position:relative;height:2px;background:var(--line);margin:16px 6px;}
+  .range .fill{position:absolute;left:8%;right:34%;top:0;bottom:0;background:var(--gold);}
+  .range .knob{position:absolute;top:50%;width:14px;height:14px;background:#fff;border:2px solid var(--navy);border-radius:50%;transform:translate(-50%,-50%);}
+  .range .knob.a{left:8%;} .range .knob.b{left:66%;}
+  .radio{width:16px;height:16px;border:1px solid #c8bfa9;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .opt input:checked + .radio{border-color:var(--navy);}
+  .opt input:checked + .radio::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);}
+
+  /* catalog grid + product cards (shared card) */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 30px;}
+  .card{position:relative;transition:transform .25s;}
+  .card:hover{transform:translateY(-5px);}
+  .card .shot{aspect-ratio:4/5;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--cream);}
+  .card .shot .inner{position:absolute;inset:14px;border:1px dashed rgba(26,43,69,.18);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;
+    background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.14), transparent 60%),linear-gradient(160deg,#f7efe0,#efe2c9);}
+  .card.dk .shot .inner{background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.22), transparent 60%),linear-gradient(150deg,var(--navy),var(--burgundy));}
+  .card.dk .shot .inner span{color:var(--parchment);}
+  .card .shot .inner span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);font-weight:700;line-height:1.5;}
+  .card .shot .flag{position:absolute;top:14px;left:14px;z-index:2;background:var(--navy);color:var(--parchment);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:6px 11px;}
+  .badge{position:absolute;top:14px;right:14px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 10px;background:rgba(255,255,255,.94);color:var(--burgundy);}
+  .badge.in{color:#2f6b3a;}
+  .badge.best{background:var(--gold);color:var(--navy);}
+  .badge.new{background:var(--burgundy);color:#fff;}
+  .badge.signed{background:var(--navy);color:var(--gold);}
+  .badge.soon{background:rgba(26,43,69,.9);color:var(--parchment);}
+  .card .shot .quick{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;background:var(--navy);color:var(--parchment);text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:12px;opacity:0;transform:translateY(8px);transition:all .25s;}
+  .card .shot .quick.notify{background:transparent;color:var(--parchment);border:1px solid var(--gold);}
+  .card:hover .shot .quick{opacity:1;transform:translateY(0);}
+  .card .info{padding:16px 4px 0;}
+  .card .info .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--burgundy);font-weight:700;}
+  .card .info .nm{font-weight:700;font-size:16px;color:var(--navy);margin:7px 0 2px;line-height:1.3;}
+  .card .info .dsc{font-family:'EB Garamond',serif;font-size:14px;color:var(--muted);}
+  .card .info .price{margin-top:9px;font-weight:700;font-size:15px;color:var(--navy);}
+  .card .info .price .from{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:5px;}
+  .card .info .price s{color:#b9b1a2;font-weight:600;margin-left:7px;}
+
+  /* pagination */
+  .pager{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:56px;}
+  .pager a{min-width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border:1px solid var(--line);color:var(--navy);}
+  .pager a.on{background:var(--navy);color:var(--parchment);border-color:var(--navy);}
+  .pager a:hover:not(.on){border-color:var(--gold);}
+
+  /* ============ EXTENSIBILITY BAND (one grid absorbs new lines) ============ */
+  .ext{background:var(--parchment);background-image:var(--linen);background-size:6px 6px;border-top:1px solid var(--line);}
+  .ext .wrap{padding:64px 40px 72px;}
+  .ext .head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;margin-bottom:14px;}
+  .ext .head h2{font-weight:800;font-size:28px;color:var(--navy);margin:8px 0 0;letter-spacing:-.01em;}
+  .ext .head .note{font-family:'EB Garamond',serif;font-style:italic;color:#6a5f47;font-size:16px;max-width:40ch;}
+  .ext .sub{font-family:'EB Garamond',serif;font-size:16px;color:#4a4436;margin:0 0 30px;max-width:70ch;}
+  .ext-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .ext-grid .card .shot{background:var(--cream);}
+
+  /* footer */
+  footer.site{background:var(--cream);border-top:1px solid var(--line);padding:64px 0 40px;}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--burgundy);font-weight:700;margin:0 0 16px;}
+  .foot-grid a{display:block;font-size:14px;color:#43505f;padding:5px 0;}
+  .foot-grid a:hover{color:var(--gold);}
+  .foot-brand .name{font-weight:800;font-size:20px;color:var(--navy);}
+  .foot-brand p{font-family:'EB Garamond',serif;font-size:15px;color:var(--muted);max-width:34ch;margin:12px 0 0;}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:.04em;}
+
+  @media(max-width:900px){
+    .layout{grid-template-columns:1fr;gap:0;}
+    .rail{display:none;}
+    .filters-btn{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--navy);padding:11px 18px;color:var(--navy);}
+    .grid,.ext-grid{grid-template-columns:repeat(2,1fr);}
+    .cat-head h1{font-size:34px;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .nav-links{display:none;}
+  }
+  @media(max-width:600px){
+    .wrap{padding:0 22px;}
+    .grid,.ext-grid{grid-template-columns:1fr;}
+    .searchbar input{padding:16px 16px 16px 46px;}
+    .searchbar .go{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="announce">America's 250th · Semiquincentennial · <b>Free U.S. shipping over $75</b></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="01-landing.html">
+      <span class="name">AMERICA'S TAPESTRY</span>
+      <span class="sub">The Shop · Est. 1776 · 2026</span>
+    </a>
+    <nav class="nav-links">
+      <a href="01-landing.html#picker">Shop by State</a>
+      <a class="active" href="03-catalog.html">Catalog</a>
+      <a href="01-landing.html#doors">By Product</a>
+      <a href="01-landing.html#story">The Project</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="cart" href="#"><span>Bag</span><span class="count">2</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= CATALOG HEAD ================= -->
+<div class="wrap">
+  <div class="cat-head">
+    <div class="crumb"><a href="01-landing.html">Shop</a> · Catalog · <span>Postcards</span></div>
+    <p class="eyebrow">The Unified Catalog</p>
+    <h1>Postcards</h1>
+    <p class="serif">One grid for the whole shop. Filter by colony, product type, price, and availability — every product across all thirteen panels lives here, so new lines appear automatically as they're released.</p>
+  </div>
+</div>
+
+<!-- prominent search -->
+<div class="searchbar">
+  <div class="wrap">
+    <form class="field" onsubmit="return false">
+      <span class="ic">⌕</span>
+      <input type="search" placeholder="Search the catalog — “Virginia print”, “tote”, “signed edition”…" />
+      <button class="go" type="submit">Search</button>
+    </form>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toolbar">
+    <div class="left">
+      <span class="count-label"><b>9</b> pieces</span>
+    </div>
+    <div class="right">
+      <div class="sort">
+        <label for="sort">Sort</label>
+        <select id="sort">
+          <option>Featured</option>
+          <option>Price · Low to High</option>
+          <option>Price · High to Low</option>
+          <option>Newest</option>
+          <option>Colony · A–Z</option>
+        </select>
+      </div>
+      <button class="filters-btn">Filters</button>
+    </div>
+  </div>
+
+  <div class="active-row">
+    <span class="lbl">Filtering</span>
+    <span class="chip type">Type: Postcards <span class="x">✕</span></span>
+    <span class="chip">Connecticut <span class="x">✕</span></span>
+    <span class="chip">Massachusetts <span class="x">✕</span></span>
+    <span class="chip">Virginia <span class="x">✕</span></span>
+    <span class="clear">Clear all</span>
+  </div>
+</div>
+
+<!-- ================= LAYOUT: RAIL + GRID ================= -->
+<div class="wrap">
+  <div class="layout">
+
+    <!-- ------- QUIET MINIMAL FILTER RAIL ------- -->
+    <aside class="rail">
+      <!-- STATE facet (tag: state:*) — 3 selected -->
+      <div class="facet">
+        <h3>State <span class="sel">3 selected</span></h3>
+        <p class="tag-hint" title="Shopify tag namespace — maps checkbox values to tag: state:*">tag: state:*</p>
+        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">Connecticut</span><span class="ct">6</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Delaware</span><span class="ct">4</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Georgia</span><span class="ct">5</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Maryland</span><span class="ct">5</span></label>
+        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">Massachusetts</span><span class="ct">7</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">New Hampshire</span><span class="ct">4</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">New Jersey</span><span class="ct">5</span></label>
+        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">Virginia</span><span class="ct">8</span></label>
+        <span class="more">Show all 13 +</span>
+      </div>
+
+      <!-- PRODUCT TYPE facet (tag: type:*) — 1 selected -->
+      <div class="facet">
+        <h3>Product Type <span class="sel">1 selected</span></h3>
+        <p class="tag-hint" title="Shopify tag namespace — maps checkbox values to tag: type:*">tag: type:*</p>
+        <label class="opt"><input type="checkbox" checked /><span class="box"></span><span class="txt">Postcards</span><span class="ct">13</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Posters</span><span class="ct">11</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Tote bags</span><span class="ct">9</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Mugs</span><span class="ct">10</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Giclée prints</span><span class="ct">13</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Framed editions</span><span class="ct">8</span></label>
+        <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Artist Edition</span><span class="ct">6</span></label>
+      </div>
+
+      <!-- PRICE facet -->
+      <div class="facet">
+        <h3>Price</h3>
+        <div class="price-note">$4 — $120</div>
+        <div class="range"><div class="fill"></div><div class="knob a"></div><div class="knob b"></div></div>
+      </div>
+
+      <!-- AVAILABILITY facet -->
+      <div class="facet">
+        <h3>Availability</h3>
+        <label class="opt"><input type="radio" name="avail" checked /><span class="radio"></span><span class="txt">In stock</span><span class="ct">9</span></label>
+        <label class="opt"><input type="radio" name="avail" /><span class="radio"></span><span class="txt">Include pre-order</span><span class="ct">2</span></label>
+        <label class="opt"><input type="radio" name="avail" /><span class="radio"></span><span class="txt">All</span><span class="ct">11</span></label>
+      </div>
+    </aside>
+
+    <!-- ------- CATALOG GRID (one ProductCard, reused) ------- -->
+    <div>
+      <div class="grid">
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Postcards</span><span class="badge best">Bestseller</span>
+            <div class="inner"><span>Connecticut<br>Pack of 10</span></div><div class="quick">Quick add — $20</div></div>
+          <div class="info"><div class="k">Connecticut</div><div class="nm">Colony Postcards, Pack of 10</div>
+            <div class="dsc serif">Ten cards from the Charter Oak panel.</div><div class="price">$20</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
+            <div class="inner"><span>Massachusetts<br>Pack of 10</span></div><div class="quick">Quick add — $20</div></div>
+          <div class="info"><div class="k">Massachusetts</div><div class="nm">Colony Postcards, Pack of 10</div>
+            <div class="dsc serif">Ten cards from the Bay Colony panel.</div><div class="price">$20</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
+            <div class="inner"><span>Virginia<br>Pack of 10</span></div><div class="quick">Quick add — $20</div></div>
+          <div class="info"><div class="k">Virginia</div><div class="nm">Colony Postcards, Pack of 10</div>
+            <div class="dsc serif">Ten cards from the Tidewater panel.</div><div class="price">$20</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
+            <div class="inner"><span>Connecticut<br>Single · Charter Oak</span></div><div class="quick">Quick add — $4</div></div>
+          <div class="info"><div class="k">Connecticut</div><div class="nm">Single Card · “Charter Oak”</div>
+            <div class="dsc serif">Individual card, blank interior.</div><div class="price">$4</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
+            <div class="inner"><span>Massachusetts<br>Single · The Harbor</span></div><div class="quick">Quick add — $4</div></div>
+          <div class="info"><div class="k">Massachusetts</div><div class="nm">Single Card · “The Harbor”</div>
+            <div class="dsc serif">Individual card, blank interior.</div><div class="price">$4</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
+            <div class="inner"><span>Virginia<br>Single · Tobacco &amp; Tide</span></div><div class="quick">Quick add — $4</div></div>
+          <div class="info"><div class="k">Virginia</div><div class="nm">Single Card · “Tobacco &amp; Tide”</div>
+            <div class="dsc serif">Individual card, blank interior.</div><div class="price">$4</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Postcards</span><span class="badge new">New</span>
+            <div class="inner"><span>Massachusetts<br>Boxed Set of 20</span></div><div class="quick">Quick add — $36</div></div>
+          <div class="info"><div class="k">Massachusetts</div><div class="nm">Boxed Postcard Set of 20</div>
+            <div class="dsc serif">Two panels, keepsake box.</div><div class="price">$36</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Postcards</span><span class="badge soon">Coming soon</span>
+            <div class="inner"><span>Connecticut<br>Greeting · Folded</span></div><div class="quick notify">Notify me</div></div>
+          <div class="info"><div class="k">Connecticut</div><div class="nm">Folded Greeting Card &amp; Envelope</div>
+            <div class="dsc serif">Ships August · pre-order now.</div><div class="price">$6</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
+            <div class="inner"><span>Virginia<br>Collector Pack of 10</span></div><div class="quick">Quick add — $24</div></div>
+          <div class="info"><div class="k">Virginia · Collector</div><div class="nm">Gilt-Edge Collector Pack, 10</div>
+            <div class="dsc serif">Gold-foil edges, numbered sleeve.</div><div class="price">$24 <s>$28</s></div></div>
+        </a>
+
+      </div>
+
+      <div class="pager">
+        <a href="#">←</a><a class="on" href="#">1</a><a href="#">2</a><a href="#">→</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= EXTENSIBILITY BAND ================= -->
+<!-- Proof the identical Card + Grid absorbs heterogeneous product lines with no new template. -->
+<section class="ext">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Same grid · other product types</p>
+        <h2>Other products from these three colonies</h2>
+      </div>
+      <p class="note">Drop the Type filter and the same cards carry posters, prints and editions — no new page.</p>
+    </div>
+    <p class="sub serif">Connecticut, Massachusetts and Virginia also appear as posters, giclée prints, totes and signed editions. Tag a product <em>state:virginia · type:poster</em> in Shopify and it lands in this exact grid automatically.</p>
+    <div class="ext-grid">
+      <a class="card" href="04-product.html">
+        <div class="shot"><span class="flag">Poster</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Connecticut<br>Panel Poster 18×24″</span></div><div class="quick">Quick add — $32</div></div>
+        <div class="info"><div class="k">Connecticut</div><div class="nm">Panel Poster, 18×24″</div>
+          <div class="dsc serif">Offset print, heavy matte stock.</div><div class="price">$32</div></div>
+      </a>
+      <a class="card" href="04-product.html">
+        <div class="shot"><span class="flag">Giclée Print</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Massachusetts<br>Fine-Art Giclée</span></div><div class="quick">View sizes</div></div>
+        <div class="info"><div class="k">Massachusetts</div><div class="nm">Fine-Art Giclée Print</div>
+          <div class="dsc serif">Archival cotton rag, three sizes.</div><div class="price"><span class="from">from</span>$85</div></div>
+      </a>
+      <a class="card" href="04-product.html">
+        <div class="shot"><span class="flag">Framed Edition</span><span class="badge new">New</span>
+          <div class="inner"><span>Virginia<br>Framed Panel Print</span></div><div class="quick">View editions</div></div>
+        <div class="info"><div class="k">Virginia</div><div class="nm">Framed Panel Edition</div>
+          <div class="dsc serif">Museum mat, solid maple frame.</div><div class="price"><span class="from">from</span>$240</div></div>
+      </a>
+      <a class="card" href="04-product.html">
+        <div class="shot"><span class="flag">Artist Edition</span><span class="badge signed">Signed</span>
+          <div class="inner"><span>Massachusetts<br>Signed · Ltd. of 50</span></div><div class="quick">View editions</div></div>
+        <div class="info"><div class="k">Massachusetts · Signed</div><div class="nm">Artist Edition, Ltd. of 50</div>
+          <div class="dsc serif">Hand-numbered, signed by the maker.</div><div class="price">$650</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">AMERICA'S TAPESTRY</div>
+        <hr class="stitch" style="margin:18px 0" />
+        <p class="serif">A nonprofit art project marking the Semiquincentennial — the 250th anniversary of American independence, July 4, 2026.</p>
+      </div>
+      <div><h4>Shop</h4>
+        <a href="01-landing.html#picker">By State</a><a href="03-catalog.html">Full Catalog</a><a href="01-landing.html#doors">By Product</a><a href="03-catalog.html">All-States</a></div>
+      <div><h4>Products</h4>
+        <a href="03-catalog.html">Postcards</a><a href="03-catalog.html">Giclée Prints</a><a href="03-catalog.html">Framed Editions</a><a href="03-catalog.html">Artist Editions</a></div>
+      <div><h4>Project</h4>
+        <a href="#">The 13 Panels</a><a href="#">The Guild</a><a href="#">Exhibitions</a><a href="#">Contact</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 America's Tapestry · A nonprofit initiative</span>
+      <span>Secure checkout via Shopify</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

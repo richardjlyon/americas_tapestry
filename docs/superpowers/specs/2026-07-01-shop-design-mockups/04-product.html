@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Virginia Colony Postcards — America's Tapestry Shop</title>
+<!--
+  PRODUCT DETAIL /shop/product/virginia-postcards
+  Image gallery + variant selector + price + Add to cart (hands off to Shopify checkout).
+  Variant selector demonstrates from-pricing + an out-of-stock variant that swaps
+  Add to cart -> Notify me (availability as button variant, no layout change).
+  RESPONSIVE INTENT:
+    - Desktop-first, ~1200px, 2-col (gallery / buy column).
+    - <=900px: gallery stacks above buy column; thumbs go horizontal; related 3->2.
+    - <=600px: related 1 col.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#1a2b45; --gold:#e8b903; --gold-dk:#d4a802;
+    --burgundy:#6b1f2e; --parchment:#f4e9d5; --cream:#fbf7ef; --white:#fff;
+    --ink:#1a2b45; --muted:#6a6a72; --line:#e6ddca; --maxw:1200px;
+    --stitch: repeating-linear-gradient(90deg, var(--gold) 0 7px, transparent 7px 13px);
+    --radius:2px;
+    --shadow-plate:0 30px 60px -30px rgba(26,43,69,.4);
+    --shadow-lift:0 24px 44px -28px rgba(26,43,69,.55);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--white);color:var(--ink);font-family:'Montserrat',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+  .serif{font-family:'EB Garamond',Georgia,serif;}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);}
+  .stitch{height:2px;border:0;width:64px;background:var(--stitch);margin:0;}
+  .stitch.center{margin:0 auto;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Montserrat';font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:15px 30px;border-radius:var(--radius);cursor:pointer;transition:transform .2s,background .2s,color .2s,border-color .2s;}
+  .btn-primary{background:var(--gold);color:var(--navy);border:1px solid var(--gold);}
+  .btn-primary:hover{background:var(--gold-dk);border-color:var(--gold-dk);transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--navy);}
+  .btn-ghost:hover{background:var(--navy);color:var(--parchment);}
+
+  /* header shared */
+  .announce{background:var(--navy);color:var(--parchment);text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:10px 20px;}
+  .announce b{color:var(--gold);font-weight:700;}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px;}
+  .brand{display:flex;flex-direction:column;line-height:1;}
+  .brand .name{font-weight:800;font-size:19px;letter-spacing:.02em;color:var(--navy);}
+  .brand .sub{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--burgundy);margin-top:5px;font-weight:700;}
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--navy);position:relative;padding:6px 0;}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s;}
+  .nav-links a:hover::after{transform:scaleX(1);}
+  .nav-actions{display:flex;align-items:center;gap:22px;}
+  .nav-actions .ic{font-size:13px;font-weight:600;color:var(--navy);}
+  .cart{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;}
+  .cart .count{background:var(--burgundy);color:#fff;border-radius:999px;font-size:11px;min-width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px;}
+
+  .crumb{font-size:12px;letter-spacing:.06em;color:var(--muted);padding:26px 0 0;}
+  .crumb a:hover{color:var(--gold);}
+
+  /* ============ PRODUCT LAYOUT ============ */
+  .pd{padding:28px 0 30px;}
+  .pd-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:start;}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:start;}
+  .thumbs{display:flex;flex-direction:column;gap:14px;}
+  .thumb{aspect-ratio:1/1;border:1px solid var(--line);position:relative;overflow:hidden;cursor:pointer;background:var(--cream);transition:border-color .2s;}
+  .thumb::before{content:"";position:absolute;inset:6px;border:1px dashed rgba(26,43,69,.2);}
+  .thumb .g{position:absolute;inset:0;background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.18), transparent 60%),linear-gradient(150deg,var(--navy),var(--burgundy));}
+  .thumb.on{border-color:var(--gold);}
+  .thumb.light .g{background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.14), transparent 60%),linear-gradient(160deg,#f7efe0,#efe2c9);}
+  .stage{position:relative;border:1px solid var(--line);background:var(--cream);padding:16px;box-shadow:var(--shadow-plate);}
+  .stage .plate{aspect-ratio:4/5;position:relative;overflow:hidden;display:flex;align-items:flex-end;
+    background:radial-gradient(120% 120% at 20% 8%, rgba(232,185,3,.2), transparent 55%),linear-gradient(150deg,var(--navy),#3a2030 55%,var(--burgundy));}
+  .stage .plate::before{content:"";position:absolute;inset:14px;border:1px dashed rgba(244,233,213,.4);}
+  .stage .flag{position:absolute;top:16px;left:16px;background:var(--navy);color:var(--parchment);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:7px 12px;z-index:2;}
+  .stage .badge{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--navy);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:7px 11px;z-index:2;}
+  .stage .cap{position:relative;padding:22px 24px;color:var(--parchment);}
+  .stage .cap .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .stage .cap .t{font-family:'EB Garamond',serif;font-size:24px;font-style:italic;margin-top:4px;}
+
+  /* buy column */
+  .buy .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);font-weight:700;}
+  .buy h1{font-weight:800;font-size:38px;line-height:1.1;letter-spacing:-.01em;color:var(--navy);margin:12px 0 10px;}
+  .buy .sub{font-family:'EB Garamond',serif;font-size:18px;line-height:1.6;color:#3a4453;margin:0 0 20px;max-width:46ch;}
+  .buy .pricerow{display:flex;align-items:baseline;gap:14px;margin:0 0 8px;}
+  .buy .price{font-size:28px;font-weight:800;color:var(--navy);}
+  .buy .price .from{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:6px;}
+  .buy .price s{font-size:19px;color:#b9b1a2;font-weight:600;margin-left:6px;}
+  .buy .avail{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#2f6b3a;}
+  .buy .rating{font-size:13px;color:var(--muted);margin:2px 0 22px;}
+  .buy .rating b{color:var(--navy);}
+  hr.rule{height:2px;border:0;width:100%;background:var(--stitch);opacity:.9;margin:24px 0;}
+
+  /* variant selector */
+  .opt-block{margin:0 0 22px;}
+  .opt-block .lab{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+  .opt-block .lab .t{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-weight:800;}
+  .opt-block .lab .v{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:15px;}
+  .swatches{display:flex;gap:10px;flex-wrap:wrap;}
+  .sw{border:1px solid var(--line);background:var(--white);padding:12px 16px;border-radius:var(--radius);cursor:pointer;font-size:13px;font-weight:700;color:var(--navy);transition:all .18s;text-align:center;min-width:96px;position:relative;}
+  .sw small{display:block;font-weight:600;font-size:11px;color:var(--muted);letter-spacing:.02em;margin-top:3px;}
+  .sw:hover{border-color:var(--gold);}
+  .sw.on{border-color:var(--navy);box-shadow:inset 0 0 0 1px var(--navy);}
+  .sw.on::after{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:2px;background:var(--stitch);}
+  .sw.disabled{color:#b3aa97;cursor:not-allowed;background:repeating-linear-gradient(135deg,#faf6ee 0 6px,#f2ebdc 6px 12px);}
+  .sw.disabled small{color:#c0b7a3;}
+
+  /* qty + add to cart */
+  .cartrow{display:flex;gap:14px;align-items:stretch;margin:6px 0 16px;}
+  .qty{display:inline-flex;align-items:center;border:1px solid var(--navy);border-radius:var(--radius);}
+  .qty button{width:44px;height:100%;background:transparent;border:none;font-size:18px;font-weight:700;color:var(--navy);cursor:pointer;}
+  .qty span{min-width:34px;text-align:center;font-weight:700;font-size:15px;}
+  .btn-add{flex:1;}
+  .assure{display:flex;gap:22px;flex-wrap:wrap;margin:14px 0 4px;}
+  .assure .a{font-size:12px;color:var(--muted);letter-spacing:.02em;display:flex;gap:8px;align-items:center;}
+  .assure .a b{color:var(--navy);font-weight:700;}
+  .assure .a .d{width:7px;height:7px;border-radius:50%;background:var(--gold);}
+
+  /* description + details */
+  .desc{margin-top:8px;}
+  .desc p{font-family:'EB Garamond',serif;font-size:17px;line-height:1.7;color:#3a4453;margin:0 0 16px;}
+  .acc{border-top:1px solid var(--line);}
+  .acc .row{border-bottom:1px solid var(--line);padding:18px 0;}
+  .acc .row .h{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--navy);}
+  .acc .row .h .pl{color:var(--gold);font-size:16px;}
+  .acc .row .b{font-family:'EB Garamond',serif;font-size:15px;color:#4a5462;margin-top:12px;}
+  .acc .row .b.hide{display:none;}
+
+  /* related */
+  .related{padding:70px 0 20px;border-top:1px solid var(--line);}
+  .related .head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:30px;flex-wrap:wrap;gap:12px;}
+  .related .head h2{font-weight:800;font-size:28px;color:var(--navy);margin:8px 0 0;letter-spacing:-.01em;}
+  .related .head a{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--burgundy);}
+  .rel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .card{position:relative;transition:transform .25s;}
+  .card:hover{transform:translateY(-5px);}
+  .card .shot{aspect-ratio:4/5;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--cream);}
+  .card .shot .inner{position:absolute;inset:12px;border:1px dashed rgba(26,43,69,.18);display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;
+    background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.14), transparent 60%),linear-gradient(160deg,#f7efe0,#efe2c9);}
+  .card .shot .inner span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);font-weight:700;line-height:1.5;}
+  .card .shot .flag{position:absolute;top:12px;left:12px;z-index:2;background:var(--navy);color:var(--parchment);font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:5px 9px;}
+  .badge{position:absolute;top:12px;right:12px;z-index:2;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:5px 9px;background:rgba(255,255,255,.94);color:var(--burgundy);}
+  .badge.in{color:#2f6b3a;} .badge.signed{background:var(--navy);color:var(--gold);} .badge.new{background:var(--burgundy);color:#fff;}
+  .card .info{padding:14px 2px 0;}
+  .card .info .k{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--burgundy);font-weight:700;}
+  .card .info .nm{font-weight:700;font-size:15px;color:var(--navy);margin:6px 0 2px;line-height:1.3;}
+  .card .info .dsc{font-family:'EB Garamond',serif;font-size:13px;color:var(--muted);}
+  .card .info .price{margin-top:8px;font-weight:700;font-size:14px;color:var(--navy);}
+  .card .info .price .from{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:4px;}
+
+  /* footer */
+  footer.site{background:var(--cream);border-top:1px solid var(--line);padding:64px 0 40px;margin-top:64px;}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--burgundy);font-weight:700;margin:0 0 16px;}
+  .foot-grid a{display:block;font-size:14px;color:#43505f;padding:5px 0;}
+  .foot-grid a:hover{color:var(--gold);}
+  .foot-brand .name{font-weight:800;font-size:20px;color:var(--navy);}
+  .foot-brand p{font-family:'EB Garamond',serif;font-size:15px;color:var(--muted);max-width:34ch;margin:12px 0 0;}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:.04em;}
+
+  @media(max-width:900px){
+    .pd-grid{grid-template-columns:1fr;gap:40px;}
+    .gallery{grid-template-columns:1fr;}
+    .thumbs{flex-direction:row;order:2;}
+    .thumb{width:76px;}
+    .rel-grid{grid-template-columns:repeat(2,1fr);}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .buy h1{font-size:32px;}
+    .nav-links{display:none;}
+  }
+  @media(max-width:600px){
+    .wrap{padding:0 22px;}
+    .rel-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="announce">America's 250th · Semiquincentennial · <b>Free U.S. shipping over $75</b></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="01-landing.html">
+      <span class="name">AMERICA'S TAPESTRY</span>
+      <span class="sub">The Shop · Est. 1776 · 2026</span>
+    </a>
+    <nav class="nav-links">
+      <a href="01-landing.html#picker">Shop by State</a>
+      <a href="03-catalog.html">Catalog</a>
+      <a href="01-landing.html#doors">By Product</a>
+      <a href="01-landing.html#story">The Project</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="ic" href="03-catalog.html" aria-label="Search">Search</a>
+      <a class="cart" href="#"><span>Bag</span><span class="count">2</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="crumb"><a href="01-landing.html">Shop</a> · <a href="02-state.html">Virginia</a> · <a href="03-catalog.html">Postcards</a> · <span>Colony Postcards</span></div>
+</div>
+
+<!-- ================= PRODUCT ================= -->
+<section class="pd">
+  <div class="wrap pd-grid">
+
+    <!-- GALLERY -->
+    <div class="gallery">
+      <div class="thumbs">
+        <div class="thumb on"><div class="g"></div></div>
+        <div class="thumb light"><div class="g"></div></div>
+        <div class="thumb"><div class="g"></div></div>
+        <div class="thumb light"><div class="g"></div></div>
+      </div>
+      <div class="stage">
+        <div class="plate">
+          <span class="flag">Postcards</span>
+          <span class="badge">Bestseller</span>
+          <div class="cap">
+            <div class="k">Panel XIII · Virginia</div>
+            <div class="t">“Tobacco &amp; Tide” — Pack of 10</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUY COLUMN -->
+    <div class="buy">
+      <div class="k">Virginia · Panel XIII</div>
+      <h1>Colony Postcards</h1>
+      <p class="sub serif">Ten cards drawn straight from the Tidewater panel — the tobacco leaf, the river, the ships at anchor. Printed on heavy uncoated stock with blank interiors, ready to write.</p>
+
+      <div class="pricerow">
+        <span class="price">$20</span>
+        <span class="avail">● In stock · ships in 2–3 days</span>
+      </div>
+      <div class="rating">★★★★★ <b>4.9</b> · 128 reviews</div>
+
+      <hr class="rule" />
+
+      <!-- VARIANT: pack size (from-pricing across variants; one is sold out -> Notify) -->
+      <div class="opt-block">
+        <div class="lab"><span class="t">Pack size</span><span class="v">Pack of 10 · $20</span></div>
+        <div class="swatches">
+          <div class="sw">Single<small>$4</small></div>
+          <div class="sw on">Pack of 10<small>$20</small></div>
+          <div class="sw">Boxed 20<small>$36</small></div>
+          <div class="sw disabled">Collector<small>Sold out</small></div>
+        </div>
+      </div>
+
+      <!-- VARIANT: finish -->
+      <div class="opt-block">
+        <div class="lab"><span class="t">Finish</span><span class="v">Uncoated matte</span></div>
+        <div class="swatches">
+          <div class="sw on">Matte<small>Uncoated</small></div>
+          <div class="sw">Gilt edge<small>+$4</small></div>
+        </div>
+      </div>
+
+      <div class="cartrow">
+        <div class="qty"><button aria-label="decrease">–</button><span>1</span><button aria-label="increase">+</button></div>
+        <button class="btn btn-primary btn-add">Add to cart — $20</button>
+      </div>
+      <!-- If the selected variant is sold out, this same button becomes:
+           <button class="btn btn-ghost btn-add" disabled>Notify me when available</button> -->
+      <button class="btn btn-ghost" style="width:100%">Buy it now · Shopify checkout</button>
+
+      <div class="assure">
+        <span class="a"><span class="d"></span><b>Free U.S. shipping</b> over $75</span>
+        <span class="a"><span class="d"></span>Ships from <b>Savannah, GA</b></span>
+        <span class="a"><span class="d"></span><b>Supports</b> the nonprofit</span>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- DESCRIPTION + DETAILS -->
+      <div class="desc">
+        <div class="acc">
+          <div class="row">
+            <div class="h">Details <span class="pl">–</span></div>
+            <div class="b">Set of ten 4×6″ postcards, one design, printed on 120 lb uncoated stock in the United States. Blank interior. Each pack ships in a kraft sleeve with the panel story printed inside.</div>
+          </div>
+          <div class="row">
+            <div class="h">The panel <span class="pl">+</span></div>
+            <div class="b hide">Panel XIII, the Colony of Virginia, was stitched by the Tidewater circle over eleven months. Every product in this shop is drawn from an original hand-embroidered panel.</div>
+          </div>
+          <div class="row">
+            <div class="h">Shipping &amp; returns <span class="pl">+</span></div>
+            <div class="b hide">Ships in 2–3 business days. Free U.S. shipping over $75. 30-day returns on unopened packs. Proceeds support America's Tapestry, a nonprofit art project.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= RELATED (more from Virginia) ================= -->
+<section class="related">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="eyebrow">tag: state:virginia</p>
+        <h2>More from the Virginia panel</h2>
+      </div>
+      <a href="02-state.html">All Virginia →</a>
+    </div>
+    <div class="rel-grid">
+      <a class="card" href="04-product.html">
+        <div class="shot"><span class="flag">Poster</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Virginia<br>Panel Poster 18×24″</span></div></div>
+        <div class="info"><div class="k">Virginia</div><div class="nm">Panel Poster, 18×24″</div>
+          <div class="dsc serif">Offset print, heavy matte stock.</div><div class="price">$32</div></div>
+      </a>
+      <a class="card" href="04-product.html">
+        <div class="shot"><span class="flag">Giclée Print</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Virginia<br>Fine-Art Giclée</span></div></div>
+        <div class="info"><div class="k">Virginia</div><div class="nm">Fine-Art Giclée Print</div>
+          <div class="dsc serif">Archival cotton rag, three sizes.</div><div class="price"><span class="from">from</span>$85</div></div>
+      </a>
+      <a class="card" href="04-product.html">
+        <div class="shot"><span class="flag">Framed Edition</span><span class="badge new">New</span>
+          <div class="inner"><span>Virginia<br>Framed Panel Print</span></div></div>
+        <div class="info"><div class="k">Virginia</div><div class="nm">Framed Panel Edition</div>
+          <div class="dsc serif">Museum mat, solid maple frame.</div><div class="price"><span class="from">from</span>$240</div></div>
+      </a>
+      <a class="card" href="04-product.html">
+        <div class="shot"><span class="flag">Artist Edition</span><span class="badge signed">Signed</span>
+          <div class="inner"><span>Virginia<br>Signed · Ltd. of 50</span></div></div>
+        <div class="info"><div class="k">Virginia · Signed</div><div class="nm">Artist Edition, Ltd. of 50</div>
+          <div class="dsc serif">Hand-numbered, signed by the maker.</div><div class="price">$650</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">AMERICA'S TAPESTRY</div>
+        <hr class="stitch" style="margin:18px 0" />
+        <p class="serif">A nonprofit art project marking the Semiquincentennial — the 250th anniversary of American independence, July 4, 2026.</p>
+      </div>
+      <div><h4>Shop</h4>
+        <a href="01-landing.html#picker">By State</a><a href="03-catalog.html">Full Catalog</a><a href="01-landing.html#doors">By Product</a><a href="03-catalog.html">All-States</a></div>
+      <div><h4>Products</h4>
+        <a href="03-catalog.html">Postcards</a><a href="03-catalog.html">Giclée Prints</a><a href="03-catalog.html">Framed Editions</a><a href="03-catalog.html">Artist Editions</a></div>
+      <div><h4>Project</h4>
+        <a href="#">The 13 Panels</a><a href="#">The Guild</a><a href="#">Exhibitions</a><a href="#">Contact</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 America's Tapestry · A nonprofit initiative</span>
+      <span>Secure checkout via Shopify</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
