@@ -1,4 +1,4 @@
-import { toCatalogProduct, STATES, PRODUCT_TYPES, stateName } from '@/lib/catalog';
+import { toCatalogProduct, STATES, PRODUCT_TYPES, stateName, searchProducts } from '@/lib/catalog';
 import type { ShopifyProduct } from '@/lib/shopify';
 
 function make(overrides: Partial<ShopifyProduct> = {}): ShopifyProduct {
@@ -86,5 +86,24 @@ describe('filterProducts', () => {
   it('filters by availability and price range', () => {
     expect(filterProducts(list, { ...EMPTY, availability: 'available' }).map((p) => p.id)).toEqual(['1', '2']);
     expect(filterProducts(list, { ...EMPTY, priceMin: 30, priceMax: 42 }).map((p) => p.id)).toEqual(['2']);
+  });
+});
+
+describe('searchProducts', () => {
+  const list = [
+    toCatalogProduct(make({ id: '1', title: 'Georgia Panel Postcard', tags: ['americas-tapestry', 'georgia', 'postcard'] })),
+    toCatalogProduct(make({ id: '2', title: 'Virginia Poster', description: 'Tidewater panel', tags: ['americas-tapestry', 'virginia', 'poster'] })),
+  ];
+  it('returns all for an empty/whitespace query', () => {
+    expect(searchProducts(list, '   ')).toHaveLength(2);
+  });
+  it('matches on title', () => {
+    expect(searchProducts(list, 'poster').map((p) => p.id)).toEqual(['2']);
+  });
+  it('matches on state name and is case-insensitive', () => {
+    expect(searchProducts(list, 'GEORGIA').map((p) => p.id)).toEqual(['1']);
+  });
+  it('matches on type label (e.g. "postcards")', () => {
+    expect(searchProducts(list, 'postcards').map((p) => p.id)).toEqual(['1']);
   });
 });

@@ -107,3 +107,17 @@ export function filterProducts(products: CatalogProduct[], filters: CatalogFilte
     return true;
   });
 }
+
+export function searchProducts(products: CatalogProduct[], query: string): CatalogProduct[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return products;
+  return products.filter((p) => {
+    const haystack = [
+      p.title,
+      p.description,
+      p.state ? stateName(p.state) ?? '' : '',
+      p.type ? typeLabel(p.type) ?? '' : '',
+    ].join(' ').toLowerCase();
+    return haystack.includes(q);
+  });
+}
