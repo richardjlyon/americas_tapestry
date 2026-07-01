@@ -59,3 +59,32 @@ describe('toCatalogProduct', () => {
     expect(c.badges).toContain('Signed');
   });
 });
+
+import { filterProducts, type CatalogFilters } from '@/lib/catalog';
+
+const EMPTY: CatalogFilters = { states: [], types: [], availability: 'all', priceMin: null, priceMax: null };
+
+describe('filterProducts', () => {
+  const list = [
+    toCatalogProduct(make({ id: '1', tags: ['americas-tapestry', 'georgia', 'postcard'], price: { amount: '20.0', currencyCode: 'USD' } })),
+    toCatalogProduct(make({ id: '2', tags: ['americas-tapestry', 'virginia', 'poster'], price: { amount: '40.0', currencyCode: 'USD' } })),
+    toCatalogProduct(make({ id: '3', tags: ['americas-tapestry', 'book'], price: { amount: '45.0', currencyCode: 'USD' }, availableForSale: false })),
+  ];
+
+  it('returns everything when no filters are set', () => {
+    expect(filterProducts(list, EMPTY)).toHaveLength(3);
+  });
+  it('filters by state (OR within facet)', () => {
+    expect(filterProducts(list, { ...EMPTY, states: ['georgia'] }).map((p) => p.id)).toEqual(['1']);
+  });
+  it('filters by type', () => {
+    expect(filterProducts(list, { ...EMPTY, types: ['poster'] }).map((p) => p.id)).toEqual(['2']);
+  });
+  it('ANDs across facets (state AND type)', () => {
+    expect(filterProducts(list, { ...EMPTY, states: ['georgia'], types: ['poster'] })).toHaveLength(0);
+  });
+  it('filters by availability and price range', () => {
+    expect(filterProducts(list, { ...EMPTY, availability: 'available' }).map((p) => p.id)).toEqual(['1', '2']);
+    expect(filterProducts(list, { ...EMPTY, priceMin: 30, priceMax: 42 }).map((p) => p.id)).toEqual(['2']);
+  });
+});

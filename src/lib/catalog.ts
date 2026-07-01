@@ -88,3 +88,22 @@ export function toCatalogProduct(p: ShopifyProduct): CatalogProduct {
     badges,
   };
 }
+
+export interface CatalogFilters {
+  states: string[];
+  types: string[];
+  availability: 'all' | 'available';
+  priceMin: number | null;
+  priceMax: number | null;
+}
+
+export function filterProducts(products: CatalogProduct[], filters: CatalogFilters): CatalogProduct[] {
+  return products.filter((p) => {
+    if (filters.states.length && (p.state === null || !filters.states.includes(p.state))) return false;
+    if (filters.types.length && (p.type === null || !filters.types.includes(p.type))) return false;
+    if (filters.availability === 'available' && p.availability !== 'available') return false;
+    if (filters.priceMin !== null && p.price < filters.priceMin) return false;
+    if (filters.priceMax !== null && p.price > filters.priceMax) return false;
+    return true;
+  });
+}
