@@ -1,4 +1,4 @@
-import { toCatalogProduct, STATES, PRODUCT_TYPES, stateName, searchProducts, sortProducts, facetCounts } from '@/lib/catalog';
+import { toCatalogProduct, STATES, PRODUCT_TYPES, stateName, searchProducts, sortProducts, facetCounts, parseFilters, serializeFilters, type CatalogQuery } from '@/lib/catalog';
 import type { ShopifyProduct } from '@/lib/shopify';
 
 function make(overrides: Partial<ShopifyProduct> = {}): ShopifyProduct {
@@ -144,5 +144,43 @@ describe('facetCounts', () => {
     expect(states['book']).toBeUndefined();
     expect(types['postcard']).toBe(1);
     expect(types['book']).toBe(1);
+  });
+});
+
+describe('parseFilters', () => {
+  it('reads comma-separated states/types, sort, price, availability, q', () => {
+    const q = parseFilters({ state: 'georgia,virginia', type: 'postcard', sort: 'price-asc', min: '20', max: '80', avail: 'available', q: 'tote' });
+    expect(q.filters.states).toEqual(['georgia', 'virginia']);
+    expect(q.filters.types).toEqual(['postcard']);
+    expect(q.filters.priceMin).toBe(20);
+    expect(q.filters.priceMax).toBe(80);
+    expect(q.filters.availability).toBe('available');
+    expect(q.sort).toBe('price-asc');
+    expect(q.q).toBe('tote');
+  });
+  it('defaults cleanly for empty/garbage input', () => {
+    const q = parseFilters({ sort: 'nonsense', min: 'abc' });
+    expect(q.filters.states).toEqual([]);
+    expect(q.filters.priceMin).toBeNull();
+    expect(q.sort).toBe('featured');
+    expect(q.q).toBe('');
+    expect(q.filters.availability).toBe('all');
+  });
+  it('ignores unknown state/type slugs', () => {
+    const q = parseFilters({ state: 'georgia,atlantis', type: 'postcard,spaceship' });
+    expect(q.filters.states).toEqual(['georgia']);
+    expect(q.filters.types).toEqual(['postcard']);
+  });
+});
+
+describe('serializeFilters', () => {
+  it('omits empty and default values', () => {
+    const base: CatalogQuery = { filters: { states: [], types: [], availability: 'all', priceMin: null, priceMax: null }, sort: 'featured', q: '' };
+    expect(serializeFilters(base).toString()).toBe('');
+  });
+  it('round-trips a populated query', () => {
+    const q: CatalogQuery = { filters: { states: ['georgia'], types: ['postcard'], availability: 'available', priceMin: 20, priceMax: 80 }, sort: 'price-asc', q: 'tote' };
+    const round = parseFilters(Object.fromEntries(serializeFilters(q)));
+    expect(round).toEqual(q);
   });
 });

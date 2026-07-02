@@ -149,3 +149,46 @@ export function facetCounts(products: CatalogProduct[]): { states: Record<string
   }
   return { states, types };
 }
+
+export interface CatalogQuery { filters: CatalogFilters; sort: SortKey; q: string }
+
+const SORT_KEYS: SortKey[] = ['featured', 'price-asc', 'price-desc', 'title'];
+
+function first(v: string | string[] | undefined): string {
+  return (Array.isArray(v) ? v[0] : v) ?? '';
+}
+function list(v: string | string[] | undefined, allowed: Set<string>): string[] {
+  return first(v).split(',').map((s) => s.trim()).filter((s) => allowed.has(s));
+}
+function num(v: string | string[] | undefined): number | null {
+  const n = Number.parseFloat(first(v));
+  return Number.isFinite(n) ? n : null;
+}
+
+export function parseFilters(params: Record<string, string | string[] | undefined>): CatalogQuery {
+  const sortRaw = first(params['sort']) as SortKey;
+  return {
+    filters: {
+      states: list(params['state'], STATE_SLUGS),
+      types: list(params['type'], TYPE_SLUGS),
+      availability: first(params['avail']) === 'available' ? 'available' : 'all',
+      priceMin: num(params['min']),
+      priceMax: num(params['max']),
+    },
+    sort: SORT_KEYS.includes(sortRaw) ? sortRaw : 'featured',
+    q: first(params['q']).trim(),
+  };
+}
+
+export function serializeFilters(query: CatalogQuery): URLSearchParams {
+  const p = new URLSearchParams();
+  const { filters: f, sort, q } = query;
+  if (f.states.length) p.set('state', f.states.join(','));
+  if (f.types.length) p.set('type', f.types.join(','));
+  if (f.availability === 'available') p.set('avail', 'available');
+  if (f.priceMin !== null) p.set('min', String(f.priceMin));
+  if (f.priceMax !== null) p.set('max', String(f.priceMax));
+  if (sort !== 'featured') p.set('sort', sort);
+  if (q) p.set('q', q);
+  return p;
+}
