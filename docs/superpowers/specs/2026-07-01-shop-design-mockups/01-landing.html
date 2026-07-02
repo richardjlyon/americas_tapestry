@@ -25,6 +25,9 @@
     /* signature running-stitch, one embroidery token reused everywhere */
     --stitch: repeating-linear-gradient(90deg, var(--gold) 0 7px, transparent 7px 13px);
     --stitch-soft: repeating-linear-gradient(90deg, rgba(244,233,213,.5) 0 7px, transparent 7px 13px);
+    /* art-only tile — full-bleed embroidery-photo gradient, collector line (taxonomy v2: no navy ground) */
+    --art-tile: radial-gradient(130% 110% at 20% 10%, rgba(232,185,3,.25), transparent 55%),
+                linear-gradient(155deg,#eecf9a 0%,#d29a5a 28%,#a85a3f 55%,#6b4536 80%,#3d2b23 100%);
     --radius:2px;
     --shadow-lift:0 24px 44px -28px rgba(26,43,69,.55);
     --shadow-plate:0 30px 60px -30px rgba(26,43,69,.4);
@@ -83,14 +86,18 @@
     background:radial-gradient(120% 120% at 20% 10%, rgba(232,185,3,.18), transparent 55%),linear-gradient(150deg,var(--navy),#3a2030 55%,var(--burgundy));
     display:flex;align-items:flex-end;}
   .plate::before{content:"";position:absolute;inset:12px;border:1px dashed rgba(244,233,213,.4);}
+  /* art-only plate — collector line: full-bleed art, no navy ground, no text lockup */
+  .frame .plate.art{background:var(--art-tile);}
+  .frame .plate.art::before{display:none;}
   .plate .cap{position:relative;padding:22px 24px;color:var(--parchment);}
   .plate .cap .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;}
   .plate .cap .t{font-family:'EB Garamond',serif;font-size:26px;font-style:italic;margin-top:4px;}
   .frame .plaque{display:flex;justify-content:space-between;align-items:baseline;padding:14px 6px 4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;}
   .frame .plaque .r{color:var(--burgundy);}
+  .plate .badge250{position:absolute;top:14px;right:14px;z-index:2;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:5px 9px;background:var(--gold);color:var(--navy);}
 
   /* ============ BOOK HERO (flagship product) ============ */
-  .book-hero{padding:76px 0 70px;}
+  .book-hero{padding:76px 0 70px;background:var(--parchment);}
   .book-hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:68px;align-items:center;}
   .book-copy h1{font-weight:800;font-size:56px;line-height:1.03;letter-spacing:-.02em;margin:0 0 12px;color:var(--navy);}
   .book-copy .tagline{font-family:'EB Garamond',serif;font-style:italic;font-size:24px;color:var(--burgundy);margin:0 0 22px;}
@@ -149,6 +156,10 @@
   .card.dk .shot .inner{background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.22), transparent 60%),linear-gradient(150deg,var(--navy),var(--burgundy));}
   .card.dk .shot .inner span{color:var(--parchment);}
   .card .shot .inner span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);font-weight:700;line-height:1.5;}
+  /* art-only card tile — collector line: full-bleed art cropped to a muslin border, label lives in the card meta below, not on the art */
+  .card.art .shot{border:6px solid var(--cream);}
+  .card.art .shot .inner{position:absolute;inset:0;border:0;background:var(--art-tile);}
+  .card.art .shot .inner span{display:none;}
   .card .shot .flag{position:absolute;top:14px;left:14px;z-index:2;background:var(--navy);color:var(--parchment);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:6px 11px;}
   /* fuller status-badge vocabulary (graft: Heritage Textile + Civic 250) */
   .badge{position:absolute;top:14px;right:14px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 10px;background:rgba(255,255,255,.94);color:var(--burgundy);}
@@ -167,10 +178,22 @@
   .card .info .price{margin-top:10px;font-weight:700;font-size:16px;color:var(--navy);}
   .card .info .price .from{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:5px;}
   .card .info .price s{color:#b9b1a2;font-weight:600;margin-left:8px;}
-  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;}
+  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+
+  /* ============ EXHIBITION POSTER STRIP (souvenir line, distinct from the collector cards above) ============ */
+  .poster-strip{margin-top:36px;display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center;background:var(--parchment);border:1px solid var(--line);padding:28px;}
+  .poster-strip .plate{aspect-ratio:4/5;position:relative;overflow:hidden;display:flex;align-items:flex-end;
+    background:radial-gradient(120% 120% at 20% 10%, rgba(232,185,3,.18), transparent 55%),linear-gradient(150deg,var(--navy),#3a2030 55%,var(--burgundy));}
+  .poster-strip .plate::before{content:"";position:absolute;inset:10px;border:1px dashed rgba(244,233,213,.4);}
+  .poster-strip .plate .cap{position:relative;padding:14px 16px;color:var(--parchment);}
+  .poster-strip .plate .cap .k{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .poster-strip .plate .cap .t{font-family:'EB Garamond',serif;font-size:18px;font-style:italic;margin-top:3px;}
+  .poster-strip-copy h3{font-weight:800;font-size:24px;color:var(--navy);margin:0 0 10px;}
+  .poster-strip-copy p.serif{font-size:16px;color:#3a4453;margin:0 0 18px;max-width:52ch;}
+  @media(max-width:900px){.poster-strip{grid-template-columns:1fr;}}
 
   /* ============ SECONDARY DOORS ============ */
-  .doors{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .doors{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
   .door{position:relative;overflow:hidden;padding:48px 44px;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--line);transition:transform .25s,box-shadow .25s;}
   .door:hover{transform:translateY(-4px);box-shadow:0 26px 46px -28px rgba(26,43,69,.5);}
   .door.p{background:linear-gradient(150deg,#20324f,var(--navy));}
@@ -208,14 +231,14 @@
     .book-copy h1{font-size:44px;}
     .colony-grid{grid-template-columns:repeat(2,1fr);}
     .feat-grid{grid-template-columns:repeat(2,1fr);}
-    .doors{grid-template-columns:1fr;}
+    .doors{grid-template-columns:repeat(2,1fr);}
     .foot-grid{grid-template-columns:1fr 1fr;}
     .hero h1{font-size:44px;}
     .nav-links{display:none;}
   }
   @media(max-width:600px){
     .wrap{padding:0 22px;}
-    .colony-grid,.feat-grid{grid-template-columns:1fr;}
+    .colony-grid,.feat-grid,.doors{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -230,11 +253,11 @@
       <span class="sub">The Shop · Est. 1776 · 2026</span>
     </a>
     <nav class="nav-links">
-      <a href="#book" class="active">The Book</a>
-      <a href="#picker">Shop by State</a>
+      <a href="#picker">Shop Your State</a>
+      <a href="#wall-art">Wall Art</a>
+      <a href="#book">The Book</a>
+      <a href="#gifts">Gifts</a>
       <a href="03-catalog.html">Catalog</a>
-      <a href="#doors">By Product</a>
-      <a href="#story">The Project</a>
     </nav>
     <div class="nav-actions">
       <a class="ic" href="03-catalog.html" aria-label="Search">Search</a>
@@ -243,7 +266,112 @@
   </div>
 </header>
 
-<!-- ================= BOOK HERO (flagship product) ================= -->
+<!-- ================= HERO — WALL ART LEADS ================= -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Thirteen Colonies · Museum Wall Art</p>
+      <h1>Your state,<br><em>framed.</em></h1>
+      <p class="lead serif">Each colony's hand-embroidered panel becomes museum-quality wall art — framed, on canvas, or in metal — printed true to the thread and ready to hang, one piece for every original state.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#wall-art">Shop Wall Art</a>
+        <a class="btn btn-ghost" href="#picker">Choose your state</a>
+      </div>
+      <div class="hero-meta">
+        <div class="stat"><b>13</b><span>Colonies</span></div>
+        <div class="stat"><b>5</b><span>Wall-Art Formats</span></div>
+        <div class="stat"><b>250</b><span>Years</span></div>
+      </div>
+    </div>
+    <div class="frame">
+      <div class="plate art">
+        <span class="badge250">250th</span>
+      </div>
+      <div class="plaque">
+        <span>Georgia Panel · Framed Print</span>
+        <span class="r">from $90</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WALL ART BAND ================= -->
+<section class="section" id="wall-art">
+  <div class="wrap">
+    <div class="sec-head">
+      <hr class="stitch center" />
+      <h2>Wall Art — four formats, one panel per state.</h2>
+      <p class="serif">Every colony's embroidered panel, reproduced true to the thread as the collector line — framed, on canvas, in metal or acrylic, or as an unframed art print.</p>
+    </div>
+
+    <div class="feat-grid">
+      <a class="card art" href="03-catalog.html">
+        <div class="shot">
+          <span class="flag">Framed Print</span><span class="badge commem">250th</span>
+          <div class="inner"><span>Framed Print</span></div>
+          <div class="quick">View sizes</div>
+        </div>
+        <div class="info"><div class="k">Wall Art</div>
+          <div class="nm">Framed Print</div>
+          <div class="dsc serif">Solid wood frame, museum mat, ready to hang.</div>
+          <div class="price"><span class="from">from</span>$90</div></div>
+      </a>
+
+      <a class="card art" href="03-catalog.html">
+        <div class="shot">
+          <span class="flag">Canvas Print</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Canvas Print</span></div>
+          <div class="quick">View sizes</div>
+        </div>
+        <div class="info"><div class="k">Wall Art</div>
+          <div class="nm">Canvas Print</div>
+          <div class="dsc serif">Gallery-wrapped canvas, no frame needed.</div>
+          <div class="price"><span class="from">from</span>$90</div></div>
+      </a>
+
+      <a class="card art" href="03-catalog.html">
+        <div class="shot">
+          <span class="flag">Metal &amp; Acrylic</span><span class="badge new">New</span>
+          <div class="inner"><span>Metal &amp; Acrylic</span></div>
+          <div class="quick">View sizes</div>
+        </div>
+        <div class="info"><div class="k">Wall Art</div>
+          <div class="nm">Metal &amp; Acrylic Print</div>
+          <div class="dsc serif">HD metal or acrylic, vivid modern finish.</div>
+          <div class="price"><span class="from">from</span>$150</div></div>
+      </a>
+
+      <a class="card art" href="03-catalog.html">
+        <div class="shot">
+          <span class="flag">Art Print</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Art Print</span></div>
+          <div class="quick">View sizes</div>
+        </div>
+        <div class="info"><div class="k">Wall Art</div>
+          <div class="nm">Art Print</div>
+          <div class="dsc serif">Unframed fine-art poster, archival stock.</div>
+          <div class="price"><span class="from">from</span>$25</div></div>
+      </a>
+    </div>
+
+    <div class="poster-strip">
+      <div class="plate">
+        <div class="cap">
+          <div class="k">Every State · Souvenir Line</div>
+          <div class="t">Exhibition Poster</div>
+        </div>
+      </div>
+      <div class="poster-strip-copy">
+        <p class="eyebrow" style="margin-bottom:10px">The souvenir line</p>
+        <h3>The Exhibition Poster</h3>
+        <p class="serif">The souvenir of the 250th. Every state, navy ground, from $15.</p>
+        <a class="btn btn-primary" href="03-catalog.html">Shop the Exhibition Poster</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOK SPOTLIGHT ================= -->
 <section class="book-hero" id="book">
   <div class="wrap">
     <div class="book-copy">
@@ -257,7 +385,7 @@
       </div>
       <div class="book-cta">
         <a class="btn btn-primary" href="04-product.html">Add to cart — $45</a>
-        <a class="btn btn-ghost" href="#picker">Look inside →</a>
+        <a class="btn btn-ghost" href="04-product.html">Look inside →</a>
       </div>
       <div class="hero-meta">
         <div class="stat"><b>62</b><span>Pages</span></div>
@@ -303,111 +431,37 @@
   </div>
 </section>
 
-<!-- ================= FEATURED PRODUCTS ================= -->
-<section class="section" id="featured">
+<!-- ================= CURATED ENTRY POINTS ================= -->
+<section class="section tint" id="gifts">
   <div class="wrap">
     <div class="sec-head">
-      <hr class="stitch center" />
-      <h2>From the collection</h2>
-      <p class="serif">A rotating selection across the catalog — postcards to signed editions, each drawn straight from the needlework. One card renders them all.</p>
-    </div>
-
-    <div class="feat-grid">
-      <!-- ProductCard: flag = type, eyebrow = state, badge = status, EB Garamond dsc, price-in-CTA -->
-      <a class="card" href="04-product.html">
-        <div class="shot">
-          <span class="flag">Postcards</span><span class="badge best">Bestseller</span>
-          <div class="inner"><span>Virginia · Pack of 10</span></div>
-          <div class="quick">Quick add — $20</div>
-        </div>
-        <div class="info"><div class="k">Virginia</div>
-          <div class="nm">Colony Postcards, Pack of 10</div>
-          <div class="dsc serif">Ten cards from the Tidewater panel.</div>
-          <div class="price">$20</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot">
-          <span class="flag">Giclée Print</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Massachusetts · Fine-Art Print</span></div>
-          <div class="quick">View editions</div>
-        </div>
-        <div class="info"><div class="k">Massachusetts</div>
-          <div class="nm">Fine-Art Giclée Print</div>
-          <div class="dsc serif">Archival cotton rag, museum inks.</div>
-          <div class="price"><span class="from">from</span>$85</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot">
-          <span class="flag">Framed Edition</span><span class="badge new">New</span>
-          <div class="inner"><span>All 13 · Composite Framed</span></div>
-          <div class="quick">View editions</div>
-        </div>
-        <div class="info"><div class="k">All-States Composite</div>
-          <div class="nm">The Thirteen, Framed Edition</div>
-          <div class="dsc serif">Every panel, one framed composite.</div>
-          <div class="price"><span class="from">from</span>$420</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot">
-          <span class="flag">Tote Bag</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Pennsylvania · Canvas Tote</span></div>
-          <div class="quick">Quick add — $28</div>
-        </div>
-        <div class="info"><div class="k">Pennsylvania</div>
-          <div class="nm">Heavyweight Canvas Tote</div>
-          <div class="dsc serif">Natural cotton, printed panel motif.</div>
-          <div class="price">$28</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot">
-          <span class="flag">Mug</span><span class="badge soon">Coming soon</span>
-          <div class="inner"><span>New York · Ceramic Mug</span></div>
-          <div class="quick notify">Notify me</div>
-        </div>
-        <div class="info"><div class="k">New York</div>
-          <div class="nm">Panel Ceramic Mug, 12 oz</div>
-          <div class="dsc serif">Dishwasher-safe, glossy glaze.</div>
-          <div class="price">$18</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot">
-          <span class="flag">Artist Edition</span><span class="badge signed">Signed</span>
-          <div class="inner"><span>South Carolina · Signed</span></div>
-          <div class="quick">View editions</div>
-        </div>
-        <div class="info"><div class="k">South Carolina · Signed</div>
-          <div class="nm">Artist Edition, Ltd. of 50</div>
-          <div class="dsc serif">Hand-numbered, signed by the maker.</div>
-          <div class="price">$650 <s>$780</s></div></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SECONDARY DOORS ================= -->
-<section class="section tint" id="doors">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Two more ways in</p>
-      <h2>Prefer to browse another way?</h2>
+      <p class="eyebrow">Curated entry points</p>
+      <h2>More ways to give and collect</h2>
     </div>
     <div class="doors">
       <a class="door p" href="03-catalog.html">
-        <span class="k">Shop by product</span>
-        <h3>Postcards, prints, totes &amp; more</h3>
-        <p>Jump straight to a product type and filter across all thirteen colonies.</p>
-        <span class="go">Browse products <span class="ar">→</span></span>
+        <span class="k">Collection-wide · $35</span>
+        <h3>The 2026 Calendar</h3>
+        <p>All thirteen panels in one keepsake — a 250th-anniversary wall calendar.</p>
+        <span class="go">Shop the calendar <span class="ar">→</span></span>
       </a>
       <a class="door c" href="03-catalog.html">
-        <span class="k">All-states collections</span>
-        <h3>The complete thirteen</h3>
-        <p>Composite editions and curated sets that gather every colony in one piece.</p>
-        <span class="go">View collections <span class="ar">→</span></span>
+        <span class="k">Under $30</span>
+        <h3>Gifts under $30</h3>
+        <p>Postcards, greeting cards, and the calendar — small gifts, every colony.</p>
+        <span class="go">Shop gifts under $30 <span class="ar">→</span></span>
+      </a>
+      <a class="door p" href="03-catalog.html">
+        <span class="k">All thirteen</span>
+        <h3>Collect all 13</h3>
+        <p>One piece from every colony's panel — the complete set, state by state.</p>
+        <span class="go">View the all-states collection <span class="ar">→</span></span>
+      </a>
+      <a class="door c" href="#">
+        <span class="k">Institutions &amp; bulk</span>
+        <h3>For institutions &amp; bulk</h3>
+        <p>Schools, museums, and civic groups — volume pricing and custom sets.</p>
+        <span class="go">Inquire <span class="ar">→</span></span>
       </a>
     </div>
   </div>
@@ -418,7 +472,7 @@
   <div class="wrap">
     <div>
       <p class="eyebrow" style="color:var(--gold)">About the project</p>
-      <p class="q serif">“Every stitch is a small act of remembrance — thirteen colonies, <b>one shared cloth</b>, carried into America's next century.”</p>
+      <p class="q serif">“Marking America's 250th — every piece carries the Semiquincentennial mark. Thirteen colonies, <b>one shared cloth</b>, stitched into America's next century.”</p>
       <p class="by">The America's Tapestry Guild · A nonprofit art project</p>
       <div style="margin-top:30px"><a class="btn btn-primary" href="#">Read the story →</a></div>
     </div>
@@ -436,9 +490,9 @@
         <p class="serif">A nonprofit art project marking the Semiquincentennial — the 250th anniversary of American independence, July 4, 2026.</p>
       </div>
       <div><h4>Shop</h4>
-        <a href="#picker">By State</a><a href="03-catalog.html">Full Catalog</a><a href="#doors">By Product</a><a href="03-catalog.html">All-States</a></div>
+        <a href="#picker">By State</a><a href="03-catalog.html">Full Catalog</a><a href="#gifts">Gifts</a><a href="03-catalog.html">All-States</a></div>
       <div><h4>Products</h4>
-        <a href="03-catalog.html">Postcards</a><a href="03-catalog.html">Giclée Prints</a><a href="03-catalog.html">Framed Editions</a><a href="03-catalog.html">Artist Editions</a></div>
+        <a href="03-catalog.html">Wall Art</a><a href="03-catalog.html">Greeting Cards</a><a href="03-catalog.html">Postcards</a><a href="03-catalog.html">2026 Calendar</a></div>
       <div><h4>Project</h4>
         <a href="#">The 13 Panels</a><a href="#">The Guild</a><a href="#">Exhibitions</a><a href="#">Contact</a></div>
     </div>

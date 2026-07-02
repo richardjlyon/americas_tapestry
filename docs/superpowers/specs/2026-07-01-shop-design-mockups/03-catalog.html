@@ -26,6 +26,9 @@
     --burgundy:#6b1f2e; --parchment:#f4e9d5; --cream:#fbf7ef; --white:#fff;
     --ink:#1a2b45; --muted:#6a6a72; --line:#e6ddca; --maxw:1200px;
     --stitch: repeating-linear-gradient(90deg, var(--gold) 0 7px, transparent 7px 13px);
+    /* art-only tile — full-bleed embroidery-photo gradient, collector line (taxonomy v2: no navy ground) */
+    --art-tile: radial-gradient(130% 110% at 20% 10%, rgba(232,185,3,.25), transparent 55%),
+                linear-gradient(155deg,#eecf9a 0%,#d29a5a 28%,#a85a3f 55%,#6b4536 80%,#3d2b23 100%);
     /* subtle two-axis linen texture for warm light fields (graft: Heritage Textile) */
     --linen: linear-gradient(90deg, rgba(107,31,46,.015) 1px, transparent 1px),
              linear-gradient(0deg, rgba(26,43,69,.015) 1px, transparent 1px);
@@ -145,6 +148,10 @@
   .card.dk .shot .inner{background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.22), transparent 60%),linear-gradient(150deg,var(--navy),var(--burgundy));}
   .card.dk .shot .inner span{color:var(--parchment);}
   .card .shot .inner span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);font-weight:700;line-height:1.5;}
+  /* art-only card tile — collector line: full-bleed art cropped to a muslin border, label lives in the card meta below, not on the art */
+  .card.art .shot{border:6px solid var(--cream);}
+  .card.art .shot .inner{position:absolute;inset:0;border:0;background:var(--art-tile);}
+  .card.art .shot .inner span{display:none;}
   .card .shot .flag{position:absolute;top:14px;left:14px;z-index:2;background:var(--navy);color:var(--parchment);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:6px 11px;}
   .badge{position:absolute;top:14px;right:14px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 10px;background:rgba(255,255,255,.94);color:var(--burgundy);}
   .badge.in{color:#2f6b3a;}
@@ -218,10 +225,11 @@
       <span class="sub">The Shop · Est. 1776 · 2026</span>
     </a>
     <nav class="nav-links">
-      <a href="01-landing.html#picker">Shop by State</a>
+      <a href="01-landing.html#picker">Shop Your State</a>
+      <a href="01-landing.html#wall-art">Wall Art</a>
+      <a href="01-landing.html#book">The Book</a>
+      <a href="01-landing.html#gifts">Gifts</a>
       <a class="active" href="03-catalog.html">Catalog</a>
-      <a href="01-landing.html#doors">By Product</a>
-      <a href="01-landing.html#story">The Project</a>
     </nav>
     <div class="nav-actions">
       <a class="cart" href="#"><span>Bag</span><span class="count">2</span></a>
@@ -253,7 +261,7 @@
 <div class="wrap">
   <div class="toolbar">
     <div class="left">
-      <span class="count-label"><b>6</b> pieces</span>
+      <span class="count-label"><b>7</b> pieces</span>
     </div>
     <div class="right">
       <div class="sort">
@@ -303,13 +311,14 @@
 
       <!-- PRODUCT TYPE facet (tag: type:*) — 4 selected (Wall Art subgroup) -->
       <div class="facet">
-        <h3>Product Type <span class="sel">4 selected</span></h3>
+        <h3>Product Type <span class="sel">5 selected</span></h3>
         <p class="tag-hint" title="Shopify tag namespace — maps checkbox values to tag: type:*">tag: type:*</p>
         <p class="subgroup">Wall Art</p>
         <label class="opt sub"><input type="checkbox" checked /><span class="box"></span><span class="txt">Framed Prints</span><span class="ct">13</span></label>
         <label class="opt sub"><input type="checkbox" checked /><span class="box"></span><span class="txt">Canvas Prints</span><span class="ct">13</span></label>
         <label class="opt sub"><input type="checkbox" checked /><span class="box"></span><span class="txt">Metal &amp; Acrylic</span><span class="ct">13</span></label>
         <label class="opt sub"><input type="checkbox" checked /><span class="box"></span><span class="txt">Art Prints</span><span class="ct">13</span></label>
+        <label class="opt sub"><input type="checkbox" checked /><span class="box"></span><span class="txt">Exhibition Posters</span><span class="ct">13</span></label>
         <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Greeting Cards</span><span class="ct">13</span></label>
         <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Postcards</span><span class="ct">13</span></label>
         <label class="opt"><input type="checkbox" /><span class="box"></span><span class="txt">Calendar</span><span class="ct">1</span></label>
@@ -325,16 +334,16 @@
           <span class="tier on">$50–150</span>
           <span class="tier">$150+</span>
         </div>
-        <div class="price-note">$20 — $300+</div>
+        <div class="price-note">$15 — $300+</div>
         <div class="range"><div class="fill"></div><div class="knob a"></div><div class="knob b"></div></div>
       </div>
 
       <!-- AVAILABILITY facet -->
       <div class="facet">
         <h3>Availability</h3>
-        <label class="opt"><input type="radio" name="avail" checked /><span class="radio"></span><span class="txt">In stock</span><span class="ct">6</span></label>
-        <label class="opt"><input type="radio" name="avail" /><span class="radio"></span><span class="txt">Include pre-order</span><span class="ct">6</span></label>
-        <label class="opt"><input type="radio" name="avail" /><span class="radio"></span><span class="txt">All</span><span class="ct">6</span></label>
+        <label class="opt"><input type="radio" name="avail" checked /><span class="radio"></span><span class="txt">In stock</span><span class="ct">7</span></label>
+        <label class="opt"><input type="radio" name="avail" /><span class="radio"></span><span class="txt">Include pre-order</span><span class="ct">7</span></label>
+        <label class="opt"><input type="radio" name="avail" /><span class="radio"></span><span class="txt">All</span><span class="ct">7</span></label>
       </div>
     </aside>
 
@@ -342,32 +351,39 @@
     <div>
       <div class="grid">
 
-        <a class="card dk" href="04-product.html">
+        <a class="card art" href="04-product.html">
           <div class="shot"><span class="flag">Framed Print</span><span class="badge commem">250th</span>
             <div class="inner"><span>Georgia<br>Framed Print</span></div><div class="quick">View sizes</div></div>
           <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Framed Print</div>
             <div class="dsc serif">Solid wood frame, museum mat, ready to hang.</div><div class="price"><span class="from">from</span>$90</div></div>
         </a>
 
-        <a class="card dk" href="04-product.html">
+        <a class="card art" href="04-product.html">
           <div class="shot"><span class="flag">Canvas Print</span><span class="badge in">In stock</span>
             <div class="inner"><span>Pennsylvania<br>Canvas Print</span></div><div class="quick">View sizes</div></div>
           <div class="info"><div class="k">Pennsylvania</div><div class="nm">Pennsylvania Panel — Canvas Print</div>
             <div class="dsc serif">Gallery-wrapped canvas, no frame needed.</div><div class="price"><span class="from">from</span>$90</div></div>
         </a>
 
-        <a class="card dk" href="04-product.html">
+        <a class="card art" href="04-product.html">
           <div class="shot"><span class="flag">Metal &amp; Acrylic</span><span class="badge new">New</span>
             <div class="inner"><span>South Carolina<br>Metal &amp; Acrylic Print</span></div><div class="quick">View sizes</div></div>
           <div class="info"><div class="k">South Carolina</div><div class="nm">South Carolina Panel — Metal &amp; Acrylic Print</div>
             <div class="dsc serif">HD metal or acrylic, vivid modern finish.</div><div class="price"><span class="from">from</span>$150</div></div>
         </a>
 
-        <a class="card dk" href="04-product.html">
+        <a class="card art" href="04-product.html">
           <div class="shot"><span class="flag">Art Print</span><span class="badge in">In stock</span>
             <div class="inner"><span>Georgia<br>Art Print</span></div><div class="quick">View sizes</div></div>
           <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Art Print</div>
             <div class="dsc serif">Unframed fine-art poster, archival stock.</div><div class="price"><span class="from">from</span>$25</div></div>
+        </a>
+
+        <a class="card dk" href="04-product.html">
+          <div class="shot"><span class="flag">Exhibition Poster</span><span class="badge new">New</span>
+            <div class="inner"><span>Georgia<br>Exhibition Poster</span></div><div class="quick">View sizes</div></div>
+          <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Exhibition Poster</div>
+            <div class="dsc serif">The exhibition composition on heavyweight poster stock.</div><div class="price"><span class="from">from</span>$15</div></div>
         </a>
 
         <a class="card dk" href="04-product.html">

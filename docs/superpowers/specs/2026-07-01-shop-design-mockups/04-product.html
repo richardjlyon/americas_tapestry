@@ -23,6 +23,9 @@
     --burgundy:#6b1f2e; --parchment:#f4e9d5; --cream:#fbf7ef; --white:#fff;
     --ink:#1a2b45; --muted:#6a6a72; --line:#e6ddca; --maxw:1200px;
     --stitch: repeating-linear-gradient(90deg, var(--gold) 0 7px, transparent 7px 13px);
+    /* art-only tile — full-bleed embroidery-photo gradient, collector line (taxonomy v2: no navy ground) */
+    --art-tile: radial-gradient(130% 110% at 20% 10%, rgba(232,185,3,.25), transparent 55%),
+                linear-gradient(155deg,#eecf9a 0%,#d29a5a 28%,#a85a3f 55%,#6b4536 80%,#3d2b23 100%);
     --radius:2px;
     --shadow-plate:0 30px 60px -30px rgba(26,43,69,.4);
     --shadow-lift:0 24px 44px -28px rgba(26,43,69,.55);
@@ -75,16 +78,21 @@
   .thumb .g{position:absolute;inset:0;background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.18), transparent 60%),linear-gradient(150deg,var(--navy),var(--burgundy));}
   .thumb.on{border-color:var(--gold);}
   .thumb.light .g{background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.14), transparent 60%),linear-gradient(160deg,#f7efe0,#efe2c9);}
+  /* art-only thumbnail/stage — collector line: full-bleed art, no navy ground, no text lockup */
+  .thumb.art .g{background:var(--art-tile);}
   .stage{position:relative;border:1px solid var(--line);background:var(--cream);padding:16px;box-shadow:var(--shadow-plate);}
   .stage .plate{aspect-ratio:4/5;position:relative;overflow:hidden;display:flex;align-items:flex-end;
     background:radial-gradient(120% 120% at 20% 8%, rgba(232,185,3,.2), transparent 55%),linear-gradient(150deg,var(--navy),#3a2030 55%,var(--burgundy));}
   .stage .plate::before{content:"";position:absolute;inset:14px;border:1px dashed rgba(244,233,213,.4);}
+  .stage .plate.art{background:var(--art-tile);}
+  .stage .plate.art::before{display:none;}
   .stage .flag{position:absolute;top:16px;left:16px;background:var(--navy);color:var(--parchment);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:7px 12px;z-index:2;}
   .stage .badge{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--navy);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:7px 11px;z-index:2;}
   .stage .badge.commem{font-size:9px;padding:5px 9px;letter-spacing:.1em;}
   .stage .cap{position:relative;padding:22px 24px;color:var(--parchment);}
   .stage .cap .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;}
   .stage .cap .t{font-family:'EB Garamond',serif;font-size:24px;font-style:italic;margin-top:4px;}
+  .stage-cap{grid-column:1/-1;margin:14px 4px 0;font-style:italic;font-size:15px;color:var(--muted);}
 
   /* buy column */
   .buy .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);font-weight:700;}
@@ -148,6 +156,12 @@
   .card .shot .inner{position:absolute;inset:12px;border:1px dashed rgba(26,43,69,.18);display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;
     background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.14), transparent 60%),linear-gradient(160deg,#f7efe0,#efe2c9);}
   .card .shot .inner span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);font-weight:700;line-height:1.5;}
+  .card.dk .shot .inner{background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.22), transparent 60%),linear-gradient(150deg,var(--navy),var(--burgundy));}
+  .card.dk .shot .inner span{color:var(--parchment);}
+  /* art-only card tile — collector line: full-bleed art cropped to a muslin border, label lives in the card meta below, not on the art */
+  .card.art .shot{border:6px solid var(--cream);}
+  .card.art .shot .inner{position:absolute;inset:0;border:0;background:var(--art-tile);}
+  .card.art .shot .inner span{display:none;}
   .card .shot .flag{position:absolute;top:12px;left:12px;z-index:2;background:var(--navy);color:var(--parchment);font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:5px 9px;}
   .badge{position:absolute;top:12px;right:12px;z-index:2;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:5px 9px;background:rgba(255,255,255,.94);color:var(--burgundy);}
   .badge.in{color:#2f6b3a;} .badge.signed{background:var(--navy);color:var(--gold);} .badge.new{background:var(--burgundy);color:#fff;}
@@ -195,10 +209,11 @@
       <span class="sub">The Shop · Est. 1776 · 2026</span>
     </a>
     <nav class="nav-links">
-      <a href="01-landing.html#picker">Shop by State</a>
+      <a href="01-landing.html#picker">Shop Your State</a>
+      <a href="01-landing.html#wall-art">Wall Art</a>
+      <a href="01-landing.html#book">The Book</a>
+      <a href="01-landing.html#gifts">Gifts</a>
       <a href="03-catalog.html">Catalog</a>
-      <a href="01-landing.html#doors">By Product</a>
-      <a href="01-landing.html#story">The Project</a>
     </nav>
     <div class="nav-actions">
       <a class="ic" href="03-catalog.html" aria-label="Search">Search</a>
@@ -218,21 +233,18 @@
     <!-- GALLERY -->
     <div class="gallery">
       <div class="thumbs">
-        <div class="thumb on"><div class="g"></div></div>
-        <div class="thumb light"><div class="g"></div></div>
-        <div class="thumb"><div class="g"></div></div>
-        <div class="thumb light"><div class="g"></div></div>
+        <div class="thumb art on"><div class="g"></div></div>
+        <div class="thumb art"><div class="g"></div></div>
+        <div class="thumb art"><div class="g"></div></div>
+        <div class="thumb art"><div class="g"></div></div>
       </div>
       <div class="stage">
-        <div class="plate">
+        <div class="plate art">
           <span class="flag">Framed Print</span>
           <span class="badge commem">250th</span>
-          <div class="cap">
-            <div class="k">Panel I · Georgia</div>
-            <div class="t">“Savannah &amp; the Coast” — Framed Print</div>
-          </div>
         </div>
       </div>
+      <p class="stage-cap serif">Panel I · Georgia — “Savannah &amp; the Coast”</p>
     </div>
 
     <!-- BUY COLUMN -->
@@ -318,29 +330,29 @@
       <a href="02-state.html">All Georgia →</a>
     </div>
     <div class="rel-grid">
-      <a class="card" href="04-product.html">
+      <a class="card art" href="04-product.html">
         <div class="shot"><span class="flag">Canvas Print</span><span class="badge in">In stock</span>
           <div class="inner"><span>Georgia<br>Canvas Print</span></div></div>
         <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Canvas Print</div>
           <div class="dsc serif">Gallery-wrapped canvas, no frame needed.</div><div class="price"><span class="from">from</span>$90</div></div>
       </a>
-      <a class="card" href="04-product.html">
+      <a class="card art" href="04-product.html">
         <div class="shot"><span class="flag">Metal &amp; Acrylic</span><span class="badge new">New</span>
           <div class="inner"><span>Georgia<br>Metal &amp; Acrylic Print</span></div></div>
         <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Metal &amp; Acrylic Print</div>
           <div class="dsc serif">HD metal or acrylic, vivid modern finish.</div><div class="price"><span class="from">from</span>$150</div></div>
       </a>
-      <a class="card" href="04-product.html">
+      <a class="card art" href="04-product.html">
         <div class="shot"><span class="flag">Art Print</span><span class="badge in">In stock</span>
           <div class="inner"><span>Georgia<br>Art Print</span></div></div>
         <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Art Print</div>
           <div class="dsc serif">Unframed fine-art poster, archival stock.</div><div class="price"><span class="from">from</span>$25</div></div>
       </a>
-      <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Georgia<br>Pack of 10</span></div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Postcards, Pack of 10</div>
-          <div class="dsc serif">Ten cards from the Savannah coast panel.</div><div class="price">$20</div></div>
+      <a class="card dk" href="04-product.html">
+        <div class="shot"><span class="flag">Exhibition Poster</span>
+          <div class="inner"><span>Georgia<br>Exhibition Poster</span></div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Exhibition Poster</div>
+          <div class="dsc serif">The exhibition composition on heavyweight poster stock.</div><div class="price"><span class="from">from</span>$15</div></div>
       </a>
     </div>
   </div>

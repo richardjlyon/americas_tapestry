@@ -21,6 +21,9 @@
     --burgundy:#6b1f2e; --parchment:#f4e9d5; --cream:#fbf7ef; --white:#fff;
     --ink:#1a2b45; --muted:#6a6a72; --line:#e6ddca; --maxw:1200px;
     --stitch: repeating-linear-gradient(90deg, var(--gold) 0 7px, transparent 7px 13px);
+    /* art-only tile — full-bleed embroidery-photo gradient, collector line (taxonomy v2: no navy ground) */
+    --art-tile: radial-gradient(130% 110% at 20% 10%, rgba(232,185,3,.25), transparent 55%),
+                linear-gradient(155deg,#eecf9a 0%,#d29a5a 28%,#a85a3f 55%,#6b4536 80%,#3d2b23 100%);
     --radius:2px;
     --shadow-lift:0 24px 44px -28px rgba(26,43,69,.55);
     --shadow-plate:0 30px 60px -30px rgba(26,43,69,.4);
@@ -71,6 +74,9 @@
   .sh-plate .plate{aspect-ratio:5/4;position:relative;overflow:hidden;
     background:radial-gradient(120% 120% at 18% 8%, rgba(232,185,3,.2), transparent 55%),linear-gradient(150deg,var(--navy),#3a2030 55%,var(--burgundy));display:flex;align-items:flex-end;}
   .sh-plate .plate::before{content:"";position:absolute;inset:12px;border:1px dashed rgba(244,233,213,.4);}
+  /* art-only plate — collector line: full-bleed art, no navy ground, no text lockup */
+  .sh-plate .plate.art{background:var(--art-tile);}
+  .sh-plate .plate.art::before{display:none;}
   .sh-plate .cap{position:relative;padding:22px 24px;color:var(--parchment);}
   .sh-plate .cap .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;}
   .sh-plate .cap .t{font-family:'EB Garamond',serif;font-size:24px;font-style:italic;margin-top:4px;}
@@ -109,6 +115,10 @@
   .card.dk .shot .inner{background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.22), transparent 60%),linear-gradient(150deg,var(--navy),var(--burgundy));}
   .card.dk .shot .inner span{color:var(--parchment);}
   .card .shot .inner span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);font-weight:700;line-height:1.5;}
+  /* art-only card tile — collector line: full-bleed art cropped to a muslin border, label lives in the card meta below, not on the art */
+  .card.art .shot{border:6px solid var(--cream);}
+  .card.art .shot .inner{position:absolute;inset:0;border:0;background:var(--art-tile);}
+  .card.art .shot .inner span{display:none;}
   .card .shot .flag{position:absolute;top:14px;left:14px;z-index:2;background:var(--navy);color:var(--parchment);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:6px 11px;}
   .badge{position:absolute;top:14px;right:14px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 10px;background:rgba(255,255,255,.94);color:var(--burgundy);}
   .badge.in{color:#2f6b3a;}
@@ -116,6 +126,7 @@
   .badge.new{background:var(--burgundy);color:#fff;}
   .badge.signed{background:var(--navy);color:var(--gold);}
   .badge.soon{background:rgba(26,43,69,.9);color:var(--parchment);}
+  .badge.commem{background:var(--gold);color:var(--navy);font-size:8px;padding:4px 8px;letter-spacing:.1em;}
   .card .shot .quick{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;background:var(--navy);color:var(--parchment);text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:12px;opacity:0;transform:translateY(8px);transition:all .25s;}
   .card .shot .quick.notify{background:transparent;color:var(--parchment);border:1px solid var(--gold);}
   .card:hover .shot .quick{opacity:1;transform:translateY(0);}
@@ -142,7 +153,7 @@
   .near .sec-head{text-align:center;max-width:560px;margin:0 auto 34px;}
   .near .sec-head h2{font-weight:800;font-size:28px;color:var(--navy);margin:12px 0 8px;}
   .near .sec-head p{font-family:'EB Garamond',serif;font-size:17px;color:#3a4453;margin:0;}
-  .near-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .near-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   .mini{display:block;border:1px solid var(--line);transition:transform .25s,border-color .25s;}
   .mini:hover{transform:translateY(-4px);border-color:var(--gold);}
   .mini .t{aspect-ratio:3/2;position:relative;background:linear-gradient(150deg,var(--navy),var(--burgundy));display:flex;align-items:center;justify-content:center;}
@@ -150,6 +161,7 @@
   .mini:nth-child(4) .t{background:linear-gradient(150deg,#152238,var(--burgundy));}
   .mini .t::before{content:"";position:absolute;inset:9px;border:1px dashed rgba(244,233,213,.36);}
   .mini .t .abbr{position:relative;font-family:'EB Garamond',serif;font-style:italic;font-size:30px;color:rgba(244,233,213,.92);}
+  .mini.alt .t .abbr{font-size:16px;letter-spacing:.14em;text-transform:uppercase;font-family:'Montserrat';font-weight:700;font-style:normal;color:var(--gold);}
   .mini .m{padding:12px 14px;display:flex;justify-content:space-between;align-items:center;}
   .mini .m .nm{font-weight:700;font-size:14px;color:var(--navy);}
   .mini .m .e{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
@@ -189,10 +201,11 @@
       <span class="sub">The Shop · Est. 1776 · 2026</span>
     </a>
     <nav class="nav-links">
-      <a class="active" href="01-landing.html#picker">Shop by State</a>
+      <a class="active" href="01-landing.html#picker">Shop Your State</a>
+      <a href="01-landing.html#wall-art">Wall Art</a>
+      <a href="01-landing.html#book">The Book</a>
+      <a href="01-landing.html#gifts">Gifts</a>
       <a href="03-catalog.html">Catalog</a>
-      <a href="01-landing.html#doors">By Product</a>
-      <a href="01-landing.html#story">The Project</a>
     </nav>
     <div class="nav-actions">
       <a class="ic" href="03-catalog.html" aria-label="Search">Search</a>
@@ -209,12 +222,7 @@
 <section class="state-hero">
   <div class="wrap sh-grid">
     <div class="sh-plate">
-      <div class="plate">
-        <div class="cap">
-          <div class="k">Panel III · Hand-embroidered</div>
-          <div class="t">Georgia — “The Trustees' Garden”</div>
-        </div>
-      </div>
+      <div class="plate art"></div>
       <div class="plaque">
         <span>Colony of Georgia · 1732</span>
         <span class="r">On tour · 2026</span>
@@ -225,12 +233,12 @@
       <h1>Georgia,<br><em>the youngest colony.</em></h1>
       <p class="hook serif">Founded as a garden and a refuge, Georgia's panel stitches live oaks, the Savannah bluff, and the silk-hope of the Trustees' Garden into one southern green. Every piece below is drawn from this single embroidered work.</p>
       <div class="sh-facts">
-        <div class="f"><b>8</b><span>Pieces</span></div>
+        <div class="f"><b>III</b><span>Panel Number</span></div>
         <div class="f"><b>1732</b><span>Chartered</span></div>
-        <div class="f"><b>4th</b><span>To ratify</span></div>
+        <div class="f"><b>7</b><span>Product Types</span></div>
       </div>
       <div class="sh-cta">
-        <a class="btn btn-primary" href="#pieces">Shop all Georgia →</a>
+        <a class="btn btn-primary" href="#pieces">Shop Georgia Wall Art →</a>
         <a class="btn btn-ghost" href="#story">Read the panel story</a>
       </div>
     </div>
@@ -241,14 +249,14 @@
 <nav class="typenav">
   <div class="wrap">
     <span class="lbl">Jump to</span>
-    <a class="on" href="#pieces">All 8</a>
-    <a href="#pieces">Postcards</a>
-    <a href="#pieces">Posters</a>
-    <a href="#pieces">Prints</a>
-    <a href="#pieces">Totes</a>
-    <a href="#pieces">Mugs</a>
+    <a class="on" href="#pieces">All</a>
     <a href="#pieces">Framed</a>
-    <a href="#pieces">Artist Edition</a>
+    <a href="#pieces">Canvas</a>
+    <a href="#pieces">Metal &amp; Acrylic</a>
+    <a href="#pieces">Art Prints</a>
+    <a href="#pieces">Exhibition Poster</a>
+    <a href="#pieces">Greeting Cards</a>
+    <a href="#pieces">Postcards</a>
   </div>
 </nav>
 
@@ -257,67 +265,60 @@
   <div class="wrap">
     <div class="prod-head">
       <div>
-        <p class="eyebrow">tag: state:georgia</p>
+        <p class="eyebrow">Panel III · Georgia</p>
         <h2>Everything from the Georgia panel</h2>
       </div>
-      <span class="cnt">8 pieces · postcards to signed edition</span>
+      <span class="cnt">7 products · wall art to postcards</span>
     </div>
 
     <div class="grid">
-      <a class="card" href="04-product.html">
+      <a class="card art" href="04-product.html">
+        <div class="shot"><span class="flag">Framed Print</span><span class="badge commem">250th</span>
+          <div class="inner"><span>Georgia<br>Framed Print</span></div><div class="quick">View sizes</div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Framed Print</div>
+          <div class="dsc serif">Solid wood frame, museum mat, ready to hang.</div><div class="price"><span class="from">from</span>$90</div></div>
+      </a>
+
+      <a class="card art" href="04-product.html">
+        <div class="shot"><span class="flag">Canvas Print</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Georgia<br>Canvas Print</span></div><div class="quick">View sizes</div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Canvas Print</div>
+          <div class="dsc serif">Gallery-wrapped canvas, no frame needed.</div><div class="price"><span class="from">from</span>$90</div></div>
+      </a>
+
+      <a class="card art" href="04-product.html">
+        <div class="shot"><span class="flag">Metal &amp; Acrylic</span><span class="badge new">New</span>
+          <div class="inner"><span>Georgia<br>Metal &amp; Acrylic Print</span></div><div class="quick">View sizes</div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Metal &amp; Acrylic Print</div>
+          <div class="dsc serif">HD metal or acrylic, vivid modern finish.</div><div class="price"><span class="from">from</span>$150</div></div>
+      </a>
+
+      <a class="card art" href="04-product.html">
+        <div class="shot"><span class="flag">Art Print</span><span class="badge in">In stock</span>
+          <div class="inner"><span>Georgia<br>Art Print</span></div><div class="quick">View sizes</div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Art Print</div>
+          <div class="dsc serif">Unframed fine-art poster, archival stock.</div><div class="price"><span class="from">from</span>$25</div></div>
+      </a>
+
+      <a class="card dk" href="04-product.html">
+        <div class="shot"><span class="flag">Exhibition Poster</span>
+          <div class="inner"><span>Georgia<br>Exhibition Poster</span></div><div class="quick">View sizes</div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Exhibition Poster</div>
+          <div class="dsc serif">The exhibition composition on heavyweight poster stock.</div><div class="price"><span class="from">from</span>$15</div></div>
+      </a>
+
+      <a class="card dk" href="04-product.html">
+        <div class="shot"><span class="flag">Greeting Cards</span><span class="badge commem">250th</span>
+          <div class="inner"><span>Georgia<br>Greeting-Card Set</span></div><div class="quick">Quick add — $28</div></div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Greeting-Card Set</div>
+          <div class="dsc serif">Boxed note cards with envelopes, blank interior.</div><div class="price">$28</div></div>
+      </a>
+
+      <a class="card dk" href="04-product.html">
         <div class="shot"><span class="flag">Postcards</span><span class="badge best">Bestseller</span>
           <div class="inner"><span>Georgia<br>Pack of 10</span></div><div class="quick">Quick add — $20</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Colony Postcards, Pack of 10</div>
+        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Postcards, Pack of 10</div>
           <div class="dsc serif">Ten cards from the Trustees' Garden panel.</div><div class="price">$20</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Postcards</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Georgia<br>Single · Live Oak</span></div><div class="quick">Quick add — $4</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Single Card · “Live Oak”</div>
-          <div class="dsc serif">Individual card, blank interior.</div><div class="price">$4</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Poster</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Georgia<br>Panel Poster 18×24″</span></div><div class="quick">Quick add — $32</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Panel Poster, 18×24″</div>
-          <div class="dsc serif">Offset print on heavy matte stock.</div><div class="price">$32</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Giclée Print</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Georgia<br>Fine-Art Giclée</span></div><div class="quick">View sizes</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Fine-Art Giclée Print</div>
-          <div class="dsc serif">Archival cotton rag, three sizes.</div><div class="price"><span class="from">from</span>$85</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Tote Bag</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Georgia<br>Canvas Tote</span></div><div class="quick">Quick add — $28</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Heavyweight Canvas Tote</div>
-          <div class="dsc serif">Natural cotton, printed panel motif.</div><div class="price">$28</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Mug</span><span class="badge soon">Coming soon</span>
-          <div class="inner"><span>Georgia<br>Ceramic Mug 12 oz</span></div><div class="quick notify">Notify me</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Panel Ceramic Mug, 12 oz</div>
-          <div class="dsc serif">Ships August · pre-order to reserve.</div><div class="price">$18</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Framed Edition</span><span class="badge new">New</span>
-          <div class="inner"><span>Georgia<br>Framed Panel Print</span></div><div class="quick">View editions</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Framed Panel Edition</div>
-          <div class="dsc serif">Museum mat, solid maple frame.</div><div class="price"><span class="from">from</span>$240</div></div>
-      </a>
-
-      <a class="card" href="04-product.html">
-        <div class="shot"><span class="flag">Artist Edition</span><span class="badge signed">Signed</span>
-          <div class="inner"><span>Georgia<br>Signed · Ltd. of 50</span></div><div class="quick">View editions</div></div>
-        <div class="info"><div class="k">Georgia · Signed</div><div class="nm">Artist Edition, Ltd. of 50</div>
-          <div class="dsc serif">Hand-numbered, signed by the maker.</div><div class="price">$650</div></div>
       </a>
     </div>
   </div>
@@ -336,19 +337,21 @@
   </div>
 </section>
 
-<!-- ================= NEIGHBORING STATES ================= -->
+<!-- ================= COMPLETE THE COLLECTION ================= -->
 <section class="near">
   <div class="wrap">
     <div class="sec-head">
       <hr class="stitch center" />
-      <h2>Continue along the coast</h2>
-      <p class="serif">Georgia's neighbors on the tapestry — each its own panel and its own shop.</p>
+      <h2>Complete the collection</h2>
+      <p class="serif">Beyond Georgia — the calendar, the book, and the neighboring colonies.</p>
     </div>
     <div class="near-grid">
-      <a class="mini" href="02-state.html"><div class="t"><span class="abbr">Sc</span></div><div class="m"><span class="nm">South Carolina</span><span class="e">8 pcs</span></div></a>
-      <a class="mini" href="02-state.html"><div class="t"><span class="abbr">Nc</span></div><div class="m"><span class="nm">North Carolina</span><span class="e">8 pcs</span></div></a>
-      <a class="mini" href="02-state.html"><div class="t"><span class="abbr">Va</span></div><div class="m"><span class="nm">Virginia</span><span class="e">10 pcs</span></div></a>
-      <a class="mini" href="01-landing.html#picker"><div class="t"><span class="abbr">All 13</span></div><div class="m"><span class="nm">The Composite</span><span class="e">All</span></div></a>
+      <a class="mini alt" href="03-catalog.html"><div class="t"><span class="abbr">2026</span></div><div class="m"><span class="nm">2026 Calendar</span><span class="e">$35</span></div></a>
+      <a class="mini alt" href="04-product.html"><div class="t"><span class="abbr">Book</span></div><div class="m"><span class="nm">The Book</span><span class="e">$45</span></div></a>
+      <a class="mini alt" href="03-catalog.html"><div class="t"><span class="abbr">All 13</span></div><div class="m"><span class="nm">Collect all 13</span><span class="e">All states</span></div></a>
+      <a class="mini" href="02-state.html"><div class="t"><span class="abbr">Sc</span></div><div class="m"><span class="nm">South Carolina</span><span class="e">6 types</span></div></a>
+      <a class="mini" href="02-state.html"><div class="t"><span class="abbr">Nc</span></div><div class="m"><span class="nm">North Carolina</span><span class="e">6 types</span></div></a>
+      <a class="mini" href="02-state.html"><div class="t"><span class="abbr">Va</span></div><div class="m"><span class="nm">Virginia</span><span class="e">6 types</span></div></a>
     </div>
   </div>
 </section>
@@ -363,9 +366,9 @@
         <p class="serif">A nonprofit art project marking the Semiquincentennial — the 250th anniversary of American independence, July 4, 2026.</p>
       </div>
       <div><h4>Shop</h4>
-        <a href="01-landing.html#picker">By State</a><a href="03-catalog.html">Full Catalog</a><a href="01-landing.html#doors">By Product</a><a href="03-catalog.html">All-States</a></div>
+        <a href="01-landing.html#picker">By State</a><a href="03-catalog.html">Full Catalog</a><a href="01-landing.html#gifts">Gifts</a><a href="03-catalog.html">All-States</a></div>
       <div><h4>Products</h4>
-        <a href="03-catalog.html">Postcards</a><a href="03-catalog.html">Giclée Prints</a><a href="03-catalog.html">Framed Editions</a><a href="03-catalog.html">Artist Editions</a></div>
+        <a href="03-catalog.html">Wall Art</a><a href="03-catalog.html">Greeting Cards</a><a href="03-catalog.html">Postcards</a><a href="03-catalog.html">2026 Calendar</a></div>
       <div><h4>Project</h4>
         <a href="#">The 13 Panels</a><a href="#">The Guild</a><a href="#">Exhibitions</a><a href="#">Contact</a></div>
     </div>

@@ -6,7 +6,7 @@
 
 ## 1. Overview & Design Principles
 
-America's Tapestry treats thirteen hand-embroidered colony panels as fine art in a modern museum-publication layout. The storefront reads as a **premium gallery bookstore**, not a costume-y heritage site: a gallery-white/parchment canvas with generous whitespace, oversized Montserrat 800 headlines, EB Garamond serif for descriptive and italic caption copy, delicate gold hairlines, and a single running-stitch motif used sparingly as a connective mark. Color is restrained — navy for text and dark art plates, gold reserved for CTAs / the stitch rule / active states, burgundy strictly for eyebrows, hovers, and the type chip. The landing leads with the **flagship hardcover** — *The Making of America's Tapestry* — as a matted museum plate, because the book is the whole work bound together (all thirteen panels in one object). The **state-first spine** then carries the rest ("Find your state, bring its story home"): a refined 13-colony index of framed panel tiles is beat two — the emotional entry into the catalog — before featured products and the curated entry points (Wall Art, the 2026 Calendar, Gifts under $30, and more). The whole surface is three reusable primitives (ProductCard, CatalogGrid, FilterRail) whose facets map directly to Shopify tags, so new product lines populate existing facets and the grid with **no new page types**.
+America's Tapestry treats thirteen hand-embroidered colony panels as fine art in a modern museum-publication layout. The storefront reads as a **premium gallery bookstore**, not a costume-y heritage site: a gallery-white/parchment canvas with generous whitespace, oversized Montserrat 800 headlines, EB Garamond serif for descriptive and italic caption copy, delicate gold hairlines, and a single running-stitch motif used sparingly as a connective mark. Color is restrained — navy for text and dark art plates, gold reserved for CTAs / the stitch rule / active states, burgundy strictly for eyebrows, hovers, and the type chip. The landing leads with **wall art** — "Your state, framed" — because the taxonomy's ★-hero products (framed and canvas prints, $90–300) are the shop's commercial and visual center: full-bleed, art-only embroidery photography IS the museum plate the design language was built around. A **Wall Art band** follows (the four collector formats plus an **Exhibition Poster strip** — the navy-plate souvenir line, from $15), then a rich **book spotlight** for the flagship hardcover (still first-class, no longer the hero), then the **state-first spine** ("Find your state, bring its story home") — the 13-colony index of framed panel tiles — and finally the **curated entry points** as a four-door band (The 2026 Calendar, Gifts under $30, Collect all 13, For Institutions & Bulk). The whole surface is three reusable primitives (ProductCard, CatalogGrid, FilterRail) whose facets map directly to Shopify tags, so new product lines populate existing facets and the grid with **no new page types**.
 
 **Principles:** (1) State-first emotional spine. (2) Museum restraint — whitespace and hairlines over chrome. (3) One card, one grid, one rail — extensibility is visible. (4) Type hierarchy carries the design; the stitch is the only ornament. (5) AA-accessible contrast throughout.
 
@@ -66,7 +66,7 @@ Derived uses: section rules (`.stitch`, height 2px), the checked filter-option u
 
 | Route | Screen | Purpose |
 |---|---|---|
-| `/shop` | **Landing** | **Book hero** (flagship — the hardcover leads) → 13-colony picker (state-first entry, beat two) → featured products → two secondary doors → project story |
+| `/shop` | **Landing** | **Wall-art hero** ("Your state, framed" — the ★-hero products lead) → Wall Art band (4 formats) → book spotlight → 13-colony picker → curated-entries band (Calendar / Gifts under $30 / Collect all 13 / Institutions) → 250th story strip |
 | `/shop/product/americas-tapestry-…-hardcover` | **Book product** | Detail page for the hardcover (reuses ProductDetail). Live Shopify product `9763676061926`: **$45**, **62 pages**, printed to order, tags `americas-tapestry, book` |
 | `/shop/state/[slug]` | **State page** | One colony: panel imagery + story hook + EVERY product for that state (`tag: state:<slug>`) |
 | `/shop/catalog` | **Catalog** | Unified filterable + searchable grid: FilterRail (State / Type [Wall-Art grouped] / Price [tier chips + range] / Availability) + search + sort + active filters |
@@ -95,16 +95,17 @@ All components map to Shopify product data via two axes — **state** and **type
 
 ### Product taxonomy (canonical — from `PRODUCT_TAXONOMY.md`)
 
-**Per-state products** (13 products each, one per colony; imagery is the portrait "navy-plate" composition — art floated on the navy ground with the AMERICA'S TAPESTRY lockup):
+**Per-state products** (13 products each, one per colony). Imagery comes in **two portrait design families** (decided 2026-07-02): the **collector line** (products 1–4) is **art-only** — the full-bleed photograph cropped to the muslin border — while the **Exhibition Poster** (product 5) carries the signature **navy-plate composition** (art floated on navy with the "AMERICA'S TAPESTRY" / state / directors text block). The navy-plate look belongs to the poster alone.
 
-| Type | Tag | Variant axes | Price | Priority |
-|---|---|---|---|---|
-| Framed Print | `framed-print` | Size S/M/L × frame color | $90–180 | ★ Hero |
-| Canvas Print | `canvas` | Size S/M/L | $90–160 | ★ Hero |
-| Metal & Acrylic Print | `metal-print` | Size S/M/L | $150–300+ | Premium |
-| Art Print (unframed poster) | `art-print` | Size S/M/L | $25–70 | Volume |
-| Greeting-Card Set (boxed) | `greeting-cards` | — | $25–30 | Gift |
-| Postcards — Pack of 10 (live) | `postcard` | — | $20 | Impulse |
+| Type | Tag | Family | Variant axes | Price | Priority |
+|---|---|---|---|---|---|
+| Framed Print | `framed-print` | Collector (art-only) | Size S/M/L × frame color | $90–180 | ★ Hero |
+| Canvas Print | `canvas` | Collector (art-only) | Size S/M/L | $90–160 | ★ Hero |
+| Metal & Acrylic Print | `metal-print` | Collector (art-only) | Size S/M/L | $150–300+ | Premium |
+| Unframed Fine-Art Print | `art-print` | Collector (art-only) | Size S/M/L | $25–70 | Volume |
+| Exhibition Poster | `poster` | Souvenir (navy-plate + text block) | Size S/M only | $15–35 (TBC) | Volume |
+| Greeting-Card Set (boxed) | `greeting-cards` | — | — | $25–30 | Gift |
+| Postcards — Pack of 10 (live) | `postcard` | — | — | $20 | Impulse |
 
 **Collection-wide products** (single product, all states — the `<state>` tag is absent; landscape/cover imagery, the two exceptions to portrait):
 
@@ -113,7 +114,7 @@ All components map to Shopify product data via two axes — **state** and **type
 | 2026 Wall Calendar | `calendar` | all 13 panels; 250th-anniversary hero, giftable | $30–40 |
 | Book — hardcover (live) | `book` | product `9763676061926` | $45 |
 
-**Type groups:** **Wall Art** = `framed-print` + `canvas` + `metal-print` + `art-print` — surfaced as a grouped heading in the Type facet and as a curated entry.
+**Type groups:** **Wall Art** = `framed-print` + `canvas` + `metal-print` + `art-print` + `poster` — surfaced as a grouped heading in the Type facet and as a curated entry. Within the group, the two families are distinguished by imagery and copy ("Collector line" / "Exhibition Poster"), not by navigation — the $15 poster deliberately sits beside the $90+ collector prints as the price-ladder entry point.
 
 **Phase-2 long tail** (recognized in the vocabulary so any tagged products render, but NOT featured): `mug`, `tote`, `fridge-magnet`.
 
@@ -122,13 +123,13 @@ All components map to Shopify product data via two axes — **state** and **type
 > **Tag scheme — RESOLVED.** The taxonomy confirms **flat tags**: `americas-tapestry` (collection) + `<state>` (one of 13; absent on collection-wide products) + `<type>` (from the tables above). Facets build from known vocabulary lists matched against these flat tags — no namespacing, no re-tag. **Data hygiene:** every product must carry its `<type>` tag (live postcards already carry `postcard`; backfill `<type>` on new products as created).
 
 ### Header / Nav
-Sticky, translucent white with blur, `1px` hairline base. Brand lockup (name + burgundy sub-label), primary links (Shop by State / Catalog / By Product / The Project), Search, and Bag with burgundy count pill. Announcement bar above (navy, gold highlight). Identical across all four screens.
+Sticky, translucent white with blur, `1px` hairline base. Brand lockup (name + burgundy sub-label), primary links **Shop Your State / Wall Art / The Book / Gifts / Catalog** (the taxonomy's first-class entries; Institutions lives in the footer and the curated band), Search, and Bag with burgundy count pill. Announcement bar above (navy, gold highlight). Identical across all four screens.
 
 ### StatePicker (13-colony index)
 Framed square panel tiles (navy→burgundy gradient, `nth-child` alternating tones for hand-made warmth, dashed inner stitch matte, EB Garamond italic state abbreviation), each with `Panel <roman> · N pieces` metadata and a hover arrow. A visually distinct **14th "All States" tile** (gold uppercase glyph, extra dashed inner frame) links to the collection-wide products (calendar, book) and the all-states catalog view. Per-state tiles link to `/shop/state/[slug]`. Props: `name, abbr, panelNo, pieceCount, slug, variant("panel"|"all-states")`.
 
 ### ProductCard (one card, everywhere)
-The single most important primitive. Renders identically from a $20 postcard pack to a $300 metal print with no layout change. Portrait image by default (per-state navy-plate); the calendar/book cards use their landscape/cover art without force-cropping. Regions:
+The single most important primitive. Renders identically from a $15 exhibition poster to a $300 metal print with no layout change. Portrait image by default — **art-only full-bleed for the collector line** (framed/canvas/metal/art-print), **navy-plate + text block for the Exhibition Poster**; the calendar/book cards use their landscape/cover art without force-cropping. Regions:
 - **flag** (top-left) = product type (the `<type>` tag → its label)
 - **eyebrow** = state name (the `<state>` tag) or "All States" for collection-wide products
 - **badge** (top-right) = status vocabulary: `In stock`, `Bestseller`, `New`, `250th` (commemorative), `Coming soon`/`Sold out`
@@ -146,7 +147,7 @@ Responsive CSS grid (3 → 2 → 1 col) holding the unified, searchable, sortabl
 ### FilterRail
 Quiet, left-aligned, hairline-divided facets — never boxed or shaded. Four facets:
 - **State** (the 13 `<state>` values, "Show all 13 +" expander)
-- **Product Type** (the `<type>` values, with a **"Wall Art" grouped heading** over `framed-print`/`canvas`/`metal-print`/`art-print`, then Greeting Cards, Postcards, Calendar, Book; grows as new types are tagged)
+- **Product Type** (the `<type>` values, with a **"Wall Art" grouped heading** over `framed-print`/`canvas`/`metal-print`/`art-print`/`poster`, then Greeting Cards, Postcards, Calendar, Book; grows as new types are tagged)
 - **Price** — one-tap **tier chips** (Under $25 / $25–50 / $50–150 / $150+) **and** a range slider below them for fine control
 - **Availability** (radio: In stock / Include pre-order / All)
 
@@ -156,7 +157,7 @@ Facet enhancements: per-facet **"N selected"** gold count badge in the header; p
 Promoted to a prominent, front-and-center field (keyword search is a fixed IA requirement): full-width within the canvas, `1.5px` navy border, magnifier glyph, and a visible gold **Search** button. Placeholder demonstrates intent ("Virginia print", "tote", "wall calendar").
 
 ### StatePage layout
-Asymmetric hero (1fr framed panel plate / 1fr story column with panel number, oversized headline, EB Garamond hook, stat trio, dual CTA), a type quick-nav (anchored views into the one grid), the full CatalogGrid of that state's products (`tag: state:<slug>`), a navy story block with pull-quote, and a "Continue along the coast" neighboring-states strip (reuses mini panel tiles + composite door).
+Asymmetric hero (1fr framed panel plate / 1fr story column with panel number, oversized headline, EB Garamond hook, stat trio, dual CTA — primary CTA "Shop <State> Wall Art"), a type quick-nav over the real seven per-state types (**All · Framed · Canvas · Metal & Acrylic · Art Prints · Exhibition Poster · Greeting Cards · Postcards**), the full CatalogGrid of that state's products in **wall-art-led merchandising order** (framed → canvas → metal → art print → poster → greeting cards → postcards), a navy story block with pull-quote, and a **"Complete the collection" band** — the 2026 Calendar + the Book (all-states) + a "Collect all 13" tile + neighboring-state mini tiles.
 
 ### ProductDetail
 Two-column: gallery (vertical thumbnails + framed stage plate with flag + badge + italic caption) and buy column (eyebrow state, H1, EB Garamond subtitle, price with from/compare-at, availability + rating, stitch rule, variant swatches with gold-stitch "on" underline and a disabled/sold-out swatch, quantity stepper, `Add to cart — $price` primary + Shopify `Buy it now`, assurances, and an accordion for Details / The panel / Shipping). Availability handled as a **button variant**: when the selected variant is sold out the primary CTA becomes a disabled `Notify me` (documented inline). Closes with a "More from the Virginia panel" related CatalogGrid.
@@ -180,9 +181,9 @@ No new routes, no new components. The catalog's **extensibility band** demonstra
 
 ## 6. Per-Screen Layout Notes
 
-**01 Landing** — **Book hero leads** (flagship): asymmetric layout with the real hardcover cover as a standing, matted museum plate (parchment offset mat + soft floor/spine shadow) opposite the title *The Making of America's Tapestry*, the "A nation's story, stitched by hand" tagline, provenance copy (≈2,000 volunteers, 30,000 hours, 50,000 yards), price + In-stock, **Add to cart** / **Look inside**, and a 60 Pages · 13 Panels · 250 Years stat trio on dashed-gold borders. The announcement bar promotes the hardcover; nav gains a "The Book" link. Beat two is the parchment-tinted 13-colony index (4-col framed tiles + 14th All-States tile). Then the white featured section (3-col cards, stitch section rule) showing the full badge/price range (Bestseller, In stock, New, Coming soon→Notify, from-pricing), parchment secondary doors (navy + burgundy), navy story strip with pull-quote, shared footer. The book is a normal Shopify product (`type:book`, all-states) — it simply gets the hero slot; its detail page reuses ProductDetail.
+**01 Landing** — **Wall-art hero leads**: "Your state, framed" — asymmetric layout with a framed portrait navy-plate print (250th badge, from $90) opposite the headline, EB Garamond lead, **Shop Wall Art** (gold) + **Choose your state** (ghost) CTAs, and a 13 Colonies · 5 Wall-Art Formats · 250 Years stat trio on dashed-gold borders. The hero plate uses the **art-only** collector-line treatment (full-bleed embroidery photograph in the frame — no lockup). Beat two: the **Wall Art band** — four collector-line format cards (Framed from $90 · Canvas from $90 · Metal & Acrylic from $150 · Art Prints from $25; art-only full-bleed tiles) plus a distinct **Exhibition Poster strip** beneath (navy-plate + lockup treatment, "the souvenir of the 250th," from $15), all linking into the catalog. Beat three: the **book spotlight** — a full-width parchment band with the real hardcover cover as a matted plate, title/tagline, $45 · 62 pages · printed to order, Add to cart (the book is a normal Shopify product, `book` tag, all-states; its detail page reuses ProductDetail). Beat four: the parchment-tinted 13-colony index (4-col framed tiles + 14th All-States tile). Beat five: the **curated-entries band** — four door tiles: The 2026 Calendar ($35) · Gifts under $30 · Collect all 13 · For Institutions & Bulk. Close: navy story strip carrying the 250th commemorative theme, shared footer. (The old "featured products" grid and two-door section are removed — the Wall Art band and curated band replace them.)
 
-**02 State (Georgia)** — Breadcrumb, asymmetric state hero (framed 5/4 plate / story column, panel number, facts, dual CTA), type quick-nav pills, `state = georgia` eyebrow over the full CatalogGrid spanning every type for that colony (framed print, canvas, metal, art print, greeting cards, postcards — with any Coming soon→Notify items), navy panel-story block, "Continue along the coast" neighbors strip, footer.
+**02 State (Georgia)** — Breadcrumb, asymmetric state hero (framed 5/4 plate with art-only imagery / story column, panel number, facts, dual CTA — primary "Shop Georgia Wall Art"; stats Panel III · 1732 · 7 Product Types), type quick-nav pills over the real seven types (All · Framed · Canvas · Metal & Acrylic · Art Prints · Exhibition Poster · Greeting Cards · Postcards), the full CatalogGrid in wall-art-led order (Framed from $90 w/ 250th badge → Canvas → Metal → Art Print → **Exhibition Poster from $15, navy-plate tile** → Greeting-Card Set $28 → Postcards $20), navy panel-story block, **"Complete the collection"** band (2026 Calendar + Book + Collect-all-13 tile + neighboring-state minis), footer.
 
 **03 Catalog** — Head + prominent centered SearchBar (gold Search button) + toolbar (result count, sort). Active-filter row (Type/state chips + Clear all). Two-col layout: quiet FilterRail — State; Product Type with the **Wall Art grouped heading** (Framed / Canvas / Metal & Acrylic / Art Prints) then Greeting Cards, Postcards, Calendar, Book; **Price = tier chips (Under $25 / $25–50 / $50–150 / $150+) + range slider**; Availability — with N-selected badges, per-option counts, gold-stitch checked underlines. 3-col CatalogGrid of portrait navy-plate cards spanning the real line (Framed from $90, Canvas from $90, Metal from $150, Art Print from $25, Greeting Cards $28, Postcards $20), with the badge vocabulary incl. a gold **250th** commemorative badge. Pagination + extensibility band. Footer.
 
@@ -203,6 +204,10 @@ No new routes, no new components. The catalog's **extensibility band** demonstra
 ## 8. Open Questions / Decisions Deferred to Build
 
 **Resolved by the taxonomy (2026-07-01):** tag scheme is **flat** `americas-tapestry` + `<state>` + `<type>` (no namespacing). Collection-wide products (calendar, book) simply omit the `<state>` tag — "All States" is derived, there is no `composite` tag or 14th tile; "Collect all 13" is a curated pre-filtered view. Price uses **tier chips + range slider**. "For Institutions / Bulk" is an **inquiry page, no SKU**.
+
+**Restructured for the taxonomy (2026-07-02):** the landing hero switched from the book to **wall art** ("Your state, framed"), following the taxonomy's ★-hero priorities (framed/canvas are the revenue center); the book moved to a beat-three spotlight; the two secondary doors became the four-door curated-entries band; the nav became the first-class entries (Shop Your State / Wall Art / The Book / Gifts / Catalog); the state page adopted the real six-type jump bar + "Complete the collection" band. The hero swap reverses the 2026-07-01 book-as-hero choice and is cheap to revert (swap beats one and three) if preferred.
+
+**Taxonomy v2 (2026-07-02 evening):** per-state wall art split into **two design families** — the **collector line** (`framed-print`/`canvas`/`metal-print`/`art-print`, art-only full-bleed imagery cropped to the muslin border) and the **Exhibition Poster** (`poster`, the navy-plate + lockup composition, Size S/M, $15–35 TBC). Per-state products are now seven. `poster` was added to `PRODUCT_TYPES` and to the `wall-art` group (the two families are a copy/imagery distinction, not a navigation split). Poster pricing is TBC — confirm before the product is created in Shopify.
 
 Still open:
 1. **Cart model** — slide-out drawer vs. dedicated cart page before Shopify checkout handoff (mockups assume drawer + Buy-it-now).

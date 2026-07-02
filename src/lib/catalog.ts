@@ -24,6 +24,7 @@ export const PRODUCT_TYPES: TypeVocab[] = [
   { slug: 'canvas', label: 'Canvas Prints' },
   { slug: 'metal-print', label: 'Metal & Acrylic Prints' },
   { slug: 'art-print', label: 'Art Prints' },
+  { slug: 'poster', label: 'Exhibition Posters' },
   { slug: 'greeting-cards', label: 'Greeting Card Sets' },
   { slug: 'postcard', label: 'Postcards' },
   { slug: 'calendar', label: '2026 Wall Calendar' },
@@ -213,7 +214,9 @@ export function tierOf(price: number): string {
 }
 
 export const TYPE_GROUPS: Record<string, { label: string; types: string[] }> = {
-  'wall-art': { label: 'Wall Art', types: ['framed-print', 'canvas', 'metal-print', 'art-print'] },
+  // Collector line (art-only imagery: framed/canvas/metal/art-print) plus the
+  // Exhibition Poster (navy-plate + lockup, the souvenir line) — one browse group.
+  'wall-art': { label: 'Wall Art', types: ['framed-print', 'canvas', 'metal-print', 'art-print', 'poster'] },
 };
 
 export function typesInGroup(group: string): string[] {

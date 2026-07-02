@@ -22,9 +22,9 @@ describe('catalog vocab', () => {
     expect(STATES).toHaveLength(13);
     expect(STATES.map((s) => s.slug)).toContain('new-hampshire');
     expect(PRODUCT_TYPES.map((t) => t.slug)).toEqual(
-      expect.arrayContaining(['framed-print', 'canvas', 'metal-print', 'art-print', 'greeting-cards', 'postcard', 'calendar', 'book']),
+      expect.arrayContaining(['framed-print', 'canvas', 'metal-print', 'art-print', 'poster', 'greeting-cards', 'postcard', 'calendar', 'book']),
     );
-    expect(PRODUCT_TYPES).toHaveLength(11);
+    expect(PRODUCT_TYPES).toHaveLength(12);
     expect(stateName('georgia')).toBe('Georgia');
   });
 });
@@ -219,9 +219,9 @@ describe('price tiers', () => {
 });
 
 describe('type groups', () => {
-  it('defines Wall Art as the four print types', () => {
+  it('defines Wall Art as the collector print types plus the exhibition poster', () => {
     expect(TYPE_GROUPS['wall-art']?.label).toBe('Wall Art');
-    expect(typesInGroup('wall-art')).toEqual(['framed-print', 'canvas', 'metal-print', 'art-print']);
+    expect(typesInGroup('wall-art')).toEqual(['framed-print', 'canvas', 'metal-print', 'art-print', 'poster']);
   });
   it('returns [] for an unknown group', () => {
     expect(typesInGroup('nonsense')).toEqual([]);
