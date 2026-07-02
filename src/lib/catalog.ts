@@ -20,21 +20,27 @@ export const STATES: StateVocab[] = [
 ];
 
 export const PRODUCT_TYPES: TypeVocab[] = [
+  { slug: 'framed-print', label: 'Framed Prints' },
+  { slug: 'canvas', label: 'Canvas Prints' },
+  { slug: 'metal-print', label: 'Metal & Acrylic Prints' },
+  { slug: 'art-print', label: 'Art Prints' },
+  { slug: 'greeting-cards', label: 'Greeting Card Sets' },
   { slug: 'postcard', label: 'Postcards' },
-  { slug: 'poster', label: 'Posters' },
-  { slug: 'tote', label: 'Tote Bags' },
-  { slug: 'mug', label: 'Mugs' },
-  { slug: 'giclee', label: 'Fine-Art Prints' },
-  { slug: 'framed', label: 'Framed Editions' },
-  { slug: 'artist-edition', label: 'Artist Edition' },
+  { slug: 'calendar', label: '2026 Wall Calendar' },
   { slug: 'book', label: 'Book' },
-  { slug: 'composite', label: 'All-States' },
+  // Phase-2 long tail — recognized so tagged products render, but not featured.
+  { slug: 'mug', label: 'Mugs' },
+  { slug: 'tote', label: 'Tote Bags' },
+  { slug: 'fridge-magnet', label: 'Fridge Magnets' },
 ];
+
+/** Phase-2 types: recognized/valid, but not surfaced as featured curated entries. */
+export const PHASE2_TYPE_SLUGS = new Set(['mug', 'tote', 'fridge-magnet']);
 
 const STATE_SLUGS = new Set(STATES.map((s) => s.slug));
 const TYPE_SLUGS = new Set(PRODUCT_TYPES.map((t) => t.slug));
 /** Optional marketing tags → display badge label. */
-const MARKETING_BADGES: Record<string, string> = { bestseller: 'Bestseller', new: 'New', signed: 'Signed' };
+const MARKETING_BADGES: Record<string, string> = { bestseller: 'Bestseller', new: 'New', commemorative: '250th' };
 
 export function stateName(slug: string): string | undefined {
   return STATES.find((s) => s.slug === slug)?.name;

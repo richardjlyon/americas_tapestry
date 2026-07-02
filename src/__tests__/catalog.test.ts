@@ -22,8 +22,9 @@ describe('catalog vocab', () => {
     expect(STATES).toHaveLength(13);
     expect(STATES.map((s) => s.slug)).toContain('new-hampshire');
     expect(PRODUCT_TYPES.map((t) => t.slug)).toEqual(
-      expect.arrayContaining(['postcard', 'poster', 'tote', 'mug', 'giclee', 'framed', 'artist-edition', 'book', 'composite']),
+      expect.arrayContaining(['framed-print', 'canvas', 'metal-print', 'art-print', 'greeting-cards', 'postcard', 'calendar', 'book']),
     );
+    expect(PRODUCT_TYPES).toHaveLength(11);
     expect(stateName('georgia')).toBe('Georgia');
   });
 });
@@ -39,7 +40,7 @@ describe('toCatalogProduct', () => {
     expect(c.badges).toContain('In stock');
   });
 
-  it('marks all-states products (book/composite) with a null state', () => {
+  it('marks all-states products (book/calendar) with a null state', () => {
     const c = toCatalogProduct(make({ tags: ['americas-tapestry', 'book'], title: 'The Hardcover' }));
     expect(c.state).toBeNull();
     expect(c.type).toBe('book');
@@ -52,11 +53,12 @@ describe('toCatalogProduct', () => {
     expect(c.hasPriceRange).toBe(true);
   });
 
-  it('derives Sold out and honors marketing tags (bestseller/new/signed)', () => {
-    const c = toCatalogProduct(make({ availableForSale: false, tags: ['americas-tapestry', 'virginia', 'artist-edition', 'signed'] }));
+  it('derives Sold out and honors marketing tags (bestseller/new/commemorative)', () => {
+    const c = toCatalogProduct(make({ availableForSale: false, tags: ['americas-tapestry', 'virginia', 'framed-print', 'commemorative'] }));
     expect(c.availability).toBe('sold-out');
+    expect(c.type).toBe('framed-print');
     expect(c.badges).toContain('Sold out');
-    expect(c.badges).toContain('Signed');
+    expect(c.badges).toContain('250th');
   });
 });
 
@@ -67,7 +69,7 @@ const EMPTY: CatalogFilters = { states: [], types: [], availability: 'all', pric
 describe('filterProducts', () => {
   const list = [
     toCatalogProduct(make({ id: '1', tags: ['americas-tapestry', 'georgia', 'postcard'], price: { amount: '20.0', currencyCode: 'USD' } })),
-    toCatalogProduct(make({ id: '2', tags: ['americas-tapestry', 'virginia', 'poster'], price: { amount: '40.0', currencyCode: 'USD' } })),
+    toCatalogProduct(make({ id: '2', tags: ['americas-tapestry', 'virginia', 'art-print'], price: { amount: '40.0', currencyCode: 'USD' } })),
     toCatalogProduct(make({ id: '3', tags: ['americas-tapestry', 'book'], price: { amount: '45.0', currencyCode: 'USD' }, availableForSale: false })),
   ];
 
@@ -78,10 +80,10 @@ describe('filterProducts', () => {
     expect(filterProducts(list, { ...EMPTY, states: ['georgia'] }).map((p) => p.id)).toEqual(['1']);
   });
   it('filters by type', () => {
-    expect(filterProducts(list, { ...EMPTY, types: ['poster'] }).map((p) => p.id)).toEqual(['2']);
+    expect(filterProducts(list, { ...EMPTY, types: ['art-print'] }).map((p) => p.id)).toEqual(['2']);
   });
   it('ANDs across facets (state AND type)', () => {
-    expect(filterProducts(list, { ...EMPTY, states: ['georgia'], types: ['poster'] })).toHaveLength(0);
+    expect(filterProducts(list, { ...EMPTY, states: ['georgia'], types: ['art-print'] })).toHaveLength(0);
   });
   it('filters by availability and price range', () => {
     expect(filterProducts(list, { ...EMPTY, availability: 'available' }).map((p) => p.id)).toEqual(['1', '2']);
@@ -92,13 +94,13 @@ describe('filterProducts', () => {
 describe('searchProducts', () => {
   const list = [
     toCatalogProduct(make({ id: '1', title: 'Georgia Panel Postcard', tags: ['americas-tapestry', 'georgia', 'postcard'] })),
-    toCatalogProduct(make({ id: '2', title: 'Virginia Poster', description: 'Tidewater panel', tags: ['americas-tapestry', 'virginia', 'poster'] })),
+    toCatalogProduct(make({ id: '2', title: 'Virginia Art Print', description: 'Tidewater panel', tags: ['americas-tapestry', 'virginia', 'art-print'] })),
   ];
   it('returns all for an empty/whitespace query', () => {
     expect(searchProducts(list, '   ')).toHaveLength(2);
   });
   it('matches on title', () => {
-    expect(searchProducts(list, 'poster').map((p) => p.id)).toEqual(['2']);
+    expect(searchProducts(list, 'art print').map((p) => p.id)).toEqual(['2']);
   });
   it('matches on state name and is case-insensitive', () => {
     expect(searchProducts(list, 'GEORGIA').map((p) => p.id)).toEqual(['1']);
