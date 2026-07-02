@@ -60,6 +60,11 @@ describe('toCatalogProduct', () => {
     expect(c.badges).toContain('Sold out');
     expect(c.badges).toContain('250th');
   });
+
+  it('surfaces the coming-soon marketing tag as a badge', () => {
+    const c = toCatalogProduct(make({ tags: ['americas-tapestry', 'georgia', 'mug', 'coming-soon'] }));
+    expect(c.badges).toContain('Coming soon');
+  });
 });
 
 import { filterProducts, type CatalogFilters } from '@/lib/catalog';

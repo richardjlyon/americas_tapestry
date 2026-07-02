@@ -185,7 +185,7 @@ export async function getAllProducts(): Promise<ShopifyProduct[]> {
   const out: ShopifyProduct[] = [];
   let after: string | null = null;
   try {
-    for (let page = 0; page < 20; page++) {
+    for (let page = 0; page < 20; page++) { // safety cap: 20 × 50 = 1000 products
       const data: {
         collection: { products: {
           pageInfo: { hasNextPage: boolean; endCursor: string | null };
@@ -194,7 +194,13 @@ export async function getAllProducts(): Promise<ShopifyProduct[]> {
       } = await client.request(ALL_PRODUCTS_QUERY, { handle: 'americas-tapestry', first: 50, after });
       const conn = data.collection?.products;
       if (!conn) break;
-      for (const { node } of conn.edges) out.push(mapProductNode(node));
+      // The americas-tapestry tag is the catalog-membership invariant (see
+      // getProductByHandle); untagged collection members are excluded so a
+      // listed product can never 404 on its own detail page.
+      for (const { node } of conn.edges) {
+        const p = mapProductNode(node);
+        if (p.tags.includes('americas-tapestry')) out.push(p);
+      }
       if (!conn.pageInfo.hasNextPage) break;
       after = conn.pageInfo.endCursor;
     }

@@ -40,7 +40,7 @@ export const PHASE2_TYPE_SLUGS = new Set(['mug', 'tote', 'fridge-magnet']);
 const STATE_SLUGS = new Set(STATES.map((s) => s.slug));
 const TYPE_SLUGS = new Set(PRODUCT_TYPES.map((t) => t.slug));
 /** Optional marketing tags → display badge label. */
-const MARKETING_BADGES: Record<string, string> = { bestseller: 'Bestseller', new: 'New', commemorative: '250th' };
+const MARKETING_BADGES: Record<string, string> = { bestseller: 'Bestseller', new: 'New', commemorative: '250th', 'coming-soon': 'Coming soon' };
 
 export function stateName(slug: string): string | undefined {
   return STATES.find((s) => s.slug === slug)?.name;
