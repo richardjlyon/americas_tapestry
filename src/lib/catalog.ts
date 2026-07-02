@@ -211,3 +211,11 @@ export function tierOf(price: number): string {
   const t = PRICE_TIERS.find((t) => price >= t.min && (t.max === null || price < t.max));
   return (t ?? PRICE_TIERS[PRICE_TIERS.length - 1]!).slug;
 }
+
+export const TYPE_GROUPS: Record<string, { label: string; types: string[] }> = {
+  'wall-art': { label: 'Wall Art', types: ['framed-print', 'canvas', 'metal-print', 'art-print'] },
+};
+
+export function typesInGroup(group: string): string[] {
+  return TYPE_GROUPS[group]?.types ?? [];
+}

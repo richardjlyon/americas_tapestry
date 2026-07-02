@@ -1,4 +1,4 @@
-import { toCatalogProduct, STATES, PRODUCT_TYPES, stateName, searchProducts, sortProducts, facetCounts, parseFilters, serializeFilters, type CatalogQuery, PRICE_TIERS, tierOf } from '@/lib/catalog';
+import { toCatalogProduct, STATES, PRODUCT_TYPES, stateName, searchProducts, sortProducts, facetCounts, parseFilters, serializeFilters, type CatalogQuery, PRICE_TIERS, tierOf, TYPE_GROUPS, typesInGroup } from '@/lib/catalog';
 import type { ShopifyProduct } from '@/lib/shopify';
 
 function make(overrides: Partial<ShopifyProduct> = {}): ShopifyProduct {
@@ -210,5 +210,15 @@ describe('price tiers', () => {
   it('parseFilters/serializeFilters round-trip the tier param', () => {
     const q = { filters: { states: [], types: [], tiers: ['50-150'], availability: 'all' as const, priceMin: null, priceMax: null }, sort: 'featured' as const, q: '' };
     expect(parseFilters(Object.fromEntries(serializeFilters(q))).filters.tiers).toEqual(['50-150']);
+  });
+});
+
+describe('type groups', () => {
+  it('defines Wall Art as the four print types', () => {
+    expect(TYPE_GROUPS['wall-art']?.label).toBe('Wall Art');
+    expect(typesInGroup('wall-art')).toEqual(['framed-print', 'canvas', 'metal-print', 'art-print']);
+  });
+  it('returns [] for an unknown group', () => {
+    expect(typesInGroup('nonsense')).toEqual([]);
   });
 });
