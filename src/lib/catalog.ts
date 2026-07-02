@@ -161,8 +161,9 @@ function list(v: string | string[] | undefined, allowed: Set<string>): string[] 
   return first(v).split(',').map((s) => s.trim()).filter((s) => allowed.has(s));
 }
 function num(v: string | string[] | undefined): number | null {
-  const n = Number.parseFloat(first(v));
-  return Number.isFinite(n) ? n : null;
+  const s = first(v).trim();
+  if (!/^-?\d+(\.\d+)?$/.test(s)) return null;
+  return Number.parseFloat(s);
 }
 
 export function parseFilters(params: Record<string, string | string[] | undefined>): CatalogQuery {

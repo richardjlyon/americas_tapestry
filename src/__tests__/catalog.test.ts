@@ -166,6 +166,11 @@ describe('parseFilters', () => {
     expect(q.q).toBe('');
     expect(q.filters.availability).toBe('all');
   });
+  it('rejects partial-numeric min/max garbage', () => {
+    const q = parseFilters({ min: '20abc', max: '5.5.5' });
+    expect(q.filters.priceMin).toBeNull();
+    expect(q.filters.priceMax).toBeNull();
+  });
   it('ignores unknown state/type slugs', () => {
     const q = parseFilters({ state: 'georgia,atlantis', type: 'postcard,spaceship' });
     expect(q.filters.states).toEqual(['georgia']);
