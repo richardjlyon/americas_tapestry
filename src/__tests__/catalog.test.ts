@@ -1,4 +1,4 @@
-import { toCatalogProduct, STATES, PRODUCT_TYPES, stateName, searchProducts } from '@/lib/catalog';
+import { toCatalogProduct, STATES, PRODUCT_TYPES, stateName, searchProducts, sortProducts, facetCounts } from '@/lib/catalog';
 import type { ShopifyProduct } from '@/lib/shopify';
 
 function make(overrides: Partial<ShopifyProduct> = {}): ShopifyProduct {
@@ -107,5 +107,42 @@ describe('searchProducts', () => {
   });
   it('matches on type label (e.g. "postcards")', () => {
     expect(searchProducts(list, 'postcards').map((p) => p.id)).toEqual(['1']);
+  });
+});
+
+describe('sortProducts', () => {
+  const list = [
+    toCatalogProduct(make({ id: 'b', title: 'Bravo', price: { amount: '40.0', currencyCode: 'USD' } })),
+    toCatalogProduct(make({ id: 'a', title: 'Alpha', price: { amount: '20.0', currencyCode: 'USD' } })),
+  ];
+  it('does not mutate the input array', () => {
+    const copy = [...list];
+    sortProducts(list, 'price-asc');
+    expect(list).toEqual(copy);
+  });
+  it('sorts by price ascending and descending', () => {
+    expect(sortProducts(list, 'price-asc').map((p) => p.id)).toEqual(['a', 'b']);
+    expect(sortProducts(list, 'price-desc').map((p) => p.id)).toEqual(['b', 'a']);
+  });
+  it('sorts by title', () => {
+    expect(sortProducts(list, 'title').map((p) => p.id)).toEqual(['a', 'b']);
+  });
+  it('featured preserves input order', () => {
+    expect(sortProducts(list, 'featured').map((p) => p.id)).toEqual(['b', 'a']);
+  });
+});
+
+describe('facetCounts', () => {
+  it('counts products per state and type, ignoring nulls', () => {
+    const list = [
+      toCatalogProduct(make({ tags: ['americas-tapestry', 'georgia', 'postcard'] })),
+      toCatalogProduct(make({ tags: ['americas-tapestry', 'georgia', 'canvas'] })),
+      toCatalogProduct(make({ tags: ['americas-tapestry', 'book'] })),
+    ];
+    const { states, types } = facetCounts(list);
+    expect(states['georgia']).toBe(2);
+    expect(states['book']).toBeUndefined();
+    expect(types['postcard']).toBe(1);
+    expect(types['book']).toBe(1);
   });
 });

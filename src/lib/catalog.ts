@@ -127,3 +127,25 @@ export function searchProducts(products: CatalogProduct[], query: string): Catal
     return haystack.includes(q);
   });
 }
+
+export type SortKey = 'featured' | 'price-asc' | 'price-desc' | 'title';
+
+export function sortProducts(products: CatalogProduct[], key: SortKey): CatalogProduct[] {
+  const copy = [...products];
+  switch (key) {
+    case 'price-asc': return copy.sort((a, b) => a.price - b.price);
+    case 'price-desc': return copy.sort((a, b) => b.price - a.price);
+    case 'title': return copy.sort((a, b) => a.title.localeCompare(b.title));
+    case 'featured': default: return copy;
+  }
+}
+
+export function facetCounts(products: CatalogProduct[]): { states: Record<string, number>; types: Record<string, number> } {
+  const states: Record<string, number> = {};
+  const types: Record<string, number> = {};
+  for (const p of products) {
+    if (p.state) states[p.state] = (states[p.state] ?? 0) + 1;
+    if (p.type) types[p.type] = (types[p.type] ?? 0) + 1;
+  }
+  return { states, types };
+}
