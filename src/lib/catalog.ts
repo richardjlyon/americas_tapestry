@@ -98,6 +98,7 @@ export function toCatalogProduct(p: ShopifyProduct): CatalogProduct {
 export interface CatalogFilters {
   states: string[];
   types: string[];
+  tiers: string[];
   availability: 'all' | 'available';
   priceMin: number | null;
   priceMax: number | null;
@@ -107,6 +108,7 @@ export function filterProducts(products: CatalogProduct[], filters: CatalogFilte
   return products.filter((p) => {
     if (filters.states.length && (p.state === null || !filters.states.includes(p.state))) return false;
     if (filters.types.length && (p.type === null || !filters.types.includes(p.type))) return false;
+    if (filters.tiers.length && !filters.tiers.includes(tierOf(p.price))) return false;
     if (filters.availability === 'available' && p.availability !== 'available') return false;
     if (filters.priceMin !== null && p.price < filters.priceMin) return false;
     if (filters.priceMax !== null && p.price > filters.priceMax) return false;
@@ -172,6 +174,7 @@ export function parseFilters(params: Record<string, string | string[] | undefine
     filters: {
       states: list(params['state'], STATE_SLUGS),
       types: list(params['type'], TYPE_SLUGS),
+      tiers: list(params['tier'], TIER_SLUGS),
       availability: first(params['avail']) === 'available' ? 'available' : 'all',
       priceMin: num(params['min']),
       priceMax: num(params['max']),
@@ -186,10 +189,25 @@ export function serializeFilters(query: CatalogQuery): URLSearchParams {
   const { filters: f, sort, q } = query;
   if (f.states.length) p.set('state', f.states.join(','));
   if (f.types.length) p.set('type', f.types.join(','));
+  if (f.tiers.length) p.set('tier', f.tiers.join(','));
   if (f.availability === 'available') p.set('avail', 'available');
   if (f.priceMin !== null) p.set('min', String(f.priceMin));
   if (f.priceMax !== null) p.set('max', String(f.priceMax));
   if (sort !== 'featured') p.set('sort', sort);
   if (q) p.set('q', q);
   return p;
+}
+
+export interface PriceTier { slug: string; label: string; min: number; max: number | null }
+export const PRICE_TIERS: PriceTier[] = [
+  { slug: 'under-25', label: 'Under $25', min: 0, max: 25 },
+  { slug: '25-50', label: '$25–50', min: 25, max: 50 },
+  { slug: '50-150', label: '$50–150', min: 50, max: 150 },
+  { slug: '150-plus', label: '$150+', min: 150, max: null },
+];
+const TIER_SLUGS = new Set(PRICE_TIERS.map((t) => t.slug));
+
+export function tierOf(price: number): string {
+  const t = PRICE_TIERS.find((t) => price >= t.min && (t.max === null || price < t.max));
+  return (t ?? PRICE_TIERS[PRICE_TIERS.length - 1]!).slug;
 }

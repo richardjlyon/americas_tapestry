@@ -1,4 +1,4 @@
-import { toCatalogProduct, STATES, PRODUCT_TYPES, stateName, searchProducts, sortProducts, facetCounts, parseFilters, serializeFilters, type CatalogQuery } from '@/lib/catalog';
+import { toCatalogProduct, STATES, PRODUCT_TYPES, stateName, searchProducts, sortProducts, facetCounts, parseFilters, serializeFilters, type CatalogQuery, PRICE_TIERS, tierOf } from '@/lib/catalog';
 import type { ShopifyProduct } from '@/lib/shopify';
 
 function make(overrides: Partial<ShopifyProduct> = {}): ShopifyProduct {
@@ -64,7 +64,7 @@ describe('toCatalogProduct', () => {
 
 import { filterProducts, type CatalogFilters } from '@/lib/catalog';
 
-const EMPTY: CatalogFilters = { states: [], types: [], availability: 'all', priceMin: null, priceMax: null };
+const EMPTY: CatalogFilters = { states: [], types: [], tiers: [], availability: 'all', priceMin: null, priceMax: null };
 
 describe('filterProducts', () => {
   const list = [
@@ -180,12 +180,35 @@ describe('parseFilters', () => {
 
 describe('serializeFilters', () => {
   it('omits empty and default values', () => {
-    const base: CatalogQuery = { filters: { states: [], types: [], availability: 'all', priceMin: null, priceMax: null }, sort: 'featured', q: '' };
+    const base: CatalogQuery = { filters: { states: [], types: [], tiers: [], availability: 'all', priceMin: null, priceMax: null }, sort: 'featured', q: '' };
     expect(serializeFilters(base).toString()).toBe('');
   });
   it('round-trips a populated query', () => {
-    const q: CatalogQuery = { filters: { states: ['georgia'], types: ['postcard'], availability: 'available', priceMin: 20, priceMax: 80 }, sort: 'price-asc', q: 'tote' };
+    const q: CatalogQuery = { filters: { states: ['georgia'], types: ['postcard'], tiers: [], availability: 'available', priceMin: 20, priceMax: 80 }, sort: 'price-asc', q: 'tote' };
     const round = parseFilters(Object.fromEntries(serializeFilters(q)));
     expect(round).toEqual(q);
+  });
+});
+
+describe('price tiers', () => {
+  it('buckets prices into the four tiers (half-open)', () => {
+    expect(PRICE_TIERS.map((t) => t.slug)).toEqual(['under-25', '25-50', '50-150', '150-plus']);
+    expect(tierOf(20)).toBe('under-25');
+    expect(tierOf(25)).toBe('25-50');
+    expect(tierOf(49.99)).toBe('25-50');
+    expect(tierOf(90)).toBe('50-150');
+    expect(tierOf(150)).toBe('150-plus');
+    expect(tierOf(300)).toBe('150-plus');
+  });
+  it('filterProducts filters by tier', () => {
+    const list = [
+      toCatalogProduct(make({ id: 'p', tags: ['americas-tapestry', 'georgia', 'postcard'], price: { amount: '20.0', currencyCode: 'USD' } })),
+      toCatalogProduct(make({ id: 'f', tags: ['americas-tapestry', 'georgia', 'framed-print'], price: { amount: '90.0', currencyCode: 'USD' } })),
+    ];
+    expect(filterProducts(list, { states: [], types: [], tiers: ['under-25'], availability: 'all', priceMin: null, priceMax: null }).map((x) => x.id)).toEqual(['p']);
+  });
+  it('parseFilters/serializeFilters round-trip the tier param', () => {
+    const q = { filters: { states: [], types: [], tiers: ['50-150'], availability: 'all' as const, priceMin: null, priceMax: null }, sort: 'featured' as const, q: '' };
+    expect(parseFilters(Object.fromEntries(serializeFilters(q))).filters.tiers).toEqual(['50-150']);
   });
 });
