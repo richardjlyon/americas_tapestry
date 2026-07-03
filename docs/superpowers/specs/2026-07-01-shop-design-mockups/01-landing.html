@@ -5,13 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>America's Tapestry — Shop</title>
 <!--
-  AMERICA'S TAPESTRY · FINAL DESIGN — "Editorial Museum"
-  Gallery-white canvas, oversized Montserrat headlines, EB Garamond body,
-  gold hairlines + a single running-stitch token used for every dashed mark.
-  RESPONSIVE INTENT:
-    - Desktop-first, canvas max-width ~1200px.
-    - <=900px: hero -> 1 col; colony index 4->2 col; featured 3->2 col; doors stack; primary nav collapses.
-    - <=600px: index/featured -> 1 col; padding tightens.
+  AMERICA'S TAPESTRY · MOCKUP VARIANT — "Editorial Museum" + "Night Gallery" HYBRID
+  Light book hero + curated doors + footer (unchanged from 01-landing.html), wrapping
+  ONE continuous dark-navy exhibition passage (Wall Art gallery + 13-Colony picker)
+  styled after merch/_assets/proofs/index.html, now with real product photography.
+  RESPONSIVE INTENT: same breakpoints as the base file (900px, 600px).
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,9 +23,6 @@
     /* signature running-stitch, one embroidery token reused everywhere */
     --stitch: repeating-linear-gradient(90deg, var(--gold) 0 7px, transparent 7px 13px);
     --stitch-soft: repeating-linear-gradient(90deg, rgba(244,233,213,.5) 0 7px, transparent 7px 13px);
-    /* art-only tile — full-bleed embroidery-photo gradient, collector line (taxonomy v2: no navy ground) */
-    --art-tile: radial-gradient(130% 110% at 20% 10%, rgba(232,185,3,.25), transparent 55%),
-                linear-gradient(155deg,#eecf9a 0%,#d29a5a 28%,#a85a3f 55%,#6b4536 80%,#3d2b23 100%);
     --radius:2px;
     --shadow-lift:0 24px 44px -28px rgba(26,43,69,.55);
     --shadow-plate:0 30px 60px -30px rgba(26,43,69,.4);
@@ -40,7 +35,6 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
   .serif{font-family:'EB Garamond',Georgia,serif;}
   .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);margin:0 0 18px;}
-  /* running-stitch rule derived from the token */
   .stitch{height:2px;border:0;width:64px;background:var(--stitch);margin:0;}
   .stitch.center{margin:0 auto;}
   .hairline{border:0;border-top:1px solid var(--line);}
@@ -69,34 +63,7 @@
   .cart{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;}
   .cart .count{background:var(--burgundy);color:#fff;border-radius:999px;font-size:11px;min-width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px;}
 
-  /* ============ HERO ============ */
-  .hero{padding:82px 0 70px;}
-  .hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center;}
-  .hero h1{font-weight:800;font-size:60px;line-height:1.04;letter-spacing:-.02em;margin:0 0 26px;color:var(--navy);}
-  .hero h1 em{font-family:'EB Garamond',serif;font-style:italic;font-weight:500;color:var(--burgundy);}
-  .hero p.lead{font-family:'EB Garamond',serif;font-size:20px;line-height:1.65;color:#3a4453;margin:0 0 34px;max-width:44ch;}
-  .hero-cta{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
-  .hero-meta{margin-top:40px;display:flex;gap:40px;}
-  .hero-meta .stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1;}
-  .hero-meta .stat span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;}
-  .hero-meta .stat{padding-left:18px;border-left:2px dashed var(--gold);}
-
-  .frame{position:relative;background:var(--cream);padding:16px;border:1px solid var(--line);box-shadow:var(--shadow-plate);}
-  .frame .plate{aspect-ratio:4/5;position:relative;overflow:hidden;
-    background:radial-gradient(120% 120% at 20% 10%, rgba(232,185,3,.18), transparent 55%),linear-gradient(150deg,var(--navy),#3a2030 55%,var(--burgundy));
-    display:flex;align-items:flex-end;}
-  .plate::before{content:"";position:absolute;inset:12px;border:1px dashed rgba(244,233,213,.4);}
-  /* art-only plate — collector line: full-bleed art, no navy ground, no text lockup */
-  .frame .plate.art{background:var(--art-tile);}
-  .frame .plate.art::before{display:none;}
-  .plate .cap{position:relative;padding:22px 24px;color:var(--parchment);}
-  .plate .cap .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;}
-  .plate .cap .t{font-family:'EB Garamond',serif;font-size:26px;font-style:italic;margin-top:4px;}
-  .frame .plaque{display:flex;justify-content:space-between;align-items:baseline;padding:14px 6px 4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;}
-  .frame .plaque .r{color:var(--burgundy);}
-  .plate .badge250{position:absolute;top:14px;right:14px;z-index:2;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:5px 9px;background:var(--gold);color:var(--navy);}
-
-  /* ============ BOOK HERO (flagship product) ============ */
+  /* ============ BOOK HERO (flagship product) — unchanged, light ============ */
   .book-hero{padding:76px 0 70px;background:var(--parchment);}
   .book-hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:68px;align-items:center;}
   .book-copy h1{font-weight:800;font-size:56px;line-height:1.03;letter-spacing:-.02em;margin:0 0 12px;color:var(--navy);}
@@ -106,7 +73,10 @@
   .book-buy .price{font-size:30px;font-weight:800;color:var(--navy);}
   .book-buy .avail{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#2f6b3a;font-weight:700;}
   .book-cta{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
-  /* the cover as a standing book, matted like a museum plate */
+  .hero-meta{margin-top:40px;display:flex;gap:40px;}
+  .hero-meta .stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1;}
+  .hero-meta .stat span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+  .hero-meta .stat{padding-left:18px;border-left:2px dashed var(--gold);}
   .book-figure{position:relative;display:flex;flex-direction:column;align-items:center;}
   .book-figure::before{content:"";position:absolute;z-index:0;width:76%;height:90%;right:5%;top:5%;
     background:radial-gradient(120% 120% at 72% 18%, rgba(232,185,3,.18), transparent 60%), var(--parchment);
@@ -116,83 +86,14 @@
     border:1px solid rgba(26,43,69,.25);border-left:3px solid rgba(0,0,0,.35);}
   .book-cap{position:relative;z-index:1;margin-top:22px;text-align:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;}
 
-  /* ============ SECTIONS ============ */
+  /* ============ SECTIONS (light) ============ */
   .section{padding:78px 0;}
   .section.tint{background:var(--parchment);}
   .sec-head{max-width:640px;margin:0 auto 54px;text-align:center;}
   .sec-head h2{font-weight:800;font-size:38px;letter-spacing:-.01em;color:var(--navy);margin:12px 0 16px;}
   .sec-head p{font-family:'EB Garamond',serif;font-size:18px;color:#3a4453;margin:0;}
 
-  /* ============ 13-COLONY INDEX (framed panel tiles) ============ */
-  .index-lead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:34px;flex-wrap:wrap;gap:20px;}
-  .index-lead h2{font-weight:800;font-size:34px;color:var(--navy);margin:8px 0 0;letter-spacing:-.01em;}
-  .index-lead .note{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:16px;}
-  .colony-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
-  .colony{display:block;background:var(--white);border:1px solid var(--line);transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;}
-  .colony:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--gold);}
-  .colony .tile{aspect-ratio:1/1;position:relative;overflow:hidden;background:linear-gradient(150deg,var(--navy),var(--burgundy));display:flex;align-items:center;justify-content:center;}
-  /* nth-child alternating swatch tones — hand-made warmth (graft: Heritage Textile) */
-  .colony:nth-child(3n) .tile{background:linear-gradient(150deg,#20324f,#7a2334);}
-  .colony:nth-child(4n) .tile{background:linear-gradient(150deg,#152238,var(--burgundy));}
-  .colony .tile::before{content:"";position:absolute;inset:10px;border:1px dashed rgba(244,233,213,.38);}
-  .colony .tile .abbr{position:relative;font-family:'EB Garamond',serif;font-style:italic;font-size:40px;color:rgba(244,233,213,.92);letter-spacing:.02em;}
-  .colony .meta{padding:16px 18px 18px;}
-  .colony .meta .nm{font-weight:700;font-size:15px;color:var(--navy);letter-spacing:.01em;}
-  .colony .meta .rw{display:flex;justify-content:space-between;align-items:center;margin-top:8px;}
-  .colony .meta .est{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;}
-  .colony .meta .arrow{color:var(--gold);font-size:15px;transform:translateX(-4px);opacity:0;transition:all .25s;}
-  .colony:hover .meta .arrow{opacity:1;transform:translateX(0);}
-  /* 14th tile: composite / all-states — visually distinct destination */
-  .colony.composite .tile{background:linear-gradient(150deg,#243a5e,#8a2a3c);}
-  .colony.composite .tile .abbr{font-size:22px;text-transform:uppercase;letter-spacing:.24em;font-family:'Montserrat';font-weight:700;font-style:normal;color:var(--gold);}
-  .colony.composite .tile::after{content:"";position:absolute;inset:18px;border:1px dashed rgba(232,185,3,.5);}
-
-  /* ============ PRODUCT CARD (one card, reused everywhere) ============ */
-  .card{background:var(--white);position:relative;transition:transform .25s;}
-  .card:hover{transform:translateY(-5px);}
-  .card .shot{aspect-ratio:4/5;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--cream);display:flex;align-items:center;justify-content:center;}
-  .card .shot .inner{position:absolute;inset:14px;border:1px dashed rgba(26,43,69,.18);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;
-    background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.14), transparent 60%),linear-gradient(160deg,#f7efe0,#efe2c9);}
-  .card.dk .shot .inner{background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.22), transparent 60%),linear-gradient(150deg,var(--navy),var(--burgundy));}
-  .card.dk .shot .inner span{color:var(--parchment);}
-  .card .shot .inner span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);font-weight:700;line-height:1.5;}
-  /* art-only card tile — collector line: full-bleed art cropped to a muslin border, label lives in the card meta below, not on the art */
-  .card.art .shot{border:6px solid var(--cream);}
-  .card.art .shot .inner{position:absolute;inset:0;border:0;background:var(--art-tile);}
-  .card.art .shot .inner span{display:none;}
-  .card .shot .flag{position:absolute;top:14px;left:14px;z-index:2;background:var(--navy);color:var(--parchment);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:6px 11px;}
-  /* fuller status-badge vocabulary (graft: Heritage Textile + Civic 250) */
-  .badge{position:absolute;top:14px;right:14px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 10px;background:rgba(255,255,255,.94);color:var(--burgundy);}
-  .badge.in{color:#2f6b3a;}
-  .badge.best{background:var(--gold);color:var(--navy);}
-  .badge.new{background:var(--burgundy);color:#fff;}
-  .badge.signed{background:var(--navy);color:var(--gold);}
-  .badge.soon{background:rgba(26,43,69,.9);color:var(--parchment);}
-  .card .shot .quick{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;background:var(--navy);color:var(--parchment);text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:12px;opacity:0;transform:translateY(8px);transition:all .25s;}
-  .card .shot .quick.notify{background:transparent;color:var(--parchment);border:1px solid var(--gold);}
-  .card:hover .shot .quick{opacity:1;transform:translateY(0);}
-  .card .info{padding:18px 4px 0;}
-  .card .info .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--burgundy);font-weight:700;}
-  .card .info .nm{font-weight:700;font-size:17px;color:var(--navy);margin:7px 0 2px;line-height:1.3;}
-  .card .info .dsc{font-family:'EB Garamond',serif;font-size:15px;color:var(--muted);}
-  .card .info .price{margin-top:10px;font-weight:700;font-size:16px;color:var(--navy);}
-  .card .info .price .from{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:5px;}
-  .card .info .price s{color:#b9b1a2;font-weight:600;margin-left:8px;}
-  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
-
-  /* ============ EXHIBITION POSTER STRIP (souvenir line, distinct from the collector cards above) ============ */
-  .poster-strip{margin-top:36px;display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center;background:var(--parchment);border:1px solid var(--line);padding:28px;}
-  .poster-strip .plate{aspect-ratio:4/5;position:relative;overflow:hidden;display:flex;align-items:flex-end;
-    background:radial-gradient(120% 120% at 20% 10%, rgba(232,185,3,.18), transparent 55%),linear-gradient(150deg,var(--navy),#3a2030 55%,var(--burgundy));}
-  .poster-strip .plate::before{content:"";position:absolute;inset:10px;border:1px dashed rgba(244,233,213,.4);}
-  .poster-strip .plate .cap{position:relative;padding:14px 16px;color:var(--parchment);}
-  .poster-strip .plate .cap .k{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;}
-  .poster-strip .plate .cap .t{font-family:'EB Garamond',serif;font-size:18px;font-style:italic;margin-top:3px;}
-  .poster-strip-copy h3{font-weight:800;font-size:24px;color:var(--navy);margin:0 0 10px;}
-  .poster-strip-copy p.serif{font-size:16px;color:#3a4453;margin:0 0 18px;max-width:52ch;}
-  @media(max-width:900px){.poster-strip{grid-template-columns:1fr;}}
-
-  /* ============ SECONDARY DOORS ============ */
+  /* ============ SECONDARY DOORS (light, unchanged) ============ */
   .doors{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
   .door{position:relative;overflow:hidden;padding:48px 44px;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--line);transition:transform .25s,box-shadow .25s;}
   .door:hover{transform:translateY(-4px);box-shadow:0 26px 46px -28px rgba(26,43,69,.5);}
@@ -206,7 +107,7 @@
   .door .go .ar{color:var(--gold);transition:transform .25s;}
   .door:hover .go .ar{transform:translateX(6px);}
 
-  /* ============ STORY STRIP ============ */
+  /* ============ STORY STRIP (dark, unchanged) ============ */
   .story{background:var(--navy);color:var(--parchment);}
   .story .wrap{padding:88px 40px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
   .story .q{font-family:'EB Garamond',serif;font-size:30px;line-height:1.5;font-style:italic;color:#fff;margin:0;}
@@ -216,7 +117,7 @@
   .story .art::before{content:"";position:absolute;inset:14px;border:1px dashed rgba(244,233,213,.3);}
   .story .art .lab{position:absolute;bottom:18px;left:20px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;}
 
-  /* ============ FOOTER (shared) ============ */
+  /* ============ FOOTER (shared, unchanged) ============ */
   footer.site{background:var(--cream);border-top:1px solid var(--line);padding:64px 0 40px;}
   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
   .foot-grid h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--burgundy);font-weight:700;margin:0 0 16px;}
@@ -226,19 +127,83 @@
   .foot-brand p{font-family:'EB Garamond',serif;font-size:15px;color:var(--muted);max-width:34ch;margin:12px 0 0;}
   .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:.04em;}
 
+  /* ================================================================
+     DARK EXHIBITION PASSAGE — imported richness from merch/_proofs
+     (deep navy gradient ground, EB Garamond small-caps headings,
+     chrome-free real photography, italic captions)
+     ================================================================ */
+  .dark-passage{
+    --dp-navy:#1e2b45; --dp-navy-deep:#141d2e; --dp-cream:#ECE7D4;
+    --dp-cream-dim:#c8c2ad;      /* for >=14px italic copy, matches proofs exactly */
+    --dp-cream-dim-sm:#d8d2bd;   /* lightened for <14px uppercase labels — AA on navy */
+    position:relative;
+    background:linear-gradient(180deg,#2a3c5c 0%, var(--dp-navy) 9%, var(--dp-navy) 58%, var(--dp-navy-deep) 100%);
+    color:var(--dp-cream);
+    padding:104px 0 108px;
+  }
+  /* threshold marker instead of an abrupt slab — a single gold tick, like a gallery doorway */
+  .dark-passage::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:70px;height:2px;background:var(--gold);opacity:.85;}
+  .dark-passage .wrap{position:relative;}
+
+  .dp-head{max-width:640px;margin:0 auto 50px;text-align:center;}
+  .dp-rule{width:70px;height:1px;background:var(--dp-cream-dim);opacity:.5;margin:0 auto 18px;border:0;}
+  .dp-head h2,.dp-index-lead h2{
+    font-family:'EB Garamond',Georgia,serif;font-weight:400;text-transform:uppercase;
+    letter-spacing:.28em;font-size:1.65rem;color:var(--dp-cream);margin:0 0 16px;
+  }
+  .dp-note{font-family:'EB Garamond',Georgia,serif;font-style:italic;color:var(--dp-cream-dim);font-size:16px;margin:0;line-height:1.6;}
+  .dp-eyebrow{font-family:'Montserrat';font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 12px;}
+
+  /* Wall Art gallery — four collector formats, real art photos */
+  .dp-feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-bottom:56px;}
+  .dp-card{display:block;}
+  .dp-card figure{margin:0;line-height:0;}
+  .dp-card img{width:100%;display:block;box-shadow:0 10px 32px rgba(0,0,0,.45);transition:transform .22s ease,box-shadow .22s ease;}
+  .dp-card:hover img{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.6);}
+  .dp-card figcaption{margin-top:14px;text-align:center;line-height:1.5;}
+  .dp-card .dp-label{display:block;font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:14px;color:var(--dp-cream-dim);}
+  .dp-card .dp-price{display:block;margin-top:4px;font-family:'Montserrat';font-weight:700;font-size:15px;color:var(--dp-cream);letter-spacing:.02em;}
+
+  /* Exhibition Poster strip — souvenir line */
+  .dp-poster-strip{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center;margin-bottom:100px;}
+  .dp-poster-img{line-height:0;}
+  .dp-poster-img img{width:100%;display:block;box-shadow:0 10px 32px rgba(0,0,0,.45);}
+  .dp-poster-copy h3{font-family:'EB Garamond',Georgia,serif;font-weight:400;text-transform:uppercase;letter-spacing:.12em;font-size:24px;color:var(--dp-cream);margin:0 0 12px;}
+  .dp-poster-copy p{font-family:'EB Garamond',Georgia,serif;font-size:16px;color:var(--dp-cream-dim);margin:0 0 20px;max-width:52ch;}
+
+  /* 13-Colony picker — real art thumbnails */
+  .dp-index-lead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:34px;flex-wrap:wrap;gap:20px;}
+  .dp-index-lead h2{margin:8px 0 0;text-align:left;}
+  .dp-index-lead .dp-note{max-width:34ch;text-align:right;}
+  .dp-colony-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .dp-colony{display:block;}
+  .dp-colony figure{margin:0;line-height:0;}
+  .dp-colony img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;box-shadow:0 10px 32px rgba(0,0,0,.45);transition:transform .22s ease,box-shadow .22s ease;}
+  .dp-colony:hover img{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.6);}
+  .dp-colony figcaption{margin-top:14px;text-align:center;font-size:15px;line-height:1.4;}
+  .dp-colony .num{font-family:'EB Garamond',Georgia,serif;font-style:italic;color:var(--dp-cream-dim);margin-right:.35em;}
+  .dp-colony .nm{color:var(--dp-cream);font-weight:500;}
+  .dp-colony .sub{display:block;margin-top:5px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dp-cream-dim-sm);font-weight:600;font-family:'Montserrat';}
+  /* 14th tile — All 13 composite, no photo exists, designed quiet in navy/gold */
+  .dp-colony.composite figure{aspect-ratio:4/5;background:linear-gradient(150deg,#243a5e,var(--dp-navy-deep));border:1px solid rgba(232,185,3,.35);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 32px rgba(0,0,0,.45);transition:transform .22s ease,box-shadow .22s ease;}
+  .dp-colony.composite:hover figure{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.6);}
+  .dp-colony.composite figure span{font-family:'Montserrat';font-weight:700;font-size:17px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);}
+
   @media(max-width:900px){
     .hero-grid,.book-hero .wrap,.story .wrap{grid-template-columns:1fr;gap:40px;}
     .book-copy h1{font-size:44px;}
-    .colony-grid{grid-template-columns:repeat(2,1fr);}
-    .feat-grid{grid-template-columns:repeat(2,1fr);}
     .doors{grid-template-columns:repeat(2,1fr);}
     .foot-grid{grid-template-columns:1fr 1fr;}
-    .hero h1{font-size:44px;}
     .nav-links{display:none;}
+    .dp-feat-grid,.dp-colony-grid{grid-template-columns:repeat(2,1fr);}
+    .dp-poster-strip{grid-template-columns:1fr;}
+    .dp-index-lead{flex-direction:column;align-items:flex-start;}
+    .dp-index-lead .dp-note{text-align:left;}
   }
   @media(max-width:600px){
     .wrap{padding:0 22px;}
-    .colony-grid,.feat-grid,.doors{grid-template-columns:1fr;}
+    .doors{grid-template-columns:1fr;}
+    .dp-feat-grid,.dp-colony-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -248,7 +213,7 @@
 
 <header class="site">
   <div class="wrap nav">
-    <a class="brand" href="01-landing.html">
+    <a class="brand" href="01-landing-dark.html">
       <span class="name">AMERICA'S TAPESTRY</span>
       <span class="sub">The Shop · Est. 1776 · 2026</span>
     </a>
@@ -266,7 +231,7 @@
   </div>
 </header>
 
-<!-- ================= HERO — THE BOOK (flagship) ================= -->
+<!-- ================= HERO — THE BOOK (flagship, light — unchanged) ================= -->
 <section class="book-hero" id="book">
   <div class="wrap">
     <div class="book-copy">
@@ -295,114 +260,141 @@
   </div>
 </section>
 
-<!-- ================= WALL ART BAND ================= -->
-<section class="section" id="wall-art">
+<!-- ================= DARK EXHIBITION PASSAGE ================= -->
+<section class="dark-passage" id="wall-art">
   <div class="wrap">
-    <div class="sec-head">
-      <hr class="stitch center" />
-      <h2>Wall Art — four formats, one panel per state.</h2>
-      <p class="serif">Every colony's embroidered panel, reproduced true to the thread as the collector line — framed, on canvas, in metal or acrylic, or as an unframed art print.</p>
+
+    <!-- Wall Art gallery -->
+    <div class="dp-head">
+      <hr class="dp-rule" />
+      <h2>Wall Art — The Collector Line</h2>
+      <p class="dp-note">Every colony's embroidered panel, reproduced true to the thread — framed, on canvas, in metal or acrylic, or as an unframed art print.</p>
     </div>
 
-    <div class="feat-grid">
-      <a class="card art" href="03-catalog.html">
-        <div class="shot">
-          <span class="flag">Framed Print</span><span class="badge commem">250th</span>
-          <div class="inner"><span>Framed Print</span></div>
-          <div class="quick">View sizes</div>
-        </div>
-        <div class="info"><div class="k">Wall Art</div>
-          <div class="nm">Framed Print</div>
-          <div class="dsc serif">Solid wood frame, museum mat, ready to hang.</div>
-          <div class="price"><span class="from">from</span>$90</div></div>
+    <div class="dp-feat-grid">
+      <a class="dp-card" href="03-catalog.html">
+        <figure>
+          <img src="assets/proofs/pennsylvania_art_v1.jpg" alt="Pennsylvania panel — collector art, framed print format" />
+          <figcaption>
+            <span class="dp-label">Framed Print</span>
+            <span class="dp-price">from $90</span>
+          </figcaption>
+        </figure>
       </a>
-
-      <a class="card art" href="03-catalog.html">
-        <div class="shot">
-          <span class="flag">Canvas Print</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Canvas Print</span></div>
-          <div class="quick">View sizes</div>
-        </div>
-        <div class="info"><div class="k">Wall Art</div>
-          <div class="nm">Canvas Print</div>
-          <div class="dsc serif">Gallery-wrapped canvas, no frame needed.</div>
-          <div class="price"><span class="from">from</span>$90</div></div>
+      <a class="dp-card" href="03-catalog.html">
+        <figure>
+          <img src="assets/proofs/georgia_art_v1.jpg" alt="Georgia panel — collector art, canvas print format" />
+          <figcaption>
+            <span class="dp-label">Canvas Print</span>
+            <span class="dp-price">from $90</span>
+          </figcaption>
+        </figure>
       </a>
-
-      <a class="card art" href="03-catalog.html">
-        <div class="shot">
-          <span class="flag">Metal &amp; Acrylic</span><span class="badge new">New</span>
-          <div class="inner"><span>Metal &amp; Acrylic</span></div>
-          <div class="quick">View sizes</div>
-        </div>
-        <div class="info"><div class="k">Wall Art</div>
-          <div class="nm">Metal &amp; Acrylic Print</div>
-          <div class="dsc serif">HD metal or acrylic, vivid modern finish.</div>
-          <div class="price"><span class="from">from</span>$150</div></div>
+      <a class="dp-card" href="03-catalog.html">
+        <figure>
+          <img src="assets/proofs/south-carolina_art_v1.jpg" alt="South Carolina panel — collector art, metal and acrylic print format" />
+          <figcaption>
+            <span class="dp-label">Metal &amp; Acrylic</span>
+            <span class="dp-price">from $150</span>
+          </figcaption>
+        </figure>
       </a>
-
-      <a class="card art" href="03-catalog.html">
-        <div class="shot">
-          <span class="flag">Art Print</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Art Print</span></div>
-          <div class="quick">View sizes</div>
-        </div>
-        <div class="info"><div class="k">Wall Art</div>
-          <div class="nm">Art Print</div>
-          <div class="dsc serif">Unframed fine-art poster, archival stock.</div>
-          <div class="price"><span class="from">from</span>$25</div></div>
+      <a class="dp-card" href="03-catalog.html">
+        <figure>
+          <img src="assets/proofs/new-hampshire_art_v1.jpg" alt="New Hampshire panel — collector art, unframed art print format" />
+          <figcaption>
+            <span class="dp-label">Art Print</span>
+            <span class="dp-price">from $25</span>
+          </figcaption>
+        </figure>
       </a>
     </div>
 
-    <div class="poster-strip">
-      <div class="plate">
-        <div class="cap">
-          <div class="k">Every State · Souvenir Line</div>
-          <div class="t">Exhibition Poster</div>
-        </div>
+    <div class="dp-poster-strip">
+      <div class="dp-poster-img">
+        <img src="assets/proofs/massachusetts_poster_v1.jpg" alt="Massachusetts Exhibition Poster — navy plate with lockup" />
       </div>
-      <div class="poster-strip-copy">
-        <p class="eyebrow" style="margin-bottom:10px">The souvenir line</p>
+      <div class="dp-poster-copy">
+        <p class="dp-eyebrow">The Souvenir Line</p>
         <h3>The Exhibition Poster</h3>
         <p class="serif">The souvenir of the 250th. Every state, navy ground, from $15.</p>
         <a class="btn btn-primary" href="03-catalog.html">Shop the Exhibition Poster</a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ================= 13-COLONY PICKER ================= -->
-<section class="section tint" id="picker">
-  <div class="wrap">
-    <div class="index-lead">
+    <!-- 13-Colony picker -->
+    <div class="dp-index-lead" id="picker">
       <div>
-        <p class="eyebrow">The Colony Index</p>
+        <p class="dp-eyebrow">The Colony Index</p>
         <h2>Enter through your state</h2>
       </div>
-      <p class="note serif">Thirteen panels. Select one to see its story and every piece drawn from it.</p>
+      <p class="dp-note">Thirteen panels. Select one to see its story and every piece drawn from it.</p>
     </div>
 
-    <div class="colony-grid">
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Ct</span></div><div class="meta"><div class="nm">Connecticut</div><div class="rw"><span class="est">Panel I · 9 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">De</span></div><div class="meta"><div class="nm">Delaware</div><div class="rw"><span class="est">Panel II · 7 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Ga</span></div><div class="meta"><div class="nm">Georgia</div><div class="rw"><span class="est">Panel III · 8 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Md</span></div><div class="meta"><div class="nm">Maryland</div><div class="rw"><span class="est">Panel IV · 8 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Ma</span></div><div class="meta"><div class="nm">Massachusetts</div><div class="rw"><span class="est">Panel V · 11 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Nh</span></div><div class="meta"><div class="nm">New Hampshire</div><div class="rw"><span class="est">Panel VI · 7 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Nj</span></div><div class="meta"><div class="nm">New Jersey</div><div class="rw"><span class="est">Panel VII · 8 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Ny</span></div><div class="meta"><div class="nm">New York</div><div class="rw"><span class="est">Panel VIII · 12 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Nc</span></div><div class="meta"><div class="nm">North Carolina</div><div class="rw"><span class="est">Panel IX · 8 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Pa</span></div><div class="meta"><div class="nm">Pennsylvania</div><div class="rw"><span class="est">Panel X · 10 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Ri</span></div><div class="meta"><div class="nm">Rhode Island</div><div class="rw"><span class="est">Panel XI · 7 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Sc</span></div><div class="meta"><div class="nm">South Carolina</div><div class="rw"><span class="est">Panel XII · 8 pieces</span><span class="arrow">→</span></div></div></a>
-      <a class="colony" href="02-state.html"><div class="tile"><span class="abbr">Va</span></div><div class="meta"><div class="nm">Virginia</div><div class="rw"><span class="est">Panel XIII · 10 pieces</span><span class="arrow">→</span></div></div></a>
-      <!-- 14th tile = all-13 composite destination -->
-      <a class="colony composite" href="03-catalog.html"><div class="tile"><span class="abbr">All 13</span></div><div class="meta"><div class="nm">The Composite</div><div class="rw"><span class="est">All-states editions</span><span class="arrow">→</span></div></div></a>
+    <div class="dp-colony-grid">
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/connecticut_art_v1.jpg" alt="Connecticut panel" />
+        <figcaption><span class="num">I</span><span class="nm">Connecticut</span><span class="sub">Panel I · 9 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/delaware_art_v1.jpg" alt="Delaware panel" />
+        <figcaption><span class="num">II</span><span class="nm">Delaware</span><span class="sub">Panel II · 7 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/georgia_art_v1.jpg" alt="Georgia panel" />
+        <figcaption><span class="num">III</span><span class="nm">Georgia</span><span class="sub">Panel III · 8 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/maryland_art_v1.jpg" alt="Maryland panel" />
+        <figcaption><span class="num">IV</span><span class="nm">Maryland</span><span class="sub">Panel IV · 8 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/massachusetts_art_v1.jpg" alt="Massachusetts panel" />
+        <figcaption><span class="num">V</span><span class="nm">Massachusetts</span><span class="sub">Panel V · 11 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/new-hampshire_art_v1.jpg" alt="New Hampshire panel" />
+        <figcaption><span class="num">VI</span><span class="nm">New Hampshire</span><span class="sub">Panel VI · 7 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/new-jersey_art_v1.jpg" alt="New Jersey panel" />
+        <figcaption><span class="num">VII</span><span class="nm">New Jersey</span><span class="sub">Panel VII · 8 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/new-york_art_v1.jpg" alt="New York panel" />
+        <figcaption><span class="num">VIII</span><span class="nm">New York</span><span class="sub">Panel VIII · 12 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/north-carolina_art_v1.jpg" alt="North Carolina panel" />
+        <figcaption><span class="num">IX</span><span class="nm">North Carolina</span><span class="sub">Panel IX · 8 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/pennsylvania_art_v1.jpg" alt="Pennsylvania panel" />
+        <figcaption><span class="num">X</span><span class="nm">Pennsylvania</span><span class="sub">Panel X · 10 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/rhode-island_art_v1.jpg" alt="Rhode Island panel" />
+        <figcaption><span class="num">XI</span><span class="nm">Rhode Island</span><span class="sub">Panel XI · 7 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/south-carolina_art_v1.jpg" alt="South Carolina panel" />
+        <figcaption><span class="num">XII</span><span class="nm">South Carolina</span><span class="sub">Panel XII · 8 pieces</span></figcaption></figure>
+      </a>
+      <a class="dp-colony" href="02-state.html">
+        <figure><img src="assets/proofs/virginia_art_v1.jpg" alt="Virginia panel" />
+        <figcaption><span class="num">XIII</span><span class="nm">Virginia</span><span class="sub">Panel XIII · 10 pieces</span></figcaption></figure>
+      </a>
+      <!-- 14th tile = all-13 composite destination — no photo exists, quiet navy/gold design -->
+      <a class="dp-colony composite" href="03-catalog.html">
+        <figure><span>All 13</span></figure>
+        <figcaption><span class="nm">The Composite</span><span class="sub">All-states editions</span></figcaption>
+      </a>
     </div>
+
   </div>
 </section>
 
-<!-- ================= CURATED ENTRY POINTS ================= -->
+<!-- ================= CURATED ENTRY POINTS (light — unchanged) ================= -->
 <section class="section tint" id="gifts">
   <div class="wrap">
     <div class="sec-head">
@@ -438,7 +430,7 @@
   </div>
 </section>
 
-<!-- ================= STORY STRIP ================= -->
+<!-- ================= STORY STRIP (dark — unchanged) ================= -->
 <section class="story" id="story">
   <div class="wrap">
     <div>
@@ -451,7 +443,7 @@
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER (unchanged) ================= -->
 <footer class="site">
   <div class="wrap">
     <div class="foot-grid">

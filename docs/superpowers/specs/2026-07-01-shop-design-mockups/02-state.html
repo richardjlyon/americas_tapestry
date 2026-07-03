@@ -77,6 +77,7 @@
   /* art-only plate — collector line: full-bleed art, no navy ground, no text lockup */
   .sh-plate .plate.art{background:var(--art-tile);}
   .sh-plate .plate.art::before{display:none;}
+  .sh-plate .plate.art img{width:100%;height:100%;object-fit:cover;}
   .sh-plate .cap{position:relative;padding:22px 24px;color:var(--parchment);}
   .sh-plate .cap .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;}
   .sh-plate .cap .t{font-family:'EB Garamond',serif;font-size:24px;font-style:italic;margin-top:4px;}
@@ -92,52 +93,6 @@
   .sh-facts .f{padding-left:16px;border-left:2px dashed var(--gold);}
   .sh-cta{display:flex;gap:14px;flex-wrap:wrap;}
 
-  /* type quick-nav (in-page anchors, all one grid) */
-  .typenav{border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .typenav .wrap{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-top:16px;padding-bottom:16px;}
-  .typenav .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:8px;}
-  .typenav a{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--navy);padding:7px 14px;border:1px solid var(--line);border-radius:999px;transition:all .2s;}
-  .typenav a:hover{border-color:var(--gold);color:var(--burgundy);}
-  .typenav a.on{background:var(--navy);color:var(--parchment);border-color:var(--navy);}
-
-  /* ============ PRODUCTS ============ */
-  .products{padding:60px 0 90px;}
-  .prod-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px;}
-  .prod-head h2{font-weight:800;font-size:30px;color:var(--navy);margin:8px 0 0;letter-spacing:-.01em;}
-  .prod-head .cnt{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:16px;}
-
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 30px;}
-  .card{background:var(--white);position:relative;transition:transform .25s;}
-  .card:hover{transform:translateY(-5px);}
-  .card .shot{aspect-ratio:4/5;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--cream);display:flex;align-items:center;justify-content:center;}
-  .card .shot .inner{position:absolute;inset:14px;border:1px dashed rgba(26,43,69,.18);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;
-    background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.14), transparent 60%),linear-gradient(160deg,#f7efe0,#efe2c9);}
-  .card.dk .shot .inner{background:radial-gradient(120% 100% at 30% 12%, rgba(232,185,3,.22), transparent 60%),linear-gradient(150deg,var(--navy),var(--burgundy));}
-  .card.dk .shot .inner span{color:var(--parchment);}
-  .card .shot .inner span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);font-weight:700;line-height:1.5;}
-  /* art-only card tile — collector line: full-bleed art cropped to a muslin border, label lives in the card meta below, not on the art */
-  .card.art .shot{border:6px solid var(--cream);}
-  .card.art .shot .inner{position:absolute;inset:0;border:0;background:var(--art-tile);}
-  .card.art .shot .inner span{display:none;}
-  .card .shot .flag{position:absolute;top:14px;left:14px;z-index:2;background:var(--navy);color:var(--parchment);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:6px 11px;}
-  .badge{position:absolute;top:14px;right:14px;z-index:2;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 10px;background:rgba(255,255,255,.94);color:var(--burgundy);}
-  .badge.in{color:#2f6b3a;}
-  .badge.best{background:var(--gold);color:var(--navy);}
-  .badge.new{background:var(--burgundy);color:#fff;}
-  .badge.signed{background:var(--navy);color:var(--gold);}
-  .badge.soon{background:rgba(26,43,69,.9);color:var(--parchment);}
-  .badge.commem{background:var(--gold);color:var(--navy);font-size:8px;padding:4px 8px;letter-spacing:.1em;}
-  .card .shot .quick{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;background:var(--navy);color:var(--parchment);text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:12px;opacity:0;transform:translateY(8px);transition:all .25s;}
-  .card .shot .quick.notify{background:transparent;color:var(--parchment);border:1px solid var(--gold);}
-  .card:hover .shot .quick{opacity:1;transform:translateY(0);}
-  .card .info{padding:16px 4px 0;}
-  .card .info .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--burgundy);font-weight:700;}
-  .card .info .nm{font-weight:700;font-size:16px;color:var(--navy);margin:7px 0 2px;line-height:1.3;}
-  .card .info .dsc{font-family:'EB Garamond',serif;font-size:14px;color:var(--muted);}
-  .card .info .price{margin-top:9px;font-weight:700;font-size:15px;color:var(--navy);}
-  .card .info .price .from{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:5px;}
-  .card .info .price s{color:#b9b1a2;font-weight:600;margin-left:7px;}
-
   /* ============ STORY BLOCK ============ */
   .story{background:var(--navy);color:var(--parchment);}
   .story .wrap{padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
@@ -146,7 +101,11 @@
   .story .by{margin-top:24px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,233,213,.7);font-weight:600;}
   .story .art{aspect-ratio:3/2;position:relative;background:radial-gradient(100% 120% at 80% 0%, rgba(232,185,3,.2), transparent 55%),linear-gradient(150deg,#233a5e,var(--burgundy));border:1px solid rgba(244,233,213,.2);}
   .story .art::before{content:"";position:absolute;inset:14px;border:1px dashed rgba(244,233,213,.3);}
-  .story .art .lab{position:absolute;bottom:18px;left:20px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .story .art .lab{position:absolute;bottom:18px;left:20px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;z-index:1;}
+  /* real-photo variant — swaps the gradient placeholder for an actual panel detail */
+  .story .art.photo{background:none;overflow:hidden;}
+  .story .art.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .story .art.photo::before{z-index:1;}
 
   /* neighboring states strip */
   .near{padding:70px 0 20px;}
@@ -162,6 +121,11 @@
   .mini .t::before{content:"";position:absolute;inset:9px;border:1px dashed rgba(244,233,213,.36);}
   .mini .t .abbr{position:relative;font-family:'EB Garamond',serif;font-style:italic;font-size:30px;color:rgba(244,233,213,.92);}
   .mini.alt .t .abbr{font-size:16px;letter-spacing:.14em;text-transform:uppercase;font-family:'Montserrat';font-weight:700;font-style:normal;color:var(--gold);}
+  /* real-photo tile — neighboring states + book cover, real imagery instead of gradient placeholder */
+  .mini.photo .t{background:var(--cream);}
+  .mini.photo .t::before{display:none;}
+  .mini.photo .t img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .mini.photo.book .t img{object-fit:contain;padding:14px;}
   .mini .m{padding:12px 14px;display:flex;justify-content:space-between;align-items:center;}
   .mini .m .nm{font-weight:700;font-size:14px;color:var(--navy);}
   .mini .m .e{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;}
@@ -176,17 +140,61 @@
   .foot-brand p{font-family:'EB Garamond',serif;font-size:15px;color:var(--muted);max-width:34ch;margin:12px 0 0;}
   .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:.04em;}
 
+  /* ================================================================
+     DARK EXHIBITION PASSAGE — matched verbatim to 01-landing.html
+     ================================================================ */
+  .dark-passage{
+    --dp-navy:#1e2b45; --dp-navy-deep:#141d2e; --dp-cream:#ECE7D4;
+    --dp-cream-dim:#c8c2ad;      /* for >=14px italic copy, matches proofs exactly */
+    --dp-cream-dim-sm:#d8d2bd;   /* lightened for <14px uppercase labels — AA on navy */
+    position:relative;
+    background:linear-gradient(180deg,#2a3c5c 0%, var(--dp-navy) 9%, var(--dp-navy) 58%, var(--dp-navy-deep) 100%);
+    color:var(--dp-cream);
+    padding:104px 0 108px;
+  }
+  .dark-passage::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:70px;height:2px;background:var(--gold);opacity:.85;}
+  .dark-passage .wrap{position:relative;}
+
+  .dp-head{max-width:640px;margin:0 auto 50px;text-align:center;}
+  .dp-rule{width:70px;height:1px;background:var(--dp-cream-dim);opacity:.5;margin:0 auto 18px;border:0;}
+  .dp-head h2{
+    font-family:'EB Garamond',Georgia,serif;font-weight:400;text-transform:uppercase;
+    letter-spacing:.28em;font-size:1.65rem;color:var(--dp-cream);margin:0 0 16px;
+  }
+  .dp-note{font-family:'EB Garamond',Georgia,serif;font-style:italic;color:var(--dp-cream-dim);font-size:16px;margin:0;line-height:1.6;}
+  .dp-eyebrow{font-family:'Montserrat';font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 12px;}
+
+  /* dark type quick-nav — cream outline pills, gold active */
+  .dark-passage .typenav-dk{margin-bottom:44px;}
+  .dark-passage .typenav-dk .wrap{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;padding:0;}
+  .dark-passage .typenav-dk .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dp-cream-dim-sm);font-weight:700;margin-right:8px;}
+  .dark-passage .typenav-dk a{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--dp-cream);padding:7px 14px;border:1px solid rgba(236,231,212,.4);border-radius:999px;transition:all .2s;}
+  .dark-passage .typenav-dk a:hover{border-color:var(--gold);color:var(--gold);}
+  .dark-passage .typenav-dk a.on{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+
+  /* chrome-free product cards — image + deep shadow + hover lift + caption below */
+  .dp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 30px;}
+  .dp-pcard{display:block;}
+  .dp-pcard figure{margin:0;line-height:0;}
+  .dp-pcard img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;box-shadow:0 10px 32px rgba(0,0,0,.45);transition:transform .22s ease,box-shadow .22s ease;}
+  .dp-pcard:hover img{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.6);}
+  .dp-pcard figcaption{margin-top:14px;text-align:center;line-height:1.5;}
+  .dp-pcard .dp-label{display:block;font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:14px;color:var(--dp-cream-dim);}
+  .dp-pcard .dp-flag{display:block;margin-top:2px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dp-cream-dim-sm);font-weight:600;}
+  .dp-pcard .dp-price{display:block;margin-top:4px;font-family:'Montserrat';font-weight:700;font-size:15px;color:var(--dp-cream);letter-spacing:.02em;}
+
   @media(max-width:900px){
     .sh-grid,.story .wrap{grid-template-columns:1fr;gap:40px;}
-    .grid{grid-template-columns:repeat(2,1fr);}
     .near-grid{grid-template-columns:repeat(2,1fr);}
     .foot-grid{grid-template-columns:1fr 1fr;}
     .sh-copy h1{font-size:42px;}
     .nav-links{display:none;}
+    .dp-grid{grid-template-columns:repeat(2,1fr);}
   }
   @media(max-width:600px){
     .wrap{padding:0 22px;}
-    .grid,.near-grid{grid-template-columns:1fr;}
+    .near-grid{grid-template-columns:1fr;}
+    .dp-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -222,7 +230,7 @@
 <section class="state-hero">
   <div class="wrap sh-grid">
     <div class="sh-plate">
-      <div class="plate art"></div>
+      <div class="plate art"><img src="assets/proofs/georgia_art_v1.jpg" alt="Georgia panel — embroidered detail" /></div>
       <div class="plaque">
         <span>Colony of Georgia · 1732</span>
         <span class="r">On tour · 2026</span>
@@ -245,82 +253,108 @@
   </div>
 </section>
 
-<!-- type quick-nav: still one grid, just anchored views -->
-<nav class="typenav">
+<!-- ================= DARK EXHIBITION PASSAGE — Georgia products ================= -->
+<section class="dark-passage" id="pieces">
   <div class="wrap">
-    <span class="lbl">Jump to</span>
-    <a class="on" href="#pieces">All</a>
-    <a href="#pieces">Framed</a>
-    <a href="#pieces">Canvas</a>
-    <a href="#pieces">Metal &amp; Acrylic</a>
-    <a href="#pieces">Art Prints</a>
-    <a href="#pieces">Exhibition Poster</a>
-    <a href="#pieces">Greeting Cards</a>
-    <a href="#pieces">Postcards</a>
-  </div>
-</nav>
 
-<!-- ================= ALL GEORGIA PRODUCTS ================= -->
-<section class="products" id="pieces">
-  <div class="wrap">
-    <div class="prod-head">
-      <div>
-        <p class="eyebrow">Panel III · Georgia</p>
-        <h2>Everything from the Georgia panel</h2>
+    <div class="dp-head">
+      <hr class="dp-rule" />
+      <p class="dp-eyebrow">Panel III · Georgia</p>
+      <h2>Everything from the Georgia panel</h2>
+      <p class="dp-note">7 products · wall art to postcards, every piece drawn from this single embroidered work.</p>
+    </div>
+
+    <!-- type quick-nav: still one grid, just anchored views -->
+    <nav class="typenav-dk">
+      <div class="wrap">
+        <span class="lbl">Jump to</span>
+        <a class="on" href="#pieces">All</a>
+        <a href="#pieces">Framed</a>
+        <a href="#pieces">Canvas</a>
+        <a href="#pieces">Metal &amp; Acrylic</a>
+        <a href="#pieces">Art Prints</a>
+        <a href="#pieces">Exhibition Poster</a>
+        <a href="#pieces">Greeting Cards</a>
+        <a href="#pieces">Postcards</a>
       </div>
-      <span class="cnt">7 products · wall art to postcards</span>
+    </nav>
+
+    <div class="dp-grid">
+      <a class="dp-pcard" href="04-product.html">
+        <figure>
+          <img src="assets/proofs/georgia_art_v1.jpg" alt="Georgia panel — collector art, framed print format" />
+          <figcaption>
+            <span class="dp-label">Framed Print</span>
+            <span class="dp-price">from $90</span>
+          </figcaption>
+        </figure>
+      </a>
+
+      <a class="dp-pcard" href="04-product.html">
+        <figure>
+          <img src="assets/proofs/georgia_art_v1.jpg" alt="Georgia panel — collector art, canvas print format" />
+          <figcaption>
+            <span class="dp-label">Canvas Print</span>
+            <span class="dp-price">from $90</span>
+          </figcaption>
+        </figure>
+      </a>
+
+      <a class="dp-pcard" href="04-product.html">
+        <figure>
+          <img src="assets/proofs/georgia_art_v1.jpg" alt="Georgia panel — collector art, metal and acrylic print format" />
+          <figcaption>
+            <span class="dp-label">Metal &amp; Acrylic</span>
+            <span class="dp-price">from $150</span>
+          </figcaption>
+        </figure>
+      </a>
+
+      <a class="dp-pcard" href="04-product.html">
+        <figure>
+          <img src="assets/proofs/georgia_art_v1.jpg" alt="Georgia panel — collector art, unframed art print format" />
+          <figcaption>
+            <span class="dp-label">Art Print</span>
+            <span class="dp-price">from $25</span>
+          </figcaption>
+        </figure>
+      </a>
+
+      <a class="dp-pcard" href="04-product.html">
+        <figure>
+          <img src="assets/proofs/georgia_poster_v1.jpg" alt="Georgia Exhibition Poster — navy plate with lockup" />
+          <figcaption>
+            <span class="dp-label">Exhibition Poster</span>
+            <span class="dp-price">from $15</span>
+          </figcaption>
+        </figure>
+      </a>
+
+      <!-- Greeting-Card Set: product photo doesn't exist yet — using panel art as placeholder, distinguished by caption flag -->
+      <a class="dp-pcard" href="04-product.html">
+        <figure>
+          <img src="assets/proofs/georgia_art_v1.jpg" alt="Georgia panel — greeting-card set (placeholder art, product photo pending)" />
+          <figcaption>
+            <span class="dp-label">Greeting-Card Set</span>
+            <span class="dp-flag">Boxed set of 8</span>
+            <span class="dp-price">$28</span>
+          </figcaption>
+        </figure>
+      </a>
+
+      <!-- Postcards Pack of 10: product photo doesn't exist yet — using panel art as placeholder, distinguished by caption flag -->
+      <a class="dp-pcard" href="04-product.html">
+        <figure>
+          <img src="assets/proofs/georgia_art_v1.jpg" alt="Georgia panel — postcards pack of 10 (placeholder art, product photo pending)" />
+          <figcaption>
+            <span class="dp-label">Postcards</span>
+            <span class="dp-flag">Pack of 10</span>
+            <span class="dp-price">$20</span>
+          </figcaption>
+        </figure>
+      </a>
     </div>
 
-    <div class="grid">
-      <a class="card art" href="04-product.html">
-        <div class="shot"><span class="flag">Framed Print</span><span class="badge commem">250th</span>
-          <div class="inner"><span>Georgia<br>Framed Print</span></div><div class="quick">View sizes</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Framed Print</div>
-          <div class="dsc serif">Solid wood frame, museum mat, ready to hang.</div><div class="price"><span class="from">from</span>$90</div></div>
-      </a>
-
-      <a class="card art" href="04-product.html">
-        <div class="shot"><span class="flag">Canvas Print</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Georgia<br>Canvas Print</span></div><div class="quick">View sizes</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Canvas Print</div>
-          <div class="dsc serif">Gallery-wrapped canvas, no frame needed.</div><div class="price"><span class="from">from</span>$90</div></div>
-      </a>
-
-      <a class="card art" href="04-product.html">
-        <div class="shot"><span class="flag">Metal &amp; Acrylic</span><span class="badge new">New</span>
-          <div class="inner"><span>Georgia<br>Metal &amp; Acrylic Print</span></div><div class="quick">View sizes</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Metal &amp; Acrylic Print</div>
-          <div class="dsc serif">HD metal or acrylic, vivid modern finish.</div><div class="price"><span class="from">from</span>$150</div></div>
-      </a>
-
-      <a class="card art" href="04-product.html">
-        <div class="shot"><span class="flag">Art Print</span><span class="badge in">In stock</span>
-          <div class="inner"><span>Georgia<br>Art Print</span></div><div class="quick">View sizes</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Art Print</div>
-          <div class="dsc serif">Unframed fine-art poster, archival stock.</div><div class="price"><span class="from">from</span>$25</div></div>
-      </a>
-
-      <a class="card dk" href="04-product.html">
-        <div class="shot"><span class="flag">Exhibition Poster</span>
-          <div class="inner"><span>Georgia<br>Exhibition Poster</span></div><div class="quick">View sizes</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Exhibition Poster</div>
-          <div class="dsc serif">The exhibition composition on heavyweight poster stock.</div><div class="price"><span class="from">from</span>$15</div></div>
-      </a>
-
-      <a class="card dk" href="04-product.html">
-        <div class="shot"><span class="flag">Greeting Cards</span><span class="badge commem">250th</span>
-          <div class="inner"><span>Georgia<br>Greeting-Card Set</span></div><div class="quick">Quick add — $28</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Greeting-Card Set</div>
-          <div class="dsc serif">Boxed note cards with envelopes, blank interior.</div><div class="price">$28</div></div>
-      </a>
-
-      <a class="card dk" href="04-product.html">
-        <div class="shot"><span class="flag">Postcards</span><span class="badge best">Bestseller</span>
-          <div class="inner"><span>Georgia<br>Pack of 10</span></div><div class="quick">Quick add — $20</div></div>
-        <div class="info"><div class="k">Georgia</div><div class="nm">Georgia Panel — Postcards, Pack of 10</div>
-          <div class="dsc serif">Ten cards from the Trustees' Garden panel.</div><div class="price">$20</div></div>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -333,7 +367,7 @@
       <p class="by">Stitched by the Savannah circle · America's Tapestry Guild</p>
       <div style="margin-top:28px"><a class="btn btn-primary" href="#">Read the full history →</a></div>
     </div>
-    <div class="art"><span class="lab">Detail · Georgia panel · Live oak</span></div>
+    <div class="art photo"><img src="assets/proofs/georgia_art_v1.jpg" alt="Georgia panel detail — live oak" /><span class="lab">Detail · Georgia panel · Live oak</span></div>
   </div>
 </section>
 
@@ -347,11 +381,11 @@
     </div>
     <div class="near-grid">
       <a class="mini alt" href="03-catalog.html"><div class="t"><span class="abbr">2026</span></div><div class="m"><span class="nm">2026 Calendar</span><span class="e">$35</span></div></a>
-      <a class="mini alt" href="04-product.html"><div class="t"><span class="abbr">Book</span></div><div class="m"><span class="nm">The Book</span><span class="e">$45</span></div></a>
+      <a class="mini photo book" href="04-product.html"><div class="t"><img src="assets/cover-front.png" alt="The Making of America's Tapestry — hardcover book cover" /></div><div class="m"><span class="nm">The Book</span><span class="e">$45</span></div></a>
       <a class="mini alt" href="03-catalog.html"><div class="t"><span class="abbr">All 13</span></div><div class="m"><span class="nm">Collect all 13</span><span class="e">All states</span></div></a>
-      <a class="mini" href="02-state.html"><div class="t"><span class="abbr">Sc</span></div><div class="m"><span class="nm">South Carolina</span><span class="e">6 types</span></div></a>
-      <a class="mini" href="02-state.html"><div class="t"><span class="abbr">Nc</span></div><div class="m"><span class="nm">North Carolina</span><span class="e">6 types</span></div></a>
-      <a class="mini" href="02-state.html"><div class="t"><span class="abbr">Va</span></div><div class="m"><span class="nm">Virginia</span><span class="e">6 types</span></div></a>
+      <a class="mini photo" href="02-state.html"><div class="t"><img src="assets/proofs/south-carolina_art_v1.jpg" alt="South Carolina panel" /></div><div class="m"><span class="nm">South Carolina</span><span class="e">7 types</span></div></a>
+      <a class="mini photo" href="02-state.html"><div class="t"><img src="assets/proofs/north-carolina_art_v1.jpg" alt="North Carolina panel" /></div><div class="m"><span class="nm">North Carolina</span><span class="e">7 types</span></div></a>
+      <a class="mini photo" href="02-state.html"><div class="t"><img src="assets/proofs/virginia_art_v1.jpg" alt="Virginia panel" /></div><div class="m"><span class="nm">Virginia</span><span class="e">7 types</span></div></a>
     </div>
   </div>
 </section>
