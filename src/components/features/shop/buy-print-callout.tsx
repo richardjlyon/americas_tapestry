@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { getPrintUrl } from '@/lib/shop-links';
 
@@ -10,8 +11,8 @@ interface BuyPrintCalloutProps {
 
 /**
  * Drives warm tapestry-page traffic to the print shop. Renders an aside with a
- * single external call-to-action linking to the colony's product (or the
- * collection page until that product is live).
+ * single call-to-action into the on-site shop (per-colony product pages take
+ * over when the full storefront ships).
  */
 export function BuyPrintCallout({
   colonySlug,
@@ -29,9 +30,7 @@ export function BuyPrintCallout({
         printed and shipped to your door.
       </p>
       <Button asChild variant="colonial-gold" size="lg" className="mt-4">
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          Shop {colonyName} prints
-        </a>
+        <Link href={href}>Shop {colonyName} prints</Link>
       </Button>
     </aside>
   );

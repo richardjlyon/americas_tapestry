@@ -1,27 +1,17 @@
-import {
-  getPrintUrl,
-  PRINT_PRODUCT_HANDLES,
-  SHOP_BASE_URL,
-} from '@/lib/shop-links';
+import { getPrintUrl, SHOP_PATH } from '@/lib/shop-links';
 
-describe('getPrintUrl', () => {
-  it('returns the collection URL when the colony has no live handle', () => {
-    expect(getPrintUrl('delaware')).toBe(
-      `${SHOP_BASE_URL}/collections/fine-art-prints`,
-    );
+describe('shop links (headless interim)', () => {
+  it('exposes the on-site shop path', () => {
+    expect(SHOP_PATH).toBe('/shop');
   });
 
-  it('returns the product URL when a handle is set', () => {
-    PRINT_PRODUCT_HANDLES['connecticut'] = 'connecticut-fine-art-print';
-    expect(getPrintUrl('connecticut')).toBe(
-      `${SHOP_BASE_URL}/products/connecticut-fine-art-print`,
-    );
-    PRINT_PRODUCT_HANDLES['connecticut'] = null; // reset shared state
+  it('routes every colony print CTA to the on-site shop', () => {
+    expect(getPrintUrl('delaware')).toBe('/shop');
+    expect(getPrintUrl('connecticut')).toBe('/shop');
   });
 
-  it('falls back to the collection URL for an unknown slug', () => {
-    expect(getPrintUrl('atlantis')).toBe(
-      `${SHOP_BASE_URL}/collections/fine-art-prints`,
-    );
+  it('never produces an external URL, even for unknown slugs', () => {
+    expect(getPrintUrl('atlantis')).toBe('/shop');
+    expect(getPrintUrl('atlantis')).not.toMatch(/^https?:\/\//);
   });
 });
