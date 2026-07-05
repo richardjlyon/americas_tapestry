@@ -322,11 +322,17 @@ export async function getTeamMembersByState(stateName: string) {
     (member) => member.state === stateName,
   );
 
-  // Find individual stitchers assigned to this state
+  // Find individual stitchers assigned to this state - handle both single
+  // state and array of states (a stitcher may contribute to several panels)
   const stitchersAll = await getTeamMembersByGroup('stitchers');
-  const stitchers = stitchersAll.filter(
-    (member) => member.state === stateName,
-  );
+  const stitchers = stitchersAll.filter((member) => {
+    // Check if member.state is an array and contains stateName
+    if (Array.isArray(member.state) && member.state.includes(stateName)) {
+      return true;
+    }
+    // Check if member.state is a string that matches stateName
+    return member.state === stateName;
+  });
 
   // Find 250 commission partners
   const commissionPartnersAll = await getTeamMembersByGroup('250-commission');

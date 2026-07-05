@@ -11,6 +11,13 @@ import { StitchingGroupPlaceholder } from './stitching-group-placeholder';
 import { ContentCard } from '@/components/ui/content-card';
 import { ImageLightbox } from '@/components/ui/image-lightbox';
 
+// Format a member's state(s) for inline display. A stitcher may contribute to
+// several panels, in which case `state` is an array; join it readably.
+function formatMemberState(state: TeamMember['state']): string {
+  if (!state) return '';
+  return Array.isArray(state) ? state.join(', ') : state;
+}
+
 interface MemberCardProps {
   member: TeamMember;
   variant?: 'grid' | 'full' | 'simple';
@@ -182,7 +189,7 @@ export function MemberCard({
           </h3>
           <p className="font-serif text-colonial-burgundy mb-3">
             {member.role}
-            {member.state ? `, ${member.state}` : ''}
+            {formatMemberState(member.state) ? `, ${formatMemberState(member.state)}` : ''}
           </p>
 
           {member.groupSlug === 'stitching-groups' &&
@@ -417,7 +424,7 @@ export function MemberCard({
                 </h2>
                 <p className="font-serif text-xl text-colonial-burgundy mt-1">
                   {member.role}
-                  {member.state ? `, ${member.state}` : ''}
+                  {formatMemberState(member.state) ? `, ${formatMemberState(member.state)}` : ''}
                 </p>
               </div>
               <div
@@ -449,7 +456,7 @@ export function MemberCard({
           onClose={() => setLightboxOpen(false)}
           src={getImageSrc(currentImageIndex)}
           alt={`${member.name} ${currentImageIndex + 1}`}
-          title={`${member.name} - ${member.role}${member.state ? `, ${member.state}` : ''} (${currentImageIndex + 1}/${getImageCount()})`}
+          title={`${member.name} - ${member.role}${formatMemberState(member.state) ? `, ${formatMemberState(member.state)}` : ''} (${currentImageIndex + 1}/${getImageCount()})`}
           showNavigation={getImageCount() > 1}
           onPrevious={
             getImageCount() > 1
@@ -513,7 +520,7 @@ export function MemberCard({
           </h4>
           <p className="font-serif text-colonial-burgundy text-sm">
             {member.role}
-            {member.state ? `, ${member.state}` : ''}
+            {formatMemberState(member.state) ? `, ${formatMemberState(member.state)}` : ''}
           </p>
         </div>
       </div>
