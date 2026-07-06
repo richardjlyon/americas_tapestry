@@ -16,7 +16,13 @@ export function SiteBreadcrumb() {
   const pathname = usePathname();
 
   // Skip rendering breadcrumbs on home page and exhibitions
-  if (pathname === '/' || pathname === '/exhibitions') {
+  // Dark Night Gallery routes render without the light breadcrumb bar; a
+  // site-wide dark breadcrumb treatment lands in Phase 3d.
+  if (
+    pathname === '/' ||
+    pathname === '/exhibitions' ||
+    pathname.startsWith('/tapestries')
+  ) {
     return null;
   }
 
