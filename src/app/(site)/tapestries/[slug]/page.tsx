@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { AccessibleAudioPlayer } from '@/components/shared/accessible-audio-player';
 import { Button } from '@/components/ui/button';
 import { FramedArtwork } from '@/components/ui/framed-artwork';
+import { TapestryLightbox } from '@/components/features/tapestries/tapestry-lightbox';
 import { getPrintUrl } from '@/lib/shop-links';
 import { TeamCard } from '@/components/features/tapestries/team-card';
 import { MemberCard } from '@/components/features/team/member-card';
@@ -115,12 +116,19 @@ export default async function TapestryPage({
       <div className="bg-colonial-navy">
         <div className="container mx-auto py-16 md:py-20">
           <div className="grid items-center gap-10 md:grid-cols-[minmax(0,26rem)_1fr] md:gap-16">
-            <FramedArtwork
-              src={imageSrc}
-              alt={`The ${tapestry.title} tapestry panel, photographed as fine art`}
-              framed
-              className="mx-auto w-full max-w-[26rem]"
-            />
+            <div className="mx-auto w-full max-w-[26rem]">
+              <FramedArtwork
+                src={imageSrc}
+                alt={`The ${tapestry.title} tapestry panel, photographed as fine art`}
+                framed
+              />
+              <div className="mt-4 text-center">
+                <TapestryLightbox
+                  src={imageSrc}
+                  alt={`The ${tapestry.title} tapestry panel`}
+                />
+              </div>
+            </div>
             <div className="text-center md:text-left">
               <span className="eyebrow eyebrow-gold">
                 The Tapestry Collection
