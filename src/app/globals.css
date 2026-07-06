@@ -219,27 +219,6 @@
    * UI COMPONENTS
    ***************************************/
 
-  /* Status indicators */
-  .status-badge {
-    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
-  }
-
-  .status-not-started {
-    @apply bg-primary text-white;
-  }
-
-  .status-designed {
-    @apply bg-colonial-navy text-colonial-parchment;
-  }
-
-  .status-in-production {
-    @apply bg-secondary text-white;
-  }
-
-  .status-finished {
-    @apply bg-accent text-primary;
-  }
-
   /***************************************
    * NIGHT GALLERY (exhibition-phase design system)
    * Dark navy rooms for art, cream plates for reading. Values
