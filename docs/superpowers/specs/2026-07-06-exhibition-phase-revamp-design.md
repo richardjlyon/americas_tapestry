@@ -110,6 +110,23 @@ Generalize the shop's proven treatment into named, shared tokens and components:
 
 ## Phase 3 — Page-by-page restyle + exhibition features
 
+**Working principle (per Richard, 2026-07-06): every page gets a structural critique
+before it gets restyled** — the review an experienced designer applies: does each
+element still earn its place in the exhibition phase? Remove/simplify first, then
+apply the Night Gallery treatment to what remains. Concrete decisions already made:
+
+- **/tapestries**: DELETE the production-status key and per-card status badges — all
+  13 panels are Finished, so the entire status UI is dead machinery (also retire the
+  `status !== 'Not Started'` filters and, where it becomes unreferenced, the
+  TapestryStatus badge vocabulary in tapestry-card.tsx). DELETE the interactive
+  map/zoom component ("the whole map zoom thing is annoying — it can go").
+- **Tapestry cards**: use the fine-art tapestry photographs themselves
+  (the `{slug}-photo.*` images `findPhotoInDirectory` already prefers), not the
+  abstract cropped slices.
+- **Tapestry detail pages**: drop the arbitrary image slice at the top; lead with the
+  fine-art photograph suitably framed (FramedArtwork treatment) combined with a
+  "Shop it now" CTA — this merges with the planned "Take it home" strip.
+
 1. **Home**: dark gallery hero replaces the Ken-Burns carousel — "Now on view" with
    current/next venue + dates computed from `exhibitions.ts`, "Plan your visit" CTA.
    Section order: hero → tapestry collection (framed plates) → Walk the Gallery feature →
