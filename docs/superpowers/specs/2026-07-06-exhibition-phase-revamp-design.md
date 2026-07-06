@@ -128,7 +128,11 @@ Generalize the shop's proven treatment into named, shared tokens and components:
    Team/Sponsors demoted; footer gains Exhibitions + Gallery links (Exhibitions is
    currently absent from footer Quick Links).
 6. **Shop**: trust signals (shipping/returns line, payment-method badges); receives
-   cross-sell traffic. Already on-language otherwise.
+   cross-sell traffic. Already on-language otherwise. Returns policy (per Richard,
+   2026-07-06): during a four-week fulfilment-testing period, replacements but NO
+   refunds for products not up to quality standards — word gently, framed around
+   the volunteer nature of the organization; policy is temporary and revisited
+   after the four weeks.
 7. **3D gallery**: linked from home + nav; graceful mobile/no-WebGL fallback (static
    panorama or image grid) verified before promotion; confirm dynamic import keeps
    three.js out of the main bundle.
