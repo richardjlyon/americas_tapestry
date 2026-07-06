@@ -15,7 +15,7 @@
     "build:clean": "rm -rf .next && node scripts/check-images.mjs && next build",
     "start": "next start",
     "start:clean": "npm run build:clean && npm run start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "check:images": "node scripts/check-images.mjs",
     "format": "npx @biomejs/biome format --write ./src/app ./src/components ./src/lib ./src/hooks",
