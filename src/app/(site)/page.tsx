@@ -30,6 +30,9 @@ export default async function Home() {
   const spotlight = getExhibitionSpotlight(exhibitions);
 
   const withImages = tapestries.filter((t) => t.imagePath || t.thumbnail);
+  // Deliberate: server-only shuffle re-picks the featured panels at each ISR
+  // regeneration (daily). Never runs on the client, so render purity is moot.
+  // eslint-disable-next-line react-hooks/purity
   const shuffled = [...withImages].sort(() => 0.5 - Math.random());
   const heroTapestry = shuffled[0];
   const plateTapestries = shuffled.slice(1, 4);

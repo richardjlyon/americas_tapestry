@@ -14,8 +14,8 @@ export function ProjectStrip() {
         <div className="gold-threshold mt-4" />
         <p className="gallery-lead mt-6">
           Created to commemorate America&rsquo;s 250th anniversary,{' '}
-          <em>America&rsquo;s Tapestry</em> weaves together stories from our
-          nation&rsquo;s founding. Panels were designed with historical
+          <em>America&rsquo;s Tapestry</em>{' '}
+          weaves together stories from our nation&rsquo;s founding. Panels were designed with historical
           organizations in each of the original colonies and stitched over 18
           months by volunteer embroiderers aged 5 to 96.
         </p>
