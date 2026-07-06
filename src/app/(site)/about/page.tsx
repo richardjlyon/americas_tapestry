@@ -1,5 +1,6 @@
 import { PageSection } from "@/components/ui/page-section";
 import { ReadingContainer } from "@/components/ui/reading-container";
+import { VisionSection } from "@/components/features/about/vision-section";
 import Image from "next/image";
 import { pageMetadata } from "@/lib/seo";
 
@@ -92,6 +93,12 @@ export default function AboutPage() {
             our exhibitions page to see where the Tapestry is on display.
           </p>
         </ReadingContainer>
+      </PageSection>
+
+      {/* Our Vision — reinstated here after its removal from the homepage
+          (per Richard, 2026-07-06). */}
+      <PageSection spacing="normal">
+        <VisionSection />
       </PageSection>
     </>
   );
