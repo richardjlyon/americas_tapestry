@@ -37,17 +37,22 @@ export default async function SponsorsPage() {
   const untieredSponsors = sponsorsWithHtml.filter((s) => !s.tier);
 
   return (
-    <>
-      <h1 className="page-heading">Our Sponsors</h1>
+    <div className="bg-colonial-oxblood">
+      <header className="container mx-auto max-w-3xl pt-10 pb-8 text-center">
+        <span className="eyebrow eyebrow-gold">Our Supporters</span>
+        <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">
+          Our Sponsors
+        </h1>
+        <p className="gallery-lead mx-auto mt-3">
+          America's Tapestry is made possible through the generous support of
+          our sponsors. These organizations and institutions share our
+          commitment to preserving and celebrating America's diverse cultural
+          heritage through art, education, and community engagement.
+        </p>
+        <div className="gold-threshold mx-auto mt-5" />
+      </header>
 
-      <p className="lead-text text-center mb-content-lg">
-        America's Tapestry is made possible through the generous support of our
-        sponsors. These organizations and institutions share our commitment to
-        preserving and celebrating America's diverse cultural heritage through
-        art, education, and community engagement.
-      </p>
-
-      <PageSection paddingTop="none">
+      <PageSection paddingTop="none" background="colonial-oxblood">
         {/* Display sponsors with tiers */}
         {Object.keys(sponsorsByTier).length > 0 &&
           Object.entries(sponsorsByTier)
@@ -63,7 +68,7 @@ export default async function SponsorsPage() {
             })
             .map(([tier, tierSponsors]) => (
               <div key={tier} className="mb-12">
-                <h3 className="text-xl font-bold text-colonial-navy mb-6 text-center">
+                <h3 className="gallery-heading text-xl mb-6 text-center">
                   {tier} {tierSponsors.length === 1 ? 'Sponsor' : 'Sponsors'}
                 </h3>
 
@@ -98,7 +103,7 @@ export default async function SponsorsPage() {
           untieredSponsors.length > 0) && (
           <div>
             {Object.keys(sponsorsByTier).length > 0 && (
-              <h3 className="text-xl font-bold text-colonial-navy mb-6 text-center">
+              <h3 className="gallery-heading text-xl mb-6 text-center">
                 Additional Sponsors
               </h3>
             )}
@@ -117,6 +122,6 @@ export default async function SponsorsPage() {
           </div>
         )}
       </PageSection>
-    </>
+    </div>
   );
 }

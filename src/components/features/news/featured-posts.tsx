@@ -10,7 +10,7 @@ export function FeaturedPosts({ posts }: FeaturedPostsProps) {
 
   return (
     <div className="mb-12">
-      <h2 className="section-title text-center mb-6">Featured Articles</h2>
+      <h2 className="gallery-heading text-center text-2xl mb-6">Featured Articles</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <BlogCard key={post.slug} post={post} />

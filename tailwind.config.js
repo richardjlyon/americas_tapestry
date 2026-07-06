@@ -35,6 +35,10 @@ module.exports = {
           vintagePaper: '#f8f3e6',
           parchment: '#f4e9d5',
           frame: '#0b0d12', // Night Gallery near-black moulding
+          // Deep oxblood room surface for the people-and-story wing
+          // (news/about/team/sponsors/contact) — derived from burgundy,
+          // which stays the ACCENT; this is the wall paint.
+          oxblood: '#470d16',
         },
         // System UI colors - mapped to colonial palette
         border: 'hsl(var(--border))',

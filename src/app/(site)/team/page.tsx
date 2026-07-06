@@ -12,24 +12,27 @@ export const metadata = pageMetadata({
 
 export default async function TeamPage() {
   return (
-    <>
-      <h1 className="page-heading">Our Team</h1>
-
-      <div className="lead-text mb-content-md">
-        America's Tapestry is a collaboration between visual artists, historical
-        advisors, and embroidery artisans drawn from each of the original 13
-        states.
-      </div>
+    <div className="bg-colonial-oxblood">
+      <header className="container mx-auto max-w-3xl pt-10 pb-8 text-center">
+        <span className="eyebrow eyebrow-gold">The People</span>
+        <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">Our Team</h1>
+        <p className="gallery-lead mx-auto mt-3">
+          America's Tapestry is a collaboration between visual artists,
+          historical advisors, and embroidery artisans drawn from each of the
+          original 13 states.
+        </p>
+        <div className="gold-threshold mx-auto mt-5" />
+      </header>
 
       {/* Project Director */}
-      <PageSection paddingTop="none" paddingBottom="small">
+      <PageSection paddingTop="none" paddingBottom="small" background="colonial-oxblood">
         <ProjectDirectorSection />
       </PageSection>
 
       {/* Team Groups */}
-      <PageSection hasPin={false} background="vintage-paper">
+      <PageSection hasPin={false} background="colonial-oxblood">
         <TeamGroupsSection />
       </PageSection>
-    </>
+    </div>
   );
 }

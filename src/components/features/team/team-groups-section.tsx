@@ -9,9 +9,9 @@ export async function TeamGroupsSection() {
 
   return (
     <div className="content-spacing-md">
-      <h2 className="section-title text-center">Meet Our Team</h2>
+      <h2 className="gallery-heading text-center text-3xl">Meet Our Team</h2>
 
-      <div className="lead-text mb-content-md">
+      <div className="gallery-lead text-center max-w-3xl mx-auto mb-content-md">
         Meet the talented people and prestigious institutions who worked
         together to create <em>America's Tapestry</em>.
       </div>

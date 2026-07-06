@@ -11,6 +11,7 @@ export interface PageSectionProps {
     | 'authentic-parchment'
     | 'colonial-navy'
     | 'colonial-burgundy'
+    | 'colonial-oxblood'
     | 'white'
     | string;
   container?: boolean;
@@ -94,6 +95,7 @@ export function PageSection({
           'authentic-parchment': background === 'authentic-parchment',
           'bg-colonial-navy': background === 'colonial-navy',
           'bg-colonial-burgundy': background === 'colonial-burgundy',
+          'bg-colonial-oxblood': background === 'colonial-oxblood',
           white: background === 'white' || !background,
         },
         className,

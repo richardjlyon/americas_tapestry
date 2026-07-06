@@ -12,16 +12,21 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <>
-      <h1 className="page-heading">Contact Us</h1>
+    <div className="bg-colonial-oxblood">
+      <header className="container mx-auto max-w-3xl pt-10 pb-4 text-center">
+        <span className="eyebrow eyebrow-gold">Get in Touch</span>
+        <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">
+          Contact Us
+        </h1>
+        <p className="gallery-lead mx-auto mt-3">
+          We'd love to hear from you. Whether you have questions about
+          America's Tapestry, want to collaborate, or simply wish to share
+          your thoughts, please reach out.
+        </p>
+        <div className="gold-threshold mx-auto mt-5" />
+      </header>
 
-      <p className="lead-text">
-        We'd love to hear from you. Whether you have questions about America's
-        Tapestry, want to collaborate, or simply wish to share your thoughts,
-        please reach out.
-      </p>
-
-      <PageSection spacing="normal">
+      <PageSection spacing="normal" background="colonial-oxblood">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-8">
           <div>
             {/* Send a message */}
@@ -81,6 +86,6 @@ export default function ContactPage() {
           </div>
         </div>
       </PageSection>
-    </>
+    </div>
   );
 }

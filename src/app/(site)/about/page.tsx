@@ -13,7 +13,7 @@ export const metadata = pageMetadata({
 
 export default function AboutPage() {
   return (
-    <div className="bg-colonial-navy">
+    <div className="bg-colonial-oxblood">
       {/* pt clears the fixed header (h-16 md:h-20) that normally rides on
           the breadcrumb bar, suppressed on this dark route. */}
       <header className="container mx-auto max-w-3xl pt-24 pb-4 text-center md:pt-28">
@@ -27,7 +27,7 @@ export default function AboutPage() {
         <div className="gold-threshold mx-auto mt-5" />
       </header>
 
-      <PageSection spacing="tight" background="colonial-navy">
+      <PageSection spacing="tight" background="colonial-oxblood">
         {/* Hero image */}
         <div className="max-w-5xl mx-auto mb-6 md:mb-12 relative rounded-lg overflow-hidden shadow-xl">
           <Image
@@ -104,7 +104,7 @@ export default function AboutPage() {
 
       {/* Our Vision — reinstated here after its removal from the homepage
           (per Richard, 2026-07-06). Cards stay light on the navy room. */}
-      <PageSection spacing="normal" background="colonial-navy">
+      <PageSection spacing="normal" background="colonial-oxblood">
         <VisionSection />
       </PageSection>
     </div>

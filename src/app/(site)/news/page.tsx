@@ -17,17 +17,22 @@ export default async function NewsPage() {
   const featuredPosts = await getFeaturedBlogPosts();
 
   return (
-    <>
-      <h1 className="page-heading">News & Updates</h1>
-
-      <div className="lead-text text-center">
-        Stay informed about America's Tapestry with the latest project updates,
-        historical insights, and event information.
-      </div>
+    <div className="bg-colonial-oxblood">
+      <header className="container mx-auto max-w-3xl pt-10 pb-4 text-center">
+        <span className="eyebrow eyebrow-gold">The Journal</span>
+        <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">
+          News & Updates
+        </h1>
+        <p className="gallery-lead mx-auto mt-3">
+          Stay informed about America's Tapestry with the latest project
+          updates, historical insights, and event information.
+        </p>
+        <div className="gold-threshold mx-auto mt-5" />
+      </header>
 
       {/* Category Filter Section */}
-      <PageSection paddingTop="small" paddingBottom="none">
-        <h2 className="section-title text-center mb-6 text-xl">
+      <PageSection paddingTop="small" paddingBottom="none" background="colonial-oxblood">
+        <h2 className="gallery-heading text-center text-xl mb-6">
           Browse by Category
         </h2>
         <CategoryFilter />
@@ -35,16 +40,18 @@ export default async function NewsPage() {
 
       {/* Featured Posts Section (if any) */}
       {featuredPosts.length > 0 && (
-        <PageSection paddingTop="small" paddingBottom="small">
+        <PageSection paddingTop="small" paddingBottom="small" background="colonial-oxblood">
           <FeaturedPosts posts={featuredPosts} />
         </PageSection>
       )}
 
       {/* All Posts Grid */}
-      <PageSection paddingTop="none">
-        <h2 className="section-title text-center mb-6">Latest Articles</h2>
+      <PageSection paddingTop="none" background="colonial-oxblood">
+        <h2 className="gallery-heading text-center text-2xl mb-6">
+          Latest Articles
+        </h2>
         <NewsGrid posts={allPosts} />
       </PageSection>
-    </>
+    </div>
   );
 }
