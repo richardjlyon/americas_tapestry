@@ -17,132 +17,6 @@
     "originalSize": 63126,
     "hash": "383bdcb4"
   },
-  "/images/carousel/carousel_01.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_01-640w-e8e339bc.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_01-1024w-e8e339bc.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_01-1920w-e8e339bc.webp"
-    },
-    "originalSize": 4127386,
-    "hash": "e8e339bc"
-  },
-  "/images/carousel/carousel_02.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_02-640w-eb126b1c.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_02-1024w-eb126b1c.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_02-1920w-eb126b1c.webp"
-    },
-    "originalSize": 327863,
-    "hash": "eb126b1c"
-  },
-  "/images/carousel/carousel_03.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_03-640w-8bf84425.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_03-1024w-8bf84425.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_03-1920w-8bf84425.webp"
-    },
-    "originalSize": 621070,
-    "hash": "8bf84425"
-  },
-  "/images/carousel/carousel_04.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_04-640w-d4a6304e.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_04-1024w-d4a6304e.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_04-1920w-d4a6304e.webp"
-    },
-    "originalSize": 7053217,
-    "hash": "d4a6304e"
-  },
-  "/images/carousel/carousel_05.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_05-640w-18b47c78.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_05-1024w-18b47c78.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_05-1920w-18b47c78.webp"
-    },
-    "originalSize": 8717416,
-    "hash": "18b47c78"
-  },
-  "/images/carousel/carousel_06.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_06-640w-2ec2b014.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_06-1024w-2ec2b014.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_06-1920w-2ec2b014.webp"
-    },
-    "originalSize": 2766488,
-    "hash": "2ec2b014"
-  },
-  "/images/carousel/carousel_07.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_07-640w-34a37290.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_07-1024w-34a37290.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_07-1920w-34a37290.webp"
-    },
-    "originalSize": 9577450,
-    "hash": "34a37290"
-  },
-  "/images/carousel/carousel_08.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_08-640w-58982b6c.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_08-1024w-58982b6c.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_08-1920w-58982b6c.webp"
-    },
-    "originalSize": 3887711,
-    "hash": "58982b6c"
-  },
-  "/images/carousel/carousel_09.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_09-640w-6db66006.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_09-1024w-6db66006.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_09-1920w-6db66006.webp"
-    },
-    "originalSize": 109184,
-    "hash": "6db66006"
-  },
-  "/images/carousel/carousel_10.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_10-640w-20d6dc88.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_10-1024w-20d6dc88.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_10-1920w-20d6dc88.webp"
-    },
-    "originalSize": 551332,
-    "hash": "20d6dc88"
-  },
-  "/images/carousel/carousel_11.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_11-640w-cc792cfb.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_11-1024w-cc792cfb.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_11-1920w-cc792cfb.webp"
-    },
-    "originalSize": 250100,
-    "hash": "cc792cfb"
-  },
-  "/images/carousel/carousel_12.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_12-640w-76cca8f8.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_12-1024w-76cca8f8.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_12-1920w-76cca8f8.webp"
-    },
-    "originalSize": 4103624,
-    "hash": "76cca8f8"
-  },
-  "/images/carousel/carousel_13.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_13-640w-ed9e83c7.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_13-1024w-ed9e83c7.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_13-1920w-ed9e83c7.webp"
-    },
-    "originalSize": 4016646,
-    "hash": "ed9e83c7"
-  },
-  "/images/carousel/carousel_14.jpg": {
-    "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_14-640w-1b7a4ba5.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_14-1024w-1b7a4ba5.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/carousel/carousel_14-1920w-1b7a4ba5.webp"
-    },
-    "originalSize": 2635434,
-    "hash": "1b7a4ba5"
-  },
   "/images/content/about-us.webp": {
     "variants": {
       "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/content/about-us-640w-a03614d2.webp",
@@ -8128,12 +8002,12 @@
   },
   "/images/shop/prints/connecticut/connecticut-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-fineart-640w-e59889a1.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-fineart-1024w-e59889a1.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-fineart-1920w-e59889a1.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-fineart-640w-f892a04b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-fineart-1024w-f892a04b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-fineart-1920w-f892a04b.webp"
     },
-    "originalSize": 1547190,
-    "hash": "e59889a1"
+    "originalSize": 2539164,
+    "hash": "f892a04b"
   },
   "/images/shop/prints/connecticut/connecticut-poster.jpg": {
     "variants": {
@@ -8146,12 +8020,12 @@
   },
   "/images/shop/prints/delaware/delaware-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-fineart-640w-dc821ef5.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-fineart-1024w-dc821ef5.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-fineart-1920w-dc821ef5.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-fineart-640w-3afd27e6.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-fineart-1024w-3afd27e6.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-fineart-1920w-3afd27e6.webp"
     },
-    "originalSize": 1530953,
-    "hash": "dc821ef5"
+    "originalSize": 2461469,
+    "hash": "3afd27e6"
   },
   "/images/shop/prints/delaware/delaware-poster.jpg": {
     "variants": {
@@ -8164,12 +8038,12 @@
   },
   "/images/shop/prints/georgia/georgia-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-fineart-640w-d2d32e28.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-fineart-1024w-d2d32e28.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-fineart-1920w-d2d32e28.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-fineart-640w-6dffc9cd.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-fineart-1024w-6dffc9cd.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-fineart-1920w-6dffc9cd.webp"
     },
-    "originalSize": 1495617,
-    "hash": "d2d32e28"
+    "originalSize": 2505245,
+    "hash": "6dffc9cd"
   },
   "/images/shop/prints/georgia/georgia-poster.jpg": {
     "variants": {
@@ -8182,12 +8056,12 @@
   },
   "/images/shop/prints/maryland/maryland-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-fineart-640w-7de79ec0.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-fineart-1024w-7de79ec0.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-fineart-1920w-7de79ec0.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-fineart-640w-503096d8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-fineart-1024w-503096d8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-fineart-1920w-503096d8.webp"
     },
-    "originalSize": 1525875,
-    "hash": "7de79ec0"
+    "originalSize": 2446823,
+    "hash": "503096d8"
   },
   "/images/shop/prints/maryland/maryland-poster.jpg": {
     "variants": {
@@ -8200,12 +8074,12 @@
   },
   "/images/shop/prints/massachusetts/massachusetts-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-fineart-640w-5356f278.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-fineart-1024w-5356f278.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-fineart-1920w-5356f278.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-fineart-640w-28fac98d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-fineart-1024w-28fac98d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-fineart-1920w-28fac98d.webp"
     },
-    "originalSize": 1725707,
-    "hash": "5356f278"
+    "originalSize": 3056211,
+    "hash": "28fac98d"
   },
   "/images/shop/prints/massachusetts/massachusetts-poster.jpg": {
     "variants": {
@@ -8218,12 +8092,12 @@
   },
   "/images/shop/prints/new-hampshire/new-hampshire-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-fineart-640w-d241c597.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-fineart-1024w-d241c597.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-fineart-1920w-d241c597.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-fineart-640w-0a077249.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-fineart-1024w-0a077249.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-fineart-1920w-0a077249.webp"
     },
-    "originalSize": 1509211,
-    "hash": "d241c597"
+    "originalSize": 2402495,
+    "hash": "0a077249"
   },
   "/images/shop/prints/new-hampshire/new-hampshire-poster.jpg": {
     "variants": {
@@ -8236,12 +8110,12 @@
   },
   "/images/shop/prints/new-jersey/new-jersey-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-fineart-640w-68674e8b.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-fineart-1024w-68674e8b.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-fineart-1920w-68674e8b.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-fineart-640w-9fb61969.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-fineart-1024w-9fb61969.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-fineart-1920w-9fb61969.webp"
     },
-    "originalSize": 1542080,
-    "hash": "68674e8b"
+    "originalSize": 2484981,
+    "hash": "9fb61969"
   },
   "/images/shop/prints/new-jersey/new-jersey-poster.jpg": {
     "variants": {
@@ -8254,12 +8128,12 @@
   },
   "/images/shop/prints/new-york/new-york-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-fineart-640w-f7c4c405.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-fineart-1024w-f7c4c405.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-fineart-1920w-f7c4c405.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-fineart-640w-ab19e09e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-fineart-1024w-ab19e09e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-fineart-1920w-ab19e09e.webp"
     },
-    "originalSize": 1461960,
-    "hash": "f7c4c405"
+    "originalSize": 2350657,
+    "hash": "ab19e09e"
   },
   "/images/shop/prints/new-york/new-york-poster.jpg": {
     "variants": {
@@ -8272,12 +8146,12 @@
   },
   "/images/shop/prints/north-carolina/north-carolina-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-fineart-640w-390f0885.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-fineart-1024w-390f0885.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-fineart-1920w-390f0885.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-fineart-640w-10327e68.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-fineart-1024w-10327e68.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-fineart-1920w-10327e68.webp"
     },
-    "originalSize": 1483019,
-    "hash": "390f0885"
+    "originalSize": 2570181,
+    "hash": "10327e68"
   },
   "/images/shop/prints/north-carolina/north-carolina-poster.jpg": {
     "variants": {
@@ -8290,12 +8164,12 @@
   },
   "/images/shop/prints/pennsylvania/pennsylvania-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-fineart-640w-aeca8512.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-fineart-1024w-aeca8512.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-fineart-1920w-aeca8512.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-fineart-640w-4c22b591.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-fineart-1024w-4c22b591.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-fineart-1920w-4c22b591.webp"
     },
-    "originalSize": 1437757,
-    "hash": "aeca8512"
+    "originalSize": 2424903,
+    "hash": "4c22b591"
   },
   "/images/shop/prints/pennsylvania/pennsylvania-poster.jpg": {
     "variants": {
@@ -8308,12 +8182,12 @@
   },
   "/images/shop/prints/rhode-island/rhode-island-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-fineart-640w-707dac10.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-fineart-1024w-707dac10.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-fineart-1920w-707dac10.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-fineart-640w-181a21bd.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-fineart-1024w-181a21bd.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-fineart-1920w-181a21bd.webp"
     },
-    "originalSize": 1457203,
-    "hash": "707dac10"
+    "originalSize": 2300457,
+    "hash": "181a21bd"
   },
   "/images/shop/prints/rhode-island/rhode-island-poster.jpg": {
     "variants": {
@@ -8326,12 +8200,12 @@
   },
   "/images/shop/prints/south-carolina/south-carolina-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-fineart-640w-493c0a40.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-fineart-1024w-493c0a40.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-fineart-1920w-493c0a40.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-fineart-640w-afab616a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-fineart-1024w-afab616a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-fineart-1920w-afab616a.webp"
     },
-    "originalSize": 1680664,
-    "hash": "493c0a40"
+    "originalSize": 2728484,
+    "hash": "afab616a"
   },
   "/images/shop/prints/south-carolina/south-carolina-poster.jpg": {
     "variants": {
@@ -8344,12 +8218,12 @@
   },
   "/images/shop/prints/virginia/virginia-fineart.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-fineart-640w-895c63e5.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-fineart-1024w-895c63e5.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-fineart-1920w-895c63e5.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-fineart-640w-43ac0ffd.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-fineart-1024w-43ac0ffd.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-fineart-1920w-43ac0ffd.webp"
     },
-    "originalSize": 1541228,
-    "hash": "895c63e5"
+    "originalSize": 2466094,
+    "hash": "43ac0ffd"
   },
   "/images/shop/prints/virginia/virginia-poster.jpg": {
     "variants": {
