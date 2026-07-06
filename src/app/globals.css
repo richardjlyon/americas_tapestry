@@ -52,7 +52,7 @@
    * Light surfaces (reading rooms): bold Montserrat (font-sans) via the
    * semantic h1-h6 base styles, .page-heading, .section-title.
    * Dark surfaces (gallery rooms): .gallery-heading — serif, cream,
-   * letterspaced (the shop's Night Gallery convention).
+   * tracking-tight (titles read densely, matching the light system).
    * Components should reach for SectionHeader (ui/section-header.tsx)
    * rather than hand-rolling heading class strings.
    */
@@ -243,9 +243,11 @@
     @apply h-px w-16 bg-colonial-gold/60;
   }
 
-  /* Display heading inside a dark room: serif, cream, letterspaced. */
+  /* Display heading inside a dark room: serif, cream, tight titling to
+   * match the site's established heading treatment (per Richard,
+   * 2026-07-06 — was letterspaced 0.08em from the shop treatment). */
   .gallery-heading {
-    @apply font-serif font-medium tracking-[0.08em] text-colonial-parchment;
+    @apply font-serif font-medium tracking-tight text-colonial-parchment;
   }
 
   /* Supporting copy inside a dark room. */
