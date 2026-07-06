@@ -16,8 +16,16 @@ export const metadata = pageMetadata({
   path: "/",
 });
 
-// Re-render daily so the exhibition spotlight tracks the calendar without a deploy.
-export const revalidate = 86400;
+// Keep this page fully static — prerendered at build only.
+//
+// Do NOT add `revalidate`/ISR here. The hero and plates resolve their panel
+// images by scanning the filesystem (getAllTapestries → fs.readdirSync of
+// public/images/tapestries/<slug>). On Vercel, public/ assets are served from
+// the CDN and are NOT present in the serverless function bundle, so an ISR
+// regeneration on that runtime finds no files and every panel falls back to the
+// placeholder — which then gets cached. Static build-time rendering has the
+// full filesystem, so images resolve correctly. The exhibition spotlight now
+// advances on deploy rather than daily; redeploy to refresh it.
 
 export default async function Home() {
   const [tapestries, exhibitions] = await Promise.all([
@@ -27,8 +35,8 @@ export default async function Home() {
   const spotlight = getExhibitionSpotlight(exhibitions);
 
   const withImages = tapestries.filter((t) => t.imagePath || t.thumbnail);
-  // Deliberate: server-only shuffle re-picks the featured panels at each ISR
-  // regeneration (daily). Never runs on the client, so render purity is moot.
+  // Deliberate: server-only shuffle re-picks the featured panels at each build.
+  // Never runs on the client, so render purity is moot.
   // eslint-disable-next-line react-hooks/purity
   const shuffled = [...withImages].sort(() => 0.5 - Math.random());
   const heroBackdrops = shuffled.slice(0, 4).map((t) => ({
