@@ -112,7 +112,11 @@ export default async function BookPage() {
   const products = await getAllProducts();
   const book = products.find((p) => p.tags.includes('book')) ?? null;
   const href = checkoutUrl(book?.variantId ?? null);
-  const buyable = Boolean(href && book?.availableForSale);
+  // BOOK LAUNCH PARKED (per Richard, 2026-07-06): the page stays browsable
+  // but the book is not yet on sale — show "Coming soon" and never link to
+  // Shopify checkout. Restore the availability check at launch:
+  //   const buyable = Boolean(href && book?.availableForSale);
+  const buyable = false;
   const price = book
     ? new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -130,8 +134,8 @@ export default async function BookPage() {
         </a>
       </Button>
     ) : (
-      <span className="font-serif italic text-colonial-parchment/60">
-        Temporarily unavailable
+      <span className="inline-flex items-center border border-dashed border-colonial-gold/50 px-4 py-2 font-sans text-sm font-semibold uppercase tracking-[0.15em] text-colonial-gold">
+        Coming soon
       </span>
     );
 
