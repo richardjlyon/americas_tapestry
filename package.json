@@ -74,7 +74,7 @@
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.948.0",
     "@biomejs/biome": "1.9.4",
-    "@next/bundle-analyzer": "^15.2.1",
+    "@next/bundle-analyzer": "^16.2.10",
     "@playwright/test": "^1.54.1",
     "@tailwindcss/typography": "^0.5.16",
     "@testing-library/jest-dom": "^6.6.3",
@@ -87,7 +87,7 @@
     "@types/three": "^0.183.1",
     "cross-env": "^7.0.3",
     "eslint": "^9.22.0",
-    "eslint-config-next": "^15.2.1",
+    "eslint-config-next": "^16.2.10",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.5.10",
