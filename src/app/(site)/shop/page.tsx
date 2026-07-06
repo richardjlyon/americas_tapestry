@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, CalendarDays, Copy, Mail, Ruler } from 'lucide-react';
+import { ArrowRight, BookOpen, CalendarDays, Copy, Mail, Ruler } from 'lucide-react';
 import { PageSection } from '@/components/ui/page-section';
 import { SectionHeader } from '@/components/ui/section-header';
 import { Button } from '@/components/ui/button';
@@ -194,21 +194,47 @@ export default async function ShopPage() {
         </div>
       </PageSection>
 
-      {/* Coming soon — the 2026 wall calendar */}
+      {/* Coming soon — the book and the 2026 wall calendar */}
       <PageSection background="vintage-paper" spacing="spacious">
-        <div className="mx-auto max-w-2xl rounded-lg border border-dashed border-colonial-gold/60 bg-white/60 p-10 text-center">
-          <CalendarDays
-            className="mx-auto h-9 w-9 text-colonial-burgundy"
-            aria-hidden="true"
-          />
-          <span className="mt-4 inline-block rounded-full bg-colonial-gold/20 px-3 py-1 font-sans text-xs font-semibold uppercase tracking-[0.15em] text-colonial-burgundy">
-            Coming soon
-          </span>
-          <h2 className="section-title mt-4">The 2026 Wall Calendar</h2>
-          <p className="mx-auto mt-3 max-w-lg font-serif text-lg text-colonial-navy/75">
-            Twelve months of the colony panels, marking America&rsquo;s 250th
-            year. Being stitched into the shop now — check back soon.
-          </p>
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="rounded-lg border border-dashed border-colonial-gold/60 bg-white/60 p-10 text-center">
+            <BookOpen
+              className="mx-auto h-9 w-9 text-colonial-burgundy"
+              aria-hidden="true"
+            />
+            <span className="mt-4 inline-block rounded-full bg-colonial-gold/20 px-3 py-1 font-sans text-xs font-semibold uppercase tracking-[0.15em] text-colonial-burgundy">
+              Coming soon
+            </span>
+            <h2 className="section-title mt-4 text-2xl">The Book</h2>
+            <p className="mx-auto mt-3 max-w-lg font-serif text-lg text-colonial-navy/75">
+              The hardcover companion — thirteen hand-embroidered panels and
+              the people who stitched them, in one keepsake volume.
+            </p>
+            <Link
+              href="/shop/book"
+              className="mt-4 inline-flex items-center font-medium text-colonial-burgundy transition-colors hover:text-colonial-burgundy/80"
+            >
+              Preview the book
+              <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+
+          <div className="rounded-lg border border-dashed border-colonial-gold/60 bg-white/60 p-10 text-center">
+            <CalendarDays
+              className="mx-auto h-9 w-9 text-colonial-burgundy"
+              aria-hidden="true"
+            />
+            <span className="mt-4 inline-block rounded-full bg-colonial-gold/20 px-3 py-1 font-sans text-xs font-semibold uppercase tracking-[0.15em] text-colonial-burgundy">
+              Coming soon
+            </span>
+            <h2 className="section-title mt-4 text-2xl">
+              The 2026 Wall Calendar
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg font-serif text-lg text-colonial-navy/75">
+              Twelve months of the colony panels, marking America&rsquo;s 250th
+              year. Being stitched into the shop now — check back soon.
+            </p>
+          </div>
         </div>
       </PageSection>
     </>
