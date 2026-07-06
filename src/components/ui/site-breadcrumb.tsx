@@ -40,16 +40,18 @@ export function SiteBreadcrumb() {
   };
 
   return (
-    // The header is fixed positioned, so we need margin-top to prevent overlap
-    <div className="w-full py-3 mt-16 md:mt-20 md:pb-6 woven-linen">
+    // The header is fixed positioned, so we need margin-top to prevent
+    // overlap. Navy strip continues the Night Gallery chrome; a faint
+    // hairline separates it from the fixed header above.
+    <div className="mt-16 w-full border-b border-white/10 bg-colonial-navy py-3 md:mt-20 md:pb-4">
       <div className="container mx-auto">
         <Breadcrumb>
-          <BreadcrumbList className="text-colonial-navy font-medium font-sans text-lg">
+          <BreadcrumbList className="font-sans text-lg font-medium text-colonial-parchment/60">
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
                 <Link
                   href="/"
-                  className="text-colonial-burgundy hover:text-colonial-burgundy/80 font-sans"
+                  className="font-sans text-colonial-parchment/70 hover:text-colonial-gold"
                 >
                   Home
                 </Link>
@@ -66,14 +68,14 @@ export function SiteBreadcrumb() {
                 <Fragment key={segment}>
                   <BreadcrumbItem>
                     {isLastItem ? (
-                      <BreadcrumbPage className="font-bold font-sans">
+                      <BreadcrumbPage className="font-sans font-bold text-colonial-gold">
                         {label}
                       </BreadcrumbPage>
                     ) : (
                       <BreadcrumbLink asChild>
                         <Link
                           href={href}
-                          className="text-colonial-burgundy hover:text-colonial-burgundy/80 font-sans"
+                          className="font-sans text-colonial-parchment/70 hover:text-colonial-gold"
                         >
                           {label}
                         </Link>
