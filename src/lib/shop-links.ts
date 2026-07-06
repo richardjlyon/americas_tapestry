@@ -13,10 +13,9 @@
 export const SHOP_PATH = '/shop';
 
 /**
- * Interim shop destination for a colony's print CTA: the shop landing page.
- * When per-product pages exist (storefront Plans 2–3), this maps to
- * `/shop/state/<slug>` or the product detail route instead.
+ * A colony's shop destination: its state index page, listing every product
+ * available for that colony plus the book (`/shop/<state>`).
  */
-export function getPrintUrl(_colonySlug: string): string {
-  return SHOP_PATH;
+export function getPrintUrl(colonySlug: string): string {
+  return `/shop/${colonySlug}`;
 }

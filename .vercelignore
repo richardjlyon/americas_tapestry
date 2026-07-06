@@ -3,3 +3,7 @@ README.md
 # Heavy media never served by the site (video streams from GitHub Releases)
 public/video/**/*.mp4
 public/video/**/*.webm
+scratch/
+.playwright-mcp/
+.superpowers/
+.memsearch/

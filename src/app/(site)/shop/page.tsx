@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/ui/optimized-image';
 import { getImagePath } from '@/lib/image-utils';
 import { EditionTypeCard } from '@/components/features/shop/edition-type-card';
-import { BookCover } from '@/components/features/shop/book-cover';
+import { FramedArtwork } from '@/components/ui/framed-artwork';
 import { StitchRule } from '@/components/ui/stitch-rule';
 import { getAllProducts } from '@/lib/shopify';
 import {
@@ -60,44 +60,42 @@ export default async function ShopPage() {
 
   return (
     <>
-      {/* Hero — the book, the flagship */}
+      {/* Hero — the collection, generically (book promotion parked until launch) */}
       <PageSection spacing="spacious">
         <div className="grid items-center gap-10 md:grid-cols-[1.1fr_1fr] md:gap-14">
           <div>
             <span className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-colonial-burgundy">
-              The Book
+              The Shop
             </span>
-            <StitchRule className="mt-4" />
-            <h1 className="mt-5 font-sans text-4xl font-bold leading-[1.05] tracking-tight text-colonial-navy md:text-5xl lg:text-6xl">
-              A Nation&rsquo;s Story, Stitched by Hand
+            <StitchRule className="mt-3" />
+            <h1 className="mt-4 font-sans text-4xl font-bold leading-[1.05] tracking-tight text-colonial-navy md:text-5xl lg:text-6xl">
+              Own a Piece of America&rsquo;s Tapestry
             </h1>
-            <p className="mt-5 max-w-xl text-colonial-navy/80">
-              The hardcover companion to America&rsquo;s Tapestry — thirteen
-              hand-embroidered colony panels and the people who stitched them,
-              gathered in one keepsake volume for the Semiquincentennial.
+            <p className="mt-4 max-w-xl text-colonial-navy/80">
+              Museum-quality giclée prints, exhibition posters, and mailable
+              art cards of all thirteen hand-embroidered colony panels —
+              printed on demand and shipped to your door.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-7 flex flex-wrap items-center gap-4">
               <Button asChild variant="colonial-gold" size="lg">
-                <Link href="/shop/book">
-                  Explore the book
+                <a href="#prints">
+                  Shop prints &amp; posters
                   <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
-                </Link>
-              </Button>
-              <Button asChild variant="colonial-outline" size="lg">
-                <a href="#prints">Shop prints &amp; posters</a>
+                </a>
               </Button>
             </div>
           </div>
 
           <div className="relative mx-auto w-full max-w-sm py-4 md:mx-0">
-            {/* A warm spotlight sets the navy cover off the page. */}
+            {/* A warm spotlight sets the artwork off the page. */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(58%_58%_at_52%_42%,rgba(191,155,84,0.28),transparent_70%)]"
             />
-            <BookCover
-              src="/images/shop/book/book-cover.png"
-              alt="The Making of America's Tapestry — hardcover"
+            <FramedArtwork
+              src={artworkSrc('fineart', pickState(0))}
+              alt={`The ${stateLabel(pickState(0))} panel as a framed fine-art print`}
+              framed
             />
           </div>
         </div>

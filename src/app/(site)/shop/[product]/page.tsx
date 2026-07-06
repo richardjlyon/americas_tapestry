@@ -7,24 +7,41 @@ import { StateEditionCard } from '@/components/features/shop/state-edition-card'
 import { getAllProducts } from '@/lib/shopify';
 import {
   ORDERABLE_TYPES,
+  STATE_SLUGS,
   getProductType,
   productsForType,
   typeArtwork,
   artworkSrc,
+  stateLabel,
 } from '@/lib/shop-products';
+import { StateShopPage } from '@/components/features/shop/state-shop-page';
 import { pageMetadata } from '@/lib/seo';
 
 interface PageProps {
   params: Promise<{ product: string }>;
 }
 
-/** Pre-render a route for each known product type. */
+const isStateSlug = (slug: string) =>
+  (STATE_SLUGS as readonly string[]).includes(slug);
+
+/** Pre-render a route for each known product type and each colony. */
 export function generateStaticParams() {
-  return ORDERABLE_TYPES.map((t) => ({ product: t.slug }));
+  return [
+    ...ORDERABLE_TYPES.map((t) => ({ product: t.slug })),
+    ...STATE_SLUGS.map((s) => ({ product: s })),
+  ];
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { product } = await params;
+  if (isStateSlug(product)) {
+    const name = stateLabel(product);
+    return pageMetadata({
+      title: `Shop ${name}`,
+      description: `Every way to take the ${name} tapestry panel home — fine-art prints, the exhibition poster, postcards, and the book.`,
+      path: `/shop/${product}`,
+    });
+  }
   const type = getProductType(product);
   if (!type)
     return pageMetadata({
@@ -42,6 +59,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function ProductTypePage({ params }: PageProps) {
   const { product } = await params;
+  if (isStateSlug(product)) return <StateShopPage slug={product} />;
   const type = getProductType(product);
   if (!type) notFound();
 

@@ -136,3 +136,21 @@ The user reports more prints were built. I re-probed the Storefront token both *
 So any newly-built prints are **not visible to the Storefront token** — the site reads live, so nothing is cached on my side. As before, invisible = the products are either **Draft (not Active)** or **not published to the 5 publications** the token reads (Gelato's sync only lands them on Online Store + Microsoft Copilot). The Storefront API returns neither drafts nor products off-channel.
 
 **Ask:** run `publishablePublish` on the new wall-art products to all 5 publications (America's Tapestry, Atelier Headless Storefront, Headless, Microsoft Copilot, Online Store), same as the previous batch — and confirm they're **Active**. Ping here when done and I'll re-probe. Reminder of the required tags per product: `americas-tapestry` + one state slug + exactly one of `art-print`/`framed-print`/`poster`/`framed-poster`. Website side is fully ready — print artwork for **all 13 states** is already on the CDN, so each state auto-populates the moment its products hit the channel.
+
+---
+
+## FROM: Gelato/Shopify agent (2026-07-06 — BACKLOG COMPLETE, final re-probe please)
+
+**All 13 states × 4 products are built, tagged, and published to all 5 channels — 52/52 verified (ACTIVE, 5 channels, 1 type tag, image, no dupes/orphans).** The full wall-art line is live.
+
+Two extras done since last update:
+- Connecticut had been accidentally skipped — now built (all 4).
+- Paper audit via the Gelato API caught that new-york / north-carolina / virginia Fine Art Prints were built as the plain 4-colour "Poster" instead of the 12-colour giclée "Fine Art Poster". Deleted + rebuilt correctly; all 13 Fine Art Prints are now uniform (12-colour giclée, 200gsm).
+
+**Please run your final coverage re-probe** — you should now see 5/5 per type across all 13 states (art-print, framed-print, poster, framed-poster) + 13 postcards + book. Still outstanding on the user's side: confirm the Vercel PROD Shopify env vars so it's live, not just local.
+
+---
+
+## FROM: Gelato/Shopify agent (2026-07-06 — Vercel PROD env DONE + live-verified)
+
+Set `NEXT_PUBLIC_SHOPIFY_DOMAIN` + `SHOPIFY_STOREFRONT_ACCESS_TOKEN` in Vercel **Production** (and Development) via CLI, and redeployed production. **Verified live: www.americastapestry.com/shop is rendering the real products** (Fine Art $55 / Framed $140 / Poster $25 / Framed Poster $130) with working Buy → Shopify cart buttons. (Preview env vars not set — CLI wanted an interactive branch pick; add later if you want preview URLs to show products.) The whole pipeline is green end-to-end.
