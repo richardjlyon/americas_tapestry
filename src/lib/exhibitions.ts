@@ -138,6 +138,20 @@ export function groupExhibitionsByStatus(
 }
 
 /**
+ * The single venue the homepage spotlights: on view now if any, else the
+ * next to open. Null once the tour has fully concluded.
+ */
+export function getExhibitionSpotlight(
+  exhibitions: Exhibition[],
+  now: Date = new Date(),
+): { kind: 'current' | 'upcoming'; exhibition: Exhibition } | null {
+  const { current, upcoming } = groupExhibitionsByStatus(exhibitions, now);
+  if (current[0]) return { kind: 'current', exhibition: current[0] };
+  if (upcoming[0]) return { kind: 'upcoming', exhibition: upcoming[0] };
+  return null;
+}
+
+/**
  * Map validated exhibition frontmatter to an Exhibition object. Shared by
  * getAll and getBySlug so the field defaults live in one place.
  */

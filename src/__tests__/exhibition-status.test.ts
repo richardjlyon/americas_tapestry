@@ -3,6 +3,7 @@ jest.mock('@/lib/markdown', () => ({ extractExcerpt: () => '' }));
 import {
   getExhibitionStatus,
   groupExhibitionsByStatus,
+  getExhibitionSpotlight,
 } from '@/lib/exhibitions';
 import type { Exhibition } from '@/lib/exhibitions';
 
@@ -81,5 +82,39 @@ describe('groupExhibitionsByStatus', () => {
     expect(groups.current.map((x) => x.slug)).toEqual(['muscarelle']);
     expect(groups.upcoming.map((x) => x.slug)).toEqual(['seton', 'nysm']);
     expect(groups.past.map((x) => x.slug)).toEqual(['newer', 'older']);
+  });
+});
+
+describe('getExhibitionSpotlight', () => {
+  const JULY_6_2026 = new Date('2026-07-06T12:00:00');
+  const current = {
+    ...ex('19 June 2026', '6 September 2026'),
+    slug: 'muscarelle',
+  };
+  const next = { ...ex('12 September 2026', '27 September 2026'), slug: 'seton' };
+  const later = { ...ex('November 2027', 'February 2028'), slug: 'nysm' };
+  const closed = { ...ex('1 January 2026', '1 February 2026'), slug: 'done' };
+
+  it('prefers the venue on view now', () => {
+    const spot = getExhibitionSpotlight(
+      [later, next, current, closed] as Exhibition[],
+      JULY_6_2026,
+    );
+    expect(spot).toEqual({ kind: 'current', exhibition: current });
+  });
+
+  it('falls back to the next venue to open', () => {
+    const spot = getExhibitionSpotlight(
+      [later, next, closed] as Exhibition[],
+      new Date('2026-09-08T12:00:00'),
+    );
+    expect(spot?.kind).toBe('upcoming');
+    expect(spot?.exhibition.slug).toBe('seton');
+  });
+
+  it('returns null when the tour is over', () => {
+    expect(
+      getExhibitionSpotlight([closed] as Exhibition[], JULY_6_2026),
+    ).toBeNull();
   });
 });
