@@ -15,7 +15,7 @@ export function TapestryCard({ tapestry }: TapestryCardProps) {
   const hasAudio = !!tapestry.audioPath;
 
   return (
-    <Link href={`/tapestries/${tapestry.slug}`} className="group block">
+    <Link href={`/tapestries/${tapestry.slug}`} className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy">
       <div className="relative">
         <FramedArtwork
           src={tapestry.imagePath || tapestry.thumbnail}

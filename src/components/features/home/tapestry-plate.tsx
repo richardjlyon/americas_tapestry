@@ -5,7 +5,7 @@ import type { TapestryEntry } from '@/lib/tapestries';
 /** A colony panel hung in the homepage gallery: framed photo + caption. */
 export function TapestryPlate({ tapestry }: { tapestry: TapestryEntry }) {
   return (
-    <Link href={`/tapestries/${tapestry.slug}`} className="group block">
+    <Link href={`/tapestries/${tapestry.slug}`} className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy">
       <FramedArtwork
         src={tapestry.imagePath || tapestry.thumbnail}
         alt={`The ${tapestry.title} tapestry panel`}
