@@ -2,7 +2,7 @@
 
 import type React from 'react';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useId } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
@@ -28,8 +28,11 @@ export function AccessibleAudioPlayer({
   const [volume, setVolume] = useState(1);
   const [audioSrc, setAudioSrc] = useState(src);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const progressBarId = `progress-${Math.random().toString(36).substring(2, 9)}`;
-  const volumeId = `volume-${Math.random().toString(36).substring(2, 9)}`;
+  // useId is stable across server and client render — Math.random here
+  // caused a hydration mismatch on every page with an audio player.
+  const uid = useId();
+  const progressBarId = `progress-${uid}`;
+  const volumeId = `volume-${uid}`;
 
   // Format time in MM:SS format
   const formatTime = (time: number) => {
