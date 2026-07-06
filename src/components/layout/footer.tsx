@@ -27,7 +27,6 @@ export function Footer() {
                   { name: 'Home', href: '/' },
                   { name: 'Visit', href: '/exhibitions' },
                   { name: 'Tapestries', href: '/tapestries' },
-                  { name: 'Gallery', href: '/gallery' },
                   { name: 'Shop', href: '/shop' },
                 ].map((item) => (
                   <li key={item.name}>

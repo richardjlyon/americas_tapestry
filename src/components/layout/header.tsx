@@ -10,7 +10,6 @@ import { cn } from '@/lib/utils';
 const navigationItems = [
   { name: 'Visit', href: '/exhibitions' },
   { name: 'Tapestries', href: '/tapestries' },
-  { name: 'Gallery', href: '/gallery' },
   { name: 'Shop', href: '/shop' },
   { name: 'News', href: '/news' },
   { name: 'About', href: '/about' },
