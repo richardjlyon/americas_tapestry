@@ -9,11 +9,6 @@ export interface ContentItem {
   excerpt?: string;
 }
 
-export interface ContentMetadata {
-  slug: string;
-  frontmatter: Record<string, any>;
-}
-
 /**
  * Core content reading utility - replaces file duplication approach
  * Reads markdown files directly from content/ directory
@@ -122,69 +117,6 @@ export async function generateContentStaticParams(
 ): Promise<{ slug: string }[]> {
   const content = await getAllContent(contentType);
   return content.map((item) => ({ slug: item.slug }));
-}
-
-/**
- * Get content metadata only (without full content) - useful for listings
- */
-export async function getContentMetadata(
-  contentType: string,
-): Promise<ContentMetadata[]> {
-  const contentDirectory = path.join(process.cwd(), 'content', contentType);
-
-  if (!fs.existsSync(contentDirectory)) {
-    console.warn(`Content directory not found: ${contentDirectory}`);
-    return [];
-  }
-
-  const metadata: ContentMetadata[] = [];
-
-  function processDirectory(dir: string, relativePath = '') {
-    const items = fs.readdirSync(dir, { withFileTypes: true });
-
-    for (const item of items) {
-      const fullPath = path.join(dir, item.name);
-      const currentPath = path.join(relativePath, item.name);
-
-      if (item.isDirectory()) {
-        if (!item.name.startsWith('.') && item.name !== 'images') {
-          processDirectory(fullPath, currentPath);
-        }
-      } else if (item.name === 'index.md' || item.name.endsWith('.md')) {
-        if (
-          item.name.toLowerCase() === 'readme.md' ||
-          item.name.toLowerCase() === 'schema.md' ||
-          item.name.toLowerCase() === 'image-guidelines.md'
-        ) {
-          continue;
-        }
-
-        try {
-          const fileContents = fs.readFileSync(fullPath, 'utf8');
-          const { data } = matter(fileContents);
-
-          let slug: string;
-          if (item.name === 'index.md') {
-            const pathParts = currentPath.split(path.sep);
-            pathParts.pop();
-            slug = pathParts.pop() || '';
-          } else {
-            slug = path.basename(item.name, '.md');
-          }
-
-          metadata.push({
-            slug,
-            frontmatter: data,
-          });
-        } catch (error) {
-          console.error(`Error processing metadata for ${fullPath}:`, error);
-        }
-      }
-    }
-  }
-
-  processDirectory(contentDirectory);
-  return metadata;
 }
 
 /**
