@@ -7,14 +7,15 @@ export function GetInTouchSection() {
   return (
     <>
       <SectionHeader
+        tone="dark"
         title="Get in Touch"
-        description="Interested in learning more about America's Tapestry or discussing exhibition opportunities?"
+        description="Questions about visiting, group and school visits, or press enquiries? We'd love to hear from you."
       />
 
       <div className="text-center">
         <Button
           asChild
-          variant="colonial-primary"
+          variant="colonial-gold"
           className="text-base py-2 px-5"
         >
           <Link href="/contact">

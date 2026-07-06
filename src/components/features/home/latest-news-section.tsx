@@ -28,6 +28,7 @@ export async function LatestNewsSection() {
   return (
     <>
       <SectionHeader
+        tone="dark"
         title="Latest News"
         description="Stay updated with the latest developments, events, and insights from America's Tapestry"
       />

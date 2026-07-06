@@ -1,13 +1,14 @@
-import { HeroCarousel } from '@/components/shared/hero-carousel';
+import { GalleryHero } from '@/components/features/home/gallery-hero';
+import { ProjectStrip } from '@/components/features/home/project-strip';
+import { ShopStrip } from '@/components/features/home/shop-strip';
+import { TapestryPlate } from '@/components/features/home/tapestry-plate';
 import { LatestNewsSection } from '@/components/features/home/latest-news-section';
-import { getAllTapestries, getCarouselImages } from '@/lib/tapestries';
-
-import { PageSection } from '@/components/ui/page-section';
-
-import { AboutSection } from '@/components/features/home/about-section';
-import { VisionSection } from '@/components/features/home/vision-section';
-import { TapestriesSection } from '@/components/features/home/tapestries-section';
 import { GetInTouchSection } from '@/components/features/home/get-in-touch-section';
+import { getAllTapestries } from '@/lib/tapestries';
+import {
+  getAllExhibitions,
+  getExhibitionSpotlight,
+} from '@/lib/exhibitions';
 import { pageMetadata } from '@/lib/seo';
 
 export const metadata = pageMetadata({
@@ -17,60 +18,76 @@ export const metadata = pageMetadata({
   path: '/',
 });
 
+// Re-render daily so the exhibition spotlight tracks the calendar without a deploy.
+export const revalidate = 86400;
+
 export default async function Home() {
-  const allTapestries = await getAllTapestries();
-  const carouselImages = getCarouselImages();
+  const [tapestries, exhibitions] = await Promise.all([
+    getAllTapestries(),
+    getAllExhibitions(),
+  ]);
+  const spotlight = getExhibitionSpotlight(exhibitions);
 
-  // Filter for tapestries that have both a valid status and an image
-  const eligibleTapestries = allTapestries.filter((tapestry) => {
-    const hasImage = !!(tapestry.imagePath || tapestry.thumbnail);
-    const isInProgress = tapestry.status !== 'Not Started';
-    return isInProgress && hasImage;
-  });
+  const withImages = tapestries.filter((t) => t.imagePath || t.thumbnail);
+  const shuffled = [...withImages].sort(() => 0.5 - Math.random());
+  const heroTapestry = shuffled[0];
+  const plateTapestries = shuffled.slice(1, 4);
 
-  // Combine carousel images with eligible tapestries
-  const allCarouselItems = [...carouselImages, ...eligibleTapestries];
-
-  // Shuffle all items for the carousel
-  const randomCarouselItems = [...allCarouselItems].sort(
-    () => 0.5 - Math.random(),
-  );
-
-  // Keep random tapestries for the tapestries section (only actual tapestries)
-  const randomTapestries = [...eligibleTapestries]
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 3);
-
-  // Site chrome (Header/Footer) is provided by the (site) route-group layout.
   return (
-    <>
-      {/* Hero Section with Carousel */}
-      <HeroCarousel tapestries={randomCarouselItems} />
+    <div className="bg-colonial-navy">
+      <GalleryHero
+        spotlight={spotlight}
+        backdrop={
+          heroTapestry
+            ? {
+                src: heroTapestry.imagePath || heroTapestry.thumbnail,
+                alt: heroTapestry.title,
+              }
+            : null
+        }
+      />
 
-      {/* About Section */}
-      <PageSection paddingTop="small">
-        <AboutSection />
-      </PageSection>
+      <section className="container mx-auto py-16 md:py-24">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <span className="eyebrow eyebrow-gold">The Collection</span>
+          <h2 className="gallery-heading mt-2 text-3xl md:text-4xl">
+            Thirteen colonies, thirteen panels
+          </h2>
+          <p className="gallery-lead mx-auto mt-4">
+            Each panel is 35&Prime; × 45&Prime; of hand embroidery, telling a
+            lesser-known story of its colony&rsquo;s road to independence.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {plateTapestries.map((tapestry) => (
+            <TapestryPlate key={tapestry.slug} tapestry={tapestry} />
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <a
+            href="/tapestries"
+            className="inline-flex items-center font-medium text-colonial-gold transition-colors hover:text-colonial-gold/80"
+          >
+            Explore all thirteen colonies →
+          </a>
+        </div>
+      </section>
 
-      {/* Vision Section */}
-      <PageSection paddingTop="medium" background="vintage-paper">
-        <VisionSection />
-      </PageSection>
+      <section className="container mx-auto py-16 md:py-24">
+        <ProjectStrip />
+      </section>
 
-      {/* Tapestry Section */}
-      <PageSection paddingTop="medium">
-        <TapestriesSection randomTapestries={randomTapestries} />
-      </PageSection>
-
-      {/* Latest News Section */}
-      <PageSection paddingTop="medium">
+      <section className="container mx-auto py-16 md:py-24">
         <LatestNewsSection />
-      </PageSection>
+      </section>
 
-      {/* Contact Section */}
-      <PageSection paddingTop="medium">
+      <section className="container mx-auto py-16 md:py-24">
+        <ShopStrip />
+      </section>
+
+      <section className="container mx-auto pb-24 pt-8">
         <GetInTouchSection />
-      </PageSection>
-    </>
+      </section>
+    </div>
   );
 }
