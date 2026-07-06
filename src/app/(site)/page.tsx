@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { GalleryHero } from '@/components/features/home/gallery-hero';
 import { ProjectStrip } from '@/components/features/home/project-strip';
 import { ShopStrip } from '@/components/features/home/shop-strip';
@@ -64,12 +65,12 @@ export default async function Home() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <a
+          <Link
             href="/tapestries"
             className="inline-flex items-center font-medium text-colonial-gold transition-colors hover:text-colonial-gold/80"
           >
             Explore all thirteen colonies →
-          </a>
+          </Link>
         </div>
       </section>
 
