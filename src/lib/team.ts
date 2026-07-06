@@ -7,9 +7,6 @@ import {
   FrontmatterValidationError,
 } from './content-schemas';
 import { markdownToHtml } from './markdown';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 
 export interface TeamMember {
   slug: string;
@@ -34,60 +31,6 @@ export interface TeamGroup {
   longDescription?: string;
   order?: number;
   [key: string]: any; // For additional frontmatter fields
-}
-
-// Specialized function to get team content for a specific group
-// Handles both group index files and individual member files
-async function getTeamContentForGroup(group: string) {
-  const groupDirectory = path.join(process.cwd(), 'content', 'team', group);
-
-  if (!fs.existsSync(groupDirectory)) {
-    console.warn(`Team group directory not found: ${groupDirectory}`);
-    return [];
-  }
-
-  const content: any[] = [];
-  const items = fs.readdirSync(groupDirectory, { withFileTypes: true });
-
-  for (const item of items) {
-    const fullPath = path.join(groupDirectory, item.name);
-
-    if (item.isFile() && item.name === 'index.md') {
-      // This is the group index file
-      try {
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
-        const { data, content: markdownContent } = matter(fileContents);
-
-        content.push({
-          slug: group, // Group index gets the group name as slug
-          frontmatter: data,
-          content: markdownContent,
-        });
-      } catch (error) {
-        console.error(`Error processing group index ${fullPath}:`, error);
-      }
-    } else if (item.isDirectory()) {
-      // This should be a member directory
-      const memberIndexPath = path.join(fullPath, 'index.md');
-
-      if (fs.existsSync(memberIndexPath)) {
-        try {
-          const fileContents = fs.readFileSync(memberIndexPath, 'utf8');
-          const { data, content: markdownContent } = matter(fileContents);
-
-          content.push({
-            slug: item.name, // Member gets their directory name as slug
-            frontmatter: data,
-            content: markdownContent,
-          });
-        } catch (error) {
-          console.error(`Error processing member ${memberIndexPath}:`, error);
-        }
-      }
-    }
-  }
-
-  return content;
 }
 
 // Build a TeamGroup from validated group-index frontmatter + body.
@@ -176,8 +119,9 @@ export async function getTeamMembersByGroup(
   group: string,
 ): Promise<TeamMember[]> {
   try {
-    // Get all team content for this specific group using direct directory processing
-    const groupSpecificContent = await getTeamContentForGroup(group);
+    // Read this group's directory via content-core (group index.md plus one
+    // subdirectory per member).
+    const groupSpecificContent = await getAllContent(`team/${group}`);
 
     const members: TeamMember[] = [];
 
@@ -185,10 +129,14 @@ export async function getTeamMembersByGroup(
       const rawData = item.frontmatter;
       const content = item.content;
 
-      // Skip if this looks like a group index file rather than a member
-      // Group index files have description but no role (they describe the group, not a person)
-      // OR if the slug matches the group name (alternative slug generation)
-      if ((rawData['description'] && !rawData['role']) || item.slug === group) {
+      // Skip the group's own index.md: it describes the group, not a person.
+      // content-core derives its slug as '' (path-root index) — the old
+      // reader used the group name, so tolerate both.
+      if (
+        (rawData['description'] && !rawData['role']) ||
+        item.slug === group ||
+        item.slug === ''
+      ) {
         continue;
       }
 
