@@ -173,43 +173,6 @@ function findAudioInDirectory(tapestrySlug: string): string | null {
   return audioFile ? `/images/tapestries/${tapestrySlug}/${audioFile}` : null;
 }
 
-// Function to get carousel images as TapestryEntry-like objects
-export function getCarouselImages(): TapestryEntry[] {
-  try {
-    const carouselPath = path.join(process.cwd(), 'public/images/carousel');
-
-    if (!fs.existsSync(carouselPath)) {
-      console.warn('Carousel directory not found');
-      return [];
-    }
-
-    const files = fs.readdirSync(carouselPath);
-    const imageFiles = files.filter((file) => {
-      const ext = path.extname(file).toLowerCase();
-      return ['.jpg', '.jpeg', '.png', '.webp', '.avif'].includes(ext);
-    });
-
-    // Sort files by name to ensure consistent ordering
-    imageFiles.sort();
-
-    return imageFiles.map((file, index) => ({
-      slug: `carousel-${index + 1}`,
-      title: `Carousel Image ${index + 1}`,
-      summary: '',
-      thumbnail: `/images/carousel/${file}`,
-      background_color: 'bg-colonial-navy',
-      content: '',
-      imagePath: `/images/carousel/${file}`,
-      colony: null,
-      status: 'In Progress' as TapestryStatus,
-      timelineEvents: [],
-    }));
-  } catch (error) {
-    console.error('Error loading carousel images:', error);
-    return [];
-  }
-}
-
 // Thumbnail: frontmatter override, then finished-photo, then a *thumbnail*
 // file (640w variant preferred), then the main image, then the placeholder.
 function resolveThumbnail(
