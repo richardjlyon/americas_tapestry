@@ -43,7 +43,7 @@ export function SiteBreadcrumb() {
     // The header is fixed positioned, so we need margin-top to prevent
     // overlap. Navy strip continues the Night Gallery chrome; a faint
     // hairline separates it from the fixed header above.
-    <div className="mt-16 w-full border-b border-white/10 bg-colonial-navy py-3 md:mt-20 md:pb-4">
+    <div className="mt-16 w-full border-b border-white/10 bg-colonial-navy/90 py-3 backdrop-blur-sm md:mt-20 md:pb-4">
       <div className="container mx-auto">
         <Breadcrumb>
           <BreadcrumbList className="font-sans text-lg font-medium text-colonial-parchment/60">

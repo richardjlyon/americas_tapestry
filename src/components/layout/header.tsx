@@ -52,10 +52,10 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-colonial-navy shadow-md border-b border-colonial-gold/20'
-          : 'bg-colonial-navy/90 backdrop-blur-sm',
+        // Frosted navy chrome — same recipe as the breadcrumb strip below,
+        // in every scroll state, so the two bands always match.
+        'fixed top-0 left-0 right-0 z-50 bg-colonial-navy/90 backdrop-blur-sm transition-all duration-300',
+        isScrolled && 'shadow-md border-b border-colonial-gold/20',
       )}
     >
       {/* Logo - Positioned at the root level */}
