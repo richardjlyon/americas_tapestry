@@ -982,39 +982,39 @@
   },
   "/images/tapestries/connecticut/connecticut-tapestry-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-640w-ab1ba7e3.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-1024w-ab1ba7e3.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-1920w-ab1ba7e3.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-640w-1d660d6b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-1024w-1d660d6b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-1920w-1d660d6b.webp"
     },
-    "originalSize": 1423055,
-    "hash": "ab1ba7e3"
+    "originalSize": 622013,
+    "hash": "1d660d6b"
   },
   "/images/tapestries/connecticut/connecticut-tapestry-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-640w-4f96d25d.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-1024w-4f96d25d.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-1920w-4f96d25d.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-640w-4d3ce47d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-1024w-4d3ce47d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-1920w-1920w-4d3ce47d.webp"
     },
-    "originalSize": 1680376,
-    "hash": "4f96d25d"
+    "originalSize": 561566,
+    "hash": "4d3ce47d"
   },
   "/images/tapestries/connecticut/connecticut-tapestry-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-640w-a1ef0db7.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-1024w-a1ef0db7.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-1920w-a1ef0db7.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-640w-6ed110c8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-1024w-6ed110c8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-1920w-6ed110c8.webp"
     },
-    "originalSize": 2575973,
-    "hash": "a1ef0db7"
+    "originalSize": 631278,
+    "hash": "6ed110c8"
   },
   "/images/tapestries/connecticut/connecticut-tapestry-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-640w-8e3acde1.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-1024w-8e3acde1.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-1920w-8e3acde1.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-640w-f8afb6fa.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-1024w-f8afb6fa.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-tapestry-2560w-1920w-f8afb6fa.webp"
     },
-    "originalSize": 3131568,
-    "hash": "8e3acde1"
+    "originalSize": 574906,
+    "hash": "f8afb6fa"
   },
   "/images/tapestries/connecticut/connecticut-tapestry-640w.jpg": {
     "variants": {
@@ -1054,12 +1054,12 @@
   },
   "/images/tapestries/delaware/delaware-tapestry-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-1920w-640w-ac8141b0.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-1920w-1024w-ac8141b0.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-1920w-1920w-ac8141b0.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-1920w-640w-03d6299a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-1920w-1024w-03d6299a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-1920w-1920w-03d6299a.webp"
     },
-    "originalSize": 535661,
-    "hash": "ac8141b0"
+    "originalSize": 221320,
+    "hash": "03d6299a"
   },
   "/images/tapestries/delaware/delaware-tapestry-1920w.webp": {
     "variants": {
@@ -1072,21 +1072,21 @@
   },
   "/images/tapestries/delaware/delaware-tapestry-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-640w-186cdf4b.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-1024w-186cdf4b.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-1920w-186cdf4b.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-640w-cc566379.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-1024w-cc566379.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-1920w-cc566379.webp"
     },
-    "originalSize": 844334,
-    "hash": "186cdf4b"
+    "originalSize": 220676,
+    "hash": "cc566379"
   },
   "/images/tapestries/delaware/delaware-tapestry-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-640w-da201497.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-1024w-da201497.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-1920w-da201497.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-640w-b37acc37.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-1024w-b37acc37.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-tapestry-2560w-1920w-b37acc37.webp"
     },
-    "originalSize": 582532,
-    "hash": "da201497"
+    "originalSize": 130046,
+    "hash": "b37acc37"
   },
   "/images/tapestries/delaware/delaware-tapestry-640w.jpg": {
     "variants": {
@@ -1126,39 +1126,39 @@
   },
   "/images/tapestries/georgia/georgia-tapestry-main-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-640w-90a9ecc8.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-1024w-90a9ecc8.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-1920w-90a9ecc8.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-640w-6a6876ce.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-1024w-6a6876ce.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-1920w-6a6876ce.webp"
     },
-    "originalSize": 692359,
-    "hash": "90a9ecc8"
+    "originalSize": 311280,
+    "hash": "6a6876ce"
   },
   "/images/tapestries/georgia/georgia-tapestry-main-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-640w-7311cb5d.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-1024w-7311cb5d.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-1920w-7311cb5d.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-640w-996f542c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-1024w-996f542c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-1920w-996f542c.webp"
     },
-    "originalSize": 518190,
-    "hash": "7311cb5d"
+    "originalSize": 206772,
+    "hash": "996f542c"
   },
   "/images/tapestries/georgia/georgia-tapestry-main-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-640w-a2f7f524.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-1024w-a2f7f524.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-1920w-a2f7f524.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-640w-b268926d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-1024w-b268926d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-1920w-b268926d.webp"
     },
-    "originalSize": 1062316,
-    "hash": "a2f7f524"
+    "originalSize": 313678,
+    "hash": "b268926d"
   },
   "/images/tapestries/georgia/georgia-tapestry-main-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-640w-f724b054.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-1024w-f724b054.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-1920w-f724b054.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-640w-dbe196bf.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-1024w-dbe196bf.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-2560w-1920w-dbe196bf.webp"
     },
-    "originalSize": 753506,
-    "hash": "f724b054"
+    "originalSize": 212252,
+    "hash": "dbe196bf"
   },
   "/images/tapestries/georgia/georgia-tapestry-main-640w.jpg": {
     "variants": {
@@ -1180,12 +1180,12 @@
   },
   "/images/tapestries/georgia/georgia-tapestry-main.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-640w-0a96deac.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1024w-0a96deac.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-0a96deac.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-640w-6e511b47.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1024w-6e511b47.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-main-1920w-6e511b47.webp"
     },
-    "originalSize": 5410754,
-    "hash": "0a96deac"
+    "originalSize": 219232,
+    "hash": "6e511b47"
   },
   "/images/tapestries/georgia/georgia-tapestry-thumbnail-1024w.jpg": {
     "variants": {
@@ -1225,12 +1225,12 @@
   },
   "/images/tapestries/georgia/georgia-tapestry-thumbnail-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-thumbnail-2560w-640w-4d8f2fc6.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-thumbnail-2560w-1024w-4d8f2fc6.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-thumbnail-2560w-1920w-4d8f2fc6.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-thumbnail-2560w-640w-2395c0ed.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-thumbnail-2560w-1024w-2395c0ed.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-tapestry-thumbnail-2560w-1920w-2395c0ed.webp"
     },
-    "originalSize": 659012,
-    "hash": "4d8f2fc6"
+    "originalSize": 315936,
+    "hash": "2395c0ed"
   },
   "/images/tapestries/georgia/georgia-tapestry-thumbnail-2560w.webp": {
     "variants": {
@@ -1288,39 +1288,39 @@
   },
   "/images/tapestries/maryland/maryland-tapestry-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-640w-9516d5df.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-1024w-9516d5df.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-1920w-9516d5df.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-640w-7d5f75ad.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-1024w-7d5f75ad.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-1920w-7d5f75ad.webp"
     },
-    "originalSize": 794173,
-    "hash": "9516d5df"
+    "originalSize": 408412,
+    "hash": "7d5f75ad"
   },
   "/images/tapestries/maryland/maryland-tapestry-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-640w-4000dff0.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-1024w-4000dff0.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-1920w-4000dff0.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-640w-964e84b5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-1024w-964e84b5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-1920w-1920w-964e84b5.webp"
     },
-    "originalSize": 633322,
-    "hash": "4000dff0"
+    "originalSize": 288660,
+    "hash": "964e84b5"
   },
   "/images/tapestries/maryland/maryland-tapestry-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-640w-72253568.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-1024w-72253568.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-1920w-72253568.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-640w-507cefd0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-1024w-507cefd0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-1920w-507cefd0.webp"
     },
-    "originalSize": 1229437,
-    "hash": "72253568"
+    "originalSize": 411960,
+    "hash": "507cefd0"
   },
   "/images/tapestries/maryland/maryland-tapestry-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-640w-2c4e04f2.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-1024w-2c4e04f2.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-1920w-2c4e04f2.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-640w-ef16197e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-1024w-ef16197e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-tapestry-2560w-1920w-ef16197e.webp"
     },
-    "originalSize": 922688,
-    "hash": "2c4e04f2"
+    "originalSize": 292828,
+    "hash": "ef16197e"
   },
   "/images/tapestries/maryland/maryland-tapestry-640w.jpg": {
     "variants": {
@@ -1360,12 +1360,12 @@
   },
   "/images/tapestries/massachusetts/massachusetts-tapestry-main-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-1920w-640w-ea2f4664.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-1920w-1024w-ea2f4664.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-1920w-1920w-ea2f4664.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-1920w-640w-b8496850.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-1920w-1024w-b8496850.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-1920w-1920w-b8496850.webp"
     },
-    "originalSize": 571066,
-    "hash": "ea2f4664"
+    "originalSize": 288338,
+    "hash": "b8496850"
   },
   "/images/tapestries/massachusetts/massachusetts-tapestry-main-1920w.webp": {
     "variants": {
@@ -1378,21 +1378,21 @@
   },
   "/images/tapestries/massachusetts/massachusetts-tapestry-main-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-640w-3946cc9c.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-1024w-3946cc9c.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-1920w-3946cc9c.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-640w-a4c77cc3.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-1024w-a4c77cc3.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-1920w-a4c77cc3.webp"
     },
-    "originalSize": 870540,
-    "hash": "3946cc9c"
+    "originalSize": 290526,
+    "hash": "a4c77cc3"
   },
   "/images/tapestries/massachusetts/massachusetts-tapestry-main-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-640w-c3b5b2ec.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-1024w-c3b5b2ec.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-1920w-c3b5b2ec.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-640w-d21644b0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-1024w-d21644b0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-tapestry-main-2560w-1920w-d21644b0.webp"
     },
-    "originalSize": 575028,
-    "hash": "c3b5b2ec"
+    "originalSize": 177396,
+    "hash": "d21644b0"
   },
   "/images/tapestries/massachusetts/massachusetts-tapestry-main-640w.jpg": {
     "variants": {
@@ -1432,39 +1432,39 @@
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-640w-7a03b1b5.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-1024w-7a03b1b5.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-1920w-7a03b1b5.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-640w-57f42839.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-1024w-57f42839.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-1920w-57f42839.webp"
     },
-    "originalSize": 855503,
-    "hash": "7a03b1b5"
+    "originalSize": 419797,
+    "hash": "57f42839"
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-640w-a85a3c4f.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-1024w-a85a3c4f.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-1920w-a85a3c4f.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-640w-9c2d18d0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-1024w-9c2d18d0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-1920w-9c2d18d0.webp"
     },
-    "originalSize": 788242,
-    "hash": "a85a3c4f"
+    "originalSize": 309898,
+    "hash": "9c2d18d0"
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-640w-457cf769.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-1024w-457cf769.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-1920w-457cf769.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-640w-8c833dd4.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-1024w-8c833dd4.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-1920w-8c833dd4.webp"
     },
-    "originalSize": 1357609,
-    "hash": "457cf769"
+    "originalSize": 425425,
+    "hash": "8c833dd4"
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-640w-df3db868.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-1024w-df3db868.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-1920w-df3db868.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-640w-dfad67a4.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-1024w-dfad67a4.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-2560w-1920w-dfad67a4.webp"
     },
-    "originalSize": 1224368,
-    "hash": "df3db868"
+    "originalSize": 315148,
+    "hash": "dfad67a4"
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-main-640w.jpg": {
     "variants": {
@@ -1486,12 +1486,12 @@
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-main.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-640w-aa749a80.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1024w-aa749a80.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-aa749a80.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-640w-6c17a723.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1024w-6c17a723.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-main-1920w-6c17a723.webp"
     },
-    "originalSize": 685946,
-    "hash": "aa749a80"
+    "originalSize": 312318,
+    "hash": "6c17a723"
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1024w.jpg": {
     "variants": {
@@ -1513,39 +1513,39 @@
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-640w-286e55c7.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-1024w-286e55c7.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-1920w-286e55c7.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-640w-7b0c122f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-1024w-7b0c122f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-1920w-7b0c122f.webp"
     },
-    "originalSize": 694179,
-    "hash": "286e55c7"
+    "originalSize": 513559,
+    "hash": "7b0c122f"
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-640w-9baabe3c.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-1024w-9baabe3c.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-1920w-9baabe3c.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-640w-37e29dc0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-1024w-37e29dc0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-1920w-37e29dc0.webp"
     },
-    "originalSize": 662670,
-    "hash": "9baabe3c"
+    "originalSize": 386628,
+    "hash": "37e29dc0"
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-640w-f612d367.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-1024w-f612d367.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-1920w-f612d367.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-640w-375c975e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-1024w-375c975e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-1920w-375c975e.webp"
     },
-    "originalSize": 1100871,
-    "hash": "f612d367"
+    "originalSize": 519088,
+    "hash": "375c975e"
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-640w-181326dd.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-1024w-181326dd.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-1920w-181326dd.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-640w-84a2d279.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-1024w-84a2d279.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-2560w-1920w-84a2d279.webp"
     },
-    "originalSize": 1031330,
-    "hash": "181326dd"
+    "originalSize": 401382,
+    "hash": "84a2d279"
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-640w.jpg": {
     "variants": {
@@ -1567,12 +1567,12 @@
   },
   "/images/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-640w-d59b2798.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1024w-d59b2798.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-d59b2798.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-640w-2ac539bb.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1024w-2ac539bb.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-tapestry-thumbnail-1920w-2ac539bb.webp"
     },
-    "originalSize": 1415656,
-    "hash": "d59b2798"
+    "originalSize": 434352,
+    "hash": "2ac539bb"
   },
   "/images/tapestries/new-jersey/new-jersey-tapestry-main-1024w.jpg": {
     "variants": {
@@ -1594,39 +1594,39 @@
   },
   "/images/tapestries/new-jersey/new-jersey-tapestry-main-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-640w-d00c0fa8.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-1024w-d00c0fa8.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-1920w-d00c0fa8.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-640w-aa141501.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-1024w-aa141501.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-1920w-aa141501.webp"
     },
-    "originalSize": 729629,
-    "hash": "d00c0fa8"
+    "originalSize": 329277,
+    "hash": "aa141501"
   },
   "/images/tapestries/new-jersey/new-jersey-tapestry-main-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-640w-a1aa22c7.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-1024w-a1aa22c7.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-1920w-a1aa22c7.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-640w-af12f38e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-1024w-af12f38e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-1920w-1920w-af12f38e.webp"
     },
-    "originalSize": 654568,
-    "hash": "a1aa22c7"
+    "originalSize": 211146,
+    "hash": "af12f38e"
   },
   "/images/tapestries/new-jersey/new-jersey-tapestry-main-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-640w-98b8d6c7.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-1024w-98b8d6c7.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-1920w-98b8d6c7.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-640w-6fc6f5b6.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-1024w-6fc6f5b6.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-1920w-6fc6f5b6.webp"
     },
-    "originalSize": 1214923,
-    "hash": "98b8d6c7"
+    "originalSize": 328418,
+    "hash": "6fc6f5b6"
   },
   "/images/tapestries/new-jersey/new-jersey-tapestry-main-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-640w-53e25809.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-1024w-53e25809.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-1920w-53e25809.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-640w-b6df2244.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-1024w-b6df2244.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-main-2560w-1920w-b6df2244.webp"
     },
-    "originalSize": 1086694,
-    "hash": "53e25809"
+    "originalSize": 214942,
+    "hash": "b6df2244"
   },
   "/images/tapestries/new-jersey/new-jersey-tapestry-main-640w.jpg": {
     "variants": {
@@ -1684,21 +1684,21 @@
   },
   "/images/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-640w-affa319d.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-1024w-affa319d.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-1920w-affa319d.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-640w-3e00c214.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-1024w-3e00c214.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-1920w-3e00c214.webp"
     },
-    "originalSize": 819844,
-    "hash": "affa319d"
+    "originalSize": 355718,
+    "hash": "3e00c214"
   },
   "/images/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-640w-a342c45b.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-1024w-a342c45b.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-1920w-a342c45b.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-640w-e83aabab.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-1024w-e83aabab.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-tapestry-thumbnail-2560w-1920w-e83aabab.webp"
     },
-    "originalSize": 680694,
-    "hash": "a342c45b"
+    "originalSize": 213236,
+    "hash": "e83aabab"
   },
   "/images/tapestries/new-jersey/new-jersey-tapestry-thumbnail-640w.jpg": {
     "variants": {
@@ -1738,39 +1738,39 @@
   },
   "/images/tapestries/new-york/new-york-tapestry-main-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-640w-68067b6c.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-1024w-68067b6c.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-1920w-68067b6c.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-640w-93b2230a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-1024w-93b2230a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-1920w-93b2230a.webp"
     },
-    "originalSize": 770936,
-    "hash": "68067b6c"
+    "originalSize": 342664,
+    "hash": "93b2230a"
   },
   "/images/tapestries/new-york/new-york-tapestry-main-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-640w-3e351b47.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-1024w-3e351b47.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-1920w-3e351b47.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-640w-9b72d321.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-1024w-9b72d321.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-1920w-9b72d321.webp"
     },
-    "originalSize": 600516,
-    "hash": "3e351b47"
+    "originalSize": 238850,
+    "hash": "9b72d321"
   },
   "/images/tapestries/new-york/new-york-tapestry-main-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-640w-0cac13f9.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-1024w-0cac13f9.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-1920w-0cac13f9.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-640w-6c36446d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-1024w-6c36446d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-1920w-6c36446d.webp"
     },
-    "originalSize": 1193741,
-    "hash": "0cac13f9"
+    "originalSize": 345395,
+    "hash": "6c36446d"
   },
   "/images/tapestries/new-york/new-york-tapestry-main-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-640w-820045d2.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-1024w-820045d2.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-1920w-820045d2.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-640w-f1b5111c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-1024w-f1b5111c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-2560w-1920w-f1b5111c.webp"
     },
-    "originalSize": 892948,
-    "hash": "820045d2"
+    "originalSize": 242316,
+    "hash": "f1b5111c"
   },
   "/images/tapestries/new-york/new-york-tapestry-main-640w.jpg": {
     "variants": {
@@ -1792,12 +1792,12 @@
   },
   "/images/tapestries/new-york/new-york-tapestry-main.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-640w-deee7627.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1024w-deee7627.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-deee7627.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-640w-6bf9b209.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1024w-6bf9b209.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-main-1920w-6bf9b209.webp"
     },
-    "originalSize": 6473882,
-    "hash": "deee7627"
+    "originalSize": 250778,
+    "hash": "6bf9b209"
   },
   "/images/tapestries/new-york/new-york-tapestry-thumbnail-1024w.jpg": {
     "variants": {
@@ -1837,21 +1837,21 @@
   },
   "/images/tapestries/new-york/new-york-tapestry-thumbnail-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-640w-a553e854.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-1024w-a553e854.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-1920w-a553e854.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-640w-1168fd6f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-1024w-1168fd6f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-1920w-1168fd6f.webp"
     },
-    "originalSize": 739997,
-    "hash": "a553e854"
+    "originalSize": 362689,
+    "hash": "1168fd6f"
   },
   "/images/tapestries/new-york/new-york-tapestry-thumbnail-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-640w-da7127f4.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-1024w-da7127f4.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-1920w-da7127f4.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-640w-cc518ef6.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-1024w-cc518ef6.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-2560w-1920w-cc518ef6.webp"
     },
-    "originalSize": 524668,
-    "hash": "da7127f4"
+    "originalSize": 226862,
+    "hash": "cc518ef6"
   },
   "/images/tapestries/new-york/new-york-tapestry-thumbnail-640w.jpg": {
     "variants": {
@@ -1873,12 +1873,12 @@
   },
   "/images/tapestries/new-york/new-york-tapestry-thumbnail.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-640w-86ad685f.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-1024w-86ad685f.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-1920w-86ad685f.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-640w-85a90a3b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-1024w-85a90a3b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-tapestry-thumbnail-1920w-85a90a3b.webp"
     },
-    "originalSize": 1434050,
-    "hash": "86ad685f"
+    "originalSize": 238784,
+    "hash": "85a90a3b"
   },
   "/images/tapestries/north-carolina/north-carolina-tapestry-main-1024w.jpg": {
     "variants": {
@@ -1900,39 +1900,39 @@
   },
   "/images/tapestries/north-carolina/north-carolina-tapestry-main-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-640w-55661792.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-1024w-55661792.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-1920w-55661792.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-640w-e43f3e10.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-1024w-e43f3e10.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-1920w-e43f3e10.webp"
     },
-    "originalSize": 978898,
-    "hash": "55661792"
+    "originalSize": 475930,
+    "hash": "e43f3e10"
   },
   "/images/tapestries/north-carolina/north-carolina-tapestry-main-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-640w-63a227a1.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-1024w-63a227a1.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-1920w-63a227a1.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-640w-77fabcb8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-1024w-77fabcb8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-1920w-1920w-77fabcb8.webp"
     },
-    "originalSize": 820390,
-    "hash": "63a227a1"
+    "originalSize": 351072,
+    "hash": "77fabcb8"
   },
   "/images/tapestries/north-carolina/north-carolina-tapestry-main-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-640w-9d1ca552.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-1024w-9d1ca552.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-1920w-9d1ca552.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-640w-f278b11b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-1024w-f278b11b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-1920w-f278b11b.webp"
     },
-    "originalSize": 1570772,
-    "hash": "9d1ca552"
+    "originalSize": 481675,
+    "hash": "f278b11b"
   },
   "/images/tapestries/north-carolina/north-carolina-tapestry-main-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-640w-b5de75f5.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-1024w-b5de75f5.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-1920w-b5de75f5.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-640w-053b2db1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-1024w-053b2db1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-tapestry-main-2560w-1920w-053b2db1.webp"
     },
-    "originalSize": 1248888,
-    "hash": "b5de75f5"
+    "originalSize": 363978,
+    "hash": "053b2db1"
   },
   "/images/tapestries/north-carolina/north-carolina-tapestry-main-640w.jpg": {
     "variants": {
@@ -1972,39 +1972,39 @@
   },
   "/images/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-640w-2455b1ad.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-1024w-2455b1ad.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-1920w-2455b1ad.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-640w-0c9a54b0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-1024w-0c9a54b0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-1920w-0c9a54b0.webp"
     },
-    "originalSize": 671204,
-    "hash": "2455b1ad"
+    "originalSize": 291271,
+    "hash": "0c9a54b0"
   },
   "/images/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-640w-2171d7f7.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-1024w-2171d7f7.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-1920w-2171d7f7.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-640w-ccf46685.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-1024w-ccf46685.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-1920w-1920w-ccf46685.webp"
     },
-    "originalSize": 523050,
-    "hash": "2171d7f7"
+    "originalSize": 182026,
+    "hash": "ccf46685"
   },
   "/images/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-640w-fec1d2e4.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-1024w-fec1d2e4.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-1920w-fec1d2e4.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-640w-600af21e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-1024w-600af21e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-1920w-600af21e.webp"
     },
-    "originalSize": 1048618,
-    "hash": "fec1d2e4"
+    "originalSize": 291885,
+    "hash": "600af21e"
   },
   "/images/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-640w-abb4b6a7.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-1024w-abb4b6a7.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-1920w-abb4b6a7.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-640w-0132c3cc.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-1024w-0132c3cc.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-main-2560w-1920w-0132c3cc.webp"
     },
-    "originalSize": 744580,
-    "hash": "abb4b6a7"
+    "originalSize": 188142,
+    "hash": "0132c3cc"
   },
   "/images/tapestries/pennsylvania/pennsylvania-tapestry-main-640w.jpg": {
     "variants": {
@@ -2044,12 +2044,12 @@
   },
   "/images/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-1920w-640w-8084ab0f.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-1920w-1024w-8084ab0f.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-1920w-1920w-8084ab0f.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-1920w-640w-ee95a5be.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-1920w-1024w-ee95a5be.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-1920w-1920w-ee95a5be.webp"
     },
-    "originalSize": 500531,
-    "hash": "8084ab0f"
+    "originalSize": 363837,
+    "hash": "ee95a5be"
   },
   "/images/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-1920w.webp": {
     "variants": {
@@ -2062,21 +2062,21 @@
   },
   "/images/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-640w-6a093fd3.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-1024w-6a093fd3.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-1920w-6a093fd3.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-640w-30c32c63.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-1024w-30c32c63.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-1920w-30c32c63.webp"
     },
-    "originalSize": 777904,
-    "hash": "6a093fd3"
+    "originalSize": 366421,
+    "hash": "30c32c63"
   },
   "/images/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-640w-cb6c00a2.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-1024w-cb6c00a2.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-1920w-cb6c00a2.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-640w-fe6c8c86.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-1024w-fe6c8c86.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-2560w-1920w-fe6c8c86.webp"
     },
-    "originalSize": 573518,
-    "hash": "cb6c00a2"
+    "originalSize": 217460,
+    "hash": "fe6c8c86"
   },
   "/images/tapestries/pennsylvania/pennsylvania-tapestry-thumbnail-640w.jpg": {
     "variants": {
@@ -2116,21 +2116,21 @@
   },
   "/images/tapestries/rhode-island/rhode-island-tapestry-main-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-640w-fe560f01.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-1024w-fe560f01.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-1920w-fe560f01.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-640w-7f20820a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-1024w-7f20820a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-1920w-7f20820a.webp"
     },
-    "originalSize": 1103430,
-    "hash": "fe560f01"
+    "originalSize": 529524,
+    "hash": "7f20820a"
   },
   "/images/tapestries/rhode-island/rhode-island-tapestry-main-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-640w-96431365.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-1024w-96431365.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-1920w-96431365.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-640w-9dcc1b8d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-1024w-9dcc1b8d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-tapestry-main-1920w-1920w-9dcc1b8d.webp"
     },
-    "originalSize": 974650,
-    "hash": "96431365"
+    "originalSize": 408926,
+    "hash": "9dcc1b8d"
   },
   "/images/tapestries/rhode-island/rhode-island-tapestry-main-640w.jpg": {
     "variants": {
@@ -2170,39 +2170,39 @@
   },
   "/images/tapestries/south-carolina/south-carolina-tapestry-main-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-640w-54b74201.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-1024w-54b74201.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-1920w-54b74201.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-640w-8d28f491.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-1024w-8d28f491.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-1920w-8d28f491.webp"
     },
-    "originalSize": 707854,
-    "hash": "54b74201"
+    "originalSize": 367211,
+    "hash": "8d28f491"
   },
   "/images/tapestries/south-carolina/south-carolina-tapestry-main-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-640w-6556fcd6.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-1024w-6556fcd6.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-1920w-6556fcd6.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-640w-cb978eb5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-1024w-cb978eb5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-1920w-1920w-cb978eb5.webp"
     },
-    "originalSize": 564512,
-    "hash": "6556fcd6"
+    "originalSize": 248904,
+    "hash": "cb978eb5"
   },
   "/images/tapestries/south-carolina/south-carolina-tapestry-main-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-640w-9449c48e.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-1024w-9449c48e.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-1920w-9449c48e.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-640w-d24f9c3e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-1024w-d24f9c3e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-1920w-d24f9c3e.webp"
     },
-    "originalSize": 1120442,
-    "hash": "9449c48e"
+    "originalSize": 370347,
+    "hash": "d24f9c3e"
   },
   "/images/tapestries/south-carolina/south-carolina-tapestry-main-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-640w-7c90a51c.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-1024w-7c90a51c.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-1920w-7c90a51c.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-640w-a292290f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-1024w-a292290f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-tapestry-main-2560w-1920w-a292290f.webp"
     },
-    "originalSize": 882656,
-    "hash": "7c90a51c"
+    "originalSize": 254868,
+    "hash": "a292290f"
   },
   "/images/tapestries/south-carolina/south-carolina-tapestry-main-640w.jpg": {
     "variants": {
@@ -6769,39 +6769,39 @@
   },
   "/images/tapestries/virginia/virginia-tapestry-main-1920w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-640w-8077981d.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1024w-8077981d.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1920w-8077981d.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-640w-f5883e90.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1024w-f5883e90.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1920w-f5883e90.webp"
     },
-    "originalSize": 784166,
-    "hash": "8077981d"
+    "originalSize": 404089,
+    "hash": "f5883e90"
   },
   "/images/tapestries/virginia/virginia-tapestry-main-1920w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-640w-dec41fc3.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1024w-dec41fc3.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1920w-dec41fc3.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-640w-40c6700e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1024w-40c6700e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-1920w-1920w-40c6700e.webp"
     },
-    "originalSize": 656094,
-    "hash": "dec41fc3"
+    "originalSize": 280436,
+    "hash": "40c6700e"
   },
   "/images/tapestries/virginia/virginia-tapestry-main-2560w.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-640w-08940b1f.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1024w-08940b1f.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1920w-08940b1f.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-640w-0bf21ba0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1024w-0bf21ba0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1920w-0bf21ba0.webp"
     },
-    "originalSize": 1205888,
-    "hash": "08940b1f"
+    "originalSize": 403120,
+    "hash": "0bf21ba0"
   },
   "/images/tapestries/virginia/virginia-tapestry-main-2560w.webp": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-640w-f59b836f.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1024w-f59b836f.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1920w-f59b836f.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-640w-31174683.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1024w-31174683.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-tapestry-main-2560w-1920w-31174683.webp"
     },
-    "originalSize": 964084,
-    "hash": "f59b836f"
+    "originalSize": 281164,
+    "hash": "31174683"
   },
   "/images/tapestries/virginia/virginia-tapestry-main-640w.jpg": {
     "variants": {
@@ -7579,120 +7579,120 @@
   },
   "/images/tapestries/connecticut/connecticut-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-photo-640w-73f93b5b.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-photo-1024w-73f93b5b.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-photo-1920w-73f93b5b.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-photo-640w-afb3254c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-photo-1024w-afb3254c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/connecticut/connecticut-photo-1920w-afb3254c.webp"
     },
-    "originalSize": 3424938,
-    "hash": "73f93b5b"
+    "originalSize": 2903971,
+    "hash": "afb3254c"
   },
   "/images/tapestries/delaware/delaware-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-photo-640w-73bb5adc.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-photo-1024w-73bb5adc.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-photo-1920w-73bb5adc.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-photo-640w-d86a286b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-photo-1024w-d86a286b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/delaware/delaware-photo-1920w-d86a286b.webp"
     },
-    "originalSize": 3341686,
-    "hash": "73bb5adc"
+    "originalSize": 2902197,
+    "hash": "d86a286b"
   },
   "/images/tapestries/georgia/georgia-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-photo-640w-74f31cc0.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-photo-1024w-74f31cc0.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-photo-1920w-74f31cc0.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-photo-640w-fd5b9eb0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-photo-1024w-fd5b9eb0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/georgia/georgia-photo-1920w-fd5b9eb0.webp"
     },
-    "originalSize": 3161764,
-    "hash": "74f31cc0"
+    "originalSize": 2836471,
+    "hash": "fd5b9eb0"
   },
   "/images/tapestries/maryland/maryland-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-photo-640w-ed775445.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-photo-1024w-ed775445.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-photo-1920w-ed775445.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-photo-640w-85bdfd31.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-photo-1024w-85bdfd31.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/maryland/maryland-photo-1920w-85bdfd31.webp"
     },
-    "originalSize": 3231293,
-    "hash": "ed775445"
+    "originalSize": 2932313,
+    "hash": "85bdfd31"
   },
   "/images/tapestries/massachusetts/massachusetts-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-photo-640w-4f7c7828.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-photo-1024w-4f7c7828.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-photo-1920w-4f7c7828.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-photo-640w-ad4cbed1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-photo-1024w-ad4cbed1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/massachusetts/massachusetts-photo-1920w-ad4cbed1.webp"
     },
-    "originalSize": 3303347,
-    "hash": "4f7c7828"
+    "originalSize": 3442233,
+    "hash": "ad4cbed1"
   },
   "/images/tapestries/new-hampshire/new-hampshire-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-photo-640w-bf30bffe.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-photo-1024w-bf30bffe.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-photo-1920w-bf30bffe.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-photo-640w-063ccb3a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-photo-1024w-063ccb3a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-hampshire/new-hampshire-photo-1920w-063ccb3a.webp"
     },
-    "originalSize": 3028376,
-    "hash": "bf30bffe"
+    "originalSize": 2946755,
+    "hash": "063ccb3a"
   },
   "/images/tapestries/new-jersey/new-jersey-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-photo-640w-57ff591b.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-photo-1024w-57ff591b.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-photo-1920w-57ff591b.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-photo-640w-4d88fbd4.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-photo-1024w-4d88fbd4.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-jersey/new-jersey-photo-1920w-4d88fbd4.webp"
     },
-    "originalSize": 3426784,
-    "hash": "57ff591b"
+    "originalSize": 2940360,
+    "hash": "4d88fbd4"
   },
   "/images/tapestries/new-york/new-york-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-photo-640w-6994764a.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-photo-1024w-6994764a.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-photo-1920w-6994764a.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-photo-640w-44a99462.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-photo-1024w-44a99462.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/new-york/new-york-photo-1920w-44a99462.webp"
     },
-    "originalSize": 3046082,
-    "hash": "6994764a"
+    "originalSize": 2821228,
+    "hash": "44a99462"
   },
   "/images/tapestries/north-carolina/north-carolina-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-photo-640w-e06d6c21.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-photo-1024w-e06d6c21.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-photo-1920w-e06d6c21.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-photo-640w-489b9d1d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-photo-1024w-489b9d1d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/north-carolina/north-carolina-photo-1920w-489b9d1d.webp"
     },
-    "originalSize": 2893674,
-    "hash": "e06d6c21"
+    "originalSize": 2896429,
+    "hash": "489b9d1d"
   },
   "/images/tapestries/pennsylvania/pennsylvania-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-photo-640w-86c8b5fa.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-photo-1024w-86c8b5fa.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-photo-1920w-86c8b5fa.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-photo-640w-7eeac406.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-photo-1024w-7eeac406.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/pennsylvania/pennsylvania-photo-1920w-7eeac406.webp"
     },
-    "originalSize": 2616793,
-    "hash": "86c8b5fa"
+    "originalSize": 2695714,
+    "hash": "7eeac406"
   },
   "/images/tapestries/rhode-island/rhode-island-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-photo-640w-cc0594cd.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-photo-1024w-cc0594cd.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-photo-1920w-cc0594cd.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-photo-640w-58aef917.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-photo-1024w-58aef917.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/rhode-island/rhode-island-photo-1920w-58aef917.webp"
     },
-    "originalSize": 2821781,
-    "hash": "cc0594cd"
+    "originalSize": 2775329,
+    "hash": "58aef917"
   },
   "/images/tapestries/south-carolina/south-carolina-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-photo-640w-d2b4d334.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-photo-1024w-d2b4d334.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-photo-1920w-d2b4d334.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-photo-640w-f6107a4a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-photo-1024w-f6107a4a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/south-carolina/south-carolina-photo-1920w-f6107a4a.webp"
     },
-    "originalSize": 3355714,
-    "hash": "d2b4d334"
+    "originalSize": 3047963,
+    "hash": "f6107a4a"
   },
   "/images/tapestries/virginia/virginia-photo.jpg": {
     "variants": {
-      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-photo-640w-2aa269bf.webp",
-      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-photo-1024w-2aa269bf.webp",
-      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-photo-1920w-2aa269bf.webp"
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-photo-640w-041977c2.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-photo-1024w-041977c2.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/tapestries/virginia/virginia-photo-1920w-041977c2.webp"
     },
-    "originalSize": 2684453,
-    "hash": "2aa269bf"
+    "originalSize": 3007561,
+    "hash": "041977c2"
   },
   "/images/news/2026-06/01.jpg": {
     "variants": {
