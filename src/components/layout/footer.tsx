@@ -25,9 +25,10 @@ export function Footer() {
               <ul className="space-y-2">
                 {[
                   { name: 'Home', href: '/' },
-                  { name: 'About', href: '/about' },
-                  { name: 'News', href: '/news' },
-                  { name: 'Tapestry', href: '/tapestries' },
+                  { name: 'Visit', href: '/exhibitions' },
+                  { name: 'Tapestries', href: '/tapestries' },
+                  { name: 'Gallery', href: '/gallery' },
+                  { name: 'Shop', href: '/shop' },
                 ].map((item) => (
                   <li key={item.name}>
                     <Link
@@ -41,9 +42,10 @@ export function Footer() {
               </ul>
               <ul className="space-y-2">
                 {[
+                  { name: 'News', href: '/news' },
+                  { name: 'About', href: '/about' },
                   { name: 'Team', href: '/team' },
                   { name: 'Sponsors', href: '/sponsors' },
-                  { name: 'Shop', href: '/shop' },
                   { name: 'Contact', href: '/contact' },
                 ].map((item) => (
                   <li key={item.name}>

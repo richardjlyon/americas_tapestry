@@ -8,13 +8,14 @@ import { cn } from '@/lib/utils';
 
 // Navigation items used in both desktop and mobile
 const navigationItems = [
-  { name: 'About', href: '/about' },
+  { name: 'Visit', href: '/exhibitions' },
   { name: 'Tapestries', href: '/tapestries' },
-  { name: 'Team', href: '/team' },
-  { name: 'Exhibitions', href: '/exhibitions' },
-  { name: 'News', href: '/news' },
-  { name: 'Sponsors', href: '/sponsors' },
+  { name: 'Gallery', href: '/gallery' },
   { name: 'Shop', href: '/shop' },
+  { name: 'News', href: '/news' },
+  { name: 'About', href: '/about' },
+  { name: 'Team', href: '/team' },
+  { name: 'Sponsors', href: '/sponsors' },
   { name: 'Contact', href: '/contact' },
 ];
 
