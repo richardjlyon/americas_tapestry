@@ -21,6 +21,7 @@ export function SiteBreadcrumb() {
   if (
     pathname === '/' ||
     pathname === '/exhibitions' ||
+    pathname === '/about' ||
     pathname.startsWith('/tapestries')
   ) {
     return null;

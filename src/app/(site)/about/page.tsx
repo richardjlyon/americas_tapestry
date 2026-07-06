@@ -13,14 +13,21 @@ export const metadata = pageMetadata({
 
 export default function AboutPage() {
   return (
-    <>
-      <h1 className="page-heading">Welcome to America's Tapestry!</h1>
+    <div className="bg-colonial-navy">
+      {/* pt clears the fixed header (h-16 md:h-20) that normally rides on
+          the breadcrumb bar, suppressed on this dark route. */}
+      <header className="container mx-auto max-w-3xl pt-24 pb-4 text-center md:pt-28">
+        <span className="eyebrow eyebrow-gold">The Project</span>
+        <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">
+          Welcome to America's Tapestry!
+        </h1>
+        <p className="gallery-lead mx-auto mt-3">
+          Celebrating America's 250th Anniversary.
+        </p>
+        <div className="gold-threshold mx-auto mt-5" />
+      </header>
 
-      <p className="lead-text text-center mb-content-lg">
-        Celebrating America's 250th Anniversary.
-      </p>
-
-      <PageSection spacing="tight">
+      <PageSection spacing="tight" background="colonial-navy">
         {/* Hero image */}
         <div className="max-w-5xl mx-auto mb-6 md:mb-12 relative rounded-lg overflow-hidden shadow-xl">
           <Image
@@ -96,10 +103,10 @@ export default function AboutPage() {
       </PageSection>
 
       {/* Our Vision — reinstated here after its removal from the homepage
-          (per Richard, 2026-07-06). */}
-      <PageSection spacing="normal">
+          (per Richard, 2026-07-06). Cards stay light on the navy room. */}
+      <PageSection spacing="normal" background="colonial-navy">
         <VisionSection />
       </PageSection>
-    </>
+    </div>
   );
 }

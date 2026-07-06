@@ -5,6 +5,7 @@ export function VisionSection() {
   return (
     <>
       <SectionHeader
+        tone="dark"
         title="Our Vision"
         description="We're committed to preserving history, educating future generations, and building a community of needlework enthusiasts."
       />
