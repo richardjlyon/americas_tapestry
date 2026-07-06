@@ -5,6 +5,10 @@ background_color: "bg-teal-900"
 audioDescription: "This audio description provides a detailed verbal account of the North Carolina Tapestry, which depicts the state's early colonial history, its independent spirit during the Revolution, and its diverse geographical regions."
 colony: "NC"
 status: "Finished"
+timelineEvents:
+  - date: "1789-11-21"
+    title: "North Carolina Ratifies the Constitution"
+    description: "North Carolina became the twelfth state to ratify the United States Constitution, approving it by a vote of 194 to 77 at the Fayetteville convention, having initially declined to ratify until a bill of rights was promised."
 ---
 
 The North Carolina panel illustrates the Edenton Tea Party, one of the earliest recorded instances of organized political action by women in the American colonies.

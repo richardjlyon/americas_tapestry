@@ -13,6 +13,7 @@ function make(overrides: Partial<ShopifyProduct> = {}): ShopifyProduct {
     maxPrice: { amount: '20.0', currencyCode: 'USD' },
     variantId: 'gid://shopify/ProductVariant/9',
     availableForSale: true,
+    variants: [],
     ...overrides,
   };
 }

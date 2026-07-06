@@ -121,7 +121,7 @@ export function Header() {
         )}
       >
         {/* Mobile Menu Content */}
-        <div className="h-screen pt-20 pb-6 px-4 overflow-y-auto bg-colonial-navy">
+        <div className="max-h-screen pt-20 pb-6 px-4 overflow-y-auto bg-colonial-navy">
           <nav className="flex flex-col space-y-6 mt-4">
             {navigationItems.map((item) => (
               <Link

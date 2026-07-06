@@ -15,7 +15,7 @@ timelineEvents:
   - date: "1662-04-23"
     title: "Connecticut Charter Granted"
     description: "King Charles II granted Connecticut a royal charter, officially establishing it as a colony and confirming its territorial claims and right to self-governance."
-  - date: "1787-01-09"
+  - date: "1788-01-09"
     title: "Connecticut Ratifies the Constitution"
     description: "Connecticut became the fifth state to ratify the United States Constitution, with a vote of 128 to 40 in favor of adoption."
 ---

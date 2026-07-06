@@ -15,8 +15,8 @@ import {
 export function SiteBreadcrumb() {
   const pathname = usePathname();
 
-  // Skip rendering breadcrumbs on home page
-  if (pathname === '/') {
+  // Skip rendering breadcrumbs on home page and exhibitions
+  if (pathname === '/' || pathname === '/exhibitions') {
     return null;
   }
 

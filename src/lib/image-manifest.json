@@ -8125,5 +8125,320 @@
     },
     "originalSize": 2639618,
     "hash": "8287b281"
+  },
+  "/images/shop/prints/connecticut/connecticut-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-fineart-640w-e59889a1.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-fineart-1024w-e59889a1.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-fineart-1920w-e59889a1.webp"
+    },
+    "originalSize": 1547190,
+    "hash": "e59889a1"
+  },
+  "/images/shop/prints/connecticut/connecticut-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-poster-640w-58e0d941.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-poster-1024w-58e0d941.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/connecticut/connecticut-poster-1920w-58e0d941.webp"
+    },
+    "originalSize": 981361,
+    "hash": "58e0d941"
+  },
+  "/images/shop/prints/delaware/delaware-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-fineart-640w-dc821ef5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-fineart-1024w-dc821ef5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-fineart-1920w-dc821ef5.webp"
+    },
+    "originalSize": 1530953,
+    "hash": "dc821ef5"
+  },
+  "/images/shop/prints/delaware/delaware-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-poster-640w-4d98f935.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-poster-1024w-4d98f935.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/delaware/delaware-poster-1920w-4d98f935.webp"
+    },
+    "originalSize": 1031132,
+    "hash": "4d98f935"
+  },
+  "/images/shop/prints/georgia/georgia-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-fineart-640w-d2d32e28.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-fineart-1024w-d2d32e28.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-fineart-1920w-d2d32e28.webp"
+    },
+    "originalSize": 1495617,
+    "hash": "d2d32e28"
+  },
+  "/images/shop/prints/georgia/georgia-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-poster-640w-e45bb943.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-poster-1024w-e45bb943.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/georgia/georgia-poster-1920w-e45bb943.webp"
+    },
+    "originalSize": 956726,
+    "hash": "e45bb943"
+  },
+  "/images/shop/prints/maryland/maryland-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-fineart-640w-7de79ec0.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-fineart-1024w-7de79ec0.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-fineart-1920w-7de79ec0.webp"
+    },
+    "originalSize": 1525875,
+    "hash": "7de79ec0"
+  },
+  "/images/shop/prints/maryland/maryland-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-poster-640w-77b61eec.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-poster-1024w-77b61eec.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/maryland/maryland-poster-1920w-77b61eec.webp"
+    },
+    "originalSize": 1019631,
+    "hash": "77b61eec"
+  },
+  "/images/shop/prints/massachusetts/massachusetts-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-fineart-640w-5356f278.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-fineart-1024w-5356f278.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-fineart-1920w-5356f278.webp"
+    },
+    "originalSize": 1725707,
+    "hash": "5356f278"
+  },
+  "/images/shop/prints/massachusetts/massachusetts-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-poster-640w-9bf9cd3a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-poster-1024w-9bf9cd3a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/massachusetts/massachusetts-poster-1920w-9bf9cd3a.webp"
+    },
+    "originalSize": 1197688,
+    "hash": "9bf9cd3a"
+  },
+  "/images/shop/prints/new-hampshire/new-hampshire-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-fineart-640w-d241c597.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-fineart-1024w-d241c597.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-fineart-1920w-d241c597.webp"
+    },
+    "originalSize": 1509211,
+    "hash": "d241c597"
+  },
+  "/images/shop/prints/new-hampshire/new-hampshire-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-poster-640w-908889e8.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-poster-1024w-908889e8.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-hampshire/new-hampshire-poster-1920w-908889e8.webp"
+    },
+    "originalSize": 1018098,
+    "hash": "908889e8"
+  },
+  "/images/shop/prints/new-jersey/new-jersey-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-fineart-640w-68674e8b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-fineart-1024w-68674e8b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-fineart-1920w-68674e8b.webp"
+    },
+    "originalSize": 1542080,
+    "hash": "68674e8b"
+  },
+  "/images/shop/prints/new-jersey/new-jersey-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-poster-640w-2441ba82.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-poster-1024w-2441ba82.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-jersey/new-jersey-poster-1920w-2441ba82.webp"
+    },
+    "originalSize": 979815,
+    "hash": "2441ba82"
+  },
+  "/images/shop/prints/new-york/new-york-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-fineart-640w-f7c4c405.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-fineart-1024w-f7c4c405.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-fineart-1920w-f7c4c405.webp"
+    },
+    "originalSize": 1461960,
+    "hash": "f7c4c405"
+  },
+  "/images/shop/prints/new-york/new-york-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-poster-640w-bf7b70e6.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-poster-1024w-bf7b70e6.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/new-york/new-york-poster-1920w-bf7b70e6.webp"
+    },
+    "originalSize": 1003371,
+    "hash": "bf7b70e6"
+  },
+  "/images/shop/prints/north-carolina/north-carolina-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-fineart-640w-390f0885.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-fineart-1024w-390f0885.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-fineart-1920w-390f0885.webp"
+    },
+    "originalSize": 1483019,
+    "hash": "390f0885"
+  },
+  "/images/shop/prints/north-carolina/north-carolina-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-poster-640w-6efd9e2f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-poster-1024w-6efd9e2f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/north-carolina/north-carolina-poster-1920w-6efd9e2f.webp"
+    },
+    "originalSize": 1009788,
+    "hash": "6efd9e2f"
+  },
+  "/images/shop/prints/pennsylvania/pennsylvania-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-fineart-640w-aeca8512.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-fineart-1024w-aeca8512.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-fineart-1920w-aeca8512.webp"
+    },
+    "originalSize": 1437757,
+    "hash": "aeca8512"
+  },
+  "/images/shop/prints/pennsylvania/pennsylvania-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-poster-640w-fde9cc44.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-poster-1024w-fde9cc44.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/pennsylvania/pennsylvania-poster-1920w-fde9cc44.webp"
+    },
+    "originalSize": 948132,
+    "hash": "fde9cc44"
+  },
+  "/images/shop/prints/rhode-island/rhode-island-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-fineart-640w-707dac10.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-fineart-1024w-707dac10.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-fineart-1920w-707dac10.webp"
+    },
+    "originalSize": 1457203,
+    "hash": "707dac10"
+  },
+  "/images/shop/prints/rhode-island/rhode-island-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-poster-640w-76c000d9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-poster-1024w-76c000d9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/rhode-island/rhode-island-poster-1920w-76c000d9.webp"
+    },
+    "originalSize": 981939,
+    "hash": "76c000d9"
+  },
+  "/images/shop/prints/south-carolina/south-carolina-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-fineart-640w-493c0a40.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-fineart-1024w-493c0a40.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-fineart-1920w-493c0a40.webp"
+    },
+    "originalSize": 1680664,
+    "hash": "493c0a40"
+  },
+  "/images/shop/prints/south-carolina/south-carolina-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-poster-640w-294f53dc.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-poster-1024w-294f53dc.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/south-carolina/south-carolina-poster-1920w-294f53dc.webp"
+    },
+    "originalSize": 1134822,
+    "hash": "294f53dc"
+  },
+  "/images/shop/prints/virginia/virginia-fineart.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-fineart-640w-895c63e5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-fineart-1024w-895c63e5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-fineart-1920w-895c63e5.webp"
+    },
+    "originalSize": 1541228,
+    "hash": "895c63e5"
+  },
+  "/images/shop/prints/virginia/virginia-poster.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-poster-640w-4b81210f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-poster-1024w-4b81210f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/prints/virginia/virginia-poster-1920w-4b81210f.webp"
+    },
+    "originalSize": 1017440,
+    "hash": "4b81210f"
+  },
+  "/images/shop/book/book-cover.png": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/book-cover-640w-460f117f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/book-cover-1024w-460f117f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/book-cover-1920w-460f117f.webp"
+    },
+    "originalSize": 1452224,
+    "hash": "460f117f"
+  },
+  "/images/shop/postcards/pennsylvania-back.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/postcards/pennsylvania-back-640w-b4165c9c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/postcards/pennsylvania-back-1024w-b4165c9c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/postcards/pennsylvania-back-1920w-b4165c9c.webp"
+    },
+    "originalSize": 177916,
+    "hash": "b4165c9c"
+  },
+  "/images/shop/postcards/pennsylvania-front.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/postcards/pennsylvania-front-640w-91d45ba2.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/postcards/pennsylvania-front-1024w-91d45ba2.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/postcards/pennsylvania-front-1920w-91d45ba2.webp"
+    },
+    "originalSize": 524255,
+    "hash": "91d45ba2"
+  },
+  "/images/shop/book/inside/book-inside-embroidery-threads.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-embroidery-threads-640w-a3b93cd9.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-embroidery-threads-1024w-a3b93cd9.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-embroidery-threads-1920w-a3b93cd9.webp"
+    },
+    "originalSize": 403969,
+    "hash": "a3b93cd9"
+  },
+  "/images/shop/book/inside/book-inside-pennsylvania-panel.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-pennsylvania-panel-640w-59cdcf4a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-pennsylvania-panel-1024w-59cdcf4a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-pennsylvania-panel-1920w-59cdcf4a.webp"
+    },
+    "originalSize": 527124,
+    "hash": "59cdcf4a"
+  },
+  "/images/shop/book/inside/book-inside-pennsylvania-story.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-pennsylvania-story-640w-7e019b7a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-pennsylvania-story-1024w-7e019b7a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-pennsylvania-story-1920w-7e019b7a.webp"
+    },
+    "originalSize": 439398,
+    "hash": "7e019b7a"
+  },
+  "/images/shop/book/inside/book-inside-south-carolina-panel.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-south-carolina-panel-640w-9851fe03.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-south-carolina-panel-1024w-9851fe03.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-south-carolina-panel-1920w-9851fe03.webp"
+    },
+    "originalSize": 696732,
+    "hash": "9851fe03"
+  },
+  "/images/shop/book/inside/book-inside-stitchers.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-stitchers-640w-06aed82f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-stitchers-1024w-06aed82f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-stitchers-1920w-06aed82f.webp"
+    },
+    "originalSize": 382837,
+    "hash": "06aed82f"
+  },
+  "/images/shop/book/inside/book-inside-stitching-detail.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-stitching-detail-640w-cfc83d56.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-stitching-detail-1024w-cfc83d56.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-inside-stitching-detail-1920w-cfc83d56.webp"
+    },
+    "originalSize": 617392,
+    "hash": "cfc83d56"
   }
 }

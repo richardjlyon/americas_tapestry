@@ -73,6 +73,7 @@ scratch/
 #TASK.md
 .mcp.json
 .serena/
+.memsearch/
 
 # Large video files (hosted on GitHub Releases)
 public/video/**/*.mp4

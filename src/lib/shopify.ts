@@ -26,6 +26,14 @@ const client =
       })
     : null;
 
+/** A purchasable variant — e.g. one frame colour of a framed print. */
+export interface ProductVariant {
+  id: string;
+  title: string;
+  availableForSale: boolean;
+  selectedOptions: { name: string; value: string }[];
+}
+
 export interface ShopifyProduct {
   id: string;
   title: string;
@@ -40,6 +48,8 @@ export interface ShopifyProduct {
   maxPrice: { amount: string; currencyCode: string };
   variantId: string | null;
   availableForSale: boolean;
+  /** All variants (first ≤10) — carries the Frame option for framed editions. */
+  variants: ProductVariant[];
 }
 
 export interface RawProductNode {
@@ -53,7 +63,16 @@ export interface RawProductNode {
     minVariantPrice: { amount: string; currencyCode: string };
     maxVariantPrice: { amount: string; currencyCode: string };
   };
-  variants: { edges: Array<{ node: { id: string; availableForSale: boolean } }> };
+  variants: {
+    edges: Array<{
+      node: {
+        id: string;
+        availableForSale: boolean;
+        title?: string;
+        selectedOptions?: { name: string; value: string }[];
+      };
+    }>;
+  };
 }
 
 /** Pure raw→typed mapping. Exported for unit testing; no I/O. */
@@ -70,6 +89,12 @@ export function mapProductNode(node: RawProductNode): ShopifyProduct {
     maxPrice: node.priceRange.maxVariantPrice,
     variantId: variant?.id ?? null,
     availableForSale: variant?.availableForSale ?? false,
+    variants: node.variants.edges.map((e) => ({
+      id: e.node.id,
+      title: e.node.title ?? '',
+      availableForSale: e.node.availableForSale,
+      selectedOptions: e.node.selectedOptions ?? [],
+    })),
   };
 }
 
@@ -172,7 +197,7 @@ const ALL_PRODUCTS_QUERY = /* GraphQL */ `
             minVariantPrice { amount currencyCode }
             maxVariantPrice { amount currencyCode }
           }
-          variants(first: 1) { edges { node { id availableForSale } } }
+          variants(first: 10) { edges { node { id title availableForSale selectedOptions { name value } } } }
         } }
       }
     }

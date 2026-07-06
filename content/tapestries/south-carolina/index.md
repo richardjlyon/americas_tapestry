@@ -18,6 +18,9 @@ timelineEvents:
   - date: "1781-01-17"
     title: "Battle of Cowpens"
     description: "American forces under General Daniel Morgan defeated the British under Lieutenant Colonel Banastre Tarleton in one of the most decisive tactical victories of the Revolutionary War."
+  - date: "1788-05-23"
+    title: "South Carolina Ratifies the Constitution"
+    description: "South Carolina became the eighth state to ratify the United States Constitution, approving it by a vote of 149 to 73."
 ---
 
 The South Carolina panel highlights the many young people who served in the American Revolution.

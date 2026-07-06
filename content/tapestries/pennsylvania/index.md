@@ -18,6 +18,9 @@ timelineEvents:
   - date: "1787-09-17"
     title: "U.S. Constitution Signed"
     description: "The Constitutional Convention in Philadelphia concluded with the signing of the United States Constitution, creating the framework for the American government."
+  - date: "1787-12-12"
+    title: "Pennsylvania Ratifies the Constitution"
+    description: "Pennsylvania became the second state to ratify the United States Constitution, approving it by a vote of 46 to 23 as the first large state to join the new federal union."
 ---
 
 During the American Revolution, flags served the dual purpose of both a military tool and a potent political symbol of an emerging national identity. The Pennsylvania panel depicts two flags flown over 300 miles apart in the Keystone State.

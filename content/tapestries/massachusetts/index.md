@@ -18,6 +18,9 @@ timelineEvents:
   - date: "1775-04-19"
     title: "Battles of Lexington and Concord"
     description: "The first military engagements of the American Revolutionary War, where 'the shot heard round the world' marked the beginning of armed conflict with Great Britain."
+  - date: "1788-02-06"
+    title: "Massachusetts Ratifies the Constitution"
+    description: "Massachusetts became the sixth state to ratify the United States Constitution, narrowly approving it by a vote of 187 to 168 after proposing the first amendments that would shape the future Bill of Rights."
 ---
 
 The Massachusetts panel pays tribute to the patriotic practice of chocolate making. At the time of the American Revolution, Massachusetts was the largest chocolate producer in North America.

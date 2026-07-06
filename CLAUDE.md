@@ -411,3 +411,7 @@ When generating code, prioritize readability and maintainability over cleverness
 - **Explain the why** - provide reasoning for design decisions
 - **Show, don't tell** - provide code examples
 - **Flag uncertainties** - clearly mark assumptions that need verification
+
+## Cowork integration (Richard's machine)
+
+This repo also has a Cowork project at `/Users/rjl/Resilio/claude-cowork/project/americas-tapestry/`. When working from a Cowork-aware Claude session, read `claude.md` and `memory.md` in that folder for cross-project context, voice notes, and current activity. Update `memory.md` after significant decisions or status changes.

@@ -197,7 +197,14 @@ export default async function TapestryPage({
           )}
         </ReadingContainer>
 
-        <BuyPrintCallout colonySlug={slug} colonyName={tapestry.title} />
+        {/* Pin separator */}
+        <div className="flex justify-center pt-8 pb-2">
+          <div className="page-section-pin-bottom" />
+        </div>
+
+        <div className="pt-6">
+          <BuyPrintCallout colonySlug={slug} colonyName={tapestry.title} />
+        </div>
 
         {/* Tapestry Talk video section */}
         {tapestryTalkVideo && (

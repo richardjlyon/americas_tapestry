@@ -3,7 +3,7 @@ title: Maryland
 summary: The Bravery of the Maryland 400
 background_color: "bg-blue-800"
 audioDescription: "This audio description provides a detailed verbal account of the Delaware Tapestry, which depicts the state's early colonial history and its role as the first state to ratify the Constitution."
-colony: “MD”
+colony: "MD"
 status: "Finished"
 timelineEvents:
   - date: "1638-03-29"
@@ -15,9 +15,9 @@ timelineEvents:
   - date: "1776-06-15"
     title: "Delaware Declares Independence"
     description: "The Delaware Assembly voted to separate from both Great Britain and Pennsylvania, becoming an independent state."
-  - date: "1787-12-07"
-    title: "First State to Ratify the Constitution"
-    description: "Delaware unanimously became the first state to ratify the United States Constitution, earning its nickname 'The First State.'"
+  - date: "1788-04-28"
+    title: "Maryland Ratifies the Constitution"
+    description: "Maryland became the seventh state to ratify the United States Constitution, approving it by a decisive vote of 63 to 11."
 ---
 
 The center of the state panel pays homage to the bravery of the Maryland 400. This contingent of the 1st Maryland Regiment earned their heroic status during the Battle of Brooklyn on August 27, 1776.
