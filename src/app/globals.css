@@ -48,7 +48,14 @@
     @apply mt-4;
   }
 
-  /* Heading styles */
+  /* HEADING SYSTEM
+   * Light surfaces (reading rooms): bold Montserrat (font-sans) via the
+   * semantic h1-h6 base styles, .page-heading, .section-title.
+   * Dark surfaces (gallery rooms): .gallery-heading — serif, cream,
+   * letterspaced (the shop's Night Gallery convention).
+   * Components should reach for SectionHeader (ui/section-header.tsx)
+   * rather than hand-rolling heading class strings.
+   */
   h1,
   h2,
   h3,
@@ -91,7 +98,7 @@
   }
 
   .section-title {
-    @apply text-2xl text-3xl md:text-4xl font-bold tracking-tight text-foreground;
+    @apply text-3xl md:text-4xl font-bold tracking-tight text-foreground;
   }
 
   .lead-text {
