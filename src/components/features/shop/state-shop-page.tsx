@@ -1,15 +1,16 @@
-import Link from 'next/link';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { PageSection } from '@/components/ui/page-section';
-import { StateEditionCard } from '@/components/features/shop/state-edition-card';
-import { getAllProducts } from '@/lib/shopify';
+import Link from "next/link";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { PageSection } from "@/components/ui/page-section";
+import { BookCover } from "@/components/features/shop/book-cover";
+import { StateEditionCard } from "@/components/features/shop/state-edition-card";
+import { getAllProducts } from "@/lib/shopify";
 import {
   ORDERABLE_TYPES,
   productsForType,
   typeArtwork,
   artworkSrc,
   stateLabel,
-} from '@/lib/shop-products';
+} from "@/lib/shop-products";
 
 /**
  * One colony's shop index (`/shop/<state>`): a card for every product
@@ -67,6 +68,40 @@ export async function StateShopPage({ slug }: { slug: string }) {
           );
         })}
 
+        {/* The book, back on the wall as a coming-soon teaser — checkout
+            stays disabled until launch; the card previews /shop/book. */}
+        <Link
+          href="/shop/book"
+          className="group block rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
+        >
+          <div className="flex aspect-[4/5] items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 motion-reduce:transform-none">
+            <BookCover
+              src="/images/shop/book/book-cover.png"
+              alt="The Making of America's Tapestry — hardcover book"
+              className="w-full"
+            />
+          </div>
+          <div className="mt-5 text-center">
+            <span
+              aria-hidden="true"
+              className="mx-auto block h-px w-8 bg-colonial-gold/70 transition-all duration-300 group-hover:w-14"
+            />
+            <h3 className="mt-3 font-serif text-lg uppercase tracking-[0.18em] text-colonial-parchment">
+              The Book
+            </h3>
+            <p className="mt-1 font-sans text-xs uppercase tracking-[0.15em] text-colonial-parchment/60">
+              Coming soon
+              <span className="mx-2 text-colonial-parchment/30">·</span>
+              <span className="inline-flex items-center gap-1 text-colonial-gold">
+                Preview
+                <ArrowRight
+                  className="h-3 w-3 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
+              </span>
+            </p>
+          </div>
+        </Link>
       </div>
 
       {editions.length === 0 && (

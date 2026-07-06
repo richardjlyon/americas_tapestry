@@ -1,7 +1,7 @@
-import { PageSection } from '@/components/ui/page-section';
-import { SponsorCard } from '@/components/features/sponsors/sponsor-card';
-import { getAllSponsors } from '@/lib/sponsors';
-import { markdownToHtml } from '@/lib/markdown';
+import { PageSection } from "@/components/ui/page-section";
+import { SponsorCard } from "@/components/features/sponsors/sponsor-card";
+import { getAllSponsors } from "@/lib/sponsors";
+import { markdownToHtml } from "@/lib/markdown";
 
 export const metadata = {
   title: "Our Sponsors | America's Tapestry",
@@ -16,9 +16,7 @@ export default async function SponsorsPage() {
   const sponsorsWithHtml = await Promise.all(
     sponsors.map(async (sponsor) => ({
       ...sponsor,
-      excerptHtml: sponsor.excerpt
-        ? await markdownToHtml(sponsor.excerpt)
-        : '',
+      excerptHtml: sponsor.excerpt ? await markdownToHtml(sponsor.excerpt) : "",
     })),
   );
 
@@ -38,7 +36,7 @@ export default async function SponsorsPage() {
 
   return (
     <div className="bg-colonial-oxblood">
-      <header className="container mx-auto max-w-3xl pt-10 pb-8 text-center">
+      <header className="container mx-auto max-w-3xl pt-12 pb-8 text-center md:pt-16">
         <span className="eyebrow eyebrow-gold">Our Supporters</span>
         <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">
           Our Sponsors
@@ -69,11 +67,11 @@ export default async function SponsorsPage() {
             .map(([tier, tierSponsors]) => (
               <div key={tier} className="mb-12">
                 <h3 className="gallery-heading text-xl mb-6 text-center">
-                  {tier} {tierSponsors.length === 1 ? 'Sponsor' : 'Sponsors'}
+                  {tier} {tierSponsors.length === 1 ? "Sponsor" : "Sponsors"}
                 </h3>
 
                 {/* If Platinum, make it more prominent */}
-                {tier === 'Platinum' ? (
+                {tier === "Platinum" ? (
                   <div className="max-w-2xl mx-auto">
                     {tierSponsors.map((sponsor) => (
                       <SponsorCard

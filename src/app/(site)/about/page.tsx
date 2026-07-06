@@ -1,7 +1,7 @@
 import { PageSection } from "@/components/ui/page-section";
 import { ReadingContainer } from "@/components/ui/reading-container";
 import { VisionSection } from "@/components/features/about/vision-section";
-import Image from "next/image";
+import { GalleryOpeningCarousel } from "@/components/features/about/gallery-opening-carousel";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -28,16 +28,8 @@ export default function AboutPage() {
       </header>
 
       <PageSection spacing="tight" background="colonial-oxblood">
-        {/* Hero image */}
-        <div className="max-w-5xl mx-auto mb-6 md:mb-12 relative rounded-lg overflow-hidden shadow-xl">
-          <Image
-            src="/images/content/about-us.webp"
-            alt="America's Tapestry - Collaborative embroidery project"
-            width={1200}
-            height={600}
-            className="w-full object-cover"
-          />
-        </div>
+        {/* Rotating photographs from the gallery opening (dummy set for now). */}
+        <GalleryOpeningCarousel />
 
         <ReadingContainer width="article" background="paper">
           <p className="font-bold">
@@ -87,17 +79,23 @@ export default function AboutPage() {
           <p>
             Over 1,000 volunteers joined America&apos;s Tapestry to embroider
             the panels, with local directors guiding the effort in each of the
-            participating states. Following its inaugural display at William
-            & Mary&apos;s Muscarelle Museum of Art – a stone&apos;s throw
-            away from Colonial Williamsburg – America&apos;s Tapestry is now
-            touring historic venues throughout the East Coast on a two year
-            traveling exhibition, running through 2028.
+            participating states. Following its inaugural display at William &
+            Mary&apos;s Muscarelle Museum of Art – a stone&apos;s throw away
+            from Colonial Williamsburg – America&apos;s Tapestry is now touring
+            historic venues throughout the East Coast on a two year traveling
+            exhibition, running through 2028.
           </p>
 
           <p>
             Please explore our website to learn more about the many talented
             artists and volunteers who made this project possible – and visit
             our exhibitions page to see where the Tapestry is on display.
+          </p>
+
+          <p>
+            America&apos;s Tapestry made its public debut at the Muscarelle
+            Museum of Art on June 19th, 2026, opening the exhibition tour that
+            will carry the panels to historic venues through 2028.
           </p>
         </ReadingContainer>
       </PageSection>

@@ -22,7 +22,7 @@ Pennsylvania directors **Mary Van Tyne** & **Raven Fagelson** explored many stit
 
 ![A sample of stitches on the Pennsylvania panel](/images/news/2025-08/2.png)
 
-**Did you Know?** _Each panel is 35" x 45", or 1,575 square inches. For every square inch of stitching, there is approximately one hour of work. Now that's a lot of hours!_
+**Did you Know?** _Each panel is 40" x 50", or 2,000 square inches. For every square inch of stitching, there is approximately one hour of work. Now that's a lot of hours!_
 
 **From One Coordinator to Another**
 

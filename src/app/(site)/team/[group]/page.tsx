@@ -1,9 +1,9 @@
-import { getTeamGroups, getTeamData } from '@/lib/team';
-import { GroupContent } from '@/components/features/team/group-content';
-import { notFound } from 'next/navigation';
-import { PageSection } from '@/components/ui/page-section';
-import { pageMetadata } from '@/lib/seo';
-import type { Metadata } from 'next';
+import { getTeamGroups, getTeamData } from "@/lib/team";
+import { GroupContent } from "@/components/features/team/group-content";
+import { notFound } from "next/navigation";
+import { PageSection } from "@/components/ui/page-section";
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   const groups = await getTeamGroups();
@@ -34,7 +34,9 @@ export async function generateMetadata({
 
 export default async function TeamGroupPage({
   params,
-}: { params: Promise<{ group: string }> }) {
+}: {
+  params: Promise<{ group: string }>;
+}) {
   // Use a server action to fetch the data
   const { group: groupSlug } = await params;
   const { group, members } = await getTeamData(groupSlug);
@@ -45,7 +47,7 @@ export default async function TeamGroupPage({
 
   // Render the content wrapped in a page section (consistent with main team page)
   return (
-    <PageSection paddingTop="none" background="colonial-parchment">
+    <PageSection paddingTop="none" background="colonial-oxblood">
       <GroupContent group={group} members={members} />
     </PageSection>
   );

@@ -1,17 +1,18 @@
-import { PageSection } from '@/components/ui/page-section';
-import { ReadingContainer } from '@/components/ui/reading-container';
-import { pageMetadata } from '@/lib/seo';
+import { PageSection } from "@/components/ui/page-section";
+import { ReadingContainer } from "@/components/ui/reading-container";
+import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: 'Privacy Policy',
+  title: "Privacy Policy",
   description: "Privacy policy for the America's Tapestry website.",
-  path: '/privacy-policy',
+  path: "/privacy-policy",
 });
 
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <h1 className="page-heading">Privacy Policy</h1>
+      {/* Breathing room between the breadcrumb bar and the title. */}
+      <h1 className="page-heading pt-12 md:pt-16">Privacy Policy</h1>
 
       <p className="lead-text text-center mb-content-lg">
         We’re committed to protecting your privacy. Here’s what you need to
@@ -51,16 +52,16 @@ export default function PrivacyPolicyPage() {
           </p>
           <h2>Questions?</h2>
           <p>
-            If you have any questions about this policy, feel free to{' '}
+            If you have any questions about this policy, feel free to{" "}
             <a href="/contact">contact us</a>. We're here to help!
           </p>
 
           <p className="text-sm text-gray-600 mt-8">
-            Last updated:{' '}
-            {new Date().toLocaleDateString('en-US', {
-              month: 'long',
-              day: 'numeric',
-              year: 'numeric',
+            Last updated:{" "}
+            {new Date().toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
             })}
           </p>
         </ReadingContainer>

@@ -2,12 +2,12 @@ import {
   getTeamGroups,
   getTeamMembersByGroup,
   getTeamMemberData,
-} from '@/lib/team';
-import { notFound } from 'next/navigation';
-import { PageSection } from '@/components/ui/page-section';
-import { MemberCard } from '@/components/features/team/member-card';
-import { pageMetadata } from '@/lib/seo';
-import type { Metadata } from 'next';
+} from "@/lib/team";
+import { notFound } from "next/navigation";
+import { PageSection } from "@/components/ui/page-section";
+import { MemberCard } from "@/components/features/team/member-card";
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   const groups = await getTeamGroups();
@@ -48,7 +48,9 @@ export async function generateMetadata({
 
 export default async function TeamMemberPage({
   params,
-}: { params: Promise<{ group: string; member: string }> }) {
+}: {
+  params: Promise<{ group: string; member: string }>;
+}) {
   // Fetch all the data we need for this member
   const { group: groupSlug, member: memberSlug } = await params;
   const { member, group, contentHtml } = await getTeamMemberData(
@@ -62,8 +64,19 @@ export default async function TeamMemberPage({
 
   // Render the member content with the data
   return (
-    <PageSection paddingTop="none" paddingBottom="large">
-      <h1 className="page-heading ">{group.name}</h1>
+    <PageSection
+      paddingTop="none"
+      paddingBottom="large"
+      background="colonial-oxblood"
+    >
+      {/* Sponsors-style header on the shared oxblood room. */}
+      <header className="mx-auto max-w-3xl pt-12 pb-8 text-center md:pt-16">
+        <span className="eyebrow eyebrow-gold">The People</span>
+        <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">
+          {group.name}
+        </h1>
+        <div className="gold-threshold mx-auto mt-5" />
+      </header>
 
       <MemberCard
         member={member}

@@ -1,14 +1,20 @@
-import Link from 'next/link';
-import { ArrowRight, BookOpen, CalendarDays, Copy, Mail, Ruler } from 'lucide-react';
-import { PageSection } from '@/components/ui/page-section';
-import { SectionHeader } from '@/components/ui/section-header';
-import { Button } from '@/components/ui/button';
-import { OptimizedImage } from '@/components/ui/optimized-image';
-import { getImagePath } from '@/lib/image-utils';
-import { EditionTypeCard } from '@/components/features/shop/edition-type-card';
-import { FramedArtwork } from '@/components/ui/framed-artwork';
-import { StitchRule } from '@/components/ui/stitch-rule';
-import { getAllProducts } from '@/lib/shopify';
+import Link from "next/link";
+import {
+  ArrowRight,
+  BookOpen,
+  CalendarDays,
+  Copy,
+  Mail,
+  Ruler,
+} from "lucide-react";
+import { PageSection } from "@/components/ui/page-section";
+import { SectionHeader } from "@/components/ui/section-header";
+import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { getImagePath } from "@/lib/image-utils";
+import { EditionTypeCard } from "@/components/features/shop/edition-type-card";
+import { FramedArtwork } from "@/components/ui/framed-artwork";
+import { getAllProducts } from "@/lib/shopify";
 import {
   WALL_ART_TYPES,
   POSTCARD_TYPE,
@@ -16,14 +22,14 @@ import {
   typeArtwork,
   artworkSrc,
   stateLabel,
-} from '@/lib/shop-products';
-import { pageMetadata } from '@/lib/seo';
+} from "@/lib/shop-products";
+import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: 'Shop',
+  title: "Shop",
   description:
     "The America's Tapestry book, fine-art prints and posters of the colony panels, and postcards — printed on demand and shipped to your door.",
-  path: '/shop',
+  path: "/shop",
 });
 
 /** A single postcard face (5.5×4.25 landscape) as a physical card. */
@@ -67,14 +73,14 @@ export default async function ShopPage() {
             <span className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-colonial-burgundy">
               The Shop
             </span>
-            <StitchRule className="mt-3" />
+            <div className="gold-threshold mt-3" />
             <h1 className="mt-4 font-sans text-4xl font-bold leading-[1.05] tracking-tight text-colonial-navy md:text-5xl lg:text-6xl">
               Own a Piece of America&rsquo;s Tapestry
             </h1>
             <p className="mt-4 max-w-xl text-colonial-navy/80">
-              Museum-quality giclée prints, exhibition posters, and mailable
-              art cards of all thirteen hand-embroidered colony panels —
-              printed on demand and shipped to your door.
+              Museum-quality giclée prints, exhibition posters, and mailable art
+              cards of all thirteen hand-embroidered colony panels — printed on
+              demand and shipped to your door.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <Button asChild variant="colonial-gold" size="lg">
@@ -93,7 +99,7 @@ export default async function ShopPage() {
               className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(58%_58%_at_52%_42%,rgba(191,155,84,0.28),transparent_70%)]"
             />
             <FramedArtwork
-              src={artworkSrc('fineart', pickState(0))}
+              src={artworkSrc("fineart", pickState(0))}
               alt={`The ${stateLabel(pickState(0))} panel as a framed fine-art print`}
               framed
             />
@@ -102,12 +108,16 @@ export default async function ShopPage() {
       </PageSection>
 
       {/* Prints & posters — one card per edition, click through to all colonies */}
-      <PageSection id="prints" background="authentic-parchment" spacing="spacious">
+      <PageSection
+        id="prints"
+        background="authentic-parchment"
+        spacing="spacious"
+      >
         <SectionHeader
           title="Prints & Posters"
           description="Four editions of every colony panel, all 16×20″. Choose an edition, then pick your colony."
         />
-        <StitchRule className="mx-auto mb-10" />
+        <div className="gold-threshold mx-auto mb-10" />
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {WALL_ART_TYPES.map((type, i) => {
             const art = typeArtwork(type.slug)!;
@@ -118,7 +128,10 @@ export default async function ShopPage() {
                 type={type}
                 illustrationSrc=""
                 illustrationLabel={stateLabel(state)}
-                artwork={{ src: artworkSrc(art.base, state), framed: art.framed }}
+                artwork={{
+                  src: artworkSrc(art.base, state),
+                  framed: art.framed,
+                }}
                 availableCount={countFor(type.slug)}
               />
             );
@@ -150,7 +163,7 @@ export default async function ShopPage() {
             <span className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-colonial-burgundy">
               Postcards
             </span>
-            <StitchRule className="mt-4" />
+            <div className="gold-threshold mt-4" />
             <h2 className="mt-5 font-sans text-3xl font-bold leading-tight text-colonial-navy md:text-4xl">
               Mail a piece of the story
             </h2>
@@ -187,7 +200,7 @@ export default async function ShopPage() {
                 Shop postcards
                 {countFor(POSTCARD_TYPE.slug) > 0
                   ? ` — ${countFor(POSTCARD_TYPE.slug)} colonies`
-                  : ''}
+                  : ""}
               </Link>
             </Button>
           </div>
@@ -207,8 +220,8 @@ export default async function ShopPage() {
             </span>
             <h2 className="section-title mt-4 text-2xl">The Book</h2>
             <p className="mx-auto mt-3 max-w-lg font-serif text-lg text-colonial-navy/75">
-              The hardcover companion — thirteen hand-embroidered panels and
-              the people who stitched them, in one keepsake volume.
+              The hardcover companion — thirteen hand-embroidered panels and the
+              people who stitched them, in one keepsake volume.
             </p>
             <Link
               href="/shop/book"

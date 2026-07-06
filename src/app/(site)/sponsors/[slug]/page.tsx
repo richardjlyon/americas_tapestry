@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { PageSection } from '@/components/ui/page-section';
-import { getAllSponsors, getSponsorData } from '@/lib/sponsors';
-import { getImagePath, getImageSizes } from '@/lib/image-utils';
-import { notFound } from 'next/navigation';
+import Link from "next/link";
+import Image from "next/image";
+import { ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { PageSection } from "@/components/ui/page-section";
+import { getAllSponsors, getSponsorData } from "@/lib/sponsors";
+import { getImagePath, getImageSizes } from "@/lib/image-utils";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const sponsors = await getAllSponsors();
@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!sponsor) {
     return {
       title: "Sponsor Not Found | America's Tapestry",
-      description: 'The requested sponsor could not be found.',
+      description: "The requested sponsor could not be found.",
     };
   }
 
@@ -50,22 +50,23 @@ export default async function SponsorPage({
 
   // Define tier colors with fallback
   const tierColors: Record<string, string> = {
-    Platinum: 'bg-slate-300 text-slate-900',
-    Gold: 'bg-amber-300 text-amber-900',
-    Silver: 'bg-gray-300 text-gray-900',
-    Bronze: 'bg-amber-700 text-amber-50',
-    Supporter: 'bg-blue-100 text-blue-800',
+    Platinum: "bg-slate-300 text-slate-900",
+    Gold: "bg-amber-300 text-amber-900",
+    Silver: "bg-gray-300 text-gray-900",
+    Bronze: "bg-amber-700 text-amber-50",
+    Supporter: "bg-blue-100 text-blue-800",
   };
 
   // Get tier color or default
   const tierColor =
     sponsor.tier && tierColors[sponsor.tier]
       ? tierColors[sponsor.tier]
-      : 'bg-gray-100 text-gray-800';
+      : "bg-gray-100 text-gray-800";
 
   return (
     <>
-      <PageSection spacing="spacious">
+      {/* White plate on the oxblood room shared by the people-and-story wing. */}
+      <PageSection spacing="spacious" background="colonial-oxblood">
         <div className="bg-white rounded-lg shadow-md border border-colonial-navy/10 overflow-hidden max-w-4xl mx-auto">
           <div className="p-6 md:p-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-colonial-navy/10 pb-6">
@@ -87,7 +88,7 @@ export default async function SponsorPage({
                 {(sponsor.location || sponsor.partnership_year) && (
                   <p className="text-colonial-navy/70">
                     {sponsor.location}
-                    {sponsor.location && sponsor.partnership_year && ' • '}
+                    {sponsor.location && sponsor.partnership_year && " • "}
                     {sponsor.partnership_year &&
                       `Partner since ${sponsor.partnership_year}`}
                   </p>
@@ -100,7 +101,7 @@ export default async function SponsorPage({
                     src={getImagePath(sponsor.logoPath)}
                     alt={`${sponsor.name} logo`}
                     fill
-                    sizes={getImageSizes('thumbnail')}
+                    sizes={getImageSizes("thumbnail")}
                     className="object-contain"
                   />
                 </div>
@@ -123,7 +124,7 @@ export default async function SponsorPage({
                 </Link>
               </Button>
 
-              {sponsor.website && sponsor.website !== '#' && (
+              {sponsor.website && sponsor.website !== "#" && (
                 <Button
                   asChild
                   variant="ghost"

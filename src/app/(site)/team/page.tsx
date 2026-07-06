@@ -1,19 +1,19 @@
-import { ProjectDirectorSection } from '@/components/features/team/project-director-section';
-import { TeamGroupsSection } from '@/components/features/team/team-groups-section';
-import { PageSection } from '@/components/ui/page-section';
-import { pageMetadata } from '@/lib/seo';
+import { ProjectDirectorSection } from "@/components/features/team/project-director-section";
+import { TeamGroupsSection } from "@/components/features/team/team-groups-section";
+import { PageSection } from "@/components/ui/page-section";
+import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: 'Our Team',
+  title: "Our Team",
   description:
     "Meet the project directors, state directors, illustrators, historical partners, and stitchers behind America's Tapestry.",
-  path: '/team',
+  path: "/team",
 });
 
 export default async function TeamPage() {
   return (
     <div className="bg-colonial-oxblood">
-      <header className="container mx-auto max-w-3xl pt-10 pb-8 text-center">
+      <header className="container mx-auto max-w-3xl pt-12 pb-8 text-center md:pt-16">
         <span className="eyebrow eyebrow-gold">The People</span>
         <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">Our Team</h1>
         <p className="gallery-lead mx-auto mt-3">
@@ -25,7 +25,11 @@ export default async function TeamPage() {
       </header>
 
       {/* Project Director */}
-      <PageSection paddingTop="none" paddingBottom="small" background="colonial-oxblood">
+      <PageSection
+        paddingTop="none"
+        paddingBottom="small"
+        background="colonial-oxblood"
+      >
         <ProjectDirectorSection />
       </PageSection>
 
