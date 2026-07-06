@@ -15,7 +15,7 @@ export function SectionHeader({
   if (tone === 'dark') {
     return (
       <div className={className}>
-        <h2 className="gallery-heading text-3xl md:text-4xl text-center mb-content-sm">
+        <h2 className="gallery-heading text-3xl md:text-4xl text-center mb-3">
           {title}
         </h2>
         <div className="gallery-lead max-w-3xl mx-auto text-center mb-content-md">

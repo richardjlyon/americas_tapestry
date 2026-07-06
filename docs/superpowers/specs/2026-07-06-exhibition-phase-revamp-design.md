@@ -107,6 +107,11 @@ Generalize the shop's proven treatment into named, shared tokens and components:
    serif/sans heading conflict (base h1–h4 vs hero `font-serif`); document the scale.
 5. **Chrome**: header and footer go dark site-wide so the "museum building" is constant.
 6. **Motion**: CSS-only, `motion-reduce` respected (no framer-motion dependency).
+7. **Heading-cluster spacing (per Richard, 2026-07-06 — binding convention going
+   forward)**: heading titles read densely. Eyebrow → heading `mt-1` (`mt-2` for
+   page-level h1), heading → lead `mt-3` (`mt-4` between stacked paragraphs),
+   threshold/rule `mt-3`–`mt-5`. Dark SectionHeader title gap `mb-3`. Applied
+   2026-07-06 across home/exhibitions/tapestries; new headers must follow it.
 
 ## Phase 3 — Page-by-page restyle + exhibition features
 

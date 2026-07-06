@@ -51,13 +51,19 @@ export default async function Home() {
         }
       />
 
+      {/* What the project is — first thing after the hero, per Richard:
+          a first-time visitor must immediately understand the site. */}
       <section className="container mx-auto py-16 md:py-24">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
+        <ProjectStrip />
+      </section>
+
+      <section className="container mx-auto py-16 md:py-24">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
           <span className="eyebrow eyebrow-gold">The Collection</span>
-          <h2 className="gallery-heading mt-2 text-3xl md:text-4xl">
+          <h2 className="gallery-heading mt-1 text-3xl md:text-4xl">
             Thirteen colonies, thirteen panels
           </h2>
-          <p className="gallery-lead mx-auto mt-4">
+          <p className="gallery-lead mx-auto mt-3">
             Each panel is 35&Prime; × 45&Prime; of hand embroidery, telling a
             lesser-known story of its colony&rsquo;s road to independence.
           </p>
@@ -75,10 +81,6 @@ export default async function Home() {
             Explore all thirteen colonies →
           </Link>
         </div>
-      </section>
-
-      <section className="container mx-auto py-16 md:py-24">
-        <ProjectStrip />
       </section>
 
       <section className="container mx-auto py-16 md:py-24">

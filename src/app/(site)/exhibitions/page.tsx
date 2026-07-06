@@ -27,8 +27,8 @@ function TourSection({
   return (
     <section className="mx-auto w-full max-w-4xl">
       <span className="eyebrow eyebrow-gold">{eyebrow}</span>
-      <h2 className="gallery-heading mt-2 text-3xl md:text-4xl">{title}</h2>
-      <div className="gold-threshold mt-4" />
+      <h2 className="gallery-heading mt-1 text-3xl md:text-4xl">{title}</h2>
+      <div className="gold-threshold mt-3" />
       <div className="mt-8 space-y-6">{children}</div>
     </section>
   );
@@ -43,10 +43,10 @@ export default async function ExhibitionsPage() {
       <div className="container mx-auto space-y-16 py-16 md:space-y-20 md:py-24">
         <header className="mx-auto max-w-3xl text-center">
           <span className="eyebrow eyebrow-gold">The Exhibition Tour</span>
-          <h1 className="gallery-heading mt-3 text-4xl md:text-5xl">
+          <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">
             See America&rsquo;s Tapestry
           </h1>
-          <p className="gallery-lead mx-auto mt-4">
+          <p className="gallery-lead mx-auto mt-3">
             All thirteen panels are touring the original colonies through
             2028. Find the gallery nearest you.
           </p>

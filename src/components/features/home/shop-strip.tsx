@@ -8,11 +8,11 @@ export function ShopStrip() {
   return (
     <div className="mx-auto max-w-3xl text-center">
       <span className="eyebrow eyebrow-gold">The Shop</span>
-      <h2 className="gallery-heading mt-2 text-3xl md:text-4xl">
+      <h2 className="gallery-heading mt-1 text-3xl md:text-4xl">
         Take the Tapestry home
       </h2>
-      <StitchRule className="mx-auto mt-4" />
-      <p className="gallery-lead mx-auto mt-6">
+      <StitchRule className="mx-auto mt-3" />
+      <p className="gallery-lead mx-auto mt-4">
         The hardcover book, fine-art prints of every colony panel, and
         postcards — printed on demand and shipped to your door.
       </p>

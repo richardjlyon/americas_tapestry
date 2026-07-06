@@ -44,23 +44,23 @@ export function GalleryHero({ spotlight, backdrop }: GalleryHeroProps) {
       <div className="container relative mx-auto py-24 text-center">
         <span className="eyebrow eyebrow-gold">{spotlightLine}</span>
         {spotlight && (
-          <p className="mt-2 font-serif text-colonial-parchment/70">
+          <p className="mt-1 font-serif text-colonial-parchment/70">
             {formatDateRange(
               spotlight.exhibition.startDate,
               spotlight.exhibition.endDate,
             )}
           </p>
         )}
-        <h1 className="gallery-heading mx-auto mt-6 max-w-4xl text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="gallery-heading mx-auto mt-4 max-w-4xl text-5xl md:text-6xl lg:text-7xl">
           America&rsquo;s Tapestry
         </h1>
-        <p className="gallery-lead mx-auto mt-6 max-w-2xl">
+        <p className="gallery-lead mx-auto mt-3 max-w-2xl">
           Thirteen hand-embroidered panels telling the story of the original
           colonies — stitched by over a thousand volunteers, now touring the
           nation through 2028.
         </p>
-        <div className="gold-threshold mx-auto mt-8" />
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <div className="gold-threshold mx-auto mt-5" />
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
           <Button asChild variant="colonial-gold" size="lg" className="text-base">
             <Link href="/exhibitions">Plan your visit</Link>
           </Button>

@@ -125,11 +125,11 @@ export default async function TapestryPage({
               <span className="eyebrow eyebrow-gold">
                 The Tapestry Collection
               </span>
-              <h1 className="gallery-heading mt-3 text-4xl md:text-5xl">
+              <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">
                 {tapestry.title}
               </h1>
-              <p className="gallery-lead mt-4">{tapestry.summary}</p>
-              <div className="gold-threshold mx-auto mt-6 md:mx-0" />
+              <p className="gallery-lead mt-3">{tapestry.summary}</p>
+              <div className="gold-threshold mx-auto mt-5 md:mx-0" />
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-start">
                 <Button
                   asChild
