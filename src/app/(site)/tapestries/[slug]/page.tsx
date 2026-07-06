@@ -2,8 +2,11 @@ import { getTapestryBySlug, getAllTapestries } from '@/lib/tapestries';
 import { notFound } from 'next/navigation';
 import { remark } from 'remark';
 import html from 'remark-html';
+import Link from 'next/link';
 import { AccessibleAudioPlayer } from '@/components/shared/accessible-audio-player';
-import { FullImageViewer } from '@/components/shared/full-image-viewer';
+import { Button } from '@/components/ui/button';
+import { FramedArtwork } from '@/components/ui/framed-artwork';
+import { getPrintUrl } from '@/lib/shop-links';
 import { TeamCard } from '@/components/features/tapestries/team-card';
 import { MemberCard } from '@/components/features/team/member-card';
 import { getTeamMembersByState } from '@/lib/team';
@@ -13,24 +16,8 @@ import { getImagePath } from '@/lib/image-utils';
 import { getTapestryTalkByState } from '@/lib/blog';
 import { TapestryTalkSection } from '@/components/features/tapestries/tapestry-talk-section';
 import { ArtworkCard } from '@/components/features/tapestries/artwork-card';
-import { BuyPrintCallout } from '@/components/features/shop/buy-print-callout';
 import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
-
-// Status color mapping
-const statusColors = {
-  'Not Started': 'bg-colonial-navy/70',
-  Designed: 'bg-colonial-navy',
-  'In Production': 'bg-colonial-burgundy',
-  Finished: 'bg-colonial-gold',
-};
-
-const statusTextColors = {
-  'Not Started': 'text-colonial-parchment',
-  Designed: 'text-colonial-parchment',
-  'In Production': 'text-colonial-parchment',
-  Finished: 'text-colonial-navy',
-};
 
 export async function generateStaticParams() {
   const tapestries = await getAllTapestries();
@@ -79,10 +66,6 @@ export default async function TapestryPage({
   const processedContent = await remark().use(html).process(tapestry.content);
   const contentHtml = processedContent.toString();
 
-  const statusColor = statusColors[tapestry.status] || 'bg-colonial-navy/70';
-  const statusTextColor =
-    statusTextColors[tapestry.status] || 'text-colonial-parchment';
-
   // Get the image source path and ensure it uses the new structure
   const imageSrc = tapestry.imagePath
     ? getImagePath(tapestry.imagePath)
@@ -128,22 +111,49 @@ export default async function TapestryPage({
 
   return (
     <>
-      <h1 className="page-heading">{tapestry.title}</h1>
-
-      <div className="lead-text">{tapestry.summary}</div>
+      {/* Dark gallery hero: the panel as framed fine art, with the shop ask */}
+      <div className="bg-colonial-navy">
+        <div className="container mx-auto py-16 md:py-20">
+          <div className="grid items-center gap-10 md:grid-cols-[minmax(0,26rem)_1fr] md:gap-16">
+            <FramedArtwork
+              src={imageSrc}
+              alt={`The ${tapestry.title} tapestry panel, photographed as fine art`}
+              framed
+              className="mx-auto w-full max-w-[26rem]"
+            />
+            <div className="text-center md:text-left">
+              <span className="eyebrow eyebrow-gold">
+                The Tapestry Collection
+              </span>
+              <h1 className="gallery-heading mt-3 text-4xl md:text-5xl">
+                {tapestry.title}
+              </h1>
+              <p className="gallery-lead mt-4">{tapestry.summary}</p>
+              <div className="gold-threshold mx-auto mt-6 md:mx-0" />
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-start">
+                <Button
+                  asChild
+                  variant="colonial-gold"
+                  size="lg"
+                  className="text-base"
+                >
+                  <Link href={getPrintUrl(tapestry.slug)}>
+                    Shop this panel
+                  </Link>
+                </Button>
+                <Link
+                  href="/shop"
+                  className="inline-flex items-center font-medium text-colonial-parchment/80 transition-colors hover:text-colonial-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
+                >
+                  Visit the shop →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <PageSection spacing="normal">
-        {/* Tapestry image */}
-        <div className="mb-8 md:mb-12">
-          <FullImageViewer
-            imageSrc={imageSrc}
-            altText={tapestry.title}
-            status={tapestry.status}
-            statusColor={statusColor}
-            statusTextColor={statusTextColor}
-          />
-        </div>
-
         {/* Content container */}
         <ReadingContainer width="content" background="paper">
           {audioSrc && (
@@ -196,15 +206,6 @@ export default async function TapestryPage({
             </div>
           )}
         </ReadingContainer>
-
-        {/* Pin separator */}
-        <div className="flex justify-center pt-8 pb-2">
-          <div className="page-section-pin-bottom" />
-        </div>
-
-        <div className="pt-6">
-          <BuyPrintCallout colonySlug={slug} colonyName={tapestry.title} />
-        </div>
 
         {/* Tapestry Talk video section */}
         {tapestryTalkVideo && (
