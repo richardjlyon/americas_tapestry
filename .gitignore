@@ -84,3 +84,6 @@ public/video/**/*.avi
 !public/video/**/*.jpeg
 !public/video/**/*.png
 .playwright-mcp/
+
+# TypeScript incremental build info
+*.tsbuildinfo
