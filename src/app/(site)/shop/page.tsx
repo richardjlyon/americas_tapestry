@@ -18,6 +18,7 @@ import { ShopifyProductCard } from '@/components/features/shop/shopify-product-c
 import { getAllTapestries } from '@/lib/tapestries';
 import { getCollectionProducts } from '@/lib/shopify';
 import { pageMetadata } from '@/lib/seo';
+import { StitchRule } from '@/components/ui/stitch-rule';
 
 export const metadata = pageMetadata({
   title: 'Shop',
@@ -77,15 +78,6 @@ const editions = [
   },
 ];
 
-/** A dashed gold rule evoking a running embroidery stitch. */
-function StitchRule({ className = '' }: { className?: string }) {
-  return (
-    <span
-      aria-hidden="true"
-      className={`block h-0 w-16 border-t-2 border-dashed border-colonial-gold ${className}`}
-    />
-  );
-}
 
 export default async function ShopPage() {
   const tapestries = await getAllTapestries();
