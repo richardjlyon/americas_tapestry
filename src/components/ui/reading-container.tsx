@@ -21,9 +21,11 @@ export function ReadingContainer({
     wide: 'max-w-5xl', // ~1000px, visual content
   };
 
+  // Both legacy texture flavors now render the clean reading plate; the
+  // prop values are kept so call sites don't churn until Phase 3.
   const backgroundClasses = {
-    paper: 'vintage-paper',
-    parchment: 'authentic-parchment',
+    paper: 'reading-plate',
+    parchment: 'reading-plate',
     none: '',
   };
 

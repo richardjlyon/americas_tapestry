@@ -292,6 +292,13 @@
     @apply font-serif text-lg md:text-xl text-colonial-parchment/80;
   }
 
+  /* Light reading room: a clean cream plate for long-form text.
+   * Replaces the vintage-paper/authentic-parchment SVG noise textures
+   * (which remain defined for any legacy uses until Phase 3 removes them). */
+  .reading-plate {
+    @apply bg-colonial-vintagePaper ring-1 ring-colonial-navy/10 shadow-md;
+  }
+
   /***************************************
    * BACKGROUND TEXTURES
    ***************************************/
