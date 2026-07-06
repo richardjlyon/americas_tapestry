@@ -5,15 +5,14 @@ export function QuestionnaireSection() {
     <div className="mb-content-lg">
       <div className="bg-colonial-navy p-8 text-center">
         <h2 className="font-serif text-2xl text-colonial-parchment mb-4">
-          Help Shape America's Tapestry
+          Share Your Story
         </h2>
         <p className="text-colonial-parchment/90 mb-6 max-w-2xl mx-auto">
-          As a valued member of our stitching community, your insights and
-          experiences are invaluable to the continued success of America's
-          Tapestry. We invite you to share your thoughts, suggestions, and
-          stories through our brief questionnaire. Your feedback will help us
-          better support our stitching groups and enhance this remarkable
-          collaborative project.
+          If you stitched with America's Tapestry, your reflections are part of
+          its history. We invite you to share your memories, experiences, and
+          stories from the project through our brief questionnaire — they help
+          us tell the full story of the hands behind the panels as the Tapestry
+          tours the country.
         </p>
         <Link
           href="https://forms.gle/cxEa13PVCR2QwZMd9"

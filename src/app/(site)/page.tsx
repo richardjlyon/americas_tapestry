@@ -11,9 +11,9 @@ import { GetInTouchSection } from '@/components/features/home/get-in-touch-secti
 import { pageMetadata } from '@/lib/seo';
 
 export const metadata = pageMetadata({
-  title: 'Embroidering the Story of the 13 Colonies',
+  title: 'The Story of the 13 Colonies in Embroidery — Now on Exhibition',
   description:
-    "America's Tapestry tells the stories of the original thirteen colonies through embroidery, created for America's 250th anniversary.",
+    "America's Tapestry tells the stories of the original thirteen colonies through embroidery. Created for America's 250th anniversary, the completed panels are now touring on a two-year exhibition through 2028.",
   path: '/',
 });
 

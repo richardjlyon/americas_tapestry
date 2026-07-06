@@ -8,16 +8,17 @@ export function AboutSection() {
     >
       <div className="content-typography">
         <p className="font-bold md:font-medium text-1xl md:text-2xl leading-tight  md:text-3xl">
-          In 2026, Americans will celebrate our country's 250th anniversary. To
-          commemorate this occasion, <em>America's Tapestry</em> weaves together
-          stories from our nation's founding through the medium of embroidery.
+          Created to commemorate our country's 250th anniversary,{' '}
+          <em>America's Tapestry</em> weaves together stories from our
+          nation's founding through the medium of embroidery.
         </p>
         <p className="text-1xl md:text-2xl leading-tight">
-          Thirteen embroidered panels have been designed by our creative team in
+          Thirteen embroidered panels were designed by our creative team in
           collaboration with historical organizations from each of the original
-          colonies. Embroiderers within each state, led by our state directors,
-          are stitching the panels over 18 months. The Tapestry will be
-          exhibited in prominent gallery spaces in 2026 and 2027.
+          colonies, and stitched over 18 months by volunteer embroiderers in
+          each state, led by our state directors. The completed Tapestry is now
+          touring prominent gallery spaces on a two-year exhibition through
+          2028.
         </p>
         <p className="text-1xl md:text-2xl leading-tight">
           <em>America's Tapestry</em> enriches our understanding of our shared

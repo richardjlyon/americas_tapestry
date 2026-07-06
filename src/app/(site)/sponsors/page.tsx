@@ -2,7 +2,6 @@ import { PageSection } from '@/components/ui/page-section';
 import { SponsorCard } from '@/components/features/sponsors/sponsor-card';
 import { getAllSponsors } from '@/lib/sponsors';
 import { markdownToHtml } from '@/lib/markdown';
-import { SponsorshipSection } from '@/components/features/home/sponsorship-section';
 
 export const metadata = {
   title: "Our Sponsors | America's Tapestry",
@@ -117,11 +116,6 @@ export default async function SponsorsPage() {
             </div>
           </div>
         )}
-      </PageSection>
-
-      {/* Partnership Opportunities Section */}
-      <PageSection spacing="normal" background="vintage-paper">
-        <SponsorshipSection />
       </PageSection>
     </>
   );

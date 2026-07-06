@@ -27,7 +27,7 @@ export async function generateMetadata({
 
   return pageMetadata({
     title: `${data.name} Stitchers`,
-    description: `The volunteers stitching the ${data.name} panel of America's Tapestry.`,
+    description: `The volunteers who stitched the ${data.name} panel of America's Tapestry.`,
     path: `/stitchers/${state}`,
   });
 }

@@ -45,7 +45,7 @@ export const blogCategories: CategoryInfo[] = [
     name: 'Project Updates',
     slug: 'project-updates',
     description:
-      "The latest developments and progress on America's Tapestry panels and exhibitions.",
+      "News and updates from America's Tapestry — from the making of the panels to the exhibition tour.",
   },
   {
     name: 'Historical Insights',
@@ -69,7 +69,7 @@ export const blogCategories: CategoryInfo[] = [
     name: 'Behind the Scenes',
     slug: 'behind-the-scenes',
     description:
-      "A look at the creative process, techniques, and people bringing America's Tapestry to life.",
+      "A look at the creative process, techniques, and people who brought America's Tapestry to life.",
   },
   {
     name: 'Videos',

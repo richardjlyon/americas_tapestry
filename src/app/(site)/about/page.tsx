@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "Learn about America's Tapestry — its mission, history, and the team creating thirteen embroidered panels for America's 250th anniversary.",
+    "Learn about America's Tapestry — its mission, history, and the team behind thirteen embroidered panels created for America's 250th anniversary and now on a two-year exhibition tour.",
   path: "/about",
 });
 
@@ -33,15 +33,15 @@ export default function AboutPage() {
 
         <ReadingContainer width="article" background="paper">
           <p className="font-bold">
-            On July 4th 2026, our nation will commemorate the 250th anniversary
-            of the signing of the Declaration of Independence. All over the
-            United States, communities will be holding events to illustrate and
-            mark our unique history, and to look forward to the next 250 years.
+            On July 4th 2026, our nation marked the 250th anniversary of the
+            signing of the Declaration of Independence. All over the United
+            States, communities held events to illustrate and celebrate our
+            unique history, and to look forward to the next 250 years.
           </p>
 
           <p>
-            Organizing one such event is 28 year-old costume designer and fiber
-            artist Stefan Romero. Stefan is a graduate of Carnegie Mellon
+            One such event was organized by costume designer and fiber artist
+            Stefan Romero. Stefan is a graduate of Carnegie Mellon
             University&apos;s College of Fine Arts, where he specialized in the
             dress and textiles of Colonial America. As a Fulbright Scholar,
             Stefan deepened his understanding of the discipline through his
@@ -51,19 +51,19 @@ export default function AboutPage() {
           <p>
             In collaboration with William & Mary (VA), Seton Hill University
             (PA), and a number of carefully selected historical and craft
-            organizations, Stefan is creating a once-in-a-generation fiber arts
+            organizations, Stefan created a once-in-a-generation fiber arts
             project.
           </p>
 
           <p>
             America&apos;s Tapestry features 13 hand embroidered panels, one for
-            each of the original colonies. The embroidery is currently being
-            conducted by volunteers from ages of 5 to 96 from New Hampshire to
-            Georgia. The panels illustrate stories of individual contributions –
-            many overlooked – that reveal each colony&apos;s struggle for
-            independence. Historical associations from across the states have
-            volunteered to collaborate on the panels&apos; imagery and have
-            generously agreed to host the stitchers as they work.
+            each of the original colonies. The embroidery was carried out by
+            volunteers from ages of 5 to 96 from New Hampshire to Georgia. The
+            panels illustrate stories of individual contributions – many
+            overlooked – that reveal each colony&apos;s struggle for
+            independence. Historical associations from across the states
+            collaborated on the panels&apos; imagery and generously hosted the
+            stitchers as they worked.
           </p>
 
           <blockquote>
@@ -77,24 +77,19 @@ export default function AboutPage() {
           </blockquote>
 
           <p>
-            Over 1,000 volunteers have joined America&apos;s Tapestry to
-            embroider the panels, with local directors guiding the effort in
-            each of the participating states. After their inaugural display at
-            William & Mary&apos;s Muscarelle Museum of Art – a stone&apos;s
-            throw away from Colonial Williamsburg, America&apos;s Tapestry will
-            tour a number of other historic venues throughout the East Coast for
-            a two year traveling exhibition.
-          </p>
-
-          <p>
-            If you may be interested in volunteering to complete this historic
-            effort, do not hesitate to reach out. All volunteers are welcome,
-            regardless of age or experience with needle art.
+            Over 1,000 volunteers joined America&apos;s Tapestry to embroider
+            the panels, with local directors guiding the effort in each of the
+            participating states. Following its inaugural display at William
+            & Mary&apos;s Muscarelle Museum of Art – a stone&apos;s throw
+            away from Colonial Williamsburg – America&apos;s Tapestry is now
+            touring historic venues throughout the East Coast on a two year
+            traveling exhibition, running through 2028.
           </p>
 
           <p>
             Please explore our website to learn more about the many talented
-            artists and volunteers who are making this project possible.
+            artists and volunteers who made this project possible – and visit
+            our exhibitions page to see where the Tapestry is on display.
           </p>
         </ReadingContainer>
       </PageSection>

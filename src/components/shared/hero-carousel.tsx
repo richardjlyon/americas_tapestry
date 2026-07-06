@@ -141,7 +141,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
               America's Tapestry
             </h1>
             <p className="font-serif text-xl sm:text-2xl text-colonial-parchment/90 max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed">
-              Be a part of America's 250th Anniversary.
+              Now on exhibition. See it in person.
             </p>
           </div>
         </div>
@@ -216,7 +216,7 @@ export function HeroCarousel({ tapestries = [] }: HeroCarouselProps) {
               America's Tapestry
             </h1>
             <p className="font-serif text-xl sm:text-2xl text-colonial-parchment/90 max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed">
-              Be a part of America's 250th Anniversary.
+              Now on exhibition. See it in person.
             </p>
             <Button
               variant="colonial-gold"

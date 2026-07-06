@@ -13,7 +13,7 @@ import { getR2Url } from './cloudflare-loader';
 export const SITE_NAME = "America's Tapestry";
 export const SITE_URL = process.env['NEXT_PUBLIC_SITE_URL'] || 'https://americastapestry.com';
 export const SITE_DESCRIPTION =
-  "America's Tapestry weaves together stories from our nation's founding through embroidery — thirteen panels representing the original colonies, created for America's 250th anniversary.";
+  "America's Tapestry tells the stories of our nation's founding through embroidery — thirteen hand-stitched panels representing the original colonies, created for America's 250th anniversary and now touring museums and galleries on a two-year exhibition through 2028.";
 
 // Default social-share image. Served from public/ at the site origin (1024×1024).
 export const DEFAULT_OG_IMAGE = '/images/branding/americas-tapestry-logo-patriotic.png';

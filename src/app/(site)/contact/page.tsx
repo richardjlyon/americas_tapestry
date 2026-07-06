@@ -65,8 +65,9 @@ export default function ContactPage() {
               </h2>
               <p className="font-serif text-colonial-navy/80 mb-6">
                 Stay updated with the latest news, events, and insights from
-                America's Tapestry. We send monthly updates about our project's
-                progress, upcoming exhibitions, and educational opportunities.
+                America's Tapestry. We send monthly updates about the
+                exhibition tour, upcoming events, and educational
+                opportunities.
               </p>
 
               <NewsletterSignup />
