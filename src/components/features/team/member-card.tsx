@@ -18,6 +18,14 @@ function formatMemberState(state: TeamMember['state']): string {
   return Array.isArray(state) ? state.join(', ') : state;
 }
 
+// Narrow a passthrough frontmatter field not modeled in teamMemberSchema to a
+// displayable string. No current content sets these keys; kept as a type-safe
+// fallback for legacy/optional fields the schema doesn't (yet) know about.
+function extraField(member: TeamMember, key: string): string | undefined {
+  const value = member[key];
+  return typeof value === 'string' ? value : undefined;
+}
+
 interface MemberCardProps {
   member: TeamMember;
   variant?: 'grid' | 'full' | 'simple';
@@ -205,24 +213,24 @@ export function MemberCard({
                 </a>
               </div>
             )}
-          {member['specialization'] && (
+          {extraField(member, 'specialization') && (
             <p className="font-serif text-sm text-colonial-navy/70 mb-2">
-              Specialization: {member['specialization']}
+              Specialization: {extraField(member, 'specialization')}
             </p>
           )}
-          {member['members'] && (
+          {extraField(member, 'members') && (
             <p className="font-serif text-sm text-colonial-navy/70 mb-2">
-              Members: {member['members']}
+              Members: {extraField(member, 'members')}
             </p>
           )}
-          {member['established'] && (
+          {extraField(member, 'established') && (
             <p className="font-serif text-sm text-colonial-navy/70 mb-2">
-              Established: {member['established']}
+              Established: {extraField(member, 'established')}
             </p>
           )}
-          {member['partnership_year'] && (
+          {extraField(member, 'partnership_year') && (
             <p className="font-serif text-sm text-colonial-navy/70 mb-2">
-              Partnership since: {member['partnership_year']}
+              Partnership since: {extraField(member, 'partnership_year')}
             </p>
           )}
 

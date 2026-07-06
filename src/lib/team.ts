@@ -8,30 +8,22 @@ import {
 } from './content-schemas';
 import { markdownToHtml } from './markdown';
 
-export interface TeamMember {
+/**
+ * A team member: validated frontmatter (name, role, state(s), portrait,
+ * imagePosition, images, order, ...) plus loader-derived fields. Extra
+ * frontmatter keys pass through as `unknown`.
+ */
+export type TeamMember = z.infer<typeof teamMemberSchema> & {
   slug: string;
-  name: string;
-  role: string;
   content: string;
   groupSlug: string;
-  imagePosition?: string; // Control image positioning (e.g., "center", "top", "left 30% center")
-  portrait?: string; // Optional dedicated portrait filename under /images/team/{groupSlug}/ — overrides images[0] and {slug}.{ext} for the primary display image only
-  portraitPosition?: string; // CSS object-position for the portrait image; falls back to imagePosition when absent
-  state?: string; // Single state assignment
-  states?: string[]; // Multiple state assignments
-  moreInformation?: string;
-  images?: string[]; // NEW: Support multiple images
-  [key: string]: any; // For additional frontmatter fields
-}
+};
 
-export interface TeamGroup {
-  name: string;
+/** A team group index: validated frontmatter plus loader-derived fields. */
+export type TeamGroup = z.infer<typeof teamGroupSchema> & {
   slug: string;
-  description: string;
   longDescription?: string;
-  order?: number;
-  [key: string]: any; // For additional frontmatter fields
-}
+};
 
 // Build a TeamGroup from validated group-index frontmatter + body.
 // Shared by getTeamGroup and getTeamGroups.
@@ -47,7 +39,7 @@ function buildTeamGroup(
     description: data['description'],
     longDescription: content.trim(),
     order: data['order'],
-  } as TeamGroup;
+  };
 }
 
 // Read team group data from the directory structure
@@ -153,18 +145,18 @@ export async function getTeamMembersByGroup(
         role: data['role'] || 'Team Member', // Provide a default role if missing
         content,
         groupSlug: group,
-      } as TeamMember);
+      });
     }
 
     // Sort by order field if present, or by name
     return members.sort((a, b) => {
       // If both have order, use that
-      if (a['order'] !== undefined && b['order'] !== undefined) {
-        return a['order'] - b['order'];
+      if (a.order !== undefined && b.order !== undefined) {
+        return a.order - b.order;
       }
       // If only one has order, prioritize that one
-      if (a['order'] !== undefined) return -1;
-      if (b['order'] !== undefined) return 1;
+      if (a.order !== undefined) return -1;
+      if (b.order !== undefined) return 1;
 
       // If both have names, compare them
       if (a.name && b.name) {
@@ -292,7 +284,7 @@ export async function getTeamMembersByState(stateName: string) {
   const stitchingVenuesAll = await getTeamMembersByGroup('stitching-venues');
   const stitchingVenues = stitchingVenuesAll
     .filter((member) => member.state === stateName)
-    .sort((a, b) => (a['order'] || 999) - (b['order'] || 999));
+    .sort((a, b) => (a.order || 999) - (b.order || 999));
 
   return {
     stateDirectors,

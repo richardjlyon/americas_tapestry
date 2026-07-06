@@ -18,6 +18,13 @@ interface TeamCardProps {
   stitchers?: TeamMember[] | null;
 }
 
+// Narrow a passthrough frontmatter field not modeled in teamMemberSchema to a
+// displayable string.
+function extraField(member: TeamMember, key: string): string | undefined {
+  const value = member[key];
+  return typeof value === 'string' ? value : undefined;
+}
+
 export function TeamCard({
   stateName,
   stateSlug,
@@ -120,9 +127,9 @@ export function TeamCard({
                       <p className="font-normal text-colonial-navy mb-1 pb-0">
                         {member.name || member.slug}
                       </p>
-                      {(member['description'] || member['summary']) && (
+                      {(extraField(member, 'description') || member.summary) && (
                         <p className="text-sm text-gray-700 mt-0 pt-0">
-                          {member['description'] || member['summary']}
+                          {extraField(member, 'description') || member.summary}
                         </p>
                       )}
                     </div>
