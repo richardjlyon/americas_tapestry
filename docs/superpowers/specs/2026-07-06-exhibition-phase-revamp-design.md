@@ -30,6 +30,13 @@ educators, and sell merchandise.
 5. **Contextual merch cross-sell**: "Take it home" strips on tapestry detail pages, a
    book/poster callout on exhibitions, one shop feature section on home. Museum-shop tone,
    never louder than the art.
+6. **Two-wing room palette (per Richard, 2026-07-06)**: navy rooms
+   (`colonial-navy`) for art and commerce — home, tapestries, exhibitions, gallery,
+   shop; deep oxblood rooms (`colonial-oxblood` #470d16, derived from the burgundy
+   ACCENT which is too hot for wall paint) for people and story — news, about, team,
+   sponsors, contact. Navy chrome (header/breadcrumb/footer) spans both wings.
+   Remaining child routes (news/[slug], team/[group]/*, sponsors/[slug], stitchers/*)
+   join the oxblood wing in the 3d sweep.
 
 ## Phase 0 — Tier 1 copy fixes (independent; ships first)
 
