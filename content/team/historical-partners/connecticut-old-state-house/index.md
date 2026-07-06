@@ -15,6 +15,5 @@ actively engages in educating the public about Connecticut’s role in
 the broader narrative of American history. The Connecticut Old State
 House provides crucial historical expertise and archival resources to
 ensure the authenticity and accuracy of the Connecticut Tapestry Panel.
-Additionally, the Old State House hosts workshops and will display the
-Tapestry, leveraging its central location and visitor traffic to engage
-a broad audience.
+Additionally, the Old State House hosts workshops, leveraging its
+central location and visitor traffic to engage a broad audience.

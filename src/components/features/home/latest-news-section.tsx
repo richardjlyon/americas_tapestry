@@ -53,8 +53,8 @@ export async function LatestNewsSection() {
       ) : (
         <ContentCard className="text-center">
           <p className="font-serif text-colonial-navy/80 text-lg mb-4">
-            News articles coming soon! Check back for updates on America's
-            Tapestry project.
+            No news articles are available right now. Visit our exhibitions
+            page to see where America's Tapestry is on display.
           </p>
         </ContentCard>
       )}

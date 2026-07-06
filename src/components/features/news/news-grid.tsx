@@ -20,12 +20,11 @@ export function NewsGrid({ posts }: NewsGridProps) {
       ) : (
         <ContentCard className="text-center max-w-2xl mx-auto">
           <p className="font-serif text-colonial-navy/80 text-lg mb-4">
-            No blog posts have been published yet. Check back soon for updates
-            on America's Tapestry project.
+            No posts in this section yet.
           </p>
           <p className="font-serif text-colonial-navy/60 text-base">
-            Our team is working on creating engaging content about our tapestry
-            panels, historical insights, and upcoming events.
+            Browse our other categories for stories about the tapestry panels,
+            historical insights, and the exhibition tour.
           </p>
         </ContentCard>
       )}
