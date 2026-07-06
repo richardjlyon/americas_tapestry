@@ -150,9 +150,12 @@ apply the Night Gallery treatment to what remains. Concrete decisions already ma
    refunds for products not up to quality standards — word gently, framed around
    the volunteer nature of the organization; policy is temporary and revisited
    after the four weeks.
-7. **3D gallery**: linked from home + nav; graceful mobile/no-WebGL fallback (static
-   panorama or image grid) verified before promotion; confirm dynamic import keeps
-   three.js out of the main bundle.
+7. **3D gallery** (REVISED per Richard, 2026-07-06): the walk-through is a PROTOTYPE
+   and likely needs complete rework. Until then: nav/footer links only (shipped in 3a),
+   NO homepage promotion — the "Walk the Gallery" feature block is removed from the
+   homepage plan. The rework is a separate future plan (needs its own brainstorm);
+   the original flagship treatment (home feature, mobile/no-WebGL fallback, bundle
+   check) moves to that plan.
 
 ## Open items (user decisions/inputs)
 
