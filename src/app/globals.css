@@ -30,6 +30,13 @@
 }
 
 @layer base {
+  /* Site-wide type scale: one point up from the browser's 16px default
+   * (per Richard, 2026-07-06). Every rem-based size inherits this; nudge
+   * this single value (e.g. 112.5% = 18px) to rescale the whole site. */
+  html {
+    font-size: 106.25%; /* 17px */
+  }
+
   /* Base styles for border and body */
   * {
     @apply border-border;
