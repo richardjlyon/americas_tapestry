@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tapestries loader (characterization) loads all 13 colonies sorted by title, finished, with images: tapestry-slugs 1`] = `
+[
+  "connecticut",
+  "delaware",
+  "georgia",
+  "maryland",
+  "massachusetts",
+  "new-hampshire",
+  "new-jersey",
+  "new-york",
+  "north-carolina",
+  "pennsylvania",
+  "rhode-island",
+  "south-carolina",
+  "virginia",
+]
+`;
+
+exports[`team loader (characterization) resolves state rosters (Virginia): virginia-roster-counts 1`] = `
+{
+  "commissionPartners": 1,
+  "historicalPartners": 2,
+  "illustrators": 1,
+  "stateDirectors": 1,
+  "stitchers": 8,
+  "stitchingGroups": 1,
+  "stitchingVenues": 1,
+}
+`;
+
+exports[`team loader (characterization) returns groups in order with required fields: team-group-slugs 1`] = `
+[
+  "250-commission",
+  "historical-partners",
+  "illustrators",
+  "project-director",
+  "state-directors",
+  "stitchers",
+  "stitching-groups",
+  "stitching-venues",
+]
+`;
+
+exports[`team loader (characterization) returns members per group with name/role/groupSlug, excluding group indexes: team-member-counts 1`] = `
+{
+  "250-commission": 4,
+  "historical-partners": 17,
+  "illustrators": 12,
+  "project-director": 1,
+  "state-directors": 22,
+  "stitchers": 86,
+  "stitching-groups": 20,
+  "stitching-venues": 30,
+}
+`;
