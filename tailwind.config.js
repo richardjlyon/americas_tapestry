@@ -34,6 +34,7 @@ module.exports = {
           linenWoven: '#f7f3ea',
           vintagePaper: '#f8f3e6',
           parchment: '#f4e9d5',
+          frame: '#0b0d12', // Night Gallery near-black moulding
         },
         // System UI colors - mapped to colonial palette
         border: 'hsl(var(--border))',
@@ -99,6 +100,12 @@ module.exports = {
         3000: '3000ms',
         5000: '5000ms',
         10000: '10000ms',
+      },
+      boxShadow: {
+        // Night Gallery museum shadows (values from the shop treatment)
+        plate: '0 18px 44px -22px rgba(0,0,0,0.85)',
+        'plate-lg': '0 28px 64px -24px rgba(0,0,0,0.9)',
+        card: '0 22px 48px -18px rgba(11,15,32,0.5)',
       },
       typography: (theme) => ({
         DEFAULT: {

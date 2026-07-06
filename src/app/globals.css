@@ -252,6 +252,40 @@
   }
 
   /***************************************
+   * NIGHT GALLERY (exhibition-phase design system)
+   * Dark navy rooms for art, cream plates for reading. Values
+   * codified verbatim from the shop treatment (2026-07).
+   ***************************************/
+
+  /* Kicker label above a heading. Pair with a color variant. */
+  .eyebrow {
+    @apply font-sans text-sm font-semibold uppercase tracking-[0.2em];
+  }
+
+  .eyebrow-burgundy {
+    @apply text-colonial-burgundy; /* on light surfaces */
+  }
+
+  .eyebrow-gold {
+    @apply text-colonial-gold; /* on dark surfaces */
+  }
+
+  /* Hairline gold divider — the "threshold" into a gallery room. */
+  .gold-threshold {
+    @apply h-px w-16 bg-colonial-gold/60;
+  }
+
+  /* Display heading inside a dark room: serif, cream, letterspaced. */
+  .gallery-heading {
+    @apply font-serif font-medium tracking-[0.08em] text-colonial-parchment;
+  }
+
+  /* Supporting copy inside a dark room. */
+  .gallery-lead {
+    @apply font-serif text-lg md:text-xl text-colonial-parchment/80;
+  }
+
+  /***************************************
    * BACKGROUND TEXTURES
    ***************************************/
 
