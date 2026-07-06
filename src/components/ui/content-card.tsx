@@ -20,7 +20,8 @@ export function ContentCard({
   };
 
   // Extract custom background if it exists in className
-  const hasCustomBg = className?.includes('vintage-paper');
+  const hasCustomBg =
+    className?.includes('vintage-paper') || className?.includes('reading-plate');
 
   return (
     <div
