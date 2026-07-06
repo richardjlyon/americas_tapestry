@@ -56,15 +56,13 @@ describe('tapestries loader (characterization)', () => {
     for (const entry of all) {
       const single = await getTapestryBySlug(entry.slug);
       expect(single).not.toBeNull();
-      // NOTE: `thumbnail` deliberately excluded — the two code paths
-      // currently disagree on thumbnail selection. Task 5 unifies them
-      // and adds the thumbnail assertion.
       const fields = [
         'slug',
         'title',
         'summary',
         'status',
         'background_color',
+        'thumbnail',
         'imagePath',
         'artworkPath',
         'audioPath',

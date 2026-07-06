@@ -1,9 +1,7 @@
-import { getAllContent, getContentBySlug } from './content-core';
-import {
-  tapestrySchema,
-  validateFrontmatter,
-  FrontmatterValidationError,
-} from './content-schemas';
+import type { z } from 'zod';
+import type { ContentItem } from './content-core';
+import { tapestrySchema } from './content-schemas';
+import { defineContentLoader } from './content-loader';
 import fs from 'fs';
 import path from 'path';
 
@@ -212,217 +210,92 @@ export function getCarouselImages(): TapestryEntry[] {
   }
 }
 
-export async function getAllTapestries(): Promise<TapestryEntry[]> {
-  try {
-    // Use content-core to get all tapestry content
-    const tapestryContent = await getAllContent('tapestries');
-
-    const tapestries: TapestryEntry[] = [];
-
-    for (const item of tapestryContent) {
-      const data = validateFrontmatter(tapestrySchema, item.frontmatter, {
-        contentType: 'tapestry',
-        slug: item.slug,
-      });
-      const content = item.content;
-      const slug = item.slug;
-
-      // Validate status or set default
-      const status =
-        data['status'] && isValidStatus(data['status'])
-          ? data['status']
-          : 'Not Started';
-
-      // Find the main image in the directory
-      const photoPath = findPhotoInDirectory(slug);
-      const imagePath = photoPath || findImageInDirectory(slug);
-
-      // Find audio description file
-      const audioPath = findAudioInDirectory(slug);
-
-      // Construct the thumbnail path - either from frontmatter or by convention
-      // Updated to prefer optimized responsive variants over original files
-      let thumbnail = data['thumbnail'] || photoPath;
-      if (!thumbnail) {
-        // Look for thumbnail in the public images directory
-        const publicImagePath = path.join(
-          process.cwd(),
-          'public/images/tapestries',
-          slug,
-        );
-
-        if (fs.existsSync(publicImagePath)) {
-          const files = fs.readdirSync(publicImagePath);
-          const formatPriority = ['.webp', '.jpg', '.jpeg', '.png', '.avif'];
-
-          // Find optimized thumbnail variants first
-          for (const format of formatPriority) {
-            // Try responsive thumbnail variants (640w is good for thumbnails)
-            const responsiveThumbnail = files.find((file) => {
-              const ext = path.extname(file).toLowerCase();
-              return (
-                ext === format &&
-                file.toLowerCase().includes('thumbnail') &&
-                file.includes('-640w')
-              );
-            });
-
-            if (responsiveThumbnail) {
-              thumbnail = `/images/tapestries/${slug}/${responsiveThumbnail}`;
-              break;
-            }
-
-            // Fall back to original thumbnail
-            const originalThumbnail = files.find((file) => {
-              const ext = path.extname(file).toLowerCase();
-              return (
-                ext === format &&
-                file.toLowerCase().includes('thumbnail') &&
-                !file.includes('-640w') &&
-                !file.includes('-1024w') &&
-                !file.includes('-1920w') &&
-                !file.includes('-2560w') &&
-                !file.includes('-400w') &&
-                !file.includes('-1280w') &&
-                !file.includes('-200w') &&
-                !file.includes('-600w') &&
-                !file.includes('-300w') &&
-                !file.includes('-900w')
-              );
-            });
-
-            if (originalThumbnail) {
-              thumbnail = `/images/tapestries/${slug}/${originalThumbnail}`;
-              break;
-            }
-          }
-
-          // If no thumbnail found, use main image as fallback
-          if (!thumbnail && imagePath) {
-            thumbnail = imagePath;
-          } else if (!thumbnail) {
-            // Use placeholder as last resort
-            thumbnail =
-              '/images/placeholders/tapestry-placeholder.svg?height=600&width=800';
-          }
-        } else {
-          // Use placeholder as last resort
-          thumbnail =
-            '/images/placeholders/tapestry-placeholder.svg?height=600&width=800';
-        }
-      }
-
-      // Return the tapestry entry
-      tapestries.push({
-        slug,
-        title: data['title'],
-        summary: data['summary'],
-        thumbnail: thumbnail || imagePath, // Use main image as fallback if no thumbnail
-        background_color: data['background_color'],
-        content,
-        imagePath,
-        artworkPath: findArtworkInDirectory(slug) || undefined,
-        audioPath,
-        audioDescription:
-          data['audioDescription'] ||
-          `Audio description of the ${data['title']} tapestry`,
-        colony: data['colony'] || null,
-        status,
-        timelineEvents: data['timelineEvents'] || [],
-        resources: data['resources'] || [],
-      } as TapestryEntry);
-    }
-
-    // Sort tapestries by title
-    return tapestries.sort((a, b) => a.title.localeCompare(b.title));
-  } catch (error) {
-    if (error instanceof FrontmatterValidationError) throw error;
-    console.error('Error getting all tapestries:', error);
-    return [];
-  }
-}
-
-export async function getTapestryBySlug(
+// Thumbnail: frontmatter override, then finished-photo, then a *thumbnail*
+// file (640w variant preferred), then the main image, then the placeholder.
+function resolveThumbnail(
   slug: string,
-): Promise<TapestryEntry | null> {
-  try {
-    // Use content-core to get the specific tapestry content
-    const tapestryItem = await getContentBySlug('tapestries', slug);
+  files: string[],
+  frontmatterThumbnail: string | undefined,
+  photoPath: string | null,
+  imagePath: string | null,
+): string {
+  if (frontmatterThumbnail) return frontmatterThumbnail;
+  if (photoPath) return photoPath;
 
-    if (!tapestryItem) {
-      return null;
-    }
-
-    const data = validateFrontmatter(tapestrySchema, tapestryItem.frontmatter, {
-      contentType: 'tapestry',
-      slug,
-    });
-    const content = tapestryItem.content;
-
-    // Validate status or set default
-    const status =
-      data['status'] && isValidStatus(data['status'])
-        ? data['status']
-        : 'Not Started';
-
-    // Find the main image in the directory
-    const photoPath = findPhotoInDirectory(slug);
-    const imagePath = photoPath || findImageInDirectory(slug);
-
-    // Find audio description file
-    const audioPath = findAudioInDirectory(slug);
-
-    // Construct the thumbnail path - either from frontmatter or by convention
-    let thumbnail = data['thumbnail'] || photoPath;
-    if (!thumbnail) {
-      // Look for thumbnail in the public images directory
-      const publicImagePath = path.join(
-        process.cwd(),
-        'public/images/tapestries',
-        slug,
-      );
-
-      if (fs.existsSync(publicImagePath)) {
-        const thumbnailFile = fs
-          .readdirSync(publicImagePath)
-          .find((file) => file.toLowerCase().includes('thumbnail'));
-
-        if (thumbnailFile) {
-          thumbnail = `/images/tapestries/${slug}/${thumbnailFile}`;
-        } else if (imagePath) {
-          // Use main image as fallback if available
-          thumbnail = imagePath;
-        } else {
-          // Use placeholder as last resort
-          thumbnail = '/images/placeholders/placeholder.svg';
-        }
-      } else {
-        // Use placeholder as last resort
-        thumbnail = '/images/placeholders/placeholder.svg';
-      }
-    }
-
-    return {
-      slug,
-      title: data['title'],
-      summary: data['summary'],
-      thumbnail: thumbnail || imagePath, // Use main image as fallback if no thumbnail
-      background_color: data['background_color'],
-      content,
-      imagePath,
-      artworkPath: findArtworkInDirectory(slug) || undefined,
-      audioPath,
-      audioDescription:
-        data['audioDescription'] ||
-        `Audio description of the ${data['title']} tapestry`,
-      colony: data['colony'] || null,
-      status,
-      timelineEvents: data['timelineEvents'] || [],
-      resources: data['resources'] || [],
-    } as TapestryEntry;
-  } catch (error) {
-    if (error instanceof FrontmatterValidationError) throw error;
-    console.error(`Error getting tapestry ${slug}:`, error);
-    return null;
-  }
+  const thumbnailFile = findTapestryFile(files, {
+    match: (lower) => lower.includes('thumbnail'),
+    preferWidth: '-640w',
+    fallback: 'original',
+  });
+  if (thumbnailFile) return `/images/tapestries/${slug}/${thumbnailFile}`;
+  if (imagePath) return imagePath;
+  return '/images/placeholders/tapestry-placeholder.svg?height=600&width=800';
 }
+
+/**
+ * Map validated tapestry frontmatter + raw item to a TapestryEntry. Shared by
+ * getAllTapestries and getTapestryBySlug so image/status/thumbnail rules live
+ * in exactly one place.
+ */
+function mapTapestry(
+  data: z.infer<typeof tapestrySchema>,
+  item: ContentItem,
+): TapestryEntry {
+  const slug = item.slug;
+  const files = listTapestryImageFiles(slug);
+
+  const status =
+    data['status'] && isValidStatus(data['status'])
+      ? data['status']
+      : 'Not Started';
+
+  const photoPath = findPhotoInDirectory(slug);
+  const imagePath = photoPath || findImageInDirectory(slug);
+  const artworkPath = findArtworkInDirectory(slug);
+  const audioPath = findAudioInDirectory(slug);
+  const thumbnail = resolveThumbnail(
+    slug,
+    files,
+    data['thumbnail'],
+    photoPath,
+    imagePath,
+  );
+
+  return {
+    slug,
+    title: data['title'],
+    summary: data['summary'],
+    thumbnail,
+    background_color: data['background_color'],
+    content: item.content,
+    // exactOptionalPropertyTypes: only set these keys when a path was found,
+    // rather than assigning an explicit `undefined` value.
+    ...(imagePath ? { imagePath } : {}),
+    ...(artworkPath ? { artworkPath } : {}),
+    ...(audioPath ? { audioPath } : {}),
+    audioDescription:
+      data['audioDescription'] ||
+      `Audio description of the ${data['title']} tapestry`,
+    colony: data['colony'] || null,
+    status,
+    timelineEvents: data['timelineEvents'] || [],
+    resources: data['resources'] || [],
+  };
+}
+
+const tapestriesLoader = defineContentLoader<
+  TapestryEntry,
+  typeof tapestrySchema
+>({
+  contentType: 'tapestries',
+  label: 'tapestry',
+  schema: tapestrySchema,
+  map: mapTapestry,
+  sort: (a, b) => a.title.localeCompare(b.title),
+});
+
+/** Get all tapestries, sorted by title. */
+export const getAllTapestries = tapestriesLoader.getAll;
+
+/** Get a single tapestry by slug, or null if not found. */
+export const getTapestryBySlug = tapestriesLoader.getBySlug;
