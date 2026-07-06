@@ -35,6 +35,22 @@ describe('tapestries loader (characterization)', () => {
     }
   });
 
+  it('resolves stable image paths per slug', async () => {
+    const all = await getAllTapestries();
+    const paths = Object.fromEntries(
+      all.map((t) => [
+        t.slug,
+        {
+          thumbnail: t.thumbnail,
+          imagePath: t.imagePath,
+          artworkPath: t.artworkPath,
+          audioPath: t.audioPath,
+        },
+      ]),
+    );
+    expect(paths).toMatchSnapshot('tapestry-image-paths');
+  });
+
   it('getTapestryBySlug agrees with getAllTapestries entry field-by-field', async () => {
     const all = await getAllTapestries();
     for (const entry of all) {

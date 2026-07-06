@@ -18,6 +18,89 @@ exports[`tapestries loader (characterization) loads all 13 colonies sorted by ti
 ]
 `;
 
+exports[`tapestries loader (characterization) resolves stable image paths per slug: tapestry-image-paths 1`] = `
+{
+  "connecticut": {
+    "artworkPath": "/images/tapestries/connecticut/connecticut-tapestry-1024w.webp",
+    "audioPath": "/images/tapestries/connecticut/connecticut-audio-description.mp3",
+    "imagePath": "/images/tapestries/connecticut/connecticut-photo.jpg",
+    "thumbnail": "/images/tapestries/connecticut/connecticut-photo.jpg",
+  },
+  "delaware": {
+    "artworkPath": "/images/tapestries/delaware/delaware-tapestry-1024w.webp",
+    "audioPath": "/images/tapestries/delaware/delaware-audio-description.mp3",
+    "imagePath": "/images/tapestries/delaware/delaware-photo.jpg",
+    "thumbnail": "/images/tapestries/delaware/delaware-photo.jpg",
+  },
+  "georgia": {
+    "artworkPath": "/images/tapestries/georgia/georgia-tapestry-main-1024w.webp",
+    "audioPath": "/images/tapestries/georgia/georgia-audio-description.mp3",
+    "imagePath": "/images/tapestries/georgia/georgia-photo.jpg",
+    "thumbnail": "/images/tapestries/georgia/georgia-photo.jpg",
+  },
+  "maryland": {
+    "artworkPath": "/images/tapestries/maryland/maryland-tapestry-1024w.webp",
+    "audioPath": "/images/tapestries/maryland/maryland-audio-description.mp3",
+    "imagePath": "/images/tapestries/maryland/maryland-photo.jpg",
+    "thumbnail": "/images/tapestries/maryland/maryland-photo.jpg",
+  },
+  "massachusetts": {
+    "artworkPath": "/images/tapestries/massachusetts/massachusetts-tapestry-main-1024w.webp",
+    "audioPath": "/images/tapestries/massachusetts/massachusetts-audio-description.mp3",
+    "imagePath": "/images/tapestries/massachusetts/massachusetts-photo.jpg",
+    "thumbnail": "/images/tapestries/massachusetts/massachusetts-photo.jpg",
+  },
+  "new-hampshire": {
+    "artworkPath": "/images/tapestries/new-hampshire/new-hampshire-tapestry-main-1024w.webp",
+    "audioPath": "/images/tapestries/new-hampshire/new-hampshire-audio-description.mp3",
+    "imagePath": "/images/tapestries/new-hampshire/new-hampshire-photo.jpg",
+    "thumbnail": "/images/tapestries/new-hampshire/new-hampshire-photo.jpg",
+  },
+  "new-jersey": {
+    "artworkPath": "/images/tapestries/new-jersey/new-jersey-tapestry-main-1024w.webp",
+    "audioPath": "/images/tapestries/new-jersey/new-jersey-audio-description.mp3",
+    "imagePath": "/images/tapestries/new-jersey/new-jersey-photo.jpg",
+    "thumbnail": "/images/tapestries/new-jersey/new-jersey-photo.jpg",
+  },
+  "new-york": {
+    "artworkPath": "/images/tapestries/new-york/new-york-tapestry-main-1024w.webp",
+    "audioPath": "/images/tapestries/new-york/new-york-audio-description.mp3",
+    "imagePath": "/images/tapestries/new-york/new-york-photo.jpg",
+    "thumbnail": "/images/tapestries/new-york/new-york-photo.jpg",
+  },
+  "north-carolina": {
+    "artworkPath": "/images/tapestries/north-carolina/north-carolina-tapestry-main-1024w.webp",
+    "audioPath": "/images/tapestries/north-carolina/north-carolina-audio-description.mp3",
+    "imagePath": "/images/tapestries/north-carolina/north-carolina-photo.jpg",
+    "thumbnail": "/images/tapestries/north-carolina/north-carolina-photo.jpg",
+  },
+  "pennsylvania": {
+    "artworkPath": "/images/tapestries/pennsylvania/pennsylvania-tapestry-main-1024w.webp",
+    "audioPath": "/images/tapestries/pennsylvania/pennsylvania-audio-description.mp3",
+    "imagePath": "/images/tapestries/pennsylvania/pennsylvania-photo.jpg",
+    "thumbnail": "/images/tapestries/pennsylvania/pennsylvania-photo.jpg",
+  },
+  "rhode-island": {
+    "artworkPath": "/images/tapestries/rhode-island/rhode-island-tapestry-main-1024w.webp",
+    "audioPath": "/images/tapestries/rhode-island/rhode-island-audio-description.mp3",
+    "imagePath": "/images/tapestries/rhode-island/rhode-island-photo.jpg",
+    "thumbnail": "/images/tapestries/rhode-island/rhode-island-photo.jpg",
+  },
+  "south-carolina": {
+    "artworkPath": "/images/tapestries/south-carolina/south-carolina-tapestry-main-1024w.webp",
+    "audioPath": "/images/tapestries/south-carolina/south-carolina-audio-description.mp3",
+    "imagePath": "/images/tapestries/south-carolina/south-carolina-photo.jpg",
+    "thumbnail": "/images/tapestries/south-carolina/south-carolina-photo.jpg",
+  },
+  "virginia": {
+    "artworkPath": "/images/tapestries/virginia/virginia-tapestry-main-1024w.webp",
+    "audioPath": "/images/tapestries/virginia/virginia-audio-description.mp3",
+    "imagePath": "/images/tapestries/virginia/virginia-photo.jpg",
+    "thumbnail": "/images/tapestries/virginia/virginia-photo.jpg",
+  },
+}
+`;
+
 exports[`team loader (characterization) resolves state rosters (Virginia): virginia-roster-counts 1`] = `
 {
   "commissionPartners": 1,
