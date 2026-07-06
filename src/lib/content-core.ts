@@ -10,6 +10,24 @@ export interface ContentItem {
 }
 
 /**
+ * Derive a plain-text excerpt (~150 chars) from markdown content. Used when
+ * frontmatter provides no explicit `excerpt`.
+ */
+function deriveExcerpt(content: string): string {
+  const plainText = content
+    .replace(/#{1,6}\s+/g, '') // Remove headers
+    .replace(/\*\*(.+?)\*\*/g, '$1') // Remove bold
+    .replace(/\*(.+?)\*/g, '$1') // Remove italic
+    .replace(/\[(.+?)\]\(.+?\)/g, '$1') // Remove links
+    .replace(/\n+/g, ' ') // Replace newlines with spaces
+    .trim();
+
+  return plainText.length > 150
+    ? plainText.substring(0, 150) + '...'
+    : plainText;
+}
+
+/**
  * Core content reading utility - replaces file duplication approach
  * Reads markdown files directly from content/ directory
  */
@@ -66,19 +84,7 @@ export async function getAllContent(
           // Generate excerpt if not provided
           let excerpt = data['excerpt'];
           if (!excerpt && content) {
-            // Extract first 150 characters of content, removing markdown syntax
-            const plainText = content
-              .replace(/#{1,6}\s+/g, '') // Remove headers
-              .replace(/\*\*(.+?)\*\*/g, '$1') // Remove bold
-              .replace(/\*(.+?)\*/g, '$1') // Remove italic
-              .replace(/\[(.+?)\]\(.+?\)/g, '$1') // Remove links
-              .replace(/\n+/g, ' ') // Replace newlines with spaces
-              .trim();
-
-            excerpt =
-              plainText.length > 150
-                ? plainText.substring(0, 150) + '...'
-                : plainText;
+            excerpt = deriveExcerpt(content);
           }
 
           allContent.push({
@@ -208,18 +214,7 @@ async function processContentDirectory(
         // Generate excerpt if not provided
         let excerpt = data['excerpt'];
         if (!excerpt && markdownContent) {
-          const plainText = markdownContent
-            .replace(/#{1,6}\s+/g, '')
-            .replace(/\*\*(.+?)\*\*/g, '$1')
-            .replace(/\*(.+?)\*/g, '$1')
-            .replace(/\[(.+?)\]\(.+?\)/g, '$1')
-            .replace(/\n+/g, ' ')
-            .trim();
-
-          excerpt =
-            plainText.length > 150
-              ? plainText.substring(0, 150) + '...'
-              : plainText;
+          excerpt = deriveExcerpt(markdownContent);
         }
 
         // Add category to frontmatter if provided
