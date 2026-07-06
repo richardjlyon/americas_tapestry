@@ -53,8 +53,8 @@ export function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-colonial-burgundy shadow-md'
-          : 'bg-colonial-burgundy/90 backdrop-blur-sm',
+          ? 'bg-colonial-navy shadow-md border-b border-colonial-gold/20'
+          : 'bg-colonial-navy/90 backdrop-blur-sm',
       )}
     >
       {/* Logo - Positioned at the root level */}
@@ -115,12 +115,12 @@ export function Header() {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          'fixed inset-0 bg-colonial-burgundy z-10 transition-transform duration-300 transform xl:hidden',
+          'fixed inset-0 bg-colonial-navy z-10 transition-transform duration-300 transform xl:hidden',
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full',
         )}
       >
         {/* Mobile Menu Content */}
-        <div className="h-screen pt-20 pb-6 px-4 overflow-y-auto bg-colonial-burgundy">
+        <div className="h-screen pt-20 pb-6 px-4 overflow-y-auto bg-colonial-navy">
           <nav className="flex flex-col space-y-6 mt-4">
             {navigationItems.map((item) => (
               <Link
