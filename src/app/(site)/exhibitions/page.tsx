@@ -1,56 +1,109 @@
-import { getAllExhibitions } from '@/lib/exhibitions';
+import {
+  getAllExhibitions,
+  groupExhibitionsByStatus,
+} from '@/lib/exhibitions';
 import { ExhibitionCard } from '@/components/features/exhibitions/exhibition-card';
-import { PageSection } from '@/components/ui/page-section';
 import { pageMetadata } from '@/lib/seo';
 
 export const metadata = pageMetadata({
-  title: 'Exhibitions',
+  title: 'Visit',
   description:
-    "Where to see America's Tapestry on display — current and upcoming exhibitions across the original colonies.",
+    "Where to see America's Tapestry on display — the venue on view now and every upcoming stop on the 2026–2028 exhibition tour.",
   path: '/exhibitions',
 });
 
+// Re-render daily so now/next/past grouping tracks the calendar without a deploy.
+export const revalidate = 86400;
+
+function TourSection({
+  eyebrow,
+  title,
+  children,
+}: {
+  eyebrow: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="mx-auto w-full max-w-4xl">
+      <span className="eyebrow eyebrow-gold">{eyebrow}</span>
+      <h2 className="gallery-heading mt-2 text-3xl md:text-4xl">{title}</h2>
+      <div className="gold-threshold mt-4" />
+      <div className="mt-8 space-y-6">{children}</div>
+    </section>
+  );
+}
+
 export default async function ExhibitionsPage() {
   const exhibitions = await getAllExhibitions();
+  const { current, upcoming, past } = groupExhibitionsByStatus(exhibitions);
 
   return (
-    <>
-      <h1 className="page-heading">Exhibitions</h1>
+    <div className="bg-colonial-navy">
+      <div className="container mx-auto space-y-16 py-16 md:space-y-20 md:py-24">
+        <header className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow eyebrow-gold">The Exhibition Tour</span>
+          <h1 className="gallery-heading mt-3 text-4xl md:text-5xl">
+            See America&rsquo;s Tapestry
+          </h1>
+          <p className="gallery-lead mx-auto mt-4">
+            All thirteen panels are touring the original colonies through
+            2028. Find the gallery nearest you.
+          </p>
+        </header>
 
-      <div className="lead-text text-center">
-        Experience America's Tapestry at these exhibition venues across the
-        original 13 states.
+        {current.length > 0 && (
+          <TourSection eyebrow="On view now" title="Now showing">
+            {current.map((exhibition) => (
+              <ExhibitionCard
+                key={exhibition.slug}
+                exhibition={exhibition}
+                featured
+              />
+            ))}
+          </TourSection>
+        )}
+
+        {upcoming.length > 0 && (
+          <TourSection eyebrow="Coming next" title="Upcoming venues">
+            {upcoming.map((exhibition) => (
+              <ExhibitionCard key={exhibition.slug} exhibition={exhibition} />
+            ))}
+          </TourSection>
+        )}
+
+        <section className="mx-auto w-full max-w-4xl">
+          <p className="gallery-lead">
+            Additional confirmed venues include{' '}
+            <a
+              href="https://www.mdhistory.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-colonial-gold hover:text-colonial-gold/80"
+            >
+              the Maryland Center for History and Culture
+            </a>{' '}
+            and{' '}
+            <a
+              href="https://www.atlantahistorycenter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-colonial-gold hover:text-colonial-gold/80"
+            >
+              the Atlanta History Center
+            </a>
+            . Dates will be announced here.
+          </p>
+        </section>
+
+        {past.length > 0 && (
+          <TourSection eyebrow="The story so far" title="Past venues">
+            {past.map((exhibition) => (
+              <ExhibitionCard key={exhibition.slug} exhibition={exhibition} />
+            ))}
+          </TourSection>
+        )}
       </div>
-
-      <PageSection paddingTop="small">
-        <div className="space-y-6 w-full lg:w-2/3 mx-auto">
-          {exhibitions.map((exhibition) => (
-            <ExhibitionCard key={exhibition.slug} exhibition={exhibition} />
-          ))}
-        </div>
-
-        <p className="text-center text-xl mt-12 w-full lg:w-2/3 mx-auto">
-          Additional confirmed venues include{' '}
-          <a
-            href="https://www.mdhistory.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold underline hover:opacity-80"
-          >
-            The Maryland Center For History And Culture
-          </a>{' '}
-          and{' '}
-          <a
-            href="https://www.atlantahistorycenter.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold underline hover:opacity-80"
-          >
-            The Atlanta History Center
-          </a>
-          . Please revisit this page for further updates.
-        </p>
-      </PageSection>
-    </>
+    </div>
   );
 }

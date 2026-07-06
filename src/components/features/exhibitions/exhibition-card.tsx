@@ -6,57 +6,69 @@ import type { Exhibition } from '@/lib/exhibitions';
 
 interface ExhibitionCardProps {
   exhibition: Exhibition;
+  /** Larger treatment for the venue currently on view. */
+  featured?: boolean;
 }
 
-export function ExhibitionCard({ exhibition }: ExhibitionCardProps) {
+/**
+ * A tour venue, presented as a plate in the Night Gallery. The featured
+ * variant (the venue on view now) gets a taller image and stronger presence.
+ */
+export function ExhibitionCard({
+  exhibition,
+  featured = false,
+}: ExhibitionCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg flex flex-col md:flex-row md:h-[224px]">
-      {/* Image - full width on mobile, fixed square on md+ */}
-      <div className="relative w-full h-48 md:w-[224px] md:h-[224px] flex-shrink-0">
+    <div
+      className={
+        featured
+          ? 'overflow-hidden bg-white/[0.04] ring-1 ring-white/10 shadow-plate-lg'
+          : 'flex flex-col overflow-hidden bg-white/[0.04] ring-1 ring-white/10 shadow-plate transition-shadow hover:shadow-plate-lg md:h-[224px] md:flex-row'
+      }
+    >
+      <div
+        className={
+          featured
+            ? 'relative h-64 w-full md:h-80'
+            : 'relative h-48 w-full flex-shrink-0 md:h-[224px] md:w-[224px]'
+        }
+      >
         <Image
           src={getImagePath(exhibition.imagePath)}
           alt={`${exhibition.name} venue`}
           fill
-          sizes={getImageSizes('thumbnail')}
+          sizes={
+            featured ? '(min-width: 1024px) 56rem, 100vw' : getImageSizes('thumbnail')
+          }
           className="object-cover"
         />
       </div>
 
-      {/* Information Section - with padding */}
-      <div className="flex-1 p-6 flex flex-col">
-        {/* Date Range - Dark blue text, sans-serif, bold, larger */}
-        <div className="mb-2">
-          <span className="text-blue-800 font-sans font-bold text-base">
-            {formatDateRange(exhibition.startDate, exhibition.endDate)}
-          </span>
-        </div>
-
-        {/* State - Smaller text, bold */}
-        <p className="text-base text-colonial-navy/70 font-bold mb-1">
+      <div className="flex flex-1 flex-col p-6 md:p-8">
+        <span className="eyebrow eyebrow-gold">
+          {formatDateRange(exhibition.startDate, exhibition.endDate)}
+        </span>
+        <p className="mt-2 text-sm font-medium uppercase tracking-wide text-colonial-parchment/60">
           {exhibition.state}
         </p>
-
-        {/* Venue Name - Large black text */}
-        <h3 className="text-2xl font-bold text-colonial-navy mb-2">
+        <h3
+          className={`gallery-heading mt-1 ${featured ? 'text-3xl md:text-4xl' : 'text-2xl'}`}
+        >
           {exhibition.name}
         </h3>
-
-        {/* Address */}
-        <p className="text-sm text-colonial-navy/60 mb-4">
+        <p className="mt-2 text-sm text-colonial-parchment/60">
           {exhibition.address}
         </p>
-
-        {/* More Information Link - Burgundy color */}
         {exhibition.moreInfo && (
-          <div className="mt-auto">
+          <div className="mt-auto pt-4">
             <a
               href={exhibition.moreInfo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-colonial-burgundy hover:underline font-medium"
+              className="inline-flex items-center font-medium text-colonial-gold transition-colors hover:text-colonial-gold/80"
             >
-              More information
-              <ExternalLink className="ml-1 h-4 w-4" />
+              Plan your visit
+              <ExternalLink className="ml-1 h-4 w-4" aria-hidden="true" />
             </a>
           </div>
         )}
