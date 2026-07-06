@@ -219,24 +219,6 @@
    * UI COMPONENTS
    ***************************************/
 
-  /* Hero elements */
-  .hero-content-box {
-    @apply bg-primary/50 backdrop-blur-sm p-6 md:p-8 rounded-lg inline-block shadow-lg transition-opacity duration-500;
-  }
-
-  /* Carousel components */
-  .embla {
-    @apply overflow-hidden;
-  }
-
-  .embla__container {
-    @apply flex;
-  }
-
-  .embla__slide {
-    @apply min-w-0;
-  }
-
   /* Status indicators */
   .status-badge {
     @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
