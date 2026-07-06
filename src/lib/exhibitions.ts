@@ -78,6 +78,65 @@ export function formatDateRange(startDate: string, endDate: string): string {
   return `${start} – ${end}`;
 }
 
+export type ExhibitionStatus = 'current' | 'upcoming' | 'past';
+
+/**
+ * The moment an exhibition stops being "on view": the end of its end date.
+ * Month-precision dates ("December 2026") parse as the 1st, so they roll to
+ * the end of that month; day-precision dates count through 23:59:59.999.
+ */
+function exhibitionEndBound(endDate: string): Date {
+  const end = new Date(endDate);
+  if (!hasDay(endDate)) {
+    // Last day of the month: day 0 of the following month.
+    return new Date(end.getFullYear(), end.getMonth() + 1, 0, 23, 59, 59, 999);
+  }
+  return new Date(
+    end.getFullYear(),
+    end.getMonth(),
+    end.getDate(),
+    23,
+    59,
+    59,
+    999,
+  );
+}
+
+/** Whether an exhibition is on view now, still to come, or finished. */
+export function getExhibitionStatus(
+  exhibition: Pick<Exhibition, 'startDate' | 'endDate'>,
+  now: Date = new Date(),
+): ExhibitionStatus {
+  if (now < new Date(exhibition.startDate)) return 'upcoming';
+  if (now > exhibitionEndBound(exhibition.endDate)) return 'past';
+  return 'current';
+}
+
+/**
+ * Split exhibitions into on-view / coming / finished groups for the tour
+ * page. Current and upcoming are ordered soonest-first; past is ordered
+ * most-recently-closed-first.
+ */
+export function groupExhibitionsByStatus(
+  exhibitions: Exhibition[],
+  now: Date = new Date(),
+): { current: Exhibition[]; upcoming: Exhibition[]; past: Exhibition[] } {
+  const byStart = (a: Exhibition, b: Exhibition) =>
+    new Date(a.startDate).getTime() - new Date(b.startDate).getTime();
+
+  const current = exhibitions
+    .filter((e) => getExhibitionStatus(e, now) === 'current')
+    .sort(byStart);
+  const upcoming = exhibitions
+    .filter((e) => getExhibitionStatus(e, now) === 'upcoming')
+    .sort(byStart);
+  const past = exhibitions
+    .filter((e) => getExhibitionStatus(e, now) === 'past')
+    .sort((a, b) => byStart(b, a));
+
+  return { current, upcoming, past };
+}
+
 /**
  * Map validated exhibition frontmatter to an Exhibition object. Shared by
  * getAll and getBySlug so the field defaults live in one place.
