@@ -37,6 +37,10 @@ educators, and sell merchandise.
    sponsors, contact. Navy chrome (header/breadcrumb/footer) spans both wings.
    Remaining child routes (news/[slug], team/[group]/*, sponsors/[slug], stitchers/*)
    join the oxblood wing in the 3d sweep.
+   **Deliberate exception (Richard, 2026-07-06): the /shop LANDING page stays
+   light** — the bright "museum shop" you step into from the dark galleries; the
+   product/state pages behind it remain navy rooms. 3d must NOT darken it (its
+   parchment textures may be modernized, but the room stays light).
 
 ## Phase 0 — Tier 1 copy fixes (independent; ships first)
 
