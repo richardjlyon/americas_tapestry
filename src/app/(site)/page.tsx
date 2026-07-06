@@ -34,22 +34,15 @@ export default async function Home() {
   // regeneration (daily). Never runs on the client, so render purity is moot.
   // eslint-disable-next-line react-hooks/purity
   const shuffled = [...withImages].sort(() => 0.5 - Math.random());
-  const heroTapestry = shuffled[0];
-  const plateTapestries = shuffled.slice(1, 4);
+  const heroBackdrops = shuffled.slice(0, 4).map((t) => ({
+    src: t.imagePath || t.thumbnail,
+    alt: `The ${t.title} tapestry panel`,
+  }));
+  const plateTapestries = shuffled.slice(4, 7);
 
   return (
     <div className="bg-colonial-navy">
-      <GalleryHero
-        spotlight={spotlight}
-        backdrop={
-          heroTapestry
-            ? {
-                src: heroTapestry.imagePath || heroTapestry.thumbnail,
-                alt: heroTapestry.title,
-              }
-            : null
-        }
-      />
+      <GalleryHero spotlight={spotlight} backdrops={heroBackdrops} />
 
       {/* What the project is — first thing after the hero, per Richard:
           a first-time visitor must immediately understand the site. */}
