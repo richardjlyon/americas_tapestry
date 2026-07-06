@@ -146,7 +146,7 @@ export default async function TapestryPage({
                   className="text-base"
                 >
                   <Link href={getPrintUrl(tapestry.slug)}>
-                    Shop this panel
+                    Shop this tapestry
                   </Link>
                 </Button>
                 <Link
