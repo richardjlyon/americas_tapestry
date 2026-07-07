@@ -1,59 +1,65 @@
-import Link from 'next/link';
-import { ArrowLeft, ArrowUpRight, BookOpen, Palette, Ruler, Users } from 'lucide-react';
-import { PageSection } from '@/components/ui/page-section';
-import { Button } from '@/components/ui/button';
-import { OptimizedImage } from '@/components/ui/optimized-image';
-import { getImagePath } from '@/lib/image-utils';
-import { BookCover } from '@/components/features/shop/book-cover';
-import { StitchRule } from '@/components/ui/stitch-rule';
-import { getAllProducts, checkoutUrl } from '@/lib/shopify';
-import { pageMetadata } from '@/lib/seo';
+import Link from "next/link";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  BookOpen,
+  Palette,
+  Ruler,
+  Users,
+} from "lucide-react";
+import { PageSection } from "@/components/ui/page-section";
+import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { getImagePath } from "@/lib/image-utils";
+import { BookCover } from "@/components/features/shop/book-cover";
+import { getAllProducts, checkoutUrl } from "@/lib/shopify";
+import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: 'The Making of America’s Tapestry — the Book',
+  title: "The Making of America’s Tapestry — the Book",
   description:
-    'The hardcover keepsake behind the thirteen hand-embroidered colony panels: every artwork in full color, the history each one tells, and the five hundred stitchers who made it. Hardback, 58 pages, 8.3 × 11 in.',
-  path: '/shop/book',
+    "The hardcover keepsake behind the thirteen hand-embroidered colony panels: every artwork in full color, the history each one tells, and the five hundred stitchers who made it. Hardback, 58 pages, 8.3 × 11 in.",
+  path: "/shop/book",
 });
 
 /** Physical facts a buyer wants before spending $45. */
 const SPECS = [
-  { label: 'Format', value: 'Hardback' },
-  { label: 'Pages', value: '58' },
-  { label: 'Size', value: '8.3 × 11 in' },
+  { label: "Format", value: "Hardback" },
+  { label: "Pages", value: "58" },
+  { label: "Size", value: "8.3 × 11 in" },
 ];
 
 /** Real interior pages — the "look inside". */
 const SPREADS = [
   {
-    src: '/images/shop/book/inside/book-inside-pennsylvania-panel.jpg',
-    caption: 'Every colony panel, reproduced in full color',
-    alt: 'A book page showing the Pennsylvania panel — flag maker Rebecca Young sewing for the Continental Navy',
+    src: "/images/shop/book/inside/book-inside-pennsylvania-panel.jpg",
+    caption: "Every colony panel, reproduced in full color",
+    alt: "A book page showing the Pennsylvania panel — flag maker Rebecca Young sewing for the Continental Navy",
   },
   {
-    src: '/images/shop/book/inside/book-inside-pennsylvania-story.jpg',
-    caption: 'The history each panel tells',
-    alt: 'A book page telling the story of the Pennsylvania panel',
+    src: "/images/shop/book/inside/book-inside-pennsylvania-story.jpg",
+    caption: "The history each panel tells",
+    alt: "A book page telling the story of the Pennsylvania panel",
   },
   {
-    src: '/images/shop/book/inside/book-inside-embroidery-threads.jpg',
-    caption: 'Colors matched to Colonial Williamsburg dye samples',
-    alt: 'A book page showing spools of wool, linen, cotton and silk embroidery thread',
+    src: "/images/shop/book/inside/book-inside-embroidery-threads.jpg",
+    caption: "Colors matched to Colonial Williamsburg dye samples",
+    alt: "A book page showing spools of wool, linen, cotton and silk embroidery thread",
   },
   {
-    src: '/images/shop/book/inside/book-inside-stitching-detail.jpg',
-    caption: 'The craft, up close',
-    alt: 'A book page with macro photographs of the embroidery and antique scissors',
+    src: "/images/shop/book/inside/book-inside-stitching-detail.jpg",
+    caption: "The craft, up close",
+    alt: "A book page with macro photographs of the embroidery and antique scissors",
   },
   {
-    src: '/images/shop/book/inside/book-inside-south-carolina-panel.jpg',
-    caption: 'Thirteen colonies, colony by colony',
-    alt: 'A book page showing the South Carolina panel',
+    src: "/images/shop/book/inside/book-inside-south-carolina-panel.jpg",
+    caption: "Thirteen colonies, colony by colony",
+    alt: "A book page showing the South Carolina panel",
   },
   {
-    src: '/images/shop/book/inside/book-inside-stitchers.jpg',
-    caption: 'The five hundred hands that made it',
-    alt: 'A book page with a photograph of volunteer stitchers holding a finished panel',
+    src: "/images/shop/book/inside/book-inside-stitchers.jpg",
+    caption: "The five hundred hands that made it",
+    alt: "A book page with a photograph of volunteer stitchers holding a finished panel",
   },
 ];
 
@@ -61,18 +67,18 @@ const SPREADS = [
 const VALUE = [
   {
     icon: BookOpen,
-    title: 'Thirteen panels, in full color',
-    body: 'Every colony’s hand-embroidered artwork, photographed and reproduced across the book.',
+    title: "Thirteen panels, in full color",
+    body: "Every colony’s hand-embroidered artwork, photographed and reproduced across the book.",
   },
   {
     icon: Palette,
-    title: 'Colonial-era craft',
-    body: 'Wool, linen, cotton and silk in colors matched to Colonial Williamsburg dye samples, worked in 18th-century stitches.',
+    title: "Colonial-era craft",
+    body: "Wool, linen, cotton and silk in colors matched to Colonial Williamsburg dye samples, worked in 18th-century stitches.",
   },
   {
     icon: Users,
-    title: 'Five hundred stitchers',
-    body: 'The volunteers and state directors who made it — named, colony by colony, in the book.',
+    title: "Five hundred stitchers",
+    body: "The volunteers and state directors who made it — named, colony by colony, in the book.",
   },
 ];
 
@@ -110,7 +116,7 @@ function InsidePage({
 
 export default async function BookPage() {
   const products = await getAllProducts();
-  const book = products.find((p) => p.tags.includes('book')) ?? null;
+  const book = products.find((p) => p.tags.includes("book")) ?? null;
   const href = checkoutUrl(book?.variantId ?? null);
   // BOOK LAUNCH PARKED (per Richard, 2026-07-06): the page stays browsable
   // but the book is not yet on sale — show "Coming soon" and never link to
@@ -118,12 +124,12 @@ export default async function BookPage() {
   //   const buyable = Boolean(href && book?.availableForSale);
   const buyable = false;
   const price = book
-    ? new Intl.NumberFormat('en-US', {
-        style: 'currency',
+    ? new Intl.NumberFormat("en-US", {
+        style: "currency",
         currency: book.price.currencyCode,
         maximumFractionDigits: 0,
       }).format(Number(book.price.amount))
-    : '$45';
+    : "$45";
 
   const BuyButton = ({ label }: { label: string }) =>
     buyable ? (
@@ -156,7 +162,7 @@ export default async function BookPage() {
             <span className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-colonial-gold">
               The Book
             </span>
-            <StitchRule className="mt-4" />
+            <div className="gold-threshold mt-4" />
             <h1 className="mt-5 font-serif text-4xl leading-tight text-colonial-parchment md:text-5xl lg:text-6xl">
               The Making of America&rsquo;s Tapestry
             </h1>
@@ -205,7 +211,11 @@ export default async function BookPage() {
       </PageSection>
 
       {/* Look inside — real interior pages */}
-      <PageSection id="inside" background="authentic-parchment" spacing="spacious">
+      <PageSection
+        id="inside"
+        background="authentic-parchment"
+        spacing="spacious"
+      >
         <div className="text-center">
           <span className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-colonial-burgundy">
             Look inside
@@ -216,7 +226,7 @@ export default async function BookPage() {
           <p className="mx-auto mt-4 max-w-2xl font-serif text-lg text-colonial-navy/75">
             Full-color panels, the stories behind them, and the craft up close.
           </p>
-          <StitchRule className="mx-auto mt-6" />
+          <div className="gold-threshold mx-auto mt-6" />
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -233,7 +243,7 @@ export default async function BookPage() {
             <div className="relative aspect-[595/788]">
               <OptimizedImage
                 src={getImagePath(
-                  '/images/shop/book/inside/book-inside-embroidery-threads.jpg',
+                  "/images/shop/book/inside/book-inside-embroidery-threads.jpg",
                 )}
                 alt="A book page showing spools of colonial-era embroidery thread"
                 fill
@@ -249,7 +259,7 @@ export default async function BookPage() {
             <span className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-colonial-burgundy">
               Why it belongs on your shelf
             </span>
-            <StitchRule className="mt-4" />
+            <div className="gold-threshold mt-4" />
             <ul className="mt-8 space-y-7">
               {VALUE.map(({ icon: Icon, title, body }) => (
                 <li key={title} className="flex gap-4">
@@ -283,10 +293,7 @@ export default async function BookPage() {
             inches, and every colony inside.
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
-            <Ruler
-              className="h-5 w-5 text-colonial-gold"
-              aria-hidden="true"
-            />
+            <Ruler className="h-5 w-5 text-colonial-gold" aria-hidden="true" />
             <span className="font-sans text-sm uppercase tracking-[0.14em] text-colonial-parchment/70">
               Hardback · 58 pages · 8.3 × 11 in
             </span>
