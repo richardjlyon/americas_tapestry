@@ -45,9 +45,20 @@ export default async function StateStitchersPage({
   }
 
   return (
-    <>
-      <h1 className="page-heading">{data.name} Stitchers</h1>
-      <PageSection spacing="normal">
+    <div className="bg-colonial-oxblood">
+      <header className="container mx-auto max-w-3xl pt-12 pb-8 text-center md:pt-16">
+        <span className="eyebrow eyebrow-gold">The Hands</span>
+        <h1 className="gallery-heading mt-2 text-4xl md:text-5xl">
+          {data.name} Stitchers
+        </h1>
+        <p className="gallery-lead mx-auto mt-3">
+          The volunteers who stitched the {data.name} panel of America's
+          Tapestry.
+        </p>
+        <div className="gold-threshold mx-auto mt-5" />
+      </header>
+
+      <PageSection spacing="normal" background="colonial-oxblood">
         <ReadingContainer width="content" background="paper">
           <StitcherSections
             stateDirectors={data.stateDirectors}
@@ -56,6 +67,6 @@ export default async function StateStitchersPage({
           />
         </ReadingContainer>
       </PageSection>
-    </>
+    </div>
   );
 }

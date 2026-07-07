@@ -77,7 +77,7 @@ export default function AboutPage() {
           </blockquote>
 
           <p>
-            Over 1,000 volunteers joined America&apos;s Tapestry to embroider
+            Nearly 200 volunteers joined America&apos;s Tapestry to embroider
             the panels, with local directors guiding the effort in each of the
             participating states. Following its inaugural display at William &
             Mary&apos;s Muscarelle Museum of Art – a stone&apos;s throw away
