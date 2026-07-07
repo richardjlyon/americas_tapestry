@@ -8314,5 +8314,23 @@
     },
     "originalSize": 617392,
     "hash": "cfc83d56"
+  },
+  "/images/shop/book/inside/book-spread-massachusetts.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-spread-massachusetts-640w-8f4abb2d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-spread-massachusetts-1024w-8f4abb2d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-spread-massachusetts-1920w-8f4abb2d.webp"
+    },
+    "originalSize": 653894,
+    "hash": "8f4abb2d"
+  },
+  "/images/shop/book/inside/book-spread-stitchers.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-spread-stitchers-640w-bd48dd2c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-spread-stitchers-1024w-bd48dd2c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/shop/book/inside/book-spread-stitchers-1920w-bd48dd2c.webp"
+    },
+    "originalSize": 474933,
+    "hash": "bd48dd2c"
   }
 }

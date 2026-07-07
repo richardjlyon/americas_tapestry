@@ -3,8 +3,8 @@ import {
   ArrowLeft,
   ArrowUpRight,
   BookOpen,
-  Palette,
   Ruler,
+  ScrollText,
   Users,
 } from "lucide-react";
 import { PageSection } from "@/components/ui/page-section";
@@ -18,7 +18,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "The Making of America’s Tapestry — the Book",
   description:
-    "The hardcover keepsake behind the thirteen hand-embroidered colony panels: every artwork in full color, the history each one tells, and the five hundred stitchers who made it. Hardback, 58 pages, 8.3 × 11 in.",
+    "The hardcover keepsake behind the thirteen hand-embroidered colony panels: every artwork in full color, the history each one tells, and the nearly two thousand stitchers who made it. Hardback, 58 pages, 8.3 × 11 in.",
   path: "/shop/book",
 });
 
@@ -29,37 +29,19 @@ const SPECS = [
   { label: "Size", value: "8.3 × 11 in" },
 ];
 
-/** Real interior pages — the "look inside". */
+/** Real interior spreads — the "look inside". */
 const SPREADS = [
   {
-    src: "/images/shop/book/inside/book-inside-pennsylvania-panel.jpg",
-    caption: "Every colony panel, reproduced in full color",
-    alt: "A book page showing the Pennsylvania panel — flag maker Rebecca Young sewing for the Continental Navy",
+    src: "/images/shop/book/inside/book-spread-massachusetts.jpg",
+    ratio: "1920 / 1269",
+    caption: "Every colony's panel — with the history it tells",
+    alt: "A two-page spread from the book: the Massachusetts panel beside the story of colonial-era chocolate making",
   },
   {
-    src: "/images/shop/book/inside/book-inside-pennsylvania-story.jpg",
-    caption: "The history each panel tells",
-    alt: "A book page telling the story of the Pennsylvania panel",
-  },
-  {
-    src: "/images/shop/book/inside/book-inside-embroidery-threads.jpg",
-    caption: "Colors matched to Colonial Williamsburg dye samples",
-    alt: "A book page showing spools of wool, linen, cotton and silk embroidery thread",
-  },
-  {
-    src: "/images/shop/book/inside/book-inside-stitching-detail.jpg",
-    caption: "The craft, up close",
-    alt: "A book page with macro photographs of the embroidery and antique scissors",
-  },
-  {
-    src: "/images/shop/book/inside/book-inside-south-carolina-panel.jpg",
-    caption: "Thirteen colonies, colony by colony",
-    alt: "A book page showing the South Carolina panel",
-  },
-  {
-    src: "/images/shop/book/inside/book-inside-stitchers.jpg",
-    caption: "The five hundred hands that made it",
-    alt: "A book page with a photograph of volunteer stitchers holding a finished panel",
+    src: "/images/shop/book/inside/book-spread-stitchers.jpg",
+    ratio: "1920 / 1262",
+    caption: "The volunteers who stitched it, colony by colony",
+    alt: "A two-page spread from the book: volunteer stitchers gathered around a table working on a panel",
   },
 ];
 
@@ -71,36 +53,38 @@ const VALUE = [
     body: "Every colony’s hand-embroidered artwork, photographed and reproduced across the book.",
   },
   {
-    icon: Palette,
-    title: "Colonial-era craft",
-    body: "Wool, linen, cotton and silk in colors matched to Colonial Williamsburg dye samples, worked in 18th-century stitches.",
+    icon: ScrollText,
+    title: "The story each panel tells",
+    body: "The history behind every colony's panel — the people and events it honors — told alongside the artwork.",
   },
   {
     icon: Users,
-    title: "Five hundred stitchers",
-    body: "The volunteers and state directors who made it — named, colony by colony, in the book.",
+    title: "Two thousand stitchers",
+    body: "The nearly 2,000 volunteers and state directors who made it — named, colony by colony, in the book.",
   },
 ];
 
-/** One interior page, shown as a physical leaf with a caption. */
-function InsidePage({
+/** One interior spread, shown as a physical leaf with a caption. */
+function Spread({
   src,
+  ratio,
   caption,
   alt,
 }: {
   src: string;
+  ratio: string;
   caption: string;
   alt: string;
 }) {
   return (
     <figure>
-      <div className="overflow-hidden rounded-[3px] bg-white shadow-[0_20px_44px_-20px_rgba(11,15,32,0.55)] ring-1 ring-colonial-navy/10">
-        <div className="relative aspect-[595/788]">
+      <div className="overflow-hidden rounded-[3px] bg-white shadow-[0_24px_54px_-22px_rgba(11,15,32,0.55)] ring-1 ring-colonial-navy/10">
+        <div className="relative" style={{ aspectRatio: ratio }}>
           <OptimizedImage
             src={getImagePath(src)}
             alt={alt}
             fill
-            sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+            sizes="(min-width: 1024px) 56rem, 92vw"
             role="feature"
             className="object-cover"
             enableBlurPlaceholder
@@ -167,7 +151,8 @@ export default async function BookPage() {
               The Making of America&rsquo;s Tapestry
             </h1>
             <p className="mt-5 max-w-xl font-serif text-lg text-colonial-parchment/80">
-              One project, thirteen colonies, five hundred pairs of hands — the
+              One project, thirteen colonies, nearly two thousand pairs of hands
+              — the
               keepsake volume behind the hand-embroidered panels. Every artwork,
               the history it tells, and the people who stitched it.
             </p>
@@ -224,14 +209,15 @@ export default async function BookPage() {
             Fifty-eight pages, cover to cover
           </h2>
           <p className="mx-auto mt-4 max-w-2xl font-serif text-lg text-colonial-navy/75">
-            Full-color panels, the stories behind them, and the craft up close.
+            Full-color panels, the stories behind them, and the hands that made
+            it.
           </p>
           <div className="gold-threshold mx-auto mt-6" />
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-12 flex max-w-4xl flex-col gap-12">
           {SPREADS.map((s) => (
-            <InsidePage key={s.src} {...s} />
+            <Spread key={s.src} {...s} />
           ))}
         </div>
       </PageSection>
