@@ -4,7 +4,6 @@ import {
   BookOpen,
   CalendarDays,
   Copy,
-  Mail,
   Ruler,
 } from "lucide-react";
 import { PageSection } from "@/components/ui/page-section";
@@ -186,13 +185,6 @@ export default async function ShopPage() {
                   aria-hidden="true"
                 />
                 5.5 × 4.25 inches
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail
-                  className="h-5 w-5 shrink-0 text-colonial-burgundy"
-                  aria-hidden="true"
-                />
-                Ships with envelopes
               </li>
             </ul>
             <Button asChild variant="colonial-gold" size="lg" className="mt-8">
