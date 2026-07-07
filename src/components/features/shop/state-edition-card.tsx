@@ -14,6 +14,13 @@ interface StateEditionCardProps {
    * here — e.g. "Postcards" — since every card is the same colony there.
    */
   heading?: string;
+  /**
+   * On a per-state page the postcard shares a row with portrait print cards.
+   * Set this so the postcard takes the same 4:5 footprint (centered within it)
+   * and its title lines up with the neighbouring editions. Omit on the
+   * all-postcards page, where a snug card reads better.
+   */
+  matchPortrait?: boolean;
 }
 
 /**
@@ -26,6 +33,7 @@ export function StateEditionCard({
   item,
   artwork,
   heading,
+  matchPortrait = false,
 }: StateEditionCardProps) {
   const { stateName, product } = item;
   const title = heading ?? stateName;
@@ -44,7 +52,13 @@ export function StateEditionCard({
       framed={artwork.framed}
     />
   ) : (
-    <div className="aspect-[4/5] overflow-hidden bg-colonial-parchment shadow-[0_18px_44px_-22px_rgba(0,0,0,0.85)] ring-1 ring-white/10">
+    // Postcards ship no local artwork — the Shopify mockup is a 1:1 webp with
+    // ~14.3% transparent bands baked in above and below the postcard, which
+    // showed as blank bars on the card. Crop them off: give the box the
+    // opaque region's aspect ratio (~1.41) and object-cover from center so the
+    // transparent padding is clipped, leaving just the postcard. A soft shadow
+    // lifts the card off the navy wall instead of looking cut out of it.
+    <div className="aspect-[1.41] w-full overflow-hidden rounded-[6px] bg-white shadow-[0_30px_58px_-20px_rgba(0,0,0,0.85)] ring-1 ring-white/10">
       {product.featuredImage ? (
         // Shopify CDN URL — plain <img> bypasses the app's R2 image loader.
         // eslint-disable-next-line @next/next/no-img-element
@@ -53,7 +67,7 @@ export function StateEditionCard({
           alt={
             product.featuredImage.altText ?? `${stateName} — ${product.title}`
           }
-          className="h-full w-full object-contain"
+          className="block h-full w-full object-cover object-center"
           loading="lazy"
         />
       ) : null}
@@ -132,9 +146,16 @@ export function StateEditionCard({
     </div>
   );
 
+  // The postcard's short landscape image would leave its title floating high
+  // beside the portrait print cards. On per-state pages give it the same 4:5
+  // footprint as those cards and center the postcard within it, so its title
+  // lands on the same line as the neighbouring editions' titles.
+  const framePortrait = !artwork && matchPortrait;
   const inner = (
     <>
-      <div className="transition-transform duration-300 group-hover:-translate-y-1 motion-reduce:transform-none">
+      <div
+        className={`${framePortrait ? "flex aspect-[4/5] items-center " : ""}transition-transform duration-300 group-hover:-translate-y-1 motion-reduce:transform-none`}
+      >
         {piece}
       </div>
       {placard}

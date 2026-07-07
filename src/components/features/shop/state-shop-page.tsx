@@ -65,6 +65,7 @@ export async function StateShopPage({ slug }: { slug: string }) {
                   ? { src: artworkSrc(art.base, slug), framed: art.framed }
                   : undefined
               }
+              matchPortrait
             />
           );
         })}
