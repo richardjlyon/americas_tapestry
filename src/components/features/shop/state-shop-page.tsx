@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PageSection } from "@/components/ui/page-section";
-import { OptimizedImage } from "@/components/ui/optimized-image";
+import { BookCover } from "@/components/features/shop/book-cover";
 import { StateEditionCard } from "@/components/features/shop/state-edition-card";
-import { getImagePath } from "@/lib/image-utils";
 import { getAllProducts } from "@/lib/shopify";
 import {
   ORDERABLE_TYPES,
@@ -76,24 +75,12 @@ export async function StateShopPage({ slug }: { slug: string }) {
           href="/shop/book"
           className="group block rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
         >
-          {/* An interior spread (not the cover, which fronts /shop/book) —
-              the embroidery up close, matted like the prints beside it. */}
-          <div className="transition-transform duration-300 group-hover:-translate-y-1 motion-reduce:transform-none">
-            <div className="overflow-hidden rounded-[3px] bg-white p-2 shadow-[0_18px_44px_-22px_rgba(0,0,0,0.85)] ring-1 ring-white/10">
-              <div className="relative aspect-[4/5]">
-                <OptimizedImage
-                  src={getImagePath(
-                    "/images/shop/book/inside/book-inside-stitching-detail.jpg",
-                  )}
-                  alt="Inside The Making of America's Tapestry — the embroidery and antique scissors, up close"
-                  fill
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
-                  role="feature"
-                  className="object-cover"
-                  enableBlurPlaceholder
-                />
-              </div>
-            </div>
+          <div className="flex aspect-[4/5] items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 motion-reduce:transform-none">
+            <BookCover
+              src="/images/shop/book/book-cover.png"
+              alt="The Making of America's Tapestry — hardcover book"
+              className="w-full"
+            />
           </div>
           <div className="mt-5 text-center">
             <span
