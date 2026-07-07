@@ -1,13 +1,19 @@
-import { ArrowRight } from 'lucide-react';
-import { FramedArtwork } from '@/components/ui/framed-artwork';
-import { FramePicker, type FrameOption } from './frame-picker';
-import { checkoutUrl } from '@/lib/shopify';
-import type { StateProduct } from '@/lib/shop-products';
+import { ArrowRight } from "lucide-react";
+import { FramedArtwork } from "@/components/ui/framed-artwork";
+import { FramePicker, type FrameOption } from "./frame-picker";
+import { checkoutUrl } from "@/lib/shopify";
+import type { StateProduct } from "@/lib/shop-products";
 
 interface StateEditionCardProps {
   item: StateProduct;
   /** Local print artwork + frame treatment; omitted for postcards. */
   artwork?: { src: string; framed: boolean } | undefined;
+  /**
+   * Card title. Defaults to the colony name (per-type pages show one card per
+   * colony). Per-state pages (`/shop/<state>`) pass the edition-type label
+   * here — e.g. "Postcards" — since every card is the same colony there.
+   */
+  heading?: string;
 }
 
 /**
@@ -16,12 +22,17 @@ interface StateEditionCardProps {
  * Prints use local artwork (optionally framed); postcards fall back to the
  * Gelato mockup.
  */
-export function StateEditionCard({ item, artwork }: StateEditionCardProps) {
+export function StateEditionCard({
+  item,
+  artwork,
+  heading,
+}: StateEditionCardProps) {
   const { stateName, product } = item;
+  const title = heading ?? stateName;
   const href = checkoutUrl(product.variantId);
   const buyable = Boolean(href && product.availableForSale);
-  const price = new Intl.NumberFormat('en-US', {
-    style: 'currency',
+  const price = new Intl.NumberFormat("en-US", {
+    style: "currency",
     currency: product.price.currencyCode,
     maximumFractionDigits: 0,
   }).format(Number(product.price.amount));
@@ -39,7 +50,9 @@ export function StateEditionCard({ item, artwork }: StateEditionCardProps) {
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={product.featuredImage.url}
-          alt={product.featuredImage.altText ?? `${stateName} — ${product.title}`}
+          alt={
+            product.featuredImage.altText ?? `${stateName} — ${product.title}`
+          }
           className="h-full w-full object-contain"
           loading="lazy"
         />
@@ -50,13 +63,13 @@ export function StateEditionCard({ item, artwork }: StateEditionCardProps) {
   // Framed editions carry a Frame option (White / Wood / Black) — let the buyer
   // choose, and point Buy at the matching variant.
   const frameVariants = product.variants.filter((v) =>
-    v.selectedOptions.some((o) => o.name.toLowerCase() === 'frame'),
+    v.selectedOptions.some((o) => o.name.toLowerCase() === "frame"),
   );
   if (frameVariants.length > 1) {
     const options: FrameOption[] = frameVariants
       .map((v) => {
         const frame =
-          v.selectedOptions.find((o) => o.name.toLowerCase() === 'frame')
+          v.selectedOptions.find((o) => o.name.toLowerCase() === "frame")
             ?.value ?? v.title;
         const vHref = checkoutUrl(v.id);
         return vHref
@@ -77,7 +90,7 @@ export function StateEditionCard({ item, artwork }: StateEditionCardProps) {
               className="mx-auto block h-px w-8 bg-colonial-gold/70 transition-all duration-300 group-hover:w-14"
             />
             <h3 className="mt-3 font-serif text-lg uppercase tracking-[0.18em] text-colonial-parchment">
-              {stateName}
+              {title}
             </h3>
             <FramePicker options={options} price={price} />
           </div>
@@ -94,7 +107,7 @@ export function StateEditionCard({ item, artwork }: StateEditionCardProps) {
         className="mx-auto block h-px w-8 bg-colonial-gold/70 transition-all duration-300 group-hover:w-14"
       />
       <h3 className="mt-3 font-serif text-lg uppercase tracking-[0.18em] text-colonial-parchment">
-        {stateName}
+        {title}
       </h3>
       <p className="mt-1 font-sans text-xs uppercase tracking-[0.15em] text-colonial-parchment/60">
         {price}

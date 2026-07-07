@@ -59,6 +59,7 @@ export async function StateShopPage({ slug }: { slug: string }) {
             <StateEditionCard
               key={type.slug}
               item={item!}
+              heading={type.label}
               artwork={
                 art
                   ? { src: artworkSrc(art.base, slug), framed: art.framed }
