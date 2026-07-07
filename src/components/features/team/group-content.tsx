@@ -1,7 +1,6 @@
 "use client";
 
 import { MemberCard } from "@/components/features/team/member-card";
-import { QuestionnaireSection } from "@/components/features/team/questionnaire-section";
 import { StitcherLinkCard } from "@/components/features/stitchers/stitcher-link-card";
 import type { TeamGroup, TeamMember } from "@/lib/team";
 
@@ -30,9 +29,6 @@ export function GroupContent({ group, members }: GroupContentProps) {
         </p>
         <div className="gold-threshold mx-auto mt-5" />
       </header>
-
-      {/* Show questionnaire section only for stitchers */}
-      {group.slug === "stitchers" && <QuestionnaireSection />}
 
       {visibleMembers.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
