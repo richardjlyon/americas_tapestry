@@ -19,7 +19,7 @@
 - Artist link target: `/team/illustrators/{slug}` (i.e. `/team/{groupSlug}/{slug}`).
 - New "Original Artwork" section is placed immediately **before** the Team section and renders only when `artworkPath` is present.
 - Webpack/cache build errors: clear `.next` and rebuild (`npm run build:clean`) — never disable features to work around them.
-- Run from project root: `/Users/rjl/Code/github/americas_tapestry`.
+- Run from project root: `/Users/rjl/Code/web-americas-tapestry`.
 
 ## State → slug → postal code map (13 states)
 

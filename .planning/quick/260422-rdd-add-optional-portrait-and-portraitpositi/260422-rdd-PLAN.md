@@ -249,7 +249,7 @@ Do NOT change anything else in team-card.tsx.
 **Style:** Follow existing formatting conventions in each file (2-space indent, single quotes, no trailing commas on last property where existing code omits them). Preserve existing comments that remain accurate. Do not remove the "Simplified function to get image source - single image per person" comment in team-card.tsx — add a short note after it acknowledging portrait: `// Portrait field overrides the default {slug}.jpg when set.`
   </action>
   <verify>
-    <automated>cd /Users/rjl/Code/github/americas_tapestry && npm run typecheck</automated>
+    <automated>cd /Users/rjl/Code/web-americas-tapestry && npm run typecheck</automated>
   </verify>
   <done>
 - `TeamMember` interface in `src/lib/team.ts` has `portrait?: string` and `portraitPosition?: string` placed immediately after `imagePosition`.
@@ -308,7 +308,7 @@ Place this new subsection immediately after the existing `#### Multi-Image Suppo
 Do NOT change any other content in SCHEMA.md.
   </action>
   <verify>
-    <automated>test -f /Users/rjl/Code/github/americas_tapestry/content/team/SCHEMA.md && grep -q "^portrait: string" /Users/rjl/Code/github/americas_tapestry/content/team/SCHEMA.md && grep -q "^portraitPosition: string" /Users/rjl/Code/github/americas_tapestry/content/team/SCHEMA.md && grep -q "Portrait Override" /Users/rjl/Code/github/americas_tapestry/content/team/SCHEMA.md</automated>
+    <automated>test -f /Users/rjl/Code/web-americas-tapestry/content/team/SCHEMA.md && grep -q "^portrait: string" /Users/rjl/Code/web-americas-tapestry/content/team/SCHEMA.md && grep -q "^portraitPosition: string" /Users/rjl/Code/web-americas-tapestry/content/team/SCHEMA.md && grep -q "Portrait Override" /Users/rjl/Code/web-americas-tapestry/content/team/SCHEMA.md</automated>
   </verify>
   <done>
 - `content/team/SCHEMA.md` Optional Fields YAML block contains both `portrait: string` and `portraitPosition: string` lines with inline comments matching the specification.
