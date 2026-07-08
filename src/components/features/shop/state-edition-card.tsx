@@ -15,6 +15,11 @@ interface StateEditionCardProps {
    */
   heading?: string;
   /**
+   * Printed sheet size (e.g. "16×20″"), shown just before the price on the buy
+   * affordance. Omitted for postcards.
+   */
+  dimensions?: string | undefined;
+  /**
    * On a per-state page the postcard shares a row with portrait print cards.
    * Set this so the postcard takes the same 4:5 footprint (centered within it)
    * and its title lines up with the neighbouring editions. Omit on the
@@ -33,6 +38,7 @@ export function StateEditionCard({
   item,
   artwork,
   heading,
+  dimensions,
   matchPortrait = false,
 }: StateEditionCardProps) {
   const { stateName, product } = item;
@@ -106,7 +112,11 @@ export function StateEditionCard({
             <h3 className="mt-3 font-serif text-lg uppercase tracking-[0.18em] text-colonial-parchment">
               {title}
             </h3>
-            <FramePicker options={options} price={price} />
+            <FramePicker
+              options={options}
+              price={price}
+              dimensions={dimensions}
+            />
           </div>
         </div>
       );
@@ -124,6 +134,12 @@ export function StateEditionCard({
         {title}
       </h3>
       <p className="mt-1 font-sans text-xs uppercase tracking-[0.15em] text-colonial-parchment/60">
+        {dimensions ? (
+          <>
+            <span className="text-colonial-parchment/45">{dimensions}</span>
+            <span className="mx-2 text-colonial-parchment/30">·</span>
+          </>
+        ) : null}
         {price}
         {buyable ? (
           <>

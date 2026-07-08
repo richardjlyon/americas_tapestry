@@ -17,6 +17,8 @@ interface FramePickerProps {
   options: FrameOption[];
   /** Formatted price (all frame colours share one price). */
   price: string;
+  /** Printed sheet size (e.g. "16×20″"), shown just before the price. */
+  dimensions?: string | undefined;
 }
 
 const WOOD = 'linear-gradient(135deg,#bd8f5c,#7a4f28)';
@@ -35,7 +37,7 @@ function swatchStyle(frame: string): CSSProperties {
  * Buy link points at that variant's checkout. Defaults to the black frame,
  * matching the frame drawn around the artwork above it.
  */
-export function FramePicker({ options, price }: FramePickerProps) {
+export function FramePicker({ options, price, dimensions }: FramePickerProps) {
   const preferred = options.findIndex((o) => o.frame === 'Black frame');
   const [idx, setIdx] = useState(preferred >= 0 ? preferred : 0);
   const selected = options[idx];
@@ -72,6 +74,12 @@ export function FramePicker({ options, price }: FramePickerProps) {
       </p>
 
       <p className="mt-2 font-sans text-xs uppercase tracking-[0.15em] text-colonial-parchment/60">
+        {dimensions ? (
+          <>
+            <span className="text-colonial-parchment/45">{dimensions}</span>
+            <span className="mx-2 text-colonial-parchment/30">·</span>
+          </>
+        ) : null}
         {price}
         <span className="mx-2 text-colonial-parchment/30">·</span>
         {selected.available ? (

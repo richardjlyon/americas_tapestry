@@ -60,6 +60,7 @@ export async function StateShopPage({ slug }: { slug: string }) {
               key={type.slug}
               item={item!}
               heading={type.label}
+              dimensions={type.dimensions}
               artwork={
                 art
                   ? { src: artworkSrc(art.base, slug), framed: art.framed }

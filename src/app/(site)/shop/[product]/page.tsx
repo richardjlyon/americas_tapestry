@@ -101,6 +101,7 @@ export default async function ProductTypePage({ params }: PageProps) {
             <StateEditionCard
               key={item.product.id}
               item={item}
+              dimensions={type.dimensions}
               artwork={
                 art
                   ? { src: artworkSrc(art.base, item.state), framed: art.framed }

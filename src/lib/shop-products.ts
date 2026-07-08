@@ -18,6 +18,8 @@ export interface ShopProductType {
   tagline: string;
   /** Lowest price across states, for a "from $X" hint. */
   priceFrom: number;
+  /** Printed sheet size, shown on the buy affordance. Omitted for postcards. */
+  dimensions?: string;
 }
 
 /** The four wall-art editions, in display order. */
@@ -27,24 +29,28 @@ export const WALL_ART_TYPES: ShopProductType[] = [
     label: 'Fine Art Print',
     tagline: 'Archival giclée on heavyweight fine-art paper — unframed.',
     priceFrom: 55,
+    dimensions: '16×20″',
   },
   {
     slug: 'framed-print',
     label: 'Framed Print',
     tagline: 'The giclée print in a solid-wood frame — ready to hang.',
     priceFrom: 140,
+    dimensions: '16×20″',
   },
   {
     slug: 'poster',
     label: 'Exhibition Poster',
     tagline: 'The souvenir poster of the 250th — unframed.',
     priceFrom: 25,
+    dimensions: '16×20″',
   },
   {
     slug: 'framed-poster',
     label: 'Framed Poster',
     tagline: 'The exhibition poster, framed and ready to hang.',
     priceFrom: 130,
+    dimensions: '16×20″',
   },
 ];
 
