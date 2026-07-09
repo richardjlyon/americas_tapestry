@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { Play, Pause, ExternalLink } from 'lucide-react';
+import { Play, Pause, Maximize } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -48,9 +48,29 @@ export function VideoPlayer({
       if (isPlaying) {
         videoRef.current.pause();
       } else {
-        videoRef.current.play();
+        videoRef.current.play()?.catch(() => {});
       }
       setIsPlaying(!isPlaying);
+    }
+  };
+
+  // Swap the player to the high-res encode and play it full screen.
+  // A plain link can't do this: the high-res file is a GitHub release asset
+  // served as `content-disposition: attachment`, so the browser downloads it.
+  const playHighRes = () => {
+    const video = videoRef.current as
+      | (HTMLVideoElement & { webkitEnterFullscreen?: () => void })
+      | null;
+    if (!video || !videoSources.highRes) return;
+
+    video.src = videoSources.highRes.mp4;
+    video.play()?.catch(() => {});
+    setIsPlaying(true);
+
+    if (video.requestFullscreen) {
+      video.requestFullscreen().catch(() => {});
+    } else if (video.webkitEnterFullscreen) {
+      video.webkitEnterFullscreen(); // iOS Safari
     }
   };
 
@@ -115,18 +135,12 @@ export function VideoPlayer({
           <Button
             variant="ghost"
             size="sm"
-            asChild
+            onClick={playHighRes}
             className="text-colonial-parchment hover:text-colonial-gold hover:bg-transparent text-xs sm:text-sm"
           >
-            <a
-              href={videoSources.highRes.webm || videoSources.highRes.mp4}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-              <span className="hidden sm:inline">High Resolution</span>
-              <span className="sm:hidden">HD</span>
-            </a>
+            <Maximize className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+            <span className="hidden sm:inline">High Resolution</span>
+            <span className="sm:hidden">HD</span>
           </Button>
         )}
       </div>
