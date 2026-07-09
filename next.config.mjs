@@ -40,6 +40,18 @@ const nextConfig = {
       'node_modules/@next/swc-linux-x64-musl/**/*',
     ],
   },
+  // Redirect the shop.americastapestry.com vanity subdomain to the on-site shop page.
+  // Matches on the incoming Host header, so any path on the subdomain lands on /shop.
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'shop.americastapestry.com' }],
+        destination: 'https://americastapestry.com/shop',
+        permanent: true,
+      },
+    ]
+  },
   // Essential rewrites for content directory
   async rewrites() {
     return [
