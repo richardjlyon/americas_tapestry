@@ -8413,5 +8413,104 @@
     },
     "originalSize": 160814,
     "hash": "60950121"
+  },
+  "/images/candids/connecticut-stitching-closeup.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/connecticut-stitching-closeup-640w-77a5d18e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/connecticut-stitching-closeup-1024w-77a5d18e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/connecticut-stitching-closeup-1920w-77a5d18e.webp"
+    },
+    "originalSize": 597931,
+    "hash": "77a5d18e"
+  },
+  "/images/candids/maryland-tapestry-talk.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/maryland-tapestry-talk-640w-2b745324.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/maryland-tapestry-talk-1024w-2b745324.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/maryland-tapestry-talk-1920w-2b745324.webp"
+    },
+    "originalSize": 584644,
+    "hash": "2b745324"
+  },
+  "/images/candids/massachusetts-stitching-portrait.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/massachusetts-stitching-portrait-640w-82754d90.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/massachusetts-stitching-portrait-1024w-82754d90.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/massachusetts-stitching-portrait-1920w-82754d90.webp"
+    },
+    "originalSize": 585299,
+    "hash": "82754d90"
+  },
+  "/images/candids/new-hampshire-pine-tree-riot.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/new-hampshire-pine-tree-riot-640w-5df0701a.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/new-hampshire-pine-tree-riot-1024w-5df0701a.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/new-hampshire-pine-tree-riot-1920w-5df0701a.webp"
+    },
+    "originalSize": 681904,
+    "hash": "5df0701a"
+  },
+  "/images/candids/new-york-tapestry-talk.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/new-york-tapestry-talk-640w-bfff94b5.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/new-york-tapestry-talk-1024w-bfff94b5.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/new-york-tapestry-talk-1920w-bfff94b5.webp"
+    },
+    "originalSize": 725497,
+    "hash": "bfff94b5"
+  },
+  "/images/candids/pennsylvania-panel-detail.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/pennsylvania-panel-detail-640w-84cf7eec.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/pennsylvania-panel-detail-1024w-84cf7eec.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/pennsylvania-panel-detail-1920w-84cf7eec.webp"
+    },
+    "originalSize": 965550,
+    "hash": "84cf7eec"
+  },
+  "/images/candids/rhode-island-figure-detail.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/rhode-island-figure-detail-640w-675dbd11.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/rhode-island-figure-detail-1024w-675dbd11.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/rhode-island-figure-detail-1920w-675dbd11.webp"
+    },
+    "originalSize": 1107139,
+    "hash": "675dbd11"
+  },
+  "/images/candids/stitcher-denim-hoopwork.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitcher-denim-hoopwork-640w-a0dfa465.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitcher-denim-hoopwork-1024w-a0dfa465.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitcher-denim-hoopwork-1920w-a0dfa465.webp"
+    },
+    "originalSize": 633753,
+    "hash": "a0dfa465"
+  },
+  "/images/candids/stitchers-lamplight.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitchers-lamplight-640w-c117c746.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitchers-lamplight-1024w-c117c746.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitchers-lamplight-1920w-c117c746.webp"
+    },
+    "originalSize": 499590,
+    "hash": "c117c746"
+  },
+  "/images/candids/stitchers-threading-needle.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitchers-threading-needle-640w-f70a5681.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitchers-threading-needle-1024w-f70a5681.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitchers-threading-needle-1920w-f70a5681.webp"
+    },
+    "originalSize": 649961,
+    "hash": "f70a5681"
+  },
+  "/images/candids/stitching-circle-group.jpg": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitching-circle-group-640w-e720d168.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitching-circle-group-1024w-e720d168.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/candids/stitching-circle-group-1920w-e720d168.webp"
+    },
+    "originalSize": 844728,
+    "hash": "e720d168"
   }
 }

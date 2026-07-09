@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { GalleryHero } from "@/components/features/home/gallery-hero";
+import type { SlideImage } from "@/components/features/home/hero-slider";
 import { ProjectStrip } from "@/components/features/home/project-strip";
 import { ShopStrip } from "@/components/features/home/shop-strip";
 import { TapestryPlate } from "@/components/features/home/tapestry-plate";
@@ -27,6 +28,56 @@ export const metadata = pageMetadata({
 // full filesystem, so images resolve correctly. The exhibition spotlight now
 // advances on deploy rather than daily; redeploy to refresh it.
 
+// Candid photographs — stitchers at work and public tapestry talks — served
+// from R2 via the image manifest (see scripts/optimize-and-upload.mjs). These
+// join every tapestry panel in the hero carousel rotation.
+const HERO_CANDIDS: SlideImage[] = [
+  {
+    src: "/images/candids/stitching-circle-group.jpg",
+    alt: "A circle of volunteer stitchers working together around a table, an embroidered fox taking shape on the linen",
+  },
+  {
+    src: "/images/candids/stitcher-denim-hoopwork.jpg",
+    alt: "A volunteer stitcher embroidering a hooped panel at a table spread with coloured threads",
+  },
+  {
+    src: "/images/candids/stitchers-threading-needle.jpg",
+    alt: "Two stitchers concentrate on their needlework, one drawing thread through the linen",
+  },
+  {
+    src: "/images/candids/stitchers-lamplight.jpg",
+    alt: "Two stitchers share a task under a work lamp, embroidering a landscape panel",
+  },
+  {
+    src: "/images/candids/maryland-tapestry-talk.jpg",
+    alt: "Stitchers at work on the Maryland panel during a public tapestry talk",
+  },
+  {
+    src: "/images/candids/new-york-tapestry-talk.jpg",
+    alt: "A stitcher works on the New York panel as visitors look on at a public event",
+  },
+  {
+    src: "/images/candids/massachusetts-stitching-portrait.jpg",
+    alt: "A stitcher embroidering a portrait on the Massachusetts panel",
+  },
+  {
+    src: "/images/candids/connecticut-stitching-closeup.jpg",
+    alt: "Close-up of a stitcher's hands embroidering a scene on the Connecticut panel",
+  },
+  {
+    src: "/images/candids/new-hampshire-pine-tree-riot.jpg",
+    alt: 'Embroidered labels reading "Pine Tree Riot" pinned to the New Hampshire panel in progress',
+  },
+  {
+    src: "/images/candids/pennsylvania-panel-detail.jpg",
+    alt: "A detail of the Pennsylvania panel — an embroidered colonial building with shuttered windows",
+  },
+  {
+    src: "/images/candids/rhode-island-figure-detail.jpg",
+    alt: "An embroidered colonial officer in a blue coat, a detail from the Rhode Island panel",
+  },
+];
+
 export default async function Home() {
   const [tapestries, exhibitions] = await Promise.all([
     getAllTapestries(),
@@ -35,15 +86,26 @@ export default async function Home() {
   const spotlight = getExhibitionSpotlight(exhibitions);
 
   const withImages = tapestries.filter((t) => t.imagePath || t.thumbnail);
-  // Deliberate: server-only shuffle re-picks the featured panels at each build.
+  // Deliberate: server-only shuffle re-picks order at each build.
   // Never runs on the client, so render purity is moot.
   // eslint-disable-next-line react-hooks/purity
   const shuffled = [...withImages].sort(() => 0.5 - Math.random());
-  const heroBackdrops = shuffled.slice(0, 4).map((t) => ({
+
+  // The hero carousel rotates through EVERYTHING: every tapestry panel plus the
+  // candid stitching/tapestry-talk photographs, interleaved in a fresh order at
+  // each build (see HERO_CANDIDS above).
+  const panelBackdrops: SlideImage[] = shuffled.map((t) => ({
     src: t.imagePath || t.thumbnail,
     alt: `The ${t.title} tapestry panel`,
   }));
-  const plateTapestries = shuffled.slice(4, 7);
+  // eslint-disable-next-line react-hooks/purity
+  const heroBackdrops = [...panelBackdrops, ...HERO_CANDIDS].sort(
+    () => 0.5 - Math.random(),
+  );
+
+  // The "Thirteen colonies" plate grid keeps its own independent pick of three
+  // panels.
+  const plateTapestries = shuffled.slice(0, 3);
 
   return (
     <div className="bg-colonial-navy">

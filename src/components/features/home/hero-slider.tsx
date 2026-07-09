@@ -70,7 +70,9 @@ export function HeroSlider({
         </div>
       </div>
 
-      {images.length > 1 && (
+      {/* Dot navigation only reads well for a handful of slides. Above ~8 the
+          row grows too wide, so we drop it and rely on auto-advance + swipe. */}
+      {images.length > 1 && images.length <= 8 && (
         <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2.5">
           {images.map((img, idx) => (
             <button
