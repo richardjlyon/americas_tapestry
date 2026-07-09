@@ -4,6 +4,12 @@ import { extractExcerpt } from './markdown';
 import { exhibitionSchema } from './content-schemas';
 import { defineContentLoader } from './content-loader';
 
+/** A photograph shown in a venue's on-view gallery. */
+export interface ExhibitionGalleryImage {
+  src: string;
+  alt: string;
+}
+
 export interface Exhibition {
   slug: string;
   name: string;
@@ -15,6 +21,7 @@ export interface Exhibition {
   moreInfo?: string;
   image: string;
   imagePath: string;
+  gallery: ExhibitionGalleryImage[];
   content: string;
   excerpt: string;
 }
@@ -162,6 +169,14 @@ function mapExhibition(
   // Convert image field to imagePath using /images/exhibitions/
   const imagePath = `/images/exhibitions/${data['image']}`;
 
+  // Gallery photos live in a per-venue subfolder: /images/exhibitions/<slug>/
+  const gallery: ExhibitionGalleryImage[] = (data['gallery'] ?? []).map(
+    (photo) => ({
+      src: `/images/exhibitions/${item.slug}/${photo.image}`,
+      alt: photo.alt,
+    }),
+  );
+
   // Create an excerpt from the content or use provided one
   const excerpt = item.excerpt || extractExcerpt(item.content);
 
@@ -176,6 +191,7 @@ function mapExhibition(
     moreInfo: data['moreInfo'],
     image: data['image'] || `${item.slug}.png`,
     imagePath,
+    gallery,
     content: item.content,
     excerpt,
   } as Exhibition;

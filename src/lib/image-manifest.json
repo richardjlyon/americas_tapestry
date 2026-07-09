@@ -8332,5 +8332,86 @@
     },
     "originalSize": 474933,
     "hash": "bd48dd2c"
+  },
+  "/images/exhibitions/muscarelle/conversation.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/conversation-640w-af221b4c.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/conversation-1024w-af221b4c.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/conversation-1920w-af221b4c.webp"
+    },
+    "originalSize": 115752,
+    "hash": "af221b4c"
+  },
+  "/images/exhibitions/muscarelle/discussion.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/discussion-640w-06f2a59f.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/discussion-1024w-06f2a59f.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/discussion-1920w-06f2a59f.webp"
+    },
+    "originalSize": 167632,
+    "hash": "06f2a59f"
+  },
+  "/images/exhibitions/muscarelle/gallery-visitors.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/gallery-visitors-640w-29221f96.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/gallery-visitors-1024w-29221f96.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/gallery-visitors-1920w-29221f96.webp"
+    },
+    "originalSize": 145008,
+    "hash": "29221f96"
+  },
+  "/images/exhibitions/muscarelle/gallery-wide.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/gallery-wide-640w-52c22f04.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/gallery-wide-1024w-52c22f04.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/gallery-wide-1920w-52c22f04.webp"
+    },
+    "originalSize": 118168,
+    "hash": "52c22f04"
+  },
+  "/images/exhibitions/muscarelle/gathering.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/gathering-640w-37c6470e.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/gathering-1024w-37c6470e.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/gathering-1920w-37c6470e.webp"
+    },
+    "originalSize": 143870,
+    "hash": "37c6470e"
+  },
+  "/images/exhibitions/muscarelle/opening-reception.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/opening-reception-640w-05dc983b.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/opening-reception-1024w-05dc983b.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/opening-reception-1920w-05dc983b.webp"
+    },
+    "originalSize": 178000,
+    "hash": "05dc983b"
+  },
+  "/images/exhibitions/muscarelle/title-wall.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/title-wall-640w-48257885.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/title-wall-1024w-48257885.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/title-wall-1920w-48257885.webp"
+    },
+    "originalSize": 78102,
+    "hash": "48257885"
+  },
+  "/images/exhibitions/muscarelle/viewing-rhode-island.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/viewing-rhode-island-640w-07fd975d.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/viewing-rhode-island-1024w-07fd975d.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/viewing-rhode-island-1920w-07fd975d.webp"
+    },
+    "originalSize": 106150,
+    "hash": "07fd975d"
+  },
+  "/images/exhibitions/muscarelle/viewing-south-carolina.webp": {
+    "variants": {
+      "640": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/viewing-south-carolina-640w-60950121.webp",
+      "1024": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/viewing-south-carolina-1024w-60950121.webp",
+      "1920": "https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev/exhibitions/muscarelle/viewing-south-carolina-1920w-60950121.webp"
+    },
+    "originalSize": 160814,
+    "hash": "60950121"
   }
 }

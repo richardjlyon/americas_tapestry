@@ -79,7 +79,20 @@ export const sponsorSchema = z
   .passthrough();
 
 /**
- * Exhibition frontmatter. Every field below is present in all exhibition files.
+ * A single exhibition gallery photo: a filename inside the venue's image
+ * subfolder plus descriptive alt text.
+ */
+const exhibitionGalleryImageSchema = z
+  .object({
+    image: z.string(),
+    alt: z.string(),
+  })
+  .passthrough();
+
+/**
+ * Exhibition frontmatter. Every field above `gallery` is present in all
+ * exhibition files. `gallery` is an optional list of on-view photographs shown
+ * on the venue's detail page.
  */
 export const exhibitionSchema = z
   .object({
@@ -91,6 +104,7 @@ export const exhibitionSchema = z
     endDate: z.string(),
     image: z.string(),
     moreInfo: z.string().optional(),
+    gallery: z.array(exhibitionGalleryImageSchema).optional(),
   })
   .passthrough();
 

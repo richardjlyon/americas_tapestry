@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { getImagePath, getImageSizes } from '@/lib/image-utils';
 import { formatDateRange } from '@/lib/exhibitions';
 import type { Exhibition } from '@/lib/exhibitions';
@@ -59,19 +60,15 @@ export function ExhibitionCard({
         <p className="mt-2 text-sm text-colonial-parchment/60">
           {exhibition.address}
         </p>
-        {exhibition.moreInfo && (
-          <div className="mt-auto pt-4">
-            <a
-              href={exhibition.moreInfo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center font-medium text-colonial-gold transition-colors hover:text-colonial-gold/80"
-            >
-              Plan your visit
-              <ExternalLink className="ml-1 h-4 w-4" aria-hidden="true" />
-            </a>
-          </div>
-        )}
+        <div className="mt-auto pt-4">
+          <Link
+            href={`/exhibitions/${exhibition.slug}`}
+            className="inline-flex items-center font-medium text-colonial-gold transition-colors hover:text-colonial-gold/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
+          >
+            Explore the venue
+            <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </div>
   );
