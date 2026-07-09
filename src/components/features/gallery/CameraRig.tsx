@@ -21,8 +21,7 @@ export interface CameraRigProps {
 const LAMBDA = 4;
 /** Free-walk speed, ft/s */
 const WALK_SPEED = 6;
-/** Drag-look offset limits around a stop's base orientation (tour mode) */
-const YAW_LIMIT = MathUtils.degToRad(60);
+/** Drag-look pitch limit around a stop's base orientation (tour mode) */
 const PITCH_LIMIT = MathUtils.degToRad(25);
 /** Pitch clamp while free-walking (yaw is unlimited there) */
 const WALK_PITCH_LIMIT = MathUtils.degToRad(60);
@@ -114,21 +113,13 @@ function applyLook(
   dYaw: number,
   dPitch: number,
 ): void {
-  if (walkMode) {
-    look.yawOff += dYaw;
-    look.pitchOff = MathUtils.clamp(
-      look.pitchOff + dPitch,
-      -WALK_PITCH_LIMIT,
-      WALK_PITCH_LIMIT,
-    );
-  } else {
-    look.yawOff = MathUtils.clamp(look.yawOff + dYaw, -YAW_LIMIT, YAW_LIMIT);
-    look.pitchOff = MathUtils.clamp(
-      look.pitchOff + dPitch,
-      -PITCH_LIMIT,
-      PITCH_LIMIT,
-    );
-  }
+  // Yaw is unlimited in both modes — visitors can turn a full 360°.
+  look.yawOff += dYaw;
+  look.pitchOff = MathUtils.clamp(
+    look.pitchOff + dPitch,
+    walkMode ? -WALK_PITCH_LIMIT : -PITCH_LIMIT,
+    walkMode ? WALK_PITCH_LIMIT : PITCH_LIMIT,
+  );
 }
 
 interface FlightState {

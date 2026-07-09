@@ -1,5 +1,6 @@
 import GalleryClient from '@/components/features/gallery/GalleryClient';
 import type { GalleryTapestryData } from '@/components/features/gallery/types';
+import imageManifest from '@/lib/image-manifest.json';
 import { getPrintUrl } from '@/lib/shop-links';
 import {
   findGalleryImage,
@@ -7,6 +8,25 @@ import {
   getAllTapestries,
 } from '@/lib/tapestries';
 import type { Metadata } from 'next';
+
+interface ManifestEntry {
+  variants: Record<string, string>;
+}
+
+/**
+ * Resolve a tapestry texture to its pre-optimized R2 variant so the 3D
+ * gallery streams from R2 instead of Vercel bandwidth. The fine-art print
+ * masters are already uploaded (shop pipeline); the R2 bucket carries a
+ * CORS policy so WebGL texture loads succeed cross-origin.
+ */
+function r2FineArtVariant(
+  slug: string,
+  width: '640' | '1024' | '1920',
+): string | null {
+  const manifest = imageManifest as Record<string, ManifestEntry>;
+  const entry = manifest[`/images/shop/prints/${slug}/${slug}-fineart.jpg`];
+  return entry?.variants[width] ?? null;
+}
 
 export const metadata: Metadata = {
   title: "Virtual Gallery | America's Tapestry",
@@ -79,8 +99,10 @@ export default async function GalleryPage(): Promise<React.ReactElement> {
       );
       continue;
     }
-    const imageUrl = findGalleryImage(slug, '1920w');
-    const imageUrlSmall = findGalleryImage(slug, '1024w');
+    const imageUrl =
+      r2FineArtVariant(slug, '1920') ?? findGalleryImage(slug, '1920w');
+    const imageUrlSmall =
+      r2FineArtVariant(slug, '1024') ?? findGalleryImage(slug, '1024w');
     if (!imageUrl || !imageUrlSmall) {
       console.warn(`[gallery] no tapestry image found for "${slug}" — skipped`);
       continue;
@@ -91,7 +113,10 @@ export default async function GalleryPage(): Promise<React.ReactElement> {
       name: entry.title,
       imageUrl,
       imageUrlSmall,
-      thumbUrl: findGalleryThumb(slug) ?? imageUrlSmall,
+      thumbUrl:
+        r2FineArtVariant(slug, '640') ??
+        findGalleryThumb(slug) ??
+        imageUrlSmall,
       audioUrl: entry.audioPath ?? '',
       audioDescription: entry.audioDescription ?? '',
       description: truncateAtWord(transcript, LABEL_LENGTH),
