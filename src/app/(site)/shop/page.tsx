@@ -4,6 +4,7 @@ import {
   BookOpen,
   CalendarDays,
   Copy,
+  Palette,
   Ruler,
 } from "lucide-react";
 import { PageSection } from "@/components/ui/page-section";
@@ -13,7 +14,7 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 import { getImagePath } from "@/lib/image-utils";
 import { EditionTypeCard } from "@/components/features/shop/edition-type-card";
 import { FramedArtwork } from "@/components/ui/framed-artwork";
-import { getAllProducts } from "@/lib/shopify";
+import { getAllProducts, checkoutUrl } from "@/lib/shopify";
 import {
   WALL_ART_TYPES,
   POSTCARD_TYPE,
@@ -62,6 +63,13 @@ export default async function ShopPage() {
   const products = await getAllProducts();
   const countFor = (slug: string) =>
     products.filter((p) => p.tags.includes(slug)).length;
+
+  // The coloring book — a single collection-wide product (no state tag),
+  // available now with a direct-to-checkout Buy button.
+  const coloringBook = products.find((p) => p.tags.includes("coloring-book"));
+  const coloringBookHref = coloringBook
+    ? checkoutUrl(coloringBook.variantId)
+    : null;
 
   return (
     <>
@@ -202,6 +210,66 @@ export default async function ShopPage() {
           </div>
         </div>
       </PageSection>
+
+      {/* The Coloring Book — a single product, available now */}
+      {coloringBook?.featuredImage && coloringBookHref && (
+        <PageSection background="authentic-parchment" spacing="spacious">
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+            {/* The cover */}
+            <div className="relative mx-auto w-full max-w-xs px-4 py-4 md:mx-0 md:ml-auto">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(58%_58%_at_52%_42%,rgba(191,155,84,0.28),transparent_70%)]"
+              />
+              {/* The Gelato mockup is a portrait cover floated in a 2048²
+                  canvas with ~11% transparent bands each side. Give the box the
+                  cover's own aspect (1583×2042) and object-cover so the bands
+                  clip and the shadow hugs the cover, not the empty canvas. */}
+              <div className="mx-auto aspect-[1583/2042] w-full overflow-hidden rounded-[6px] shadow-[0_30px_58px_-20px_rgba(11,15,32,0.55)] ring-1 ring-colonial-navy/10">
+                {/* Shopify CDN URL — plain <img> bypasses the app's R2 image loader. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={coloringBook.featuredImage.url}
+                  alt={coloringBook.featuredImage.altText ?? coloringBook.title}
+                  className="block h-full w-full object-cover object-center"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* The details */}
+            <div>
+              <span className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-colonial-burgundy">
+                New — Available Now
+              </span>
+              <div className="gold-threshold mt-4" />
+              <h2 className="mt-5 font-sans text-3xl font-bold leading-tight text-colonial-navy md:text-4xl">
+                The America&rsquo;s Tapestry Coloring Book
+              </h2>
+              <p className="mt-4 max-w-md text-colonial-navy/80">
+                The thirteen colony panels redrawn as line art to color in —
+                the whole tapestry, page by page. Printed on demand and shipped
+                to your door.
+              </p>
+              <ul className="mt-6 space-y-3 font-serif text-base text-colonial-navy/85">
+                <li className="flex items-center gap-3">
+                  <Palette
+                    className="h-5 w-5 shrink-0 text-colonial-burgundy"
+                    aria-hidden="true"
+                  />
+                  All thirteen colony panels as colorable line art
+                </li>
+              </ul>
+              <Button asChild variant="colonial-gold" size="lg" className="mt-8">
+                <a href={coloringBookHref}>
+                  Buy the coloring book — $
+                  {Number(coloringBook.price.amount).toFixed(0)}
+                </a>
+              </Button>
+            </div>
+          </div>
+        </PageSection>
+      )}
 
       {/* Coming soon — the book and the 2026 wall calendar */}
       <PageSection background="vintage-paper" spacing="spacious">
