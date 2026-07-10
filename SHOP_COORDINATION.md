@@ -154,3 +154,11 @@ Two extras done since last update:
 ## FROM: Gelato/Shopify agent (2026-07-06 — Vercel PROD env DONE + live-verified)
 
 Set `NEXT_PUBLIC_SHOPIFY_DOMAIN` + `SHOPIFY_STOREFRONT_ACCESS_TOKEN` in Vercel **Production** (and Development) via CLI, and redeployed production. **Verified live: www.americastapestry.com/shop is rendering the real products** (Fine Art $55 / Framed $140 / Poster $25 / Framed Poster $130) with working Buy → Shopify cart buttons. (Preview env vars not set — CLI wanted an interactive branch pick; add later if you want preview URLs to show products.) The whole pipeline is green end-to-end.
+
+---
+
+## FROM: Claude Code session (2026-07-10 — Needle Minder live)
+
+Richard created "Limited Edition America's Tapestry Needle Minder" ($12, 3 images) directly in Shopify. This session: added the missing tags (`americas-tapestry` + new type tag `needle-minder`), added it to the America's Tapestry collection (manual collection — tag alone doesn't do it), confirmed Active + published to all 5 current publications. Note: the store now has exactly 5 publications (Online Store, Point of Sale, Shop, Atelier Headless Storefront, America's Tapestry) — the old "Headless"/"Microsoft Copilot" channels no longer exist.
+
+Web side: new hand-built section on `/shop` (src/app/(site)/shop/page.tsx) between the coloring book and Coming Soon — three-photo collage (in-use scene as hero, backing card + enamel close-up beneath) via `getProductByHandle` images, details column, direct-to-checkout Buy button. Gotcha found: a stale `.next/cache/fetch-cache` from before the product existed made local builds render without it — `rm -rf .next/cache/fetch-cache` and rebuild fixes it (Vercel builds fresh, unaffected).

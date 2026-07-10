@@ -4,8 +4,10 @@ import {
   BookOpen,
   CalendarDays,
   Copy,
+  Magnet,
   Palette,
   Ruler,
+  Star,
 } from "lucide-react";
 import { PageSection } from "@/components/ui/page-section";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -14,7 +16,7 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 import { getImagePath } from "@/lib/image-utils";
 import { EditionTypeCard } from "@/components/features/shop/edition-type-card";
 import { FramedArtwork } from "@/components/ui/framed-artwork";
-import { getAllProducts, checkoutUrl } from "@/lib/shopify";
+import { getAllProducts, getProductByHandle, checkoutUrl } from "@/lib/shopify";
 import {
   WALL_ART_TYPES,
   POSTCARD_TYPE,
@@ -70,6 +72,22 @@ export default async function ShopPage() {
   const coloringBookHref = coloringBook
     ? checkoutUrl(coloringBook.variantId)
     : null;
+
+  // The needle minder — a limited-edition single product (no state tag). Its
+  // detail fetch brings back all three photos for the collage: the backing
+  // card, the in-use scene, and the enamel close-up, in Shopify image order.
+  const needleMinder = products.find((p) => p.tags.includes("needle-minder"));
+  const needleMinderDetail = needleMinder
+    ? await getProductByHandle(needleMinder.handle)
+    : null;
+  const needleMinderHref = needleMinder
+    ? checkoutUrl(needleMinder.variantId)
+    : null;
+  const nmImages = needleMinderDetail?.images ?? [];
+  // The in-use scene (second image) makes the strongest hero; the card and
+  // close-up sit beneath. With fewer than three images, fall back gracefully.
+  const nmHero = nmImages[1] ?? nmImages[0] ?? null;
+  const nmThumbs = nmImages.filter((img) => img !== nmHero).slice(0, 2);
 
   return (
     <>
@@ -264,6 +282,95 @@ export default async function ShopPage() {
                 <a href={coloringBookHref}>
                   Buy the coloring book — $
                   {Number(coloringBook.price.amount).toFixed(0)}
+                </a>
+              </Button>
+            </div>
+          </div>
+        </PageSection>
+      )}
+
+      {/* The Needle Minder — a limited edition of 100 */}
+      {needleMinder && nmHero && needleMinderHref && (
+        <PageSection spacing="spacious">
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+            {/* Photo collage — the in-use scene above the card and close-up. */}
+            <div className="mx-auto grid w-full max-w-md grid-cols-2 gap-3">
+              <div className="relative col-span-2 aspect-[3/2] overflow-hidden rounded-[8px] shadow-[0_22px_48px_-18px_rgba(11,15,32,0.5)] ring-1 ring-colonial-navy/10">
+                {/* Shopify CDN URLs — plain <img> bypasses the R2 image loader. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={nmHero.url}
+                  alt={
+                    nmHero.altText ||
+                    "The America's Tapestry needle minder at work on embroidery linen, beside stork scissors and a threaded needle"
+                  }
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              {nmThumbs.map((img, i) => (
+                <div
+                  key={img.url}
+                  className="relative aspect-[3/2] overflow-hidden rounded-[8px] shadow-[0_16px_36px_-16px_rgba(11,15,32,0.45)] ring-1 ring-colonial-navy/10"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={img.url}
+                    alt={
+                      img.altText ||
+                      (i === 0
+                        ? "The needle minder on its commemorative backing card"
+                        : "Close-up of the enamel spool needle minder")
+                    }
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* The details */}
+            <div>
+              <span className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-colonial-burgundy">
+                Limited Edition — Only 100 Made
+              </span>
+              <div className="gold-threshold mt-4" />
+              <h2 className="mt-5 font-sans text-3xl font-bold leading-tight text-colonial-navy md:text-4xl">
+                The Needle Minder
+              </h2>
+              <p className="mt-4 max-w-md text-colonial-navy/80">
+                Our spool logo as a magnetic needle minder — it holds your
+                needle to the fabric between stitches, right where you left it.
+                Printed in glossy navy UV ink, each one arrives on its own
+                commemorative backing card.
+              </p>
+              <ul className="mt-6 space-y-3 font-serif text-base text-colonial-navy/85">
+                <li className="flex items-center gap-3">
+                  <Star
+                    className="h-5 w-5 shrink-0 text-colonial-burgundy"
+                    aria-hidden="true"
+                  />
+                  A limited run of one hundred
+                </li>
+                <li className="flex items-center gap-3">
+                  <Ruler
+                    className="h-5 w-5 shrink-0 text-colonial-burgundy"
+                    aria-hidden="true"
+                  />
+                  ¾″ high, glossy navy UV ink
+                </li>
+                <li className="flex items-center gap-3">
+                  <Magnet
+                    className="h-5 w-5 shrink-0 text-colonial-burgundy"
+                    aria-hidden="true"
+                  />
+                  Strong magnet keeps your needle to hand
+                </li>
+              </ul>
+              <Button asChild variant="colonial-gold" size="lg" className="mt-8">
+                <a href={needleMinderHref}>
+                  Buy the needle minder — $
+                  {Number(needleMinder.price.amount).toFixed(0)}
                 </a>
               </Button>
             </div>
