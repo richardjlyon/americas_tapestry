@@ -4,6 +4,7 @@ import './globals.css';
 import { Montserrat, EB_Garamond } from 'next/font/google';
 import { ThemeProvider } from '@/components/shared/theme-provider';
 import { Analytics } from '@vercel/analytics/react';
+import { MatomoAnalytics } from '@/components/shared/matomo-analytics';
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, DEFAULT_OG_IMAGE } from '@/lib/seo';
 
 // Load Montserrat as the sans-serif font
@@ -64,6 +65,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
         <Analytics />
+        <MatomoAnalytics />
       </body>
     </html>
   );
