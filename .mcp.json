@@ -2,15 +2,25 @@
   "mcpServers": {
     "memory": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory@latest"]
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory@latest"
+      ]
     },
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem@latest", "/Users/richardlyon"]
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem@latest",
+        "/Users/richardlyon"
+      ]
     },
     "brave-search": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-brave-search@latest"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search@latest"
+      ],
       "env": {
         "BRAVE_API_KEY": "BSAT6nkx22aB6Dzyx4AYiBGy1FhQakH"
       }
@@ -18,6 +28,10 @@
     "serena": {
       "command": "/Users/richardlyon/.claude/serena-mcp-wrapper.sh",
       "args": []
+    },
+    "matomo": {
+      "type": "http",
+      "url": "https://stats.kwlan.net/index.php?module=API&method=McpServer.mcp&format=mcp&token_auth=99fbaee46af7698082845c913d925e13"
     }
   }
 }
