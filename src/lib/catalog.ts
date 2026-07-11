@@ -27,7 +27,7 @@ export const PRODUCT_TYPES: TypeVocab[] = [
   { slug: 'poster', label: 'Exhibition Posters' },
   { slug: 'greeting-cards', label: 'Greeting Card Sets' },
   { slug: 'postcard', label: 'Postcards' },
-  { slug: 'calendar', label: '2026 Wall Calendar' },
+  { slug: 'calendar', label: '2027 Wall Calendar' },
   { slug: 'book', label: 'Book' },
   // Phase-2 long tail — recognized so tagged products render, but not featured.
   { slug: 'mug', label: 'Mugs' },

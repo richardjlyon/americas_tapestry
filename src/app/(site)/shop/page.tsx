@@ -378,7 +378,7 @@ export default async function ShopPage() {
         </PageSection>
       )}
 
-      {/* Coming soon — the book and the 2026 wall calendar */}
+      {/* Coming soon — the book and the 2027 wall calendar */}
       <PageSection background="vintage-paper" spacing="spacious">
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
           <div className="rounded-lg border border-dashed border-colonial-gold/60 bg-white/60 p-10 text-center">
@@ -412,11 +412,12 @@ export default async function ShopPage() {
               Coming soon
             </span>
             <h2 className="section-title mt-4 text-2xl">
-              The 2026 Wall Calendar
+              The 2027 Wall Calendar
             </h2>
             <p className="mx-auto mt-3 max-w-lg font-serif text-lg text-colonial-navy/75">
-              Twelve months of the colony panels, marking America&rsquo;s 250th
-              year. Being stitched into the shop now — check back soon.
+              Twelve months of the colony panels, celebrating America&rsquo;s
+              250th anniversary. Being stitched into the shop now — check back
+              soon.
             </p>
           </div>
         </div>
