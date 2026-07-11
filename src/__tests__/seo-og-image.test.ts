@@ -13,7 +13,7 @@ function twitterImageUrl(meta: ReturnType<typeof pageMetadata>): string {
   return typeof first === 'string' ? first : String((first as { url: unknown }).url);
 }
 
-const R2_HOST = 'pub-93847b5093894cc7874bdee71704b7b5.r2.dev';
+const R2_HOST = 'images.americastapestry.com';
 
 describe('pageMetadata OG image resolution', () => {
   it('resolves a manifest-backed image to an R2 WebP variant (not the local original)', () => {

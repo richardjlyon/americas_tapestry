@@ -49,7 +49,7 @@
     - `R2_SECRET_ACCESS_KEY`
   - Bucket: `R2_IMAGES_BUCKET` (default: `americas-tapestry-images`)
   - Public URL: `R2_IMAGES_PUBLIC_URL`, `NEXT_PUBLIC_R2_IMAGES_URL`
-  - Remote pattern: `pub-93847b5093894cc7874bdee71704b7b5.r2.dev`
+  - Remote pattern: `images.americastapestry.com`
   - Implementation: `src/lib/cloudflare-loader.ts`
   - Manifest: `src/lib/image-manifest.json`
 

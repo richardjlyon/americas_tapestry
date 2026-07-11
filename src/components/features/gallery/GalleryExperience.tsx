@@ -2,6 +2,7 @@
 
 import { useProgress } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import Link from 'next/link';
 import {
   Suspense,
   useCallback,
@@ -24,6 +25,7 @@ import {
   VIEWPOINTS,
 } from './galleryLayout';
 import { disposeProceduralTextures } from './proceduralTextures';
+import { SceneErrorBoundary } from './SceneErrorBoundary';
 import type { GalleryTapestryData, Viewpoint } from './types';
 import { useGalleryAudio } from './useGalleryAudio';
 import { useWebXR } from './useWebXR';
@@ -98,6 +100,42 @@ function WorldRig({
 }
 
 /**
+ * DOM fallback when the Canvas itself can't run — WebGL unavailable or a
+ * context that fails to initialise (some locked-down browsers, blocked GPUs).
+ * Rather than the route error page, offer a retry and a route to the flat
+ * tapestry pages so the visitor is never stranded.
+ */
+function CanvasFallback({ onRetry }: { onRetry: () => void }): React.ReactElement {
+  return (
+    <div className="absolute inset-0 z-[60] flex flex-col items-center justify-center gap-4 bg-[#F5EFE0] px-6 text-center">
+      <img src={SPOOL_SVG_URL} alt="" className="h-16 w-auto" />
+      <p className="font-serif text-[28px] text-[#12284C]">
+        The 3D gallery couldn&rsquo;t load in this browser
+      </p>
+      <p className="max-w-md text-[15px] text-[#12284C]/70">
+        This can happen if hardware acceleration is off or WebGL is blocked. You
+        can try again, or explore the tapestries as full images instead.
+      </p>
+      <div className="flex flex-wrap items-center justify-center gap-3">
+        <button
+          type="button"
+          onClick={onRetry}
+          className="rounded-full bg-[#12284C] px-5 py-2 text-sm text-[#F5EFE0]"
+        >
+          Try again
+        </button>
+        <Link
+          href="/tapestries"
+          className="rounded-full border border-[#12284C]/30 px-5 py-2 text-sm text-[#12284C]"
+        >
+          View the tapestries
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+/**
  * GalleryExperience — owns all gallery state (current stop, walk mode,
  * flight status, audio) and composes the Canvas scene with its DOM siblings
  * (HUD, loading overlay, hint pill, a11y nav, live region).
@@ -115,6 +153,10 @@ export default function GalleryExperience({
   const [hintVisible, setHintVisible] = useState(false);
   const [welcomeVisible, setWelcomeVisible] = useState(false);
   const [glRenderer, setGlRenderer] = useState<WebGLRenderer | null>(null);
+  // Bumped to remount the Canvas after a WebGL context loss/restore or a
+  // manual retry from the fallback — rebuilds all GPU resources from scratch.
+  const [sceneKey, setSceneKey] = useState(0);
+  const remountScene = useCallback(() => setSceneKey((k) => k + 1), []);
   const lastDirRef = useRef<'prev' | 'next' | null>(null);
   const introStartedRef = useRef(false);
   const canvasWrapRef = useRef<HTMLDivElement>(null);
@@ -362,41 +404,59 @@ export default function GalleryExperience({
         role="application"
         aria-label="3D gallery view. Use the tapestry list or arrow keys to navigate."
       >
-        <Canvas
-          dpr={[1, 1.75]}
-          gl={{ antialias: true, powerPreference: 'high-performance' }}
-          camera={{ fov: 60, position: SPAWN.position, near: 0.1, far: 200 }}
-          onCreated={({ gl }) => {
-            gl.toneMapping = NoToneMapping;
-            setGlRenderer(gl);
-          }}
+        {/* DOM backstop: if the Canvas can't initialise WebGL at all, show a
+            branded fallback with retry instead of the route error page. */}
+        <SceneErrorBoundary
+          fallback={<CanvasFallback onRetry={remountScene} />}
+          resetKeys={[sceneKey]}
         >
-          <color attach="background" args={[PALETTE.wall]} />
-          <Suspense fallback={null}>
-            <WorldRig stop={currentStop} active={xr.active}>
-              <GalleryRoom />
-              {TAPESTRY_PLACEMENTS.map((placement) => {
-                const data = bySlug.get(placement.slug);
-                if (!data) return null;
-                return (
-                  <TapestryPanel
-                    key={placement.slug}
-                    data={data}
-                    placement={placement}
-                    selected={currentStop.tapestrySlug === placement.slug}
-                    onSelect={handleVisitTapestry}
-                  />
-                );
-              })}
-            </WorldRig>
-          </Suspense>
-          <CameraRig
-            stop={currentStop}
-            walkMode={walkMode}
-            flightId={flightId}
-            onArrive={handleArrive}
-          />
-        </Canvas>
+          <Canvas
+            key={sceneKey}
+            dpr={[1, 1.75]}
+            gl={{ antialias: true, powerPreference: 'high-performance' }}
+            camera={{ fov: 60, position: SPAWN.position, near: 0.1, far: 200 }}
+            onCreated={({ gl }) => {
+              gl.toneMapping = NoToneMapping;
+              setGlRenderer(gl);
+              // WebGL context-loss recovery: preventDefault on loss lets the
+              // browser restore the context; on restore we remount the Canvas
+              // so every GPU resource (textures, geometry) is rebuilt cleanly.
+              const canvas = gl.domElement;
+              canvas.addEventListener(
+                'webglcontextlost',
+                (e) => e.preventDefault(),
+                false,
+              );
+              canvas.addEventListener('webglcontextrestored', remountScene, false);
+            }}
+          >
+            <color attach="background" args={[PALETTE.wall]} />
+            <Suspense fallback={null}>
+              <WorldRig stop={currentStop} active={xr.active}>
+                <GalleryRoom />
+                {TAPESTRY_PLACEMENTS.map((placement) => {
+                  const data = bySlug.get(placement.slug);
+                  if (!data) return null;
+                  return (
+                    <TapestryPanel
+                      key={placement.slug}
+                      data={data}
+                      placement={placement}
+                      selected={currentStop.tapestrySlug === placement.slug}
+                      onSelect={handleVisitTapestry}
+                    />
+                  );
+                })}
+              </WorldRig>
+            </Suspense>
+            <CameraRig
+              stop={currentStop}
+              walkMode={walkMode}
+              flightId={flightId}
+              onArrive={handleArrive}
+            />
+          </Canvas>
+        </SceneErrorBoundary>
       </div>
 
       <GalleryHUD

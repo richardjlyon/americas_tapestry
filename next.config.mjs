@@ -16,7 +16,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'pub-93847b5093894cc7874bdee71704b7b5.r2.dev',
+        hostname: 'images.americastapestry.com',
         port: '',
         pathname: '/**',
       },

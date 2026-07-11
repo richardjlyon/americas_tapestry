@@ -4,6 +4,7 @@ import { useTexture } from '@react-three/drei';
 import { type ThreeEvent, useFrame, useThree } from '@react-three/fiber';
 import { Suspense, useEffect, useRef } from 'react';
 import { type MeshStandardMaterial, SRGBColorSpace } from 'three';
+import { SceneErrorBoundary } from './SceneErrorBoundary';
 import WallText from './WallText';
 import {
   FRAME_CONFIG,
@@ -295,7 +296,13 @@ export default function TapestryPanel({
     <group>
       {panelMesh}
       <TapestryFrame placement={placement} />
-      <Suspense
+      {/*
+        Error boundary + Suspense share one fallback: the accent placeholder
+        quad shows while the texture streams (pending) AND if it fails to load
+        (rejected — e.g. a CORS-blocked R2 fetch). Without the boundary a single
+        rejected texture unmounts the entire gallery to the route error page.
+      */}
+      <SceneErrorBoundary
         fallback={
           <PlaceholderQuad
             placement={placement}
@@ -304,13 +311,23 @@ export default function TapestryPanel({
           />
         }
       >
-        <TextileQuad
-          url={data.imageUrl}
-          placement={placement}
-          slug={data.slug}
-          onSelect={onSelect}
-        />
-      </Suspense>
+        <Suspense
+          fallback={
+            <PlaceholderQuad
+              placement={placement}
+              slug={data.slug}
+              onSelect={onSelect}
+            />
+          }
+        >
+          <TextileQuad
+            url={data.imageUrl}
+            placement={placement}
+            slug={data.slug}
+            onSelect={onSelect}
+          />
+        </Suspense>
+      </SceneErrorBoundary>
       {/* Outside the Suspense boundary: labels never wait for the textile image. */}
       <WallText
         position={wallTextCenter(placement)}

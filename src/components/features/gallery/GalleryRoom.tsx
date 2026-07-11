@@ -15,6 +15,7 @@ import { Text, useTexture } from '@react-three/drei';
 import { Suspense, useEffect, useMemo, useState } from 'react';
 import type { ReactElement } from 'react';
 import { type CanvasTexture, SRGBColorSpace } from 'three';
+import { SceneErrorBoundary } from './SceneErrorBoundary';
 import WallText from './WallText';
 import {
   ACCENT_BANDS,
@@ -527,17 +528,21 @@ function ShopWall(): ReactElement {
       >
         {SHOP_WALL.heading.text}
       </Text>
-      <Suspense fallback={null}>
-        {images.map((url, i) => (
-          <ShopProduct
-            key={url}
-            url={url}
-            centerX={
-              SHOP_WALL.centerX + (i - (images.length - 1) / 2) * spacing
-            }
-          />
-        ))}
-      </Suspense>
+      {/* Failed shop-mockup textures fall back to empty (frames only), never
+          crashing the room. */}
+      <SceneErrorBoundary fallback={null}>
+        <Suspense fallback={null}>
+          {images.map((url, i) => (
+            <ShopProduct
+              key={url}
+              url={url}
+              centerX={
+                SHOP_WALL.centerX + (i - (images.length - 1) / 2) * spacing
+              }
+            />
+          ))}
+        </Suspense>
+      </SceneErrorBoundary>
       <WallText
         position={[SHOP_WALL.centerX, SHOP_WALL.paragraph.centerY, textZ]}
         rotation={[0, 0, 0]}

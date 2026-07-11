@@ -338,7 +338,7 @@ async function main() {
   await loadEnv();
 
   const bucket = process.env.R2_IMAGES_BUCKET || 'americas-tapestry-images';
-  const publicUrl = process.env.R2_IMAGES_PUBLIC_URL || 'https://pub-93847b5093894cc7874bdee71704b7b5.r2.dev';
+  const publicUrl = process.env.R2_IMAGES_PUBLIC_URL || 'https://images.americastapestry.com';
 
   console.log(`📦 Bucket: ${bucket}`);
   console.log(`🌐 Public URL: ${publicUrl}\n`);
