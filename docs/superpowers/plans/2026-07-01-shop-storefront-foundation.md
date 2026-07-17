@@ -24,7 +24,7 @@
 
 ## Taxonomy Update (2026-07-01) — read before executing remaining tasks
 
-After Tasks 1–4 were implemented, the product taxonomy was finalized (`/Users/rjl/Code/data-tapestry-assets/PRODUCT_TAXONOMY.md`) and the design spec updated. This changes the `type` vocabulary and adds price tiers and a type-group.
+After Tasks 1–4 were implemented, the product taxonomy was finalized (`/Users/rjl/Resilio/Projects/americas-tapestry-shop-items/PRODUCT_TAXONOMY.md`) and the design spec updated. This changes the `type` vocabulary and adds price tiers and a type-group.
 
 - **Tasks 1, 3, 4 (Shopify layer, `filterProducts`, `searchProducts`) are logic-only and unaffected** — they stand as committed.
 - **Task 2's `PRODUCT_TYPES` values are superseded.** The old vocab (`poster`, `giclee`, `tote`, `mug`, `artist-edition`, `composite`) is replaced. Because Tasks 2/3/4 tests were committed using the removed slug `poster` (and an `artist-edition`+`signed` case), the correction (Task 7) also updates those committed tests.

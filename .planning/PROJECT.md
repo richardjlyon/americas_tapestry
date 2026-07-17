@@ -2,13 +2,17 @@
 
 ## What This Is
 
-A website showcasing America's Tapestry — a series of 13 needlework tapestries depicting the history of each of the original American colonies. The site features tapestry content pages with images, timelines, and maps; team pages; a blog; an interactive colonial map; and community engagement features.
+A website showcasing America's Tapestry — a series of 13 needlework tapestries depicting the history of each of the original American colonies. As of the July 2026 "dark gallery" redesign, the site presents framed fine-art tapestry plates with a full-size lightbox, team/stitcher pages, a blog/news section, exhibitions, and an **online shop** (`/shop`) selling per-state wall art, postcards, a book, and Stefan Romero dolls via a headless Shopify storefront. (The earlier tapestry status carousel and interactive Mapbox colonial map were removed in that redesign.)
 
 ## Core Value
 
-**Bring the tapestries to life through immersive digital experiences that let people explore the art and history from anywhere.**
+**Bring the tapestries to life through digital experiences that let people explore the art and history — and now support the project by buying from the shop.**
 
-## Current Milestone: v2.0 Virtual Gallery
+## Current Milestone
+
+> **⚠️ The v2.0 Virtual Gallery milestone documented below is PARKED** (last advanced 2026-04-22; the 3D gallery is unlisted in nav — prototype only). Actual work since early July 2026 is the **"dark gallery" site redesign + online shop**, done in yolo mode outside this planning folder. See `.planning/STATE.md`, `.planning/MILESTONES.md`, `git log`, and repo-root `SHOP_COORDINATION.md` for the live stream. The rest of this file is the frozen spec for the parked 3D milestone.
+
+## Parked Milestone: v2.0 Virtual Gallery
 
 **Goal:** Create a first-person 3D virtual gallery experience where visitors can walk through a museum-style room and view all 13 colony tapestries mounted on the walls.
 

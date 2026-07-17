@@ -1,5 +1,7 @@
 # Roadmap: Virtual Gallery v2.0
 
+> **⚠️ PARKED.** This roadmap covers the v2.0 3D Virtual Gallery milestone, which is on hold (Phase 1 complete, last advanced 2026-04-22; gallery unlisted in nav). Live work since July 2026 — the "dark gallery" redesign + online shop — was done outside this roadmap in yolo mode. See `.planning/STATE.md`, `.planning/MILESTONES.md`, and `git log`. Resume this only on Richard's instruction.
+
 ## Overview
 
 Transform the America's Tapestry site from a flat content experience into an immersive 3D virtual gallery where visitors walk through a museum-style room viewing all 13 colony tapestries. The build progresses from an empty navigable room, to tapestries on walls, to clickable detail overlays, to museum-quality lighting, and finally a mobile fallback -- each phase delivering a verifiable capability that builds on the last.

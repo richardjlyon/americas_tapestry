@@ -4,10 +4,22 @@
 
 See: .planning/PROJECT.md (updated 2026-03-06)
 
-**Core value:** Bring the tapestries to life through immersive digital experiences
-**Current focus:** Phase 1 - 3D Foundation & Navigation (completing)
+**Core value:** Bring the tapestries to life — currently through a redesigned "dark gallery" site and an online shop, rather than the 3D walkthrough.
+**Current focus:** Live-site redesign + online shop (ongoing, worked in yolo mode with direct commits — no phase plans in this folder). The v2.0 3D Virtual Gallery milestone tracked below is **PARKED**.
 
 ## Current Position
+
+**⚠️ Roadmap divergence — read this first.** This `.planning/` structure tracks the **v2.0 Virtual Gallery (3D)** milestone, which is **parked** (last advanced 2026-04-22; the gallery is now unlisted in nav — prototype only). Since early July 2026 the real work has been a separate, unplanned stream, done in yolo mode outside this roadmap:
+
+- **"Dark gallery" redesign** — dark homepage with a rotating full-bleed hero, navy/oxblood themed "rooms" per page type, framed fine-art tapestry plates + full-size lightbox. The old tapestry status carousel and interactive Mapbox colonial map were **removed**.
+- **Online shop** (`/shop`) — headless Shopify Storefront API: per-state wall art (prints/framed/posters), postcards (all 13 states), a book (coming-soon), and Stefan Romero dolls. `shop.americastapestry.com` → `/shop`. Coordinated with sister repo **`gitea/americas-tapestry-shop`** (Gelato→Shopify) via **`SHOP_COORDINATION.md`** in the repo root.
+- **Vercel bandwidth leak fixed** (~189 GB/mo crawler transfer).
+
+For live state, trust `git log` + repo-root docs (`SHOP_COORDINATION.md`, `TASK.md`, `feature.md`) — **not** the phase docs below, which describe only the parked 3D stream.
+
+---
+
+**Parked v2.0 milestone position (frozen 2026-04-22):**
 
 Phase: 1 of 5 (3D Foundation & Navigation)
 Plan: 2 of 2 in current phase
@@ -69,6 +81,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07
-Stopped at: Phase 1 plans complete, proceeding to verification
+Last GSD session (parked 3D milestone): 2026-03-07 — Phase 1 plans complete, proceeding to verification.
+Live work since (redesign + shop) is tracked in `git log` and repo-root docs, not here.
 Resume file: None
