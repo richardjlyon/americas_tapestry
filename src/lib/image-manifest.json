@@ -8512,5 +8512,14 @@
     },
     "originalSize": 844728,
     "hash": "e720d168"
+  },
+  "/images/sponsors/kindred-felt-co-logo.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/sponsors/kindred-felt-co-logo-640w-dd17ff28.webp",
+      "1024": "https://images.americastapestry.com/sponsors/kindred-felt-co-logo-1024w-dd17ff28.webp",
+      "1920": "https://images.americastapestry.com/sponsors/kindred-felt-co-logo-1920w-dd17ff28.webp"
+    },
+    "originalSize": 71834,
+    "hash": "dd17ff28"
   }
 }
