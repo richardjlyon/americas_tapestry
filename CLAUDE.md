@@ -1,5 +1,7 @@
 # Claude Code Configuration for Next.js Projects
 
+Project knowledge (site history, shop/licence status, decisions) lives in the owner's private knowledge base — sessions with access should read the "America's Tapestry" project notes there before making non-trivial changes. This file carries only code style rules.
+
 This document provides guidelines and preferences for Claude Code when generating Next.js applications.
 
 IMPORTANT: You may get webpack build errors. Investigate if they are .cache issues and try clearing and rebuiilding to resolve. Do NOT disable features when troubleshooting in an effort to simplify. IMPORTANT
