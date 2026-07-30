@@ -8521,5 +8521,545 @@
     },
     "originalSize": 71834,
     "hash": "dd17ff28"
+  },
+  "/images/branding/americas-tapestry-logo.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/branding/americas-tapestry-logo-640w-b2daadc8.webp",
+      "1024": "https://images.americastapestry.com/branding/americas-tapestry-logo-1024w-b2daadc8.webp",
+      "1920": "https://images.americastapestry.com/branding/americas-tapestry-logo-1920w-b2daadc8.webp"
+    },
+    "originalSize": 209789,
+    "hash": "b2daadc8"
+  },
+  "/images/news/2026-07/01.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/01-640w-1dce15c3.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/01-1024w-1dce15c3.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/01-1920w-1dce15c3.webp"
+    },
+    "originalSize": 2968360,
+    "hash": "1dce15c3"
+  },
+  "/images/news/2026-07/02.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/02-640w-737bfc02.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/02-1024w-737bfc02.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/02-1920w-737bfc02.webp"
+    },
+    "originalSize": 2278852,
+    "hash": "737bfc02"
+  },
+  "/images/news/2026-07/03.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/03-640w-f76825bd.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/03-1024w-f76825bd.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/03-1920w-f76825bd.webp"
+    },
+    "originalSize": 3422406,
+    "hash": "f76825bd"
+  },
+  "/images/news/2026-07/04.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/04-640w-05131b84.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/04-1024w-05131b84.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/04-1920w-05131b84.webp"
+    },
+    "originalSize": 3391788,
+    "hash": "05131b84"
+  },
+  "/images/news/2026-07/05.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/05-640w-faf0fa63.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/05-1024w-faf0fa63.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/05-1920w-faf0fa63.webp"
+    },
+    "originalSize": 3272580,
+    "hash": "faf0fa63"
+  },
+  "/images/news/2026-07/06.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/06-640w-bf5aa578.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/06-1024w-bf5aa578.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/06-1920w-bf5aa578.webp"
+    },
+    "originalSize": 3784095,
+    "hash": "bf5aa578"
+  },
+  "/images/news/2026-07/07.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/07-640w-a717f16e.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/07-1024w-a717f16e.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/07-1920w-a717f16e.webp"
+    },
+    "originalSize": 2863001,
+    "hash": "a717f16e"
+  },
+  "/images/news/2026-07/08.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/08-640w-f2a63728.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/08-1024w-f2a63728.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/08-1920w-f2a63728.webp"
+    },
+    "originalSize": 1241778,
+    "hash": "f2a63728"
+  },
+  "/images/news/2026-07/09.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/09-640w-021dba22.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/09-1024w-021dba22.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/09-1920w-021dba22.webp"
+    },
+    "originalSize": 1641242,
+    "hash": "021dba22"
+  },
+  "/images/news/2026-07/10.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/10-640w-1f12aa9e.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/10-1024w-1f12aa9e.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/10-1920w-1f12aa9e.webp"
+    },
+    "originalSize": 495440,
+    "hash": "1f12aa9e"
+  },
+  "/images/news/2026-07/11.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/11-640w-572f31da.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/11-1024w-572f31da.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/11-1920w-572f31da.webp"
+    },
+    "originalSize": 1913211,
+    "hash": "572f31da"
+  },
+  "/images/news/2026-07/12.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/12-640w-02b73a67.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/12-1024w-02b73a67.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/12-1920w-02b73a67.webp"
+    },
+    "originalSize": 132072,
+    "hash": "02b73a67"
+  },
+  "/images/news/2026-07/13.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/13-640w-fc780be9.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/13-1024w-fc780be9.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/13-1920w-fc780be9.webp"
+    },
+    "originalSize": 16396,
+    "hash": "fc780be9"
+  },
+  "/images/news/2026-07/14.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/14-640w-c83f61b3.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/14-1024w-c83f61b3.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/14-1920w-c83f61b3.webp"
+    },
+    "originalSize": 2171986,
+    "hash": "c83f61b3"
+  },
+  "/images/news/2026-07/15.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/15-640w-779a81b9.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/15-1024w-779a81b9.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/15-1920w-779a81b9.webp"
+    },
+    "originalSize": 43868,
+    "hash": "779a81b9"
+  },
+  "/images/news/2026-07/16.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/16-640w-c4397640.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/16-1024w-c4397640.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/16-1920w-c4397640.webp"
+    },
+    "originalSize": 2778605,
+    "hash": "c4397640"
+  },
+  "/images/news/2026-07/17.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/17-640w-0b45fbe0.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/17-1024w-0b45fbe0.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/17-1920w-0b45fbe0.webp"
+    },
+    "originalSize": 527487,
+    "hash": "0b45fbe0"
+  },
+  "/images/news/2026-07/18.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/18-640w-eb9bbccc.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/18-1024w-eb9bbccc.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/18-1920w-eb9bbccc.webp"
+    },
+    "originalSize": 7430,
+    "hash": "eb9bbccc"
+  },
+  "/images/news/2026-07/19.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/19-640w-1f2c7fb4.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/19-1024w-1f2c7fb4.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/19-1920w-1f2c7fb4.webp"
+    },
+    "originalSize": 2449996,
+    "hash": "1f2c7fb4"
+  },
+  "/images/news/2026-07/20.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-07/20-640w-6f70422c.webp",
+      "1024": "https://images.americastapestry.com/news/2026-07/20-1024w-6f70422c.webp",
+      "1920": "https://images.americastapestry.com/news/2026-07/20-1920w-6f70422c.webp"
+    },
+    "originalSize": 164456,
+    "hash": "6f70422c"
+  },
+  "/images/tapestries/connecticut/connecticut-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/connecticut/connecticut-fineart-gallery-1024w-640w-71c57f0e.webp",
+      "1024": "https://images.americastapestry.com/tapestries/connecticut/connecticut-fineart-gallery-1024w-1024w-71c57f0e.webp",
+      "1920": "https://images.americastapestry.com/tapestries/connecticut/connecticut-fineart-gallery-1024w-1920w-71c57f0e.webp"
+    },
+    "originalSize": 183998,
+    "hash": "71c57f0e"
+  },
+  "/images/tapestries/connecticut/connecticut-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/connecticut/connecticut-fineart-gallery-1920w-640w-35ba8df3.webp",
+      "1024": "https://images.americastapestry.com/tapestries/connecticut/connecticut-fineart-gallery-1920w-1024w-35ba8df3.webp",
+      "1920": "https://images.americastapestry.com/tapestries/connecticut/connecticut-fineart-gallery-1920w-1920w-35ba8df3.webp"
+    },
+    "originalSize": 650756,
+    "hash": "35ba8df3"
+  },
+  "/images/tapestries/connecticut/connecticut-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/connecticut/connecticut-fineart-gallery-640w-640w-3b450d64.webp",
+      "1024": "https://images.americastapestry.com/tapestries/connecticut/connecticut-fineart-gallery-640w-1024w-3b450d64.webp",
+      "1920": "https://images.americastapestry.com/tapestries/connecticut/connecticut-fineart-gallery-640w-1920w-3b450d64.webp"
+    },
+    "originalSize": 76680,
+    "hash": "3b450d64"
+  },
+  "/images/tapestries/delaware/delaware-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/delaware/delaware-fineart-gallery-1024w-640w-a0e87249.webp",
+      "1024": "https://images.americastapestry.com/tapestries/delaware/delaware-fineart-gallery-1024w-1024w-a0e87249.webp",
+      "1920": "https://images.americastapestry.com/tapestries/delaware/delaware-fineart-gallery-1024w-1920w-a0e87249.webp"
+    },
+    "originalSize": 170796,
+    "hash": "a0e87249"
+  },
+  "/images/tapestries/delaware/delaware-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/delaware/delaware-fineart-gallery-1920w-640w-0fb39525.webp",
+      "1024": "https://images.americastapestry.com/tapestries/delaware/delaware-fineart-gallery-1920w-1024w-0fb39525.webp",
+      "1920": "https://images.americastapestry.com/tapestries/delaware/delaware-fineart-gallery-1920w-1920w-0fb39525.webp"
+    },
+    "originalSize": 675950,
+    "hash": "0fb39525"
+  },
+  "/images/tapestries/delaware/delaware-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/delaware/delaware-fineart-gallery-640w-640w-163f032f.webp",
+      "1024": "https://images.americastapestry.com/tapestries/delaware/delaware-fineart-gallery-640w-1024w-163f032f.webp",
+      "1920": "https://images.americastapestry.com/tapestries/delaware/delaware-fineart-gallery-640w-1920w-163f032f.webp"
+    },
+    "originalSize": 63072,
+    "hash": "163f032f"
+  },
+  "/images/tapestries/georgia/georgia-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/georgia/georgia-fineart-gallery-1024w-640w-4ad0288c.webp",
+      "1024": "https://images.americastapestry.com/tapestries/georgia/georgia-fineart-gallery-1024w-1024w-4ad0288c.webp",
+      "1920": "https://images.americastapestry.com/tapestries/georgia/georgia-fineart-gallery-1024w-1920w-4ad0288c.webp"
+    },
+    "originalSize": 172506,
+    "hash": "4ad0288c"
+  },
+  "/images/tapestries/georgia/georgia-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/georgia/georgia-fineart-gallery-1920w-640w-1e624252.webp",
+      "1024": "https://images.americastapestry.com/tapestries/georgia/georgia-fineart-gallery-1920w-1024w-1e624252.webp",
+      "1920": "https://images.americastapestry.com/tapestries/georgia/georgia-fineart-gallery-1920w-1920w-1e624252.webp"
+    },
+    "originalSize": 645712,
+    "hash": "1e624252"
+  },
+  "/images/tapestries/georgia/georgia-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/georgia/georgia-fineart-gallery-640w-640w-f29aa741.webp",
+      "1024": "https://images.americastapestry.com/tapestries/georgia/georgia-fineart-gallery-640w-1024w-f29aa741.webp",
+      "1920": "https://images.americastapestry.com/tapestries/georgia/georgia-fineart-gallery-640w-1920w-f29aa741.webp"
+    },
+    "originalSize": 70316,
+    "hash": "f29aa741"
+  },
+  "/images/tapestries/maryland/maryland-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/maryland/maryland-fineart-gallery-1024w-640w-a4bfcc9c.webp",
+      "1024": "https://images.americastapestry.com/tapestries/maryland/maryland-fineart-gallery-1024w-1024w-a4bfcc9c.webp",
+      "1920": "https://images.americastapestry.com/tapestries/maryland/maryland-fineart-gallery-1024w-1920w-a4bfcc9c.webp"
+    },
+    "originalSize": 170548,
+    "hash": "a4bfcc9c"
+  },
+  "/images/tapestries/maryland/maryland-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/maryland/maryland-fineart-gallery-1920w-640w-60df0c2a.webp",
+      "1024": "https://images.americastapestry.com/tapestries/maryland/maryland-fineart-gallery-1920w-1024w-60df0c2a.webp",
+      "1920": "https://images.americastapestry.com/tapestries/maryland/maryland-fineart-gallery-1920w-1920w-60df0c2a.webp"
+    },
+    "originalSize": 643652,
+    "hash": "60df0c2a"
+  },
+  "/images/tapestries/maryland/maryland-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/maryland/maryland-fineart-gallery-640w-640w-75ec115b.webp",
+      "1024": "https://images.americastapestry.com/tapestries/maryland/maryland-fineart-gallery-640w-1024w-75ec115b.webp",
+      "1920": "https://images.americastapestry.com/tapestries/maryland/maryland-fineart-gallery-640w-1920w-75ec115b.webp"
+    },
+    "originalSize": 70762,
+    "hash": "75ec115b"
+  },
+  "/images/tapestries/massachusetts/massachusetts-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/massachusetts/massachusetts-fineart-gallery-1024w-640w-49775675.webp",
+      "1024": "https://images.americastapestry.com/tapestries/massachusetts/massachusetts-fineart-gallery-1024w-1024w-49775675.webp",
+      "1920": "https://images.americastapestry.com/tapestries/massachusetts/massachusetts-fineart-gallery-1024w-1920w-49775675.webp"
+    },
+    "originalSize": 203302,
+    "hash": "49775675"
+  },
+  "/images/tapestries/massachusetts/massachusetts-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/massachusetts/massachusetts-fineart-gallery-1920w-640w-87774b57.webp",
+      "1024": "https://images.americastapestry.com/tapestries/massachusetts/massachusetts-fineart-gallery-1920w-1024w-87774b57.webp",
+      "1920": "https://images.americastapestry.com/tapestries/massachusetts/massachusetts-fineart-gallery-1920w-1920w-87774b57.webp"
+    },
+    "originalSize": 780742,
+    "hash": "87774b57"
+  },
+  "/images/tapestries/massachusetts/massachusetts-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/massachusetts/massachusetts-fineart-gallery-640w-640w-072a4d83.webp",
+      "1024": "https://images.americastapestry.com/tapestries/massachusetts/massachusetts-fineart-gallery-640w-1024w-072a4d83.webp",
+      "1920": "https://images.americastapestry.com/tapestries/massachusetts/massachusetts-fineart-gallery-640w-1920w-072a4d83.webp"
+    },
+    "originalSize": 79958,
+    "hash": "072a4d83"
+  },
+  "/images/tapestries/new-hampshire/new-hampshire-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/new-hampshire/new-hampshire-fineart-gallery-1024w-640w-c6cb2d39.webp",
+      "1024": "https://images.americastapestry.com/tapestries/new-hampshire/new-hampshire-fineart-gallery-1024w-1024w-c6cb2d39.webp",
+      "1920": "https://images.americastapestry.com/tapestries/new-hampshire/new-hampshire-fineart-gallery-1024w-1920w-c6cb2d39.webp"
+    },
+    "originalSize": 165642,
+    "hash": "c6cb2d39"
+  },
+  "/images/tapestries/new-hampshire/new-hampshire-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/new-hampshire/new-hampshire-fineart-gallery-1920w-640w-a48a3142.webp",
+      "1024": "https://images.americastapestry.com/tapestries/new-hampshire/new-hampshire-fineart-gallery-1920w-1024w-a48a3142.webp",
+      "1920": "https://images.americastapestry.com/tapestries/new-hampshire/new-hampshire-fineart-gallery-1920w-1920w-a48a3142.webp"
+    },
+    "originalSize": 649382,
+    "hash": "a48a3142"
+  },
+  "/images/tapestries/new-hampshire/new-hampshire-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/new-hampshire/new-hampshire-fineart-gallery-640w-640w-49b08a7e.webp",
+      "1024": "https://images.americastapestry.com/tapestries/new-hampshire/new-hampshire-fineart-gallery-640w-1024w-49b08a7e.webp",
+      "1920": "https://images.americastapestry.com/tapestries/new-hampshire/new-hampshire-fineart-gallery-640w-1920w-49b08a7e.webp"
+    },
+    "originalSize": 66772,
+    "hash": "49b08a7e"
+  },
+  "/images/tapestries/new-jersey/new-jersey-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/new-jersey/new-jersey-fineart-gallery-1024w-640w-7bcf138d.webp",
+      "1024": "https://images.americastapestry.com/tapestries/new-jersey/new-jersey-fineart-gallery-1024w-1024w-7bcf138d.webp",
+      "1920": "https://images.americastapestry.com/tapestries/new-jersey/new-jersey-fineart-gallery-1024w-1920w-7bcf138d.webp"
+    },
+    "originalSize": 175364,
+    "hash": "7bcf138d"
+  },
+  "/images/tapestries/new-jersey/new-jersey-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/new-jersey/new-jersey-fineart-gallery-1920w-640w-cb1fc04a.webp",
+      "1024": "https://images.americastapestry.com/tapestries/new-jersey/new-jersey-fineart-gallery-1920w-1024w-cb1fc04a.webp",
+      "1920": "https://images.americastapestry.com/tapestries/new-jersey/new-jersey-fineart-gallery-1920w-1920w-cb1fc04a.webp"
+    },
+    "originalSize": 676374,
+    "hash": "cb1fc04a"
+  },
+  "/images/tapestries/new-jersey/new-jersey-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/new-jersey/new-jersey-fineart-gallery-640w-640w-d58601b5.webp",
+      "1024": "https://images.americastapestry.com/tapestries/new-jersey/new-jersey-fineart-gallery-640w-1024w-d58601b5.webp",
+      "1920": "https://images.americastapestry.com/tapestries/new-jersey/new-jersey-fineart-gallery-640w-1920w-d58601b5.webp"
+    },
+    "originalSize": 67914,
+    "hash": "d58601b5"
+  },
+  "/images/tapestries/new-york/new-york-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/new-york/new-york-fineart-gallery-1024w-640w-78042389.webp",
+      "1024": "https://images.americastapestry.com/tapestries/new-york/new-york-fineart-gallery-1024w-1024w-78042389.webp",
+      "1920": "https://images.americastapestry.com/tapestries/new-york/new-york-fineart-gallery-1024w-1920w-78042389.webp"
+    },
+    "originalSize": 170992,
+    "hash": "78042389"
+  },
+  "/images/tapestries/new-york/new-york-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/new-york/new-york-fineart-gallery-1920w-640w-02df42aa.webp",
+      "1024": "https://images.americastapestry.com/tapestries/new-york/new-york-fineart-gallery-1920w-1024w-02df42aa.webp",
+      "1920": "https://images.americastapestry.com/tapestries/new-york/new-york-fineart-gallery-1920w-1920w-02df42aa.webp"
+    },
+    "originalSize": 608932,
+    "hash": "02df42aa"
+  },
+  "/images/tapestries/new-york/new-york-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/new-york/new-york-fineart-gallery-640w-640w-6899ed92.webp",
+      "1024": "https://images.americastapestry.com/tapestries/new-york/new-york-fineart-gallery-640w-1024w-6899ed92.webp",
+      "1920": "https://images.americastapestry.com/tapestries/new-york/new-york-fineart-gallery-640w-1920w-6899ed92.webp"
+    },
+    "originalSize": 71962,
+    "hash": "6899ed92"
+  },
+  "/images/tapestries/north-carolina/north-carolina-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/north-carolina/north-carolina-fineart-gallery-1024w-640w-dc36374c.webp",
+      "1024": "https://images.americastapestry.com/tapestries/north-carolina/north-carolina-fineart-gallery-1024w-1024w-dc36374c.webp",
+      "1920": "https://images.americastapestry.com/tapestries/north-carolina/north-carolina-fineart-gallery-1024w-1920w-dc36374c.webp"
+    },
+    "originalSize": 163892,
+    "hash": "dc36374c"
+  },
+  "/images/tapestries/north-carolina/north-carolina-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/north-carolina/north-carolina-fineart-gallery-1920w-640w-1a931b81.webp",
+      "1024": "https://images.americastapestry.com/tapestries/north-carolina/north-carolina-fineart-gallery-1920w-1024w-1a931b81.webp",
+      "1920": "https://images.americastapestry.com/tapestries/north-carolina/north-carolina-fineart-gallery-1920w-1920w-1a931b81.webp"
+    },
+    "originalSize": 614112,
+    "hash": "1a931b81"
+  },
+  "/images/tapestries/north-carolina/north-carolina-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/north-carolina/north-carolina-fineart-gallery-640w-640w-665a9fae.webp",
+      "1024": "https://images.americastapestry.com/tapestries/north-carolina/north-carolina-fineart-gallery-640w-1024w-665a9fae.webp",
+      "1920": "https://images.americastapestry.com/tapestries/north-carolina/north-carolina-fineart-gallery-640w-1920w-665a9fae.webp"
+    },
+    "originalSize": 66552,
+    "hash": "665a9fae"
+  },
+  "/images/tapestries/pennsylvania/pennsylvania-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/pennsylvania/pennsylvania-fineart-gallery-1024w-640w-d8bc680f.webp",
+      "1024": "https://images.americastapestry.com/tapestries/pennsylvania/pennsylvania-fineart-gallery-1024w-1024w-d8bc680f.webp",
+      "1920": "https://images.americastapestry.com/tapestries/pennsylvania/pennsylvania-fineart-gallery-1024w-1920w-d8bc680f.webp"
+    },
+    "originalSize": 167878,
+    "hash": "d8bc680f"
+  },
+  "/images/tapestries/pennsylvania/pennsylvania-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/pennsylvania/pennsylvania-fineart-gallery-1920w-640w-dfd5fb26.webp",
+      "1024": "https://images.americastapestry.com/tapestries/pennsylvania/pennsylvania-fineart-gallery-1920w-1024w-dfd5fb26.webp",
+      "1920": "https://images.americastapestry.com/tapestries/pennsylvania/pennsylvania-fineart-gallery-1920w-1920w-dfd5fb26.webp"
+    },
+    "originalSize": 616352,
+    "hash": "dfd5fb26"
+  },
+  "/images/tapestries/pennsylvania/pennsylvania-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/pennsylvania/pennsylvania-fineart-gallery-640w-640w-89ab0148.webp",
+      "1024": "https://images.americastapestry.com/tapestries/pennsylvania/pennsylvania-fineart-gallery-640w-1024w-89ab0148.webp",
+      "1920": "https://images.americastapestry.com/tapestries/pennsylvania/pennsylvania-fineart-gallery-640w-1920w-89ab0148.webp"
+    },
+    "originalSize": 69214,
+    "hash": "89ab0148"
+  },
+  "/images/tapestries/rhode-island/rhode-island-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/rhode-island/rhode-island-fineart-gallery-1024w-640w-598ab019.webp",
+      "1024": "https://images.americastapestry.com/tapestries/rhode-island/rhode-island-fineart-gallery-1024w-1024w-598ab019.webp",
+      "1920": "https://images.americastapestry.com/tapestries/rhode-island/rhode-island-fineart-gallery-1024w-1920w-598ab019.webp"
+    },
+    "originalSize": 161402,
+    "hash": "598ab019"
+  },
+  "/images/tapestries/rhode-island/rhode-island-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/rhode-island/rhode-island-fineart-gallery-1920w-640w-df51048a.webp",
+      "1024": "https://images.americastapestry.com/tapestries/rhode-island/rhode-island-fineart-gallery-1920w-1024w-df51048a.webp",
+      "1920": "https://images.americastapestry.com/tapestries/rhode-island/rhode-island-fineart-gallery-1920w-1920w-df51048a.webp"
+    },
+    "originalSize": 611960,
+    "hash": "df51048a"
+  },
+  "/images/tapestries/rhode-island/rhode-island-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/rhode-island/rhode-island-fineart-gallery-640w-640w-db1344f9.webp",
+      "1024": "https://images.americastapestry.com/tapestries/rhode-island/rhode-island-fineart-gallery-640w-1024w-db1344f9.webp",
+      "1920": "https://images.americastapestry.com/tapestries/rhode-island/rhode-island-fineart-gallery-640w-1920w-db1344f9.webp"
+    },
+    "originalSize": 65358,
+    "hash": "db1344f9"
+  },
+  "/images/tapestries/south-carolina/south-carolina-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/south-carolina/south-carolina-fineart-gallery-1024w-640w-e54b0596.webp",
+      "1024": "https://images.americastapestry.com/tapestries/south-carolina/south-carolina-fineart-gallery-1024w-1024w-e54b0596.webp",
+      "1920": "https://images.americastapestry.com/tapestries/south-carolina/south-carolina-fineart-gallery-1024w-1920w-e54b0596.webp"
+    },
+    "originalSize": 223560,
+    "hash": "e54b0596"
+  },
+  "/images/tapestries/south-carolina/south-carolina-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/south-carolina/south-carolina-fineart-gallery-1920w-640w-4f49375b.webp",
+      "1024": "https://images.americastapestry.com/tapestries/south-carolina/south-carolina-fineart-gallery-1920w-1024w-4f49375b.webp",
+      "1920": "https://images.americastapestry.com/tapestries/south-carolina/south-carolina-fineart-gallery-1920w-1920w-4f49375b.webp"
+    },
+    "originalSize": 784210,
+    "hash": "4f49375b"
+  },
+  "/images/tapestries/south-carolina/south-carolina-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/south-carolina/south-carolina-fineart-gallery-640w-640w-196d9c93.webp",
+      "1024": "https://images.americastapestry.com/tapestries/south-carolina/south-carolina-fineart-gallery-640w-1024w-196d9c93.webp",
+      "1920": "https://images.americastapestry.com/tapestries/south-carolina/south-carolina-fineart-gallery-640w-1920w-196d9c93.webp"
+    },
+    "originalSize": 88024,
+    "hash": "196d9c93"
+  },
+  "/images/tapestries/virginia/virginia-fineart-gallery-1024w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/virginia/virginia-fineart-gallery-1024w-640w-5b2a8b19.webp",
+      "1024": "https://images.americastapestry.com/tapestries/virginia/virginia-fineart-gallery-1024w-1024w-5b2a8b19.webp",
+      "1920": "https://images.americastapestry.com/tapestries/virginia/virginia-fineart-gallery-1024w-1920w-5b2a8b19.webp"
+    },
+    "originalSize": 164436,
+    "hash": "5b2a8b19"
+  },
+  "/images/tapestries/virginia/virginia-fineart-gallery-1920w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/virginia/virginia-fineart-gallery-1920w-640w-7c9654f1.webp",
+      "1024": "https://images.americastapestry.com/tapestries/virginia/virginia-fineart-gallery-1920w-1024w-7c9654f1.webp",
+      "1920": "https://images.americastapestry.com/tapestries/virginia/virginia-fineart-gallery-1920w-1920w-7c9654f1.webp"
+    },
+    "originalSize": 651276,
+    "hash": "7c9654f1"
+  },
+  "/images/tapestries/virginia/virginia-fineart-gallery-640w.webp": {
+    "variants": {
+      "640": "https://images.americastapestry.com/tapestries/virginia/virginia-fineart-gallery-640w-640w-c739cde0.webp",
+      "1024": "https://images.americastapestry.com/tapestries/virginia/virginia-fineart-gallery-640w-1024w-c739cde0.webp",
+      "1920": "https://images.americastapestry.com/tapestries/virginia/virginia-fineart-gallery-640w-1920w-c739cde0.webp"
+    },
+    "originalSize": 68068,
+    "hash": "c739cde0"
   }
 }
