@@ -10,6 +10,12 @@ export interface ExhibitionGalleryImage {
   alt: string;
 }
 
+/** One line of a venue's opening hours, e.g. "Monday – Thursday" / "12pm – 8pm". */
+export interface ExhibitionHours {
+  days: string;
+  time: string;
+}
+
 export interface Exhibition {
   slug: string;
   name: string;
@@ -19,6 +25,7 @@ export interface Exhibition {
   startDate: string;
   endDate: string;
   moreInfo?: string;
+  hours: ExhibitionHours[];
   image: string;
   imagePath: string;
   gallery: ExhibitionGalleryImage[];
@@ -166,8 +173,12 @@ function mapExhibition(
   data: z.infer<typeof exhibitionSchema>,
   item: ContentItem,
 ): Exhibition {
-  // Convert image field to imagePath using /images/exhibitions/
-  const imagePath = `/images/exhibitions/${data['image']}`;
+  // Bare filenames live in /images/exhibitions/; an absolute path is used as
+  // given, so a venue can reuse a photo already published elsewhere on the site
+  // (and already in the R2 manifest) rather than duplicating the file.
+  const imagePath = data['image'].startsWith('/')
+    ? data['image']
+    : `/images/exhibitions/${data['image']}`;
 
   // Gallery photos live in a per-venue subfolder: /images/exhibitions/<slug>/
   const gallery: ExhibitionGalleryImage[] = (data['gallery'] ?? []).map(
@@ -189,6 +200,7 @@ function mapExhibition(
     startDate: data['startDate'] || '',
     endDate: data['endDate'] || '',
     moreInfo: data['moreInfo'],
+    hours: (data['hours'] ?? []).map((h) => ({ days: h.days, time: h.time })),
     image: data['image'] || `${item.slug}.png`,
     imagePath,
     gallery,

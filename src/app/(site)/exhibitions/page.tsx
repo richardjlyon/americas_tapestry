@@ -76,15 +76,6 @@ export default async function ExhibitionsPage() {
           <p className="gallery-lead">
             Additional confirmed venues include{' '}
             <a
-              href="https://www.mdhistory.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-colonial-gold hover:text-colonial-gold/80"
-            >
-              the Maryland Center for History and Culture
-            </a>{' '}
-            and{' '}
-            <a
               href="https://www.atlantahistorycenter.com/"
               target="_blank"
               rel="noopener noreferrer"

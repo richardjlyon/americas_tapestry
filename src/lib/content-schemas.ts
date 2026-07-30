@@ -104,6 +104,9 @@ export const exhibitionSchema = z
     endDate: z.string(),
     image: z.string(),
     moreInfo: z.string().optional(),
+    hours: z
+      .array(z.object({ days: z.string(), time: z.string() }).passthrough())
+      .optional(),
     gallery: z.array(exhibitionGalleryImageSchema).optional(),
   })
   .passthrough();

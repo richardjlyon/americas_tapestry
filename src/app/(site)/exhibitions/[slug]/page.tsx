@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react';
+import { ArrowLeft, Clock, ExternalLink, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
 import {
   getAllExhibitions,
@@ -131,6 +131,28 @@ export default async function ExhibitionVenuePage({
               />
               {exhibition.address}
             </p>
+
+            {exhibition.hours.length > 0 && (
+              <div className="mt-5 flex items-start gap-2">
+                <Clock
+                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-colonial-gold"
+                  aria-hidden="true"
+                />
+                <div>
+                  <p className="text-sm font-medium uppercase tracking-wide text-colonial-parchment/60">
+                    Gallery hours
+                  </p>
+                  <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-colonial-parchment/70">
+                    {exhibition.hours.map((slot) => (
+                      <div key={slot.days} className="contents">
+                        <dt>{slot.days}</dt>
+                        <dd className="tabular-nums">{slot.time}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              </div>
+            )}
 
             <div className="gold-threshold mt-6" />
 
