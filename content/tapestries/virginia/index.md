@@ -29,4 +29,4 @@ The panel depicts Welsh miners who were hired and brought to the colony to reviv
 
 An enslaved man named Aberdeen (upper right) defied his Loyalist master’s orders to join the British and volunteered to enlist with the Continentals. Laboring far from the front line, Aberdeen served in the mines for seven years. After writing a petition to the House of Delegates explaining his service to the Patriot cause, Aberdeen received his freedom in 1783.
 
-It is believed that the shots fired during the last conflict of the war, the Battle of Yorktown, used musket balls derived from the mines of Wythe County.
+It is believed that the shots fired during the last major conflict of the war, the Battle of Yorktown, used musket balls derived from the mines of Wythe County.

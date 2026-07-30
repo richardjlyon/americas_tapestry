@@ -23,7 +23,7 @@ timelineEvents:
     description: "Pennsylvania became the second state to ratify the United States Constitution, approving it by a vote of 46 to 23 as the first large state to join the new federal union."
 ---
 
-During the American Revolution, flags served the dual purpose of both a military tool and a potent political symbol of an emerging national identity. The Pennsylvania panel depicts two flags flown over 300 miles apart in the Keystone State.
+During the American Revolution, flags served the dual purpose of both a military tool and a potent political symbol of an emerging national identity. The Pennsylvania panel depicts two flags flown over 200 miles apart in the Keystone State.
 
 The left side of the panel illustrates Westmoreland County’s “Don’t Tread On Me” Flag. The flag was flown by one of the first military units established west of the Allegheny Mountains and features the native Pennsylvania rattlesnake, one of our country’s first political symbols. The “Proctor Flag,” as it is known today, is the only known Revolutionary-era rattlesnake flag still in existence.
 

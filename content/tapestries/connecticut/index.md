@@ -20,7 +20,7 @@ timelineEvents:
     description: "Connecticut became the fifth state to ratify the United States Constitution, with a vote of 128 to 40 in favor of adoption."
 ---
 
-The Connecticut panel commemorates newspaper publisher Hannah Bunce Watson. She inherited _The Connecticut Courant_ in 1777 at age 27 upon her husband's death, making her one of America's first female publishers and a significant voice for the Patriot cause. After the paper mill necessary for printing the _Courant_ was set afire by Tory sympathizers (lower right), Watson petitioned and received the funds necessary to rebuild the mill. She never missed a publication.
+The Connecticut panel commemorates newspaper publisher Hannah Bunce Watson. She inherited _The Connecticut Courant_ in 1777 at age 28 upon her husband's death, making her one of America's first female publishers and a significant voice for the Patriot cause. After the paper mill necessary for printing the _Courant_ was set afire by Tory sympathizers (lower right), Watson petitioned and received the funds necessary to rebuild the mill. She never missed a publication.
 
 Connecticut played a critical role as the "Provision State" during the Revolutionary War. Salisbury's cannon foundries appear in the panel alongside Canaan's marble quarries, East Haven's saltworks, and farmland that supplied provisions to Continental troops.
 

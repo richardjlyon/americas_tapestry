@@ -29,4 +29,4 @@ At age 13, South Carolina resident John McCord volunteered to serve with Captain
 
 The upper vignette illustrates the Cherokee War of 1776. The Cherokee Tribe launched a series of attacks in coordination with the British army against colonial frontier settlements throughout western South Carolina. This action aimed to quell westward expansion and stifle colonial unrest. However, with the destruction of over 50 Cherokee towns by the end of the year, colonists eliminated the ongoing threat of waging a two-front war.
 
-Captain Francis Salvador, the first Jewish American killed in the Revolution, is embroidered on horseback. Catawba General New River and a frontiersman are featured alongside the Captain. The Catawba Indians allied with the Patriots in 1775, believing an early partnership would secure rights to their ancestral territory.
+Francis Salvador, the first Jewish American killed in the Revolution, is embroidered on horseback. Catawba General New River and a frontiersman are featured alongside the Captain. The Catawba Indians allied with the Patriots in 1775, believing an early partnership would secure rights to their ancestral territory.

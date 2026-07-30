@@ -26,4 +26,4 @@ Significantly outnumbered by British forces, the Maryland 400 held their ground,
 
 The upper right-hand corner spotlights one of the most significant moments in early American political history: General George Washington’s resignation speech at the Annapolis State House, as witnessed by Mary “Molly” Ridout. A letter she wrote to her mother in 1783 vividly captures the emotional gravity of Washington’s farewell, underscoring the profound significance of the first peaceful transfer of power.
 
-Maryland icons such as the Wye Oak, Annapolis State House, and the _Peggy Stewart_ are depicted throughout the panel.
+Maryland icons such as the Wye Oak, Maryland State House, and the _Peggy Stewart_ are depicted throughout the panel.
