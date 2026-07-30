@@ -100,8 +100,11 @@
    ***************************************/
 
   /* Heading styles */
+  /* A page title is always the first thing inside <main>, directly beneath the
+     navy breadcrumb bar, so it owns the gap below that bar. Pages that build
+     their header from SectionHeader get this spacing from PageSection instead. */
   .page-heading {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-center tracking-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 pt-12 md:pt-16 text-center tracking-tight;
   }
 
   .section-title {

@@ -11,8 +11,7 @@ export const metadata = pageMetadata({
 export default function PrivacyPolicyPage() {
   return (
     <>
-      {/* Breathing room between the breadcrumb bar and the title. */}
-      <h1 className="page-heading pt-12 md:pt-16">Privacy Policy</h1>
+      <h1 className="page-heading">Privacy Policy</h1>
 
       <p className="lead-text text-center mb-content-lg">
         We’re committed to protecting your privacy. Here’s what you need to
