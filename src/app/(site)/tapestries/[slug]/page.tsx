@@ -183,8 +183,12 @@ export default async function TapestryPage({
               </h2>
               <ul className="space-y-4">
                 {tapestry.resources.map((resource, index) => {
-                  // Construct the full resource URL using the convention
-                  const resourceUrl = `/docs/tapestry-resources/${tapestry.slug}/${resource.url}`;
+                  // Construct the full resource URL using the convention.
+                  // Absolute URLs pass through — large PDFs are hosted on
+                  // GitHub releases, not the Vercel deployment (bandwidth).
+                  const resourceUrl = resource.url.startsWith('http')
+                    ? resource.url
+                    : `/docs/tapestry-resources/${tapestry.slug}/${resource.url}`;
 
                   return (
                     <li key={index} className="flex items-baseline space-x-3">
