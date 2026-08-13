@@ -9070,5 +9070,158 @@
     },
     "originalSize": 204783,
     "hash": "5c869e86"
+  },
+  "/images/news/2026-08/01.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/01-640w-bf5aa578.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/01-1024w-bf5aa578.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/01-1920w-bf5aa578.webp"
+    },
+    "originalSize": 3784095,
+    "hash": "bf5aa578"
+  },
+  "/images/news/2026-08/02.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/02-640w-432449df.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/02-1024w-432449df.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/02-1920w-432449df.webp"
+    },
+    "originalSize": 2048158,
+    "hash": "432449df"
+  },
+  "/images/news/2026-08/03.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/03-640w-20e4707f.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/03-1024w-20e4707f.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/03-1920w-20e4707f.webp"
+    },
+    "originalSize": 135275,
+    "hash": "20e4707f"
+  },
+  "/images/news/2026-08/04.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/04-640w-021dba22.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/04-1024w-021dba22.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/04-1920w-021dba22.webp"
+    },
+    "originalSize": 1641242,
+    "hash": "021dba22"
+  },
+  "/images/news/2026-08/05.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/05-640w-35dd2343.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/05-1024w-35dd2343.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/05-1920w-35dd2343.webp"
+    },
+    "originalSize": 515900,
+    "hash": "35dd2343"
+  },
+  "/images/news/2026-08/06.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/06-640w-1f12aa9e.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/06-1024w-1f12aa9e.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/06-1920w-1f12aa9e.webp"
+    },
+    "originalSize": 495440,
+    "hash": "1f12aa9e"
+  },
+  "/images/news/2026-08/07.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/07-640w-572f31da.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/07-1024w-572f31da.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/07-1920w-572f31da.webp"
+    },
+    "originalSize": 1913211,
+    "hash": "572f31da"
+  },
+  "/images/news/2026-08/08.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/08-640w-947e6fee.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/08-1024w-947e6fee.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/08-1920w-947e6fee.webp"
+    },
+    "originalSize": 450394,
+    "hash": "947e6fee"
+  },
+  "/images/news/2026-08/09.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/09-640w-b5fd531f.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/09-1024w-b5fd531f.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/09-1920w-b5fd531f.webp"
+    },
+    "originalSize": 147549,
+    "hash": "b5fd531f"
+  },
+  "/images/news/2026-08/10.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/10-640w-5824e95b.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/10-1024w-5824e95b.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/10-1920w-5824e95b.webp"
+    },
+    "originalSize": 575156,
+    "hash": "5824e95b"
+  },
+  "/images/news/2026-08/11.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/11-640w-2d744f6f.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/11-1024w-2d744f6f.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/11-1920w-2d744f6f.webp"
+    },
+    "originalSize": 273577,
+    "hash": "2d744f6f"
+  },
+  "/images/news/2026-08/12.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/12-640w-fc780be9.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/12-1024w-fc780be9.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/12-1920w-fc780be9.webp"
+    },
+    "originalSize": 16396,
+    "hash": "fc780be9"
+  },
+  "/images/news/2026-08/13.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/13-640w-c83f61b3.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/13-1024w-c83f61b3.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/13-1920w-c83f61b3.webp"
+    },
+    "originalSize": 2171986,
+    "hash": "c83f61b3"
+  },
+  "/images/news/2026-08/14.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/14-640w-779a81b9.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/14-1024w-779a81b9.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/14-1920w-779a81b9.webp"
+    },
+    "originalSize": 43868,
+    "hash": "779a81b9"
+  },
+  "/images/news/2026-08/15.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/15-640w-c4397640.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/15-1024w-c4397640.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/15-1920w-c4397640.webp"
+    },
+    "originalSize": 2778605,
+    "hash": "c4397640"
+  },
+  "/images/news/2026-08/16.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/16-640w-0b45fbe0.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/16-1024w-0b45fbe0.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/16-1920w-0b45fbe0.webp"
+    },
+    "originalSize": 527487,
+    "hash": "0b45fbe0"
+  },
+  "/images/news/2026-08/17.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-08/17-640w-5e58b70c.webp",
+      "1024": "https://images.americastapestry.com/news/2026-08/17-1024w-5e58b70c.webp",
+      "1920": "https://images.americastapestry.com/news/2026-08/17-1920w-5e58b70c.webp"
+    },
+    "originalSize": 42497,
+    "hash": "5e58b70c"
   }
 }
