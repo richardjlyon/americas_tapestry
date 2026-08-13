@@ -9061,5 +9061,14 @@
     },
     "originalSize": 68068,
     "hash": "c739cde0"
+  },
+  "/images/news/tapestry-talk/tt-ep11-rhode-island/tt-ep11-rhode-island.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/tapestry-talk/tt-ep11-rhode-island/tt-ep11-rhode-island-640w-5c869e86.webp",
+      "1024": "https://images.americastapestry.com/news/tapestry-talk/tt-ep11-rhode-island/tt-ep11-rhode-island-1024w-5c869e86.webp",
+      "1920": "https://images.americastapestry.com/news/tapestry-talk/tt-ep11-rhode-island/tt-ep11-rhode-island-1920w-5c869e86.webp"
+    },
+    "originalSize": 204783,
+    "hash": "5c869e86"
   }
 }

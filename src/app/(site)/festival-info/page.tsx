@@ -1,5 +1,7 @@
 import { PageSection } from '@/components/ui/page-section';
 import { ReadingContainer } from '@/components/ui/reading-container';
+import { ExhibitionGallery } from '@/components/features/exhibitions/exhibition-gallery';
+import { getExhibitionBySlug } from '@/lib/exhibitions';
 import { pageMetadata } from '@/lib/seo';
 
 export const metadata = {
@@ -18,11 +20,15 @@ export const metadata = {
  * Festival landing page — the destination for the printed QR code handed out
  * at the Festival of Folk Arts (Mesterségek Ünnepe) in Budapest, August 2026.
  *
- * Placeholder content: it introduces the project and the fourteenth-panel
- * collaboration so the QR code has somewhere worthwhile to land. Stitching
- * instructions, diagrams and sign-up details land here as they are written.
+ * The introductory header is bilingual English/Hungarian; the body is in
+ * Hungarian for the festival audience. Stitching instructions, diagrams and
+ * sign-up details land here as they are written.
  */
-export default function FestivalInfoPage() {
+export default async function FestivalInfoPage() {
+  // Reuse the Muscarelle photographs (already published and in the R2
+  // manifest) to show festival visitors the exhibition itself.
+  const muscarelle = await getExhibitionBySlug('muscarelle');
+
   return (
     <div className="bg-colonial-oxblood">
       <header className="container mx-auto max-w-3xl pt-12 pb-8 text-center md:pt-16">
@@ -42,70 +48,89 @@ export default function FestivalInfoPage() {
 
       <PageSection paddingTop="none" background="colonial-oxblood">
         <ReadingContainer width="article" background="paper">
-          <h2>Why we are here</h2>
+          <h2>Miért vagyunk itt?</h2>
 
           <p>
-            America&apos;s Tapestry has been invited to Hungary as part of a
-            cultural envoy programme, representing the fiber arts of the United
-            States at the 35th Festival of Folk Arts — Mesterségek Ünnepe — held
-            in the courtyards of Buda Castle around the 20th of August, with the
-            United States as this year&apos;s Guest of Honour.
+            Az America&apos;s Tapestry kulturális követprogram keretében kapott
+            meghívást Magyarországra, hogy az Egyesült Államok textilművészetét
+            képviselje a 35. Mesterségek Ünnepén, amelyet augusztus 20-a táján
+            rendeznek a Budai Vár udvaraiban — az idei fesztivál díszvendége az
+            Egyesült Államok.
           </p>
 
           <p>
-            The festival brings together master craftspeople from Hungary and
-            around the world for four days of workshops, demonstrations, music
-            and dance, celebrating skills passed down through generations. It is
-            exactly the kind of company we hoped to keep.
+            A fesztivál négy napra összehozza Magyarország és a világ
+            mesterembereit: műhelyfoglalkozások, bemutatók, zene és tánc
+            ünneplik a nemzedékről nemzedékre továbbadott tudást. Éppen ilyen
+            társaságot reméltünk.
           </p>
 
-          <h2>What America&apos;s Tapestry is</h2>
+          <h2>Mi az America&apos;s Tapestry?</h2>
 
           <p>
-            America&apos;s Tapestry is thirteen hand-embroidered panels, one for
-            each of the original American colonies, made for the 250th
-            anniversary of the Declaration of Independence. Nearly 2,000
-            volunteers aged from 5 to 96 stitched them, guided by local
-            directors in each state and by the historical societies who helped
-            shape the imagery. The panels are now touring historic venues across
-            the United States.
+            Az America&apos;s Tapestry tizenhárom kézzel hímzett pannó — egy-egy
+            az eredeti tizenhárom amerikai gyarmat mindegyikéről —, amely a
+            Függetlenségi Nyilatkozat 250. évfordulójára készült. Közel 2000
+            önkéntes hímezte, 5 évestől 96 éves korig, az egyes államok helyi
+            irányítóinak és a képi világ kialakításában segítő történelmi
+            társaságoknak a vezetésével. A pannók jelenleg az Egyesült Államok
+            történelmi helyszínein vándorkiállításon láthatók.
           </p>
 
-          <h2>The fourteenth panel — &ldquo;Join, or Die&rdquo;</h2>
+          <h2>A tizennegyedik pannó — „Join, or Die&rdquo;</h2>
 
           <p>
-            For this exchange we are making a fourteenth panel, and we would
-            like Hungarian hands on it. Its design takes its cue from Benjamin
-            Franklin&apos;s famous 1754 woodcut of a rattlesnake cut into
-            segments beneath the words <em>Join, or Die</em> — an early and
-            enduring emblem of separate communities choosing to act as one.
-          </p>
-
-          <p>
-            The idea is simple. Hungarian stitchers work the segments of the
-            snake alongside us, in whatever hands come forward — experienced
-            embroiderers, curious beginners, families, children. What is stitched
-            here in Budapest becomes a permanent part of the work when it returns
-            home.
-          </p>
-
-          <h2>How to take part</h2>
-
-          <p>
-            Come and find us at the festival. No experience is needed, and
-            materials, threads and guidance are provided at our table. Full
-            instructions — the stitches used, the section diagrams, and how to
-            register your contribution — will be published on this page shortly,
-            in English and in Hungarian.
+            Erre a cserére egy tizennegyedik pannót készítünk, és szeretnénk, ha
+            magyar kezek is dolgoznának rajta. A terv Benjamin Franklin híres,
+            1754-es fametszetét idézi: a darabokra vágott csörgőkígyót a{' '}
+            <em>Join, or Die</em> — „Egyesülj vagy halj meg&rdquo; — felirat
+            alatt; korai és máig érvényes jelképét annak, amikor különálló
+            közösségek úgy döntenek, hogy egyként cselekszenek.
           </p>
 
           <p>
-            <strong>Hamarosan további részletek.</strong> More details are
-            coming soon. Bookmark this page, or scan the code again later, to
-            follow the panel as it takes shape.
+            Az ötlet egyszerű. A kígyó szelvényeit magyar hímzők öltik velünk
+            együtt — bárki, aki kedvet érez: gyakorlott hímzők, kíváncsi
+            kezdők, családok, gyerekek. Ami itt, Budapesten készül, a mű
+            hazatérte után annak maradandó része lesz.
+          </p>
+
+          <h2>Hogyan vehet részt?</h2>
+
+          <p>
+            Keressen minket a fesztiválon! Előzetes gyakorlat nem szükséges; az
+            anyagokat, a fonalakat és az útmutatást asztalunknál biztosítjuk. A
+            teljes útmutató — a használt öltések, a szelvényrajzok és a
+            hozzájárulás regisztrálásának módja — hamarosan megjelenik ezen az
+            oldalon, angolul és magyarul.
+          </p>
+
+          <p>
+            <strong>Hamarosan további részletek.</strong> Mentse el ezt az
+            oldalt, vagy olvassa be később újra a QR-kódot, és kövesse, ahogyan
+            a pannó alakot ölt.
           </p>
         </ReadingContainer>
       </PageSection>
+
+      {/* Photographs of the exhibition, in the same grid used on the
+          Muscarelle venue page. */}
+      {muscarelle && muscarelle.gallery.length > 0 && (
+        <PageSection paddingTop="none" background="colonial-oxblood">
+          <section className="mx-auto w-full max-w-5xl">
+            <span className="eyebrow eyebrow-gold">
+              Muscarelle Museum of Art · Virginia
+            </span>
+            <h2 className="gallery-heading mt-1 text-3xl md:text-4xl">
+              A kiállítás képei
+            </h2>
+            <div className="gold-threshold mt-3" />
+            <div className="mt-8">
+              <ExhibitionGallery images={muscarelle.gallery} />
+            </div>
+          </section>
+        </PageSection>
+      )}
     </div>
   );
 }
