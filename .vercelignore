@@ -7,3 +7,5 @@ scratch/
 .playwright-mcp/
 .superpowers/
 .memsearch/
+# Festival panel master lives in git; site serves the R2 variants (image-manifest.json)
+public/images/festival/*.jpg

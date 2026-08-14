@@ -9223,5 +9223,14 @@
     },
     "originalSize": 42497,
     "hash": "5e58b70c"
+  },
+  "/images/festival/e-pluribus-unum-panel.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/festival/e-pluribus-unum-panel-640w-4ed1343c.webp",
+      "1024": "https://images.americastapestry.com/festival/e-pluribus-unum-panel-1024w-4ed1343c.webp",
+      "1920": "https://images.americastapestry.com/festival/e-pluribus-unum-panel-1920w-4ed1343c.webp"
+    },
+    "originalSize": 203723,
+    "hash": "4ed1343c"
   }
 }

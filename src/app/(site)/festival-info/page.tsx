@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { PageSection } from '@/components/ui/page-section';
 import { ReadingContainer } from '@/components/ui/reading-container';
 import { ExhibitionGallery } from '@/components/features/exhibitions/exhibition-gallery';
@@ -113,6 +114,28 @@ export default async function FestivalInfoPage() {
           </section>
         </PageSection>
       )}
+
+      {/* Frontispiece for the E Pluribus Unum section: the fourteenth panel,
+          presented as a single lit plate on the gallery wall, aligned with the
+          essay column below. Served from R2 via the manifest; the original is
+          excluded from the Vercel deployment (.vercelignore). */}
+      <PageSection paddingTop="none" background="colonial-oxblood">
+        <figure className="mx-auto w-full max-w-3xl">
+          <div className="overflow-hidden bg-white/[0.04] ring-1 ring-white/10 shadow-plate">
+            <Image
+              src="/images/festival/e-pluribus-unum-panel.jpg"
+              alt="Az „E Pluribus Unum” kárpit: kézzel hímzett, feldarabolt kígyó magyar virágmotívumokkal, sötétkék foltvarrott háttéren"
+              width={1280}
+              height={956}
+              sizes="(min-width: 768px) 48rem, 100vw"
+              className="w-full"
+            />
+          </div>
+          <figcaption className="mt-3 text-center font-serif text-sm italic text-colonial-parchment/70">
+            Az „E Pluribus Unum” kárpit
+          </figcaption>
+        </figure>
+      </PageSection>
 
       <PageSection paddingTop="none" background="colonial-oxblood">
         <ReadingContainer width="article" background="paper">
