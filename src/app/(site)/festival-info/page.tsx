@@ -1,7 +1,7 @@
 import { PageSection } from '@/components/ui/page-section';
 import { ReadingContainer } from '@/components/ui/reading-container';
 import { ExhibitionGallery } from '@/components/features/exhibitions/exhibition-gallery';
-import { getAllTapestries } from '@/lib/tapestries';
+import { findGalleryImage, getAllTapestries } from '@/lib/tapestries';
 import { pageMetadata } from '@/lib/seo';
 
 export const metadata = {
@@ -27,11 +27,12 @@ export const metadata = {
  */
 export default async function FestivalInfoPage() {
   // The thirteen panels, shown in the grid format used for the Muscarelle
-  // exhibition photographs (images served from R2 via the manifest loader).
+  // exhibition photographs. Photographs of the stitched panels (the
+  // -fineart-gallery- variants), not the design illustrations.
   const tapestries = await getAllTapestries();
   const panelImages = tapestries
-    .filter((t) => t.imagePath)
-    .map((t) => ({ src: t.imagePath as string, alt: t.title }));
+    .map((t) => ({ src: findGalleryImage(t.slug, '1024w'), alt: t.title }))
+    .filter((img): img is { src: string; alt: string } => Boolean(img.src));
 
   return (
     <div className="bg-colonial-oxblood">
@@ -52,7 +53,7 @@ export default async function FestivalInfoPage() {
 
       <PageSection paddingTop="none" background="colonial-oxblood">
         <ReadingContainer width="article" background="paper">
-          <h2>Amerika Kárpitja</h2>
+          <h2 className="text-2xl md:text-3xl">Amerika Kárpitja</h2>
 
           <p>
             <em>13 gyarmat. 13 történet. 1 nemzet.</em>
@@ -115,7 +116,7 @@ export default async function FestivalInfoPage() {
 
       <PageSection paddingTop="none" background="colonial-oxblood">
         <ReadingContainer width="article" background="paper">
-          <h2>„E Pluribus Unum” Kárpit</h2>
+          <h2 className="text-2xl md:text-3xl">„E Pluribus Unum” Kárpit</h2>
 
           <p>
             A Benjamin Franklin által 1754-ben megalkotott, feldarabolt kígyó
@@ -124,7 +125,7 @@ export default async function FestivalInfoPage() {
             Önökkel.
           </p>
 
-          <h3>Az első amerikai politikai karikatúra 1754</h3>
+          <h3 className="text-xl">Az első amerikai politikai karikatúra 1754</h3>
 
           <p>
             1754. május 9-én Benjamin Franklin saját újságjában egy apró
@@ -145,7 +146,7 @@ export default async function FestivalInfoPage() {
             az amerikai forradalom egyik legismertebb szimbólumává vált.
           </p>
 
-          <h3>Miért éppen egy kígyó?</h3>
+          <h3 className="text-xl">Miért éppen egy kígyó?</h3>
 
           <p>
             A korabeli néphit szerint egy feldarabolt kígyó újra életre kelhet,
@@ -162,7 +163,9 @@ export default async function FestivalInfoPage() {
             elítéltekért, akiket a brit hatóságok a gyarmatokra szállítottak.
           </p>
 
-          <h3>A „Join, or Die” jelmondattól az „E Pluribus Unum”-ig</h3>
+          <h3 className="text-xl">
+            A „Join, or Die” jelmondattól az „E Pluribus Unum”-ig
+          </h3>
 
           <p>
             1776-ban egy bizottság – amelynek Benjamin Franklin is tagja volt –
@@ -185,16 +188,18 @@ export default async function FestivalInfoPage() {
 
       <PageSection paddingTop="none" background="colonial-oxblood">
         <ReadingContainer width="article" background="paper">
-          <h2>Mit készítünk ma – az Ön segítségével?</h2>
+          <h2 className="text-2xl md:text-3xl">
+            Mit készítünk ma – az Ön segítségével?
+          </h2>
 
-          <h3>A kígyó</h3>
+          <h3 className="text-xl">A kígyó</h3>
 
           <p>
             Testét a fesztivál látogatói által készített, hagyományos magyar
             hímzésminták töltik meg.
           </p>
 
-          <h3>A háttér</h3>
+          <h3 className="text-xl">A háttér</h3>
 
           <p>
             A hátteret a látogatók által összevarrt textilcsíkok alkotják,
