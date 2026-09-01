@@ -47,6 +47,42 @@ homepage still depends on build-time filesystem access for anything **not** yet
 on R2 (see the ISR comment in `src/app/(site)/page.tsx` — do not add
 `revalidate` there).
 
+## The bandwidth leak — fixed 2026-09-01, and the method matters
+
+`38948e6` excludes **142.4MB** of R2 duplicates from the Vercel deployment via
+`.vercelignore`. Deployment images fall from 171.7MB to 29.4MB. **Nothing was
+deleted** — the files remain in git and on disk at 165MB, so a wrong answer
+costs a redeploy rather than a file. Verified live: 30 of 30 sampled excluded
+files now 404 at the origin, all 293 pages still 200.
+
+**Two earlier attempts that day tried to derive a safe-to-DELETE set and were
+both confidently wrong.** First from crawled HTML (545 files — broke 74 image
+references), then from content markdown plus `src/` plus the crawl (403 files —
+still included `/images/exhibitions/muscarelle/conversation.webp`, which is
+listed in that venue's own frontmatter gallery). The reason is structural:
+`exhibitions.ts:186`, `tapestries.ts:134`, `sponsors.ts:51`,
+`shop-products.ts:131` and `content-core.ts:261` all build asset paths at render
+time from a slug plus a bare filename, so a required path exists in no file
+anywhere. **No static or crawl-based analysis can establish the set.**
+
+What worked was measurement: build and serve the site twice, once intact and
+once with every candidate moved aside, then diff the image references on all 293
+pages. Zero lost across 292; the 293rd is the homepage, whose hero carousel
+rotates a random slide and swapped one candid for another in both directions.
+
+`scripts/generate-vercelignore.mjs` regenerates the block and **refuses to run
+without measured evidence** — no `--refs`, a missing file, or a refs file with no
+`/images/` paths all exit 2. `--check` makes it a CI gate.
+
+## Deploys are not automatic — check, never assume
+
+A push to this repo usually triggers a Vercel build, but **not reliably**. On
+2026-09-01 three pushes deployed automatically and the fourth did not: the
+commit sat on the remote while production stayed on the previous one. Confirm
+with `vercel ls americas-tapestry --scope richardjlyons-projects` after any
+push, and deploy explicitly with `vercel deploy --prod --yes` if no build
+appears.
+
 ## Watch
 
 - **The merchandise licence is still a draft** (TAPSTRY-1). Seton Hill University owns the name, marks, designs and images; the shop sells goods derived from them. Shop confirmed live (`/shop` returns 200). Thirteen days from an exhibition on their own premises, an unexecuted licence is the largest exposure on this project. Vault: `America's Tapestry — Seton Hill Merchandise Licence (draft)`.
