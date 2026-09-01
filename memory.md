@@ -28,6 +28,6 @@ Audited against live sources 2026-09-01 (`audit-project-memory`). Claims below w
 - **The merchandise licence is still a draft** (TAPSTRY-1). Seton Hill University owns the name, marks, designs and images; the shop sells goods derived from them. Shop confirmed live (`/shop` returns 200). Thirteen days from an exhibition on their own premises, an unexecuted licence is the largest exposure on this project. Vault: `America's Tapestry — Seton Hill Merchandise Licence (draft)`.
 - Vercel bandwidth from image originals — see `VERCEL_USAGE_INVESTIGATION.md` in the repo.
 
-## Sibling project, outside the estate
+## Sibling project
 
-`americas-tapestry-exhibition-products` (TAPSTRY-6) — the printed exhibition materials (display panels, state quote plaques, banners), all **due September 2026**. It pulls its source content from *this* repo, so content gaps here become gaps in the print run. It lives at `~/Resilio/Projects/americas-tapestry-exhibition-items`, has never been migrated into the AIOS estate, and its Gitea repo is `rjl/americas-tapestry-exhibition-products` under a legacy org. Vault: `America's Tapestry — Exhibition Materials`.
+`americas-tapestry-exhibition` (Plane `TAPEX`) — the printed exhibition materials. **Migrated into the estate 2026-09-01**; lives at `~/AIOS/Projects/americas-tapestry-exhibition`. It reads *this* repo's `content/team/` through its `just ingest` recipe, so a content fix here does not reach the print products until that ingest is re-run. Two of its four product families due this month are empty directories (TAPEX-1, TAPEX-2). Vault: `America's Tapestry — Exhibition Materials`.
