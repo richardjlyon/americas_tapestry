@@ -23,6 +23,30 @@ Audited against live sources 2026-09-01 (`audit-project-memory`). Claims below w
 - Repo remote is `github.com/richardjlyon/americas_tapestry` (public, GitHub — not Gitea). AI layer adopted 2026-08-28, not 2026-08-26 as previously recorded; `work-products-index.md` corrected to match 2026-09-01.
 - The old `~/Code/web-americas-tapestry` location was **not parked** as `_migrated-` per the migration skill. It is simply gone.
 
+## The R2 migration has a bite: deleting from public/ breaks filesystem lookups
+
+Images live in two places — committed under `public/images` and served from R2
+via `src/lib/image-manifest.json`. Removing a file from `public/` once it is on
+the CDN is correct for bandwidth **and silently breaks any code that resolves
+images by reading the filesystem.**
+
+This has now cost twice in one day (2026-09-01):
+
+- **Tapestry photographs vanished for nineteen days.** All thirteen mounted-panel
+  photographs went to R2 on 20 June and were deleted from `public/` on 13 August
+  by commit `235abb8`. `listTapestryImageFiles` used `fs.readdirSync` only, so
+  `findPhotoInDirectory` found nothing and every tapestry page fell through to
+  the original design illustration — exactly as designed, and wrong. The
+  photographs were live on R2 the entire time. Fixed in `6717656`: the function
+  now unions the filesystem with the manifest.
+- **The bandwidth deletion could not be verified safe.** See TAPSTRY-9.
+
+Before deleting anything from `public/`, check what resolves it. `tapestries.ts`
+was the only image resolver reading the filesystem, and it is now fixed, but the
+homepage still depends on build-time filesystem access for anything **not** yet
+on R2 (see the ISR comment in `src/app/(site)/page.tsx` — do not add
+`revalidate` there).
+
 ## Watch
 
 - **The merchandise licence is still a draft** (TAPSTRY-1). Seton Hill University owns the name, marks, designs and images; the shop sells goods derived from them. Shop confirmed live (`/shop` returns 200). Thirteen days from an exhibition on their own premises, an unexecuted licence is the largest exposure on this project. Vault: `America's Tapestry — Seton Hill Merchandise Licence (draft)`.

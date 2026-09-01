@@ -20,13 +20,16 @@ export const metadata = pageMetadata({
 // Keep this page fully static — prerendered at build only.
 //
 // Do NOT add `revalidate`/ISR here. The hero and plates resolve their panel
-// images by scanning the filesystem (getAllTapestries → fs.readdirSync of
-// public/images/tapestries/<slug>). On Vercel, public/ assets are served from
-// the CDN and are NOT present in the serverless function bundle, so an ISR
-// regeneration on that runtime finds no files and every panel falls back to the
-// placeholder — which then gets cached. Static build-time rendering has the
-// full filesystem, so images resolve correctly. The exhibition spotlight now
-// advances on deploy rather than daily; redeploy to refresh it.
+// images through getAllTapestries. That resolver reads the R2 manifest as well
+// as the filesystem (fixed 2026-09-01), so a CDN-migrated image now resolves
+// on any runtime — but anything NOT yet on R2 still comes from
+// public/images/tapestries/<slug> via fs.readdirSync. On Vercel, public/
+// assets are served from the CDN and are NOT present in the serverless
+// function bundle, so an ISR regeneration would find no files for those and
+// fall back to the placeholder — which then gets cached. Static build-time
+// rendering has the full filesystem, so everything resolves correctly. The
+// exhibition spotlight advances on deploy rather than daily; redeploy to
+// refresh it.
 
 // Candid photographs — stitchers at work and public tapestry talks — served
 // from R2 via the image manifest (see scripts/optimize-and-upload.mjs). These
