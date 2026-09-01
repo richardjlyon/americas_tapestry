@@ -4,6 +4,7 @@ import type { z } from 'zod';
 import type { ContentItem } from './content-core';
 import { defineContentLoader } from './content-loader';
 import { tapestrySchema } from './content-schemas';
+import imageManifest from './image-manifest.json';
 
 // Define the possible status values as an enum
 export type TapestryStatus =
@@ -67,15 +68,45 @@ function isResponsiveVariant(file: string): boolean {
   return RESPONSIVE_VARIANT_RE.test(file);
 }
 
-/** List files in public/images/tapestries/{slug}, or [] if the dir is absent. */
+/**
+ * List the image filenames available for a tapestry.
+ *
+ * Two sources, unioned. The filesystem is authoritative for anything not yet
+ * migrated to R2, but files ARE removed from public/ once they are on the CDN
+ * (see VERCEL_USAGE_INVESTIGATION.md) — so a filesystem-only read makes a
+ * migrated image invisible to every resolver below.
+ *
+ * That is not hypothetical: the thirteen mounted-tapestry photographs were
+ * uploaded to R2 and then deleted from public/ in commit 235abb8, after which
+ * findPhotoInDirectory silently found nothing and every tapestry page fell
+ * through to the original artwork. The photographs were live on the CDN the
+ * whole time. Caught 2026-09-01.
+ *
+ * The manifest is keyed by the ORIGINAL path (e.g. /images/tapestries/
+ * delaware/delaware-photo.jpg); the loader maps that to the R2 variant at
+ * render time, so returning the original filename here is correct.
+ */
 function listTapestryImageFiles(tapestrySlug: string): string[] {
+  const names = new Set<string>();
+
   const dir = path.join(
     process.cwd(),
     'public/images/tapestries',
     tapestrySlug,
   );
-  if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir);
+  if (fs.existsSync(dir)) {
+    for (const f of fs.readdirSync(dir)) names.add(f);
+  }
+
+  const prefix = `/images/tapestries/${tapestrySlug}/`;
+  for (const key of Object.keys(imageManifest)) {
+    if (key.startsWith(prefix)) {
+      const rest = key.slice(prefix.length);
+      if (!rest.includes('/')) names.add(rest);
+    }
+  }
+
+  return [...names];
 }
 
 /**
