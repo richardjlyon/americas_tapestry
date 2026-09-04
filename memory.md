@@ -11,7 +11,7 @@ Audited against live sources 2026-09-01 (`audit-project-memory`). Claims below w
 
 ## In-flight
 
-- Four uncommitted content changes, present before this session and so attributable to Richard, all verified rendering correctly on the dev server: Seton Hill address `1 Seton Hill Drive` → `201 West Otterman Street`; Georgia stitcher `Dorothy Wise` → `Dorothy Waits`; North Carolina + `Mary W. Cohn`, + `Lauren Thie`; South Carolina + `Monica Debbi`. Held pending the address question above.
+- Four uncommitted content changes, present before this session and so attributable to Richard, all verified rendering correctly on the dev server: Seton Hill address `1 Seton Hill Drive` → `201 West Otterman Street`; Georgia stitcher `Dorothy Wise` → `Dorothy Waits`; North Carolina + `Mary W. Cohn`, + `Lauren Thie`; South Carolina + `Monica Debbi`. Held pending the address question above. **Superseded in part 2026-09-04: Monica Debbi is a Pennsylvania stitcher, not South Carolina — see below.**
 - `next-env.d.ts` and `package-lock.json` also show as modified: both are machine-regenerated (Next 16 moved route types to `.next/dev/`), not authored edits.
 - **The Jest suite is broken and was broken before these changes** (TAPSTRY-4): 47 of 117 tests fail, identically with the changes stashed. Cause is `React.act is not a function` — React 19.2.4 removed `react-dom/test-utils`, which `@testing-library/react` 16.3.2 still reaches for.
 
@@ -22,6 +22,25 @@ Audited against live sources 2026-09-01 (`audit-project-memory`). Claims below w
 - The `add-shop-product` skill named as the operational contract in `AGENTS.md` and in the vault **is not loadable** (TAPSTRY-5). It survives only at `~/AIOS-hermes/archives/parked-skills/add-shop-product` and `archives/claude-system-import/skills/add-shop-product`. Any shop work will fall back to improvisation until it is restored.
 - Repo remote is `github.com/richardjlyon/americas_tapestry` (public, GitHub — not Gitea). AI layer adopted 2026-08-28, not 2026-08-26 as previously recorded; `work-products-index.md` corrected to match 2026-09-01.
 - The old `~/Code/web-americas-tapestry` location was **not parked** as `_migrated-` per the migration skill. It is simply gone.
+
+## A wrong bio sat on a named person's page and nothing caught it
+
+2026-09-04. `content/team/stitchers/monica-debbi/index.md` held Nancy Cook's bio
+verbatim — same 900 characters, same Charlotte NC, same goldwork. It was live on
+a public page under Monica Debbi's name, and it had already been ingested into
+the printed bio binders for the 14 September exhibition. She is also a
+**Pennsylvania** stitcher, not South Carolina, so `src/lib/data/stitchers.json`
+listed her under the wrong panel too. Both fixed (`0ac77c1`, `fc313e2`),
+verified by a full `npm run build` and then by polling the live URL until it
+served the new text. Exhibition binders regenerated via `just ingest`
+(`4ed4f66` there), not hand-edited — the `.typ` files are generated.
+
+**Nothing in this repo detects a duplicated body.** The fault surfaced only
+because the project emailed to complain. A hash of every content body found the
+same shape elsewhere: `barbara-bass`, `bonnie-berman` and `stefan-romero` each
+appear twice with byte-identical text (plausibly intentional — one person, two
+roles), and twenty `stitching-groups` pages have empty bodies that render as a
+bare heading. TAPSTRY-14 proposes the build-time check.
 
 ## The R2 migration has a bite: deleting from public/ breaks filesystem lookups
 
