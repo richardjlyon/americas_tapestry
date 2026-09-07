@@ -11,6 +11,11 @@ Audited against live sources 2026-09-01 (`audit-project-memory`). Claims below w
 
 ## In-flight
 
+- **2026-09-07: only the Seton Hill address change remains uncommitted** (plus
+  machine-regenerated `package-lock.json`). The other three content changes
+  below were committed earlier. The address is still the open question of
+  TAPSTRY-3 — do not commit `1 Seton Hill Drive` → `201 West Otterman Street`
+  until Emily Franicola settles 201 vs 205.
 - Four uncommitted content changes, present before this session and so attributable to Richard, all verified rendering correctly on the dev server: Seton Hill address `1 Seton Hill Drive` → `201 West Otterman Street`; Georgia stitcher `Dorothy Wise` → `Dorothy Waits`; North Carolina + `Mary W. Cohn`, + `Lauren Thie`; South Carolina + `Monica Debbi`. Held pending the address question above. **Superseded in part 2026-09-04: Monica Debbi is a Pennsylvania stitcher, not South Carolina — see below.**
 - `next-env.d.ts` and `package-lock.json` also show as modified: both are machine-regenerated (Next 16 moved route types to `.next/dev/`), not authored edits.
 - **The Jest suite is broken and was broken before these changes** (TAPSTRY-4): 47 of 117 tests fail, identically with the changes stashed. Cause is `React.act is not a function` — React 19.2.4 removed `react-dom/test-utils`, which `@testing-library/react` 16.3.2 still reaches for.
@@ -41,6 +46,45 @@ same shape elsewhere: `barbara-bass`, `bonnie-berman` and `stefan-romero` each
 appear twice with byte-identical text (plausibly intentional — one person, two
 roles), and twenty `stitching-groups` pages have empty bodies that render as a
 bare heading. TAPSTRY-14 proposes the build-time check.
+
+## Budapest festival article and the news photo grid — 2026-09-07
+
+Stefan's email of 1 September built out as
+`/news/americas-tapestry-travels-overseas` (his text verbatim, featured), and
+`/festival-info` — the printed-QR-code landing page — cut to the single
+signpost sentence he asked for, in English and Hungarian. **The ~1,500-word
+bilingual briefing that page carried is gone**; the codes are in circulation,
+so if a Hungarian visitor scans one they now get a stub. Richard approved; the
+old text is in the history if it is wanted back.
+
+Eighteen photographs in a tiled grid at the foot of the article, via a new
+optional `gallery` array in blog frontmatter (`post-gallery.tsx`, reusing
+`ImageLightbox`). Any post can now carry a picture set without placing each
+one in the prose.
+
+**Stefan's text ends "(Photos of the festival in tiles included below)" but no
+photographs were attached to that email** — Richard supplied them separately
+from `~/Resilio/shared-drive/budapest-photos/website images`.
+
+### Prose styles leak into any component rendered inside an article
+
+Three separate faults, one cause. The article body is wrapped in
+`.content-typography` (Tailwind prose), which sets `margin: 1.78em` on every
+`img`, bullets and inline padding on every `li`, and a colonial-navy colour on
+every `p`:
+
+- the grid tiles showed a 42px blank band, because the margin displaced the
+  absolutely-positioned `fill` image inside its frame;
+- **the lightbox showed the same band** — it renders inline in the React tree,
+  so it inherits the article's scope even though it is `position: fixed`;
+- the lightbox caption rendered navy on a dark photograph, because
+  `text-white` sat on the wrapper and worked by *inheritance*, which a direct
+  `p` rule always beats.
+
+Fixes: `not-prose` on both the grid `ul` and the lightbox root; colour moved
+onto the `<p>` itself. **Rule: any component that can appear inside an article
+body needs `not-prose` on its root**, and colour belongs on the element that
+renders the text, not an ancestor.
 
 ## The R2 migration has a bite: deleting from public/ breaks filesystem lookups
 
