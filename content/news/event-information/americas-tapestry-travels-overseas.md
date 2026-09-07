@@ -21,7 +21,7 @@ The "E Pluribus Unum" Tapestry reimagines Benjamin Franklin's famous 1754 "Join,
 
 The 13-letter slogan "E Pluribus Unum" was selected to accompany the rattlesnake as it has been featured on our nation's great seal since its inception in 1782, and symbolizes strength through unity — a message that strongly resonates with our community driven endeavor.
 
-![Benjamin Franklin's "Join, or Die" woodcut, published in the Pennsylvania Gazette on 9 May 1754](/images/news/2026-09/join-or-die-1754.jpg)
+![](/images/news/2026-09/join-or-die-1754.jpg)
 
 *Benjamin Franklin's "Join, Or Die", 1754*
 
