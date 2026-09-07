@@ -55,7 +55,11 @@ export function ImageLightbox({
   return (
     <div
       className={cn(
-        'fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4',
+        // `not-prose`: this modal renders inline in the React tree, so when a
+        // gallery sits inside an article's `.content-typography` scope the
+        // prose styles put a 1.78em margin on the img — a white band across
+        // the head of the lightbox. No effect outside prose.
+        'not-prose fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4',
         'animate-in fade-in duration-200',
       )}
       onClick={onClose}
