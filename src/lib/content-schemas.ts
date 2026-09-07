@@ -201,5 +201,9 @@ export const blogPostSchema = z
     videoUrl: z.string().optional(),
     videoWebm: z.string().optional(),
     draft: z.boolean().optional(),
+    // Optional tiled photo grid rendered at the foot of the article.
+    gallery: z
+      .array(z.object({ src: z.string(), alt: z.string().optional() }))
+      .optional(),
   })
   .passthrough();

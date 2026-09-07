@@ -2,6 +2,7 @@ import { ReadingContainer } from '@/components/ui/reading-container';
 import type { BlogPost } from '@/lib/blog';
 import { blogCategories } from '@/lib/blog';
 import { MarkdownContent } from './markdown-content';
+import { PostGallery } from './post-gallery';
 import { PostMetadata } from './post-metadata';
 
 interface BlogPostContentProps {
@@ -33,6 +34,12 @@ export function BlogPostContent({ post, contentHtml }: BlogPostContentProps) {
             className="mb-3"
           />
           <MarkdownContent html={contentHtml} />
+
+          {post.gallery && post.gallery.length > 0 && (
+            <div className="mt-8">
+              <PostGallery images={post.gallery} />
+            </div>
+          )}
         </div>
 
         {/* Video section - only show if videoUrl exists */}

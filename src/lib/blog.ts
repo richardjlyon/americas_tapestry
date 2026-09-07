@@ -22,6 +22,9 @@ export interface BlogPost {
   videoUrl?: string | undefined; // MP4 video URL (backward compatible)
   videoWebm?: string | undefined; // WebM video URL (optional, new)
   draft?: boolean; // Optional draft flag to hide posts
+  // Tiled photo grid shown at the foot of the article, for posts that carry a
+  // set of pictures rather than a few placed in the prose.
+  gallery?: { src: string; alt: string }[] | undefined;
 }
 
 // Update the BlogCategory type to include "videos"
@@ -206,6 +209,14 @@ export async function getBlogPostBySlug(
           videoUrl: data['videoUrl'] || undefined,
           videoWebm: data['videoWebm'] || undefined,
           draft: data['draft'] || false,
+          gallery: Array.isArray(data['gallery'])
+            ? data['gallery'].map(
+                (g: { src: string; alt?: string | undefined }, i: number) => ({
+                  src: g.src,
+                  alt: g.alt || `Festival photograph ${i + 1}`,
+                }),
+              )
+            : undefined,
         };
 
         // Don't return draft posts
