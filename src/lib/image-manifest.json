@@ -9232,5 +9232,23 @@
     },
     "originalSize": 203723,
     "hash": "4ed1343c"
+  },
+  "/images/news/2026-09/e-pluribus-unum-panel.png": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-09/e-pluribus-unum-panel-640w-8e9bc9f9.webp",
+      "1024": "https://images.americastapestry.com/news/2026-09/e-pluribus-unum-panel-1024w-8e9bc9f9.webp",
+      "1920": "https://images.americastapestry.com/news/2026-09/e-pluribus-unum-panel-1920w-8e9bc9f9.webp"
+    },
+    "originalSize": 5762765,
+    "hash": "8e9bc9f9"
+  },
+  "/images/news/2026-09/join-or-die-1754.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-09/join-or-die-1754-640w-76ae3aa2.webp",
+      "1024": "https://images.americastapestry.com/news/2026-09/join-or-die-1754-1024w-76ae3aa2.webp",
+      "1920": "https://images.americastapestry.com/news/2026-09/join-or-die-1754-1920w-76ae3aa2.webp"
+    },
+    "originalSize": 37832,
+    "hash": "76ae3aa2"
   }
 }
