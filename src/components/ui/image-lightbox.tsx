@@ -115,8 +115,12 @@ export function ImageLightbox({
             priority
           />
           {title && (
-            <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
-              <p className="text-lg font-medium">{title}</p>
+            <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4">
+              {/* The colour must sit on the <p>, not the wrapper: a global
+                  `p` rule sets colonial navy, and a direct rule always beats
+                  an inherited one — which left the caption dark navy on a
+                  dark photograph. */}
+              <p className="text-lg font-medium text-white">{title}</p>
             </div>
           )}
         </div>
