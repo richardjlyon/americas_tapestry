@@ -34,7 +34,12 @@ export function PostGallery({ images }: { images: PostGalleryImage[] }) {
 
   return (
     <>
-      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4">
+      {/* `not-prose` is required: this grid renders inside the article's
+          `.content-typography` scope, which sets a 1.78em margin on every img
+          and bullets plus padding on every li. That margin shifts the
+          absolutely-positioned fill image down inside its frame, leaving a
+          blank band at the head of each tile. */}
+      <ul className="not-prose grid list-none grid-cols-2 gap-3 p-0 sm:grid-cols-3 md:gap-4">
         {images.map((photo, index) => (
           <li key={photo.src}>
             <button
