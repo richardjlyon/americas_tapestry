@@ -37,7 +37,7 @@
 ## Later the same day (event log, read via Admin API)
 
 - 13:29 UTC: **Lulu Direct app** (so it is installed) published the old
-  product. 13:44: Richard deleted it in Shopify admin. **The store now has no
+  product. 13:44: Stefan deleted it in Shopify admin. **The store now has no
   book product**, and the Gelato book listing is gone.
 - Admin token copied to 1Password `Automation › shopify-admin-api`.
 - Site code on branch `feat/book-on-sale-lulu` (`02559f5`, not pushed): buy
@@ -45,6 +45,16 @@
   tagged `book` appears in the America's Tapestry collection. Specs now 62 pp,
   8.5 × 11 in. Type-check and `npm run build:clean` pass; not yet render-tested
   with a live book, because none exists.
+
+## New product (13:49 UTC)
+
+- `15395985490150` "America's Tapestry Companion Book (Hardcover)", $45,
+  created **by Stefan in Shopify admin, not by Lulu Direct**, then set to
+  Draft and removed from every channel at 13:50. No Lulu Direct events on it,
+  so no Lulu link is visible from Shopify.
+- 14:5x: I added tags `americas-tapestry` + `book`, the America's Tapestry
+  collection, and set inventory to untracked (it was tracked at 0 = sold out).
+  Still Draft, unpublished. Weight 0 lb and no SKU left for Lulu Direct.
 
 ## Plan
 
