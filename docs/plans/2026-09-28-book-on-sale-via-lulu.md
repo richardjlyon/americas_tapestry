@@ -75,6 +75,15 @@
   at 0fzpk4-z1.myshopify.com, where orders would print; (3) merge
   `feat/book-on-sale-lulu` to `master` — that publishes the site.
 
+## Re-checked 28 Sep ~14:40 UTC (after Stefan's shipping changes)
+
+- Book weight now 1.1 lb (set 14:33). Stock untracked, keeps selling.
+- Checkout, fresh basket each time: **US (CA, PA, AK, HI): one option,
+  "Standard, 11–14 business days, $6.98"**. Canada, UK, Australia, Germany:
+  "Shipping not available" (book-only; the coloring book still quotes).
+- Lulu's cost to ship 1 copy by Mail to the US: £4.60 (≈ $6.2), so $6.98
+  roughly covers it.
+
 ## Plan
 
 ### 1. Lulu (Richard, in Lulu's web app)
