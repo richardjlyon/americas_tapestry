@@ -9,6 +9,12 @@ Audited against live sources 2026-09-01 (`audit-project-memory`). Claims below w
 - **Exhibition opens 14 September 2026, Harlan Gallery, Seton Hill Arts Center, Greensburg PA**, running to 27 September. Gallery talk **19 September, 2pm**, given by the two Pennsylvania co-directors (Three Rivers Chapter); registration at `alumni.setonhill.edu/e/gallery-talk/`. Extended hours during the run: Mon–Thu 12–8pm, Fri 12–4, Sat 1–4, Sun 2–5. Source: Seton Hill Art Galleries page, read 2026-09-01. The talk, the registration link and the extended hours are **not yet on our exhibitions page**.
 - **Street number unresolved (TAPSTRY-3).** Seton Hill contradict themselves: their galleries page (the one carrying our listing) says **201** W. Otterman Street; their arts-venue page and the Harlan Gallery Facebook page say **205**; the gallery Instagram still says 1 Seton Hill Drive, which is the main campus, not the Arts Center. Settle with Emily Franicola, Gallery Director, efranicola@setonhill.edu, before 14 September.
 
+## Shop: the book (2026-09-28)
+
+- **On sale via Lulu Direct, US-only, live on americastapestry.com.** Shopify product `15395985490150`, $45, Standard shipping $6.98. Buy buttons follow Shopify (`02559f5`).
+- No paid test order (Richard's call). First real order is the test: it must appear in Lulu › Channel Orders. Tracked as TAPSTRY-17.
+- Shopify Admin token: 1Password `Automation › shopify-admin-api`. Vercel is logged in on VM 106 (session login); Vercel production deploys from GitHub `master`.
+
 ## In-flight
 
 - **2026-09-07: only the Seton Hill address change remains uncommitted** (plus
