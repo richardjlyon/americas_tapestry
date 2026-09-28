@@ -89,6 +89,11 @@ export default async function ShopPage() {
   const nmHero = nmImages[1] ?? nmImages[0] ?? null;
   const nmThumbs = nmImages.filter((img) => img !== nmHero).slice(0, 2);
 
+  // The hardcover book (Lulu Direct). Its card flips from "Coming soon" to
+  // on-sale as soon as Shopify reports a tagged, purchasable product.
+  const book = products.find((p) => p.tags.includes("book"));
+  const bookOnSale = Boolean(book?.availableForSale && book.variantId);
+
   return (
     <>
       {/* Hero — the collection, generically (book promotion parked until launch) */}
@@ -378,7 +383,7 @@ export default async function ShopPage() {
         </PageSection>
       )}
 
-      {/* Coming soon — the book and the 2027 wall calendar */}
+      {/* The book (on sale once live in Shopify) and the 2027 wall calendar */}
       <PageSection background="vintage-paper" spacing="spacious">
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
           <div className="rounded-lg border border-dashed border-colonial-gold/60 bg-white/60 p-10 text-center">
@@ -387,7 +392,9 @@ export default async function ShopPage() {
               aria-hidden="true"
             />
             <span className="mt-4 inline-block rounded-full bg-colonial-gold/20 px-3 py-1 font-sans text-xs font-semibold uppercase tracking-[0.15em] text-colonial-burgundy">
-              Coming soon
+              {bookOnSale
+                ? `Now available — $${Number(book!.price.amount).toFixed(0)}`
+                : "Coming soon"}
             </span>
             <h2 className="section-title mt-4 text-2xl">The Book</h2>
             <p className="mx-auto mt-3 max-w-lg font-serif text-lg text-colonial-navy/75">
@@ -398,7 +405,7 @@ export default async function ShopPage() {
               href="/shop/book"
               className="mt-4 inline-flex items-center font-medium text-colonial-burgundy transition-colors hover:text-colonial-burgundy/80"
             >
-              Preview the book
+              {bookOnSale ? "See the book" : "Preview the book"}
               <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
             </Link>
           </div>

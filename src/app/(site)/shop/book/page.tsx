@@ -18,15 +18,15 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "The Making of America’s Tapestry — the Book",
   description:
-    "The hardcover keepsake behind the thirteen hand-embroidered colony panels: every artwork in full color, the history each one tells, and the nearly two thousand stitchers who made it. Hardback, 58 pages, 8.3 × 11 in.",
+    "The hardcover keepsake behind the thirteen hand-embroidered colony panels: every artwork in full color, the history each one tells, and the nearly two thousand stitchers who made it. Hardback, 62 pages, 8.5 × 11 in.",
   path: "/shop/book",
 });
 
 /** Physical facts a buyer wants before spending $45. */
 const SPECS = [
   { label: "Format", value: "Hardback" },
-  { label: "Pages", value: "58" },
-  { label: "Size", value: "8.3 × 11 in" },
+  { label: "Pages", value: "62" },
+  { label: "Size", value: "8.5 × 11 in" },
 ];
 
 /** Real interior spreads — the "look inside". */
@@ -102,11 +102,9 @@ export default async function BookPage() {
   const products = await getAllProducts();
   const book = products.find((p) => p.tags.includes("book")) ?? null;
   const href = checkoutUrl(book?.variantId ?? null);
-  // BOOK LAUNCH PARKED (per Richard, 2026-07-06): the page stays browsable
-  // but the book is not yet on sale — show "Coming soon" and never link to
-  // Shopify checkout. Restore the availability check at launch:
-  //   const buyable = Boolean(href && book?.availableForSale);
-  const buyable = false;
+  // On sale via Lulu Direct (2026-09-28). The button shows only while
+  // Shopify reports a tagged, purchasable book; otherwise "Coming soon".
+  const buyable = Boolean(href && book?.availableForSale);
   const price = book
     ? new Intl.NumberFormat("en-US", {
         style: "currency",
@@ -206,7 +204,7 @@ export default async function BookPage() {
             Look inside
           </span>
           <h2 className="mt-3 font-serif text-3xl text-colonial-navy md:text-4xl">
-            Fifty-eight pages, cover to cover
+            Sixty-two pages, cover to cover
           </h2>
           <p className="mx-auto mt-4 max-w-2xl font-serif text-lg text-colonial-navy/75">
             Full-color panels, the stories behind them, and the hands that made
@@ -275,13 +273,13 @@ export default async function BookPage() {
             Bring the whole story home
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-serif text-lg text-colonial-parchment/80">
-            A hardback keepsake of America&rsquo;s 250th — 58 pages, 8.3 × 11
+            A hardback keepsake of America&rsquo;s 250th — 62 pages, 8.5 × 11
             inches, and every colony inside.
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
             <Ruler className="h-5 w-5 text-colonial-gold" aria-hidden="true" />
             <span className="font-sans text-sm uppercase tracking-[0.14em] text-colonial-parchment/70">
-              Hardback · 58 pages · 8.3 × 11 in
+              Hardback · 62 pages · 8.5 × 11 in
             </span>
           </div>
           <div className="mt-8 flex justify-center">

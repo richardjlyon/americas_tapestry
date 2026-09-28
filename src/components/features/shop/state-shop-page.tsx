@@ -30,6 +30,10 @@ export async function StateShopPage({ slug }: { slug: string }) {
       null,
   })).filter((e) => e.item !== null);
 
+  // The all-states book: on sale once Shopify reports it purchasable.
+  const book = products.find((p) => p.tags.includes("book"));
+  const bookOnSale = Boolean(book?.availableForSale && book.variantId);
+
   return (
     <PageSection background="colonial-navy" spacing="spacious">
       <Link
@@ -71,8 +75,7 @@ export async function StateShopPage({ slug }: { slug: string }) {
           );
         })}
 
-        {/* The book, back on the wall as a coming-soon teaser — checkout
-            stays disabled until launch; the card previews /shop/book. */}
+        {/* The book — links to /shop/book, which carries the buy button. */}
         <Link
           href="/shop/book"
           className="group block rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
@@ -93,10 +96,12 @@ export async function StateShopPage({ slug }: { slug: string }) {
               The Book
             </h3>
             <p className="mt-1 font-sans text-xs uppercase tracking-[0.15em] text-colonial-parchment/60">
-              Coming soon
+              {bookOnSale
+                ? `$${Number(book!.price.amount).toFixed(0)}`
+                : "Coming soon"}
               <span className="mx-2 text-colonial-parchment/30">·</span>
               <span className="inline-flex items-center gap-1 text-colonial-gold">
-                Preview
+                {bookOnSale ? "Buy" : "Preview"}
                 <ArrowRight
                   className="h-3 w-3 transition-transform group-hover:translate-x-0.5"
                   aria-hidden="true"
