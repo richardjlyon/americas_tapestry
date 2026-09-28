@@ -56,6 +56,25 @@
   collection, and set inventory to untracked (it was tracked at 0 = sold out).
   Still Draft, unpublished. Weight 0 lb and no SKU left for Lulu Direct.
 
+## Tested 28 Sep (not live)
+
+- Lulu Direct activated the product 13:59; it is linked (Lulu project
+  `je2jwjn`, print cost $24.30). Shopify shows it Active on all channels.
+- Preview site (Vercel preview, not production):
+  `americas-tapestry-30dwgjdi5-richardjlyons-projects.vercel.app` —
+  /shop/book shows $45, "Buy the book", 62 pages; /shop shows "Now available
+  — $45"; /shop/pennsylvania shows the book at $45. The button opens Shopify
+  checkout with the book in the basket.
+- Checkout reaches payment. **Shipping is Shopify's calculated rates on a
+  0 lb weight** — US $4.39–$47.63, Canada CAD 27–89, UK/Australia £17–68.
+  These are not Lulu's costs. Lulu's own shipping (1 copy): US £4.60 (mail,
+  12–14 days) to £28.34 (express); Canada £9.38–33.08; UK £3.94–8.94;
+  Australia £10.82–45.56. The shipping-rate decision is Richard's.
+- The admin token cannot read shipping settings (no `read_shipping`).
+- **Before release:** (1) set shipping rates; (2) the book is ALREADY buyable
+  at 0fzpk4-z1.myshopify.com, where orders would print; (3) merge
+  `feat/book-on-sale-lulu` to `master` — that publishes the site.
+
 ## Plan
 
 ### 1. Lulu (Richard, in Lulu's web app)
