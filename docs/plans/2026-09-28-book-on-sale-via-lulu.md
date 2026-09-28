@@ -34,6 +34,18 @@
 - The token lacks `read_shipping` and cannot read installed apps. It is in the
   Personal vault, which the VM's service account cannot see.
 
+## Later the same day (event log, read via Admin API)
+
+- 13:29 UTC: **Lulu Direct app** (so it is installed) published the old
+  product. 13:44: Richard deleted it in Shopify admin. **The store now has no
+  book product**, and the Gelato book listing is gone.
+- Admin token copied to 1Password `Automation › shopify-admin-api`.
+- Site code on branch `feat/book-on-sale-lulu` (`02559f5`, not pushed): buy
+  buttons follow Shopify, so the book goes on sale when a purchasable product
+  tagged `book` appears in the America's Tapestry collection. Specs now 62 pp,
+  8.5 × 11 in. Type-check and `npm run build:clean` pass; not yet render-tested
+  with a live book, because none exists.
+
 ## Plan
 
 ### 1. Lulu (Richard, in Lulu's web app)
