@@ -172,6 +172,26 @@ paths — chiefly `/images/team/stitchers/*.jpg` and `state-directors/*.jpg` —
 (`git log --all` on them is empty). Team pages request portraits that were never
 committed. Unrelated to bandwidth; worth a TAPSTRY item.
 
+## Vercel warnings since September are requests and storage, not bandwidth — 2026-10-01
+
+Team usage 6 Sep – 1 Oct, read from `vercel.com/api/v2/usage?type=requests`
+(the CLI `usage`/`metrics` commands need a paid plan; this endpoint does not):
+**13.4 GB transfer of 100 GB**, but **1.9M edge requests of 1M**. The September
+emails are for Edge Requests (9, 23 Sep) and Deployment Storage 10 GB (7, 21 Sep).
+Requests by project: subsidy-clock 1.33M, americas-tapestry 0.44M, gb-grid-margin
+0.05M. Storage: 148 deployments kept across 15 projects.
+
+Asset sweep of this site: nothing leaks. `.vercelignore --check` clean against a
+fresh crawl (611 files excluded, 18.1 MB deployed); old leak URLs 404.
+Per visit, though: home page = 78 requests, of which **48 are Next.js link
+prefetches**; a tapestry page = 88, incl. 45 prefetches and 11 image 404s
+(stitcher portraits never committed; `/images/ui/needle.png`).
+
+Request logs: `vercel.com/api/logs/request-logs?projectId=…&ownerId=<team>&startDate=&endDate=&page=`
+with the CLI token (`~/.local/share/com.vercel.cli/auth.json`) — one hour retention,
+returns `hasMoreRows`; split windows rather than paging (paging repeats rows).
+It returns nothing for subsidy-clock, so that project's requests are unexplained.
+
 ## Deploys are not automatic — check, never assume
 
 A push to this repo usually triggers a Vercel build, but **not reliably**. On
