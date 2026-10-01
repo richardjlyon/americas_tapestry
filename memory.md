@@ -190,7 +190,8 @@ prefetches**; a tapestry page = 88, incl. 45 prefetches and 11 image 404s
 Request logs: `vercel.com/api/logs/request-logs?projectId=…&ownerId=<team>&startDate=&endDate=&page=`
 with the CLI token (`~/.local/share/com.vercel.cli/auth.json`) — one hour retention,
 returns `hasMoreRows`; split windows rather than paging (paging repeats rows).
-It returns nothing for subsidy-clock, so that project's requests are unexplained.
+It returns nothing for subsidy-clock; that project's requests are its embed widget
+on dailysceptic.org — see `subsidy-clock/memory.md`.
 
 ## Deploys are not automatic — check, never assume
 
