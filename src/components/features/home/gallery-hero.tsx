@@ -2,11 +2,16 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { HeroSlider, type SlideImage } from '@/components/features/home/hero-slider';
-import { formatDateRange } from '@/lib/exhibitions';
-import type { Exhibition } from '@/lib/exhibitions';
+import {
+  HeroSpotlight,
+  type TourStop,
+} from '@/components/features/home/hero-spotlight';
 
 interface GalleryHeroProps {
-  spotlight: { kind: 'current' | 'upcoming'; exhibition: Exhibition } | null;
+  /** Every tour venue; the hero picks the one on view now, else the next. */
+  stops: TourStop[];
+  /** Build time (ISO), the hero's starting clock before the browser's. */
+  builtAt: string;
   /** Full-bleed sliding backdrop: fine-art tapestry photographs. */
   backdrops: SlideImage[];
 }
@@ -18,13 +23,7 @@ interface GalleryHeroProps {
  * the text legible whatever image is behind it. Fills the first viewport
  * (min-h-svh); carries the live exhibition spotlight.
  */
-export function GalleryHero({ spotlight, backdrops }: GalleryHeroProps) {
-  const spotlightLine = spotlight
-    ? spotlight.kind === 'current'
-      ? `On view now · ${spotlight.exhibition.name}, ${spotlight.exhibition.state}`
-      : `Opening soon · ${spotlight.exhibition.name}, ${spotlight.exhibition.state}`
-    : 'The Exhibition Tour · 2026–2028';
-
+export function GalleryHero({ stops, builtAt, backdrops }: GalleryHeroProps) {
   return (
     <section className="relative flex min-h-svh items-center overflow-hidden bg-colonial-navy">
       {backdrops.length > 0 && <HeroSlider images={backdrops} />}
@@ -37,15 +36,7 @@ export function GalleryHero({ spotlight, backdrops }: GalleryHeroProps) {
 
       <div className="pointer-events-none container relative z-10 mx-auto py-24">
         <div className="pointer-events-auto mx-auto max-w-3xl bg-colonial-navy/70 p-8 text-center shadow-plate ring-1 ring-white/10 backdrop-blur-md md:p-10">
-          <span className="eyebrow eyebrow-gold">{spotlightLine}</span>
-          {spotlight && (
-            <p className="mt-1 font-serif text-colonial-parchment/70">
-              {formatDateRange(
-                spotlight.exhibition.startDate,
-                spotlight.exhibition.endDate,
-              )}
-            </p>
-          )}
+          <HeroSpotlight stops={stops} builtAt={builtAt} />
           <h1 className="gallery-heading mx-auto mt-4 text-5xl md:text-6xl">
             America&rsquo;s Tapestry
           </h1>

@@ -7,7 +7,7 @@ import { TapestryPlate } from "@/components/features/home/tapestry-plate";
 import { LatestNewsSection } from "@/components/features/home/latest-news-section";
 import { GetInTouchSection } from "@/components/features/home/get-in-touch-section";
 import { getAllTapestries } from "@/lib/tapestries";
-import { getAllExhibitions, getExhibitionSpotlight } from "@/lib/exhibitions";
+import { getAllExhibitions } from "@/lib/exhibitions";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -28,8 +28,8 @@ export const metadata = pageMetadata({
 // function bundle, so an ISR regeneration would find no files for those and
 // fall back to the placeholder — which then gets cached. Static build-time
 // rendering has the full filesystem, so everything resolves correctly. The
-// exhibition spotlight advances on deploy rather than daily; redeploy to
-// refresh it.
+// hero's "Now showing / Coming soon" line is recomputed in the visitor's
+// browser (HeroSpotlight), so it changes on the right day without a redeploy.
 
 // Candid photographs — stitchers at work and public tapestry talks — served
 // from R2 via the image manifest (see scripts/optimize-and-upload.mjs). These
@@ -86,7 +86,14 @@ export default async function Home() {
     getAllTapestries(),
     getAllExhibitions(),
   ]);
-  const spotlight = getExhibitionSpotlight(exhibitions);
+  // Only what the hero's client-side spotlight needs crosses to the browser.
+  const tourStops = exhibitions.map(({ name, state, startDate, endDate }) => ({
+    name,
+    state,
+    startDate,
+    endDate,
+  }));
+  const builtAt = new Date().toISOString();
 
   const withImages = tapestries.filter((t) => t.imagePath || t.thumbnail);
   // Deliberate: server-only shuffle re-picks order at each build.
@@ -101,8 +108,8 @@ export default async function Home() {
     src: t.imagePath || t.thumbnail,
     alt: `The ${t.title} tapestry panel`,
   }));
-  // eslint-disable-next-line react-hooks/purity
   const heroBackdrops = [...panelBackdrops, ...HERO_CANDIDS].sort(
+    // eslint-disable-next-line react-hooks/purity
     () => 0.5 - Math.random(),
   );
 
@@ -112,7 +119,11 @@ export default async function Home() {
 
   return (
     <div className="bg-colonial-navy">
-      <GalleryHero spotlight={spotlight} backdrops={heroBackdrops} />
+      <GalleryHero
+        stops={tourStops}
+        builtAt={builtAt}
+        backdrops={heroBackdrops}
+      />
 
       {/* What the project is — first thing after the hero, per Richard:
           a first-time visitor must immediately understand the site. */}

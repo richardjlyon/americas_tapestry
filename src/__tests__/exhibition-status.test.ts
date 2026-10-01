@@ -118,3 +118,17 @@ describe('getExhibitionSpotlight', () => {
     ).toBeNull();
   });
 });
+
+describe('Passaic County run (24 October 2026 – 31 January 2027)', () => {
+  const passaic = ex('24 October 2026', '31 January 2027');
+
+  it('is still coming on 23 October and showing from 24 October', () => {
+    expect(getExhibitionStatus(passaic, new Date('2026-10-23T18:00:00'))).toBe('upcoming');
+    expect(getExhibitionStatus(passaic, new Date('2026-10-24T09:00:00'))).toBe('current');
+  });
+
+  it('shows through 31 January 2027 and closes on 1 February', () => {
+    expect(getExhibitionStatus(passaic, new Date('2027-01-31T21:00:00'))).toBe('current');
+    expect(getExhibitionStatus(passaic, new Date('2027-02-01T08:00:00'))).toBe('past');
+  });
+});
