@@ -10,6 +10,9 @@ import { getImageSizes } from '@/lib/image-utils';
 import { StitchingGroupPlaceholder } from './stitching-group-placeholder';
 import { ContentCard } from '@/components/ui/content-card';
 import { ImageLightbox } from '@/components/ui/image-lightbox';
+import { isImageMigrated } from '@/lib/cloudflare-loader';
+
+const USER_PLACEHOLDER = '/images/placeholders/placeholder-user.jpg';
 
 // Format a member's state(s) for inline display. A stitcher may contribute to
 // several panels, in which case `state` is an array; join it readably.
@@ -50,7 +53,7 @@ export function MemberCard({
   // Single source of truth: index 0 is the primary image, the rest are
   // shown as thumbnails. When `portrait` is set, it occupies index 0
   // and any `images` array entries follow it.
-  const imageFilenames: string[] = (() => {
+  const declaredFilenames: string[] = (() => {
     if (member.groupSlug === 'stitching-groups' && member['image']) {
       return [member['image']];
     }
@@ -65,9 +68,18 @@ export function MemberCard({
     return [`${member.slug}.${extension}`];
   })();
 
+  // Every team image that exists is in the R2 manifest. Drop the ones that
+  // aren't (never supplied), so the browser doesn't request a file that 404s;
+  // with none left, the card shows the generic placeholder straight away.
+  const imageFilenames = declaredFilenames.filter((filename) =>
+    isImageMigrated(`/images/team/${member.groupSlug}/${filename}`),
+  );
+
   const getImageSrc = (imageIndex: number = 0) => {
     const filename = imageFilenames[imageIndex] ?? imageFilenames[0];
-    return `/images/team/${member.groupSlug}/${filename}`;
+    return filename
+      ? `/images/team/${member.groupSlug}/${filename}`
+      : USER_PLACEHOLDER;
   };
 
   const getImageCount = () => imageFilenames.length;

@@ -7,6 +7,7 @@ import type { TeamMember } from '@/lib/team';
 import { PageSection } from '@/components/ui/page-section';
 import { useState } from 'react';
 import { StitcherLinkCard } from '@/components/features/stitchers/stitcher-link-card';
+import { isImageMigrated } from '@/lib/cloudflare-loader';
 
 interface TeamCardProps {
   stateName: string;
@@ -45,20 +46,24 @@ export function TeamCard({
     setFailedImages((prev) => ({ ...prev, [id]: true }));
   };
 
-  // Simplified function to get image source - single image per person
-  // Portrait field overrides the default {slug}.jpg when set.
+  // Single image per person. Every team image that exists is in the R2
+  // manifest, so a path that isn't there was never supplied: show the
+  // placeholder straight away instead of requesting a file that 404s.
   const getImageSrc = (member: TeamMember) => {
     // If image already failed, use placeholder
     if (failedImages[member.slug]) {
       return personSvgFallback;
     }
+    const own = getOwnImagePath(member);
+    return own && isImageMigrated(own) ? own : personSvgFallback;
+  };
 
+  // Path of the member's own image, or null when they have none.
+  // Portrait field overrides the default {slug}.jpg when set.
+  const getOwnImagePath = (member: TeamMember): string | null => {
     // For stitching groups, check if they have an image defined in frontmatter
     if (member.groupSlug === 'stitching-groups') {
-      if (member['image']) {
-        return `/images/team/${member.groupSlug}/${member['image']}`;
-      }
-      return personSvgFallback;
+      return member['image'] ? `/images/team/${member.groupSlug}/${member['image']}` : null;
     }
 
     // Dedicated portrait overrides the {slug}.jpg convention for the primary thumbnail
