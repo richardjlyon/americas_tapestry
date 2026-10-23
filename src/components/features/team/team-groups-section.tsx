@@ -31,7 +31,7 @@ export async function TeamGroupsSection() {
                 {group.description}
               </p>
               <Button asChild variant="colonial-outline" className="text-sm">
-                <Link href={`/team/${group.slug}`}>
+                <Link prefetch={false} href={`/team/${group.slug}`}>
                   View {group.name} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

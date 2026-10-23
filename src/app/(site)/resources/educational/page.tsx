@@ -177,7 +177,7 @@ export default function EducationalResourcesPage() {
             asChild
             className="rounded-full bg-colonial-burgundy hover:bg-colonial-burgundy/90"
           >
-            <Link href="/contact?subject=Educational%20Resources%20Request">
+            <Link prefetch={false} href="/contact?subject=Educational%20Resources%20Request">
               Contact Educational Outreach
             </Link>
           </Button>
@@ -214,7 +214,7 @@ function ResourceCard({ resource }: { resource: ResourceItem }) {
           variant="outline"
           className="w-full border-colonial-burgundy text-colonial-burgundy hover:bg-colonial-burgundy/10"
         >
-          <Link href={resource.downloadUrl}>
+          <Link prefetch={false} href={resource.downloadUrl}>
             <Download className="mr-2 h-4 w-4" /> Download Resource
           </Link>
         </Button>

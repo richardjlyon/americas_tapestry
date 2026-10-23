@@ -42,7 +42,7 @@ export default function FestivalInfoPage() {
           <p>
             To learn more about America&apos;s Tapestry at the Hungarian
             Festival of Folk Arts, please visit{' '}
-            <Link href="/news/americas-tapestry-travels-overseas">
+            <Link prefetch={false} href="/news/americas-tapestry-travels-overseas">
               America&apos;s Tapestry Travels Overseas
             </Link>
             .
@@ -52,7 +52,7 @@ export default function FestivalInfoPage() {
             <em>
               Ha többet szeretne megtudni Amerika Kárpitjáról a Mesterségek
               Ünnepén, olvassa el{' '}
-              <Link href="/news/americas-tapestry-travels-overseas">
+              <Link prefetch={false} href="/news/americas-tapestry-travels-overseas">
                 beszámolónkat
               </Link>
               .

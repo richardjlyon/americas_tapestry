@@ -105,7 +105,7 @@ export function SponsorCard({
             size="sm"
             className="text-colonial-burgundy border-colonial-burgundy hover:bg-colonial-burgundy/10"
           >
-            <Link href={`/sponsors/${sponsor.slug}`}>Learn More</Link>
+            <Link prefetch={false} href={`/sponsors/${sponsor.slug}`}>Learn More</Link>
           </Button>
 
           {sponsor.website && sponsor.website !== '#' && (

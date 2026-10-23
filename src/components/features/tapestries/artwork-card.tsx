@@ -45,6 +45,7 @@ export function ArtworkCard({ src, alt, artists }: ArtworkCardProps) {
                   {index > 0 &&
                     (index === artists.length - 1 ? ' and ' : ', ')}
                   <Link
+                    prefetch={false}
                     href={artist.href}
                     className="font-medium text-colonial-burgundy underline hover:text-colonial-navy"
                   >

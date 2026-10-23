@@ -53,9 +53,10 @@ export function GalleryHero({ stops, builtAt, backdrops }: GalleryHeroProps) {
               size="lg"
               className="text-base"
             >
-              <Link href="/exhibitions">Plan your visit</Link>
+              <Link prefetch={false} href="/exhibitions">Plan your visit</Link>
             </Button>
             <Link
+              prefetch={false}
               href="/tapestries"
               className="inline-flex items-center font-medium text-colonial-parchment/80 transition-colors hover:text-colonial-gold"
             >

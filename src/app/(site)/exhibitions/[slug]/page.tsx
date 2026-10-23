@@ -85,6 +85,7 @@ export default async function ExhibitionVenuePage({
     <div className="bg-colonial-navy">
       <div className="container mx-auto space-y-14 py-16 md:space-y-20 md:py-24">
         <Link
+          prefetch={false}
           href="/exhibitions"
           className="inline-flex items-center gap-2 text-sm font-medium text-colonial-parchment/70 transition-colors hover:text-colonial-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
         >

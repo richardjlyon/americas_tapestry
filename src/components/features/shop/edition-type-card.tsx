@@ -41,6 +41,7 @@ export function EditionTypeCard({
 
   return (
     <Link
+      prefetch={false}
       href={`/shop/${type.slug}`}
       className="group block rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-2 focus-visible:ring-offset-colonial-linenWoven"
     >

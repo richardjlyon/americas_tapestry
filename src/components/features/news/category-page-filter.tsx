@@ -11,6 +11,7 @@ export function CategoryPageFilter({
   return (
     <div className="flex flex-wrap justify-center gap-2 mb-10">
       <Link
+        prefetch={false}
         href="/news"
         className="inline-block px-4 py-2 rounded-full bg-colonial-parchment border border-colonial-navy/20 text-colonial-navy text-sm font-medium hover:bg-colonial-navy/10 transition-colors"
       >
@@ -18,6 +19,7 @@ export function CategoryPageFilter({
       </Link>
       {blogCategories.map((category) => (
         <Link
+          prefetch={false}
           key={category.slug}
           href={`/news/category/${category.slug}`}
           className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${

@@ -94,6 +94,7 @@ export function TeamCard({
       <div className="flex flex-wrap justify-center gap-6 mx-auto">
         {teamMembers.map((member) => (
           <Link
+            prefetch={false}
             href={`/team/${member.groupSlug}/${member.slug}`}
             key={member.slug}
             className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-[300px]"

@@ -60,7 +60,7 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
             {post.excerpt}
           </p>
           <Button asChild variant="colonial-outline" className="text-sm">
-            <Link href={`/news/${post.slug}`}>
+            <Link prefetch={false} href={`/news/${post.slug}`}>
               {isVideo ? 'Watch Video' : 'Read Full Article'}{' '}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

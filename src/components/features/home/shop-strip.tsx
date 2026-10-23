@@ -17,9 +17,10 @@ export function ShopStrip() {
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
         <Button asChild variant="colonial-gold" size="lg" className="text-base">
-          <Link href="/shop">Visit the shop</Link>
+          <Link prefetch={false} href="/shop">Visit the shop</Link>
         </Button>
         <Link
+          prefetch={false}
           href="/shop/art-print"
           className="inline-flex items-center font-medium text-colonial-parchment/80 transition-colors hover:text-colonial-gold"
         >

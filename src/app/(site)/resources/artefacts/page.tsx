@@ -198,7 +198,7 @@ export default function ArtefactsGalleryPage() {
             asChild
             className="rounded-full bg-colonial-navy hover:bg-colonial-navy/90"
           >
-            <Link href="/team/historical-partners">View Museum Partners</Link>
+            <Link prefetch={false} href="/team/historical-partners">View Museum Partners</Link>
           </Button>
         </ContentCard>
       </PageSection>
@@ -251,6 +251,7 @@ function ArtefactCard({ artefact }: { artefact: Artefact }) {
               Related Colony:{' '}
             </span>
             <Link
+              prefetch={false}
               href={`/tapestry/${artefact.relatedColony.toLowerCase()}`}
               className="text-colonial-burgundy hover:underline"
             >

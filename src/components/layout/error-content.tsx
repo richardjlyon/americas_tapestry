@@ -43,7 +43,7 @@ export function ErrorContent({
           <RotateCcw className="mr-2 h-4 w-4" /> Try Again
         </Button>
         <Button asChild variant="colonial-outline" className="text-base py-2 px-5">
-          <Link href="/">
+          <Link prefetch={false} href="/">
             <Home className="mr-2 h-4 w-4" /> Return Home
           </Link>
         </Button>

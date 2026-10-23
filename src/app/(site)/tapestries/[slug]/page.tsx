@@ -145,11 +145,12 @@ export default async function TapestryPage({
                   size="lg"
                   className="text-base"
                 >
-                  <Link href={getPrintUrl(tapestry.slug)}>
+                  <Link prefetch={false} href={getPrintUrl(tapestry.slug)}>
                     Shop this tapestry
                   </Link>
                 </Button>
                 <Link
+                  prefetch={false}
                   href="/shop"
                   className="inline-flex items-center font-medium text-colonial-parchment/80 transition-colors hover:text-colonial-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
                 >

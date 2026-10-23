@@ -119,7 +119,7 @@ export default async function SponsorPage({
                 variant="outline"
                 className="rounded-full border-colonial-burgundy text-colonial-burgundy hover:bg-colonial-burgundy/10"
               >
-                <Link href="/contact?subject=Regarding%20Sponsorship">
+                <Link prefetch={false} href="/contact?subject=Regarding%20Sponsorship">
                   Contact About Sponsorship
                 </Link>
               </Button>

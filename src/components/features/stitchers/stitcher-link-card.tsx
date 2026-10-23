@@ -15,6 +15,7 @@ export function StitcherLinkCard({
 }) {
   return (
     <Link
+      prefetch={false}
       href={href}
       className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-[300px]"
     >

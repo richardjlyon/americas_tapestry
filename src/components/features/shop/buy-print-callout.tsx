@@ -51,7 +51,7 @@ export function BuyPrintCallout({
         </p>
         <div className="mt-6">
           <Button asChild variant="colonial-gold" size="lg">
-            <Link href={href}>Shop {colonyName} prints</Link>
+            <Link prefetch={false} href={href}>Shop {colonyName} prints</Link>
           </Button>
         </div>
       </div>

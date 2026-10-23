@@ -37,6 +37,7 @@ export function ProjectStrip() {
           revolution and engage in the historic practice of needlework.
         </p>
         <Link
+          prefetch={false}
           href="/about"
           className="mt-5 inline-flex items-center font-medium text-colonial-gold transition-colors hover:text-colonial-gold/80"
         >

@@ -125,6 +125,7 @@ function CanvasFallback({ onRetry }: { onRetry: () => void }): React.ReactElemen
           Try again
         </button>
         <Link
+          prefetch={false}
           href="/tapestries"
           className="rounded-full border border-[#12284C]/30 px-5 py-2 text-sm text-[#12284C]"
         >

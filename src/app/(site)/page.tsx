@@ -151,6 +151,7 @@ export default async function Home() {
           </div>
           <div className="mt-12 text-center">
             <Link
+              prefetch={false}
               href="/tapestries"
               className="inline-flex items-center font-medium text-colonial-gold transition-colors hover:text-colonial-gold/80"
             >
