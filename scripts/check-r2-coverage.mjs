@@ -220,6 +220,20 @@ function renderedReferences() {
       }
     }
   }
+  // Built CSS: a url(/images/...) in a stylesheet is fetched from the origin by
+  // every page that uses the rule, but never appears in the HTML. This is how
+  // /images/ui/needle.png (globals.css) was excluded while 13 pages use it.
+  const cssFiles = walk(path.join(ROOT, '.next', 'static'), (n) => n.endsWith('.css'));
+  for (const file of cssFiles) {
+    const css = fs.readFileSync(file, 'utf8');
+    for (const m of css.matchAll(/url\((['"]?)([^)'"]+)\1\)/g)) {
+      const p = m[2].replace(/^https?:\/\/(www\.)?americastapestry\.com(?=\/images\/)/, '');
+      if (!p.startsWith('/images/')) continue;
+      let clean = p.split(/[?#]/)[0];
+      try { clean = decodeURIComponent(clean); } catch { /* keep raw */ }
+      refs.push({ path: clean, where: `css:${path.relative(ROOT, file)}` });
+    }
+  }
   return { refs, pages: files.length };
 }
 

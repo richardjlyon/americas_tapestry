@@ -56,6 +56,10 @@
     {
       "path": "/images/news/van-schaick-mansion.webp",
       "reason": "Body figure on /news/february-2025-update. The markdown says /images/news/images/van-schaick-mansion.webp; the redundant-segment fix turns it into this path, and the rendered <img> requests it at origin, not R2. Excluding it would 404 the figure. Can be excluded once markdown.ts sends this figure to its R2 variant."
+    },
+    {
+      "path": "/images/ui/needle.png",
+      "reason": "Needle divider under every section of the 13 tapestry pages: background-image url(/images/ui/needle.png) in src/app/globals.css (.page-section-pin, .page-section-pin-bottom). CSS is not run through the R2 loader, so the browser fetches the origin path. It was excluded and has 404'd in production (checked 2026-10-23). 124 KB. Can be excluded once globals.css points at the R2 variant."
     }
   ]
 }
