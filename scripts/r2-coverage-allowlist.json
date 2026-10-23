@@ -1,0 +1,209 @@
+{
+  "_about": "Known R2 coverage gaps for scripts/check-r2-coverage.mjs. One entry per path, each with a reason. A path listed here never fails the build. Add to this list only for a deliberate gap; a new image must be uploaded to R2 instead (scripts/optimize-and-upload.mjs).",
+  "entries": [
+    {
+      "path": "/images/team/state-directors/barbara-bass.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/state-directors/barbara-bass.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/state-directors/bonnie-berman.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/state-directors/bonnie-berman.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/state-directors/gail-smith.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/state-directors/gail-smith.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/state-directors/kiki-haumann.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/state-directors/kiki-haumann.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/alison-haigis.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/alison-haigis.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/allie-pleiter.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/allie-pleiter.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/amy-gilley.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/amy-gilley.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/anne-hart-davies.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/anne-hart-davies.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/barbara-bass.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/barbara-bass.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/bonnie-berman.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/bonnie-berman.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/carol-harrison.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/carol-harrison.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/carolyn-eddy.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/carolyn-eddy.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/christine-giglio-nanni.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/christine-giglio-nanni.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/corinne-burr.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/corinne-burr.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/darce-costello.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/darce-costello.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/donna-morrison.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/donna-morrison.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/erin-lien.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/erin-lien.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/erin-vogel.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/erin-vogel.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/georgianna-segovia-aviola.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/georgianna-segovia-aviola.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/graciela-white.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/graciela-white.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/heidi-levesque.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/heidi-levesque.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/irene-allie.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/irene-allie.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/janis-bidwell-burnham-waine.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/janis-bidwell-burnham-waine.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/joan-flanigan-clarke.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/joan-flanigan-clarke.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/joanne-c-aker.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/joanne-c-aker.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/judy-blout.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/judy-blout.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/karen-schueler.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/karen-schueler.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/kathleen-franetovich.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/kathleen-franetovich.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/laura-morrison.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/laura-morrison.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/linda-m-hartman.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/linda-m-hartman.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/marsha-cauthen.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/marsha-cauthen.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/mary-stewart.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/mary-stewart.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/mary-w-cohn.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/mary-w-cohn.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/maureen-farrell.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/maureen-farrell.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/melody-mcmath.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/melody-mcmath.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/michelle-mcpheron.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/michelle-mcpheron.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/monica-debbi.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/monica-debbi.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/palma-vaccaro.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/palma-vaccaro.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/pamela-weeks.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/pamela-weeks.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/ruth-gross.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/ruth-gross.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/sharon-beaulieu.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/sharon-beaulieu.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/sherry-gould.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/sherry-gould.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/sherry-mccredie.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/sherry-mccredie.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/sue-polumbo.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/sue-polumbo.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/susan-banbury.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/susan-banbury.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/susan-huber.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/susan-huber.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/tanya-sander.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/tanya-sander.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/tisha-dolton.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/tisha-dolton.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/valerie-stasalovich.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/valerie-stasalovich.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitchers/violet-anderson.jpg",
+      "reason": "Portrait never committed (git log --all on public/images/team/stitchers/violet-anderson.jpg is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    },
+    {
+      "path": "/images/team/stitching-venues/the-sew-op.png",
+      "reason": "Venue logo never committed (git log --all on public/images/team/stitching-venues/the-sew-op.png is empty, checked 2026-10-23). The page builds this path from the slug and the request 404s, so there is no bandwidth leak, only a broken-image request. Remove the entry once the image is supplied and uploaded to R2."
+    }
+  ]
+}
