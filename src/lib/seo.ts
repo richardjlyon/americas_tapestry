@@ -15,8 +15,12 @@ export const SITE_URL = process.env['NEXT_PUBLIC_SITE_URL'] || 'https://americas
 export const SITE_DESCRIPTION =
   "America's Tapestry tells the stories of our nation's founding through embroidery — thirteen hand-stitched panels representing the original colonies, created for America's 250th anniversary and now touring museums and galleries on a two-year exhibition through 2028.";
 
-// Default social-share image. Served from public/ at the site origin (1024×1024).
-export const DEFAULT_OG_IMAGE = '/images/branding/americas-tapestry-logo-patriotic.png';
+// Default social-share image: the brand spool (1024×1024). The PNG is no longer
+// in public/ (it is R2-only), so the origin path 404s. Use its R2 variant, the
+// same URL pageMetadata already resolves it to. The root layout uses this
+// directly, so pages without pageMetadata get a working preview image too.
+export const DEFAULT_OG_IMAGE_SOURCE = '/images/branding/americas-tapestry-logo-patriotic.png';
+export const DEFAULT_OG_IMAGE = getR2Url(DEFAULT_OG_IMAGE_SOURCE, 1200) ?? DEFAULT_OG_IMAGE_SOURCE;
 
 interface PageMetaInput {
   /** Page-specific title; the site name is appended automatically. */
