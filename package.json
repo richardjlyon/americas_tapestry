@@ -18,6 +18,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "check:images": "node scripts/check-images.mjs",
+    "check:r2": "node scripts/check-r2-coverage.mjs",
     "format": "npx @biomejs/biome format --write ./src/app ./src/components ./src/lib ./src/hooks",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",

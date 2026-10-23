@@ -205,5 +205,12 @@ export const blogPostSchema = z
     gallery: z
       .array(z.object({ src: z.string(), alt: z.string().optional() }))
       .optional(),
+    // Optional named photo grids, placed in the body with a
+    // `<!-- gallery:name -->` marker on its own line.
+    galleries: z
+      .record(
+        z.array(z.object({ src: z.string(), alt: z.string().optional() })),
+      )
+      .optional(),
   })
   .passthrough();

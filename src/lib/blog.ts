@@ -25,6 +25,33 @@ export interface BlogPost {
   // Tiled photo grid shown at the foot of the article, for posts that carry a
   // set of pictures rather than a few placed in the prose.
   gallery?: { src: string; alt: string }[] | undefined;
+  // Named photo grids placed in the body with `<!-- gallery:name -->`. The
+  // default `gallery` can be placed with `<!-- gallery -->`; without that
+  // marker it still renders at the foot of the article.
+  galleries?: Record<string, { src: string; alt: string }[]> | undefined;
+}
+
+/**
+ * Turn a frontmatter `galleries:` map into named picture sets, dropping
+ * entries without a `src`. Returns undefined when there are none, so posts
+ * without the field are unchanged.
+ */
+function normaliseGalleries(
+  raw: unknown,
+): Record<string, { src: string; alt: string }[]> | undefined {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return undefined;
+  const out: Record<string, { src: string; alt: string }[]> = {};
+  for (const [name, set] of Object.entries(raw as Record<string, unknown>)) {
+    if (!Array.isArray(set)) continue;
+    const images = set
+      .filter(
+        (g): g is { src: string; alt?: string } =>
+          !!g && typeof g === 'object' && typeof g.src === 'string',
+      )
+      .map((g, i) => ({ src: g.src, alt: g.alt || `Photograph ${i + 1}` }));
+    if (images.length > 0) out[name] = images;
+  }
+  return Object.keys(out).length > 0 ? out : undefined;
 }
 
 // Update the BlogCategory type to include "videos"
@@ -217,6 +244,7 @@ export async function getBlogPostBySlug(
                 }),
               )
             : undefined,
+          galleries: normaliseGalleries(data['galleries']),
         };
 
         // Don't return draft posts

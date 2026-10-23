@@ -10,9 +10,39 @@ interface BlogPostContentProps {
   contentHtml: string;
 }
 
+// A marker on its own line in the markdown body places a picture set:
+// `<!-- gallery -->` for the default `gallery`, `<!-- gallery:name -->` for a
+// set from `galleries`. remark-html passes HTML comments through unchanged.
+const GALLERY_MARKER = /<!--\s*gallery(?::([A-Za-z0-9_-]+))?\s*-->/;
+
+type Segment =
+  | { kind: 'html'; html: string }
+  | { kind: 'gallery'; name: string | null };
+
+function splitOnGalleryMarkers(html: string): Segment[] {
+  // With one capture group, split() alternates: html, name, html, name, ...
+  const parts = html.split(new RegExp(GALLERY_MARKER.source, 'g'));
+  const segments: Segment[] = [];
+  parts.forEach((part, i) => {
+    if (i % 2 === 0) {
+      if (part && part.trim()) segments.push({ kind: 'html', html: part });
+    } else {
+      segments.push({ kind: 'gallery', name: part ?? null });
+    }
+  });
+  return segments;
+}
+
 export function BlogPostContent({ post, contentHtml }: BlogPostContentProps) {
   // Find the category info
   const category = blogCategories.find((cat) => cat.slug === post.category);
+
+  const segments = splitOnGalleryMarkers(contentHtml);
+  const defaultPlaced = segments.some(
+    (s) => s.kind === 'gallery' && s.name === null,
+  );
+  const imagesFor = (name: string | null) =>
+    name === null ? post.gallery : post.galleries?.[name];
 
   return (
     <div className="mt-16">
@@ -33,9 +63,24 @@ export function BlogPostContent({ post, contentHtml }: BlogPostContentProps) {
             {...(post.author && { author: post.author })}
             className="mb-3"
           />
-          <MarkdownContent html={contentHtml} />
+          {segments.map((segment, i) => {
+            if (segment.kind === 'html') {
+              // biome-ignore lint/suspicious/noArrayIndexKey: static, ordered body segments
+              return <MarkdownContent key={i} html={segment.html} />;
+            }
+            const images = imagesFor(segment.name);
+            if (!images || images.length === 0) return null;
+            return (
+              // biome-ignore lint/suspicious/noArrayIndexKey: static, ordered body segments
+              <div key={i} className="not-prose my-8">
+                <PostGallery images={images} />
+              </div>
+            );
+          })}
 
-          {post.gallery && post.gallery.length > 0 && (
+          {/* Backward compatible: with no `<!-- gallery -->` marker the
+              default gallery renders at the foot, as it always has. */}
+          {!defaultPlaced && post.gallery && post.gallery.length > 0 && (
             <div className="mt-8">
               <PostGallery images={post.gallery} />
             </div>

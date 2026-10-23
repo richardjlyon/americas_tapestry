@@ -42,6 +42,24 @@ gallery:
     alt: "A boy holds up his finished fabric square"
   - src: "/images/news/2026-09/festival/festival-18.jpg"
     alt: "Two visitors at the booth"
+galleries:
+  making:
+    - src: "/images/news/2026-10/e-pluribus-unum/making-01.jpg"
+      alt: "The patchwork of signed fabric rectangles, framed by its cream border"
+    - src: "/images/news/2026-10/e-pluribus-unum/making-02.jpg"
+      alt: "Appliqué flowers and leaves cut out and laid ready on the work table"
+    - src: "/images/news/2026-10/e-pluribus-unum/making-03.jpg"
+      alt: "The rattlesnake pieces and lettering laid out on the patchwork"
+    - src: "/images/news/2026-10/e-pluribus-unum/making-04.jpg"
+      alt: "The panel taking shape, with the floral border begun"
+    - src: "/images/news/2026-10/e-pluribus-unum/making-05.jpg"
+      alt: "Detail: the embroidered diamond medallion beneath the lettering"
+    - src: "/images/news/2026-10/e-pluribus-unum/making-06.jpg"
+      alt: "Detail: floral motifs stitched along the border among the visitors' inscriptions"
+    - src: "/images/news/2026-10/e-pluribus-unum/making-07.jpg"
+      alt: "Detail: sections of the rattlesnake embroidered in Hungarian floral motifs"
+    - src: "/images/news/2026-10/e-pluribus-unum/making-08.jpg"
+      alt: "Detail: the rattlesnake's head, stitched in traditional Hungarian motifs"
 ---
 
 **America's Tapestry at the Hungarian Festival of Folk Arts — August 20–23, 2026**
@@ -69,3 +87,21 @@ In tandem with the work conducted at our booth, Hungarian embroiderers stitched 
 Volunteers then sewed the fabric rectangles together and embroidered floral motifs that will line the border of the panel. Throughout the duration of the festival, over 150 visitors of all ages from the United States, UK, France, Hungary, Australia, Germany, Korea, Japan, Azerbaijan, and Israel (among others) visited the America's Tapestry booth to participate in this unique fiber arts project.
 
 We hope that the completed "E Pluribus Unum" tapestry will be displayed in both the United States and Hungary, where participants in this year's festival can see the completed artwork.
+
+<!-- gallery -->
+
+Upon returning home, Karen brought the project into her studio for completion. A skilled quilt maker, Karen utilized her expertise to mount this special panel using traditional quilting techniques.
+
+<!-- gallery:making -->
+
+![](/images/news/2026-10/e-pluribus-unum/finished-panel.jpg)
+
+*The finished "E Pluribus Unum" Tapestry*
+
+The "E Pluribus Unum" Tapestry made its debut at the commemorative event "Land of the Free: Celebrating 250 Years of Hungarian-American Friendship" at the Riviera Theatre in Charleston on Saturday, October 10.
+
+What a fitting tribute to a project that touched so many hands on both sides of the Atlantic.
+
+![](/images/news/2026-10/e-pluribus-unum/karen-wallach.jpg)
+
+*Karen Wallach with the "E Pluribus Unum" Tapestry*
