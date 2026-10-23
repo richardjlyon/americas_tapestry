@@ -12,8 +12,6 @@ import { ContentCard } from '@/components/ui/content-card';
 import { ImageLightbox } from '@/components/ui/image-lightbox';
 import { isImageMigrated } from '@/lib/cloudflare-loader';
 
-const USER_PLACEHOLDER = '/images/placeholders/placeholder-user.jpg';
-
 // Format a member's state(s) for inline display. A stitcher may contribute to
 // several panels, in which case `state` is an array; join it readably.
 function formatMemberState(state: TeamMember['state']): string {
@@ -70,7 +68,8 @@ export function MemberCard({
 
   // Every team image that exists is in the R2 manifest. Drop the ones that
   // aren't (never supplied), so the browser doesn't request a file that 404s;
-  // with none left, the card shows the generic placeholder straight away.
+  // with none left, the card shows the placeholder straight away. (The same
+  // SVG the error chain below ends on: placeholder-user.jpg doesn't decode.)
   const imageFilenames = declaredFilenames.filter((filename) =>
     isImageMigrated(`/images/team/${member.groupSlug}/${filename}`),
   );
@@ -79,7 +78,7 @@ export function MemberCard({
     const filename = imageFilenames[imageIndex] ?? imageFilenames[0];
     return filename
       ? `/images/team/${member.groupSlug}/${filename}`
-      : USER_PLACEHOLDER;
+      : placeholderPath;
   };
 
   const getImageCount = () => imageFilenames.length;
