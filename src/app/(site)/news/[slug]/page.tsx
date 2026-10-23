@@ -43,15 +43,43 @@ export async function generateMetadata({
   });
 }
 
+// Longest italic paragraph (in text characters) still treated as a caption.
+// Longer italic paragraphs (e.g. a quoted testimonial) stay in the body.
+const MAX_CAPTION_LENGTH = 200;
+
 // Function to add captions to images in HTML
 function addImageCaptions(htmlContent: string): string {
-  // Replace standard markdown image tags with figure + figcaption
-  // This regex looks for <p><img src="..." alt="..."></p> tags which is how remark-html typically renders markdown images
+  // Replace standard markdown image tags with figure + figcaption.
+  // remark-html renders a markdown image as <p><img src="..." alt="..."></p>.
+  // Caption source, in order:
+  //   1. an italic-only paragraph directly after the image (`*Caption*`):
+  //      it becomes the figcaption and the separate paragraph is dropped,
+  //      so the alt text can describe the image without being shown twice;
+  //   2. otherwise the alt text (older posts use alt as their caption).
   return htmlContent.replace(
-    /<p>(<img\s+src="([^"]+)"\s+alt="([^"]*)"[^>]*>)<\/p>/g,
-    (_match, img, _src, alt) => {
-      // Only add figcaption if alt text exists
-      const caption = alt ? `<figcaption>${alt}</figcaption>` : '';
+    /<p>(<img\s+src="([^"]+)"\s+alt="([^"]*)"[^>]*>)<\/p>(?:(\s*)<p><em>((?:(?!<\/p>)[\s\S])*?)<\/em><\/p>)?/g,
+    (match, img, _src, alt, _gap, italic) => {
+      const italicText =
+        italic === undefined ? '' : italic.replace(/<[^>]+>/g, '').trim();
+      // Italic-only means one <em> run for the whole paragraph, not
+      // "<em>a</em> and <em>b</em>". A line with a link is a call to
+      // action ("Click here"), not a caption.
+      const useItalic =
+        italic !== undefined &&
+        !italic.includes('</em>') &&
+        !italic.includes('<a ') &&
+        italicText.length > 0 &&
+        italicText.length <= MAX_CAPTION_LENGTH;
+      if (italic !== undefined && !useItalic) {
+        // Not a caption: caption from alt as before, keep the paragraph.
+        const imgPart = match.slice(0, match.indexOf('</p>') + 4);
+        return addImageCaptions(imgPart) + match.slice(imgPart.length);
+      }
+      const caption = useItalic
+        ? `<figcaption>${italic}</figcaption>`
+        : alt
+          ? `<figcaption>${alt}</figcaption>`
+          : '';
       return `
         <figure class="image-with-caption">
           ${img}

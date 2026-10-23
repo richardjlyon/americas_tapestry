@@ -76,7 +76,7 @@ The "E Pluribus Unum" Tapestry reimagines Benjamin Franklin's famous 1754 "Join,
 
 The 13-letter slogan "E Pluribus Unum" was selected to accompany the rattlesnake as it has been featured on our nation's great seal since its inception in 1782, and symbolizes strength through unity — a message that strongly resonates with our community driven endeavor.
 
-![](/images/news/2026-09/join-or-die-1754.jpg)
+![A woodcut of a snake cut into eight pieces, each marked with the initials of a colony, above the words "JOIN, or DIE."](/images/news/2026-09/join-or-die-1754.jpg)
 
 *Benjamin Franklin's "Join, Or Die", 1754*
 
@@ -94,7 +94,7 @@ Upon returning home, Karen brought the project into her studio for completion. A
 
 <!-- gallery:making -->
 
-![](/images/news/2026-10/e-pluribus-unum/finished-panel.jpg)
+![The finished quilt: the embroidered rattlesnake and the words "E Pluribus Unum" on a patchwork of signed fabric strips, inside a cream border of stitched flowers](/images/news/2026-10/e-pluribus-unum/finished-panel.jpg)
 
 *The finished "E Pluribus Unum" Tapestry*
 
@@ -102,6 +102,6 @@ The "E Pluribus Unum" Tapestry made its debut at the commemorative event "Land o
 
 What a fitting tribute to a project that touched so many hands on both sides of the Atlantic.
 
-![](/images/news/2026-10/e-pluribus-unum/karen-wallach.jpg)
+![Karen Wallach smiling beside the finished panel, which hangs on the wall behind her](/images/news/2026-10/e-pluribus-unum/karen-wallach.jpg)
 
 *Karen Wallach with the "E Pluribus Unum" Tapestry*
