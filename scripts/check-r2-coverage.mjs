@@ -33,6 +33,10 @@
  *                cannot (memory.md, 2026-09-01). Only fetchable attributes are
  *                read (src, srcset, href, poster, content, CSS url()), as in
  *                scripts/crawl-image-refs.mjs.
+ *   4. deploy    (--rendered) .vercelignore excludes every R2 original under
+ *                public/images, except files a rendered page requests at their
+ *                origin path, which must be named with a reason in
+ *                scripts/vercel-deploy-keep.json. See deployLayer() below.
  *
  * KNOWN GAPS live in scripts/r2-coverage-allowlist.json, one entry per path,
  * each with a reason. An allowlisted path never fails the build. An entry whose
@@ -51,6 +55,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { isIgnored, loadIgnore } from './vercelignore.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CONTENT_DIR = path.join(ROOT, 'content');
@@ -59,6 +64,8 @@ const PUBLIC_DIR = path.join(ROOT, 'public');
 const BUILD_HTML_DIR = path.join(ROOT, '.next', 'server', 'app');
 const MANIFEST_PATH = path.join(ROOT, 'src', 'lib', 'image-manifest.json');
 const ALLOWLIST_PATH = path.join(ROOT, 'scripts', 'r2-coverage-allowlist.json');
+const KEEP_PATH = path.join(ROOT, 'scripts', 'vercel-deploy-keep.json');
+const IGNORE_PATH = path.join(ROOT, '.vercelignore');
 
 const RASTER_EXT = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.avif'];
 // Mirrors isLocalImage() in cloudflare-loader.ts and the uploader's excludeDirs.
@@ -216,7 +223,94 @@ function renderedReferences() {
   return { refs, pages: files.length };
 }
 
+// ---------------------------------------------------------------- layer 4
+
+/**
+ * deploy  (--rendered only) .vercelignore must exclude every original under
+ *         public/images that R2 serves, so Vercel never holds a second copy
+ *         that bots can fetch (190 GB in July 2026). The one exception is a
+ *         file a rendered page requests at its ORIGIN path: excluding it would
+ *         404 the page, so it must stay deployed and be named, with a reason,
+ *         in scripts/vercel-deploy-keep.json.
+ *
+ *         "Requested at origin" is the rendered layer's measurement above,
+ *         from every prerendered page, so slug-built paths are seen. Three
+ *         rules, each a build failure:
+ *           a. a manifested file that would deploy is not on the keep list
+ *              (a missing or broken .vercelignore line, or a new original);
+ *           b. a keep-list entry no rendered page requests at origin, or that
+ *              is not a manifested file on disk (stale: exclude it instead);
+ *           c. a file a rendered page requests at origin is excluded by
+ *              .vercelignore (it would 404 in production).
+ *
+ *         Deployed = on disk and not matched by .vercelignore. On Vercel the
+ *         excluded files are already absent, so the answer is the same there.
+ */
+function deployLayer(manifest, renderedByPath, failures) {
+  const rules = loadIgnore(IGNORE_PATH);
+  if (rules.length === 0) {
+    failures.push(['deploy', '.vercelignore', 'missing or empty: every R2 original would deploy']);
+    return;
+  }
+  const keep = loadKeepList();
+  const has = (p) => Boolean(manifest[p]);
+  const relOf = (web) => `public${web}`;
+
+  let manifestedOnDisk = 0;
+  let deployedFiles = 0;
+  let deployedBytes = 0;
+  for (const f of walk(path.join(PUBLIC_DIR, 'images'), () => true)) {
+    const web = '/' + path.relative(PUBLIC_DIR, f).split(path.sep).join('/');
+    const ignored = isIgnored(rules, relOf(web));
+    if (!ignored) { deployedFiles += 1; deployedBytes += fs.statSync(f).size; }
+    if (!has(web)) continue;
+    manifestedOnDisk += 1;
+    if (!ignored && !keep.has(web)) {
+      failures.push([
+        'deploy', web,
+        renderedByPath.has(web)
+          ? 'R2 original would deploy. A rendered page requests it at origin, so add it with a reason to scripts/vercel-deploy-keep.json'
+          : 'R2 original would deploy and no rendered page requests it at origin: add it to .vercelignore (scripts/generate-vercelignore.mjs)',
+      ]);
+    }
+  }
+
+  for (const [p] of keep) {
+    if (!has(p) || !fs.existsSync(path.join(PUBLIC_DIR, p))) {
+      failures.push(['deploy', p, 'keep-list entry is not a manifested file on disk: remove it from scripts/vercel-deploy-keep.json']);
+    } else if (!renderedByPath.has(p)) {
+      failures.push(['deploy', p, 'keep-list entry is not requested at origin by any rendered page: remove it from scripts/vercel-deploy-keep.json and exclude it']);
+    }
+  }
+
+  for (const [p, where] of renderedByPath) {
+    if (fs.existsSync(path.join(PUBLIC_DIR, p)) && isIgnored(rules, relOf(p))) {
+      failures.push(['deploy', p, `excluded by .vercelignore but requested at origin (would 404): ${[...new Set(where)].slice(0, 3).join(', ')}`]);
+    }
+  }
+
+  console.log(
+    `Deploy: ${manifestedOnDisk} R2 originals on disk, ${keep.size} kept deployed on purpose ` +
+      `(${path.relative(ROOT, KEEP_PATH)}). public/images would deploy ${deployedFiles} files, ` +
+      `${(deployedBytes / 1e6).toFixed(1)} MB.`,
+  );
+}
+
 // ---------------------------------------------------------------- main
+
+function loadKeepList() {
+  if (!fs.existsSync(KEEP_PATH)) return new Map();
+  const list = JSON.parse(fs.readFileSync(KEEP_PATH, 'utf8'));
+  const map = new Map();
+  for (const e of list.entries ?? []) {
+    if (!e.path || !e.reason || !String(e.reason).trim()) {
+      console.error(`❌ Keep-list entry without a path and a reason: ${JSON.stringify(e)}`);
+      process.exit(2);
+    }
+    map.set(e.path, e.reason);
+  }
+  return map;
+}
 
 function loadAllowlist() {
   if (!fs.existsSync(ALLOWLIST_PATH)) return new Map();
@@ -266,8 +360,10 @@ function main() {
 
   if (rendered) {
     const { refs, pages } = renderedReferences();
-    const n = check('rendered', group(refs));
+    const byPath = group(refs);
+    const n = check('rendered', byPath);
     console.log(`Rendered: ${pages} prerendered pages, ${n} distinct origin /images/ raster requests.`);
+    deployLayer(manifest, byPath, failures);
   } else {
     // Layer 1: disk
     const disk = walk(path.join(PUBLIC_DIR, 'images'), isRaster).map(
@@ -299,23 +395,40 @@ function main() {
   console.log(`Allowlist: ${allow.size} entries (${path.relative(ROOT, ALLOWLIST_PATH)}), ${used.size} matched in this run.`);
 
   if (failures.length === 0) {
-    console.log(`✅ R2 coverage (${rendered ? 'rendered' : 'disk + content'}): nothing would be served from the Vercel origin.`);
+    console.log(`✅ R2 coverage (${rendered ? 'rendered + deploy' : 'disk + content'}): nothing would be served from the Vercel origin.`);
     return;
   }
 
-  console.error(
-    `\n❌ ${failures.length} image path(s) are NOT in image-manifest.json and not allowlisted.\n` +
-      '   They would be served from the Vercel origin (bandwidth leak) or 404:',
-  );
-  for (const [layer, p, where] of failures) {
-    const onDisk = fs.existsSync(path.join(PUBLIC_DIR, p)) ? 'on disk' : 'NOT on disk (404)';
-    console.error(`   • [${layer}] ${p}  (${onDisk})\n       ${where}`);
+  const coverage = failures.filter(([layer]) => layer !== 'deploy');
+  const deploy = failures.filter(([layer]) => layer === 'deploy');
+
+  if (coverage.length > 0) {
+    console.error(
+      `\n❌ ${coverage.length} image path(s) are NOT in image-manifest.json and not allowlisted.\n` +
+        '   They would be served from the Vercel origin (bandwidth leak) or 404:',
+    );
+    for (const [layer, p, where] of coverage) {
+      const onDisk = fs.existsSync(path.join(PUBLIC_DIR, p)) ? 'on disk' : 'NOT on disk (404)';
+      console.error(`   • [${layer}] ${p}  (${onDisk})\n       ${where}`);
+    }
+    console.error(
+      '\n   Fix: node scripts/optimize-and-upload.mjs --path=<dir under public/images>,\n' +
+        '   commit the manifest change, then re-run. Only if the gap is deliberate, add\n' +
+        `   the path with a reason to ${path.relative(ROOT, ALLOWLIST_PATH)}.`,
+    );
   }
-  console.error(
-    '\n   Fix: node scripts/optimize-and-upload.mjs --path=<dir under public/images>,\n' +
-      '   commit the manifest change, then re-run. Only if the gap is deliberate, add\n' +
-      `   the path with a reason to ${path.relative(ROOT, ALLOWLIST_PATH)}.`,
-  );
+
+  if (deploy.length > 0) {
+    console.error(
+      `\n❌ ${deploy.length} problem(s) with what Vercel would deploy from public/images (.vercelignore):`,
+    );
+    for (const [, p, why] of deploy) console.error(`   • [deploy] ${p}\n       ${why}`);
+    console.error(
+      '\n   Fix: build, serve, crawl (scripts/crawl-image-refs.mjs) and regenerate the block with\n' +
+        '   scripts/generate-vercelignore.mjs. A file that must stay deployed goes, with a reason,\n' +
+        `   in ${path.relative(ROOT, KEEP_PATH)}.`,
+    );
+  }
   process.exit(1);
 }
 

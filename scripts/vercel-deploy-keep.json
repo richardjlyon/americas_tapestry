@@ -1,0 +1,61 @@
+{
+  "_about": "Files under public/images that have an R2 manifest entry but MUST stay deployed on Vercel, because a rendered page requests them at their origin path. Checked by the deploy layer of scripts/check-r2-coverage.mjs --rendered (postbuild): every other R2 original must be excluded by .vercelignore, and every entry here must still be requested at origin by a prerendered page, or the build fails. One entry per path, each with a reason. Added 2026-10-23 (t_e1d348db).",
+  "entries": [
+    {
+      "path": "/images/news/tapestry-talk/tt-ep1-georgia/tt-ep1-georgia.jpg",
+      "reason": "Tapestry Talk episode 1 video poster. <video poster> on /news/georgia-tapestry-talk (blog-post-content.tsx) and /tapestries/georgia (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep2-south-carolina/tt-ep2-south-carolina.jpg",
+      "reason": "Tapestry Talk episode 2 video poster. <video poster> on /news/south-carolina-tapestry-talk (blog-post-content.tsx) and /tapestries/south-carolina (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep3-north-carolina/tt-ep3-north-carolina.png",
+      "reason": "Tapestry Talk episode 3 video poster. <video poster> on /news/north-carolina-tapestry-talk (blog-post-content.tsx) and /tapestries/north-carolina (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep4-virginia/tt-ep4-virginia.jpg",
+      "reason": "Tapestry Talk episode 4 video poster. <video poster> on /news/virginia-tapestry-talk (blog-post-content.tsx) and /tapestries/virginia (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep5-new-jersey/tt-ep5-new-jersey.jpg",
+      "reason": "Tapestry Talk episode 5 video poster. <video poster> on /news/new-jersey-tapestry-talk (blog-post-content.tsx) and /tapestries/new-jersey (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep6-maryland/tt-ep6-maryland.jpg",
+      "reason": "Tapestry Talk episode 6 video poster. <video poster> on /news/maryland-tapestry-talk (blog-post-content.tsx) and /tapestries/maryland (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep7-delaware/tt-ep7-delaware.jpg",
+      "reason": "Tapestry Talk episode 7 video poster. <video poster> on /news/delaware-tapestry-talk (blog-post-content.tsx) and /tapestries/delaware (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep8-pennsylvania/tt-ep8-pennsylvania.jpg",
+      "reason": "Tapestry Talk episode 8 video poster. <video poster> on /news/pennsylvania-tapestry-talk (blog-post-content.tsx) and /tapestries/pennsylvania (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep9-connecticut/tt-ep9-connecticut.jpg",
+      "reason": "Tapestry Talk episode 9 video poster. <video poster> on /news/connecticut-tapestry-talk (blog-post-content.tsx) and /tapestries/connecticut (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep10-new-hampshire/tt-ep10-new-hampshire.jpg",
+      "reason": "Tapestry Talk episode 10 video poster. <video poster> on /news/new-hampshire-tapestry-talk (blog-post-content.tsx) and /tapestries/new-hampshire (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep11-rhode-island/tt-ep11-rhode-island.jpg",
+      "reason": "Tapestry Talk episode 11 video poster. <video poster> on /news/rhode-island-tapestry-talk (blog-post-content.tsx) and /tapestries/rhode-island (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep12-massachusetts/tt-ep12-massachusetts.jpg",
+      "reason": "Tapestry Talk episode 12 video poster. <video poster> on /news/massachusetts-tapestry-talk (blog-post-content.tsx) and /tapestries/massachusetts (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/tapestry-talk/tt-ep13-new-york/tt-ep13-new-york.jpg",
+      "reason": "Tapestry Talk episode 13 video poster. <video poster> on /news/new-york-tapestry-talk (blog-post-content.tsx) and /tapestries/new-york (tapestry-talk-section.tsx) takes post.image as a raw origin path; the R2 loader never sees it. Excluding it would 404 the poster. Can be excluded once both components pass the poster through the R2 loader."
+    },
+    {
+      "path": "/images/news/van-schaick-mansion.webp",
+      "reason": "Body figure on /news/february-2025-update. The markdown says /images/news/images/van-schaick-mansion.webp; the redundant-segment fix turns it into this path, and the rendered <img> requests it at origin, not R2. Excluding it would 404 the figure. Can be excluded once markdown.ts sends this figure to its R2 variant."
+    }
+  ]
+}
