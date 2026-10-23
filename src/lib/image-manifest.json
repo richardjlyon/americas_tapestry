@@ -9412,5 +9412,95 @@
     },
     "originalSize": 327215,
     "hash": "715b43b7"
+  },
+  "/images/news/2026-10/e-pluribus-unum/finished-panel.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/finished-panel-640w-425decfc.webp",
+      "1024": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/finished-panel-1024w-425decfc.webp",
+      "1920": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/finished-panel-1920w-425decfc.webp"
+    },
+    "originalSize": 695945,
+    "hash": "425decfc"
+  },
+  "/images/news/2026-10/e-pluribus-unum/karen-wallach.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/karen-wallach-640w-aa2c51d0.webp",
+      "1024": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/karen-wallach-1024w-aa2c51d0.webp",
+      "1920": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/karen-wallach-1920w-aa2c51d0.webp"
+    },
+    "originalSize": 552949,
+    "hash": "aa2c51d0"
+  },
+  "/images/news/2026-10/e-pluribus-unum/making-01.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-01-640w-5e455ddc.webp",
+      "1024": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-01-1024w-5e455ddc.webp",
+      "1920": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-01-1920w-5e455ddc.webp"
+    },
+    "originalSize": 622764,
+    "hash": "5e455ddc"
+  },
+  "/images/news/2026-10/e-pluribus-unum/making-02.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-02-640w-0d6f8006.webp",
+      "1024": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-02-1024w-0d6f8006.webp",
+      "1920": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-02-1920w-0d6f8006.webp"
+    },
+    "originalSize": 638567,
+    "hash": "0d6f8006"
+  },
+  "/images/news/2026-10/e-pluribus-unum/making-03.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-03-640w-9eb1c6dc.webp",
+      "1024": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-03-1024w-9eb1c6dc.webp",
+      "1920": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-03-1920w-9eb1c6dc.webp"
+    },
+    "originalSize": 521169,
+    "hash": "9eb1c6dc"
+  },
+  "/images/news/2026-10/e-pluribus-unum/making-04.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-04-640w-3cd1a2de.webp",
+      "1024": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-04-1024w-3cd1a2de.webp",
+      "1920": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-04-1920w-3cd1a2de.webp"
+    },
+    "originalSize": 863067,
+    "hash": "3cd1a2de"
+  },
+  "/images/news/2026-10/e-pluribus-unum/making-05.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-05-640w-2f1787fa.webp",
+      "1024": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-05-1024w-2f1787fa.webp",
+      "1920": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-05-1920w-2f1787fa.webp"
+    },
+    "originalSize": 839872,
+    "hash": "2f1787fa"
+  },
+  "/images/news/2026-10/e-pluribus-unum/making-06.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-06-640w-fd78390f.webp",
+      "1024": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-06-1024w-fd78390f.webp",
+      "1920": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-06-1920w-fd78390f.webp"
+    },
+    "originalSize": 785077,
+    "hash": "fd78390f"
+  },
+  "/images/news/2026-10/e-pluribus-unum/making-07.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-07-640w-1f752957.webp",
+      "1024": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-07-1024w-1f752957.webp",
+      "1920": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-07-1920w-1f752957.webp"
+    },
+    "originalSize": 1381304,
+    "hash": "1f752957"
+  },
+  "/images/news/2026-10/e-pluribus-unum/making-08.jpg": {
+    "variants": {
+      "640": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-08-640w-92e3d80d.webp",
+      "1024": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-08-1024w-92e3d80d.webp",
+      "1920": "https://images.americastapestry.com/news/2026-10/e-pluribus-unum/making-08-1920w-92e3d80d.webp"
+    },
+    "originalSize": 1218320,
+    "hash": "92e3d80d"
   }
 }
