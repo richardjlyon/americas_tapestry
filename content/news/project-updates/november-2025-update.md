@@ -26,7 +26,7 @@ Before some gorgeous embroidery photos, I want to share an important message wit
 
 ![](/images/news/2025-11/01.jpg)
 
-With stitching underway and the project nearing completion, we need to raise **$6,000** to commission an art crate for the panels to safely travel in during their 2-year tour.
+With stitching underway and the project nearing completion, we need to raise **$6,000** to commission an art crate for the panels to safely travel in during their tour.
 
 America's Tapestry has been invited to exhibit at prestigious venues across the East Coast and requires a museum-grade shipping container to ensure they are protected during months of rigorous transport.
 

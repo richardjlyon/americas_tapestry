@@ -14,7 +14,7 @@ Importantly, this year marks the completion of the America's Tapestry project an
 
 If you are joining us this month, please consider donating to our Crate History Campaign! We have raised **$1,600 over the last two months**! Thank you to everyone who has supported us so far. We are over half-way to reaching our **$2,400 goal**.
 
-**Every donation will ensure that our volunteers' work is protected for years to come through the commission of a bespoke art crate to transport the panels on a 2+ year exhibition tour.**
+**Every donation will ensure that our volunteers' work is protected for years to come through the commission of a bespoke art crate to transport the panels on an exhibition tour.**
 
 If you would like to support us, please share our [GoFundMe Page](https://gofund.me/c17d6116e) with your community.
 

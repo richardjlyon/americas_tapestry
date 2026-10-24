@@ -14,7 +14,7 @@ Happy December! It is hard to believe another year is nearly over and 2026 - our
 
 What a success our Crate History Campaign has been! We have raised **$1,445** in just over a month! Thank you to all who have supported us so far. We are over half-way to reaching our **$2,400 goal**.
 
-**Every donation will ensure that our volunteers' work is protected for years to come through the commission of a bespoke art crate to transport the panels on a 2+ year exhibition tour.**
+**Every donation will ensure that our volunteers' work is protected for years to come through the commission of a bespoke art crate to transport the panels on an exhibition tour.**
 
 If you would like to support us, please consider donating and sharing our [GoFundMe Page](https://gofund.me/c17d6116e) with your community.
 

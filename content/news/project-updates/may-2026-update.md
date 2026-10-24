@@ -18,7 +18,7 @@ On April 30, the final stitches were placed into each of our panels before they 
 
 I am thrilled to announce that our **Crate History Campaign** has been a smashing success. Over the last six months, we raised **$4,024** - more than we ever thought possible!
 
-Thank you to everyone who donated and shared our campaign with your community. Your donation will ensure that our panels travel safely in three bespoke art crates during the 2+ year exhibition tour. *This project simply would not have been possible without your generous support. From all the volunteers at America's Tapestry, we thank you.*
+Thank you to everyone who donated and shared our campaign with your community. Your donation will ensure that our panels travel safely in three bespoke art crates during the exhibition tour. *This project simply would not have been possible without your generous support. From all the volunteers at America's Tapestry, we thank you.*
 
 ![](/images/news/2026-05/02.jpg)
 
@@ -76,7 +76,7 @@ The New Hampshire panel is the product of 80 incredible stitchers and 5,000 hour
 
 ![America's Tapestry at the Muscarelle Museum of Art](/images/news/2026-05/12.png)
 
-Do not miss the debut of America's Tapestry at the Muscarelle Museum this summer from **June 19 to September 6.** After the close of the exhibition in Virginia, the panels will travel to all participating states in a 2+ year exhibition tour. [Click here to learn more!](https://www.americastapestry.com/exhibitions)
+Do not miss the debut of America's Tapestry at the Muscarelle Museum this summer from **June 19 to September 6.** After the close of the exhibition in Virginia, the panels will travel to all participating states in an exhibition tour. [Click here to learn more!](https://www.americastapestry.com/exhibitions)
 
 ## Introducing: America's Tapestry Needle Minders!
 

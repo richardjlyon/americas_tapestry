@@ -12,7 +12,7 @@ Happy February! I hope everyone is staying warm and dry amidst the many snow flu
 
 If you are joining us this month, please consider donating to our Crate History Campaign! We have raised **$2,220 over the last two months**! Thank you to everyone who has donated so far. We are blown away by the support! While the crate will cost roughly $5,000, we are hoping to fundraise over half of that amount. We are now so close to reaching our goal of **$2,800!**
 
-**Every donation will ensure that our volunteers' work is protected for years to come through the commission of a bespoke art crate to transport the panels on a 2+ year exhibition tour.**
+**Every donation will ensure that our volunteers' work is protected for years to come through the commission of a bespoke art crate to transport the panels on an exhibition tour.**
 
 If you would like to support us, please share our [GoFundMe Page](https://gofund.me/c17d6116e) with your community.
 

@@ -14,7 +14,7 @@ I hope everyone is enjoying the early signs of spring - no matter where you may 
 
 If you are joining us this month, please consider donating to our Crate History Campaign! We have raised **$3,009 over the last three months**! Thank you to everyone who has donated so far. We are blown away by the support! We are now so close to reaching our FINAL goal of **$3,500!**
 
-**Every donation will ensure that our volunteers' work is protected for years to come through the commission of a bespoke art crate to transport the panels on a 2+ year exhibition tour.**
+**Every donation will ensure that our volunteers' work is protected for years to come through the commission of a bespoke art crate to transport the panels on an exhibition tour.**
 
 If you would like to support us, please share our [GoFundMe Page](https://gofund.me/c17d6116e) with your community.
 
