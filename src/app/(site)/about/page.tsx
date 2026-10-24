@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "Learn about America's Tapestry — its mission, history, and the team behind thirteen embroidered panels created for America's 250th anniversary and now on a two-year exhibition tour.",
+    "Learn about America's Tapestry — its mission, history, and the team behind thirteen embroidered panels created for America's 250th anniversary and now on an exhibition tour.",
   path: "/about",
 });
 
@@ -82,7 +82,7 @@ export default function AboutPage() {
             participating states. Following its inaugural display at William &
             Mary&apos;s Muscarelle Museum of Art – a stone&apos;s throw away
             from Colonial Williamsburg – America&apos;s Tapestry is now touring
-            historic venues throughout the East Coast on a two year traveling
+            historic venues throughout the East Coast on a traveling
             exhibition, running through 2030.
           </p>
 
