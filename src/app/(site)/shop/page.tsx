@@ -113,7 +113,7 @@ export default async function ShopPage() {
               demand and shipped to your door.
             </p>
             <p className="mt-3 max-w-xl font-medium text-colonial-burgundy">
-              Every purchase helps fund the tapestry&rsquo;s three-year tour
+              Every purchase helps fund the tapestry&rsquo;s tour
               through the original thirteen states.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-4">

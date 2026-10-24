@@ -27,8 +27,8 @@ export function ProjectStrip() {
           collaboration with historical organizations from each of the
           original colonies, and stitched over 18 months by volunteer
           embroiderers in each state, led by our state directors. The
-          completed Tapestry is now touring prominent gallery spaces on a
-          three-year exhibition through to 2030.
+          completed Tapestry is now touring prominent gallery spaces on an
+          exhibition through to 2030.
         </p>
         <p className="gallery-lead mt-4">
           <em>America&rsquo;s Tapestry</em>{' '}
