@@ -83,7 +83,7 @@ export default function AboutPage() {
             Mary&apos;s Muscarelle Museum of Art – a stone&apos;s throw away
             from Colonial Williamsburg – America&apos;s Tapestry is now touring
             historic venues throughout the East Coast on a two year traveling
-            exhibition, running through 2028.
+            exhibition, running through 2030.
           </p>
 
           <p>
@@ -95,7 +95,7 @@ export default function AboutPage() {
           <p>
             America&apos;s Tapestry made its public debut at the Muscarelle
             Museum of Art on June 19th, 2026, opening the exhibition tour that
-            will carry the panels to historic venues through 2028.
+            will carry the panels to historic venues through 2030.
           </p>
         </ReadingContainer>
       </PageSection>

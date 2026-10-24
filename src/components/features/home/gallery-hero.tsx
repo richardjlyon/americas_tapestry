@@ -43,7 +43,7 @@ export function GalleryHero({ stops, builtAt, backdrops }: GalleryHeroProps) {
           <p className="gallery-lead mx-auto mt-3 max-w-2xl">
             Thirteen hand-embroidered panels telling the story of the original
             colonies — stitched by over a thousand volunteers, now touring the
-            nation through 2028.
+            nation through 2030.
           </p>
           <div className="gold-threshold mx-auto mt-5" />
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
