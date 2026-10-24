@@ -18,7 +18,7 @@ export function GetInTouchSection() {
           variant="colonial-gold"
           className="text-base py-2 px-5"
         >
-          <Link href="/contact">
+          <Link prefetch={false} href="/contact">
             <Mail className="mr-2 h-4 w-4" /> Contact Us
           </Link>
         </Button>

@@ -50,6 +50,7 @@ export function SiteBreadcrumb() {
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
                 <Link
+                  prefetch={false}
                   href="/"
                   className="font-sans text-colonial-parchment/70 hover:text-colonial-gold"
                 >
@@ -74,6 +75,7 @@ export function SiteBreadcrumb() {
                     ) : (
                       <BreadcrumbLink asChild>
                         <Link
+                          prefetch={false}
                           href={href}
                           className="font-sans text-colonial-parchment/70 hover:text-colonial-gold"
                         >

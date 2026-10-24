@@ -37,7 +37,7 @@ export default function TapestryGlossariesCard() {
           asChild
           className="w-full rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90"
         >
-          <Link href="/resources/glossary">
+          <Link prefetch={false} href="/resources/glossary">
             View Glossaries <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>

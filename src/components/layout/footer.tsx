@@ -31,6 +31,7 @@ export function Footer() {
                 ].map((item) => (
                   <li key={item.name}>
                     <Link
+                      prefetch={false}
                       href={item.href}
                       className="font-serif text-lg text-colonial-parchment/70 hover:text-colonial-parchment transition-colors"
                     >
@@ -49,6 +50,7 @@ export function Footer() {
                 ].map((item) => (
                   <li key={item.name}>
                     <Link
+                      prefetch={false}
                       href={item.href}
                       className="font-serif text-lg text-colonial-parchment/70 hover:text-colonial-parchment transition-colors"
                     >
@@ -66,6 +68,7 @@ export function Footer() {
             </h3>
             <div className="flex space-x-4">
               <Link
+                prefetch={false}
                 href="https://www.instagram.com/250tapestry/"
                 className="text-colonial-parchment/70 hover:text-colonial-gold transition-colors"
               >
@@ -73,6 +76,7 @@ export function Footer() {
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
+                prefetch={false}
                 href="https://x.com/The250Tapestry"
                 className="text-colonial-parchment/70 hover:text-colonial-gold transition-colors"
               >
@@ -80,6 +84,7 @@ export function Footer() {
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
+                prefetch={false}
                 href="https://www.facebook.com/people/Americas-Tapestry/61571902259201/"
                 className="text-colonial-parchment/70 hover:text-colonial-gold transition-colors"
               >
@@ -96,6 +101,7 @@ export function Footer() {
               <FooterNewsletter />
               <div className="mt-4">
                 <Link
+                  prefetch={false}
                   href="/privacy-policy"
                   className="font-serif text-colonial-parchment/70 hover:text-colonial-parchment transition-colors text-lg"
                 >

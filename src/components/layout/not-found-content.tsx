@@ -27,12 +27,12 @@ export function NotFoundContent() {
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <Button asChild variant="colonial-primary" className="text-base py-2 px-5">
-          <Link href="/">
+          <Link prefetch={false} href="/">
             <Home className="mr-2 h-4 w-4" /> Return Home
           </Link>
         </Button>
         <Button asChild variant="colonial-outline" className="text-base py-2 px-5">
-          <Link href="/tapestries">
+          <Link prefetch={false} href="/tapestries">
             <Compass className="mr-2 h-4 w-4" /> Browse the Tapestries
           </Link>
         </Button>

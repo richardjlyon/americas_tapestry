@@ -6,12 +6,15 @@ import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// Navigation items used in both desktop and mobile
-const navigationItems = [
+// Navigation items used in both desktop and mobile.
+// Link prefetch is off site-wide: every visible <Link> cost ~4 edge requests
+// per page view (Vercel Edge Requests over the free cap, Sept 2026). Only Shop
+// keeps Next's default prefetch, so the one page that earns money opens instantly.
+const navigationItems: { name: string; href: string; prefetch?: boolean }[] = [
   { name: 'Visit', href: '/exhibitions' },
   { name: 'Tapestries', href: '/tapestries' },
   { name: 'Gallery', href: '/gallery' },
-  { name: 'Shop', href: '/shop' },
+  { name: 'Shop', href: '/shop', prefetch: true },
   { name: 'News', href: '/news' },
   { name: 'About', href: '/about' },
   { name: 'Team', href: '/team' },
@@ -60,6 +63,7 @@ export function Header() {
     >
       {/* Logo - Positioned at the root level */}
       <Link
+        prefetch={false}
         href="/"
         className="absolute top-1/2 left-4 md:left-8 flex items-center z-30 transform -translate-y-1/2"
       >
@@ -83,6 +87,7 @@ export function Header() {
           <nav className="hidden xl:flex items-center space-x-8 2xl:space-x-12">
             {navigationItems.map((item) => (
               <Link
+                prefetch={item.prefetch ? 'auto' : false}
                 key={item.name}
                 href={item.href}
                 className="text-sm lg:text-base font-medium font-sans text-colonial-parchment transition-colors hover:text-colonial-gold"
@@ -125,6 +130,7 @@ export function Header() {
           <nav className="flex flex-col space-y-6 mt-4">
             {navigationItems.map((item) => (
               <Link
+                prefetch={item.prefetch ? 'auto' : false}
                 key={item.name}
                 href={item.href}
                 className="block text-center py-2 text-xl font-bold font-sans text-colonial-parchment hover:text-colonial-gold transition-colors"

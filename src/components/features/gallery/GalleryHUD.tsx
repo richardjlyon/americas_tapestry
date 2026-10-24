@@ -614,6 +614,7 @@ export default function GalleryHUD({
       {/* Bottom-centre: shop stop call-to-action (the shop stop has no audio card). */}
       {atShopStop && !showCard && (
         <Link
+          prefetch={false}
           href="/shop"
           className="pointer-events-auto absolute bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-40 flex min-h-[44px] -translate-x-1/2 items-center rounded-full bg-[#F5EFE0] px-6 font-serif text-[17px] text-[#12284C] shadow-[0_4px_16px_rgba(0,0,0,0.35)] transition-colors hover:text-[#8C4A4A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#12284C] max-[715px]:bottom-[calc(env(safe-area-inset-bottom,0px)+88px)]"
           style={

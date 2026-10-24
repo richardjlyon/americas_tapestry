@@ -37,6 +37,7 @@ export async function StateShopPage({ slug }: { slug: string }) {
   return (
     <PageSection background="colonial-navy" spacing="spacious">
       <Link
+        prefetch={false}
         href={`/tapestries/${slug}`}
         className="inline-flex items-center gap-1 font-sans text-sm font-medium text-colonial-parchment/70 transition-colors hover:text-colonial-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
       >
@@ -77,6 +78,7 @@ export async function StateShopPage({ slug }: { slug: string }) {
 
         {/* The book — links to /shop/book, which carries the buy button. */}
         <Link
+          prefetch={false}
           href="/shop/book"
           className="group block rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
         >
@@ -121,6 +123,7 @@ export async function StateShopPage({ slug }: { slug: string }) {
 
       <div className="mt-12 text-center">
         <Link
+          prefetch={false}
           href="/shop"
           className="inline-flex items-center font-medium text-colonial-parchment/80 transition-colors hover:text-colonial-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
         >

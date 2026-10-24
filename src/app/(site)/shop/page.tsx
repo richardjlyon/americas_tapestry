@@ -223,7 +223,7 @@ export default async function ShopPage() {
               </li>
             </ul>
             <Button asChild variant="colonial-gold" size="lg" className="mt-8">
-              <Link href="/shop/postcard">
+              <Link prefetch={false} href="/shop/postcard">
                 Shop postcards
                 {countFor(POSTCARD_TYPE.slug) > 0
                   ? ` — ${countFor(POSTCARD_TYPE.slug)} colonies`
@@ -402,6 +402,7 @@ export default async function ShopPage() {
               people who stitched them, in one keepsake volume.
             </p>
             <Link
+              prefetch={false}
               href="/shop/book"
               className="mt-4 inline-flex items-center font-medium text-colonial-burgundy transition-colors hover:text-colonial-burgundy/80"
             >

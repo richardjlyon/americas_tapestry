@@ -171,7 +171,7 @@ export default function GlossaryPage() {
             asChild
             className="rounded-full bg-colonial-gold text-colonial-navy hover:bg-colonial-gold/90"
           >
-            <Link href="#">Download Complete Glossary (PDF, 8.3MB)</Link>
+            <Link prefetch={false} href="#">Download Complete Glossary (PDF, 8.3MB)</Link>
           </Button>
         </ContentCard>
       </PageSection>

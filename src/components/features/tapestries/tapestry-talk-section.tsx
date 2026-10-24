@@ -36,6 +36,7 @@ export function TapestryTalkSection({ video }: TapestryTalkSectionProps) {
             {video.excerpt || video.content}
           </p>
           <Link
+            prefetch={false}
             href={`/news/${video.slug}`}
             className="text-link text-sm mt-2 inline-block"
           >

@@ -71,6 +71,7 @@ export function BlogCard({ post, className }: BlogCardProps) {
         {/* read more */}
         <div className="mt-auto pt-2">
           <Link
+            prefetch={false}
             href={`/news/${post.slug}`}
             className="inline-block text-colonial-burgundy hover:text-colonial-navy font-medium transition-colors"
           >

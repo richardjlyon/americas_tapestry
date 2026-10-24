@@ -71,6 +71,7 @@ export default async function ProductTypePage({ params }: PageProps) {
     <PageSection background="colonial-navy" spacing="spacious">
       {/* Back to the shop — a quiet link, legible on the navy wall. */}
       <Link
+        prefetch={false}
         href="/shop"
         className="inline-flex items-center gap-1 font-sans text-sm font-medium text-colonial-parchment/70 transition-colors hover:text-colonial-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
       >
@@ -117,7 +118,7 @@ export default async function ProductTypePage({ params }: PageProps) {
             one by one — check back soon, or explore the other formats.
           </p>
           <Button asChild variant="colonial-gold" size="lg" className="mt-6">
-            <Link href="/shop">Browse the shop</Link>
+            <Link prefetch={false} href="/shop">Browse the shop</Link>
           </Button>
         </div>
       )}

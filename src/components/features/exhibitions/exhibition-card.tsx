@@ -62,6 +62,7 @@ export function ExhibitionCard({
         </p>
         <div className="mt-auto pt-4">
           <Link
+            prefetch={false}
             href={`/exhibitions/${exhibition.slug}`}
             className="inline-flex items-center font-medium text-colonial-gold transition-colors hover:text-colonial-gold/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-colonial-gold focus-visible:ring-offset-4 focus-visible:ring-offset-colonial-navy"
           >

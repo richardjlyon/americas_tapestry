@@ -1,4 +1,4 @@
-import { pageMetadata, DEFAULT_OG_IMAGE } from '@/lib/seo';
+import { pageMetadata, DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_SOURCE } from '@/lib/seo';
 
 // Pull the OG and Twitter image URLs out of the Metadata object, normalising
 // the various shapes Next.js accepts (string | {url} | array).
@@ -41,7 +41,14 @@ describe('pageMetadata OG image resolution', () => {
     });
     const og = ogImageUrl(meta);
     expect(og).toContain(R2_HOST);
-    expect(og).not.toBe(DEFAULT_OG_IMAGE);
+    expect(og).toBe(DEFAULT_OG_IMAGE);
+  });
+
+  it('DEFAULT_OG_IMAGE itself is an R2 URL (the root layout uses it as-is)', () => {
+    // The origin PNG is not deployed; an origin path here 404s for every page
+    // that relies on the layout's default Open Graph image.
+    expect(DEFAULT_OG_IMAGE).toMatch(new RegExp(`^https://${R2_HOST}/branding/americas-tapestry-logo-patriotic-.*\\.webp$`));
+    expect(DEFAULT_OG_IMAGE).not.toBe(DEFAULT_OG_IMAGE_SOURCE);
   });
 
   it('falls back to the original path for an image not in the manifest', () => {

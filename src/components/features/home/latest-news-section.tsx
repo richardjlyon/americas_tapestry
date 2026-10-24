@@ -66,7 +66,7 @@ export async function LatestNewsSection() {
           variant="colonial-primary"
           className="text-base py-2 px-5"
         >
-          <Link href="/news">
+          <Link prefetch={false} href="/news">
             View All News <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>

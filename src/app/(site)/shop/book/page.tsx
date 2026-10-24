@@ -132,6 +132,7 @@ export default async function BookPage() {
       {/* Hero — the hardcover on a navy stage */}
       <PageSection background="colonial-navy" spacing="spacious">
         <Link
+          prefetch={false}
           href="/shop"
           className="inline-flex items-center gap-1 font-sans text-sm font-medium text-colonial-parchment/70 transition-colors hover:text-colonial-gold"
         >
