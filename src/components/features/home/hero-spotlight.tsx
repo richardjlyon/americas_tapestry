@@ -51,7 +51,7 @@ export function HeroSpotlight({
   const spotlight = getExhibitionSpotlight(stops, now);
   const line = spotlight
     ? `${spotlight.kind === 'current' ? 'Now showing' : 'Coming soon'} · ${spotlight.exhibition.name}, ${spotlight.exhibition.state}`
-    : 'The Exhibition Tour · 2026–2028';
+    : 'The Exhibition Tour · 2026–2030';
 
   return (
     <>

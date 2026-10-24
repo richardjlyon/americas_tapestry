@@ -8,7 +8,7 @@ import { pageMetadata } from '@/lib/seo';
 export const metadata = pageMetadata({
   title: 'Visit',
   description:
-    "Where to see America's Tapestry on display — the venue on view now and every upcoming stop on the 2026–2028 exhibition tour.",
+    "Where to see America's Tapestry on display — the venue on view now and every upcoming stop on the 2026–2030 exhibition tour.",
   path: '/exhibitions',
 });
 
@@ -48,7 +48,7 @@ export default async function ExhibitionsPage() {
           </h1>
           <p className="gallery-lead mx-auto mt-3">
             All thirteen panels are touring the original colonies through
-            2028. Find the gallery nearest you.
+            2030. Find the gallery nearest you.
           </p>
         </header>
 
